@@ -19,7 +19,7 @@
     <div class="box1">
         <header class="headercancermama">
         
-            <span id="cabecera">Cáncer de MAMA</span>
+            <span id="cabecera">Cáncer de MAMA.</span>
 
         </header>
         <?php 
