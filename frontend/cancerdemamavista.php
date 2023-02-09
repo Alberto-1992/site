@@ -11,7 +11,7 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <!--<script defer src="https://app.embed.im/snow.js"></script>-->
-    <title>Cancer de Mama</title>
+    <title>Cáncer de Mama</title>
 </head>
 
 <body>
