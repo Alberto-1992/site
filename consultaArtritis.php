@@ -1,10 +1,11 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-</script>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+<style>
+    .ver-info:hover{
+        background: grey;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+<div id="lista-comentarios">
 <?php 
 
 	require 'conexionCancer.php';
@@ -32,10 +33,8 @@
 
 <input type="submit" data-bs-toggle="modal" data-bs-target="#artritis" value="+Cargar Paciente"
     id="boton_artritis">
-
-<table class="table table-responsive  table-bordered table-striped table-hover display" id="lista-comentarios">
-
-    <tbody>
+    <hr id="hrinicial">
+ 
         <input type="hidden" name="total_registro" id="total_registro" value="<?php echo $total_registro; ?>" />
         <?php
         
@@ -44,21 +43,19 @@
         $query->setFetchMode(PDO::FETCH_ASSOC);
         while($dataRegistro= $query->fetch())
         { ?>
-        <div class="row border_special item-comentario" id="<?php echo $dataRegistro['id']; ?>">
+        <div class="item-comentario" id="<?php echo $dataRegistro['id']; ?>" >
             <?php
             $id = $dataRegistro['id'];
             ?>
-            <tr>
-                <td id='<?php echo $id ?>' class='ver-info' style="font-size: 12px">
-                    <?php echo $dataRegistro['nombrecompleto'].'<br>'.'<strong style="font-size: 9px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'.<br>'.'<strong style="float:right; font-size: 7px; margin-top: -20px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
-                </td>
-
-            </tr>
+            <div id='<?php echo $id ?>' class='ver-info' >
+            
+                    <?php echo '<strong style="font-family: monospace; white-space: nowrap; font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
+                    </div> 
+            <hr>
+            </div>
             <?php 
         }?>
-    </tbody>
-
-</table>
+    
 </script>
 
 <div class="col-md-12 col-sm-12">
@@ -73,55 +70,57 @@
 <script>
 $(function() {
 
-    $('table').on('click', '.ver-info', function() {
+$('.item-comentario').on('click', '.ver-info', function() {
 
-        var id = $(this).prop('id');
+    var id = $(this).prop('id');
+      
+    let ob = {
+        id: id
+    };
 
-        let ob = {
-            id: id
-        };
-        $.ajax({
-            type: "POST",
-            url: "consultaArtritisBusqueda.php",
-            data: ob,
-            beforeSend: function() {
+    $.ajax({
+        type: "POST",
+        url: "consultaArtritisBusqueda.php",
+        data: ob,
+        beforeSend: function() {
 
-            },
-            success: function(data) {
+        },
+        success: function(data) {
 
-                $("#tabla_resultado").html(data);
+            $("#tabla_resultado").html(data);
 
-            }
-        });
-
+        }
     });
+
+});
 });
 $(document).ready(function() {
-    $('table').on('click', '.ver-info', function() {
+$('.item-comentario').on('click', '.ver-info', function() {
+//const nombre = document.querySelector(".ver-info");
+//nombre.style.color = "blue";
+    //Añadimos la imagen de carga en el contenedor
+    $('#tabla_resultado').html(
+        '<div id="tabla_resultado" style="position: fixed;  top: 0px; left: 0px;  width: 100%; height: 100%; z-index: 9999;  opacity: .7; background: url(imagenes/loader2.gif) 50% 50% no-repeat rgb(249,249,249);"><br/></div>'
+    );
 
-        //Añadimos la imagen de carga en el contenedor
-        $('#tabla_resultado').html(
-            '<div id="tabla_resultado" style="position: fixed;  top: 0px; left: 0px;  width: 100%; height: 100%; z-index: 9999;  opacity: .7; background: url(imagenes/loader2.gif) 50% 50% no-repeat rgb(249,249,249);"><br/></div>'
-        );
 
-
-        return false;
-    });
+    return false;
+});
 });
 
 
 $(document).ready(function() {
-    pageScroll();
+pageScroll();
 
-    $('.ajax-loader').hide();
+$('.ajax-loader').hide();
 
 });
 
 document.addEventListener('keydown', (event) => {
 
-    if (event.keyCode == 8 || event.keyCode == 46) {
-        $("#tabla_resultadobus").off("scroll");
-    }
+if (event.keyCode == 8 || event.keyCode == 46) {
+    $("#tabla_resultadobus").off("scroll");
+}
 }, false);
 
 function pageScroll() {

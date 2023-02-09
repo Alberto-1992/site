@@ -118,65 +118,95 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     }
 
-    .containerr {
-        background: #EEEEEE;
-        margin-top: 45px;
-        display: flex;
-        justify-content: left;
-        position: fixed;
-        width: 100%;
-        height: 25px;
-        font-size: 13px;
-        padding: 8px;
-        border-radius: 15px;
-    }
-
-    .containerr2 {
-        background: grey;
-        margin-top: 70px;
-        display: flex;
-        justify-content: center;
-        border-radius: 15px 15px 0px 0px;
-        padding: 0px;
-        width: 100%;
-        height: 15px;
-        color: white;
-    }
-
-    .containerr3 {
-        background: grey;
-        margin-top: -12px;
-        display: flex;
-        justify-content: center;
-        border-radius: 15px 15px 0px 0px;
-        padding: 0px;
-        width: 100%;
-        height: 15px;
-        color: white;
-    }
+    .containerr{
+    background: #EEEEEE;
+    margin-top: 45px;
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    width: 73%;
+    height: auto;
+    font-size: 13px;
+    padding: 2px;
+    border-radius: 0px 0px 0px 0px;
+    
+}
+.containerr2{
+    background: grey;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px 15px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    height: 15px;
+    color: white;
+}
+.containerr3{
+    background: grey;
+    margin-top: -12px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px 15px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    height: 15px;
+    color: white;
+}
 
     table {
         border-radius: 0px 0px 15px 15px;
     }
 
-
-
     #eliminarregistro {
-        color: red;
-    }
+    color: white;
+    background: red;
+    border: none;
+    font-size: 10px;
+    padding: 4px;
+    margin-left: 5px;
+}
+#eliminarregistro:hover{
+    color: black;
+}
+#expediente {
+    color: white;
+}
+#editarregistro {
+    color: white;
+    background: orange;
+    border: none;
+    font-size: 10px;
+    padding: 4px;
+    margin-left: 5px;
+}
+#expediente:hover,
+#editarregistro:hover {
+    color: blue;
+}
 
-    #expediente {
-        color: orange;
-    }
-
-    #editarregistro {
-        color: orange;
-    }
-
-    #expediente:hover,
-    #editarregistro:hover {
-        color: blue;
-    }
+#verseguimiento{
+    color: white;
+    background: orange;
+    border: none;
+    font-size: 10px;
+    padding: 4px;
+    margin-left: 2px;
+}
+#verseguimiento:hover{
+    color: black;
+}
+.mandaid{
+    color: white;
+    background: orange;
+    border: none;
+    font-size: 10px;
+    padding: 4px;
+    margin-left: 2px;
+}
+.mandaid:hover{
+    color: black;
+}
 </style>
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
@@ -221,21 +251,27 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
             };
         </script>
-        <a href="consultaExpediente?id=<?php echo $id_paciente ?>" class="" id="expediente">Expediente</a>
         <?php session_start();
-        if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { ?>
-            <a href="#" onclick="editarRegistro();" id="editarregistro">Editar registro</a>
-        <?php }; ?>
-        <a href="#" onclick="eliminarRegistro();" id="eliminarregistro">Eliminar registro</a>
-    <?php
-    } ?>
+                if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { 
+                    if($dataRegistro['editopaciente'] == 0 ) {?>
+                    
+            <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
+                <?php }else{ ?>
+                    <input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">
+
+                <?php }
+            };?>
+            <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
+            <?php
+    }?>
+                </div>
+                <style>
+                    .table:hover {
+                            background: #EBEBEB;
+                    }
+                </style>
 </div>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-
-
-
-
-
 
 
 
