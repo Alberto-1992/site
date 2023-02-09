@@ -18,5 +18,4 @@ try{
         die("Fallo la conexion:(".$conexion2 -> mysqli_connect_error().")".$conexion2-> mysqli_connect_error());
     }
     mysqli_query($conexion2,  'utf8');
-    
     ?>
