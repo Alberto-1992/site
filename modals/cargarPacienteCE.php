@@ -9,61 +9,7 @@
     <div class="modal-dialog modal-lg">
 
         <!-- Modal content-->
-        <style>
-    #datos_paciente{
-        display: block;
-        font-family: arial;
-        white-space: nowrap;
-       
-        width: 15ch;
-        font-size: 22px;
 
-        /*animation: typing 2s steps(18),
-        blink .5s infinite step-end alternate;
-        overflow: hidden;*/
-    }
-    
-
-    .form-title{
-        display: block;
-        font-family: arial;
-       /* white-space: nowrap;*/
-       
-        width: 100%;
-        font-size: 28px;
-        text-align: center; 
-        color:blueviolet; 
-        background-color:antiquewhite; 
-        margin-top: 5px;
-        /*animation: typing 2s steps(18),
-        blink .5s infinite step-end alternate;
-        overflow: hidden; */
-    }
-    strong{
-        font-family: arial;
-        font-size: 13px;
-        /*white-space: nowrap;*/ 
-    }
-    #inmuno-title{
-        font-family: arial;
-        font-size: 13px;
-    }
-    label{
-        font-family: arial;
-        font-size: 13px;
-        /*white-space: nowrap;*/ 
-    }
-    #titulos{
-        font-size: 14px;
-    }
-     .control{
-        border: .5px solid grey;
-        border-radius: 5px 5px 5px 5px;
-        outline: none;
-        font-size: 11px;
-        color: black;
-    }
-</style>
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalInfarto">
             

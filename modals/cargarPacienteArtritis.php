@@ -13,30 +13,6 @@
     <div class="modal-dialog modal-lg">
 
 
-        <!--Estilos-->
-        <style>
-            .form-title {
-                display: block;
-                /* white-space: nowrap;*/
-                border-right: 4px solid;
-                width: 100%;
-                font-size: 22px;
-                text-align: center;
-                color: blueviolet;
-                background-color: antiquewhite;
-                margin-top: 5px;
-            }
-
-            strong {
-                font-size: 13px;
-                /*white-space: nowrap;*/
-            }
-        </style>
-        <!--Fin de los Estilos-->
-
-
-
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalArtritis">

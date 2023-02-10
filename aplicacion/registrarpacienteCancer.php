@@ -216,13 +216,12 @@ $hoy = date("Y-m-d");
                                             $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                 $sql->execute();
 
-                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimica(receptoresestrogenos, receptoresprogesterona, ki67, k, p53, triplenegativo, aplicopdl, descripcionpdl, oncogenher2, fish, id_usuario)
-                                                        values(:receptoresestrogenos, :receptoresprogesterona, :ki67, :k, :p53, :triplenegativo, :aplicopdl, :descripcionpdl, :oncogenher2, :fish, :id_usuario)");
+                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimica(receptoresestrogenos, receptoresprogesterona, ki67, p53, triplenegativo, aplicopdl, descripcionpdl, oncogenher2, fish, id_usuario)
+                                                        values(:receptoresestrogenos, :receptoresprogesterona, :ki67, :p53, :triplenegativo, :aplicopdl, :descripcionpdl, :oncogenher2, :fish, :id_usuario)");
 
                                                         $sql->bindParam(':receptoresestrogenos',$receptoresestrogenos,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesterona',$receptoresprogesterona,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67',$ki67,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':k',$k,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':p53',$p53,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativo',$triplenegativo,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdl',$pdlrealizo,PDO::PARAM_STR,10);
@@ -232,13 +231,12 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':id_usuario',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
 
-                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargd(receptoresestrogenosrgd, receptoresprogesteronargd, ki67rgd, krgd, p53rgd, triplenegativorgd, aplicopdlrgd, descripcionpdlrgd, oncogenher2rgd, fishrgd, id_paciente)
-                                                        values(:receptoresestrogenosrgd, :receptoresprogesteronargd, :ki67rgd, :krgd, :p53rgd, :triplenegativorgd, :aplicopdlrgd, :descripcionpdlrgd, :oncogenher2rgd, :fishrgd, :id_paciente)");
+                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargd(receptoresestrogenosrgd, receptoresprogesteronargd, ki67rgd, p53rgd, triplenegativorgd, aplicopdlrgd, descripcionpdlrgd, oncogenher2rgd, fishrgd, id_paciente)
+                                                        values(:receptoresestrogenosrgd, :receptoresprogesteronargd, :ki67rgd, :p53rgd, :triplenegativorgd, :aplicopdlrgd, :descripcionpdlrgd, :oncogenher2rgd, :fishrgd, :id_paciente)");
 
                                                         $sql->bindParam(':receptoresestrogenosrgd',$receptoresestrogenosrgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronargd',$receptoresprogesteronargd,PDO::PARAM_STR,10);
-                                                        $sql->bindParam(':ki67rgd',$ki67rgd,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':krgd',$krgd,PDO::PARAM_STR,10);
+                                                        $sql->bindParam(':ki67rgd',$ki67rgd,PDO::PARAM_STR,100);                                                
                                                         $sql->bindParam(':p53rgd',$p53rgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativorgd',$triplenegativorgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdlrgd',$pdlrealizorgd,PDO::PARAM_STR,10);
@@ -248,13 +246,13 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
                                                             
-                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicaiz(receptoresestrogenosiz, receptoresprogesteronaiz, ki67iz, kiz, p53iz, triplenegativoiz, aplicopdliz, descripcionpdliz, oncogenher2iz, fishiz, id_usuario)
-                                                        values(:receptoresestrogenosiz, :receptoresprogesteronaiz, :ki67iz, :kiz, :p53iz, :triplenegativoiz, :aplicopdliz, :descripcionpdliz, :oncogenher2iz, :fishiz, :id_usuario)");
+                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicaiz(receptoresestrogenosiz, receptoresprogesteronaiz, ki67iz, p53iz, triplenegativoiz, aplicopdliz, descripcionpdliz, oncogenher2iz, fishiz, id_usuario)
+                                                        values(:receptoresestrogenosiz, :receptoresprogesteronaiz, :ki67iz, :p53iz, :triplenegativoiz, :aplicopdliz, :descripcionpdliz, :oncogenher2iz, :fishiz, :id_usuario)");
 
                                                         $sql->bindParam(':receptoresestrogenosiz',$receptoresestrogenosiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronaiz',$receptoresprogesteronaiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67iz',$ki67iz,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':kiz',$kiz,PDO::PARAM_STR,10);
+                                                    
                                                         $sql->bindParam(':p53iz',$p53iz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativoiz',$triplenegativoiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdliz',$pdlrealizoiz,PDO::PARAM_STR,10);
@@ -264,13 +262,13 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':id_usuario',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
 
-                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargiz(receptoresestrogenosrgiz, receptoresprogesteronargiz, ki67rgiz, krgiz, p53rgiz, triplenegativorgiz, aplicopdlrgiz, descripcionpdlrgiz, oncogenher2rgiz, fishrgiz, id_paciente)
+                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargiz(receptoresestrogenosrgiz, receptoresprogesteronargiz, ki67rgiz, p53rgiz, triplenegativorgiz, aplicopdlrgiz, descripcionpdlrgiz, oncogenher2rgiz, fishrgiz, id_paciente)
                                                         values(:receptoresestrogenosrgiz, :receptoresprogesteronargiz, :ki67rgiz, :krgiz, :p53rgiz, :triplenegativorgiz, :aplicopdlrgiz, :descripcionpdlrgiz, :oncogenher2rgiz, :fishrgiz, :id_paciente)");
 
                                                         $sql->bindParam(':receptoresestrogenosrgiz',$receptoresestrogenosizrgi,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronargiz',$receptoresprogesteronaizrgi,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67rgiz',$ki67izrgi,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':krgiz',$kizrgi,PDO::PARAM_STR,10);
+                                                    
                                                         $sql->bindParam(':p53rgiz',$p53izrgi,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativorgiz',$triplenegativoizrgi,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdlrgiz',$pdlrealizoizrgi,PDO::PARAM_STR,10);
@@ -567,13 +565,13 @@ $hoy = date("Y-m-d");
                                             $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                 $sql->execute();
 
-                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimica(receptoresestrogenos, receptoresprogesterona, ki67, k, p53, triplenegativo, aplicopdl, descripcionpdl, oncogenher2, fish, id_usuario)
-                                                        values(:receptoresestrogenos, :receptoresprogesterona, :ki67, :k, :p53, :triplenegativo, :aplicopdl, :descripcionpdl, :oncogenher2, :fish, :id_usuario)");
+                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimica(receptoresestrogenos, receptoresprogesterona, ki67, p53, triplenegativo, aplicopdl, descripcionpdl, oncogenher2, fish, id_usuario)
+                                                        values(:receptoresestrogenos, :receptoresprogesterona, :ki67, :p53, :triplenegativo, :aplicopdl, :descripcionpdl, :oncogenher2, :fish, :id_usuario)");
 
                                                         $sql->bindParam(':receptoresestrogenos',$receptoresestrogenos,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesterona',$receptoresprogesterona,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67',$ki67,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':k',$k,PDO::PARAM_STR,10);
+                                                
                                                         $sql->bindParam(':p53',$p53,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativo',$triplenegativo,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdl',$pdlrealizo,PDO::PARAM_STR,10);
@@ -584,12 +582,12 @@ $hoy = date("Y-m-d");
                                                             $sql->execute();
 
                                                             $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargd(receptoresestrogenosrgd, receptoresprogesteronargd, ki67rgd, krgd, p53rgd, triplenegativorgd, aplicopdlrgd, descripcionpdlrgd, oncogenher2rgd, fishrgd, id_paciente)
-                                                        values(:receptoresestrogenosrgd, :receptoresprogesteronargd, :ki67rgd, :krgd, :p53rgd, :triplenegativorgd, :aplicopdlrgd, :descripcionpdlrgd, :oncogenher2rgd, :fishrgd, :id_paciente)");
+                                                        values(:receptoresestrogenosrgd, :receptoresprogesteronargd, :ki67rgd, :p53rgd, :triplenegativorgd, :aplicopdlrgd, :descripcionpdlrgd, :oncogenher2rgd, :fishrgd, :id_paciente)");
 
                                                         $sql->bindParam(':receptoresestrogenosrgd',$receptoresestrogenosrgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronargd',$receptoresprogesteronargd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67rgd',$ki67rgd,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':krgd',$krgd,PDO::PARAM_STR,10);
+                                                    
                                                         $sql->bindParam(':p53rgd',$p53rgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativorgd',$triplenegativorgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdlrgd',$pdlrealizorgd,PDO::PARAM_STR,10);
@@ -602,12 +600,12 @@ $hoy = date("Y-m-d");
                     
                                                             
                             $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicaiz(receptoresestrogenosiz, receptoresprogesteronaiz, ki67iz, kiz, p53iz, triplenegativoiz, aplicopdliz, descripcionpdliz, oncogenher2iz, fishiz, id_usuario)
-                                                        values(:receptoresestrogenosiz, :receptoresprogesteronaiz, :ki67iz, :kiz, :p53iz, :triplenegativoiz, :aplicopdliz, :descripcionpdliz, :oncogenher2iz, :fishiz, :id_usuario)");
+                                                        values(:receptoresestrogenosiz, :receptoresprogesteronaiz, :ki67iz, :p53iz, :triplenegativoiz, :aplicopdliz, :descripcionpdliz, :oncogenher2iz, :fishiz, :id_usuario)");
 
                                                         $sql->bindParam(':receptoresestrogenosiz',$receptoresestrogenosiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronaiz',$receptoresprogesteronaiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67iz',$ki67iz,PDO::PARAM_STR,100);
-                                                        $sql->bindParam(':kiz',$kiz,PDO::PARAM_STR,10);
+                                                    
                                                         $sql->bindParam(':p53iz',$p53iz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativoiz',$triplenegativoiz,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdliz',$pdlrealizoiz,PDO::PARAM_STR,10);
@@ -618,12 +616,12 @@ $hoy = date("Y-m-d");
                                                             $sql->execute();
 
                                                             $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargiz(receptoresestrogenosrgiz, receptoresprogesteronargiz, ki67rgiz, krgiz, p53rgiz, triplenegativorgiz, aplicopdlrgiz, descripcionpdlrgiz, oncogenher2rgiz, fishrgiz, id_paciente)
-                                                            values(:receptoresestrogenosrgiz, :receptoresprogesteronargiz, :ki67rgiz, :krgiz, :p53rgiz, :triplenegativorgiz, :aplicopdlrgiz, :descripcionpdlrgiz, :oncogenher2rgiz, :fishrgiz, :id_paciente)");
+                                                            values(:receptoresestrogenosrgiz, :receptoresprogesteronargiz, :ki67rgiz, :p53rgiz, :triplenegativorgiz, :aplicopdlrgiz, :descripcionpdlrgiz, :oncogenher2rgiz, :fishrgiz, :id_paciente)");
     
                                                             $sql->bindParam(':receptoresestrogenosrgiz',$receptoresestrogenosizrgi,PDO::PARAM_STR,10);
                                                             $sql->bindParam(':receptoresprogesteronargiz',$receptoresprogesteronaizrgi,PDO::PARAM_STR,10);
                                                             $sql->bindParam(':ki67rgiz',$ki67izrgi,PDO::PARAM_STR,100);
-                                                            $sql->bindParam(':krgiz',$kizrgi,PDO::PARAM_STR,10);
+                                                        
                                                             $sql->bindParam(':p53rgiz',$p53izrgi,PDO::PARAM_STR,10);
                                                             $sql->bindParam(':triplenegativorgiz',$triplenegativoizrgi,PDO::PARAM_STR,10);
                                                             $sql->bindParam(':aplicopdlrgiz',$pdlrealizoizrgi,PDO::PARAM_STR,10);
