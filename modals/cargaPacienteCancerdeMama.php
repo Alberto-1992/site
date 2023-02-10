@@ -921,8 +921,8 @@
                                         style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
                                         <strong id="titulos">Mama derecha</strong>
                                     </div>
+                                    
                                     <div class="col-md-4">
-
                                         <div class="input-group pull-left" id="inmunoderecha1">
                                             <strong>Receptores de estrogenos (RE)</strong>
                                             <input type="number" id="receptoresestrogenos" name="receptoresestrogenos"
@@ -942,14 +942,14 @@
                                             <input type="number" id="ki67" name="ki67" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div><!--
                                     <div class="col-md-2" id="inmunoderecha4">
                                         <div class="input-group pull-left">
                                             <strong>K</strong>
                                             <input type="number" id="k" name="k" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-2" id="inmunoderecha5">
                                         <div class="input-group pull-left">
                                             <strong>P 53</strong>
@@ -961,7 +961,7 @@
                                         <div class="input-group pull-left">
                                             <strong>Triple negativo</strong>
                                             <select name="triplenegativo" id="triplenegativo" class="control control col-md-12">
-                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Sin registro" selected>Sin registro</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
 
@@ -1037,14 +1037,14 @@
                                             <input type="number" id="ki67rgd" name="ki67rgd" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div><!--
                                     <div class="col-md-2" id="inmunoderecha4rgd">
                                         <div class="input-group pull-left">
                                             <strong>K</strong>
                                             <input type="number" id="krgd" name="krgd" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-2" id="inmunoderecha5rgd">
                                         <div class="input-group pull-left">
                                             <strong>P 53</strong>
@@ -1132,13 +1132,14 @@
                                                 class="control control col-md-12">
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="col-md-2" id="inmunoderechaiz4">
                                         <div class="input-group pull-left">
                                             <strong>K</strong>
                                             <input type="number" id="kiz" name="kiz" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-2" id="inmunoderechaiz5">
                                         <div class="input-group pull-left">
                                             <strong>P 53</strong>
@@ -1225,17 +1226,18 @@
                                                 class="control control col-md-12">
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="col-md-2" id="inmunoderechaiz4rgi">
                                         <div class="input-group pull-left">
                                             <strong>K</strong>
                                             <input type="number" id="kizrgi" name="kizrgi" placeholder="%"
                                                 class="control control col-md-12">
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-2" id="inmunoderechaiz5rgi">
                                         <div class="input-group pull-left">
                                             <strong>P 53</strong>
-                                            <input type"number" name="p53izrgi" id="p53izrgi" class="control control col-md-12">
+                                            <input type="number" name="p53izrgi" id="p53izrgi" class="control control col-md-12">
                                                 
                                         </div>
                                     </div>
@@ -1592,7 +1594,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">TRATAMIENTO</strong>
                                     </div>
-                                    <div class="col-md-3" style="color: #BD9FD6; ">
+                                    <div class="col-md-12" style="color: #BD9FD6; ">
                                         <strong>QUIRURGICO</strong>
                                         <select name="quirurgico" id="quirurgico" class="control control col-md-12">
                                             <option value="0">Seleccione</option>
@@ -1601,7 +1603,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="lateralidad">
+                                    <div class="col-md-4" id="lateralidad">
                                         <strong>Lateralidad Qx</strong>
                                         <select name="lateralidadsegundo" id="lateralidadsegundo" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1611,7 +1613,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tipoquirurgico">
+                                    <div class="col-md-4" id="tipoquirurgico">
                                         <strong>Tipo</strong>
                                         <select name="quirurgicotipo" id="quirurgicotipo" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1621,7 +1623,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="tipomastectomia">
+                                    <div class="col-md-4" id="tipomastectomia">
                                         <strong>Tipo de mastectomia</strong>
                                         <select name="mastectomiatipo" id="mastectomiatipo" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1735,7 +1737,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">QUIMIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-3" style="color: #BD9FD6;">
+                                    <div class="col-md-12" style="color: #BD9FD6;">
                                         <strong>QUIMIOTERAPIA</strong>
                                         <select name="aplicoquimio" id="aplicoquimio" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1744,12 +1746,12 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="fechainicioquimio">
+                                    <div class="col-md-4" id="fechainicioquimio">
                                         <strong>Fecha inicio</strong>
                                         <input type="date" id="fechadeinicioquimio" name="fechadeinicioquimio"
                                             class="control control col-md-12">
                                     </div>
-                                    <div class="col-md-3" id="atracicilassi">
+                                    <div class="col-md-4" id="atracicilassi">
                                         <strong>Antraciclinas</strong>
                                         <select name="antraciclinas" id="antraciclinas" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1764,7 +1766,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="quimiomomento">
+                                    <div class="col-md-4" id="quimiomomento">
                                         <strong>Momento de la QT</strong>
                                         <select name="momentoquimio" id="momentoquimio" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1890,7 +1892,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">RADIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-3" style="color: #BD9FD6; ">
+                                    <div class="col-md-12" style="color: #BD9FD6; ">
                                         <strong>RADIOTERAPIA</strong>
                                         <select name="radioterapia" id="radioterapia" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1898,7 +1900,7 @@
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="seaplicoradio">
+                                    <div class="col-md-4" id="seaplicoradio">
                                         <strong>Tipo Radioterapia</strong>
                                         <select name="aplicoradioterapia" id="aplicoradioterapia" class="control control col-md-12">
                                             <option value="Sin registro">Sin registro</option>
@@ -1906,12 +1908,12 @@
                                             <option value="TANGENCIAL">TANGENCIAL</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="fechadelaradio">
+                                    <div class="col-md-4" id="fechadelaradio">
                                         <strong>Fecha de inicio</strong>
                                         <input type="date" id="fechainicioradio" name="fechainicioradio"
                                             class="control control col-md-12">
                                     </div>
-                                    <div class="col-md-3" id="sesionescantidad">
+                                    <div class="col-md-4" id="sesionescantidad">
                                         <strong>N° de sesiones</strong>
                                         <input type="number" id="numerosesiones" name="numerosesiones"
                                             class="control control col-md-12">

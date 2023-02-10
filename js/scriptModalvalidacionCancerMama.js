@@ -806,7 +806,7 @@ $(document).ready(function() {
             $('#lateralidad').prop("hidden", false);
             $("#guardaApartado").prop("hidden", false);
 
-        } else {
+        } else if ($(this).val() === "No") {
             $('#tipoquirurgico').prop("hidden", true);
             $('#tipomastectomia').prop("hidden", true);
             $('#reconstruccion').prop("hidden", true);
@@ -817,6 +817,7 @@ $(document).ready(function() {
             $("#guardaApartado").prop("hidden", true);
             $('#lateralidad').prop("hidden", true);
             $('#fechatiporeconstruccion').val('');
+            $('#reconstrucciontipofecha').prop('hidden', true);
             $('#quirurgicotipo').prop('selectedIndex',0);
             $('#mastectomiatipo').prop("selectedIndex", 0);
             $('#reconstruccionsino').prop("selectedIndex", 0);
@@ -2059,4 +2060,30 @@ $(function() {
     $('#basalizmmrgi').val('');
 
 
+
 })
+/*
+$(document).ready(function () {
+
+    $('#triplenegativo').change(function (e) {
+        if (triplenegativo.options[0].selected == true) {
+
+            $('#inmunoderecha7').prop("hidden", true);
+            $('#inmunoderecha8').prop("hidden", true);
+        } else if (triplenegativo.options[1].selected == true) {
+            $('#inmunoderecha7').prop("hidden", false);
+            $('#inmunoderecha8').prop("hidden", false);
+            $("#pdlrealizo1").prop("checked", true);
+            $("#pdl").prop("disabled", false);
+
+        } else if (triplenegativo.options[2].selected == true) {
+            $('#inmunoderecha7').prop("hidden", true);
+            $('#inmunoderecha8').prop("hidden", true);
+            $("#pdl").val('');
+            $("#pdlrealizo2").prop("checked", true);
+        }
+
+    })
+
+});
+*/
