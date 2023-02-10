@@ -245,7 +245,7 @@
             ));
             $rw = $statement->fetch();
             $admin = $rw['correo'];
-            if ($admin == 'msandoval@hraei.gob.mx') {
+            if ($admin == 'msandoval@hraei.gob.mx' or $admin == 'bramirez@gmail.com') {
                 ?>
         <article class="card" id="estructura-organizacional">
             <a href="../rh/admin">
@@ -318,7 +318,27 @@
             ));
             $rw = $statement->fetch();
             $admin = $rw['correo'];
-            if ($admin == 'drraulguzman@gmail.com') {
+            if ($admin == 'bramirez699@gmail.com') {
+                ?>
+        <article class="card" id="estructura-organizacional">
+            <a href="../rh/admin">
+                <hr id="hr6">
+                <p>Modulo usuarios</p>
+
+                <a id="linkestructura" href="../rh/admin" class="btn btn-secondary">Estructura</a>
+            </a>
+        </article>
+        <?php
+        
+            $usernameSesion = $_SESSION['usuarioJefe'];
+            require '../cisfa/conexion.php';
+            $statement = $conexion->prepare("SELECT correo, rol, password FROM usuarioslogeojefes WHERE correo= '$usernameSesion' AND rol = 4");
+            $statement->execute(array(
+                ':correo' => $usernameSesion
+            ));
+            $rw = $statement->fetch();
+            $admin = $rw['correo'];
+        }else if ($admin == 'drraulguzman@gmail.com') {
                 ?>
         <article class="card" id="cancer">
             <a href="cancer">
