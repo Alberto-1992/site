@@ -675,13 +675,7 @@ td{
   margin-top: 65px;
 }
 
-th {
 
-  font-size: 14px;
-  background-color: #A8A8A8;
-  color: black;
-  text-align: left;
-}
 
 
 td {
@@ -823,4 +817,121 @@ strong {
   color: black;
 }
 
+#th {
+  background-color: #dedede;
+  font-family: arial;
+  font-size: 12px;
+  width: 14rem;
+  float: right;
+  text-align: right;
+  padding: 3px;
+
+}
+
+#td {
+  font-family: arial;
+  font-size: 12px;
+  width: 100rem;
+  padding: 3px;
+
+}
+
+.containerr {
+  background: #EEEEEE;
+  margin-top: 45px;
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  width: 73%;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  border-radius: 0px 0px 0px 0px;
+
+}
+
+.containerr2 {
+  background: grey;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px 15px 0px 0px;
+  padding: 0px;
+  width: 100%;
+  height: 15px;
+  color: white;
+}
+
+.containerr3 {
+  background: grey;
+  margin-top: -12px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px 15px 0px 0px;
+  padding: 0px;
+  width: 100%;
+  height: 15px;
+  color: white;
+}
+
+table {
+  border-radius: 0px 0px 15px 15px;
+}
+
+#eliminarregistro {
+  color: white;
+  background: red;
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 5px;
+}
+
+#eliminarregistro:hover {
+  color: black;
+}
+
+#expediente {
+  color: white;
+}
+
+#editarregistro {
+  color: white;
+  background: orange;
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 5px;
+}
+
+#expediente:hover,
+#editarregistro:hover {
+  color: blue;
+}
+
+#verseguimiento {
+  color: white;
+  background: orange;
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 2px;
+}
+
+#verseguimiento:hover {
+  color: black;
+}
+
+.mandaid {
+  color: white;
+  background: orange;
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 2px;
+}
+
+.mandaid:hover {
+  color: black;
+}
 /*finaliza */
