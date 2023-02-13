@@ -825,6 +825,22 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $dataRegistro['fechainicio'];?></td>
     </tr>
     <tr>
+        <th id="th">1ra linea QT</th>
+        <td id="td"><?php echo $dataRegistro['primeralinea'];?></td>
+    </tr>
+    <tr>
+        <th id="th">Ciclos 1ra linea</th>
+        <td id="td"><?php echo $dataRegistro['ciclosprimerlineaqt'];?></td>
+    </tr>
+    <tr>
+        <th id="th">2da linea QT</th>
+        <td id="td"><?php echo $dataRegistro['segundalinea'];?></td>
+    </tr>
+    <tr>
+        <th id="th">Ciclos 2da linea</th>
+        <td id="td"><?php echo $dataRegistro['ciclossegundalineaqt'];?></td>
+    </tr>
+    <tr>
         <th id="th">Antraciclinas</th>
         <td id="td"><?php echo $dataRegistro['antraciclinas'];?></td>
     </tr>
