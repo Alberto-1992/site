@@ -205,7 +205,7 @@ require 'menu/menuPersonal.php';
         <?php
        }else if(isset($_SESSION['residentes'])){
    
-   require 'menu/menuPrincipal.php';
+   require 'menu/menuResidentes.php';
    
    ?>
 <article class="card" id="cancer-mama">

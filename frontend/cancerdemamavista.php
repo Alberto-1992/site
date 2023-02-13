@@ -27,6 +27,8 @@
         require 'menu/menuInfarto.php';
     }elseif(isset($_SESSION['usuarioJefe'])){
         require 'menu/menuMedico.php';
+    }elseif(isset($_SESSION['residentes'])){
+        require 'menu/menuResidentes.php';
     }
 ?>
 

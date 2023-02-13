@@ -438,7 +438,7 @@
         //include 'footer.php';
             
         } else if (isset($_SESSION['residentes'])) {
-            require 'menu/menuPersonal.php';
+            require 'menu/menuResidentes.php';
 
             ?>
 <article class="card" id="cancer">

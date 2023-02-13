@@ -42,7 +42,7 @@
                     $rw = $statement->fetch();
                     if($rw != false){
                         $_SESSION['residentes'] = $usernameSesion;
-                            require 'frontend/principalInfarto.php';
+                            require 'frontend/cancer.php';
                     }else{
                         echo "<script>alert('No tienes acceso a este apartado');window.history.back();
                         </script>;";
