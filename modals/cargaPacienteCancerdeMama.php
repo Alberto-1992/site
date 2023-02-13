@@ -1699,6 +1699,46 @@
                                         <input type="date" id="fechadeinicioquimio" name="fechadeinicioquimio"
                                             class="form-control">
                                     </div>
+                                    <div class="col-md-4" id="primerlineaqt">
+                                        <strong>1er Linea QT</strong>
+                                        <select name="primerlinea" id="primerlinea" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionprimeralinea FROM primeralinea");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionprimeralinea']; ?>">
+                                                <?php echo $row['descripcionprimeralinea']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="ciclosprimerlinea">
+                                        <strong>Ciclos 1er linea</strong>
+                                        <input type="number" id="ciclosprimerlineaqt" name="ciclosprimerlineaqt"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-4" id="segundalineaqt">
+                                        <strong>2da Linea QT</strong>
+                                        <select name="segundalinea" id="segundalinea" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionsegundalinea FROM segundalinea");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionsegundalinea']; ?>">
+                                                <?php echo $row['descripcionsegundalinea']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="ciclossegundalinea">
+                                        <strong>Ciclos 2da linea</strong>
+                                        <input type="number" id="ciclossegundalineaqt" name="ciclossegundalineaqt"
+                                            class="form-control">
+                                    </div>
                                     <div class="col-md-4" id="atracicilassi">
                                         <strong>Antraciclinas</strong>
                                         <select name="antraciclinas" id="antraciclinas" class="form-control">

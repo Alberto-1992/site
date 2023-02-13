@@ -323,12 +323,16 @@ $hoy = date("Y-m-d");
                                                             $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                                                                 $sql->execute();
 
-                            $sql = $conexionCancer->prepare("INSERT into quimioterapia(aplicoquimio, fechainicio, antraciclinas, momentodelaqt, her2, esquemaher2, triplenegativo, esquematrilpenegativo, hormonosensible, 
+                            $sql = $conexionCancer->prepare("INSERT into quimioterapia(aplicoquimio, fechainicio, primeralinea, ciclosprimerlineaqt, segundalinea, ciclossegundalineaqt, antraciclinas, momentodelaqt, her2, esquemaher2, triplenegativo, esquematrilpenegativo, hormonosensible, 
                             esquemahormonosensible, tipotratamiento, completoquimio, causaqtincompleta, fechaeventoadverso, fechaprogresion, fecharecurrencia, fechafallecio, causafallecio, especifique, id_paciente) 
-                            values(:aplicoquimio, :fechainicio, :antraciclinas, :momentodelaqt, :her2, :esquemaher2, :triplenegativo, :esquematrilpenegativo, :hormonosensible, 
+                            values(:aplicoquimio, :fechainicio, :primeralinea, :ciclosprimerlineaqt, :segundalinea, :ciclossegundalineaqt, :antraciclinas, :momentodelaqt, :her2, :esquemaher2, :triplenegativo, :esquematrilpenegativo, :hormonosensible, 
                             :esquemahormonosensible, :tipotratamiento, :completoquimio, :causaqtincompleta, :fechaeventoadverso, :fechaprogresion, :fecharecurrencia, :fechafallecio, :causafallecio, :especifique, :id_paciente)");
                                                                 $sql->bindParam(':aplicoquimio',$aplicoquimio,PDO::PARAM_STR,10);
                                                                 $sql->bindParam(':fechainicio',$fechadeinicioquimio,PDO::PARAM_STR);
+                                                                $sql->bindParam(':primeralinea',$primerlinea,PDO::PARAM_STR, 10);
+                                                                $sql->bindParam(':ciclosprimerlineaqt',$ciclosprimerlineaqt,PDO::PARAM_INT);
+                                                                $sql->bindParam(':segundalinea',$segundalinea,PDO::PARAM_STR);
+                                                                $sql->bindParam(':ciclossegundalineaqt',$ciclossegundalineaqt,PDO::PARAM_INT);
                                                                 $sql->bindParam(':antraciclinas',$antraciclinas,PDO::PARAM_STR,50);
                                                                 $sql->bindParam(':momentodelaqt',$momentoquimio,PDO::PARAM_STR,50);
                                                                 $sql->bindParam(':her2',$her,PDO::PARAM_STR,10);
@@ -678,12 +682,16 @@ $hoy = date("Y-m-d");
 
                                                                     
 
-                            $sql = $conexionCancer->prepare("INSERT into quimioterapia(aplicoquimio, fechainicio, antraciclinas, momentodelaqt, her2, esquemaher2, triplenegativo, esquematrilpenegativo, hormonosensible, 
+                            $sql = $conexionCancer->prepare("INSERT into quimioterapia(aplicoquimio, fechainicio, primeralinea, ciclosprimerlineaqt, segundalinea, ciclossegundalineaqt, antraciclinas, momentodelaqt, her2, esquemaher2, triplenegativo, esquematrilpenegativo, hormonosensible, 
                             esquemahormonosensible, tipotratamiento, completoquimio, causaqtincompleta, fechaeventoadverso, fechaprogresion, fecharecurrencia, fechafallecio, causafallecio, especifique, id_paciente) 
-                            values(:aplicoquimio, :fechainicio, :antraciclinas, :momentodelaqt, :her2, :esquemaher2, :triplenegativo, :esquematrilpenegativo, :hormonosensible, 
+                            values(:aplicoquimio, :fechainicio, :primeralinea, :ciclosprimerlineaqt, :segundalinea, :ciclossegundalineaqt, :antraciclinas, :momentodelaqt, :her2, :esquemaher2, :triplenegativo, :esquematrilpenegativo, :hormonosensible, 
                             :esquemahormonosensible, :tipotratamiento, :completoquimio, :causaqtincompleta, :fechaeventoadverso, :fechaprogresion, :fecharecurrencia, :fechafallecio, :causafallecio, :especifique, :id_paciente)");
                                                                 $sql->bindParam(':aplicoquimio',$aplicoquimio,PDO::PARAM_STR,10);
                                                                 $sql->bindParam(':fechainicio',$fechadeinicioquimio,PDO::PARAM_STR);
+                                                                $sql->bindParam(':primeralinea',$primerlinea,PDO::PARAM_STR, 10);
+                                                                $sql->bindParam(':ciclosprimerlineaqt',$ciclosprimerlineaqt,PDO::PARAM_INT);
+                                                                $sql->bindParam(':segundalinea',$segundalinea,PDO::PARAM_STR);
+                                                                $sql->bindParam(':ciclossegundalineaqt',$ciclossegundalineaqt,PDO::PARAM_INT);
                                                                 $sql->bindParam(':antraciclinas',$antraciclinas,PDO::PARAM_STR,50);
                                                                 $sql->bindParam(':momentodelaqt',$momentoquimio,PDO::PARAM_STR,50);
                                                                 $sql->bindParam(':her2',$her,PDO::PARAM_STR,10);

@@ -945,6 +945,11 @@ $(document).ready(function() {
             $('#hormonosensibles2').prop("checked", true);
             $('#quimiono4').prop("checked", true);
             $('#completoquimio1').prop("checked", true);
+
+            $('#primerlineaqt').prop("hidden", false);
+            $('#ciclosprimerlinea').prop("hidden", false);
+            $('#segundalineaqt').prop("hidden", false);
+            $('#ciclossegundalinea').prop("hidden", false);
         } else {
             $('#fechainicioquimio').prop("hidden", true);
             $('#atracicilassi').prop("hidden", true);
@@ -982,6 +987,18 @@ $(document).ready(function() {
             $('#otracausa').prop("selectedIndex", 0);
             $('#especifiquecausa').val('');
 
+            $('#primerlineaqt').prop("hidden", true);
+            $('#ciclosprimerlinea').prop("hidden", true);
+            $('#segundalineaqt').prop("hidden", true);
+            $('#ciclossegundalinea').prop("hidden", true);
+
+            $('#primerlinea').prop("selectedIndex", 0);
+            $('#segundalinea').prop("selectedIndex", 0);
+            $('#ciclosprimerlineaqt').val('');
+            $('#ciclossegundalineaqt').val('');
+
+
+
 
 
 
@@ -1000,6 +1017,14 @@ $(function() {
     $('#fechainicioquimio').prop("selectedIndex", 0);
     $('#atracicilassi').prop("selectedIndex", 0);
     $('#quimiomomento').prop("selectedIndex", 0);
+    $('#primerlineaqt').prop("hidden", true);
+    $('#ciclosprimerlinea').prop("hidden", true);
+    $('#segundalineaqt').prop("hidden", true);
+    $('#ciclossegundalinea').prop("hidden", true);
+    $('#primerlinea').prop("selectedIndex", 0);
+    $('#segundalinea').prop("selectedIndex", 0);
+    $('#ciclosprimerlineaqt').val('');
+    $('#ciclossegundalineaqt').val('');
 
 
 })
