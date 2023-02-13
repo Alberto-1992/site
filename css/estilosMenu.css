@@ -809,13 +809,6 @@ strong {
   font-size: 14px;
 }
 
-.control {
-  border: .5px solid grey;
-  border-radius: 5px 5px 5px 5px;
-  outline: none;
-  font-size: 11px;
-  color: black;
-}
 
 #th {
   background-color: #dedede;
@@ -826,7 +819,7 @@ strong {
   text-align: right;
   padding: 3px;
 
-  
+
 }
 
 #td {
