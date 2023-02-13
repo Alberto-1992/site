@@ -203,8 +203,22 @@ require 'menu/menuPersonal.php';
 </div> 
 -->
         <?php
+       }else if(isset($_SESSION['residentes'])){
+   
+   require 'menu/menuPrincipal.php';
+   
+   ?>
+<article class="card" id="cancer-mama">
+            <a href="cancerdemama">
+                <hr id="hr3">
+                <p>Cancer de mama</p>
+                <a id="linkcancer" href="cancerdemama" class="btn btn-info">Ver Información</a>
+
+            </a>
+        </article>
+
+<?php
        }
-    
        ?>
     </div>
 

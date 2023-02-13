@@ -384,9 +384,9 @@
 
             <hr id="hr1datostrabajador">
             <p>Mis datos personales</p>
-            <a id="linkdatostrabajador" href="misDatos" class="btn btn-success">Mis datos</a>
+            <a id="linkdatostrabajador" href="#" class="btn btn-success">Mis datos</a>
 
-        </article>
+        </article><!--
         <article class="card" id="cancer-mama">
             <a href="cancerMama">
                 <hr id="hrcancermama">
@@ -402,6 +402,7 @@
                 <a id="link" href="infarto" class="btn btn-danger">S.C.A</a>
             </a>
         </article>
+        
         <article class="card" id="cursosDiplomas">
 
             <hr id="hr2">
@@ -422,7 +423,7 @@
             <p>Formato de incidencia</p>
             <a id="link" href="formatoIncidencia" class="btn btn-danger">Ver Información</a>
 
-        </article>
+        </article>-->
         <article class="card">
 
             <hr id="hr6">
@@ -433,9 +434,25 @@
         </article>
         <br>
         <?php
-        }
+        
         //include 'footer.php';
-        ?>
+            
+        } else if (isset($_SESSION['residentes'])) {
+            require 'menu/menuPersonal.php';
+
+            ?>
+<article class="card" id="cancer">
+            <a href="cancer">
+                <hr id="hrcancermama">
+                <p>Clinicas/Cancer</p>
+                <a id="linkcancer" href="cancer" class="btn btn-warning">Cancer</a>
+            </a>
+        </article>
+
+
+            <?php
+        }
+            ?>
     </div>
 </body>
 

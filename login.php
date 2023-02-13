@@ -98,7 +98,7 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
         
         header('location: principal');
     
-    /*
+    
     }else{
         $statement3 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :usuario  AND clave_acceso = :password and rol_acceso = 2');
         $statement3->execute(array(
@@ -109,8 +109,9 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
         $resultado3 = $statement3->fetch();
         
             if ($resultado3 != false){
-            $_SESSION['rh'] = $correo;
-        header('location: moduloRh');
+            $_SESSION['residentes'] = $correo;
+        header('location: principal');
+        /*
     }else{
         $statement4 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :usuario  AND clave_acceso = :password and rol_acceso = 4');
         $statement4->execute(array(
@@ -162,7 +163,7 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
     }
     
         echo "<script>alert('Error de usuario o contraseña');</script>";
-                
+                    }
                 }
         }
     }   
