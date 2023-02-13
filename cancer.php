@@ -33,19 +33,19 @@
                     }
                 }else if(isset($_SESSION['residentes'])){
                     $usernameSesion = $_SESSION['residentes'];
-                        require '../cisfa/conexion.php';
-                        $statement = $conexion->prepare("SELECT correo, rol, password FROM usuarioslogeo WHERE correo= '$usernameSesion' and rol = 4 and eliminado = 0");
-                             $statement->execute(array(
-                                    ':correo' => $usernameSesion
-                                ));
-                                $rw = $statement->fetch();
-                                if($rw != false){
-                                     //$_SESSION['usuarioJefe'] = $usernameSesion;
-                                        require 'frontend/cancer.php';
-                                }else{
-                                    echo "<script>alert('No tienes acceso a este apartado');
-                                    </script>;";
-                                     require 'close_sesion.php';
+            require '../cisfa/conexion.php';
+			$statement = $conexion->prepare("SELECT correo_electronico, nombre_trabajador, rol_acceso FROM login WHERE correo_electronico= :correo_electronico AND rol_acceso = :rol_acceso");
+                $statement->execute(array(
+                        ':correo_electronico' => $usernameSesion,
+                        ':rol_acceso'=>0
+                    ));
+                    $rw = $statement->fetch();
+                    if($rw != false){
+                        $_SESSION['residentes'] = $usernameSesion;
+                            require 'frontend/principalInfarto.php';
+                    }else{
+                        echo "<script>alert('No tienes acceso a este apartado');window.history.back();
+                        </script>;";
                                 }
     
   

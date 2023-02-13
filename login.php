@@ -100,12 +100,15 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
     
     
     }else{
-        $statement3 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :usuario  AND clave_acceso = :password and rol_acceso = 2');
+        $statement3 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :correo_electronico  AND clave_acceso = :clave_acceso and rol_acceso = :rol_acceso');
+
         $statement3->execute(array(
             
-            ':usuario' => $correo,
-            ':password' => $password
+            ':correo_electronico' => $correosanitizado,
+            ':clave_acceso' => $password,
+            ':rol_acceso'=>0
         ));
+    
         $resultado3 = $statement3->fetch();
         
             if ($resultado3 != false){
