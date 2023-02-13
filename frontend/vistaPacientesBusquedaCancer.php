@@ -672,9 +672,9 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
     
     <div class="containerr3">Tratamiento</div>
-    <tr>
-        <th id="th">Quirurgico:</th>
-        <td id="td"><?php while($row= mysqli_fetch_assoc($sql_q))
+    
+        
+        <?php while($row= mysqli_fetch_assoc($sql_q))
 {
     if($row['tipo'] == 'Mastectomia'){
     $id_quiru_mastecto = $row['id_quirurgico'];
@@ -682,9 +682,12 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     if($row['tipo'] == 'Ganglionar'){
       $id_quiru_ganglio = $row['id_quirurgico'];  
     }
-   
-        echo $row['realizoquirurgico'] ?>
-        </td>
+   ?>
+        
+        
+    <tr>
+    <th id="th">Quirurgico:</th>
+    <td id="td"><?php echo $row['realizoquirurgico'] ?></td>
     </tr>
     <tr>
         <th id="th">Lateralidad:</th>
@@ -694,29 +697,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <th id="th">Tipo:</th>
         <td id="td"><?php echo $row['tipo']; }?></td>
     </tr>
-    <tr>
-    <tr>
-        <th id="th">Quirurgico:</th>
-        <td id="td"><?php while($row= mysqli_fetch_assoc($sql_q))
-{
-    if($row['tipo'] == 'Mastectomia'){
-    $id_quiru_mastecto = $row['id_quirurgico'];
-    }
-    if($row['tipo'] == 'Ganglionar'){
-      $id_quiru_ganglio = $row['id_quirurgico'];  
-    }
-   
-        echo $row['realizoquirurgico'] ?>
-        </td>
-    </tr>
-    <tr>
-        <th id="th">Lateralidad:</th>
-        <td id="td"><?php echo $row['lateralidad'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Tipo:</th>
-        <td id="td"><?php echo $row['tipo']; } ?></td>
-    </tr>
+    
 
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        

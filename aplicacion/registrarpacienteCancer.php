@@ -585,13 +585,12 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':id_usuario',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
 
-                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargd(receptoresestrogenosrgd, receptoresprogesteronargd, ki67rgd, krgd, p53rgd, triplenegativorgd, aplicopdlrgd, descripcionpdlrgd, oncogenher2rgd, fishrgd, id_paciente)
+                                                            $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicargd(receptoresestrogenosrgd, receptoresprogesteronargd, ki67rgd, p53rgd,  triplenegativorgd, aplicopdlrgd, descripcionpdlrgd, oncogenher2rgd, fishrgd, id_paciente)
                                                         values(:receptoresestrogenosrgd, :receptoresprogesteronargd, :ki67rgd, :p53rgd, :triplenegativorgd, :aplicopdlrgd, :descripcionpdlrgd, :oncogenher2rgd, :fishrgd, :id_paciente)");
 
                                                         $sql->bindParam(':receptoresestrogenosrgd',$receptoresestrogenosrgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':receptoresprogesteronargd',$receptoresprogesteronargd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':ki67rgd',$ki67rgd,PDO::PARAM_STR,100);
-                                                    
                                                         $sql->bindParam(':p53rgd',$p53rgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':triplenegativorgd',$triplenegativorgd,PDO::PARAM_STR,10);
                                                         $sql->bindParam(':aplicopdlrgd',$pdlrealizorgd,PDO::PARAM_STR,10);
