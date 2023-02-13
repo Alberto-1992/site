@@ -162,7 +162,7 @@ date_default_timezone_set('America/Monterey');
                             background: #EBEBEB;
                     }
                 </style>
-<table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatos();" <?php } ?> >
+<table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatos();" <?php } }?> >
 
     <div class="containerr2">Datos Personales</div>
     <tr>
@@ -201,7 +201,7 @@ date_default_timezone_set('America/Monterey');
             <td id="td"><?php echo $rown['unidad']; ?></td>
         </tr>
         </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoscancer();" <?php } ?>>        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoscancer();" <?php } }?>>        
     <div class="containerr3">Cancer</div>
     <tr>
         <th id="th">Tipo de cancer:</th>
@@ -232,7 +232,7 @@ date_default_timezone_set('America/Monterey');
         echo '&nbsp&nbsp'.$dataRegis['datoantecedentefamiliar'].'--'.'';} ?></td>
 
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonalespatologicos();" <?php } ?>>        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonalespatologicos();" <?php } }?>>        
     <tr>
     <div class="containerr3">Antecedentes personales patologicos</div>
 
@@ -258,7 +258,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $dataRegistro['imc'].'&nbsp'; if($id_paciente != ''){ echo $showimc;}?></td></tr>
     </table>
 
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosantecedentesgineco();" <?php } ?>>         
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosantecedentesgineco();" <?php } }?>>         
     <div class="containerr3">Antecedentes gineco obstetricos</div>
     <tr>
         <th id="th">Menarca:</th>
@@ -312,7 +312,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         </table>
 
 
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosatencionclinica();" <?php } ?>>        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosatencionclinica();" <?php } }?>>        
     <div class="containerr3">Atención clinica</div>
         <tr>
         <th id="th">Fecha de atención inicial:</th>
