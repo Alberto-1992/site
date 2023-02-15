@@ -190,7 +190,7 @@ date_default_timezone_set('America/Monterey');
             
         </td></tr>
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosreferencia();" <?php } }?>>        
     
     <div class="containerr3">Unidad de refernecia</div>
     <tr>
@@ -975,6 +975,9 @@ function editardatosantecedentesgineco(){
 }
 function editardatosatencionclinica(){
   $("#editarDatosAtencionClinica").modal('show');
+}
+function editardatosreferencia(){
+  $("#editarDatosReferencia").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();

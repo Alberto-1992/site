@@ -45,13 +45,7 @@
     #titulos{
         font-size: 14px;
     }
-    .control{
-        border: .5px solid grey;
-        border-radius: 5px 5px 5px 5px;
-        outline: none;
-        font-size: 11px;
-        color: black;
-    }
+   
 
 </style>
 <script>
@@ -181,6 +175,7 @@ return false;
 
 </script>
 <div id="mensaje"></div>
+
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosPersonalescancerdeMama">
 
     <div class="modal-dialog modal-lg">
@@ -223,7 +218,7 @@ return false;
 
                                         $.ajax({
 
-                                            url: "aplicacion/editardatospersonalescancer.php",
+                                            url: "aplicacion/editardatospaciente.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -232,6 +227,7 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                location.load();
 
                                             }
                                         })
@@ -239,29 +235,28 @@ return false;
                                 
                                     
                                     </script>
-                                    <div class="col-md-6" autocomplete="off">
+                                    <div class="col-md-12" autocomplete="off">
 
                                         <input id="year" name="year" class="form-control" type="hidden" value="2022"
                                             required="required" readonly>
                                     </div>
                                     <div class="col-md-12">
-
-                                        <input id="cest" name="cest" type="hidden" class="form-control" value="cest">
-                                    </div>
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
                                     <div class="col-md-3">
                                         <strong>CURP</strong>
-                                        <input type="text" id="curpedit" name="curpedit" type="text" class="control col-md-12" value="<?php echo $dataRegistro['curp'] ?>"
+                                        <input type="text" id="curpedit" name="curpedit" type="text" class="form-control" value="<?php echo $dataRegistro['curp'] ?>"
                                         onblur="curp2dateEdit();" minlength="18" maxlength="18" required >
                                     
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Nombre Completo</strong>
                                         <input id="nombrecompletoedit" name="nombrecompletoedit" onblur="calcularEdadEdit();"
-                                            type="text" class="control control col-md-12" value="<?php echo $dataRegistro['nombrecompleto'] ?>" required>
+                                            type="text" class="form-control" value="<?php echo $dataRegistro['nombrecompleto'] ?>" required>
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Población indigena</strong>
-                                        <select name="poblacionindigenaedit" id="poblacionindigenaedit" class="control control col-md-12" >
+                                        <select name="poblacionindigenaedit" id="poblacionindigenaedit" class="form-control" >
                                             <option value="<?php echo $dataRegistro['poblacionindigena'] ?>" selected><?php echo $dataRegistro['poblacionindigena'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
@@ -272,7 +267,7 @@ return false;
                                 
                                     <div class="col-md-3">
                                         <strong>Discapacidad</strong>
-                                        <select name="discapacidadedit" id="discapacidadedit" class="control control col-md-12">
+                                        <select name="discapacidadedit" id="discapacidadedit" class="form-control">
                                     
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
@@ -281,7 +276,7 @@ return false;
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Escolaridad</strong>
-                                        <select id="escolaridadedit" name="escolaridadedit" class="control control col-md-12">
+                                        <select id="escolaridadedit" name="escolaridadedit" class="form-control">
                                         <option value="<?php echo $dataRegistro['escolaridad'] ?>" selected><?php echo $dataRegistro['escolaridad'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -300,35 +295,35 @@ return false;
                                     <div class="col-md-3">
                                         <strong>Fecha de nacimiento</strong>
                                         <input id="fechaedit" name="fechaedit" type="date" value="<?php echo $dataRegistro['fechanacimiento'] ?>" onblur="curp2dateEdit();"
-                                            class="control control col-md-12" readonly>
+                                            class="form-control" readonly>
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Edad</strong>
-                                        <input id="edadedit" name="edadedit" type="text" class="control control col-md-12" value="<?php echo $dataRegistro['edad'] ?>" readonly>
+                                        <input id="edadedit" name="edadedit" type="text" class="form-control" value="<?php echo $dataRegistro['edad'] ?>" readonly>
                                     </div>
 
                                     <div class="col-md-2">
                                         <strong>Sexo</strong>
-                                        <input type="text" class="control control col-md-12" id="sexoedit" value="<?php echo $dataRegistro['sexo'] ?>" onclick="curp2dateEdit();"
+                                        <input type="text" class="form-control" id="sexoedit" value="<?php echo $dataRegistro['sexo'] ?>" onclick="curp2dateEdit();"
                                             name="sexoedit" readonly>
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Raza</strong>
-                                        <input type="text" class="control control col-md-12" id="razaedit" onclick="curp2dateEdit();"
+                                        <input type="text" class="form-control" id="razaedit" onclick="curp2dateEdit();"
                                             name="razaedit" value="<?php echo $dataRegistro['raza'] ?>">
 
                                     </div>
                                     <!--
                                     <div class="col-md-3">
                                         <strong>Frecuencia cardiaca</strong>
-                                        <input type="text" class="control control col-md-12" id="frecuenciacardiaca"
+                                        <input type="text" class="form-control col-md-12" id="frecuenciacardiaca"
                                             name="frecuenciacardiaca">
 
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Presión arterial</strong>
-                                        <input type="text" class="control control col-md-12" id="presionarterial"
+                                        <input type="text" class="form-control col-md-12" id="presionarterial"
                                             name="presionarterial">
 
                                     </div>
@@ -344,19 +339,19 @@ return false;
                                     </script>
                                     <div class="col-md-2">
                                         <strong>Talla</strong>
-                                        <input type="number" step="any" class="control control col-md-12" id="tallaedit" name="tallaedit"
+                                        <input type="number" step="any" class="form-control" id="tallaedit" name="tallaedit"
                                             required value="<?php echo $dataRegistro['talla'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
-                                        <input type="number" step="any" class="control control col-md-12" id="pesoedit"
+                                        <input type="number" step="any" class="form-control" id="pesoedit"
                                             onblur="calculaIMCEdit();" name="pesoedit" required value="<?php echo $dataRegistro['peso'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>IMC</strong>
-                                        <input type="text" class="control control col-md-12" id="imcedit" onblur="calculaIMCEdit();"
+                                        <input type="text" class="form-control" id="imcedit" onblur="calculaIMCEdit();"
                                             name="imcedit" readonly value="<?php echo $dataRegistro['imc'] ?>">
 
                                     </div>
@@ -364,9 +359,9 @@ return false;
                                     <div class="col-md-6">
                                         <strong>Estado de residencia</strong>
 
-                                        <select name="cbx_estadoedit" id="cbx_estadoedit" class="control control col-md-12"
+                                        <select name="cbx_estadoedit" id="cbx_estadoedit" class="form-control"
                                             style="width: 100%;" required>
-                                            <option value="<?php echo $rows['estado'] ?>" selected><?php echo $rows['estado'] ?></option>
+                                            <option value="<?php echo $rows['id_estado'] ?>" selected><?php echo $rows['estado'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				    require '../esclerosis/conexion.php';
@@ -385,26 +380,97 @@ return false;
                                     <div class="col-md-6">
                                         <strong>Delegación o Municipio</strong>
                                         
-                                        <select name="cbx_municipioedit" id="cbx_municipioedit" class="control control col-md-12"
+                                        <select name="cbx_municipioedit" id="cbx_municipioedit" class="form-control"
                                             style="width: 100%;">
-                                            <option value="<?php echo $rowsm['municipio'] ?>" selected><?php echo $rowsm['municipio'] ?></option>
+                                            <option value="<?php echo $rowsm['id_municipio'] ?>" selected><?php echo $rowsm['municipio'] ?></option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6" >
+                                    
+                                    </div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosReferencia">
+
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarcancer();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="formularioedicionreferencia" id="formularioedicionreferencia" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#formularioedicionreferencia").on("submit", function(e) {
+                                        
+                                        let checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "formularioedicionreferencia"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarreferencia.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                
+
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>
+                                <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">DATOS DE REFERECNIA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                <div class="col-md-6" >
                                         <strong>Referenciado</strong>
-                                        <select name="referenciadoedit" id="referenciadoedit" class="control control col-md-12">
-                                        <option value="<?php echo $dataRegistro['referenciado'] ?>" selected><?php echo $dataRegistro['referenciado'] ?></option>
+                                        <select name="referenciadoedit" id="referenciadoedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['referenciado'] ?>" ><?php echo $dataRegistro['referenciado'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-12" >
+                                    <div class="col-md-6" >
                                         <strong>Unidad referencia</strong>
                                         <input list="referencias" name="unidadreferenciaedit" id="unidadreferenciaedit"
-                                            class="control control col-md-12">
+                                            class="form-control" value="<?php echo $rown['unidad']; ?>">
                                         <datalist id="referencias">
-                                        <option value="<?php echo $rown['unidad'] ?>" selected><?php echo $rown['unidad'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT clues, unidad FROM hospitales");
@@ -465,7 +531,7 @@ return false;
 
                                         $.ajax({
 
-                                            url: "aplicacion/editarcancer.php",
+                                            url: "aplicacion/editarcancermama.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -474,6 +540,7 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                
 
                                             }
                                         })
@@ -485,9 +552,13 @@ return false;
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ANTECEDENTES HEREDOFAMILIARES</strong>
                                     </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
                                     <div class="col-md-6">
                                         <strong>Cancer</strong>
-                                        <select name="tipodecanceredit" id="tipodecanceredit" class="control control col-md-12">
+                                        <select name="tipodecanceredit" id="tipodecanceredit" class="form-control">
+                                        
                                             <option value="Sin antecedentes">Sin antecedentes</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -497,8 +568,10 @@ return false;
                                     <div class="col-md-6" >
                                         <strong>Familiar(es)</strong>
                                         <select id="mscanceredit" name="mscanceredit[]" multiple="multiple"
-                                            class="control control col-md-12">
+                                            class="form-control">
+                                            
                                             <optgroup style="margin-left: 5px;" label="Cancer de mama">
+                                            
                                                 <option value="Madre CM">Madre</option>
                                                 <option value="Hermana CM">Hermana</option>
                                                 <option value="Abuela materna CM">Abuela materna</option>
@@ -569,7 +642,7 @@ return false;
 
                                         $.ajax({
 
-                                            url: "aplicacion/editarpatologicoscancer.php",
+                                            url: "aplicacion/antecedentespersonalespato.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -590,9 +663,12 @@ return false;
                                         <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS</strong>
                                     </div>
                                     <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-12">
                                         <strong>Antecedentes</strong>
                                         <select id="mspatoedit" name="check_listapatoedit[]" multiple="multiple"
-                                            class="control control col-md-12">
+                                            class="form-control">
 
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripcionantecedente FROM antecedentespersonalespatologicos");
@@ -654,7 +730,7 @@ return false;
 
                                         $.ajax({
 
-                                            url: "aplicacion/editarginecocancer.php",
+                                            url: "aplicacion/editarantecedentesgineco.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -674,27 +750,30 @@ return false;
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ANTECEDENTES GINECOOBSTETRICOS</strong>
                                     </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
                                     <div class="col-md-2">
                                         <strong>Menarca</strong>
-                                        <input type="text" class="control control col-md-12" id="menarcaedit" name="menarcaedit" value="<?php echo $dataRegistro['menarca'] ?>">
+                                        <input type="text" class="form-control" id="menarcaedit" name="menarcaedit" value="<?php echo $dataRegistro['menarca'] ?>">
 
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Ultima menstruación</strong>
-                                        <input type="date" class="control control col-md-12" id="fechaultimamestruacionedit"
+                                        <input type="date" class="form-control" id="fechaultimamestruacionedit"
                                             name="fechaultimamestruacionedit" onblur="calcularmestruacionedit();" value="<?php echo $dataRegistro['ultimamestruacion'] ?>">
 
                                     </div>
                                     <div class="col-md-3" >
                                         <strong>Cuenta con:</strong>
-                                        <input type="text" class="control control col-md-12" id="menopauseaedit" name="menopauseaedit"
+                                        <input type="text" class="form-control" id="menopauseaedit" name="menopauseaedit"
                                             readonly value="<?php echo $dataRegistro['cuentacon'] ?>">
 
                                     </div>
 
                                     <div class="col-md-2">
                                         <strong>Gestas</strong>
-                                        <select name="gestasedit" id="gestasedit" class="control control col-md-12" >
+                                        <select name="gestasedit" id="gestasedit" class="form-control" >
                                             <option value="<?php echo $dataRegistro['gestas'] ?>" selected><?php echo $dataRegistro['gestas'] ?></option>
                                             <option value="0">Ninguna</option>
                                             <option value="1">1</option>
@@ -712,25 +791,25 @@ return false;
                                     </div>
                                     <div class="col-md-2" id="partoidedit">
                                         <strong>Paras</strong>
-                                        <input type="number" class="control control col-md-12" id="partoedit" onblur="validapartoedit();"
+                                        <input type="number" class="form-control" id="partoedit" onblur="validapartoedit();"
                                             name="partoedit" value="<?php echo $dataRegistro['parto'] ?>">
 
                                     </div>
                                     <div class="col-md-2" id="abortoidedit">
                                         <strong>Aborto</strong>
-                                        <input type="number" class="control control col-md-12" id="abortoedit" onblur="validapartoedit();"
+                                        <input type="number" class="form-control" id="abortoedit" onblur="validapartoedit();"
                                             name="abortoedit" value="<?php echo $dataRegistro['aborto'] ?>">
 
                                     </div>
                                     <div class="col-md-2" id="cesareaidedit">
                                         <strong>Cesarea</strong>
-                                        <input type="number" class="control control col-md-12" id="cesareaedit" onblur="validapartoedit();"
+                                        <input type="number" class="form-control" id="cesareaedit" onblur="validapartoedit();"
                                             name="cesareaedit" value="<?php echo $dataRegistro['cesarea'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Esta embarazada</strong>
-                                        <select name="embarazadaedit" id="embarazadaedit" class="control control col-md-12" >
+                                        <select name="embarazadaedit" id="embarazadaedit" class="form-control" >
                                             <option value="<?php echo $dataRegistro['embarazada'] ?>" selected><?php echo $dataRegistro['embarazada'] ?></option>
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
@@ -741,14 +820,14 @@ return false;
                                     </div>
                                     <div class="col-md-2" id="probablepartoedit">
                                         <strong>F.P.P</strong>
-                                        <input type="date" class="control control col-md-12" id="fechaprobablepartoedit"
+                                        <input type="date" class="form-control" id="fechaprobablepartoedit"
                                             name="fechaprobablepartoedit" value="<?php echo $dataRegistro['fpp'] ?>" >
 
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Terapia de remplazo hormonal</strong>
                                         <select name="planificacionfamiliaredit" id="planificacionfamiliaredit"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="<?php echo $dataRegistro['terapiareemplazohormonal'] ?>" selected><?php echo $dataRegistro['terapiareemplazohormonal'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="si">si</option>
@@ -759,7 +838,7 @@ return false;
 
                                     <div class="col-md-2" id="tipolactancia">
                                         <strong>Lactancia</strong>
-                                        <select name="lactanciaedit" id="lactanciaedit" class="control control col-md-12">
+                                        <select name="lactanciaedit" id="lactanciaedit" class="form-control">
                                         <option value="<?php echo $dataRegistro['lactancia'] ?>" selected><?php echo $dataRegistro['lactancia'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
@@ -769,7 +848,7 @@ return false;
                                     </div>
                                     <div class="col-md-2" id="tiempodelactancia">
                                         <strong>Tiempo</strong>
-                                        <input type="text" class="control control col-md-12" id="tiempolactanciaedit"
+                                        <input type="text" class="form-control" id="tiempolactanciaedit"
                                             name="tiempolactanciaedit" value="<?php echo $dataRegistro['tiempolactancia'] ?>">
 
                                     </div>
@@ -846,11 +925,11 @@ return false;
                                     <div class="col-md-3">
                                         <strong>Fecha primer atencion</strong>
                                         <input type="date" id="fechaatencioninicialedit" name="fechaatencioninicialedit"
-                                            class="control control col-md-12" value="<?php echo $dataRegistro['fechaatencioninicial']?>">
+                                            class="form-control" value="<?php echo $dataRegistro['fechaatencioninicial']?>">
                                     </div>
                                     <div class="col-md-3">
                                         <strong>BIRADS de referencia</strong>
-                                        <select name="biradsreferenciaedit" id="biradsreferenciaedit" class="control control col-md-12">
+                                        <select name="biradsreferenciaedit" id="biradsreferenciaedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['biradsreferencia']?>" selected><?php echo $dataRegistro['biradsreferencia']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -867,7 +946,7 @@ return false;
 
                                     <div class="col-md-3">
                                         <strong>BIRADS HRAEI</strong>
-                                        <select name="biradshraeiedit" id="biradshraeiedit" class="control control col-md-12">
+                                        <select name="biradshraeiedit" id="biradshraeiedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['biradshraei']?>" selected><?php echo $dataRegistro['biradshraei']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -883,7 +962,7 @@ return false;
                                     </div>
                                     <div class="col-md-3" id="lateralidadinicioedit">
                                         <strong>Lateralidad</strong>
-                                        <select name="lateralidadprimeroedit" id="lateralidadprimeroedit" class="control control col-md-12">
+                                        <select name="lateralidadprimeroedit" id="lateralidadprimeroedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['lateralidadmama']?>" selected><?php echo $dataRegistro['lateralidadmama']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Derecha">Derecha</option>
@@ -894,7 +973,7 @@ return false;
                                     </div>
                                     <div class="col-md-4" id="lateralidadinicioedit">
                                         <strong>Estadio clinico</strong>
-                                        <select name="estadioclinicoedit" id="estadioclinicoedit" class="control control col-md-12">
+                                        <select name="estadioclinicoedit" id="estadioclinicoedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['estadioclinico']?>" selected><?php echo $dataRegistro['estadioclinico']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="0">0</option>
@@ -911,14 +990,14 @@ return false;
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Etapa clinica</strong>
-                                        <select name="etapasclinicasedit" id="etapasclinicasedit" class="control control col-md-12" readonly>
+                                        <select name="etapasclinicasedit" id="etapasclinicasedit" class="form-control" readonly>
                                             <option value="TNM" selected>TNM</option>
 
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Tamaño tumoral</strong>
-                                        <select name="tamaniotumoraledit" id="tamaniotumoraledit" class="control control col-md-12">
+                                        <select name="tamaniotumoraledit" id="tamaniotumoraledit" class="form-control">
                                             <option value="<?php echo $dataRegistro['tamaniotumoral']?>" selected><?php echo $dataRegistro['tamaniotumoral']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -935,7 +1014,7 @@ return false;
 
                                     <div class="col-md-4">
                                         <strong>Compromiso linfatico nodal</strong>
-                                        <select name="linfaticonodaledit" id="linfaticonodaledit" class="control control col-md-12">
+                                        <select name="linfaticonodaledit" id="linfaticonodaledit" class="form-control">
                                             <option value="<?php echo $dataRegistro['compromisolenfatico']?>" selected><?php echo $dataRegistro['compromisolenfatico']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -951,7 +1030,7 @@ return false;
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Metastasis</strong>
-                                        <select name="metastasisedit" id="metastasisedit" class="control control col-md-12">
+                                        <select name="metastasisedit" id="metastasisedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['metastasis']?>" selected><?php echo $dataRegistro['metastasis']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="MX: No se pueden evaluar metastasis distantes">MX: No se pueden evaluar metastasis distante</option>
@@ -963,7 +1042,7 @@ return false;
                                     </div>
                                     <div class="col-md-4" id="metastasissitioedit">
                                         <strong>Sitio de metastasis</strong>
-                                        <select name="sitiometastasisedit[]" id="sitiometastasis2edit" multiple="multiple" class="category control col-md-12">
+                                        <select name="sitiometastasisedit[]" id="sitiometastasis2edit" multiple="multiple" class="form-control">
                                            
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripcionsitiometastasis FROM sitiometastasis");
@@ -979,7 +1058,7 @@ return false;
                                     <div class="col-md-4" id="etapasedit">
                                         <strong>Clasificación etapas</strong>
                                         <select name="clasificaciondeetapasedit" id="clasificaciondeetapasedit"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -996,7 +1075,7 @@ return false;
 
                                     <div class="col-md-4">
                                         <strong>Calidad de vida ECOG</strong>
-                                        <select name="calidaddevidaecogedit" id="calidaddevidaecogedit" class="control control col-md-12">
+                                        <select name="calidaddevidaecogedit" id="calidaddevidaecogedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['calidadvidaecog']?>" selected><?php echo $dataRegistro['calidadvidaecog']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -1013,7 +1092,7 @@ return false;
                                     <div class="col-md-4" >
                                         <strong>Mastectomia Extrainstitucional</strong>
                                         <select name="mastectomiaextrainstitucionaledit" id="mastectomiaextrainstitucionaledit"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="<?php echo $dataRegistro['mastectoextrainstituto']?>" selected><?php echo $dataRegistro['mastectoextrainstituto']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
@@ -1023,7 +1102,7 @@ return false;
                                     <div class="col-md-4" id="mstectoextra1edit">
                                         <strong>Lateralidad Mastectomia</strong>
                                         <select name="lateralidadextrainstitucionaledit" id="lateralidadextrainstitucionaledit"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="<?php echo $dataRegistro['lateralidadmastectoextrainstituto']?>" selected><?php echo $dataRegistro['lateralidadmastectoextrainstituto']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Mama Derecha">Mama Derecha</option>
@@ -1033,7 +1112,7 @@ return false;
                                     </div>
                                     <div class="col-md-4" id="mstectoextra2edit">
                                         <strong>Fecha</strong>
-                                        <input type="date" class="control control col-md-12" id="fechamastectoextraedit"
+                                        <input type="date" class="form-control" id="fechamastectoextraedit"
                                             name="fechamastectoextraedit" value="<?php echo $dataRegistro['fechamastectoextrainstituto']?>">
 
                                     </div>

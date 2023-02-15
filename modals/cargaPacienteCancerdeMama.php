@@ -338,6 +338,16 @@
                                             <option value="8">8</option>
                                             <option value="9">9</option>
                                             <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
 
                                         </select>
                                     </div>
@@ -1910,7 +1920,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">BRAQUITERAPIA</strong>
                                     </div>
-                                    <div class="col-md-3" style="color: #BD9FD6; ">
+                                    <div class="col-md-6" style="color: #BD9FD6; ">
                                         <strong>BRAQUITERAPIA</strong>
                                         <select name="braquiterapia" id="braquiterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1918,7 +1928,7 @@
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="fechabraquiterapia">
+                                    <div class="col-md-6" id="fechabraquiterapia">
                                         <strong>Fecha braquiterapia</strong>
                                         <input type="date" id="fechadebraquiterapia" name="fechadebraquiterapia"
                                             class="form-control" >

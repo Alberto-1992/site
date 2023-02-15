@@ -422,11 +422,11 @@
                                     </div>
                                     <div class="col-md-4">
 
-                                        <div class="input-group pull-left">
+                                    
                                             <span id="paraclinic">CK</span>&nbsp;&nbsp;
                                             <input type="text" id="ck" name="ck" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
+                                        
                                     </div>
                                     <div class="col-md-4">
                                         <div class="input-group pull-left">

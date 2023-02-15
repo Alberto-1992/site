@@ -63,7 +63,7 @@ $hoy = date("Y-m-d");
     
                                     values (:referenciado, :clues, :id_paciente)");
                                     
-                                $sql->bindParam(':referenciado',$referenciado, PDO::PARAM_STR, 10);
+                                $sql->bindParam(':referenciado',$referenciado, PDO::PARAM_STR, 20);
                                 $sql->bindParam(':clues',$unidadreferencia, PDO::PARAM_STR, 40);
                                 $sql->bindParam(':id_paciente',$id_usuario, PDO::PARAM_INT);
                             $sql->execute();
@@ -89,10 +89,10 @@ $hoy = date("Y-m-d");
                                 $sql->bindParam(':parto',$parto, PDO::PARAM_INT); 
                                 $sql->bindParam(':aborto',$aborto, PDO::PARAM_INT);
                                 $sql->bindParam(':cesarea',$cesarea, PDO::PARAM_INT);
-                                $sql->bindParam(':embarazada',$embarazada, PDO::PARAM_STR, 10);
+                                $sql->bindParam(':embarazada',$embarazada, PDO::PARAM_STR, 20);
                                 $sql->bindParam(':fpp',$fechaprobableparto, PDO::PARAM_STR);
-                                $sql->bindParam(':terapiareemplazohormonal',$planificacionfamiliar, PDO::PARAM_STR, 10);
-                                $sql->bindParam(':lactancia',$lactancia, PDO::PARAM_STR, 10);
+                                $sql->bindParam(':terapiareemplazohormonal',$planificacionfamiliar, PDO::PARAM_STR, 20);
+                                $sql->bindParam(':lactancia',$lactancia, PDO::PARAM_STR, 20);
                                 $sql->bindParam(':tiempolactancia',$tiempolactancia, PDO::PARAM_STR, 35);
                                 $sql->bindParam(':id_paciente',$id_usuario, PDO::PARAM_INT);
                             $sql->execute(); 
