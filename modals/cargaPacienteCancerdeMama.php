@@ -15,7 +15,6 @@
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
                 <span class="material-symbols-outlined">
-                    person_add
                 </span>
 
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>

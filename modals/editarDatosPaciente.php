@@ -150,6 +150,15 @@ $('#sitiometastasis2edit').change(function(e) {
     width: '100%'
 });
 });
+$(document).ready(function() {
+
+$('#mamaseleccionedit').change(function(e) {
+
+    
+}).multipleSelect({
+    width: '100%'
+});
+});
 
 function limpiar() {
 
@@ -1283,6 +1292,941 @@ return false;
                                         <input type="date" class="form-control" id="fechamastectoextraedit"
                                             name="fechamastectoextraedit" value="<?php echo $dataRegistro['fechamastectoextrainstituto']?>">
 
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosHistopatologiaMamaDer">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="formularioedicionhistomamader" id="formularioedicionhistomamader" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#formularioedicionhistomamader").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "formularioedicionhistomamader"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarDatosHistopatologia.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosHistopatologiaMamaDer").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosHistopatologiaMamaDer").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosHistopatologiaMamaDer").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">HISTOPATOLOGIA MAMA DERECHA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                <!--inicia mama derecha-->
+                                    <div class="col-md-4">
+                                        <strong>Dx histopatologico MMD</strong>
+                                        <select name="dxhistopatologicoedit" id="dxhistopatologicoedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['dxhistopatologico'] ?>"><?php echo $dataRegistro['dxhistopatologico'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcion_dx_histopalogico']; ?>">
+                                                <?php echo $row['descripcion_dx_histopalogico']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha dx histopatologico MMD</strong>
+                                        <input type="date" id="fechadxhistopatologicoedit" name="fechadxhistopatologicoedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechadxhistopatologico'] ?>">
+                                    </div>
+                                    <div class="col-md-4" >
+                                        <strong>Nottinghan MMD</strong>
+                                        <select name="nottinghamedit" id="nottinghamedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['nottingham'] ?>"><?php echo $dataRegistro['nottingham'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
+                                            <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
+                                            <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
+                                           
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Escala SBR (SCARLET-BLOOM-RICHARDSON) MMD</strong>
+                                        <select name="escalasbredit" id="escalasbredit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['escalasbr'] ?>"><?php echo $dataRegistro['escalasbr'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionescalasbr']; ?>">
+                                                <?php echo $row['descripcionescalasbr']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosRgMamaDer">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="formularioedicionhistopatogrd" id="formularioedicionhistopatogrd" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#formularioedicionhistopatogrd").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "formularioedicionhistopatogrd"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarDatosRgMamaDer.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosRgMamaDer").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosRgMamaDer").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosRgMamaDer").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">HISTOPATOLOGIA REGION GANGLIONAR MAMA DERECHA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                        <strong>Dx histopatologico RGD</strong>
+                                        <select name="dxhistopatologicorgdedit" id="dxhistopatologicorgdedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['dxhistopatologicorgd'] ?>"><?php echo $dataRegistro['dxhistopatologicorgd'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcion_dx_histopalogico']; ?>">
+                                                <?php echo $row['descripcion_dx_histopalogico']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha dx histopatologico RGD</strong>
+                                        <input type="date" id="fechadxhistopatologicorgdedit" name="fechadxhistopatologicorgdedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechadxhistopatologicorgd'] ?>">
+                                    </div>
+                                    <div class="col-md-4" >
+                                        <strong>Nottinghan RGD</strong>
+                                        <select name="nottinghamrgdedit" id="nottinghamrgdedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['nottinghamrgd'] ?>"><?php echo $dataRegistro['nottinghamrgd'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
+                                            <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
+                                            <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
+                                           
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12" >
+                                        <strong>Escala SBR (SCARLET-BLOOM-RICHARDSON) RGD</strong>
+                                        <select name="escalasbrrgdedit" id="escalasbrrgdedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['escalasbrrgd'] ?>"><?php echo $dataRegistro['escalasbrrgd'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionescalasbr']; ?>">
+                                                <?php echo $row['descripcionescalasbr']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                <!--finaliza region ganglionar izquierda-->
+                                <!--inicia mama izquierda--> 
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosMamaIz">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="formularioedicionmamaizquierda" id="formularioedicionmamaizquierda" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#formularioedicionmamaizquierda").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "formularioedicionmamaizquierda"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarDatosMamaIz.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosMamaIz").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosMamaIz").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosMamaIz").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">HISTOPATOLOGIA MAMA IZQUIERDA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                        <strong>Dx histopatologico MMI</strong>
+                                        <select name="dxhistopatologicoizedit" id="dxhistopatologicoizedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['dxhistopatologicoiz'] ?>"><?php echo $dataRegistro['dxhistopatologicoiz'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcion_dx_histopalogico']; ?>">
+                                                <?php echo $row['descripcion_dx_histopalogico']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" >
+                                        <strong>Fecha dx histopatologico MMI</strong>
+                                        <input type="date" id="fechadxhistopatologicoizedit" name="fechadxhistopatologicoizedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechadxhistopatologicoiz'] ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Nottinghan MMI</strong>
+                                        <select name="nottinghamizedit" id="nottinghamizedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['nottinghamiz'] ?>"><?php echo $dataRegistro['nottinghamiz'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
+                                            <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
+                                            <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
+                                           
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12" >
+                                        <strong>Escala SBR (SCARLET-BLOOM-RICHARDSON) MMI</strong>
+                                        <select name="escalasbrizedit" id="escalasbrizedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['escalasbriz'] ?>"><?php echo $dataRegistro['escalasbriz'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionescalasbr']; ?>">
+                                                <?php echo $row['descripcionescalasbr']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                                <!--finaliza mama izquierda -->
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosRgmamaIz">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="formularioedicionrgmamaiz" id="formularioedicionrgmamaiz" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#formularioedicionrgmamaiz").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "formularioedicionrgmamaiz"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarDatosRgMamaiz.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosRgmamaIz").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosRgmamaIz").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosRgmamaIz").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>
+                                <!-- inicia region ganglionar IZQUIERDA-->
+                                <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">HISTOPATOLOGIA REGION GANGLIONAR MAMA IZQUIERDA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                        <strong>Dx histopatologico RGI</strong>
+                                        <select name="dxhistopatologicorgiedit" id="dxhistopatologicorgiedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['dxhistopatologicorgi'] ?>"><?php echo $dataRegistro['dxhistopatologicorgi'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcion_dx_histopalogico']; ?>">
+                                                <?php echo $row['descripcion_dx_histopalogico']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha dx histopatologico RGI</strong>
+                                        <input type="date" id="fechadxhistopatologicorgiedit" name="fechadxhistopatologicorgiedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechadxhistopatologicorgi'] ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Nottinghan RGI</strong>
+                                        <select name="nottinghamrgiedit" id="nottinghamrgiedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['nottinghamrgi'] ?>"><?php echo $dataRegistro['nottinghamrgi'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
+                                            <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
+                                            <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
+                                           
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Escala SBR (SCARLET-BLOOM-RICHARDSON) RGI</strong>
+                                        <select name="escalasbrrgiedit" id="escalasbrrgiedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['escalasbrrgi'] ?>"><?php echo $dataRegistro['escalasbrrgi'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionescalasbr']; ?>">
+                                                <?php echo $row['descripcionescalasbr']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistoMamaDer">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarInmunoMamaDer" id="editarInmunoMamaDer" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarInmunoMamaDer").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarInmunoMamaDer"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarInmunoMamaDer.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarInmunohistoMamaDer").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarInmunohistoMamaDer").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarInmunohistoMamaDer").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script>     
+                                    <div class="col-md-12"
+                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">INMUNOHISTOQUIMICA MAMA DERECHA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                        
+                                            <strong>Receptores de estrogenos (RE)</strong>
+                                            <input type="number" id="receptoresestrogenosedit" name="receptoresestrogenosedit"
+                                                placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresestrogenos']?>">
+                                        </div>
+                                    
+                                    <div class="col-md-4">
+                                        
+                                            <strong>Receptores de progesterona (RP)</strong>
+                                            <input type="number" id="receptoresprogesteronaedit"
+                                                name="receptoresprogesteronaedit" placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresprogesterona'] ?>">
+                                    
+                                    </div>
+                                    <div class="col-md-2">
+                                        
+                                            <strong>KI-67</strong>
+                                            <input type="number" id="ki67edit" name="ki67edit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['ki67'] ?>">
+                                    
+                                    </div><!--
+                                    <div class="col-md-2" id="inmunoderecha4">
+                                        <div class="input-group pull-left">
+                                            <strong>K</strong>
+                                            <input type="number" id="k" name="k" placeholder="%"
+                                                class="form-control">
+                                        </div>
+                                    </div>-->
+                                    <div class="col-md-2">
+                                        
+                                            <strong>P 53</strong>
+                                            <input type="number" name="p53edit" id="p53edit" class="form-control" value="<?php echo $dataRegistro['p53'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Triple negativo</strong>
+                                            <select name="triplenegativoedit" id="triplenegativoedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['triplenegativo'] ?>"><?php echo $dataRegistro['triplenegativo'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+
+                                            </select>
+                                    
+                                    </div>
+                                    <fieldset class="col-md-2">
+                                            <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizo1"
+                                                onclick="aplicopdlsi();" class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizo2"
+                                                onclick="aplicopdlno();" class="check" checked value="no">   
+                                    </fieldset>
+                                    <div class="col-md-2">
+                                        
+                                            <strong id="inmuno-title">PDL</strong>
+                                            <input type="number" id="pdledit" name="pdledit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['descripcionpdl'] ?>">
+                                        
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Oncogen HER2</strong>
+                                            <select name="oncogenedit" id="oncogenedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['oncogenher2'] ?>"><?php echo $dataRegistro['oncogenher2'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Una cruz">+</option>
+                                                <option value="Dos cruces">++</option>
+                                                <option value="Tres cruces">+++</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                    
+                                        <strong>FISH</strong>
+                                        <select name="fishedit" id="fishedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['fish'] ?>"><?php echo $dataRegistro['fish'] ?></option>
+                                            <option value="0">Seleccione</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+
+                                        </select>
+                                    
+                                    </div> 
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistorgdMamaDer">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarInmunoMamaRgdDer" id="editarInmunoMamaRgdDer" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarInmunoMamaRgdDer").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarInmunoMamaRgdDer"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarInmunoRgdMamaDer.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarInmunohistorgdMamaDer").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarInmunohistorgdMamaDer").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarInmunohistorgdMamaDer").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script> 
+                                    <div class="col-md-12" 
+                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
+                                        <strong id="titulos">REGIÓN GANGLIONAR MAMA DERECHA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                            <strong>Receptores de estrogenos (RE)</strong>
+                                            <input type="number" id="receptoresestrogenosrgdedit" name="receptoresestrogenosrgdedit"
+                                                placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresestrogenosrgd']?>">
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+                                        
+                                            <strong>Receptores de progesterona (RP)</strong>
+                                            <input type="number" id="receptoresprogesteronargdedit"
+                                                name="receptoresprogesteronargdedit" placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresprogesteronargd'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        
+                                            <strong>KI-67</strong>
+                                            <input type="number" id="ki67rgdedit" name="ki67rgdedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['ki67rgd'] ?>">
+                                        
+                                    </div><!--
+                                    <div class="col-md-2" id="inmunoderecha4rgd">
+                                        <div class="input-group pull-left">
+                                            <strong>K</strong>
+                                            <input type="number" id="krgd" name="krgd" placeholder="%"
+                                                class="form-control">
+                                        </div>
+                                    </div>-->
+                                    <div class="col-md-2">
+                                        
+                                            <strong>P 53</strong>
+                                            <input type="number" name="p53rgdedit" id="p53rgdedit" class="form-control" value="<?php echo $dataRegistro['p53rgd'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Triple negativo</strong>
+                                            <select name="triplenegativorgdedit" id="triplenegativorgdedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['triplenegativorgd'] ?>"><?php echo $dataRegistro['triplenegativorgd'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+
+                                            </select>
+                                    
+                                    </div>
+                                    <fieldset class="col-md-2" >
+                                            <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="pdlrealizorgdedit" id="pdlrealizo1rgdedit"
+                                                onclick="aplicopdlsirgdedit();" class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="pdlrealizorgdedit" id="pdlrealizo2rgdedit"
+                                                onclick="aplicopdlnorgdedit();" class="check" checked value="no">   
+                                    </fieldset>
+                                    <div class="col-md-2">
+                                        
+                                            <strong id="inmuno-title">PDL</strong>
+                                            <input type="number" id="pdlrgdedit" name="pdlrgdedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['descripcionpdlrgd'] ?>">
+                                        
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Oncogen HER2</strong>
+                                            <select name="oncogenrgdedit" id="oncogenrgdedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['oncogenher2rgd'] ?>"><?php echo $dataRegistro['oncogenher2rgd'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Una cruz">+</option>
+                                                <option value="Dos cruces">++</option>
+                                                <option value="Tres cruces">+++</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                    
+                                        <strong>FISH</strong>
+                                        <select name="fishrgdedit" id="fishrgdedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['fishrgd'] ?>"><?php echo $dataRegistro['fishrgd'] ?></option>
+                                            <option value="0">Seleccione</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+
+                                        </select>
+                                    
                                     </div>
                                     </div>
                                     <div class="col-md-12"></div>

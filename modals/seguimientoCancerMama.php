@@ -102,13 +102,13 @@
                                         required="required" onkeyup="mayus(this);" readonly>
                                     <div class="col-md-12">
                                         <strong>ID:&nbsp;</strong>
-                                        <input id="curps" name="curps" class="control control col-md-12" type="hidden" value=""
+                                        <input id="curps" name="curps" class="form-control" type="hidden" value=""
                                             readonly>
                                         <span id="curp" class="curp" name="curp"></span>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Calidad de vida ECOG</strong>
-                                        <select name="calidadvidaecog" id="calidadvidaecog" class="control control col-md-12" onclick="obtenerid();">
+                                        <select name="calidadvidaecog" id="calidadvidaecog" class="form-control" onclick="obtenerid();">
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripcionecog FROM calidadvidaecog");
@@ -137,7 +137,7 @@
                                     <div class="col-md-4">
                                         <strong>Progresión de la enfermedad</strong>
                                         <select name="progresionenfermedad" id="progresionenfermedad"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -147,12 +147,12 @@
                                     <div class="col-md-4" id="dxprogresion">
                                         <strong style="color:red;">Fecha Dx progresión</strong>
                                         <input type="date" id="fechadxprogresion" name="fechadxprogresion" 
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Recurrencia de la enfermedad</strong>
                                         <select name="recurrencianenfermedad" id="recurrencianenfermedad"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -162,12 +162,12 @@
                                     <div class="col-md-4" id="recurrenciadate">
                                         <strong style="color:red;">Fecha de recurrencia</strong>
                                         <input type="date" id="fecharecurrencia" name="fecharecurrencia"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                      <div class="col-md-4">
                                         <strong>Amerita reintervención</strong>
                                         <select name="ameritareintervencion" id="ameritareintervencion"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -177,7 +177,7 @@
                                     <div class="col-md-4" id="datereintervencion">
                                         <strong style="color:red;">Fecha de reintervención</strong>
                                         <input type="date" id="fechareintenvencion" name="fechareintenvencion"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <script>
                                     $(document).ready(function() {
@@ -204,7 +204,7 @@
 
                                     <div class="col-md-4" id="lateralidadqt">
                                         <strong style="color:red;">Lateralidad reintervención QX</strong>
-                                        <select name="lateralidadreintervencion" id="lateralidadreintervencion" class="control control col-md-12">
+                                        <select name="lateralidadreintervencion" id="lateralidadreintervencion" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Derecha">Derecha</option>
                                             <option value="Izquierda">Izquierda</option>
@@ -215,7 +215,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Amerita nueva QT</strong>
-                                        <select name="ameritanuevaqt" id="ameritanuevaqt" class="control control col-md-12">
+                                        <select name="ameritanuevaqt" id="ameritanuevaqt" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -226,11 +226,11 @@
                                     <div class="col-md-4" id="fechadelanuevaqt">
                                         <strong style="color:red;">Fecha de nueva QT</strong>
                                         <input type="date" id="fechanuevaqt" name="fechanuevaqt"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <div class="col-md-4" id="tipodelaqt">
                                         <strong style="color:red;">Tipo</strong>
-                                        <select name="tipoqt" id="tipoqt" class="control control col-md-12">
+                                        <select name="tipoqt" id="tipoqt" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Neoadyuvante">Neoadyuvante</option>
                                             <option value="Coadyuvante">Coadyuvante</option>
@@ -238,7 +238,7 @@
                                     </div>
                                     <div class="col-md-4" id="tratamientodelaqt">
                                         <strong style="color:red;">Tratamiento QT</strong>
-                                        <select name="tratameintoqt" id="tratameintoqt" class="control control col-md-12">
+                                        <select name="tratameintoqt" id="tratameintoqt" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripciontratameinto FROM tratamientoqt");
@@ -253,7 +253,7 @@
                                         </div>
                                     <div class="col-md-4">
                                         <strong>Amerita radioterapia</strong>
-                                        <select name="ameritaradioterapia" id="ameritaradioterapia" class="control control col-md-12">
+                                        <select name="ameritaradioterapia" id="ameritaradioterapia" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -261,7 +261,7 @@
                                     </div>
                                     <div class="col-md-4" id="aplicoradio">
                                         <strong style="color:red;">Tipo Radioterapia</strong>
-                                        <select name="tipoderadioterapia" id="tipoderadioterapia" class="control control col-md-12">
+                                        <select name="tipoderadioterapia" id="tipoderadioterapia" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="CICLO MAMARIO COMPLETO">CICLO MAMARIO COMPLETO</option>
                                             <option value="TANGENCIAL">TANGENCIAL</option>
@@ -270,16 +270,16 @@
                                     <div class="col-md-4" id="fecharadio">
                                         <strong style="color:red;">Fecha de inicio</strong>
                                         <input type="date" id="fechadeinicioradio" name="fechadeinicioradio"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <div class="col-md-4" id="sesionescanti">
                                         <strong style="color:red;">N° de sesiones</strong>
                                         <input type="number" id="numerodesesiones" name="numerodesesiones"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Amerita braquiterapia</strong>
-                                        <select name="ameritabraquiterapia" id="ameritabraquiterapia" class="control control col-md-12">
+                                        <select name="ameritabraquiterapia" id="ameritabraquiterapia" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -288,11 +288,11 @@
                                     <div class="col-md-4" id="fechadelabraqui">
                                         <strong style="color:red;">Fecha de inicio</strong>
                                         <input type="date" id="fechabraquiterapia" name="fechabraquiterapia"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Cuidados paliativos</strong>
-                                        <select name="cuidadospaliativos" id="cuidadospaliativos" class="control control col-md-12">
+                                        <select name="cuidadospaliativos" id="cuidadospaliativos" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -300,7 +300,7 @@
                                     </div>
                                     <div class="col-md-4" id="paliativaclinica">
                                         <strong style="color:red;">Tipo de cuidado paliativo</strong>
-                                        <select name="clinicapaliativa" id="clinicapaliativa" class="control control col-md-12">
+                                        <select name="clinicapaliativa" id="clinicapaliativa" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Clinca del dolor">Clinca del dolor</option>
                                             <option value="Medicina paliativa">Medicina paliativa</option>
@@ -309,7 +309,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Protocolo clínico</strong>
-                                        <select name="protocoloclinico" id="protocoloclinico" class="control control col-md-12">
+                                        <select name="protocoloclinico" id="protocoloclinico" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -320,7 +320,7 @@
                                     <div class="col-md-4">
                                         <strong>Protocolo de investigación</strong>
                                         <select name="protocoloinvestigacion" id="protocoloinvestigacion"
-                                            class="control control col-md-12">
+                                            class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>

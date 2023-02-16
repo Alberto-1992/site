@@ -374,7 +374,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         
         </table>
 
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoshistopatomamaderecha();" <?php } }?>>        
    
     <div class="containerr3">Histopatologia mama derecha</div>
         <tr>
@@ -393,10 +393,10 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <th id="th">ESCALA SBR (SCARLET-BLOOM-RICHARDSON)::</th>
             <td id="td"><?php echo $dataRegistro['escalasbr'] ?></td>
         </tr>
-       
+    
         </table>
-        <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
-   
+        <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoshistopatorgmamader();" <?php } }?>>        
+
     <div class="containerr3">Histopatologia Region ganglionar mama derecha</div>
         <tr>
         <th id="th">DX histopatologico MMD:</th>
@@ -414,9 +414,9 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <th id="th">ESCALA SBR (SCARLET-BLOOM-RICHARDSON)::</th>
             <td id="td"><?php echo $dataRegistro['escalasbrrgd'] ?></td>
         </tr>
-       
+    
         </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoshistopatomamaiz();" <?php } }?>>        
     
     <div class="containerr3">Histopatologia mama izquierda</div>
         <tr>
@@ -435,7 +435,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <th id="th">ESCALA SBR (SCARLET-BLOOM-RICHARDSON)::</th>
             <td id="td"><?php echo $dataRegistro['escalasbriz'] ?></td>
         </tr></table>
-        <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+        <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoshistopatorgmamaiz();" <?php } }?>>        
     
     <div class="containerr3">Histopatologia Region ganglionar mama izquierda</div>
         <tr>
@@ -454,7 +454,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <th id="th">ESCALA SBR (SCARLET-BLOOM-RICHARDSON)::</th>
             <td id="td"><?php echo $dataRegistro['escalasbrrgi'] ?></td>
         </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosinmunomamaderecha();" <?php } }?>>        
    
     <div class="containerr3">Inmunohistoquimica mama derecha</div>
      <tr>
@@ -469,6 +469,10 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <tr>
         <th id="th">KI-67:</th>
         <td id="td"><?php echo $dataRegistro['ki67'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">P 53:</th>
+        <td id="td"><?php echo $dataRegistro['p53'] ?></td>
     </tr>
     <tr>
         <th id="th">Triple negativo:</th>
@@ -492,7 +496,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosinmunorgdmamaderecha();" <?php } }?>>        
    
     <div class="containerr3">Inmunohistoquimica Region ganglionar mama derecha</div>
      <tr>
@@ -507,6 +511,10 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <tr>
         <th id="th">KI-67:</th>
         <td id="td"><?php echo $dataRegistro['ki67rgd'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">P 53:</th>
+        <td id="td"><?php echo $dataRegistro['p53rgd'] ?></td>
     </tr>
     <tr>
         <th id="th">Triple negativo:</th>
@@ -995,6 +1003,26 @@ function editardatosatencionclinica(){
 }
 function editardatosreferencia(){
   $("#editarDatosReferencia").modal('show');
+}
+function editardatoshistopatomamaderecha(){
+  $("#editarDatosHistopatologiaMamaDer").modal('show');
+}
+function editardatoshistopatorgmamader() {
+    $("#editarDatosRgMamaDer").modal('show');
+    
+}
+function editardatoshistopatomamaiz(){
+    $("#editarDatosMamaIz").modal('show');
+}
+function editardatoshistopatorgmamaiz() {
+    $("#editarDatosRgmamaIz").modal('show');
+    
+}
+function editardatosinmunomamaderecha() {
+    $("#editarInmunohistoMamaDer").modal('show');
+}
+function editardatosinmunorgdmamaderecha() {
+    $("#editarInmunohistorgdMamaDer").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();

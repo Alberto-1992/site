@@ -2,7 +2,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="js/getCatalogos.js"></script>
     <script src="js/scriptModalvalidacionCE.js"></script>
     <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
@@ -12,7 +12,8 @@
 
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalInfarto">
-            
+            <span class="material-symbols-outlined">
+                </span>
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
             </div>
             <div class="modal-body">
@@ -21,13 +22,9 @@
 
                     <div class="contrato-nuevo">
 
-
-
-
                         <div class="modal-body">
 
                             <!-- form start -->
-
 
                             <div class="form-header">
                                 <h3 class="form-title"
@@ -420,105 +417,79 @@
                                         style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>PARACLINICOS</strong>
                                     </div>
-                                    <div class="col-md-4">
-
-                                    
-                                            <span id="paraclinic">CK</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>CK</strong>
                                             <input type="text" id="ck" name="ck" placeholder="Describa"
                                                 class="form-control">
                                         
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">CK-MB</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>CK-MB</strong>
                                             <input type="text" id="ckmb" name="ckmb" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
+                                        
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">TROPONINAS</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>TROPONINAS</strong>
                                             <input type="text" id="troponinas" name="troponinas" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
 
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">GlUCOSA</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>GLUCOSA</strong>
                                             <input type="text" id="glucosa" name="glucosa" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">UREA</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>UREA</strong>
                                             <input type="text" id="urea" name="urea" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
+                                    
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">CREATININA</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>CREATININA</strong>
                                             <input type="text" id="creatinina" name="creatinina" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">COLESTEROL</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>COLESTEROL</strong>
                                             <input type="text" id="colesterol" name="colesterol" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">TRIGLICERIDOS</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>TRIGLICERIDOS</strong>
                                             <input type="text" id="trigliceridos" name="trigliceridos"
                                                 placeholder="Describa" class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">ACIDO URICO</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>ACIDO URICO</strong>
                                             <input type="text" id="acidourico" name="acidourico" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">HB GLUCOSILADA</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>HB GLUCOSILADA</strong>
                                             <input type="text" id="hbglucosilada" name="hbglucosilada"
                                                 placeholder="Describa" class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">PROTEINAS</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>PROTEINAS</strong>
                                             <input type="text" id="proteinas" name="proteinas" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">COLESTEROL TOTAL</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>COLESTEROL TOTAL</strong>
                                             <input type="text" id="colesteroltotal" name="colesteroltotal"
                                                 placeholder="Describa" class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">LDL</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>LDL</strong>
                                             <input type="text" id="ldl" name="ldl" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="input-group pull-left">
-                                            <span id="paraclinic">HDL</span>&nbsp;&nbsp;
+                                    <div class="col-md-3">
+                                            <strong>HDL</strong>
                                             <input type="text" id="hdl" name="hdl" placeholder="Describa"
                                                 class="form-control">
-                                        </div>
                                     </div><br><br><br>
                                     <style>
                                         #paraclinic{
@@ -530,7 +501,7 @@
                                         style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>TRATAMIENTO</strong>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-12">
                                         <strong>Trombolisis</strong>
                                         <select name="trombolisis" id="trombolisis" class="form-control">
                                             <option value="">Seleccione</option>
@@ -538,17 +509,17 @@
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="iniciotromb">
+                                    <div class="col-md-4" id="iniciotromb">
                                         <strong>Fecha/hora inicio</strong>
                                         <input type="datetime-local" id="iniciotrombolisis" name="iniciotrombolisis"
                                             placeholder="Describa" class="form-control">
                                     </div>
-                                    <div class="col-md-3" id="finalizotromb">
+                                    <div class="col-md-4" id="finalizotromb">
                                         <strong>Fecha/hora finaliza</strong>
                                         <input type="datetime-local" id="finalizotrombolisis" name="finalizotrombolisis"
                                             placeholder="Describa" class="form-control">
                                     </div>
-                                    <div class="col-md-3" id="fibrinolitico">
+                                    <div class="col-md-4" id="fibrinolitico">
                                         <strong>Tipo de fibrinolitico</strong>
                                         <select name="fibrinoliticos" id="fibrinoliticos" class="form-control">
                                             <option value="">Seleccione</option>
@@ -613,7 +584,7 @@
                                             Consultar referencia</a>-->
                                     </div>
                                     
-                                    <div class="col-md-3">
+                                    <div class="col-md-12">
                                         <strong>Procedimiento</strong>
                                         <select name="procedimientorealizado" id="procedimientorealizado"
                                             class="form-control">
@@ -697,9 +668,9 @@
                                             <?php } ?>
                                         </select>
                                     </div>
-                                     <div class="col-md-3" id="idstend">
+                                     <div class="col-md-3" id="cantidadstend">
                                         <strong>N° stent implantados</strong>
-                                        <select name="stent" id="stent" class="form-control">
+                                        <select name="stentcantidad" id="stentcantidad" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>

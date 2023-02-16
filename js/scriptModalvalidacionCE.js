@@ -116,11 +116,10 @@ $(document).ready(function() {
             $('#finalizotromb').prop("hidden", false);
             $('#fibrinolitico').prop("hidden", false);
 
-        } else {
+        } else if ($(this).val() === "No") {
             $('#iniciotromb').prop("hidden", true);
             $('#finalizotromb').prop("hidden", true);
             $('#fibrinolitico').prop("hidden", true);
-
 
         }
     })
@@ -292,6 +291,7 @@ $(document).ready(function() {
             $('#revasculariza').prop("hidden", false);
             $('#temporalmarcapasos').prop("hidden", false);
 
+
         } else {
             $('#iniciodeprocedimiento').prop("hidden", true);
             $('#tipoprocedimiento').prop("hidden", true);
@@ -299,6 +299,8 @@ $(document).ready(function() {
             $('#tipodelesionangio').prop("hidden", true);
             $('#revasculariza').prop("hidden", true);
             $('#temporalmarcapasos').prop("hidden", true);
+
+
 
         }
         if ($(this).val() === "no") {
@@ -314,11 +316,12 @@ $(document).ready(function() {
             $('#idetapasprocedimiento').prop("hidden", true);
             $('#idstend').prop("hidden", true);
             $('#idolusion').prop("hidden", true);
-
+            $('#cantidadstend').prop("hidden", true);
             $('#idseveridad').prop("hidden", true);
             $('#tipodelesionangio').prop("hidden", true);
             $('#revasculariza').prop("hidden", true);
             $('#temporalmarcapasos').prop("hidden", true);
+
             //limpiar todos los select al seleccionar la opcion de no
 
             $('#otc').prop('selectedIndex',0);
@@ -372,6 +375,7 @@ $(function() {
     $('#tipodelesionangio').prop("hidden", true);
     $('#revasculariza').prop("hidden", true);
     $('#temporalmarcapasos').prop("hidden", true);
+    $('#cantidadstend').prop("hidden", true);
     
     
 
@@ -387,6 +391,7 @@ $(document).ready(function() {
             $('#idetapasprocedimiento').prop("hidden", false);
             $('#idstend').prop("hidden", false);
             $('#idolusion').prop("hidden", false);
+            $('#cantidadstend').prop("hidden", false);
             
 
 
@@ -401,13 +406,15 @@ $(document).ready(function() {
             $('#sitiodepuncion').prop('selectedIndex',0);
             $('#etapasprocedimiento').prop('selectedIndex',0);
             $('#stent').prop('selectedIndex',0);
+            $('#stentcantidad').prop('selectedIndex', 0);
             $('#olusion').prop('selectedIndex',0);
+            $('#cantidadstend').prop("hidden", true);
     
 
         }
         if($(this).val() === "Angioplastia coronaria trasnluminal") {
             $('#idseveridad').prop("hidden", false);
-        
+            $('#cantidadstend').prop("hidden", true);
             
 
 
@@ -423,6 +430,7 @@ $(document).ready(function() {
             $('#estrategia').prop('selectedIndex',0);
             $('#sitiodepuncion').prop('selectedIndex',0);
             $('#stent').prop('selectedIndex',0);
+            $('#stentcantidad').prop('selectedIndex', 0);
             $('#etapasprocedimiento').prop('selectedIndex',0);
             $('#olusion').prop('selectedIndex',0);
             $('#severidad').prop('selectedIndex',0);
