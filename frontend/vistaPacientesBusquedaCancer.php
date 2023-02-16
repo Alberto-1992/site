@@ -354,10 +354,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <th id="th">Sito Metastasis:</th>
             <td id="td"></td>
         </tr>
-        <tr>
-            <th id="th">Clasificación etapas:</th>
-            <td id="td"><?php echo $dataRegistro['clasificacionetapas'] ?></td>
-        </tr>
+        
         <tr>
             <th id="th">Calidad de vida ECOG:</th>
             <td id="td"><?php echo $dataRegistro['calidadvidaecog']?></td>

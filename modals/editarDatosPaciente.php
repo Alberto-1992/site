@@ -1067,23 +1067,7 @@ return false;
 
                                         </select>
                                     </div>
-                                    <div class="col-md-4" id="etapasedit">
-                                        <strong>Clasificación etapas</strong>
-                                        <select name="clasificaciondeetapasedit" id="clasificaciondeetapasedit"
-                                            class="form-control">
-                                            <option value="<?php echo $dataRegistro['clasificacionetapas']?>" selected><?php echo $dataRegistro['clasificacionetapas']?></option>
-                                            <option value="Sin registro">Sin registro</option>
-                                            <?php 
-				        $query = $conexionCancer->prepare("SELECT etapaclasificacion FROM clasificacionetapas");
-                        $query->setFetchMode(PDO::FETCH_ASSOC);
-                            $query->execute();
-				                    while($row = $query->fetch()) { ?>
-                                            <option value="<?php echo $row['etapaclasificacion']; ?>">
-                                                <?php echo $row['etapaclasificacion']; ?></option>
-                                            <?php } ?>
-
-                                        </select>
-                                    </div>
+                                    
 
                                     <div class="col-md-4">
                                         <strong>Calidad de vida ECOG</strong>

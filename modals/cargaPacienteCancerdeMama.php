@@ -108,7 +108,8 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Población indigena</strong>
-                                        <select name="poblacionindigena" id="poblacionindigena" class="form-control">
+                                        <select name="poblacionindigena" id="poblacionindigena" class="form-control" required>
+                                            <option >seleccione</option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -119,6 +120,7 @@
                                     <div class="col-md-3">
                                         <strong>Discapacidad</strong>
                                         <select name="discapacidad" id="discapacidad" class="form-control">
+                                        <option >seleccione</option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
