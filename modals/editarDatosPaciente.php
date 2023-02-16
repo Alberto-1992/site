@@ -176,7 +176,7 @@ return false;
 </script>
 <div id="mensaje"></div>
 
-<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosPersonalescancerdeMama">
+<div class="modal fade in" role="dialog"  data-bs-keyboard="false" id="editarDatosPersonalescancerdeMama">
 
     <div class="modal-dialog modal-lg">
 
@@ -227,12 +227,35 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
-                                                location.load();
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosPersonalescancerdeMama").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosPersonalescancerdeMama").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosPersonalescancerdeMama").modal('hide');
                                             }
+                                        
                                         })
+                                        
                                     })
-                                
+                                    
                                     
                                     </script>
                                     <div class="col-md-12" autocomplete="off">
@@ -243,13 +266,13 @@ return false;
                                     <div class="col-md-12">
                                             <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
                                         </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <strong>CURP</strong>
                                         <input type="text" id="curpedit" name="curpedit" type="text" class="form-control" value="<?php echo $dataRegistro['curp'] ?>"
                                         onblur="curp2dateEdit();" minlength="18" maxlength="18" required >
                                     
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <strong>Nombre Completo</strong>
                                         <input id="nombrecompletoedit" name="nombrecompletoedit" onblur="calcularEdadEdit();"
                                             type="text" class="form-control" value="<?php echo $dataRegistro['nombrecompleto'] ?>" required>
@@ -388,6 +411,7 @@ return false;
                                     
                                     </div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                                    
                         </form>
             </div>
         </div>
@@ -442,8 +466,29 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
-                                                
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosReferencia").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosReferencia").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosReferencia").modal('hide');
                                             }
                                         })
                                     })
@@ -485,7 +530,8 @@ return false;
                                     </div>
                                     </div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
-                        </form>
+                                    
+                                </form>
             </div>
         </div>
     </div>
@@ -540,8 +586,29 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
-                                                
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosCancer").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosCancer").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosCancer").modal('hide');
                                             }
                                         })
                                     })
@@ -651,7 +718,29 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosPersonalesPatologicos").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosPersonalesPatologicos").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosPersonalesPatologicos").modal('hide');
                                             }
                                         })
                                     })
@@ -739,7 +828,29 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosAntecedentesGineco").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosAntecedentesGineco").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosAntecedentesGineco").modal('hide');
                                             }
                                         })
                                     })
@@ -805,19 +916,19 @@ return false;
                                             name="partoedit" value="<?php echo $dataRegistro['parto'] ?>">
 
                                     </div>
-                                    <div class="col-md-2" id="abortoidedit">
+                                    <div class="col-md-3" id="abortoidedit">
                                         <strong>Aborto</strong>
                                         <input type="number" class="form-control" id="abortoedit" onblur="validapartoedit();"
                                             name="abortoedit" value="<?php echo $dataRegistro['aborto'] ?>">
 
                                     </div>
-                                    <div class="col-md-2" id="cesareaidedit">
+                                    <div class="col-md-3" id="cesareaidedit">
                                         <strong>Cesarea</strong>
                                         <input type="number" class="form-control" id="cesareaedit" onblur="validapartoedit();"
                                             name="cesareaedit" value="<?php echo $dataRegistro['cesarea'] ?>">
 
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <strong>Esta embarazada</strong>
                                         <select name="embarazadaedit" id="embarazadaedit" class="form-control" >
                                             <option value="<?php echo $dataRegistro['embarazada'] ?>" selected><?php echo $dataRegistro['embarazada'] ?></option>
@@ -828,7 +939,7 @@ return false;
 
                                         </select>
                                     </div>
-                                    <div class="col-md-2" id="probablepartoedit">
+                                    <div class="col-md-3" id="probablepartoedit">
                                         <strong>F.P.P</strong>
                                         <input type="date" class="form-control" id="fechaprobablepartoedit"
                                             name="fechaprobablepartoedit" value="<?php echo $dataRegistro['fpp'] ?>" >
@@ -840,8 +951,8 @@ return false;
                                             class="form-control">
                                             <option value="<?php echo $dataRegistro['terapiareemplazohormonal'] ?>" selected><?php echo $dataRegistro['terapiareemplazohormonal'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="si">si</option>
-                                            <option value="no">no</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
 
                                         </select>
                                     </div>
@@ -862,6 +973,45 @@ return false;
                                             name="tiempolactanciaedit" value="<?php echo $dataRegistro['tiempolactancia'] ?>">
 
                                     </div>
+                                    <script>
+                                        $(document).ready(function() {
+
+                                                $('#embarazadaedit').change(function(e) {
+                                                    if ($(this).val() == 'No') {
+
+                                                            $('#fechaprobablepartoedit').prop("disabled", true);
+                                                            $('#fechaprobablepartoedit').val('');
+                                                        
+
+                                                        }else if($(this).val() == 'Sin registro') {
+                                                            $('#fechaprobablepartoedit').prop("disabled", true);
+                                                            $('#fechaprobablepartoedit').val('');
+                                                        }else if ($(this).val() == 'Si') {
+                                                            $('#fechaprobablepartoedit').prop("disabled", false);
+                                                            $('#fechaprobablepartoedit').val('');
+                                                        }
+                                                        })
+                                                    });
+                                                    $(document).ready(function() {
+
+                                                            $('#lactanciaedit').change(function(e) {                
+                                                                        if ($(this).val() == 'No') {
+
+                                                                        $('#tiempodelactancia').prop("hidden", true);
+                                                                        $('#tiempolactanciaedit').val('');
+        
+
+                                                                }else if($(this).val() == 'Sin registro'){
+                                                                        $('#tiempodelactancia').prop("hidden", true);
+                                                                        $('#tiempolactanciaedit').val('');
+                                                                    }else if($(this).val() == 'Si'){
+                                                                        $('#tiempodelactancia').prop("hidden", false);
+                                                                        $('#tiempolactanciaedit').val('');
+                                                                    }
+
+                                                                        })
+                                                                    });
+                                    </script>
                                     </div>
                                     <div class="col-md-12"></div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
@@ -920,7 +1070,29 @@ return false;
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
 
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarDatosAtencionClinica").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarDatosAtencionClinica").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarDatosAtencionClinica").modal('hide');
                                             }
                                         })
                                     })

@@ -1009,13 +1009,29 @@ function editarRegistro(){
             data: parametros,
             url: 'aplicacion/editarRegistroCancer.php',
             type: 'post',
-            beforeSend: function() {
-                
-            },
-            success: function(response) {
-            
-                $("#mensaje").html(response);
-            }
+            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#idcurp").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                
+                                            }
         });
             }else{
                 alert('proceso cancelado')
@@ -1034,13 +1050,30 @@ function editarRegistro(){
             data: parametros,
             url: 'aplicacion/finalizarEdicion.php',
             type: 'post',
-            beforeSend: function() {
-                
-            },
-            success: function(response) {
-            
-                $("#mensaje").html(response);
-            }
+        
+            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#idcurp").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                
+                                            }
         });
             }else{
                 alert('proceso cancelado')

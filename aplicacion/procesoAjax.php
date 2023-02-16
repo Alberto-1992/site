@@ -29,6 +29,8 @@ $sql = $conexionCancer->prepare("SELECT tipo, lateralidad, curpusuario from quir
                     title: 'Error!',
                     text: 'Error proceso duplicado!',
                     icon: 'error',
+                    timer: 1500,
+                    showConfirmButton: false
                     
                 });
                 </script>";
@@ -61,6 +63,8 @@ $sql = $conexionCancer->prepare("SELECT tipo, lateralidad, curpusuario from quir
                             title: 'Dato guardado!',
                             text: 'Informaión guardada!',
                             icon: 'success',
+                            timer: 1500,
+                    showConfirmButton: false
                             
                         });
                         </script>";
@@ -93,6 +97,8 @@ $sql = $conexionCancer->prepare("SELECT tipo, lateralidad, curpusuario from quir
                             title: 'Hooho error!',
                             text: 'Error al guardar los datos!',
                             icon: 'error',
+                            timer: 1500,
+                    showConfirmButton: false
                             
                         });
                         </script>";
@@ -116,6 +122,8 @@ $sql = $conexionCancer->prepare("SELECT tipo, lateralidad, curpusuario from quir
                             title: 'Dato guardado!',
                             text: 'Informaión guardada!',
                             icon: 'success',
+                            timer: 1500,
+                    showConfirmButton: false
                             
                         });
                         </script>";
@@ -148,6 +156,8 @@ $sql = $conexionCancer->prepare("SELECT tipo, lateralidad, curpusuario from quir
                             title: 'Hooho error!',
                             text: 'Error al guardar los datos!',
                             icon: 'error',
+                            timer: 1500,
+                    showConfirmButton: false
                             
                         });
                         </script>";
@@ -169,6 +179,8 @@ echo "<script>swal({
     title: 'Good job!',
     text: 'Datos guardados exitosamente!',
     icon: 'success',
+    timer: 1500,
+                    showConfirmButton: false
     
 });
 </script>";	
@@ -177,6 +189,8 @@ echo "<script>swal({
                         title: 'Error!',
                         text: 'Error al guardar los datos!',
                         icon: 'error',
+                        timer: 1500,
+                    showConfirmButton: false
                         
                     });
                     </script>";

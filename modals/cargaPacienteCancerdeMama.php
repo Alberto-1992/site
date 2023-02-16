@@ -392,8 +392,8 @@
                                         <select name="planificacionfamiliar" id="planificacionfamiliar"
                                             class="form-control">
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="si">si</option>
-                                            <option value="no">no</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
 
                                         </select>
                                     </div>

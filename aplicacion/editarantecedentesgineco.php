@@ -29,6 +29,8 @@ embarazada = :embarazada, fpp = :fpp, terapiareemplazohormonal = :terapiareempla
                                             title: 'Good job!',
                                             text: 'Datos actualizados exitosamente!',
                                             icon: 'success',
+                                            timer: 1500,
+                    showConfirmButton: false
                                             
                                     });
                                     </script>";	
@@ -39,6 +41,8 @@ embarazada = :embarazada, fpp = :fpp, terapiareemplazohormonal = :terapiareempla
                                             title: 'Fatal!',
                                             text: 'Error al actualizar informacion!',
                                             icon: 'error',
+                                            timer: 1500,
+                    showConfirmButton: false
                                             });</script>";
                                         
                                     

@@ -27,6 +27,8 @@ $hoy = date("Y-m-d");
             title: 'Fatal!',
             text: 'Error!! ya existe un paciente con este CURP y registro de cancer!',
             icon: 'error',
+            timer: 1500,
+                    showConfirmButton: false
             });</script>";
         
     }else{
@@ -756,6 +758,8 @@ $hoy = date("Y-m-d");
                                             title: 'Good job!',
                                             text: 'Datos guardados exitosamente!',
                                             icon: 'success',
+                                            timer: 1500,
+                    showConfirmButton: false
                                             
                                     });
                                     </script>";	
@@ -766,6 +770,8 @@ $hoy = date("Y-m-d");
                                             title: 'Fatal!',
                                             text: 'Error al guardar informacion!',
                                             icon: 'error',
+                                            timer: 1500,
+                    showConfirmButton: false
                                             });</script>";
                                         
                                     

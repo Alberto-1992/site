@@ -25,8 +25,10 @@ date_default_timezone_set("America/Monterrey");
 
 echo "<script>swal({
     title: 'Proceso exitoso!',
-    text: 'Edicion habilitada!',
+    text: 'Edicion desabilitada!',
     icon: 'success',
+    timer: 1500,
+                    showConfirmButton: false
     
 });
 </script>";
@@ -35,6 +37,8 @@ echo "<script>swal({
     title: 'ooho oho proceso fallido!',
     text: 'Error al editar los datos!',
     icon: 'error',
+    timer: 1500,
+                    showConfirmButton: false
     
 });
 </script>";
@@ -63,8 +67,10 @@ echo "<script>swal({
 
 echo "<script>swal({
     title: 'Proceso exitoso!',
-    text: 'Edicion habilitada!',
+    text: 'Edicion desabilitada!',
     icon: 'success',
+    timer: 1500,
+                    showConfirmButton: false
     
 });
 </script>";
@@ -73,6 +79,8 @@ echo "<script>swal({
     title: 'ooho oho proceso fallido!',
     text: 'Error al editar los datos!',
     icon: 'error',
+    timer: 1500,
+                    showConfirmButton: false
     
 });
 </script>";
