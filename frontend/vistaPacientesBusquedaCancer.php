@@ -351,8 +351,28 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
             <td id="td"><?php echo $dataRegistro['metastasis']?></td>
         </tr>
         <tr>
+            <th id="th">Sito Metastasis:</th>
+            <td id="td"></td>
+        </tr>
+        <tr>
+            <th id="th">Clasificación etapas:</th>
+            <td id="td"><?php echo $dataRegistro['clasificacionetapas'] ?></td>
+        </tr>
+        <tr>
             <th id="th">Calidad de vida ECOG:</th>
             <td id="td"><?php echo $dataRegistro['calidadvidaecog']?></td>
+        </tr>
+        <tr>
+            <th id="th">Mastectomia extrainstitucional:</th>
+            <td id="td"><?php echo $dataRegistro['mastectoextrainstituto'] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Lateralidad Mastectomia extrainstitucional:</th>
+            <td id="td"><?php echo $dataRegistro['lateralidadmastectoextrainstituto'] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Fecha Mastectomia extrainstitucional:</th>
+            <td id="td"><?php echo $dataRegistro['fechamastectoextrainstituto'] ?></td>
         </tr>
         
         </table>

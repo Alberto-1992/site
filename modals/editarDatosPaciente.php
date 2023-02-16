@@ -786,6 +786,16 @@ return false;
                                             <option value="8">8</option>
                                             <option value="9">9</option>
                                             <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
 
                                         </select>
                                     </div>
@@ -901,7 +911,7 @@ return false;
 
                                         $.ajax({
 
-                                            url: "aplicacion/editaratencionclinicacancer.php",
+                                            url: "aplicacion/atencionclinicacancer.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -921,7 +931,9 @@ return false;
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ATENCIÓN CLINICA</strong>
                                     </div>
-
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
                                     <div class="col-md-3">
                                         <strong>Fecha primer atencion</strong>
                                         <input type="date" id="fechaatencioninicialedit" name="fechaatencioninicialedit"
@@ -1059,7 +1071,7 @@ return false;
                                         <strong>Clasificación etapas</strong>
                                         <select name="clasificaciondeetapasedit" id="clasificaciondeetapasedit"
                                             class="form-control">
-                                            
+                                            <option value="<?php echo $dataRegistro['clasificacionetapas']?>" selected><?php echo $dataRegistro['clasificacionetapas']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT etapaclasificacion FROM clasificacionetapas");
