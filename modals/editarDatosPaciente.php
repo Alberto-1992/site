@@ -2887,3 +2887,125 @@ return false;
                 </div>
             </div>
         </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatosRadioterapia">
+
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarradioterapia" id="editarradioterapia" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarradioterapia").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarradioterapia"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editardatosRadio.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editardatosRadioterapia").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editardatosRadioterapia").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editardatosRadioterapia").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script> 
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">RADIOTERAPIA</strong>
+                                    </div>
+                                    <div class="col-md-12" style="color: #BD9FD6; ">
+                                        <strong>RADIOTERAPIA</strong>
+                                        <select name="radioterapiaedit" id="radioterapiaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['aplicoradio'];?>"><?php echo $dataRegistro['aplicoradio'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Tipo Radioterapia</strong>
+                                        <select name="aplicoradioterapiaedit" id="aplicoradioterapiaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['decripcionradio']?>"><?php echo $dataRegistro['decripcionradio']?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="CICLO MAMARIO COMPLETO">CICLO MAMARIO COMPLETO</option>
+                                            <option value="TANGENCIAL">TANGENCIAL</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha de inicio</strong>
+                                        <input type="date" id="fechainicioradioedit" name="fechainicioradioedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fecharadio']?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>N° de sesiones</strong>
+                                        <input type="number" id="numerosesionesedit" name="numerosesionesedit"
+                                            class="form-control" value="<?php echo $dataRegistro['numerosesiones']?>">
+                                    </div>
+                                
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

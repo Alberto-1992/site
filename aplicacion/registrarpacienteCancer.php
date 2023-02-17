@@ -373,11 +373,11 @@ $hoy = date("Y-m-d");
                             ));
                             $row = $sql->fetch();
                             $id_deradio = $row['id_radio'];
-                                            $sql = $conexionCancer->prepare("INSERT into tiporadioterapia(decripcionradio, fecharadio, numerosesiones, id_radio)
-                                                values(:decripcionradio, :fecharadio, :numerosesiones, :id_radio)");
+                                            $sql = $conexionCancer->prepare("INSERT into tiporadioterapia(decripcionradio, fecharadio, numerodesesiones, id_radio)
+                                                values(:decripcionradio, :fecharadio, :numerodesesiones, :id_radio)");
                                                         $sql->bindParam(':decripcionradio',$aplicoradioterapia,PDO::PARAM_STR,100);
                                                         $sql->bindParam(':fecharadio',$fechainicioradio,PDO::PARAM_STR);
-                                                        $sql->bindParam(':numerosesiones',$numerosesiones,PDO::PARAM_INT);
+                                                        $sql->bindParam(':numerodesesiones',$numerosesiones,PDO::PARAM_INT);
                                                         $sql->bindParam(':id_radio',$id_deradio,PDO::PARAM_INT);
                                                             $sql->execute();
 
@@ -731,11 +731,11 @@ $hoy = date("Y-m-d");
                             ));
                             $row = $sql->fetch();
                             $id_deradio = $row['id_radio'];
-                                            $sql = $conexionCancer->prepare("INSERT into tiporadioterapia(decripcionradio, fecharadio, numerosesiones, id_radio)
-                                                values(:decripcionradio, :fecharadio, :numerosesiones, :id_radio)");
+                                            $sql = $conexionCancer->prepare("INSERT into tiporadioterapia(decripcionradio, fecharadio, numerodesesiones, id_radio)
+                                                values(:decripcionradio, :fecharadio, :numerodesesiones, :id_radio)");
                                                         $sql->bindParam(':decripcionradio',$aplicoradioterapia,PDO::PARAM_STR,100);
                                                         $sql->bindParam(':fecharadio',$fechainicioradio,PDO::PARAM_STR);
-                                                        $sql->bindParam(':numerosesiones',$numerosesiones,PDO::PARAM_INT);
+                                                        $sql->bindParam(':numerodesesiones',$numerosesiones,PDO::PARAM_INT);
                                                         $sql->bindParam(':id_radio',$id_deradio,PDO::PARAM_INT);
                                                             $sql->execute();
 

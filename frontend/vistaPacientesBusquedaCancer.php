@@ -806,7 +806,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <th id="th">Fecha:</th>
         <td id="td"><?php echo $row_l['fecha']?></td>
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editaradioterapia();" <?php } }?>>        
     
     <div class="containerr3">Radioterapia</div>
     <tr>
@@ -824,7 +824,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     <tr>
         <th id="th">N° de sesiones:</th>
-        <td id="td"><?php echo $dataRegistro['numerosesiones']?></td>
+        <td id="td"><?php echo $dataRegistro['numerodesesiones']?></td>
     </tr></table>
 
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarquimioterapia();" <?php } }?>>        
@@ -1041,6 +1041,9 @@ function editardatosinmunorgimamaiz(){
 }
 function editarquimioterapia() {
     $("#editardatosQuimio").modal('show');
+}
+function editaradioterapia() {
+    $("#editardatosRadioterapia").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();
