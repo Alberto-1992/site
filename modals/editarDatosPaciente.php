@@ -2060,7 +2060,7 @@ return false;
                 </div>
             </div>
         </div>
-        <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistorgdMamaDer">
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistorgdMamaDer">
     
     <div class="modal-dialog modal-lg">
 
@@ -2227,6 +2227,653 @@ return false;
 
                                         </select>
                                     
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistoMamaIz">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarInmunoMamaIz" id="editarInmunoMamaIz" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarInmunoMamaIz").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarInmunoMamaIz"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarInmunoMamaIz.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarInmunohistoMamaIz").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarInmunohistoMamaIz").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarInmunohistoMamaIz").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script> 
+                                    <div class="col-md-12"
+                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
+                                        <strong id="titulos">MAMA IZQUIERDA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                            <strong>Receptores de estrogenos (RE)</strong>
+                                            <input type="number" id="receptoresestrogenosizedit" name="receptoresestrogenosizedit"
+                                                placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresestrogenosiz']?>">
+                                    
+                                    </div>
+                                    <div class="col-md-4">
+                                            <strong>Receptores de progesterona (RP)</strong>
+                                            <input type="number" id="receptoresprogesteronaizedit"
+                                                name="receptoresprogesteronaizedit" placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresprogesteronaiz'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">                                      
+                                            <strong>KI-67</strong>
+                                            <input type="number" id="ki67izedit" name="ki67izedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['ki67iz'] ?>">
+                                        
+                                    </div>
+                                    <!--
+                                    <div class="col-md-2" id="inmunoderechaiz4">
+                                        <div class="input-group pull-left">
+                                            <strong>K</strong>
+                                            <input type="number" id="kiz" name="kiz" placeholder="%"
+                                                class="form-control">
+                                        </div>
+                                    </div>-->
+                                    <div class="col-md-2">                                       
+                                            <strong>P 53</strong>
+                                            <input type="number" name="p53izedit" id="p53izedit" class="form-control" value="<?php echo $dataRegistro['p53rgiz'] ?>">                               
+                                    </div>
+                                    <div class="col-md-2">
+                                            <strong>Triple negativo</strong>
+                                            <select name="triplenegativoizedit" id="triplenegativoizedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['triplenegativoiz'] ?>"><?php echo $dataRegistro['triplenegativoiz'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <fieldset class="col-md-2">
+                                            <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="pdlrealizoizedit" id="pdlrealizo1izedit"
+                                                onclick="aplicopdlsimmizedit();" class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="pdlrealizoizedit" id="pdlrealizo2izedit"
+                                                onclick="aplicopdlnommizedit();" class="check" checked value="no">   
+                                    </fieldset>
+                                    <div class="col-md-2">
+                                        
+                                            <strong id="inmuno-title">PDL</strong>
+                                            <input type="number" id="pdlizedit" name="pdlizedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['descripcionpdliz'] ?>">
+                                    
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Oncogen HER2</strong>
+                                            <select name="oncogenizedit" id="oncogenizedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['oncogenher2iz'] ?>"><?php echo $dataRegistro['oncogenher2iz'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Una cruz">+</option>
+                                                <option value="Dos cruces">++</option>
+                                                <option value="Tres cruces">+++</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                    
+                                        <strong>FISH</strong>
+                                        <select name="fishizedit" id="fishizedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['fishiz'] ?>"><?php echo $dataRegistro['fishiz'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarInmunohistoRgizMamaIz">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarInmunoMamaRgIz" id="editarInmunoMamaRgIz" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarInmunoMamaRgIz").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarInmunoMamaRgIz"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editarInmunoRgMamaIz.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editarInmunohistoRgizMamaIz").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editarInmunohistoRgizMamaIz").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editarInmunohistoRgizMamaIz").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script> 
+                                <div class="col-md-12"
+                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
+                                        <strong id="titulos">REGIÓN GANGLIONAR MAMA IZQUIERDA</strong>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-4">
+                                            <strong>Receptores de estrogenos (RE)</strong>
+                                            <input type="number" id="receptoresestrogenosizrgiedit" name="receptoresestrogenosizrgiedit"
+                                                placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresestrogenosrgiz']?>">
+                                    
+                                    </div>
+                                    <div class="col-md-4">
+                                            <strong>Receptores de progesterona (RP)</strong>
+                                            <input type="number" id="receptoresprogesteronaizrgiedit"
+                                                name="receptoresprogesteronaizrgiedit" placeholder="%" class="form-control" value="<?php echo $dataRegistro['receptoresprogesteronargiz'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                            <strong>KI-67</strong>
+                                            <input type="number" id="ki67izrgiedit" name="ki67izrgiedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['ki67rgiz'] ?>">
+                                        
+                                    </div>
+                                    <!--
+                                    <div class="col-md-2" id="inmunoderechaiz4rgi">
+                                        <div class="input-group pull-left">
+                                            <strong>K</strong>
+                                            <input type="number" id="kizrgi" name="kizrgi" placeholder="%"
+                                                class="form-control">
+                                        </div>
+                                    </div>-->
+                                    <div class="col-md-2">
+                                        
+                                            <strong>P 53</strong>
+                                            <input type="number" name="p53izrgiedit" id="p53izrgiedit" class="form-control" value="<?php echo $dataRegistro['p53rgiz'] ?>">
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Triple negativo</strong>
+                                            <select name="triplenegativoizrgiedit" id="triplenegativoizrgiedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['triplenegativorgiz'] ?>"><?php echo $dataRegistro['triplenegativorgiz'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <fieldset class="col-md-2">
+                                            <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="pdlrealizoizrgiedit" id="pdlrealizo1izrgiedit"
+                                                onclick="aplicopdlsirgiz();" class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="pdlrealizoizrgiedit" id="pdlrealizo2izrgiedit"
+                                                onclick="aplicopdlnorgiz();" class="check" checked value="no">   
+                                    </fieldset>
+                                    <div class="col-md-2">
+                                        
+                                            <strong id="inmuno-title">PDL</strong>
+                                            <input type="number" id="pdlizrgiedit" name="pdlizrgiedit" placeholder="%"
+                                                class="form-control" value="<?php echo $dataRegistro['descripcionpdlrgiz'] ?>">
+                                        
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        
+                                            <strong>Oncogen HER2</strong>
+                                            <select name="oncogenizrgiedit" id="oncogenizrgiedit" class="form-control">
+                                                <option value="<?php echo $dataRegistro['oncogenher2rgiz'] ?>"><?php echo $dataRegistro['oncogenher2rgiz'] ?></option>
+                                                <option value="Sin registro">Sin registro</option>
+                                                <option value="Una cruz">+</option>
+                                                <option value="Dos cruces">++</option>
+                                                <option value="Tres cruces">+++</option>
+
+                                            </select>
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                    
+                                        <strong>FISH</strong>
+                                        <select name="fishizrgiedit" id="fishizrgiedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['fishrgiz'] ?>"><?php echo $dataRegistro['fishrgiz'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+
+                                        </select>
+                                    
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatosQuimio">
+    
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalMama">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+            
+            </div>
+            <div class="modal-body">
+
+                <div id="panel_editar">
+
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <!-- form start -->
+                        
+
+                            <form name="editarqumioterapia" id="editarqumioterapia" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                    $("#editarqumioterapia").on("submit", function(e) {
+                                        checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                        e.preventDefault();
+
+                                        var formData = new FormData(document.getElementById(
+                                            "editarqumioterapia"));
+                                        formData.append("dato", "valor");
+
+                                        $.ajax({
+
+                                            url: "aplicacion/editardatosQumioterapia.php",
+                                            type: "post",
+                                            dataType: "html",
+                                            data: formData,
+                                            cache: false,
+                                            contentType: false,
+                                            processData: false,
+                                            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#id_paciente").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#editardatosQuimio").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#editardatosQuimio").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#editardatosQuimio").modal('hide');
+                                            }
+                                        })
+                                    })
+                                
+                                    
+                                    </script> 
+                                    <div class="col-md-12">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                        </div>
+                                    <div class="col-md-12" style="color: #BD9FD6;">
+                                        <strong>QUIMIOTERAPIA</strong>
+                                        <select name="aplicoquimioedit" id="aplicoquimioedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['aplicoquimio'];?>"><?php echo $dataRegistro['aplicoquimio'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha inicio</strong>
+                                        <input type="date" id="fechadeinicioquimioedit" name="fechadeinicioquimioedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechainicio'];?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>1er Linea QT</strong>
+                                        <select name="primerlineaedit" id="primerlineaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['primeralinea'];?>"><?php echo $dataRegistro['primeralinea'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionprimeralinea FROM primeralinea");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionprimeralinea']; ?>">
+                                                <?php echo $row['descripcionprimeralinea']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Ciclos 1er linea</strong>
+                                        <input type="number" id="ciclosprimerlineaqtedit" name="ciclosprimerlineaqtedit"
+                                            class="form-control" value="<?php echo $dataRegistro['ciclosprimerlineaqt'];?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>2da Linea QT</strong>
+                                        <select name="segundalineaedit" id="segundalineaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['segundalinea'];?>"><?php echo $dataRegistro['segundalinea'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcionsegundalinea FROM segundalinea");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcionsegundalinea']; ?>">
+                                                <?php echo $row['descripcionsegundalinea']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Ciclos 2da linea</strong>
+                                        <input type="number" id="ciclossegundalineaqtedit" name="ciclossegundalineaqtedit"
+                                            class="form-control" value="<?php echo $dataRegistro['ciclossegundalineaqt'];?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Antraciclinas</strong>
+                                        <select name="antraciclinasedit" id="antraciclinasedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['antraciclinas'];?>"><?php echo $dataRegistro['antraciclinas'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <?php 
+				        $query = $conexionCancer->prepare("SELECT descripcion FROM atraciclina");
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $query->execute();
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['descripcion']; ?>">
+                                                <?php echo $row['descripcion']; ?></option>
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Momento de la QT</strong>
+                                        <select name="momentoquimioedit" id="momentoquimioedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['momentodelaqt'];?>"><?php echo $dataRegistro['momentodelaqt'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
+                                            <option value="Coadyuvante">Coadyuvante</option>
+                                            <option value="Paliativo">Paliativo</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-4">
+                                        <strong>HER 2 +++</strong><br>
+                                        <input type="radio" name="heredit" id="her1edit" onclick="aplicoher();" class="check"
+                                            value="si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="heredit" id="her2edit" onclick="aplicoherno();" class="check"
+                                            checked value="noaplico">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Esquema HER 2 +++</strong>
+                                        <select name="esquemaherdosedit" id="esquemaherdosedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['esquemaher2'];?>"><?php echo $dataRegistro['esquemaher2'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="TRASTUZUMAB/PERTUZUMAB">TRASTUZUMAB/PERTUZUMAB</option>
+                                            <option value="TRASTUZUMAB/EMTANSINA">TRASTUZUMAB/EMTANSINA</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-4">
+                                        <strong>Triple negativo</strong><br>
+                                        <input type="radio" name="triplenegativoedit" id="triplenegativo1edit"
+                                            onclick="triplesi();" class="check" value="si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="triplenegativoedit" id="triplenegativo2edit"
+                                            onclick="tripleno();" class="check" checked value="no">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Esquema triple negativo</strong>
+                                        <select name="esquematripleedit" id="esquematripleedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['esquematrilpenegativo']; ?>"><?php echo $dataRegistro['esquematrilpenegativo']; ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="ATEZOLIZUMAB">ATEZOLIZUMAB</option>
+                                            <option value="PEMBROLIZUMAB">PEMBROLIZUMAB</option>
+                                            <option value="OLAPARIB">OLAPARIB</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-4">
+                                        <strong>Hormonosensible</strong><br>
+                                        <input type="radio" name="hormonosensiblesedit" id="hormonosensibles1edit"
+                                            onclick="hormonosi();" class="check" value="si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="hormonosensiblesedit" id="hormonosensibles2edit"
+                                            onclick="hormonono();" class="check" checked value="no">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Inhibidores de ciclinas</strong>
+                                        <select name="esquemahormonosensibleedit" id="esquemahormonosensibleedit"
+                                            class="form-control">
+                                            <option value="<?php echo $dataRegistro['esquemahormonosensible']; ?>"><?php echo $dataRegistro['esquemahormonosensible']; ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="PALBOCICLIB">PALBOCICLIB</option>
+                                            <option value="RIBOCICLIB">RIBOCICLIB</option>
+                                            <option value="ABEMACICLIB">ABEMACICLIB</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Tipo de tratamiento</strong>
+                                        <select name="tipotratamientoedit" id="tipotratamientoedit"
+                                            class="form-control">
+                                            <option value="<?php echo $dataRegistro['tipotratamiento']; ?>"><?php echo $dataRegistro['tipotratamiento']; ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Adyuvante">Adyuvante</option>
+                                            <option value="Coadyuvante">Coadyuvante</option>
+                                            <option value="Paliativo">Paliativo</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-4">
+                                        <strong>Completo quimio</strong><br>
+                                        <input type="radio" name="completoquimioedit" id="completoquimio1edit"
+                                            onclick="quimiocompletosi();" class="check" checked value="si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="completoquimioedit" id="completoquimio2edit"
+                                            onclick="quimiocompletono();" class="check" value="no">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Causa QT incompleta</strong>
+                                        <select name="quimioesquemaedit" id="quimioesquemaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['causaqtincompleta']; ?>"><?php echo $dataRegistro['causaqtincompleta']; ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="EVENTO ADVERSO">EVENTO ADVERSO</option>
+                                            <option value="PROGRESION DE LA ENFERMEDAD">PROGRESION DE LA ENFERMEDAD
+                                            </option>
+                                            <option value="RECURRENCIA DE LA ENFERMEDAD">RECURRENCIA DE LA ENFERMEDAD
+                                            </option>
+                                            <option value="ABANDONO DEL PACIENTE">ABANDONO DEL PACIENTE</option>
+                                            <option value="FALLECIO">FALLECIO</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Fecha evento adverso</strong>
+                                        <input type="date" id="fechaeventoadversoedit" name="fechaeventoadversoedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechaeventoadverso']; ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Fecha progresion</strong>
+                                        <input type="date" id="fechaprogresionedit" name="fechaprogresionedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechaprogresion']; ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Fecha recurrencia</strong>
+                                        <input type="date" id="fecharecurrenciaedit" name="fecharecurrenciaedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fecharecurrencia']; ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Fecha fallecio</strong>
+                                        <input type="date" id="fechadefuncionedit" name="fechadefuncionedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fechafallecio']; ?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong style="color:red;">Causa</strong>
+                                        <select name="otracausaedit" id="otracausaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['causafallecio']; ?>"><?php echo $dataRegistro['causafallecio']; ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="ONCOLOGICA">ONCOLOGICA</option>
+                                            <option value="EVENTO ADVERSO">EVENTO ADVERSO</option>
+                                            <option value="OTRA">OTRA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong style="color:red;">Especifique</strong>
+                                        <input type="text" id="especifiquecausaedit" name="especifiquecausaedit"
+                                            class="form-control" value="<?php echo $dataRegistro['especifique']; ?>">
                                     </div>
                                     </div>
                                     <div class="col-md-12"></div>

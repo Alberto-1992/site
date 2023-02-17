@@ -538,7 +538,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosinmunomamaiz();" <?php } }?>>        
     
     <div class="containerr3">Inmunohistoquimica mama izquierda</div>
         <tr>
@@ -553,6 +553,10 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <tr>
         <th id="th">KI-67:</th>
         <td id="td"><?php echo $dataRegistro['ki67iz'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">P 53:</th>
+        <td id="td"><?php echo $dataRegistro['p53iz'] ?></td>
     </tr>
     <tr>
         <th id="th">Triple negativo:</th>
@@ -574,7 +578,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <th id="th">Fish:</th>
         <td id="td"><?php echo $dataRegistro['fishiz'] ?></td>
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosinmunorgimamaiz();" <?php } }?>>        
     
     <div class="containerr3">Inmunohistoquimica Region ganglionar mama izquierda</div>
         <tr>
@@ -589,6 +593,10 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <tr>
         <th id="th">KI-67:</th>
         <td id="td"><?php echo $dataRegistro['ki67rgiz'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">P 53:</th>
+        <td id="td"><?php echo $dataRegistro['p53rgiz'] ?></td>
     </tr>
     <tr>
         <th id="th">Triple negativo:</th>
@@ -818,7 +826,8 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <th id="th">N° de sesiones:</th>
         <td id="td"><?php echo $dataRegistro['numerosesiones']?></td>
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarquimioterapia();" <?php } }?>>        
     
     <div class="containerr3">Quimioterapia</div>
     <tr>
@@ -1023,6 +1032,15 @@ function editardatosinmunomamaderecha() {
 }
 function editardatosinmunorgdmamaderecha() {
     $("#editarInmunohistorgdMamaDer").modal('show');
+}
+function editardatosinmunomamaiz() {
+    $("#editarInmunohistoMamaIz").modal('show');
+}
+function editardatosinmunorgimamaiz(){
+    $("#editarInmunohistoRgizMamaIz").modal('show');
+}
+function editarquimioterapia() {
+    $("#editardatosQuimio").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();
