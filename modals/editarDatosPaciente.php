@@ -1253,7 +1253,7 @@ return false;
                                     <div class="col-md-4">
                                         <strong>Calidad de vida ECOG</strong>
                                         <select name="calidaddevidaecogedit" id="calidaddevidaecogedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['calidadvidaecog']?>" selected><?php echo $dataRegistro['calidadvidaecog']?></option>
+                                            <option value="<?php echo $dataRegistro['calidaddevidaecog']?>" selected><?php echo $dataRegistro['calidaddevidaecog']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripcionecog FROM calidadvidaecog");

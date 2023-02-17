@@ -133,8 +133,8 @@ $hoy = date("Y-m-d");
             
                                 ));
                             }
-                            $sql = $conexionCancer->prepare("INSERT into atencionclinica(fechaatencioninicial, biradsreferencia, biradshraei, lateralidadmama, estadioclinico, etapaclinica, tamaniotumoral, compromisolenfatico, metastasis, calidadvidaecog, mastectoextrainstituto, lateralidadmastectoextrainstituto, fechamastectoextrainstituto, id_usuario)
-                            values(:fechaatencioninicial, :biradsreferencia, :biradshraei, :lateralidadmama, :estadioclinico, :etapaclinica, :tamaniotumoral, :compromisolenfatico, :metastasis, :calidadvidaecog, :mastectoextrainstituto, :lateralidadmastectoextrainstituto, :fechamastectoextrainstituto, :id_usuario)");
+                            $sql = $conexionCancer->prepare("INSERT into atencionclinica(fechaatencioninicial, biradsreferencia, biradshraei, lateralidadmama, estadioclinico, etapaclinica, tamaniotumoral, compromisolenfatico, metastasis, calidaddevidaecog, mastectoextrainstituto, lateralidadmastectoextrainstituto, fechamastectoextrainstituto, id_usuario)
+                            values(:fechaatencioninicial, :biradsreferencia, :biradshraei, :lateralidadmama, :estadioclinico, :etapaclinica, :tamaniotumoral, :compromisolenfatico, :metastasis, :calidaddevidaecog, :mastectoextrainstituto, :lateralidadmastectoextrainstituto, :fechamastectoextrainstituto, :id_usuario)");
 
                             $sql->bindParam(':fechaatencioninicial',$fechaatencioninicial, PDO::PARAM_STR);
                             $sql->bindParam(':biradsreferencia',$biradsreferencia,PDO::PARAM_STR,100);
@@ -145,7 +145,7 @@ $hoy = date("Y-m-d");
                             $sql->bindParam(':tamaniotumoral',$tamaniotumoral,PDO::PARAM_STR,100);
                             $sql->bindParam(':compromisolenfatico',$linfaticonodal,PDO::PARAM_STR,150);
                             $sql->bindParam(':metastasis',$metastasis,PDO::PARAM_STR,150);
-                            $sql->bindParam(':calidadvidaecog',$calidaddevidaecog,PDO::PARAM_STR,100);
+                            $sql->bindParam(':calidaddevidaecog',$calidaddevidaecog,PDO::PARAM_STR,100);
                             $sql->bindParam(':mastectoextrainstituto',$mastectomiaextrainstitucional,PDO::PARAM_STR,10);
                             $sql->bindParam(':lateralidadmastectoextrainstituto',$lateralidadextrainstitucional,PDO::PARAM_STR, 50);
                             $sql->bindParam(':fechamastectoextrainstituto',$fechamastectoextra,PDO::PARAM_STR);
@@ -486,8 +486,8 @@ $hoy = date("Y-m-d");
             
                                 ));
                             }
-                            $sql = $conexionCancer->prepare("INSERT into atencionclinica(fechaatencioninicial, biradsreferencia, biradshraei, lateralidadmama, estadioclinico, etapaclinica, tamaniotumoral, compromisolenfatico, metastasis, calidadvidaecog, mastectoextrainstituto, lateralidadmastectoextrainstituto, fechamastectoextrainstituto, id_usuario)
-                            values(:fechaatencioninicial, :biradsreferencia, :biradshraei, :lateralidadmama, :estadioclinico, :etapaclinica, :tamaniotumoral, :compromisolenfatico, :metastasis, :calidadvidaecog, :mastectoextrainstituto, :lateralidadmastectoextrainstituto, :fechamastectoextrainstituto, :id_usuario)");
+                            $sql = $conexionCancer->prepare("INSERT into atencionclinica(fechaatencioninicial, biradsreferencia, biradshraei, lateralidadmama, estadioclinico, etapaclinica, tamaniotumoral, compromisolenfatico, metastasis, calidaddevidaecog, mastectoextrainstituto, lateralidadmastectoextrainstituto, fechamastectoextrainstituto, id_usuario)
+                            values(:fechaatencioninicial, :biradsreferencia, :biradshraei, :lateralidadmama, :estadioclinico, :etapaclinica, :tamaniotumoral, :compromisolenfatico, :metastasis, :calidaddevidaecog, :mastectoextrainstituto, :lateralidadmastectoextrainstituto, :fechamastectoextrainstituto, :id_usuario)");
 
                             $sql->bindParam(':fechaatencioninicial',$fechaatencioninicial, PDO::PARAM_STR);
                             $sql->bindParam(':biradsreferencia',$biradsreferencia,PDO::PARAM_STR,100);
@@ -498,7 +498,7 @@ $hoy = date("Y-m-d");
                             $sql->bindParam(':tamaniotumoral',$tamaniotumoral,PDO::PARAM_STR,100);
                             $sql->bindParam(':compromisolenfatico',$linfaticonodal,PDO::PARAM_STR,150);
                             $sql->bindParam(':metastasis',$metastasis,PDO::PARAM_STR,150);
-                            $sql->bindParam(':calidadvidaecog',$calidaddevidaecog,PDO::PARAM_STR,100);
+                            $sql->bindParam(':calidaddevidaecog',$calidaddevidaecog,PDO::PARAM_STR,100);
                             $sql->bindParam(':mastectoextrainstituto',$mastectomiaextrainstitucional,PDO::PARAM_STR,10);
                             $sql->bindParam(':lateralidadmastectoextrainstituto',$lateralidadextrainstitucional,PDO::PARAM_STR, 50);
                             $sql->bindParam(':fechamastectoextrainstituto',$fechamastectoextra,PDO::PARAM_STR);

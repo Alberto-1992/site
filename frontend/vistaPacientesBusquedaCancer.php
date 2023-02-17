@@ -357,7 +357,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         
         <tr>
             <th id="th">Calidad de vida ECOG:</th>
-            <td id="td"><?php echo $dataRegistro['calidadvidaecog']?></td>
+            <td id="td"><?php echo $dataRegistro['calidaddevidaecog']?></td>
         </tr>
         <tr>
             <th id="th">Mastectomia extrainstitucional:</th>

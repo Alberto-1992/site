@@ -5,7 +5,7 @@ $hoy = date("Y-m-d");
     extract($_POST);
 
     $sql = $conexionCancer->prepare("UPDATE atencionclinica set fechaatencioninicial = :fechaatencioninicial, biradsreferencia = :biradsreferencia, biradshraei = :biradshraei, lateralidadmama = :lateralidadmama, 
-        estadioclinico = :estadioclinico, etapaclinica = :etapaclinica, tamaniotumoral = :tamaniotumoral, compromisolenfatico = :compromisolenfatico, metastasis = :metastasis, calidadvidaecog = :calidadvidaecog, 
+        estadioclinico = :estadioclinico, etapaclinica = :etapaclinica, tamaniotumoral = :tamaniotumoral, compromisolenfatico = :compromisolenfatico, metastasis = :metastasis, calidaddevidaecog = :calidaddevidaecog, 
         mastectoextrainstituto = :mastectoextrainstituto, lateralidadmastectoextrainstituto = :lateralidadmastectoextrainstituto, fechamastectoextrainstituto = :fechamastectoextrainstituto where id_usuario = :id_usuario");
                         $sql->execute(array(
                             ':fechaatencioninicial'=>$fechaatencioninicialedit,
@@ -17,7 +17,7 @@ $hoy = date("Y-m-d");
                             ':tamaniotumoral'=>$tamaniotumoraledit,
                             ':compromisolenfatico'=>$linfaticonodaledit,
                             ':metastasis'=>$metastasisedit,
-                            ':calidadvidaecog'=>$calidaddevidaecogedit,
+                            ':calidaddevidaecog'=>$calidaddevidaecogedit,
                             ':mastectoextrainstituto'=>$mastectomiaextrainstitucionaledit,
                             ':lateralidadmastectoextrainstituto'=>$lateralidadextrainstitucionaledit,
                             ':fechamastectoextrainstituto'=>$fechamastectoextraedit,
