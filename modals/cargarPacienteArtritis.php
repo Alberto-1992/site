@@ -162,7 +162,7 @@
                                         ANTECEDENTES PERSONALES PATOLÓGICOS
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <strong>Antecedentes Personales Patológicos</strong>
                                         <!-- En el select se deben reemplazar los datos de la tabla 'antecedentescancer' por los siguientes datos,
                                         también debe considerarse que es un múltiple select:

@@ -246,7 +246,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
 
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
    
-    <div class="containerr3">Signos vitales</div>
+    <div class="containerr3">Somatometria</div>
      <tr>
         <th id="th">Talla:</th>
         <td id="td"><?php echo $dataRegistro['talla']?></td></tr>
@@ -713,9 +713,9 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     $id_quiru_mastecto = $row['id_quirurgico'];
     }
     if($row['tipo'] == 'Ganglionar'){
-      $id_quiru_ganglio = $row['id_quirurgico'];  
+        $id_quiru_ganglio = $row['id_quirurgico'];  
     }
-   ?>
+    ?>
         
         
     <tr>
@@ -739,8 +739,8 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <tr>
         <th id="th">Tipo mastectomia:</th>
         <td id="td"><?php
-         require 'conexionCancer.php';
-         $query_s = $conexion2->query("SELECT id_mastecto, tipomastecto, fecha from mastecto where id_tipo = $id_quiru_mastecto");
+            require 'conexionCancer.php';
+            $query_s = $conexion2->query("SELECT id_mastecto, tipomastecto, fecha from mastecto where id_tipo = $id_quiru_mastecto");
         $row_s = mysqli_fetch_assoc($query_s);
         $id_mastecto1 = $row_s['id_mastecto'];
         echo $row_s['tipomastecto'] ;?>
