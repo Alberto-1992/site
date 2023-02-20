@@ -37,7 +37,6 @@
         
         
         $query->execute();
-        $query->setFetchMode(PDO::FETCH_ASSOC);
         while($dataRegistro= $query->fetch())
         { ?>
         
@@ -45,9 +44,10 @@
             <?php
             error_reporting(0);
             $id = $dataRegistro['id'];
-             $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = $id");
-                $sql_busqueda->execute();
-                $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = :id_paciente");
+                $sql_busqueda->execute(array(
+                    ':id_paciente'=>$id
+                ));
                 $validacion = $sql_busqueda->fetch();
                 $validaid = $validacion['id_paciente'];
             ?>
