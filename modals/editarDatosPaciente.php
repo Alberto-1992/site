@@ -2994,7 +2994,7 @@ return false;
                                     <div class="col-md-4">
                                         <strong>N° de sesiones</strong>
                                         <input type="number" id="numerosesionesedit" name="numerosesionesedit"
-                                            class="form-control" value="<?php echo $dataRegistro['numerosesiones']?>">
+                                            class="form-control" value="<?php echo $dataRegistro['numerodesesiones']?>">
                                     </div>
                                 
                                     </div>

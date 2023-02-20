@@ -19,7 +19,7 @@ $sql_r = $conexionCancer->prepare("UPDATE radioterapia SET aplicoradio = :aplico
                             ));
                             $row = $sql_s->fetch();
                             $id_deradio = $row['id_radio'];
-                                    $sql_f = $conexionCancer->query("SELECT id_radio from tiporadioterapia where id_radio = :id_radio");
+                                    $sql_f = $conexionCancer->prepare("SELECT id_radio from tiporadioterapia where id_radio = :id_radio");
                                         $sql_f->execute(array(
                                             ':id_radio'=>$id_deradio
                                         ));
