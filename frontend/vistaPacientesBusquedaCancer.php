@@ -845,6 +845,18 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $dataRegistro['momentodelaqt'];?></td>
     </tr>
     <tr>
+        <th id="th">Hormonoterapia:</th>
+        <td id="td"><?php echo $dataRegistro['hormonoterapia'];?></td>
+    </tr>
+    <tr>
+        <th id="th">Tipo hormonoterapia:</th>
+        <td id="td"><?php echo $dataRegistro['tipohormonoterapia'];?></td>
+    </tr>
+    <tr>
+        <th id="th">Momento hormonoterapia:</th>
+        <td id="td"><?php echo $dataRegistro['momentohormonoterapia'];?></td>
+    </tr>
+    <tr>
         <th id="th">Her 2++</th>
         <td id="td"><?php echo $dataRegistro['her2'];?></td>
     </tr>

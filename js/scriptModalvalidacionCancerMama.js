@@ -971,6 +971,7 @@ $(document).ready(function() {
             $('#ciclosprimerlinea').prop("hidden", false);
             $('#segundalineaqt').prop("hidden", false);
             $('#ciclossegundalinea').prop("hidden", false);
+            $('#hormono').prop('hidden', false);
         } else {
             $('#fechainicioquimio').prop("hidden", true);
             $('#atracicilassi').prop("hidden", true);
@@ -1017,6 +1018,7 @@ $(document).ready(function() {
             $('#segundalinea').prop("selectedIndex", 0);
             $('#ciclosprimerlineaqt').val('');
             $('#ciclossegundalineaqt').val('');
+            $('#hormono').prop('hidden', true);
 
 
 
@@ -1046,6 +1048,9 @@ $(function() {
     $('#segundalinea').prop("selectedIndex", 0);
     $('#ciclosprimerlineaqt').val('');
     $('#ciclossegundalineaqt').val('');
+    $('#hormono').prop('hidden', true);
+
+
 
 
 })
@@ -1072,6 +1077,53 @@ function aplicoher(){
 $(function() {
         $('#esquemaher').prop("hidden", true);
         $('#esquemaherdos').prop("selectedIndex", 0);
+
+
+})
+function aplicohormono() {
+    if ($("#her2").val() === "noaplico") {
+
+        $('#esquemaher').prop("hidden", true);
+        $('#esquemaherdos').prop("selectedIndex", 0);
+    }
+
+}
+
+$(function () {
+    $('#esquemaher').prop("hidden", true);
+    $('#esquemaherdos').prop("selectedIndex", 0);
+
+
+})
+function aplicohormonosi() {
+    if ($("#hormonoterapia1").val() === "Si") {
+
+        $('#tipohormono').prop("hidden", false);
+        $('#tipohormonoterapia').prop("selectedIndex", 0);
+        $('#momentohormono').prop("hidden", false);
+        $('#momentohormonoterapia').prop("selectedIndex", 0);
+
+    }
+
+}
+function aplicohormonono() {
+    if ($("#hormonoterapia2").val() === "No") {
+
+        $('#tipohormono').prop("hidden", true);
+        $('#tipohormonoterapia').prop("selectedIndex", 0);
+        $('#momentohormono').prop("hidden", true);
+        $('#momentohormonoterapia').prop("selectedIndex", 0);
+    }
+
+}
+
+$(function () {
+    $('#esquemaher').prop("hidden", true);
+    $('#esquemaherdos').prop("selectedIndex", 0);
+    $('#tipohormono').prop("hidden", true);
+    $('#tipohormonoterapia').prop("selectedIndex", 0);
+    $('#momentohormono').prop("hidden", true);
+    $('#momentohormonoterapia').prop("selectedIndex", 0);
 
 
 })

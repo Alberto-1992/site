@@ -1778,6 +1778,31 @@
                                             <option value="Paliativo">Paliativo</option>
                                         </select>
                                     </div>
+                                    <fieldset class="col-md-2" id="hormono">
+                                        <strong>Hormonoterapia</strong><br>
+                                        <input type="radio" name="hormonoterapia" id="hormonoterapia1" onclick="aplicohormonosi();" class="check"
+                                            value="Si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="hormonoterapia" id="hormonoterapia2" onclick="aplicohormonono();" class="check"
+                                            checked value="No">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-3" id="tipohormono">
+                                        <strong style="color:red;">Tipo Hormonoterapia</strong>
+                                        <select name="tipohormonoterapia" id="tipohormonoterapia" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Letrazol">Letrazol</option>
+                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Tomoxifeno">Tomoxifeno</option>
+                                            <option value="Exemetastino">Exemetastino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3" id="momentohormono">
+                                        <strong style="color:red;">Momento Hormonoterapia</strong>
+                                        <select name="momentohormonoterapia" id="momentohormonoterapia" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Adyuvante">Adyuvante</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
+                                        </select>
+                                    </div>
                                     <fieldset class="col-md-2" id="quimiono">
                                         <strong>HER 2 +++</strong><br>
                                         <input type="radio" name="her" id="her1" onclick="aplicoher();" class="check"

@@ -2755,6 +2755,33 @@ return false;
                                             <option value="Paliativo">Paliativo</option>
                                         </select>
                                     </div>
+                                    <fieldset class="col-md-2" >
+                                        <strong>Hormonoterapia</strong><br>
+                                        <input type="radio" name="hormonoterapiaedit" id="hormonoterapia1edit" onclick="aplicohormonosiedit();" class="check"
+                                            value="Si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="hormonoterapiaedit" id="hormonoterapia2edit" onclick="aplicohormononoedit();" class="check"
+                                            checked value="No">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-3">
+                                        <strong style="color:red;">Tipo Hormonoterapia</strong>
+                                        <select name="tipohormonoterapiaedit" id="tipohormonoterapiaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Letrazol">Letrazol</option>
+                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Tomoxifeno">Tomoxifeno</option>
+                                            <option value="Exemetastino">Exemetastino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong style="color:red;">Momento Hormonoterapia</strong>
+                                        <select name="momentohormonoterapiaedit" id="momentohormonoterapiaedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['momentohormonoterapia'] ?>"><?php echo $dataRegistro['momentohormonoterapia'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Adyuvante">Adyuvante</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
+                                        </select>
+                                    </div>
                                     <fieldset class="col-md-4">
                                         <strong>HER 2 +++</strong><br>
                                         <input type="radio" name="heredit" id="her1edit" onclick="aplicoher();" class="check"
