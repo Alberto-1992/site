@@ -619,7 +619,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $dataRegistro['fishrgiz'] ?></td>
     </tr></table>
     
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarmolecularmamaderecha();" <?php } }?>>        
     
     <div class="containerr3">Molecular mama derecha</div>
     <tr>
@@ -1025,6 +1025,9 @@ function editarquimioterapia() {
 }
 function editaradioterapia() {
     $("#editardatosRadioterapia").modal('show');
+}
+function editarmolecularmamaderecha() {
+    $("#editardatosMolecular").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();

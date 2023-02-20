@@ -20,12 +20,12 @@ $sql_r = $conexionCancer->prepare("UPDATE radioterapia SET aplicoradio = :aplico
                             $row = $sql_s->fetch();
                             $id_deradio = $row['id_radio'];
 
-                                            $sql = $conexionCancer->prepare("UPDATE tiporadioterapia SET decripcionradio = :decripcionradio, fecharadio = :fecharadio, numerosesiones = :numerosesiones WHERE id_radio = :id_radio");
+                                            $sql = $conexionCancer->prepare("UPDATE tiporadioterapia SET decripcionradio = :decripcionradio, fecharadio = :fecharadio, numerodesesiones = :numerodesesiones WHERE id_radio = :id_radio");
                                                 
                                                         $sql->execute(array(
                                                             ':decripcionradio'=>$aplicoradioterapiaedit,
                                                             ':fecharadio'=>$fechainicioradioedit,
-                                                            ':numerosesiones'=>$numerosesionesedit,
+                                                            ':numerodesesiones'=>$numerosesionesedit,
                                                             ':id_radio'=>$id_deradio
                                                         ));
                                                     

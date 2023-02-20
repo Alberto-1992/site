@@ -3009,3 +3009,140 @@ return false;
                 </div>
             </div>
         </div>
+
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatosMolecular">
+
+<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+
+    <div class="modal-content">
+        <div class="modal-header" id="cabeceraModalMama">
+            
+            <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+        
+        </div>
+        <div class="modal-body">
+
+            <div id="panel_editar">
+
+                <div class="contrato-nuevo">
+                    <div class="modal-body">
+
+                        <!-- form start -->
+                    
+
+                        <form name="editarmolecular" id="editarmolecular" onSubmit="return limpiar()" autocomplete="off">
+                            <div class="form-row">
+                                <div id="mensaje"></div>
+                                <script>
+                                $("#editarmolecular").on("submit", function(e) {
+                                    checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                    e.preventDefault();
+
+                                    var formData = new FormData(document.getElementById(
+                                        "editarmolecular"));
+                                    formData.append("dato", "valor");
+
+                                    $.ajax({
+
+                                        url: "aplicacion/editardatosMolecular.php",
+                                        type: "post",
+                                        dataType: "html",
+                                        data: formData,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        success: function(datos) {
+                                            $("#mensaje").html(datos);
+                                            let id = $("#id_paciente").val();
+                                            let ob = {
+                                                        id: id
+                                                        };
+
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "consultaCancerdeMamaBusqueda.php",
+                                                        data: ob,
+                                                
+                                                    success: function(data) {
+
+                                                        $("#tabla_resultado").html(data);
+                                                        //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                        setTimeout(function(){
+                                                            $("#editardatosMolecular").modal('hide');
+                                                                }, 1500);
+                                                                $("#editardatosMolecular").modal('hide');
+                                                        
+                                                        }
+                                                        
+                                                });
+                                                $("#editardatosMolecular").modal('hide');
+                                        }
+                                    })
+                                })
+                            
+                                
+                                </script> 
+                                <div class="col-md-12">
+                                        <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                    </div>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">MOLECULAR</strong>
+                                    </div>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
+                                        <strong id="titulos">Mama derecha</strong>
+                                    </div>
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal A</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalaedit" id="luminalaedit"
+                                                class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalaedit" id="luminalaedit"
+                                                class="check" checked value="no">   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal B</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalbedit" id="luminalbedit"
+                                                class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalbedit" id="luminalbedit"
+                                                class="check" checked value="no">   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Enriquecido en Her 2 +</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="enriquecidoherdosedit" id="enriquecidoherdosedit"
+                                                class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="enriquecidoherdosedit" id="enriquecidoherdosedit"
+                                                class="check" checked value="no">   
+                                    </fieldset>
+                                    
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Basal</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="basaledit" id="basaledit"
+                                                 class="check" value="si">
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="basaledit" id="basaledit"
+                                                class="check" checked value="no">   
+                                    </fieldset>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
