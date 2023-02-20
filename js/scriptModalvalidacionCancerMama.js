@@ -825,6 +825,7 @@ $(document).ready(function() {
             $('#fechatipoganglio').prop("selectedIndex", 0);
             $('#reconstrucciontipo').prop("selectedIndex", 0);
             $('#lateralidadsegundo').prop("selectedIndex", 0);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
         }
     })
 });
@@ -844,6 +845,7 @@ $(function() {
     $('#fechatipomastecto').prop("selectedIndex", 0);
     $('#fechatipoganglio').prop("selectedIndex", 0);
     $('#lateralidadsegundo').prop("selectedIndex", 0);
+    $('#fechatiporeconstruccion').val('');
 
 })
 /*termina quirurgico*/
@@ -859,11 +861,23 @@ $(document).ready(function() {
             $('#fechatipoganglio').prop("selectedIndex", 0);
             $('#fechatipomastecto').val('');
             $('#fechatipoganglio').val('');
+            $('#reconstruccion').prop("hidden", false);
+            $('#reconstruccionsino').prop("selectedIndex", 0);
+            $('#tiporeconstruccion').prop("hidden", false);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#reconstrucciontipofecha').prop("hidden", false);
+            $('#fechatiporeconstruccion').val('');
         } else {
             $('#tipomastectomia').prop("hidden", true);
             $('#fechatipomastectomia').prop("hidden", true);
             $('#fechatipomastecto').val('');
             $('#fechatipoganglio').val('');
+            $('#reconstruccion').prop("hidden", true);
+            $('#reconstruccionsino').prop("selectedIndex", 0);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#fechatiporeconstruccion').val('');
         
         }
         if ($(this).val() === "Ganglionar") {
@@ -874,6 +888,13 @@ $(document).ready(function() {
             $('#fechatipomastecto').prop("selectedIndex", 0);
             $('#fechatipoganglio').val('');
             $('#fechatipomastecto').val('');
+            $('#reconstruccion').prop("hidden", true);
+            $('#reconstruccionsino').prop("selectedIndex", 0);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#fechatiporeconstruccion').val('');
         } else {
             $('#tipoganglionar').prop("hidden", true);
             $('#fechatipoganglionar').prop("hidden", true);

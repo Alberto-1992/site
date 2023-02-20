@@ -954,6 +954,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogen" id="oncogen" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1046,6 +1047,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenrgd" id="oncogenrgd" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1139,6 +1141,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogeniz" id="oncogeniz" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1232,6 +1235,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenizrgi" id="oncogenizrgi" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1553,7 +1557,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">TRATAMIENTO</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6; ">
+                                    <div class="col-md-12">
                                         <strong>QUIRURGICO</strong>
                                         <select name="quirurgico" id="quirurgico" class="form-control">
                                             <option value="0">Seleccione</option>
@@ -1591,7 +1595,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tipoganglionar">
+                                    <div class="col-md-4" id="tipoganglionar">
                                         <strong>Tipo de ganglionar</strong>
                                         <select name="ganglionartipo" id="ganglionartipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1600,17 +1604,17 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="fechatipomastectomia">
+                                    <div class="col-md-4" id="fechatipomastectomia">
                                         <strong>Fecha</strong>
                                         <input type="date" id="fechatipomastecto" name="fechatipomastecto"
                                             class="form-control">
                                     </div>
-                                    <div class="col-md-3" id="fechatipoganglionar">
+                                    <div class="col-md-4" id="fechatipoganglionar">
                                         <strong>Fecha</strong>
                                         <input type="date" id="fechatipoganglio" name="fechatipoganglio"
                                             class="form-control">
                                     </div>
-                                    <div class="col-md-3" id="reconstruccion">
+                                    <div class="col-md-4" id="reconstruccion">
                                         <strong>Reconstruccion</strong>
                                         <select name="reconstruccionsino" id="reconstruccionsino" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1619,7 +1623,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tiporeconstruccion">
+                                    <div class="col-md-4" id="tiporeconstruccion">
                                         <strong>Tipo</strong>
                                         <select name="reconstrucciontipo" id="reconstrucciontipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1630,7 +1634,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="reconstrucciontipofecha">
+                                    <div class="col-md-4" id="reconstrucciontipofecha">
                                         <strong>Fecha</strong>
                                         <input type="date" id="fechatiporeconstruccion" name="fechatiporeconstruccion"
                                             class="form-control">
@@ -1696,7 +1700,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">QUIMIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6;">
+                                    <div class="col-md-12">
                                         <strong>QUIMIOTERAPIA</strong>
                                         <select name="aplicoquimio" id="aplicoquimio" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1891,7 +1895,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">RADIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6; ">
+                                    <div class="col-md-12">
                                         <strong>RADIOTERAPIA</strong>
                                         <select name="radioterapia" id="radioterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1921,7 +1925,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">BRAQUITERAPIA</strong>
                                     </div>
-                                    <div class="col-md-6" style="color: #BD9FD6; ">
+                                    <div class="col-md-6">
                                         <strong>BRAQUITERAPIA</strong>
                                         <select name="braquiterapia" id="braquiterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
