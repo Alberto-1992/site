@@ -702,9 +702,9 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $dataRegistro['basalrgiz'] ?></td>
     </tr>
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatostratamiento();" <?php } }?>>        
     
-    <div class="containerr3">Tratamiento</div>
+    <div class="containerr3" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatostratamiento();" <?php } }?>>Tratamiento</div>
     
         
         <?php while($row= mysqli_fetch_assoc($sql_q))
@@ -787,25 +787,6 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
         <td id="td"><?php echo $row_q['fecha'] ?></td>
     </tr>
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
-
-    <div class="containerr3">Reconstrucción ganglionar</div>
-    <tr>
-        <th id="th">Reconstruccion:</th>
-        <td id="td"><?php 
-        $query_l = $conexion2->query("SELECT reconstruccion, tiporeconstruccion, fecha from reconstruccion where id_mastecto_ganglio = $id_ganglio1");
-        $row_l = mysqli_fetch_assoc($query_l);
-        echo $row_l['reconstruccion'];?>
-        </td>
-    </tr>
-    <tr>
-        <th id="th">Tipo reconstruccion:</th>
-        <td id="td"><?php echo $row_l['tiporeconstruccion'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Fecha:</th>
-        <td id="td"><?php echo $row_l['fecha']?></td>
-    </tr></table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editaradioterapia();" <?php } }?>>        
     
     <div class="containerr3">Radioterapia</div>
