@@ -54,7 +54,6 @@ left outer join molecularrgd on molecularrgd.id_paciente = dato_usuario.id
 left outer join molecularizquierda on molecularizquierda.id_paciente = dato_usuario.id
 left outer join molecularrgiz on molecularrgiz.id_paciente = dato_usuario.id
 where dato_usuario.id = $id");
-$query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();
 $dataRegistro= $query->fetch();
 if($query != false){
