@@ -35,7 +35,7 @@ $sql_r = $conexionCancer->prepare("UPDATE radioterapia SET aplicoradio = :aplico
                                                             ':id_radio'=>$id_deradio
                                                         ));
                                                     
-                                                            if($sql || $sql_r || $sql_s || $sql_f) {
+                                                            if($sql || $sql_s || $sql_f) {
 
                                                                 $sql = mysqli_affected_rows($conexionCancer);
                                                                 echo "<script>swal({
@@ -69,7 +69,8 @@ $sql_r = $conexionCancer->prepare("UPDATE radioterapia SET aplicoradio = :aplico
                                                                                 ':numerodesesiones'=>$numerosesionesedit,
                                                                                 ':id_radio'=>$id_deradio
                                                                             ));
-                                                                            if($sql || $sql_r || $sql_s || $sql_f) {
+
+                                                                            if($sql || $sql_s || $sql_f) {
 
                                                                                 $sql = mysqli_affected_rows($conexionCancer);
                                                                                 echo "<script>swal({
