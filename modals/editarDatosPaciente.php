@@ -763,7 +763,7 @@ return false;
                                     <div class="col-md-12">
                                             <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
                                         </div>
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
                                         <select id="mspatoedit" name="check_listapatoedit[]" multiple="multiple"
                                             class="form-control">
@@ -778,7 +778,28 @@ return false;
                                             <?php } ?>
 
                                         </select>
-                                    </div>
+                                    </div>-->
+                                
+                                    <fieldset class="col-md-12" style="margin-top: 15px; font-size: 15px;">
+
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Tabaquismo">&nbsp;Tabaquismo&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Hipertencion Arterial">&nbsp;Hipertensión
+                                        Arterial&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Enfermedad Renal Cronica">&nbsp;Enfermedad Renal
+                                        Cronica&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Diabetes Mellitus">&nbsp;Diabetes Mellitus&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Conocida con Gen BRCA 1">&nbsp;Conocida con Gen BRCA
+                                        1&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
+                                        2&nbsp;&nbsp;
+
+                                    </fieldset>
                                     </div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                         </form>

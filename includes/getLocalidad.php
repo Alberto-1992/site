@@ -1,5 +1,5 @@
 <?php
-	require ('../../esclerosis/conexion.php');
+	require ('../conexionCancer.php');
 	
 	$id_municipio = $_POST['id_municipio'];
 	

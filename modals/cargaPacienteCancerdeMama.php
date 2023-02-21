@@ -213,8 +213,8 @@
                                             style="width: 100%;" required>
                                             <option value="Sin registro" selected>Sin registro</option>
                                             <?php 
-				    require '../esclerosis/conexion.php';
-				  $query = "SELECT id_estado, estado FROM t_estado ";
+                                    require 'conexionCancer.php';
+				    $query = "SELECT id_estado, estado FROM t_estado ";
 	                $resultado=$conexion2->query($query);
 				while($row = $resultado->fetch_assoc()) { ?>
                                             <option value="<?php echo $row['id_estado']; ?>">
@@ -417,7 +417,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS</strong>
                                     </div>
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
                                         <select id="mspato" name="check_listapato[]" multiple="multiple"
                                             class="form-control">
@@ -432,8 +432,8 @@
                                             <?php } ?>
 
                                         </select>
-                                    </div>
-                                    <!--
+                                    </div>-->
+                                    
                                     <fieldset class="col-md-12">
 
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
@@ -445,7 +445,7 @@
                                             class="check" value="Enfermedad Renal Cronica">&nbsp;Enfermedad Renal
                                         Cronica&nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
-                                            class="check" value="Diabetes Mellitus">&nbsp;Diabetes Mellitus&nbsp;&nbsp;
+                                            class="check" value="Diabetes Mellitus">&nbsp;Diabetes Mellitus&nbsp;&nbsp;<br>
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Conocida con Gen BRCA 1">&nbsp;Conocida con Gen BRCA
                                         1&nbsp;&nbsp;
@@ -454,7 +454,7 @@
                                         2&nbsp;&nbsp;
 
                                     </fieldset>
-                                    -->
+                                    
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ATENCIÓN CLINICA</strong>
