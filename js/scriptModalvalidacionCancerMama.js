@@ -129,6 +129,15 @@ $(document).ready(function () {
         width: '100%'
     });
 });
+$(document).ready(function () {
+
+    $('#quirurgicotipo').change(function (e) {
+
+
+    }).multipleSelect({
+        width: '100%'
+    });
+});
 
 Date.prototype.toString = function() {
     var anyo = this.getFullYear();
@@ -796,154 +805,10 @@ $(document).ready(function() {
 
 /*termina numero de gestas*/
 /*quirurgico*/
-$(document).ready(function() {
 
-    $('#quirurgico').change(function(e) {
-        if ($(this).val() === "Si") {
-
-            $('#tipoquirurgico').prop("hidden", false);
-            $('#reconstruccion').prop("hidden", false);
-            $('#lateralidad').prop("hidden", false);
-            $("#guardaApartado").prop("hidden", false);
-
-        } else if ($(this).val() === "No") {
-            $('#tipoquirurgico').prop("hidden", true);
-            $('#tipomastectomia').prop("hidden", true);
-            $('#reconstruccion').prop("hidden", true);
-            $('#tipoganglionar').prop("hidden", true);
-            $('#tiporeconstruccion').prop("hidden", true);
-            $('#fechatipomastectomia').prop("hidden", true);
-            $('#fechatipoganglionar').prop("hidden", true);
-            $("#guardaApartado").prop("hidden", true);
-            $('#lateralidad').prop("hidden", true);
-            $('#fechatiporeconstruccion').val('');
-            $('#reconstrucciontipofecha').prop('hidden', true);
-            $('#quirurgicotipo').prop('selectedIndex',0);
-            $('#mastectomiatipo').prop("selectedIndex", 0);
-            $('#reconstruccionsino').prop("selectedIndex", 0);
-            $('#fechatipomastecto').prop("selectedIndex", 0);
-            $('#fechatipoganglio').prop("selectedIndex", 0);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-            $('#lateralidadsegundo').prop("selectedIndex", 0);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-        }
-    })
-});
-
-$(function() {
-    $('#tipoquirurgico').prop("hidden", true);
-    $('#tipomastectomia').prop("hidden", true);
-    $('#reconstruccion').prop("hidden", true);
-    $('#tipoganglionar').prop("hidden", true);
-    $('#tiporeconstruccion').prop("hidden", true);
-    $('#lateralidad').prop("hidden", true);
-    $('#reconstrucciontipofecha').prop("hidden", true);
-    $("#guardaApartado").prop("hidden", true);
-    $('#quirurgicotipo').prop('selectedIndex',0);
-    $('#mastectomiatipo').prop("selectedIndex", 0);
-    $('#reconstruccionsino').prop("selectedIndex", 0);
-    $('#fechatipomastecto').prop("selectedIndex", 0);
-    $('#fechatipoganglio').prop("selectedIndex", 0);
-    $('#lateralidadsegundo').prop("selectedIndex", 0);
-    $('#fechatiporeconstruccion').val('');
-
-})
-/*termina quirurgico*/
-/*mastectomia ganglionar*/
-$(document).ready(function() {
-
-    $('#quirurgicotipo').change(function(e) {
-        if ($(this).val() === "Mastectomia") {
-
-            $('#tipomastectomia').prop("hidden", false);
-            $('#fechatipomastectomia').prop("hidden", false);
-            $('#ganglionartipo').prop("selectedIndex", 0);
-            $('#fechatipoganglio').prop("selectedIndex", 0);
-            $('#fechatipomastecto').val('');
-            $('#fechatipoganglio').val('');
-            $('#reconstruccion').prop("hidden", false);
-            $('#reconstruccionsino').prop("selectedIndex", 0);
-            $('#tiporeconstruccion').prop("hidden", false);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-            $('#reconstrucciontipofecha').prop("hidden", false);
-            $('#fechatiporeconstruccion').val('');
-        } else {
-            $('#tipomastectomia').prop("hidden", true);
-            $('#fechatipomastectomia').prop("hidden", true);
-            $('#fechatipomastecto').val('');
-            $('#fechatipoganglio').val('');
-            $('#reconstruccion').prop("hidden", true);
-            $('#reconstruccionsino').prop("selectedIndex", 0);
-            $('#tiporeconstruccion').prop("hidden", true);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-            $('#reconstrucciontipofecha').prop("hidden", true);
-            $('#fechatiporeconstruccion').val('');
-        
-        }
-        if ($(this).val() === "Ganglionar") {
-
-            $('#tipoganglionar').prop("hidden", false);
-            $('#fechatipoganglionar').prop("hidden", false);
-            $('#mastectomiatipo').prop("selectedIndex", 0);
-            $('#fechatipomastecto').prop("selectedIndex", 0);
-            $('#fechatipoganglio').val('');
-            $('#fechatipomastecto').val('');
-            $('#reconstruccion').prop("hidden", true);
-            $('#reconstruccionsino').prop("selectedIndex", 0);
-            $('#tiporeconstruccion').prop("hidden", true);
-            $('#tiporeconstruccion').prop("hidden", true);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-            $('#reconstrucciontipofecha').prop("hidden", true);
-            $('#fechatiporeconstruccion').val('');
-        } else {
-            $('#tipoganglionar').prop("hidden", true);
-            $('#fechatipoganglionar').prop("hidden", true);
-            $('#fechatipoganglio').val('');
-            $('#fechatipomastecto').val('');
-        
-        }
-    })
-});
-
-$(function() {
-    $('#tipomastectomia').prop("hidden", true);
-    $('#tipoganglionar').prop("hidden", true);
-    $('#fechatipomastectomia').prop("hidden", true);
-    $('#fechatipoganglionar').prop("hidden", true);
-    $('#fechatipoganglio').val('');
-    $('#fechatipomastecto').val('');
-
-
-})
 /*termina mastectomia ganglionar*/
 /*tipo reconstruccion*/
-$(document).ready(function() {
 
-    $('#reconstruccionsino').change(function(e) {
-        if ($(this).val() === "Si") {
-
-            $('#tiporeconstruccion').prop("hidden", false);
-            $('#reconstrucciontipofecha').prop("hidden", false);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-        } else {
-            $('#tiporeconstruccion').prop("hidden", true);
-            $('#reconstrucciontipofecha').prop("hidden", true);
-            $('#reconstrucciontipo').prop("selectedIndex", 0);
-            $('#fechatiporeconstruccion').val('');
-        
-        }
-    
-    })
-});
-
-$(function() {
-    $('#tiporeconstruccion').prop("hidden", true);
-    $('#reconstrucciontipofecha').prop("hidden", true);
-    $('#reconstrucciontipo').prop("selectedIndex", 0);
-    $('#fechatiporeconstruccion').val('');
-
-
-})
 /*termina tipo reconstruccion*/
 
 /*inicia aplicacion quimioterapia*/
@@ -1552,6 +1417,163 @@ $(document).ready(function () {
 
     })
 });
+/*quirurgico tipo*/
+$(document).ready(function () {
+    $("#quirurgico").change(function (e) {
+
+        if (quirurgico.options[1].selected == true) {
+
+            $('#lateralidad').prop("hidden", false);
+            $('#tipoquirurgico').prop("hidden", true);
+
+
+        } else if (quirurgico.options[2].selected == true) {
+
+            $('#lateralidad').prop("hidden", true);
+            $('#tipoquirurgico').prop("hidden", true);
+            $('#tipomastectomia').prop("hidden", true);
+            $('#fechatipomastectomia').prop("hidden", true);
+            $('#reconstruccion').prop("hidden", true);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#mastectomiatipo').prop("selectedIndex", 0);
+            $('#fechatipomastecto').val('');
+            $('#reconstruccionsino').prop("selectedIndex", 0);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#fechatiporeconstruccion').val('');
+            $('#tipoganglionar').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#lateralidadsegundo').prop("selectedIndex", 0);
+            $('#tipoganglionar').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#ganglionartipo').prop("selectedIndex", 0);
+            $('#fechatipoganglio').val('');
+
+
+
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#lateralidadsegundo").change(function (e) {
+
+        if (lateralidadsegundo.options[1].selected == true || lateralidadsegundo.options[2].selected == true || lateralidadsegundo.options[3].selected == true) {
+
+            $('#tipoquirurgico').prop("hidden", false);
+
+
+        } else if (lateralidadsegundo.options[0].selected == true) {
+            $('#tipoquirurgico').prop("hidden", true);
+            $('#tipomastectomia').prop("hidden", true);
+            $('#fechatipomastectomia').prop("hidden", true);
+            $('#reconstruccion').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#tipoganglionar').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#fechatipoganglio').val('');
+            $('#fechatipomastecto').val('');
+        }
+    })
+});
+$(document).ready(function () {
+    $("#quirurgicotipo").change(function (e) {
+
+        if (quirurgicotipo.options[1].selected == true) {
+
+            $('#tipomastectomia').prop("hidden", false);
+            $('#fechatipomastectomia').prop("hidden", false);
+            $('#reconstruccion').prop("hidden", false);
+
+
+        } else if (quirurgicotipo.options[1].selected == false) {
+            $('#tipomastectomia').prop("hidden", true);
+            $('#fechatipomastectomia').prop("hidden", true);
+            $('#reconstruccion').prop("hidden", true);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#mastectomiatipo').prop("selectedIndex", 0);
+            $('#fechatipomastecto').val('');
+            $('#reconstruccionsino').prop("selectedIndex", 0);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#fechatiporeconstruccion').val('');
+
+        }
+        if (quirurgicotipo.options[2].selected == true && quirurgicotipo.options[1].selected == true) {
+
+            $('#tipoganglionar').prop("hidden", false);
+            $('#fechatipoganglionar').prop("hidden", false);
+        } else if (quirurgicotipo.options[2].selected == false) {
+            $('#tipoganglionar').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#ganglionartipo').prop("selectedIndex", 0);
+            $('#fechatipoganglio').val('');
+
+        } else if (quirurgicotipo.options[2].selected == true) {
+
+            $('#tipoganglionar').prop("hidden", false);
+            $('#fechatipoganglionar').prop("hidden", false);
+            $('#ganglionartipo').prop("selectedIndex", 0);
+            $('#fechatipoganglio').val('');
+            $('#reconstruccion').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+
+        }
+        if (quirurgicotipo.options[0].selected == true) {
+
+            $('#tipomastectomia').prop("hidden", true);
+            $('#fechatipomastectomia').prop("hidden", true);
+            $('#reconstruccion').prop("hidden", true);
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#tipoganglionar').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#reconstrucciontipofecha').prop("hidden", true);
+            $('#fechatipoganglionar').prop("hidden", true);
+            $('#fechatipoganglio').val('');
+            $('#fechatipomastecto').val('');
+
+
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#reconstruccionsino").change(function (e) {
+
+        if (reconstruccionsino.options[1].selected == true) {
+
+            $('#tiporeconstruccion').prop("hidden", false);
+            $('#reconstrucciontipofecha').prop("hidden", false);
+
+
+        } else if (reconstruccionsino.options[1].selected == false) {
+            $('#tiporeconstruccion').prop("hidden", true);
+            $('#reconstrucciontipo').prop("selectedIndex", 0);
+            $('#fechatiporeconstruccion').val('');
+            $('#reconstrucciontipofecha').prop("hidden", true);
+
+        }
+    })
+});
+$(function () {
+    $('#lateralidad').prop("hidden", true);
+    $('#tipoquirurgico').prop("hidden", true);
+    $('#tipoganglionar').prop("hidden", true);
+    $('#tipomastectomia').prop("hidden", true);
+    $('#fechatipomastectomia').prop("hidden", true);
+    $('#fechatipoganglionar').prop("hidden", true);
+    $('#reconstruccion').prop("hidden", true);
+    $('#tiporeconstruccion').prop("hidden", true);
+    $('#reconstrucciontipofecha').prop("hidden", true);
+    $('#fechatipoganglio').val('');
+    $('#fechatipomastecto').val('');
+
+
+})
+/*finaliza quirurgico tipo*/
 $(document).ready(function () {
     $("#mamaseleccion").change(function (e) {
 

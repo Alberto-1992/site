@@ -798,6 +798,8 @@ return false;
                                         <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;
 
                                     </fieldset>
                                     </div>

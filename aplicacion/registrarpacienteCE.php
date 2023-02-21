@@ -30,39 +30,10 @@ $hoy = date("d-m-Y");
                     $rows = mysqli_fetch_assoc($query);
 
                     $id_carga = $rows['id'];
-                $query2 = $conexionCancer->prepare("INSERT into tratamiento(
-                killipkimball, 
-                fevi, 
-                choquecardiogenico, 
-                revascularizacionprevia, 
-                localizacion, 
-                caracteristicasdolor, 
-                iniciosintomas, 
-                primercontacto, 
-                puertabalon, 
-                trombolisis, 
-                fechainiciotrombolisis, 
-                fechaterminotrombolisis, 
-                tipofibrinolitico, 
-                tiempoisquemiatotal, 
-                revascularizacion, 
-                diseccion, 
-                iam_periprocedimiento, 
-                complicaciones, 
-                flujo_microvascular_tmp, 
-                flujo_final_tfj, 
-                trombosis_definitiva, 
-                marcapasos_temporal, 
-                estancia_hospitalaria, 
-                reestenosis_instrastent, 
-                reehospitalizacion_one_year, 
-                escalas_riesgo, 
-                iam_tres_years, 
-                cruc_tres_years, 
-                defuncion, 
-                causadefuncion, 
-                id_paciente, 
-                identificador, 
+                $query2 = $conexionCancer->prepare("INSERT into tratamiento(killipkimball, fevi, choquecardiogenico, revascularizacionprevia, localizacion, caracteristicasdolor, 
+                iniciosintomas, primercontacto, puertabalon, trombolisis, fechainiciotrombolisis, fechaterminotrombolisis, tipofibrinolitico, tiempoisquemiatotal, revascularizacion, 
+                diseccion, iam_periprocedimiento, complicaciones, flujo_microvascular_tmp, flujo_final_tfj, trombosis_definitiva, marcapasos_temporal, estancia_hospitalaria, reestenosis_instrastent, 
+                reehospitalizacion_one_year, escalas_riesgo, iam_tres_years, cruc_tres_years, defuncion, causadefuncion, id_paciente, identificador, 
                 peso, talla, imc, electroconcambios, seguimiento)
                                     values(:killipkimball, 
                                     :fevi,
@@ -98,43 +69,44 @@ $hoy = date("d-m-Y");
                                     :identificador, 
                                     :peso, 
                                     :talla, :imc, :electroconcambios, 'inicial')");
-                            $query2->bindParam(':killipkimball',$killip, PDO::PARAM_STR, 5);
-                            $query2->bindParam(':fevi',$fevi, PDO::PARAM_STR. 30); 
-                            $query2->bindParam(':choquecardiogenico',$choque, PDO::PARAM_STR, 5);
-                            $query2->bindParam(':revascularizacionprevia',$revascularizacionprevia, PDO::PARAM_STR, 5);
-                            $query2->bindParam(':localizacion',$localizacion, PDO::PARAM_STR, 30);
-                            $query2->bindParam(':caracteristicasdolor',$caractipicasatipicas, PDO::PARAM_STR, 50);
-                            $query2->bindParam(':iniciosintomas',$iniciotrombolisis, PDO::PARAM_STR);
-                            $query2->bindParam(':primercontacto',$primercontacto, PDO::PARAM_STR);
-                            $query2->bindParam(':puertabalon',$puertabalon, PDO::PARAM_STR);
-                            $query2->bindParam(':trombolisis',$trombolisis, PDO::PARAM_STR, 10);
-                            $query2->bindParam(':fechainiciotrombolisis',$iniciotrombolisis, PDO::PARAM_STR);
-                            $query2->bindParam(':fechaterminotrombolisis',$finalizotrombolisis, PDO::PARAM_STR);
-                            $query2->bindParam(':tipofibrinolitico',$fibrinoliticos, PDO::PARAM_STR, 50);
-                            $query2->bindParam(':tiempoisquemiatotal',$tiempoisquemia, PDO::PARAM_STR, 50);
-                            $query2->bindParam(':revascularizacion',$revascularizacion, PDO::PARAM_STR. 30);
-                            $query2->bindParam(':diseccion',$diseccion, PDO::PARAM_STR, 30);
-                            $query2->bindParam(':iam_periprocedimiento',$iamperiprocedimiento, PDO::PARAM_STR,10);
-                            $query2->bindParam(':complicaciones',$complicaciones, PDO::PARAM_STR, 50);
-                            $query2->bindParam(':flujo_microvascular_tmp',$flujomicrovasculartmp, PDO::PARAM_STR, 10);
-                            $query2->bindParam(':flujo_final_tfj',$flujofinaltfg, PDO::PARAM_STR, 10);
-                            $query2->bindParam(':trombosis_definitiva',$trombosisdefinitiva, PDO::PARAM_STR, 10);
-                            $query2->bindParam(':marcapasos_temporal',$marcapasostemporal, PDO::PARAM_STR, 10);
-                            $query2->bindParam(':estancia_hospitalaria',$estanciahospitalaria, PDO::PARAM_STR,20);
-                            $query2->bindParam(':reestenosis_instrastent',$reesentosis, PDO::PARAM_STR,10);
-                            $query2->bindParam(':reehospitalizacion_one_year',$rehospitalizacion, PDO::PARAM_STR,10);
-                            $query2->bindParam(':escalas_riesgo',$escaladeriesgo, PDO::PARAM_STR,30);
-                            $query2->bindParam(':iam_tres_years',$iamtresyears, PDO::PARAM_STR,10);
-                            $query2->bindParam(':cruc_tres_years',$cruc, PDO::PARAM_STR,10);
-                            $query2->bindParam(':defuncion',$defuncion, PDO::PARAM_STR,50);
-                            $query2->bindParam(':causadefuncion',$causadefuncion, PDO::PARAM_STR,40);
-                            $query2->bindParam(':id_paciente',$id_carga,PDO::PARAM_INT); 
-                            $query2->bindParam(':identificador', $identificador, PDO::PARAM_STR, 25);
-                            $query2->bindParam(':peso',$peso,   PDO::PARAM_STR);
-                            $query2->bindParam(':talla',$talla, PDO::PARAM_STR);
-                            $query2->bindParam(':imc',$imc, PDO::PARAM_STR);
-                            $query2->bindParam(':electroconcambios',$electrocardio, PDO::PARAM_STR);
-                    $query2->execute();
+                        $query2->execute(array(
+                            ':killipkimball'=>$killip,
+                            ':fevi'=>$fevi,
+                            ':choquecardiogenico'=>$choque,
+                            ':revascularizacionprevia'=>$revascularizacionprevia,
+                            ':localizacion'=>$localizacion,
+                            ':caracteristicasdolor'=>$caractipicasatipicas,
+                            ':iniciosintomas'=>$iniciotrombolisis,
+                            ':primercontacto'=>$primercontacto,
+                            ':puertabalon'=>$puertabalon,
+                            ':trombolisis'=>$trombolisis,
+                            ':fechainiciotrombolisis'=>$iniciotrombolisis,
+                            ':fechaterminotrombolisis'=>$finalizotrombolisis,
+                            ':tipofibrinolitico'=>$fibrinoliticos,
+                            ':tiempoisquemiatotal'=>$tiempoisquemia,
+                            ':revascularizacion'=>$revascularizacion,
+                            ':diseccion'=>$diseccion,
+                            ':iam_periprocedimiento'=>$iamperiprocedimiento,
+                            ':complicaciones'=>$complicaciones,
+                            ':flujo_microvascular_tmp'=>$flujomicrovasculartmp,
+                            ':flujo_final_tfj'=>$flujofinaltfg,
+                            ':trombosis_definitiva'=>$trombosisdefinitiva,
+                            ':marcapasos_temporal'=>$marcapasostemporal,
+                            ':estancia_hospitalaria'=>$estanciahospitalaria,
+                            ':reestenosis_instrastent'=>$reesentosis,
+                            ':reehospitalizacion_one_year'=>$rehospitalizacion,
+                            ':escalas_riesgo'=>$escaladeriesgo,
+                            ':iam_tres_years'=>$iamtresyears,
+                            ':cruc_tres_years'=>$cruc,
+                            ':defuncion'=>$defuncion,
+                            ':causadefuncion'=>$causadefuncion,
+                            ':id_paciente'=>$id_carga,
+                            ':identificador'=> $identificador,
+                            ':peso'=>$peso,
+                            ':talla'=>$talla, 
+                            ':imc'=>$imc, 
+                            ':electroconcambios'=>$electrocardio
+                            ));
 
                     $sql_s = $conexionCancer->prepare("INSERT into paraclinicos(
                         ck, 

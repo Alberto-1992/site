@@ -452,6 +452,8 @@
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
+                                            class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;
 
                                     </fieldset>
                                     
@@ -1578,7 +1580,7 @@
                                     </div>
                                     <div class="col-md-4" id="tipoquirurgico">
                                         <strong>Tipo</strong>
-                                        <select name="quirurgicotipo" id="quirurgicotipo" class="form-control">
+                                        <select name="quirurgicotipo[]" id="quirurgicotipo" multiple="multiple" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Mastectomia">Mastectomia</option>
                                             <option value="Ganglionar">Ganglionar</option>
@@ -1595,22 +1597,23 @@
 
                                         </select>
                                     </div>
+                                    <div class="col-md-4" id="fechatipomastectomia">
+                                        <strong>Fecha mastectomia</strong>
+                                        <input type="date" id="fechatipomastecto" name="fechatipomastecto"
+                                            class="form-control">
+                                    </div>
                                     <div class="col-md-4" id="tipoganglionar">
                                         <strong>Tipo de ganglionar</strong>
-                                        <select name="ganglionartipo" id="ganglionartipo" class="form-control">
+                                        <select name="ganglionartipo" id="ganglionartipo"  class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="GANGLIO CENTINELA">GANGLIO CENTINELA</option>
                                             <option value="DISECCION AXILAR">DISECCION AXILAR</option>
 
                                         </select>
                                     </div>
-                                    <div class="col-md-4" id="fechatipomastectomia">
-                                        <strong>Fecha</strong>
-                                        <input type="date" id="fechatipomastecto" name="fechatipomastecto"
-                                            class="form-control">
-                                    </div>
+                                    
                                     <div class="col-md-4" id="fechatipoganglionar">
-                                        <strong>Fecha</strong>
+                                        <strong>Fecha ganglionar</strong>
                                         <input type="date" id="fechatipoganglio" name="fechatipoganglio"
                                             class="form-control">
                                     </div>
@@ -1624,7 +1627,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="tiporeconstruccion">
-                                        <strong>Tipo</strong>
+                                        <strong>Tipo Reconstrucción</strong>
                                         <select name="reconstrucciontipo" id="reconstrucciontipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Expansor tisular">Expansor tisular</option>
@@ -1635,12 +1638,12 @@
                                     </div>
 
                                     <div class="col-md-4" id="reconstrucciontipofecha">
-                                        <strong>Fecha</strong>
+                                        <strong>Fecha Reconstrucción</strong>
                                         <input type="date" id="fechatiporeconstruccion" name="fechatiporeconstruccion"
                                             class="form-control">
                                     </div>
                                     <div class="col-md-12"></div>
-                                    <input type="button" name="enviar" value="Guardar Tratamiento" onclick="Hola();"
+                                    <!--<input type="button" name="enviar" value="Guardar Tratamiento" onclick="Hola();"
                                         id="guardaApartado"
                                         style="width: 170px; height: 27px; font-size: 12px; color: white; background-color: #00B6FF; margin-left: auto; margin-right: auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                                     <script>
@@ -1694,7 +1697,7 @@
                                             }
                                         });
                                     }
-                                    </script>
+                                    </script>-->
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
