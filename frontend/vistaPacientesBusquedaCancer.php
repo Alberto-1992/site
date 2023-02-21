@@ -12,6 +12,7 @@ date_default_timezone_set('America/Monterey');
             $id = $dataRegistro['id_paciente'];
             $municipio = $dataRegistro['municipio'];
             $estado = $dataRegistro['estado'];
+            $idquirurgico = $dataRegistro['id_quirurgico'];
             require 'conexionCancer.php';
             
             $clues = $dataRegistro['clues'];
@@ -49,14 +50,14 @@ date_default_timezone_set('America/Monterey');
             and id_paciente = $id_paciente
             ORDER BY id_paciente");
             
-            $sql_q = $conexion2->query("SELECT id_quirurgico, realizoquirurgico, lateralidad, tipo, curpusuario 
-            FROM quirurgico 
-            WHERE curpusuario
-            IN (SELECT curpusuario FROM quirurgico
-            GROUP BY curpusuario
-            HAVING count(curpusuario) >= 1)
-            and curpusuario = '$curp'
-            ORDER BY curpusuario");
+            $sql_q = $conexion2->query("SELECT id_quirurgico, descripciontipoquirurgico
+            FROM quirugicotipo 
+            WHERE id_paciente
+            IN (SELECT id_quirurgico FROM quirurgicotipo
+            GROUP BY id_quirurgico
+            HAVING count(id_quirurgico) >= 1)
+            and id_quirurgico = '$idquirurgico'
+            ORDER BY id_quirurgico");
             
                 
                 
@@ -704,33 +705,16 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatostratamiento();" <?php } }?>>        
     
-    <div class="containerr3" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatostratamiento();" <?php } }?>>Tratamiento</div>
+    <div class="containerr3" >Tratamiento</div>
     
-        
-        <?php while($row= mysqli_fetch_assoc($sql_q))
-{
-    if($row['tipo'] == 'Mastectomia'){
-    $id_quiru_mastecto = $row['id_quirurgico'];
-    }
-    if($row['tipo'] == 'Ganglionar'){
-        $id_quiru_ganglio = $row['id_quirurgico'];  
-    }
-    ?>
-        
-        
     <tr>
     <th id="th">Quirurgico:</th>
-    <td id="td"><?php echo $row['realizoquirurgico'] ?></td>
+    <td id="td"><?php echo $dataRegistro['realizoquirurgico'] ?></td>
     </tr>
     <tr>
         <th id="th">Lateralidad:</th>
-        <td id="td"><?php echo $row['lateralidad'] ?></td>
+        <td id="td"><?php echo $dataRegistro['lateralidad'] ?></td>
     </tr>
-    <tr>
-        <th id="th">Tipo:</th>
-        <td id="td"><?php echo $row['tipo']; }?></td>
-    </tr>
-    
 
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -738,33 +722,24 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <div class="containerr3">Mastectomia</div>
     <tr>
         <th id="th">Tipo mastectomia:</th>
-        <td id="td"><?php
-            require 'conexionCancer.php';
-            $query_s = $conexion2->query("SELECT id_mastecto, tipomastecto, fecha from mastecto where id_tipo = $id_quiru_mastecto");
-        $row_s = mysqli_fetch_assoc($query_s);
-        $id_mastecto1 = $row_s['id_mastecto'];
-        echo $row_s['tipomastecto'] ;?>
+        <td id="td"><?php echo $dataRegistro['tipomastecto'] ;?>
         </td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $row_s['fecha'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fecha'] ?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
     <div class="containerr3">Ganglionar</div>
     <tr>
         <th id="th">Tipo ganglionar:</th>
-        <td id="td"><?php 
-        $query_r = $conexion2->query("SELECT id_ganglionar, tipoganglionar, fecha from ganglionar where id_tipo = $id_quiru_ganglio");
-        $row_r = mysqli_fetch_assoc($query_r);
-        $id_ganglio1 = $row_r['id_ganglionar'];
-        echo $row_r['tipoganglionar'] ;?>
+        <td id="td"><?php echo $dataRegistro['tipoganglionar'] ;?>
         </td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $row_r['fecha']?></td>
+        <td id="td"><?php echo $dataRegistro['fecha']?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -772,19 +747,16 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     <div class="containerr3">Reconstrucción mastectomia</div>
     <tr>
         <th id="th">Reconstruccion:</th>
-        <td id="td"><?php 
-        $query_q = $conexion2->query("SELECT reconstruccion, tiporeconstruccion, fecha from reconstruccion where id_mastecto_ganglio = $id_mastecto1");
-        $row_q = mysqli_fetch_assoc($query_q);
-        echo $row_q['reconstruccion'];?>
+        <td id="td"><?php echo $dataRegistro['reconstruccion'];?>
         </td>
     </tr>
     <tr>
         <th id="th">Tipo reconstruccion:</th>
-        <td id="td"><?php echo $row_q['tiporeconstruccion'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tiporeconstruccion'] ?></td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $row_q['fecha'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fecha'] ?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editaradioterapia();" <?php } }?>>        

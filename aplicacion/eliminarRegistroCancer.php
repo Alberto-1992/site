@@ -10,17 +10,17 @@ date_default_timezone_set("America/Monterrey");
     $nombrepaciente = $_POST['nombrepaciente'];
     $hora = date("Y-m-d h:i:sa");
         
-    $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
+    /*$sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
                 $row = mysqli_fetch_assoc($sql);
-                $curpusuario = $row['curp'];
+                $curpusuario = $row['curp'];*/
 
         $sql = $conexionCancer->prepare("DELETE from dato_usuario where id = :id");
             $sql->bindParam(':id',$id, PDO::PARAM_INT);
             $sql->execute();
 
-            $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
+            /*$sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
             $sql->bindParam(':curpusuario',$curpusuario, PDO::PARAM_STR);
-            $sql->execute();
+            $sql->execute();*/
             
 
             
@@ -58,17 +58,17 @@ echo "<script>swal({
     $nombrepaciente = $_POST['nombrepaciente'];
      $hora = date("Y-m-d h:i:sa");
         
-     $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
+    /* $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
                 $row = mysqli_fetch_assoc($sql);
-                $curpusuario = $row['curp'];
+                $curpusuario = $row['curp'];*/
 
         $sql = $conexionCancer->prepare("DELETE from dato_usuario where id = :id");
             $sql->bindParam(':id',$id, PDO::PARAM_INT);
             $sql->execute();
 
-            $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
+           /* $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
             $sql->bindParam(':curpusuario',$curpusuario, PDO::PARAM_STR);
-            $sql->execute();
+            $sql->execute();*/
             
             $sql = $conexionCancer->prepare("INSERT INTO registroeliminado(detalleregistro, usuarioelimino, fechahoraelimino, nombrepaciente) values(:detalleregistro, :usuarioelimino, :fechahoraelimino, :nombrepaciente)");
                 $sql->bindParam(':detalleregistro',$cancer, PDO::PARAM_STR);
@@ -104,17 +104,17 @@ echo "<script>swal({
     $nombrepaciente = $_POST['nombrepaciente'];
      $hora = date("Y-m-d h:i:sa");
         
-     $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
+    /* $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
                 $row = mysqli_fetch_assoc($sql);
-                $curpusuario = $row['curp'];
+                $curpusuario = $row['curp'];*/
 
         $sql = $conexionCancer->prepare("DELETE from dato_usuario where id = :id");
             $sql->bindParam(':id',$id, PDO::PARAM_INT);
             $sql->execute();
 
-            $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
+           /* $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
             $sql->bindParam(':curpusuario',$curpusuario, PDO::PARAM_STR);
-            $sql->execute();
+            $sql->execute();*/
             
             $sql = $conexionCancer->prepare("INSERT INTO registroeliminado(detalleregistro, usuarioelimino, fechahoraelimino, nombrepaciente) values(:detalleregistro, :usuarioelimino, :fechahoraelimino, :nombrepaciente)");
                 $sql->bindParam(':detalleregistro',$cancer, PDO::PARAM_STR);
