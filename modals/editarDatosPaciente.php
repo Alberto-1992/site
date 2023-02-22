@@ -3411,12 +3411,9 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">MOLECULAR</strong>
+                                        <strong id="titulos">MOLECULAR MAMA DERECHA</strong>
                                     </div>
-                                    <div class="col-md-12"
-                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
-                                        <strong id="titulos">Mama derecha</strong>
-                                    </div>
+                                    
                                     <fieldset class="col-md-3">
                                             <strong>&nbsp;&nbsp;Luminal A</strong><br>
                                             &nbsp;<strong>Si</strong>
@@ -3556,12 +3553,9 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">MOLECULAR</strong>
+                                        <strong id="titulos">MOLECULAR MAMA IZQUIERDA</strong>
                                     </div>
-                                    <div class="col-md-12"
-                                        style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px; font-size: 0px;">
-                                        <strong id="titulos">Mama izquierda</strong>
-                                    </div>
+                                    
                                     <fieldset class="col-md-3">
                                             <strong>&nbsp;&nbsp;Luminal A</strong><br>
                                             &nbsp;<strong>Si</strong>
