@@ -663,7 +663,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
    
     </table>
     
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarmolecularmamaizquierda();" <?php } }?>>        
     
     <div class="containerr3">Molecular mama izquierda</div>
         <tr>
@@ -1012,6 +1012,9 @@ function editaradioterapia() {
 }
 function editarmolecularmamaderecha() {
     $("#editardatosMolecular").modal('show');
+}
+function editarmolecularmamaizquierda() {
+    $("#editardatosMolecularMamaIz").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();
