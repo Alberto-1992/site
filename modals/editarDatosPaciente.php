@@ -3375,8 +3375,11 @@ $('#mstectoextra2edit').prop("hidden", true);
                                         cache: false,
                                         contentType: false,
                                         processData: false,
+                                    
                                         success: function(datos) {
+                                            
                                             $("#mensaje").html(datos);
+                                            
                                             let id = $("#id_paciente").val();
                                             let ob = {
                                                         id: id
@@ -3386,7 +3389,6 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                         type: "POST",
                                                         url: "consultaCancerdeMamaBusqueda.php",
                                                         data: ob,
-                                                
                                                     success: function(data) {
 
                                                         $("#tabla_resultado").html(data);
