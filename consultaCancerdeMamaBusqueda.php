@@ -28,7 +28,10 @@ defencionpaciente.*,
 molecular.*,
 molecularrgd.*,
 molecularizquierda.*,
-molecularrgiz.*
+molecularrgiz.*,
+quirurgico.*,
+mastecto_gaglionar.*,
+reconstruccion.*
 FROM dato_usuario 
 left outer join antecedentesgineco on antecedentesgineco.id_paciente = dato_usuario.id
 left outer join signosvitales on signosvitales.id_paciente = dato_usuario.id
@@ -53,8 +56,10 @@ left outer join molecular on molecular.id_paciente = dato_usuario.id
 left outer join molecularrgd on molecularrgd.id_paciente = dato_usuario.id
 left outer join molecularizquierda on molecularizquierda.id_paciente = dato_usuario.id
 left outer join molecularrgiz on molecularrgiz.id_paciente = dato_usuario.id
+left outer join quirurgico on quirurgico.id_paciente = dato_usuario.id
+left outer join mastecto_gaglionar on mastecto_gaglionar.id_paciente = dato_usuario.id
+left outer join reconstruccion on reconstruccion.id_quirurgico = quirurgico.id_quirurgico
 where dato_usuario.id = $id");
-$query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();
 $dataRegistro= $query->fetch();
 if($query != false){

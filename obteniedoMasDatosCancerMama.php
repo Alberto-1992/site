@@ -2,7 +2,7 @@
 sleep(0.5);
 
 $utimoId = $_POST['utimoId'];
-$limite  = 5;
+$limite  = 10;
 	require 'conexionCancer.php';
     $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id, cancerpaciente.id_paciente FROM dato_usuario inner join cancerpaciente on cancerpaciente.id_paciente = dato_usuario.id");
     $total_registro       = mysqli_num_rows($sqlQueryComentarios);
@@ -22,7 +22,7 @@ $limite  = 5;
            ?>
            
                <div id='<?php echo $id ?>' class='ver-info' style="cursor: pointer;">
-                   <?php echo '<strong style="font-family: monospace; white-space: nowrap; font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
+                   <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-top: 0px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
            </div> 
            <hr>
            </div>

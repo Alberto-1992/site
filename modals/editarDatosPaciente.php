@@ -525,6 +525,7 @@ return false;
                                         <input list="referencias" name="unidadreferenciaedit" id="unidadreferenciaedit"
                                             class="form-control" value="<?php echo $rown['unidad']; ?>">
                                         <datalist id="referencias">
+                                            <option value="<?php echo $rown['unidad']; ?>" selected><?php echo $rown['unidad']; ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT clues, unidad FROM hospitales");
@@ -763,7 +764,7 @@ return false;
                                     <div class="col-md-12">
                                             <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
                                         </div>
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
                                         <select id="mspatoedit" name="check_listapatoedit[]" multiple="multiple"
                                             class="form-control">
@@ -778,7 +779,29 @@ return false;
                                             <?php } ?>
 
                                         </select>
-                                    </div>
+                                    </div>-->
+                                
+                                    <fieldset class="col-md-12" style="margin-top: 15px; font-size: 15px;">
+                                
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Tabaquismo" >&nbsp;Tabaquismo&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Hipertencion Arterial" >&nbsp;Hipertensión
+                                        Arterial&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Enfermedad Renal Cronica">&nbsp;Enfermedad Renal
+                                        Cronica&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Diabetes Mellitus" >&nbsp;Diabetes Mellitus&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Conocida con Gen BRCA 1">&nbsp;Conocida con Gen BRCA
+                                        1&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
+                                        2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
+                                            class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;                                 
+                                    </fieldset>
                                     </div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                         </form>
@@ -937,11 +960,45 @@ return false;
                                             name="cesareaedit" value="<?php echo $dataRegistro['cesarea'] ?>">
 
                                     </div>
+                                    <script>
+                                
+                                    $(document).ready(function () {
+                                        
+    $("#embarazadaedit").change(function (e) {
+            let valor = $("#embarazadaedit").val()
+        if (valor == 'Si') {
+
+            $('#probablepartoedit').prop("hidden", false);
+            $('#fechaprobablepartoedit').prop("required", true);
+
+        } else if (valor == 'No') {
+            $('#probablepartoedit').prop("hidden", true);
+            $('#fechaprobablepartoedit').val('');
+            $('#fechaprobablepartoedit').prop("required", false);
+
+        }
+    })
+});
+$(document).ready(function () {
+                                        
+        let valor = $("#embarazadaedit").val()
+            if (valor == 'Si') {
+                                    
+                    $('#probablepartoedit').prop("hidden", false);
+                    $('#fechaprobablepartoedit').prop("required", true);             
+            } else if (valor == 'No') {
+                    $('#probablepartoedit').prop("hidden", true);
+                    $('#fechaprobablepartoedit').prop("required", false);                 
+                                    
+                    }
+                                        
+            });
+
+</script>
                                     <div class="col-md-3">
                                         <strong>Esta embarazada</strong>
                                         <select name="embarazadaedit" id="embarazadaedit" class="form-control" >
                                             <option value="<?php echo $dataRegistro['embarazada'] ?>" selected><?php echo $dataRegistro['embarazada'] ?></option>
-                                            <option value="0">Seleccione</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                     
@@ -952,6 +1009,24 @@ return false;
                                         <strong>F.P.P</strong>
                                         <input type="date" class="form-control" id="fechaprobablepartoedit"
                                             name="fechaprobablepartoedit" value="<?php echo $dataRegistro['fpp'] ?>" >
+
+                                    </div>
+                                    
+
+                                    <div class="col-md-3" id="tipolactancia">
+                                        <strong>Lactancia</strong>
+                                        <select name="lactanciaedit" id="lactanciaedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['lactancia'] ?>" selected><?php echo $dataRegistro['lactancia'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3" id="tiempodelactancia">
+                                        <strong>Tiempo</strong>
+                                        <input type="text" class="form-control" id="tiempolactanciaedit"
+                                            name="tiempolactanciaedit" value="<?php echo $dataRegistro['tiempolactancia'] ?>">
 
                                     </div>
                                     <div class="col-md-4">
@@ -965,61 +1040,39 @@ return false;
 
                                         </select>
                                     </div>
-
-                                    <div class="col-md-2" id="tipolactancia">
-                                        <strong>Lactancia</strong>
-                                        <select name="lactanciaedit" id="lactanciaedit" class="form-control">
-                                        <option value="<?php echo $dataRegistro['lactancia'] ?>" selected><?php echo $dataRegistro['lactancia'] ?></option>
-                                            <option value="Sin registro">Sin registro</option>
-                                            <option value="Si">Si</option>
-                                            <option value="No">No</option>
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2" id="tiempodelactancia">
-                                        <strong>Tiempo</strong>
-                                        <input type="text" class="form-control" id="tiempolactanciaedit"
-                                            name="tiempolactanciaedit" value="<?php echo $dataRegistro['tiempolactancia'] ?>">
-
-                                    </div>
                                     <script>
-                                        $(document).ready(function() {
-
-                                                $('#embarazadaedit').change(function(e) {
-                                                    if ($(this).val() == 'No') {
-
-                                                            $('#fechaprobablepartoedit').prop("disabled", true);
-                                                            $('#fechaprobablepartoedit').val('');
-                                                        
-
-                                                        }else if($(this).val() == 'Sin registro') {
-                                                            $('#fechaprobablepartoedit').prop("disabled", true);
-                                                            $('#fechaprobablepartoedit').val('');
-                                                        }else if ($(this).val() == 'Si') {
-                                                            $('#fechaprobablepartoedit').prop("disabled", false);
-                                                            $('#fechaprobablepartoedit').val('');
-                                                        }
-                                                        })
-                                                    });
-                                                    $(document).ready(function() {
-
-                                                            $('#lactanciaedit').change(function(e) {                
-                                                                        if ($(this).val() == 'No') {
-
-                                                                        $('#tiempodelactancia').prop("hidden", true);
-                                                                        $('#tiempolactanciaedit').val('');
-        
-
-                                                                }else if($(this).val() == 'Sin registro'){
-                                                                        $('#tiempodelactancia').prop("hidden", true);
-                                                                        $('#tiempolactanciaedit').val('');
-                                                                    }else if($(this).val() == 'Si'){
-                                                                        $('#tiempodelactancia').prop("hidden", false);
-                                                                        $('#tiempolactanciaedit').val('');
-                                                                    }
-
-                                                                        })
-                                                                    });
+                                        
+                                        $(document).ready(function () {
+                                        
+                                        $("#lactanciaedit").change(function (e) {
+                                                let valor = $("#lactanciaedit").val()
+                                            if (valor == 'Si') {
+                                    
+                                                $('#tiempodelactancia').prop("hidden", false);
+                                                $('#tiempolactanciaedit').prop("required", true); 
+                                    
+                                            } else if (valor == 'No') {
+                                                $('#tiempodelactancia').prop("hidden", true);
+                                                $('#tiempolactanciaedit').prop("required", false);
+                                                $('#tiempolactanciaedit').val('');
+                                    
+                                            }
+                                        })
+                                    });
+                                                                    $(document).ready(function () {
+                                        
+                                                        let valor = $("#lactanciaedit").val()
+                                            if (valor == 'Si') {
+                                                                    
+                                                    $('#tiempodelactancia').prop("hidden", false);
+                                                    $('#tiempolactanciaedit').prop("required", true);             
+                                            } else if (valor == 'No') {
+                                                    $('#tiempodelactancia').prop("hidden", true);
+                                                    $('#tiempolactanciaedit').prop("required", false);                 
+                                                                    
+                                                    }
+                                                                        
+                                            });
                                     </script>
                                     </div>
                                     <div class="col-md-12"></div>
@@ -1221,6 +1274,41 @@ return false;
 
                                         </select>
                                     </div>
+                                    <script>
+                                
+                                    $(document).ready(function () {
+                                        
+    $("#metastasisedit").change(function (e) {
+            let valor = $("#metastasisedit").val()
+        if (valor == 'M1 Con enfermedad metastasica') {
+
+            $('#metastasissitioedit').prop("hidden", false);
+            $('#sitiometastasis2edit').prop("required", true);
+
+        } else if (valor == 'MX: No se pueden evaluar metastasis distantes' || valor == 'M0 Sin enfermedad a distancia' || valor == 'Sin registro') {
+            $('#metastasissitioedit').prop("hidden", true);
+            $('#sitiometastasis2edit').prop("required", false);
+            
+
+        }
+    })
+});
+$(document).ready(function () {
+                                        
+        let valor = $("#metastasisedit").val()
+            if (valor == 'M1 Con enfermedad metastasica') {
+                                    
+                $('#metastasissitioedit').prop("hidden", false);
+                $('#sitiometastasis2edit').prop("required", true);            
+            } else {
+                $('#metastasissitioedit').prop("hidden", true);
+                $('#sitiometastasis2edit').prop("required", false);                 
+                                    
+                    }
+                                        
+            });
+
+</script>
                                     <div class="col-md-4">
                                         <strong>Metastasis</strong>
                                         <select name="metastasisedit" id="metastasisedit" class="form-control">
@@ -1266,6 +1354,62 @@ return false;
 
                                         </select>
                                     </div>
+                                    <script>
+                                
+                                    $(document).ready(function () {
+                                        
+    $("#mastectomiaextrainstitucionaledit").change(function (e) {
+            let valor = $("#mastectomiaextrainstitucionaledit").val()
+        if (valor == 'Si') {
+
+            $('#mstectoextra1edit').prop("hidden", false);
+            $('#mstectoextra2edit').prop("hidden", false);
+            $('#ateralidadextrainstitucionaledit').prop("required", true);
+            $('#fechamastectoextraedit').prop("required", true);
+
+        } else if (valor == 'No') {
+            $('#mstectoextra1edit').prop("hidden", true);
+            $('#mstectoextra2edit').prop("hidden", true);
+            $('#ateralidadextrainstitucionaledit').prop("required", false);
+            $('#fechamastectoextraedit').prop("required", false);
+            $('#lateralidadextrainstitucionaledit').prop("selectedIndex", 0);
+            $('#fechamastectoextraedit').val('');
+            
+
+        }else if (valor == 'Sin registro') {
+            $('#mstectoextra1edit').prop("hidden", true);
+            $('#mstectoextra2edit').prop("hidden", true);
+            $('#ateralidadextrainstitucionaledit').prop("required", false);
+            $('#fechamastectoextraedit').prop("required", false);
+            $('#lateralidadextrainstitucionaledit').prop("selectedIndex", 0);
+            $('#fechamastectoextraedit').val('');
+        }
+    })
+});
+$(document).ready(function () {
+                                        
+        let valor = $("#mastectomiaextrainstitucionaledit").val()
+        if (valor == 'Si') {
+
+$('#mstectoextra1edit').prop("hidden", false);
+$('#mstectoextra2edit').prop("hidden", false);
+
+
+} else if (valor == 'No') {
+$('#mstectoextra1edit').prop("hidden", true);
+$('#mstectoextra2edit').prop("hidden", true);
+
+
+
+}else if (valor == 'Sin registro') {
+$('#mstectoextra1edit').prop("hidden", true);
+$('#mstectoextra2edit').prop("hidden", true);
+
+}
+                                        
+            });
+
+</script>
                                     <div class="col-md-4" >
                                         <strong>Mastectomia Extrainstitucional</strong>
                                         <select name="mastectomiaextrainstitucionaledit" id="mastectomiaextrainstitucionaledit"
@@ -1280,8 +1424,9 @@ return false;
                                         <strong>Lateralidad Mastectomia</strong>
                                         <select name="lateralidadextrainstitucionaledit" id="lateralidadextrainstitucionaledit"
                                             class="form-control">
-                                            <option value="<?php echo $dataRegistro['lateralidadmastectoextrainstituto']?>" selected><?php echo $dataRegistro['lateralidadmastectoextrainstituto']?></option>
                                             <option value="Sin registro">Sin registro</option>
+                                            <option value="<?php echo $dataRegistro['lateralidadmastectoextrainstituto']?>" selected><?php echo $dataRegistro['lateralidadmastectoextrainstituto']?></option>
+                                            
                                             <option value="Mama Derecha">Mama Derecha</option>
                                             <option value="Mama Izquierda">Mama Izquierda</option>
                                             <option value="Ambas Mamas">Ambas Mamas</option>
@@ -2006,29 +2151,105 @@ return false;
                                             </select>
                                     
                                     </div>
+                                    <script>
+                                    $(document).ready(function () {
+                                        
+                                        $("#pdlrealizoedit1").click(function (e) {
+                                            let valor = $("#pdlrealizoedit1").val();
+                                                if (valor == 'si') {
+
+                                                        $('#pdledit').prop("disabled", false);
+
+                                                    } 
+                                                })
+                                            });
+                                            $(document).ready(function () {
+                                        
+                                        $("#pdlrealizoedit2").click(function (e) {
+                                            let valor2 = $("#pdlrealizoedit2").val();
+                                            if (valor2 == 'no') {
+                                                        $('#pdledit').prop("disabled", true);
+                                                        $('#pdledit').val('');
+                                                        
+                                                    }
+                                                })
+                                            });
+
+                                    $(document).ready(function () {
+                                        
+                                            let valor = $("#pdlrealizoedit1").val();
+                                            
+                                        if (valor == 'si') {
+
+                                            $('#pdledit').prop("disabled", false);
+                                                } 
+                                        
+                                                });
+
+                                                $(document).ready(function () {
+                                        
+                                        let valor2 = $("#pdlrealizoedit2").val();
+                                    if(valor2 == 'no') {
+                                        $('#pdledit').prop("disabled", true);
+                                        
+                                            }
+                                    
+                                            });
+                                        </script>
                                     <fieldset class="col-md-2">
                                             <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
                                             &nbsp;<strong>Si</strong>
-                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizo1"
-                                                onclick="aplicopdlsi();" class="check" value="si">
+                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizoedit1"
+                                                class="check" value="si" <?php echo $dataRegistro['aplicopdl'] ?>
+                                                <?php if ($dataRegistro['aplicopdl'] == "si") echo 'checked="checked"' ?>>
                                             &nbsp;<strong>No</strong>
-                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizo2"
-                                                onclick="aplicopdlno();" class="check" checked value="no">   
+                                            <input type="radio" name="pdlrealizoedit" id="pdlrealizoedit2"
+                                                class="check" value="no" <?php echo $dataRegistro['aplicopdl'] ?>
+                                                <?php if ($dataRegistro['aplicopdl'] == "no") echo 'checked="checked"' ?>>   
                                     </fieldset>
-                                    <div class="col-md-2">
+
+                                    <div class="col-md-2" id="pdledicion">
                                         
                                             <strong id="inmuno-title">PDL</strong>
                                             <input type="number" id="pdledit" name="pdledit" placeholder="%"
                                                 class="form-control" value="<?php echo $dataRegistro['descripcionpdl'] ?>">
                                         
                                     </div>
+                                    <script>
+                                    $(document).ready(function () {
+                                        
+                                        $("#oncogenedit").change(function (e) {
+                                            let valor = $("#oncogenedit").val();
+                                            if (valor == 'Dos cruces') {
 
+                                                    $('#editfish').prop("hidden", false);
+                                                        } else {
+                                                $('#editfish').prop("hidden", true);
+                                                $('#fishedit').prop('selectedIndex',0);
+                                                        }
+                                                    });
+                                    });
+                                    $(document).ready(function () {
+                                        
+                                            let valor = $("#oncogenedit").val();
+                                            
+                                        if (valor == 'Dos cruces') {
+
+                                            $('#editfish').prop("hidden", false);
+                                                } else {
+                                            $('#editfish').prop("hidden", true);
+                                            $('#fishedit').prop('selectedIndex',0);
+                                                }
+                                        
+                                    });
+                                        </script>
                                     <div class="col-md-2">
                                         
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenedit" id="oncogenedit" class="form-control">
-                                                <option value="<?php echo $dataRegistro['oncogenher2'] ?>"><?php echo $dataRegistro['oncogenher2'] ?></option>
+                                                
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="<?php echo $dataRegistro['oncogenher2'] ?>" selected><?php echo $dataRegistro['oncogenher2'] ?></option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2036,12 +2257,13 @@ return false;
                                             </select>
                                         
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2" id="editfish">
                                     
                                         <strong>FISH</strong>
                                         <select name="fishedit" id="fishedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['fish'] ?>"><?php echo $dataRegistro['fish'] ?></option>
+                                            
                                             <option value="0">Seleccione</option>
+                                            <option value="<?php echo $dataRegistro['fish'] ?>" selected><?php echo $dataRegistro['fish'] ?></option>
                                             <option value="Positivo">Positivo</option>
                                             <option value="Negativo">Negativo</option>
 
@@ -2186,29 +2408,102 @@ return false;
                                             </select>
                                     
                                     </div>
+                                    <script>
+                                    $(document).ready(function () {
+                                        
+                                        $("#pdlrealizo1rgdedit").click(function (e) {
+                                            let valor = $("#pdlrealizo1rgdedit").val();
+                                                if (valor == 'si') {
+
+                                                        $('#pdlrgdedit').prop("disabled", false);
+
+                                                    } 
+                                                })
+                                            });
+                                            $(document).ready(function () {
+                                        
+                                        $("#pdlrealizo2rgdedit").click(function (e) {
+                                            let valor2 = $("#pdlrealizo2rgdedit").val();
+                                                if (valor2 == 'no') {
+                                                        $('#pdlrgdedit').prop("disabled", true);
+                                                        $('#pdlrgdedit').val('');
+                                                    }
+                                                })
+                                            });
+
+                                    $(document).ready(function () {
+                                        
+                                            let valor = $("#pdlrealizo1rgdedit").val();
+                                            
+                                        if (valor == 'si') {
+
+                                            $('#pdlrgdedit').prop("disabled", false);
+                                                } 
+                                        
+                                                });
+
+                                                $(document).ready(function () {
+                                        
+                                        let valor2 = $("#pdlrealizo2rgdedit").val();
+                                    if(valor2 == 'no') {
+                                        $('#pdlrgdedit').prop("disabled", true);
+                        
+                                            }
+                                    
+                                            });
+                                        </script>
                                     <fieldset class="col-md-2" >
                                             <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
                                             &nbsp;<strong>Si</strong>
                                             <input type="radio" name="pdlrealizorgdedit" id="pdlrealizo1rgdedit"
-                                                onclick="aplicopdlsirgdedit();" class="check" value="si">
+                                                class="check" value="si" <?php echo $dataRegistro['aplicopdlrgd'] ?>
+                                                <?php if ($dataRegistro['aplicopdlrgd'] == "si") echo 'checked="checked"' ?>>
                                             &nbsp;<strong>No</strong>
                                             <input type="radio" name="pdlrealizorgdedit" id="pdlrealizo2rgdedit"
-                                                onclick="aplicopdlnorgdedit();" class="check" checked value="no">   
+                                                class="check" value="no" <?php echo $dataRegistro['aplicopdlrgd'] ?>
+                                                <?php if ($dataRegistro['aplicopdlrgd'] == "no") echo 'checked="checked"' ?>>   
                                     </fieldset>
-                                    <div class="col-md-2">
-                                        
+                                    <div class="col-md-2" id="pdleditarrgd">
                                             <strong id="inmuno-title">PDL</strong>
                                             <input type="number" id="pdlrgdedit" name="pdlrgdedit" placeholder="%"
                                                 class="form-control" value="<?php echo $dataRegistro['descripcionpdlrgd'] ?>">
                                         
                                     </div>
+                                    <script>
+                                    $(document).ready(function () {
+                                        
+                                        $("#oncogenrgdedit").change(function (e) {
+                                            let valor = $("#oncogenrgdedit").val();
+                                            if (valor == 'Dos cruces') {
 
+                                                    $('#fisheditregionderecha').prop("hidden", false);
+                                                    $('#fishrgdedit').prop("required", true);
+                                                        } else {
+                                                $('#fisheditregionderecha').prop("hidden", true);
+                                                $('#fishrgdedit').prop('selectedIndex',0);
+                                                        }
+                                                    });
+                                    });
+                                    $(document).ready(function () {
+                                        
+                                            let valor = $("#oncogenrgdedit").val();
+                                            
+                                        if (valor == 'Dos cruces') {
+
+                                            $('#fisheditregionderecha').prop("hidden", false);
+                                                } else {
+                                            $('#fisheditregionderecha').prop("hidden", true);
+                                            $('#fishrgdedit').prop('selectedIndex',0);
+                                                }
+                                        
+                                    });
+                                        </script>
                                     <div class="col-md-2">
                                         
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenrgdedit" id="oncogenrgdedit" class="form-control">
-                                                <option value="<?php echo $dataRegistro['oncogenher2rgd'] ?>"><?php echo $dataRegistro['oncogenher2rgd'] ?></option>
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="<?php echo $dataRegistro['oncogenher2rgd'] ?>" selected><?php echo $dataRegistro['oncogenher2rgd'] ?></option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2216,7 +2511,7 @@ return false;
                                             </select>
                                         
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2" id="fisheditregionderecha">
                                     
                                         <strong>FISH</strong>
                                         <select name="fishrgdedit" id="fishrgdedit" class="form-control">
@@ -2543,7 +2838,7 @@ return false;
                                             <strong>&nbsp;&nbsp;Se realizó PDL</strong><br>
                                             &nbsp;<strong>Si</strong>
                                             <input type="radio" name="pdlrealizoizrgiedit" id="pdlrealizo1izrgiedit"
-                                                onclick="aplicopdlsirgiz();" class="check" value="si">
+                                                onclick="aplicopdlsirgiz();" class="check" value="si" >
                                             &nbsp;<strong>No</strong>
                                             <input type="radio" name="pdlrealizoizrgiedit" id="pdlrealizo2izrgiedit"
                                                 onclick="aplicopdlnorgiz();" class="check" checked value="no">   
@@ -2753,6 +3048,33 @@ return false;
                                             <option value="Neoadyuvante">Neoadyuvante</option>
                                             <option value="Coadyuvante">Coadyuvante</option>
                                             <option value="Paliativo">Paliativo</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-2" >
+                                        <strong>Hormonoterapia</strong><br>
+                                        <input type="radio" name="hormonoterapiaedit" id="hormonoterapia1edit" onclick="aplicohormonosiedit();" class="check"
+                                            value="Si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="hormonoterapiaedit" id="hormonoterapia2edit" onclick="aplicohormononoedit();" class="check"
+                                            checked value="No">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-3">
+                                        <strong style="color:red;">Tipo Hormonoterapia</strong>
+                                        <select name="tipohormonoterapiaedit" id="tipohormonoterapiaedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Letrazol">Letrazol</option>
+                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Tomoxifeno">Tomoxifeno</option>
+                                            <option value="Exemetastino">Exemetastino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong style="color:red;">Momento Hormonoterapia</strong>
+                                        <select name="momentohormonoterapiaedit" id="momentohormonoterapiaedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['momentohormonoterapia'] ?>"><?php echo $dataRegistro['momentohormonoterapia'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Adyuvante">Adyuvante</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
                                         </select>
                                     </div>
                                     <fieldset class="col-md-4">
@@ -2994,9 +3316,295 @@ return false;
                                     <div class="col-md-4">
                                         <strong>N° de sesiones</strong>
                                         <input type="number" id="numerosesionesedit" name="numerosesionesedit"
-                                            class="form-control" value="<?php echo $dataRegistro['numerosesiones']?>">
+                                            class="form-control" value="<?php echo $dataRegistro['numerodesesiones']?>">
                                     </div>
                                 
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatosMolecular">
+
+<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+
+    <div class="modal-content">
+        <div class="modal-header" id="cabeceraModalMama">
+            
+            <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+        
+        </div>
+        <div class="modal-body">
+
+            <div id="panel_editar">
+
+                <div class="contrato-nuevo">
+                    <div class="modal-body">
+
+                        <!-- form start -->
+                    
+
+                        <form name="editarmolecular" id="editarmolecular" onSubmit="return limpiar()" autocomplete="off">
+                            <div class="form-row">
+                                <div id="mensaje"></div>
+                                <script>
+                                $("#editarmolecular").on("submit", function(e) {
+                                    checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                    e.preventDefault();
+
+                                    var formData = new FormData(document.getElementById(
+                                        "editarmolecular"));
+                                    formData.append("dato", "valor");
+
+                                    $.ajax({
+
+                                        url: "aplicacion/editardatosMolecular.php",
+                                        type: "post",
+                                        dataType: "html",
+                                        data: formData,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                    
+                                        success: function(datos) {
+                                            
+                                            $("#mensaje").html(datos);
+                                            
+                                            let id = $("#id_paciente").val();
+                                            let ob = {
+                                                        id: id
+                                                        };
+
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "consultaCancerdeMamaBusqueda.php",
+                                                        data: ob,
+                                                    success: function(data) {
+
+                                                        $("#tabla_resultado").html(data);
+                                                        //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                        setTimeout(function(){
+                                                            $("#editardatosMolecular").modal('hide');
+                                                                }, 1500);
+                                                                $("#editardatosMolecular").modal('hide');
+                                                        
+                                                        }
+                                                        
+                                                });
+                                                $("#editardatosMolecular").modal('hide');
+                                        }
+                                    })
+                                })
+                            
+                                
+                                </script> 
+                                <div class="col-md-12">
+                                        <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                    </div>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">MOLECULAR MAMA DERECHA</strong>
+                                    </div>
+                                    
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal A</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalaedit" id="luminalaedit"
+                                                class="check" value="si" <?php echo $dataRegistro['luminala'] ?>
+                                                <?php if ($dataRegistro['luminala'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalaedit" id="luminalaedit"
+                                                class="check"  value="no" <?php echo $dataRegistro['luminala'] ?>
+                                                <?php if ($dataRegistro['luminala'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal B</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalbedit" id="luminalbedit"
+                                                class="check" value="si" <?php echo $dataRegistro['luminalb'] ?>
+                                                <?php if ($dataRegistro['luminalb'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalbedit" id="luminalbedit"
+                                                class="check" value="no" <?php echo $dataRegistro['luminalb'] ?>
+                                                <?php if ($dataRegistro['luminalb'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Enriquecido en Her 2 +</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="enriquecidoherdosedit" id="enriquecidoherdosedit"
+                                                class="check" value="si" <?php echo $dataRegistro['enriquecidoher2'] ?>
+                                                <?php if ($dataRegistro['enriquecidoher2'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="enriquecidoherdosedit" id="enriquecidoherdosedit"
+                                                class="check" value="no" <?php echo $dataRegistro['enriquecidoher2'] ?>
+                                                <?php if ($dataRegistro['enriquecidoher2'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                                    
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Basal</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="basaledit" id="basaledit"
+                                                class="check" value="si" <?php echo $dataRegistro['basal'] ?>
+                                                <?php if ($dataRegistro['basal'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="basaledit" id="basaledit"
+                                                class="check" value="no" <?php echo $dataRegistro['basal'] ?>
+                                                <?php if ($dataRegistro['basal'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatosMolecularMamaIz">
+
+<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+
+    <div class="modal-content">
+        <div class="modal-header" id="cabeceraModalMama">
+            
+            <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+        
+        </div>
+        <div class="modal-body">
+
+            <div id="panel_editar">
+
+                <div class="contrato-nuevo">
+                    <div class="modal-body">
+
+                        <!-- form start -->
+                    
+
+                        <form name="editarmoleculariz" id="editarmoleculariz" onSubmit="return limpiar()" autocomplete="off">
+                            <div class="form-row">
+                                <div id="mensaje"></div>
+                                <script>
+                                $("#editarmoleculariz").on("submit", function(e) {
+                                    checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                    e.preventDefault();
+
+                                    var formData = new FormData(document.getElementById(
+                                        "editarmoleculariz"));
+                                    formData.append("dato", "valor");
+
+                                    $.ajax({
+
+                                        url: "aplicacion/editardatosMolecularIz.php",
+                                        type: "post",
+                                        dataType: "html",
+                                        data: formData,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        success: function(datos) {
+                                            $("#mensaje").html(datos);
+                                            let id = $("#id_paciente").val();
+                                            let ob = {
+                                                        id: id
+                                                        };
+
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "consultaCancerdeMamaBusqueda.php",
+                                                        data: ob,
+                                                
+                                                    success: function(data) {
+
+                                                        $("#tabla_resultado").html(data);
+                                                        //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                        setTimeout(function(){
+                                                            $("#editardatosMolecularMamaIz").modal('hide');
+                                                                }, 1500);
+                                                                $("#eeditardatosMolecularMamaIz").modal('hide');
+                                                        
+                                                        }
+                                                        
+                                                });
+                                                $("#editardatosMolecularMamaIz").modal('hide');
+                                        }
+                                    })
+                                })
+                            
+                                
+                                </script> 
+                                <div class="col-md-12">
+                                        <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                    </div>
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">MOLECULAR MAMA IZQUIERDA</strong>
+                                    </div>
+                                    
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal A</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalaeditiz" id="luminalaeditiz"
+                                                class="check" value="si" <?php echo $dataRegistro['luminalaiz'] ?>
+                                                <?php if ($dataRegistro['luminalaiz'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalaeditiz" id="luminalaeditiz"
+                                                class="check"  value="no" <?php echo $dataRegistro['luminalaiz'] ?>
+                                                <?php if ($dataRegistro['luminalaiz'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Luminal B</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="luminalbeditiz" id="luminalbeditiz"
+                                                class="check" value="si" <?php echo $dataRegistro['luminalbiz'] ?>
+                                                <?php if ($dataRegistro['luminalbiz'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="luminalbeditiz" id="luminalbeditiz"
+                                                class="check" value="no" <?php echo $dataRegistro['luminalbiz'] ?>
+                                                <?php if ($dataRegistro['luminalbiz'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                            
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Enriquecido en Her 2 +</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="enriquecidoherdoseditiz" id="enriquecidoherdoseditiz"
+                                                class="check" value="si" <?php echo $dataRegistro['enriquecidoher2iz'] ?>
+                                                <?php if ($dataRegistro['enriquecidoher2iz'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="enriquecidoherdoseditiz" id="enriquecidoherdoseditiz"
+                                                class="check" value="no" <?php echo $dataRegistro['enriquecidoher2iz'] ?>
+                                                <?php if ($dataRegistro['enriquecidoher2iz'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
+                                    
+                                    <fieldset class="col-md-3">
+                                            <strong>&nbsp;&nbsp;Basal</strong><br>
+                                            &nbsp;<strong>Si</strong>
+                                            <input type="radio" name="basaleditiz" id="basaleditiz"
+                                                class="check" value="si" <?php echo $dataRegistro['basaliz'] ?>
+                                                <?php if ($dataRegistro['basaliz'] == "si") echo 'checked="checked"' ?>>
+                                            &nbsp;<strong>No</strong>
+                                            <input type="radio" name="basaleditiz" id="basaleditiz"
+                                                class="check" value="no" <?php echo $dataRegistro['basaliz'] ?>
+                                                <?php if ($dataRegistro['basaliz'] == "no") echo 'checked="checked"' ?>>   
+                                    </fieldset>
                                     </div>
                                     <div class="col-md-12"></div>
                                     <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">

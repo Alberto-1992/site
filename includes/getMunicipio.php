@@ -1,6 +1,6 @@
 <?php
 	
-	require ('../../esclerosis/conexion.php');
+	require ('../conexionCancer.php');
 	
 	$id_estado = $_POST['id_estado'];
 	

@@ -213,8 +213,8 @@
                                             style="width: 100%;" required>
                                             <option value="Sin registro" selected>Sin registro</option>
                                             <?php 
-				    require '../esclerosis/conexion.php';
-				  $query = "SELECT id_estado, estado FROM t_estado ";
+                                    require 'conexionCancer.php';
+				    $query = "SELECT id_estado, estado FROM t_estado ";
 	                $resultado=$conexion2->query($query);
 				while($row = $resultado->fetch_assoc()) { ?>
                                             <option value="<?php echo $row['id_estado']; ?>">
@@ -417,7 +417,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS</strong>
                                     </div>
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
                                         <select id="mspato" name="check_listapato[]" multiple="multiple"
                                             class="form-control">
@@ -432,8 +432,8 @@
                                             <?php } ?>
 
                                         </select>
-                                    </div>
-                                    <!--
+                                    </div>-->
+                                    
                                     <fieldset class="col-md-12">
 
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
@@ -445,16 +445,18 @@
                                             class="check" value="Enfermedad Renal Cronica">&nbsp;Enfermedad Renal
                                         Cronica&nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
-                                            class="check" value="Diabetes Mellitus">&nbsp;Diabetes Mellitus&nbsp;&nbsp;
+                                            class="check" value="Diabetes Mellitus">&nbsp;Diabetes Mellitus&nbsp;&nbsp;<br>
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Conocida con Gen BRCA 1">&nbsp;Conocida con Gen BRCA
                                         1&nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
+                                            class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;
 
                                     </fieldset>
-                                    -->
+                                    
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">ATENCIÓN CLINICA</strong>
@@ -954,6 +956,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogen" id="oncogen" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1046,6 +1049,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenrgd" id="oncogenrgd" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1139,6 +1143,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogeniz" id="oncogeniz" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1232,6 +1237,7 @@
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenizrgi" id="oncogenizrgi" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -1553,7 +1559,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">TRATAMIENTO</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6; ">
+                                    <div class="col-md-12">
                                         <strong>QUIRURGICO</strong>
                                         <select name="quirurgico" id="quirurgico" class="form-control">
                                             <option value="0">Seleccione</option>
@@ -1574,7 +1580,7 @@
                                     </div>
                                     <div class="col-md-4" id="tipoquirurgico">
                                         <strong>Tipo</strong>
-                                        <select name="quirurgicotipo" id="quirurgicotipo" class="form-control">
+                                        <select name="quirurgicotipo[]" id="quirurgicotipo" multiple="multiple" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Mastectomia">Mastectomia</option>
                                             <option value="Ganglionar">Ganglionar</option>
@@ -1591,26 +1597,27 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tipoganglionar">
+                                    <div class="col-md-4" id="fechatipomastectomia">
+                                        <strong>Fecha mastectomia</strong>
+                                        <input type="date" id="fechatipomastecto" name="fechatipomastecto"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-4" id="tipoganglionar">
                                         <strong>Tipo de ganglionar</strong>
-                                        <select name="ganglionartipo" id="ganglionartipo" class="form-control">
+                                        <select name="ganglionartipo" id="ganglionartipo"  class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="GANGLIO CENTINELA">GANGLIO CENTINELA</option>
                                             <option value="DISECCION AXILAR">DISECCION AXILAR</option>
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="fechatipomastectomia">
-                                        <strong>Fecha</strong>
-                                        <input type="date" id="fechatipomastecto" name="fechatipomastecto"
-                                            class="form-control">
-                                    </div>
-                                    <div class="col-md-3" id="fechatipoganglionar">
-                                        <strong>Fecha</strong>
+                                    
+                                    <div class="col-md-4" id="fechatipoganglionar">
+                                        <strong>Fecha ganglionar</strong>
                                         <input type="date" id="fechatipoganglio" name="fechatipoganglio"
                                             class="form-control">
                                     </div>
-                                    <div class="col-md-3" id="reconstruccion">
+                                    <div class="col-md-4" id="reconstruccion">
                                         <strong>Reconstruccion</strong>
                                         <select name="reconstruccionsino" id="reconstruccionsino" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1619,8 +1626,8 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tiporeconstruccion">
-                                        <strong>Tipo</strong>
+                                    <div class="col-md-4" id="tiporeconstruccion">
+                                        <strong>Tipo Reconstrucción</strong>
                                         <select name="reconstrucciontipo" id="reconstrucciontipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Expansor tisular">Expansor tisular</option>
@@ -1630,13 +1637,13 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="reconstrucciontipofecha">
-                                        <strong>Fecha</strong>
+                                    <div class="col-md-4" id="reconstrucciontipofecha">
+                                        <strong>Fecha Reconstrucción</strong>
                                         <input type="date" id="fechatiporeconstruccion" name="fechatiporeconstruccion"
                                             class="form-control">
                                     </div>
                                     <div class="col-md-12"></div>
-                                    <input type="button" name="enviar" value="Guardar Tratamiento" onclick="Hola();"
+                                    <!--<input type="button" name="enviar" value="Guardar Tratamiento" onclick="Hola();"
                                         id="guardaApartado"
                                         style="width: 170px; height: 27px; font-size: 12px; color: white; background-color: #00B6FF; margin-left: auto; margin-right: auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                                     <script>
@@ -1690,13 +1697,13 @@
                                             }
                                         });
                                     }
-                                    </script>
+                                    </script>-->
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">QUIMIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6;">
+                                    <div class="col-md-12">
                                         <strong>QUIMIOTERAPIA</strong>
                                         <select name="aplicoquimio" id="aplicoquimio" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1772,6 +1779,31 @@
                                             <option value="Neoadyuvante">Neoadyuvante</option>
                                             <option value="Coadyuvante">Coadyuvante</option>
                                             <option value="Paliativo">Paliativo</option>
+                                        </select>
+                                    </div>
+                                    <fieldset class="col-md-2" id="hormono">
+                                        <strong>Hormonoterapia</strong><br>
+                                        <input type="radio" name="hormonoterapia" id="hormonoterapia1" onclick="aplicohormonosi();" class="check"
+                                            value="Si">&nbsp;<strong>Si</strong>&nbsp;&nbsp;
+                                        <input type="radio" name="hormonoterapia" id="hormonoterapia2" onclick="aplicohormonono();" class="check"
+                                            checked value="No">&nbsp;<strong>No</strong>&nbsp;&nbsp;
+                                    </fieldset>
+                                    <div class="col-md-3" id="tipohormono">
+                                        <strong style="color:red;">Tipo Hormonoterapia</strong>
+                                        <select name="tipohormonoterapia" id="tipohormonoterapia" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Letrazol">Letrazol</option>
+                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Tomoxifeno">Tomoxifeno</option>
+                                            <option value="Exemetastino">Exemetastino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3" id="momentohormono">
+                                        <strong style="color:red;">Momento Hormonoterapia</strong>
+                                        <select name="momentohormonoterapia" id="momentohormonoterapia" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Adyuvante">Adyuvante</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
                                         </select>
                                     </div>
                                     <fieldset class="col-md-2" id="quimiono">
@@ -1891,7 +1923,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">RADIOTERAPIA</strong>
                                     </div>
-                                    <div class="col-md-12" style="color: #BD9FD6; ">
+                                    <div class="col-md-12">
                                         <strong>RADIOTERAPIA</strong>
                                         <select name="radioterapia" id="radioterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
@@ -1921,7 +1953,7 @@
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">BRAQUITERAPIA</strong>
                                     </div>
-                                    <div class="col-md-6" style="color: #BD9FD6; ">
+                                    <div class="col-md-6">
                                         <strong>BRAQUITERAPIA</strong>
                                         <select name="braquiterapia" id="braquiterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>

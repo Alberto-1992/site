@@ -5,7 +5,7 @@ $hoy = date("Y-m-d");
     extract($_POST);
 
     $sql = $conexionCancer->prepare("UPDATE quimioterapia SET aplicoquimio=:aplicoquimio, fechainicio=:fechainicio, primeralinea=:primeralinea, ciclosprimerlineaqt=:ciclosprimerlineaqt, segundalinea=:segundalinea,
-    ciclossegundalineaqt=:ciclossegundalineaqt, antraciclinas=:antraciclinas, momentodelaqt=:momentodelaqt, her2=:her2, esquemaher2=:esquemaher2, triplenegativo=:triplenegativo, esquematrilpenegativo=:esquematrilpenegativo,
+    ciclossegundalineaqt=:ciclossegundalineaqt, antraciclinas=:antraciclinas, momentodelaqt=:momentodelaqt, hormonoterapia = :hormonoterapia, tipohormonoterapia=:tipohormonoterapia, momentohormonoterapia=:momentohormonoterapia, her2=:her2, esquemaher2=:esquemaher2, triplenegativo=:triplenegativo, esquematrilpenegativo=:esquematrilpenegativo,
     hormonosensible=:hormonosensible, esquemahormonosensible=:esquemahormonosensible, tipotratamiento=:tipotratamiento, completoquimio=:completoquimio, causaqtincompleta=:causaqtincompleta, fechaeventoadverso=:fechaeventoadverso,
     fechaprogresion=:fechaprogresion, fecharecurrencia=:fecharecurrencia, fechafallecio=:fechafallecio, causafallecio=:causafallecio, especifique=:especifique WHERE id_paciente = :id_paciente"); 
     
@@ -18,6 +18,9 @@ $hoy = date("Y-m-d");
                                             ':ciclossegundalineaqt'=>$ciclossegundalineaqtedit,
                                             ':antraciclinas'=>$antraciclinasedit,
                                             ':momentodelaqt'=>$momentoquimioedit,
+                                            ':hormonoterapia'=>$hormonoterapiaedit,
+                                            ':tipohormonoterapia'=>$tipohormonoterapiaedit,
+                                            ':momentohormonoterapia'=>$momentohormonoterapiaedit,
                                             ':her2'=>$heredit,
                                             ':esquemaher2'=>$esquemaherdosedit,
                                             ':triplenegativo'=>$triplenegativoedit,

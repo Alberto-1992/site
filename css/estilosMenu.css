@@ -256,20 +256,21 @@ height: 100%;
     font-size: 12px; 
     width: 100%; 
     height: auto; 
-    margin-left: 0px; 
+    margin-left: 1px;
     background: white; 
     margin-top: 0px; 
     padding: 5px;
 }
 #tabla_resultadobus{
-  width: 30%;
+  width: 30rem;
   height: auto;
   position: relative;
   float: left;
-  margin-left: 10px;
+  margin-left: 2px;
   margin-top: 90px;
   resize: horizontal; overflow: auto;
   font-size: 12px;
+  
 }
 .adaptar{
   width: 100%;
@@ -277,7 +278,7 @@ height: 100%;
   font-size: 12px;
   position: relative;
   resize: horizontal; overflow: auto;
-  margin-left: 5px;
+  margin-left: 15px;
   overflow-x: auto;
 
 }
@@ -472,15 +473,17 @@ height: 100%;
 }
 #busqueda{
   float: left;
-  margin-left: 9px;
+  margin-left: 2px;
   margin-top: 50px; 
-  width: 22%;
+  width: 100%;
+    max-width: 378px;
+    height: 33px;
   position: absolute;
+  border-radius: 0px 0px 0px 0px;
  
 }
 #totalregistro{
-  float: right; 
-  margin-right: 0%; 
+  margin-left: 1%; 
   width: 40px;
   height: 25px; 
   font-size: 12px; 
@@ -492,6 +495,7 @@ height: 100%;
 }
 #lista-comentarios {
     margin-top: 0px;
+    width: 100%;
     }
     
     #hrinicial {
@@ -533,8 +537,9 @@ thead tr th{
     left: 40px;
 }
 hr{
-  background-color: grey;
-  height: 1px;
+  background-color: rgb(8, 6, 6);
+    height: .5px;
+    width: 100%;
   margin: 0px 0px;
 }
 .parent{
@@ -875,12 +880,13 @@ strong {
 }
 
 .containerr {
-  background: #EEEEEE;
+  background-color: rgb(255, 255, 255);
   margin-top: 45px;
   display: flex;
   justify-content: flex-start;
   position: fixed;
-  width: 73%;
+  width: 100%;
+    max-width: 91rem;
   height: 25px;
   font-size: 13px;
   padding: 2px;

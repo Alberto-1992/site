@@ -4,6 +4,7 @@
         color: white;
         cursor: pointer;
     }
+    
     </style>
 <div id="lista-comentarios">
 <?php 
@@ -37,7 +38,6 @@
         
         
         $query->execute();
-        $query->setFetchMode(PDO::FETCH_ASSOC);
         while($dataRegistro= $query->fetch())
         { ?>
         
@@ -45,16 +45,18 @@
             <?php
             error_reporting(0);
             $id = $dataRegistro['id'];
-             $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = $id");
-                $sql_busqueda->execute();
-                $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = :id_paciente");
+                $sql_busqueda->execute(array(
+                    ':id_paciente'=>$id
+                ));
                 $validacion = $sql_busqueda->fetch();
                 $validaid = $validacion['id_paciente'];
             ?>
                 <div id='<?php echo $id ?>' class='ver-info' >
-                    <?php echo '<strong style="font-family: monospace; white-space: nowrap; font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>';
+                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>';
                     if($validaid == $id){ 
-            ?><a href="#" style="color: red; float: right; margin-right: 10px; font-size: 8px; font-style: arial; margin-top: -30px;">En seguimiento</a><?php } ?>
+            ?><input type="submit" value="En seguimiento" style="padding: 1px; cursor-pointer: none; background: red; border: none;color: white; margin-left: 1%; font-size: 10px; font-style: arial; margin-top: 0px;"><?php } ?>
+            
             </div> 
             <hr>
             </div>
