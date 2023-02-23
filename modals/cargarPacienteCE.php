@@ -118,7 +118,7 @@
                                         <select id="escolaridad" name="escolaridad" class="form-control">
                                             <option value="0">Seleccione </option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -191,7 +191,7 @@
                                         <select name="cbx_estado" id="cbx_estado" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccionar Estado</option>
                                             <?php
-                                            require '../esclerosis/conexion.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT id_estado, estado FROM t_estado ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -228,8 +228,8 @@
                                         <select id="msfactores" name="check_lista[]" multiple="multiple" class="form-control">
 
                                             <?php
-                                            require 'conexionInfarto.php';
-                                            $query = $conexion->prepare("SELECT * FROM factor_riesgocombo");
+                                            require 'conexionCancer.php';
+                                            $query = $conexionCancer->prepare("SELECT * FROM factor_riesgocombo");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) { ?>
@@ -353,7 +353,7 @@
                                         <select name="localizacion" id="localizacion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccionar</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT id_localizacion, nombre_localizacion FROM localizacion ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -762,7 +762,7 @@
                                         <strong>Seleccione las complicaciones</strong>
                                         <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
                                             <?php
-                                            $query = $conexion->prepare("SELECT * FROM complicaciones ");
+                                            $query = $conexionCancer->prepare("SELECT * FROM complicaciones ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) { ?>
