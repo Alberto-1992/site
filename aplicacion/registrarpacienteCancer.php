@@ -352,11 +352,11 @@ $hoy = date("Y-m-d");
                                                                                                     
                                                                 ));
                                                             } 
-                                                            $sql = $conexionCancer->prepare("INSERT into mastecto_gaglionar(tipomastecto, fecha, tipoganglionar, fechatipogaglionar, id_paciente)
-                                                            values(:tipomastecto, :fecha, :tipoganglionar, :fechatipogaglionar, :id_paciente)");  
+                                                            $sql = $conexionCancer->prepare("INSERT into mastecto_gaglionar(tipomastecto, fecha_mastecto, tipoganglionar, fechatipogaglionar, id_paciente)
+                                                            values(:tipomastecto, :fecha_mastecto, :tipoganglionar, :fechatipogaglionar, :id_paciente)");  
                                                                     $sql->execute(array(
                                                                         ':tipomastecto'=>$mastectomiatipo,
-                                                                        ':fecha'=>$fechatipomastecto,
+                                                                        ':fecha_mastecto'=>$fechatipomastecto,
                                                                         ':tipoganglionar'=>$ganglionartipo,
                                                                         ':fechatipogaglionar'=>$fechatipoganglio,
                                                                         ':id_paciente'=>$id_usuario

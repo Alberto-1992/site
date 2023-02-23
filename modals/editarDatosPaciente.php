@@ -3617,3 +3617,349 @@ $('#mstectoextra2edit').prop("hidden", true);
                 </div>
             </div>
         </div>
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editardatostratamiento">
+<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+
+    <div class="modal-content">
+        <div class="modal-header" id="cabeceraModalMama">
+            
+            <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
+        
+        </div>
+        <div class="modal-body">
+
+            <div id="panel_editar">
+
+                <div class="contrato-nuevo">
+                    <div class="modal-body">
+
+                        <!-- form start -->
+                    
+
+                        <form name="editartratamiento" id="editartratamiento" onSubmit="return limpiar()" autocomplete="off">
+                            <div class="form-row">
+                                <div id="mensaje"></div>
+                                <script>
+                                $("#editartratamiento").on("submit", function(e) {
+                                    checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                    e.preventDefault();
+
+                                    var formData = new FormData(document.getElementById(
+                                        "editartratamiento"));
+                                    formData.append("dato", "valor");
+
+                                    $.ajax({
+
+                                        url: "aplicacion/editardatosTratamiento.php",
+                                        type: "post",
+                                        dataType: "html",
+                                        data: formData,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        success: function(datos) {
+                                            $("#mensaje").html(datos);
+                                            let id = $("#id_paciente").val();
+                                            let ob = {
+                                                        id: id
+                                                        };
+
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "consultaCancerdeMamaBusqueda.php",
+                                                        data: ob,
+                                                
+                                                    success: function(data) {
+
+                                                        $("#tabla_resultado").html(data);
+                                                        //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                        setTimeout(function(){
+                                                            $("#editardatostratamiento").modal('hide');
+                                                                }, 1500);
+                                                                $("#editardatostratameinto").modal('hide');
+                                                        
+                                                        }
+                                                        
+                                                });
+                                                $("#editardatostratamiento").modal('hide');
+                                        }
+                                    })
+                                })
+                            
+                                
+                                </script> 
+                                <div class="col-md-12">
+                                        <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                    </div>
+                                    
+                                    <div class="col-md-12"
+                                        style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
+                                        <strong id="titulos">TRATAMIENTO</strong>
+                                    </div>
+                                    <script>
+                                    $(document).ready(function () {
+                                        
+                                        $("#quirurgicoedit").change(function (e) {
+                                            let valor = $("#quirurgicoedit").val();
+                                            if (valor == 'No') {
+
+                                                    $('#lateralidadedicion').prop("hidden", true);
+                                                    $('#lateralidadsegundoedit').prop("selectedIndex", 1);
+                                                    $('#mastectomiatipoedit').prop("selectedIndex",1);
+                                                    $('#fechatipomastectoedit').val('');
+                                                    $('#ganglionartipoedit').prop("selectedIndex",1);
+                                                    $('#fechatipoganglioedit').val('');
+                                                    $('#fechatiporeconstruccionedit').val('');
+                                                    $('#reconstrucciontipoedit').prop("selectedIndex", 1);
+                                                    $('#reconstruccionsinoedit').prop("selectedIndex", 1);
+                                                    $('#tipoquirurgicoedit').prop('hidden', true);
+                                                    $('#tipomastectomiaedit').prop('hidden', true);
+                                                    $('#fechatipomastectomiaedit').prop('hidden', true);
+                                                    $('#tipoganglionaredit').prop('hidden', true);
+                                                    $('#fechatipoganglionaredit').prop('hidden', true);
+                                                    $('#reconstruccionedit').prop('hidden', true);
+                                                    $('#tiporeconstruccionedit').prop('hidden', true);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', true);
+                                                        } else if (valor == 'Si'){
+                                                            $('#lateralidadedicion').prop("hidden", false);
+                                                            $('#lateralidadsegundoedit').prop("selectedIndex", 1);
+                                                            $('#tipoquirurgicoedit').prop('hidden', false);
+                                                            $('#tipomastectomiaedit').prop('hidden', false);
+                                                            $('#fechatipomastectomiaedit').prop('hidden', false);
+                                                            $('#tipoganglionaredit').prop('hidden', false);
+                                                            $('#fechatipoganglionaredit').prop('hidden', false);
+                                                            $('#reconstruccionedit').prop('hidden', false);
+                                                            $('#tiporeconstruccionedit').prop('hidden', false);
+                                                            $('#reconstrucciontipofechaedit').prop('hidden', false);
+                                                        }
+                                                    });
+                                        });
+                                        $(document).ready(function () {
+
+                                                $('#quirurgicotipoedit').change(function (e) {
+
+                                                }).multipleSelect({
+                                        width: '100%'
+                                                    });
+                                                });
+                                $(document).ready(function () {
+                                        
+                                        $("#reconstruccionsinoedit").change(function (e) {
+                                            let valor = $("#reconstruccionsinoedit").val();
+                                            if (valor == 'No') {
+
+                                                    $('#fechatiporeconstruccionedit').val('');
+                                                    $('#reconstrucciontipoedit').prop("selectedIndex", 1);
+                                                    $('#tiporeconstruccionedit').prop('hidden', true);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', true);
+                                                }else  if (valor == 'Sin registro') {
+                                                    $('#fechatiporeconstruccionedit').val('');
+                                                    $('#reconstrucciontipoedit').prop("selectedIndex", 1);
+                                                    $('#tiporeconstruccionedit').prop('hidden', true);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', true);
+
+                                                    
+                                                        } else if (valor == 'Si'){
+                                                            
+                                                            $('#tiporeconstruccionedit').prop('hidden', false);
+                                                            $('#reconstrucciontipofechaedit').prop('hidden', false);
+                                                        
+                                                        }
+                                                    });
+                                        });
+                                        $(document).ready(function () {
+                                        
+                                            let valor = $("#reconstruccionsinoedit").val();
+                                        
+                                            if (valor == 'No') {
+                                                    $('#fechatiporeconstruccionedit').val('');
+                                                    $('#reconstrucciontipoedit').prop("selectedIndex", 1);
+                                                    $('#tiporeconstruccionedit').prop('hidden', true);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', true);
+
+                                                } else if (valor == 'Si'){
+        
+                                                    $('#tiporeconstruccionedit').prop('hidden', false);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', false);
+    
+                                                }else  if (valor == 'Sin registro') {
+                                                    $('#fechatiporeconstruccionedit').val('');
+                                                    $('#reconstrucciontipoedit').prop("selectedIndex", 1);
+                                                    $('#tiporeconstruccionedit').prop('hidden', true);
+                                                    $('#reconstrucciontipofechaedit').prop('hidden', true);
+
+                                                }
+                                            });
+                                            $(document).ready(function () {
+    $("#quirurgicotipoedit").change(function (e) {
+
+        if (quirurgicotipoedit.options[1].selected == true) {
+
+            $('#tipomastectomiaedit').prop("hidden", false);
+            $('#fechatipomastectomiaedit').prop("hidden", false);
+            $('#reconstruccionedit').prop("hidden", false);
+
+
+        } else if (quirurgicotipoedit.options[1].selected == false) {
+            $('#tipomastectomiaedit').prop("hidden", true);
+            $('#fechatipomastectomiaedit').prop("hidden", true);
+            $('#reconstruccionedit').prop("hidden", true);
+            $('#reconstrucciontipofechaedit').prop("hidden", true);
+            $('#tiporeconstruccionedit').prop("hidden", true);
+            $('#mastectomiatipoedit').prop("selectedIndex", 0);
+            $('#fechatipomastectoedit').val('');
+            $('#reconstruccionsinoedit').prop("selectedIndex", 0);
+            $('#reconstrucciontipoedit').prop("selectedIndex", 0);
+            $('#fechatiporeconstruccionedit').val('');
+
+        }
+        if (quirurgicotipoedit.options[2].selected == true && quirurgicotipoedit.options[1].selected == true) {
+
+            $('#tipoganglionaredit').prop("hidden", false);
+            $('#fechatipoganglionaredit').prop("hidden", false);
+        } else if (quirurgicotipoedit.options[2].selected == false) {
+            $('#tipoganglionaredit').prop("hidden", true);
+            $('#fechatipoganglionaredit').prop("hidden", true);
+            $('#ganglionartipoedit').prop("selectedIndex", 0);
+            $('#fechatipoganglioedit').val('');
+
+        } else if (quirurgicotipoedit.options[2].selected == true) {
+
+            $('#tipoganglionaredit').prop("hidden", false);
+            $('#fechatipoganglionaredit').prop("hidden", false);
+            $('#ganglionartipoedit').prop("selectedIndex", 0);
+            $('#fechatipoganglioedit').val('');
+            $('#reconstruccionedit').prop("hidden", true);
+            $('#tiporeconstruccionedit').prop("hidden", true);
+            $('#reconstrucciontipofechaedit').prop("hidden", true);
+
+        }
+        if (quirurgicotipoedit.options[0].selected == true) {
+
+            $('#tipomastectomiaedit').prop("hidden", true);
+            $('#fechatipomastectomiaedit').prop("hidden", true);
+            $('#reconstruccionedit').prop("hidden", true);
+            $('#tiporeconstruccionedit').prop("hidden", true);
+            $('#tipoganglionaredit').prop("hidden", true);
+            $('#fechatipoganglionaredit').prop("hidden", true);
+            $('#reconstrucciontipofechaedit').prop("hidden", true);
+            $('#fechatipoganglionaredit').prop("hidden", true);
+            $('#fechatipoganglioedit').val('');
+            $('#fechatipomastectoedit').val('');
+
+
+        }
+
+    })
+});
+$(function () {
+   
+ 
+
+
+})
+                                        </script>
+                                    <div class="col-md-6">
+                                        <strong>QUIRURGICO</strong>
+                                        <select name="quirurgicoedit" id="quirurgicoedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['realizoquirurgico'] ?>"><?php echo $dataRegistro['realizoquirurgico'] ?></option>
+                                            <option value="0">Seleccione</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6" id="lateralidadedicion">
+                                        <strong>Lateralidad Qx</strong>
+                                        <select name="lateralidadsegundoedit" id="lateralidadsegundoedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['lateralidad'] ?>"><?php echo $dataRegistro['lateralidad'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Derecha">Derecha</option>
+                                            <option value="Izquierda">Izquierda</option>
+                                            <option value="Bilateral">Bilateral</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="tipoquirurgicoedit">
+                                        <strong>Tipo</strong>
+                                        <select name="quirurgicotipoedit[]" id="quirurgicotipoedit" multiple="multiple" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Mastectomia">Mastectomia</option>
+                                            <option value="Ganglionar">Ganglionar</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4" id="tipomastectomiaedit">
+                                        <strong>Tipo de mastectomia</strong>
+                                        <select name="mastectomiatipoedit" id="mastectomiatipoedit" class="form-control">
+                                            <option value="<?php echo $dataRegistro['tipomastecto'] ;?>"><?php echo $dataRegistro['tipomastecto'] ;?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Mastectomia conservadora">Mastectomia conservadora</option>
+                                            <option value="Mastectomia paliativa">Mastectomia paliativa</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="fechatipomastectomiaedit">
+                                        <strong>Fecha mastectomia</strong>
+                                        <input type="date" id="fechatipomastectoedit" name="fechatipomastectoedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fecha'] ?>">
+                                    </div>
+                                    <div class="col-md-4" id="tipoganglionaredit">
+                                        <strong>Tipo de ganglionar</strong>
+                                        <select name="ganglionartipoedit" id="ganglionartipoedit"  class="form-control">
+                                        <option value="<?php echo $dataRegistro['tipoganglionar'] ;?>"><?php echo $dataRegistro['tipoganglionar'] ;?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="GANGLIO CENTINELA">GANGLIO CENTINELA</option>
+                                            <option value="DISECCION AXILAR">DISECCION AXILAR</option>
+
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-4" id="fechatipoganglionaredit">
+                                        <strong>Fecha ganglionar</strong>
+                                        <input type="date" id="fechatipoganglioedit" name="fechatipoganglioedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fecha'] ?>">
+                                    </div>
+                                    <div class="col-md-4" id="reconstruccionedit">
+                                        <strong>Reconstruccion</strong>
+                                        <select name="reconstruccionsinoedit" id="reconstruccionsinoedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['reconstruccion'];?>"><?php echo $dataRegistro['reconstruccion'];?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="tiporeconstruccionedit">
+                                        <strong>Tipo Reconstrucción</strong>
+                                        <select name="reconstrucciontipoedit" id="reconstrucciontipoedit" class="form-control">
+                                        <option value="<?php echo $dataRegistro['tiporeconstruccion'] ?>"><?php echo $dataRegistro['tiporeconstruccion'] ?></option>
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Expansor tisular">Expansor tisular</option>
+                                            <option value="Implante mamario">Implante mamario</option>
+                                            <option value="Colgajo">Colgajo</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4" id="reconstrucciontipofechaedit">
+                                        <strong>Fecha Reconstrucción</strong>
+                                        <input type="date" id="fechatiporeconstruccionedit" name="fechatiporeconstruccionedit"
+                                            class="form-control" value="<?php echo $dataRegistro['fecha'] ?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    

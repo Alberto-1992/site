@@ -717,7 +717,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
 
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosmastectomia();" <?php } }?>>        
 
     <div class="containerr3">Mastectomia</div>
     <tr>
@@ -727,7 +727,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $dataRegistro['fecha'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fecha_mastecto'] ?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -739,7 +739,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $dataRegistro['fecha']?></td>
+        <td id="td"><?php echo $dataRegistro['fechatipogaglionar']?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -1015,6 +1015,12 @@ function editarmolecularmamaderecha() {
 }
 function editarmolecularmamaizquierda() {
     $("#editardatosMolecularMamaIz").modal('show');
+}
+function editardatostratamiento() {
+    $("#editardatostratamiento").modal('show');
+}
+function editardatosmastectomia() {
+    $("#editardatosmastectomia").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();
