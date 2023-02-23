@@ -359,18 +359,8 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     </tr>
 
     <tr>
-        <th id="th">Articulaciones Dolorosas SJC28:</th>
+        <th id="th">Articulaciones Dolorosas TJC28:</th>
         <td id="td"><?php ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">EVA Paciente:</th>
-        <td id="td"><?php ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">EVA Médico:</th>
-        <td id="td"><?php  ?></td>
     </tr>
 
     <tr>

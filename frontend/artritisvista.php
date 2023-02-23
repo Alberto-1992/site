@@ -11,60 +11,65 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-    <title>Cancer de Mama</title>
+    <title>Artritis Reumatoide</title>
 </head>
 
 <body>
 
     <div class="box1">
         <header class="headerartritis">
-            <span id="cabecera">ARTRITIS REUMATOIDE</span>
+            <span id="cabecera">
+                <span class="material-symbols-outlined">
+                    rheumatology
+                </span>
+                ARTRITIS REUMATOIDE
+
+            </span>
 
         </header>
-        <?php 
-    if(isset($_SESSION['usuarioAdmin'])){
-        require 'menu/menuInfarto.php';
-    }elseif(isset($_SESSION['usuarioJefe'])){
-        require 'menu/menuMedico.php';
-    }
-?>
+        <?php
+        if (isset($_SESSION['usuarioAdmin'])) {
+            require 'menu/menuInfarto.php';
+        } elseif (isset($_SESSION['usuarioJefe'])) {
+            require 'menu/menuMedico.php';
+        }
+        ?>
 
 
         <script>
-             $.ajax({
-                url: 'consultaArtritisBusqueda.php',
-                type: 'POST',
-                dataType: 'html',
-            })
-
-            .done(function(resultado) {
-                $("#tabla_resultado").html(resultado);
-            })
-        $(obtener_registros());
-
-        function obtener_registros(paciente) {
             $.ajax({
-                    url: 'consultaArtritis.php',
+                    url: 'consultaArtritisBusqueda.php',
                     type: 'POST',
                     dataType: 'html',
-                    data: {
-                        pacientes: paciente
-                    },
                 })
 
                 .done(function(resultado) {
-                    $("#tabla_resultadobus").html(resultado);
+                    $("#tabla_resultado").html(resultado);
                 })
-        }
-        $(document).on('keyup', '#busqueda', function() {
-            var valorBusqueda = $(this).val();
-            if (valorBusqueda != "") {
-                obtener_registros(valorBusqueda);
-            } else {
-                obtener_registros();
-            }
-        });
+            $(obtener_registros());
 
+            function obtener_registros(paciente) {
+                $.ajax({
+                        url: 'consultaArtritis.php',
+                        type: 'POST',
+                        dataType: 'html',
+                        data: {
+                            pacientes: paciente
+                        },
+                    })
+
+                    .done(function(resultado) {
+                        $("#tabla_resultadobus").html(resultado);
+                    })
+            }
+            $(document).on('keyup', '#busqueda', function() {
+                var valorBusqueda = $(this).val();
+                if (valorBusqueda != "") {
+                    obtener_registros(valorBusqueda);
+                } else {
+                    obtener_registros();
+                }
+            });
         </script>
 
         <div class="autoheight">
@@ -77,12 +82,11 @@
     </div>
     <?php
 
-require 'modals/cargarPacienteArtritis.php';
-require 'modals/seguimientoArtritis.php';
+    require 'modals/cargarPacienteArtritis.php';
+    require 'modals/seguimientoArtritis.php';
 
-?>
-    <script type='text/javascript'
-        src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'>
+    ?>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'>
     </script>
     <script src="js/multiple-select-cancermama.js"></script>
 </body>

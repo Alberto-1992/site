@@ -36,7 +36,7 @@
                             <div class="form-header">
                                 <h4 class="form-title" style="text-align: center;
                                     color:aliceblue  ;
-                                    background-color:#9ECFD3;
+                                    background-color:#A9DFBF;
                                     margin-top: 5px;">
                                     DATOS DEL PACIENTE</h4>
                             </div>
@@ -158,7 +158,7 @@
 
 
                                     <!--Inicia formulario de Antecedentes Personales Patológicos-->
-                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#9ECFD3; margin-top: 5px; font-size: 17px;">
+                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
                                         ANTECEDENTES PERSONALES PATOLÓGICOS
                                     </div>
 
@@ -194,7 +194,7 @@
 
                                     <!--Inicia sección de Laboratorios, aquí el usuario deberá poder capturar los valores de cada estudio realizado al paciente-->
                                     <div class="col-md-12">
-                                        <div class="form-title" style="text-align: center; color:aliceblue; background-color:#9ECFD3; margin-top: 5px; font-size: 18px;">
+                                        <div class="form-title" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 18px;">
                                             LABORATORIOS
                                         </div>
                                     </div>
@@ -287,7 +287,7 @@
 
 
                                     <!--Inicia sección USG HEPÁTICO-->
-                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#9ECFD3; margin-top: 5px; font-size: 17px;">
+                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
                                         USG HEPÁTICO
                                     </div>
 
@@ -309,13 +309,14 @@
                                             <option value="0">Seleccione...</option>
                                             <option value="normal">Normal</option>
                                             <option value="cirrosishepatica">Cirrosis Hepática</option>
+                                            <option value="esteatosis">Esteatosis</option>
                                         </select>
                                     </div>
 
                                     <div class="col-md-4">
                                         <strong>
-                                            Clasificación Cirrosis</strong>
-                                        <select name="clasificacioncirrosis" id="clasificacioncirrosis" class="form-select">
+                                            Clasificación Esteatosis</strong>
+                                        <select name="clasificacionesteatosis" id="clasificacionesteatosis" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="leve">Leve</option>
                                             <option value="moderada">Moderada</option>
@@ -330,7 +331,7 @@
 
 
                                     <!--Inicia la sección Clinica-->
-                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#9ECFD3; margin-top: 5px; font-size: 17px;">
+                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
                                         CLINICA
                                     </div>
 
@@ -346,9 +347,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="articulacionesDolorosasSJC28"> <strong>
-                                                    Articulaciones Dolorosas SJC28
+                                                    Articulaciones Dolorosas TJC28
                                                 </strong></label>
-                                            <input type="number" class="form-control" id="articulacionesDolorosasSJC28" placeholder="Ingrese valor...">
+                                            <input type="number" class="form-control" id="articulacionesDolorosasTJC28" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
 
@@ -370,7 +371,7 @@
                                             <input type="number" class="form-control" id="evega" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
-
+                                    <!--
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="evapaciente"> <strong>
@@ -387,7 +388,7 @@
                                                 </strong></label>
                                             <input type="number" class="form-control" id="evamedico" placeholder="Ingrese valor...">
                                         </div>
-                                    </div>
+                                    </div>-->
 
 
                                     <!--Finaliza la Sección Clinica-->
@@ -397,7 +398,7 @@
 
 
                                     <!-- Inicia sección Tratamiento-->
-                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#9ECFD3; margin-top: 5px; font-size: 17px;">
+                                    <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
                                         TRATAMIENTO
                                     </div>
 
@@ -454,7 +455,7 @@
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-4">
                                         <strong>Glucocorticoide</strong>
                                         <br>
                                         <input type="radio" name="glucocorticoide" id="glucocorticoide1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
@@ -462,7 +463,7 @@
                                     </fieldset>
 
                                     <!--Si el usuario selecciona Sí en la opción Glucocorticoide, se deben mostrar los siguientes dos selects-->
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <strong>Tratamiento</strong>
                                         <select name="usghepatico" id="usghepatico" class="form-select">
                                             <option value="0">Seleccione...</option>
@@ -471,7 +472,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-4" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
                                     </div>
@@ -499,6 +500,19 @@
                                         </select>
                                     </div>
 
+                                    <!--Si el usuario selecciona Sí en la opción Biológico, se deben mostrar los siguientes dos selects-->
+                                    <div class="col-md-3">
+                                        <strong>Tratamiento</strong>
+                                        <select name="usghepatico" id="usghepatico" class="form-select">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="rituximab">Rituximab</option>
+                                            <option value="abatacept">Abatacept</option>
+                                            <option value="aalimumab">Adalimumab</option>
+                                            <option value="tocilizumab">Tocilizumab</option>
+                                            <option value="pertuzumab">Pertuzumab</option>
+                                        </select>
+                                    </div>
+
                                     <div class="col-md-3">
                                         <strong>
                                             Apego a Tratamiento</strong>
@@ -514,9 +528,9 @@
                                         <br>
                                         <br>
                                         <!--Se cambia value=Finalizar por value=Cancelar-->
-                                        <input type="button" id="recargar" onclick="window.location.reload();" value="Cancelar">
+                                        <input type="button" id="recargarArtritis" onclick="window.location.reload();" value="Cancelar">
                                         <!--Se cambia value=Registrar por value=Guardar-->
-                                        <input type="submit" id="registrar" value="Guardar">
+                                        <input type="submit" id="registrarArtritis" value="Guardar">
                                         <br>
                                     </div>
 

@@ -190,7 +190,7 @@ height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-  background-color: #14BEE0;
+  background-color: #45B39D;
   z-index: 99;
   transition: .5s
 }
@@ -216,7 +216,7 @@ height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-  background-color: #14BEE0;
+  background-color: #45B39D;
   z-index: 99;
   transition: .5s
 }
@@ -307,7 +307,7 @@ height: 100%;
 }
 #boton_artritis{
   text-decoration: none; 
-  background-color: #14BEE0; 
+  background-color: #45B39D; 
   color: white; 
   cursor: pointer; 
   width: 120px; 
@@ -368,6 +368,24 @@ height: 100%;
     opacity: 0.7;
     color: yellow;
 }
+
+/*BOTÓN GUARDAR ARTRITIS*/
+#registrarArtritis{
+    width: 170px; 
+    height: 27px; 
+    background-color: #53D769;
+    text-decoration: none; 
+    color: white; 
+    cursor: pointer;  
+    font-size: 13px; 
+    border: 5px; 
+    margin-left: 0px; 
+    margin-top: 10px;
+}
+#registrarArtritis:hover{
+    background-color: #46C263;
+    color: white;}
+
 #cabeceramama{
   
   background-color: #FC71D4;
@@ -375,17 +393,27 @@ height: 100%;
 #cabeceraModalaMama {
   background-color: #FC71D4;
 }
+
+/**
 #cabecerainfartoce{
-  background-color: #CD114E;
+  background-color: #900C3F;
 }
 #cabecerainfartose{
-  background-color: #CD114E;
+  background-color: #900C3F;
+}**/
+
+#cabecerainfartoce{
+  background-color: #ab2229;
+}
+#cabecerainfartose{
+  background-color: #900C3F;
+}
+
+#cabeceramodalartritis{
+  background-color: #45B39D;
 }
 #cabeceramodalartritis{
-  background-color: #14BEE0;
-}
-#cabeceramodalartritis{
-  background-color: #409FEA;
+  background-color: #45B39D;
 }
 
 
@@ -404,10 +432,26 @@ height: 100%;
   margin-left: 0px; 
   margin-top: 10px;
 }
-#recargar:hover{
-    background-color: #E84C37;
-    opacity: 0.7;
-    color: yellow;
+
+
+/*botón Cancelar Artritis*/
+#recargarArtritis{
+  width: 170px; 
+  height: 27px; 
+  background-color: #FC3D39;
+  text-decoration: none; 
+  color: white; 
+  cursor: pointer;  
+  font-size: 13px; 
+  border: 5px; 
+  margin-left: 0px; 
+  margin-top: 10px;
+}
+
+#recargarArtritis:hover{
+    background-color: #E33437;
+    
+    color: aliceblue;
 }
 .check{
     transform : scale(1.5);
@@ -454,12 +498,12 @@ height: 100%;
       margin-top: 10px;
 }
 #cabeceraModalInfarto {
-  background: #CD114E;
+  background: #900C3F;
   color: white;
   height: 50px;
 }
 #cabeceraModalArtritis {
-  background: #14BEE0;
+  background: #45B39D;
   color: white;
   height: 50px;
 }
