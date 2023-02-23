@@ -2001,7 +2001,7 @@
                                 <br>
 
 
-                                <input type="submit"  value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                                <input type="submit"  value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                                 <input type="button" onclick="window.location.reload();"
                                     value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
 
