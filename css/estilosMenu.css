@@ -256,7 +256,7 @@ height: 100%;
     font-size: 12px; 
     width: 100%; 
     height: auto; 
-    margin-left: 12px;
+    margin-left: 1px;
     background: white; 
     margin-top: 0px; 
     padding: 5px;
@@ -270,6 +270,7 @@ height: 100%;
   margin-top: 90px;
   resize: horizontal; overflow: auto;
   font-size: 12px;
+  
 }
 .adaptar{
   width: 100%;
@@ -430,8 +431,11 @@ height: 100%;
   float: left;
   margin-left: 2px;
   margin-top: 50px; 
-  width: 24.4rem;
+  width: 100%;
+    max-width: 378px;
+    height: 33px;
   position: absolute;
+  border-radius: 0px 0px 0px 0px;
  
 }
 #totalregistro{
