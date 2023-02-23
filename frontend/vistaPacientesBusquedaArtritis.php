@@ -107,7 +107,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <div class="containerr">
     <?php
 
-    $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = $id_paciente");
+    $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = $id_paciente");
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
@@ -183,7 +183,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['escolaridad'] ?>
     </tr>
 
     <tr>
@@ -197,17 +197,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['talla'] ?>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['peso'] ?>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['imc'] ?>
     </tr>
     </tr>
 </table>
@@ -473,8 +473,8 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
                 },
                 success: function(response) {
                     $("#mensaje").html(response);
-                    $("#tabla_resultadobus").load('consultacancerdemama.php');
-                    $("#tabla_resultado").load('consultaCancerdeMamaBusqueda.php');
+                    $("#tabla_resultadobus").load('consultaArtritis.php');
+                    $("#tabla_resultado").load('consultaArtritisBusqueda.php');
 
                 }
             });

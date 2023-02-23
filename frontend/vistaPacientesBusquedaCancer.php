@@ -104,6 +104,7 @@ date_default_timezone_set('America/Monterey');
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
 <input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
+<input type="hidden" id="curpvalidar" value="<?php echo $dataRegistro['curp']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php

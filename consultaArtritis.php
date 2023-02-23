@@ -9,18 +9,15 @@
 <?php 
 
 	require 'conexionCancer.php';
-    $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id  FROM dato_usuario");
+    $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id FROM dato_usuario inner join artritispaciente on artritispaciente.id_paciente = dato_usuario.id");
     $total_registro       = mysqli_num_rows($sqlQueryComentarios);
     
-	$sql = "SELECT COUNT(*) total FROM dato_usuario";
-    $result = mysqli_query($conexion2, $sql);
-    $fila = mysqli_fetch_assoc($result);
 
-    $query= $conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio FROM dato_usuario order by dato_usuario.id DESC LIMIT 5 ");
+    $query= $conexionCancer->prepare("SELECT DISTINCT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio, artritispaciente.id_paciente FROM dato_usuario inner join artritispaciente on artritispaciente.id_paciente = dato_usuario.id order by dato_usuario.id DESC LIMIT 23 ");
     if(isset($_POST['pacientes']))
 {
 	$q=$conexion2->real_escape_string($_POST['pacientes']);
-	$query=$conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio FROM dato_usuario  where
+	$query=$conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio, artritispaciente.id_paciente FROM dato_usuario inner join artritispaciente on artritispaciente.id_paciente = dato_usuario.id where
 		dato_usuario.id LIKE '%".$q."%' OR
         dato_usuario.nombrecompleto LIKE '%".$q."%' OR
 		dato_usuario.fechanacimiento LIKE '%".$q."%' OR
@@ -29,7 +26,7 @@
 		dato_usuario.curp LIKE '%".$q."%' group by dato_usuario.id");
 }
         ?>
-<input type="submit" id="totalregistro" value="<?php echo $fila['total']; ?>">
+<input type="submit" id="totalregistro" value="<?php echo $total_registro; ?>">
 
 <input type="submit" data-bs-toggle="modal" data-bs-target="#artritis" value="+Cargar Paciente"
     id="boton_artritis">
@@ -47,7 +44,7 @@
             <?php
             error_reporting(0);
             $id = $dataRegistro['id'];
-                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = :id_paciente");
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = :id_paciente");
                 $sql_busqueda->execute(array(
                     ':id_paciente'=>$id
                 ));

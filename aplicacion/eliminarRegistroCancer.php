@@ -1,10 +1,23 @@
 <?php
 session_start();
-
+$id = $_POST['id'];
+require '../conexionCancer.php';
+$sql_t = $conexionCancer->prepare("SELECT cancerpaciente.id_paciente, artritispaciente.id_paciente as id_artritis, dato_usuario.id as id_eliminar FROM cancerpaciente LEFT OUTER join artritispaciente on artritispaciente.id_paciente = cancerpaciente.id_paciente left OUTER join dato_usuario on dato_usuario.id = cancerpaciente.id_paciente where dato_usuario.id = $id");
+$sql_t->execute();
+$resultado = $sql_t->fetch();
+$validacion = $resultado['id_artritis'];
+if($validacion == $id){
+    echo "<script>swal({
+        title: 'ooho oho proceso fallido!',
+        text: 'Error al eliminar los datos!',
+        icon: 'error',
+        
+    });
+    </script>";
+}else if($validacion != $id){
  if (isset($_SESSION['usuarioAdmin'])) {
 $usernameSesion = $_SESSION['usuarioAdmin'];
 date_default_timezone_set("America/Monterrey");
-    require '../conexionCancer.php';
     $id = $_POST['id'];
     $cancer = $_POST['cancer'];
     $nombrepaciente = $_POST['nombrepaciente'];
@@ -140,6 +153,7 @@ echo "<script>swal({
     
 });
 </script>";
+}
 }
 }
 ?>
