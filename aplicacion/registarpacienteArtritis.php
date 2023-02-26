@@ -1,18 +1,19 @@
 <?php
 include("../conexionCancer.php");
+error_reporting(0);
 date_default_timezone_set('America/Monterrey');
 $hoy = date("Y-m-d");
-    extract($_POST);
-		
+    extract($_POST);	
+$artritis = 'Artritis reumatoide';	
 	//buscamos el email	
     
-	$sql_busqueda = $conexionCancer->prepare("SELECT curp, id from dato_usuario where curp = :curp");
+	$sql_busqueda = $conexionCancer->prepare("SELECT curp, id_usuarioartritis from dato_usuarioartritis where curp = :curp");
 	    $sql_busqueda->bindParam(':curp',$curp,PDO::PARAM_STR);
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
         $validaCurp = $validacion['curp'];
-        $id_check = $validacion['id'];
+        $id_check = $validacion['id_usuarioartritis'];
         
          $sql = $conexionCancer->prepare("SELECT id_paciente from artritispaciente where id_paciente = :id_paciente limit 1");
                             $sql->execute(array(
@@ -25,58 +26,107 @@ $hoy = date("Y-m-d");
     if($id_valida != false){
         echo "<script>swal({
             title: 'Fatal!',
-            text: 'Error!! ya existe un paciente con este CURP y registro de artritis!',
+            text: 'Error!! ya existe un paciente con este CURP y registro de cancer!',
             icon: 'error',
             timer: 1500,
                     showConfirmButton: false
             });</script>";
         
     }else{
-	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO
-    $raza = 'sin dato';   
-    $cbx_estado = 0;
-    $cbx_municipio = 0;
-    $artritis = 'Artritis reumatoide';
-        if($validaCurp != $curp){
+	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO   
+	$sql = $conexionCancer->prepare("INSERT into dato_usuarioartritis(curp, nombrecompleto, escolaridad, fechanacimiento, edad, sexo,  year) 
     
-	$sql = $conexionCancer->prepare("INSERT into dato_usuario(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, raza, estado, municipio, year) 
-    
-                                    values (:curp, :nombrecompleto, :poblacionindigena, :escolaridad, :fechanacimiento, :edad, :sexo, :raza, :estado, :municipio, :year)");
+                                    values (:curp, :nombrecompleto, :escolaridad, :fechanacimiento, :edad, :sexo,  :year)");
                     
                                 $sql->execute(array(
                                     ':curp'=> $curp,
                                     ':nombrecompleto'=>$nombrecompleto,
-                                    ':poblacionindigena'=>$raza,
                                     ':escolaridad'=>$escolaridad,
                                     ':fechanacimiento'=>$fecha,
                                     ':edad'=>$edad, 
                                     ':sexo'=>$sexo,
-                                    ':raza'=>$raza,
-                                    ':estado'=>$cbx_estado,
-                                    ':municipio'=>$cbx_municipio,
                                     ':year'=>$hoy
         )); 
-        $sql = $conexionCancer->prepare("SELECT id from dato_usuario where curp = :curp");
+        
+        $sql = $conexionCancer->prepare("SELECT id_usuarioartritis from dato_usuarioartritis where curp = :curp");
         $sql->execute(array(
 
             ':curp' => $curp
         
         ));
         $row = $sql->fetch();
-        $id_usuario = $row['id'];
-        $sql = $conexionCancer->prepare("INSERT into artritispaciente(descripcion_artritis,id_paciente) VALUES(:descripcion_artritis,:id_paciente)");
+        $id_usuario = $row['id_usuarioartritis'];
+        $sql = $conexionCancer->prepare("INSERT into artritispaciente(id_artritispaciente, descripcion_artritis,id_paciente) VALUES(:id_artritispaciente, :descripcion_artritis,:id_paciente)");
         $sql->execute(array(
+            ':id_artritispaciente'=>$id_usuario,
             ':descripcion_artritis'=>$artritis,
             ':id_paciente'=>$id_usuario
         ));
-        }else{
-            $sql = $conexionCancer->prepare("INSERT into artritispaciente(descripcion_artritis,id_paciente) VALUES(:descripcion_artritis,:id_paciente)");
+        $sql = $conexionCancer->prepare("INSERT into somatometriaartritis(id_somatometria,id_paciente,tallaartritis,pesoartritis,imcartritis)values(:id_somatometria,:id_paciente,:tallaartritis,:pesoartritis,:imcartritis)");
+            $sql->execute(array(
+                ':id_somatometria'=>uniqid('hraei'),
+                ':id_paciente'=>$id_usuario,
+                ':tallaartritis'=>$talla,
+                ':pesoartritis'=>$peso,
+                ':imcartritis'=>$imc  
+            ));
+                        $msartritis;
+                        if(is_array($msartritis) || is_object($msartritis)){
+                            foreach($msartritis as $seleccion) {
+                                $sql_s = $conexionCancer->prepare("INSERT into antecedentespatologicosartritis(detalleantecedente,id_paciente) 
+                
+                                            values(:detalleantecedente,id_paciente)");
+
+                                                $sql_s->execute(array(
+                                                    
+                                                    ':detalleantecedente'=>$seleccion,
+                                                    ':id_paciente'=>$id_usuario
+                                                    
+                                    ));
+                            }
+                        }
+        $sql = $conexionCancer->prepare("INSERT into laboratoriosartritis(id_laboratorio,plaquetas,frbasal,frnominal,pcr,vitaminadbasal,vitaminadnominal,anticppbasal,anticppnominal,vsg,tgobasal,tgonominal,tgpbasal,tgpnominal,glucosa,colesterol,trigliceridos,id_paciente)
+        values(:id_laboratorio,:plaquetas,:frbasal,:frnominal,:pcr,:vitaminadbasal,:vitaminadnominal,:anticppbasal,:anticppnominal,:vsg,:tgobasal,:tgonominal,:tgpbasal,:tgpnominal,:glucosa,:colesterol,:trigliceridos,:id_paciente)");
+                    $sql->execute(array(
+                        ':id_laboratorio'=>uniqid('hraei'),
+                        ':plaquetas'=>$plaquetas,
+                        ':frbasal'=>$frbasal,
+                        ':frnominal'=>$frnominal,
+                        ':pcr'=>$pcr,
+                        ':vitaminadbasal'=>$vitaminaDBasal,
+                        ':vitaminadnominal'=>$vitaminaDNominal,
+                        ':anticppbasal'=>$anticppbasal,
+                        ':anticppnominal'=>$anticppnominal,
+                        ':vsg'=>$vsg,
+                        ':tgobasal'=>$tgobasal,
+                        ':tgonominal'=>$tgonominal,
+                        ':tgpbasal'=>$tgpbasal,
+                        ':tgpnominal'=>$tgpnominal,
+                        ':glucosa'=>$glucosa,
+                        ':colesterol'=>$colesterol,
+                        ':trigliceridos'=>$trigliceridos,
+                        ':id_paciente'=>$id_usuario
+                    ));
+        $sql = $conexionCancer->prepare("INSERT into usghepaticoartritis(id_usg,id_paciente,detalleusghepatico,hallazgousg,clasificacionesteatosis)
+        values(:id_usg,:id_paciente,:detalleusghepatico,:hallazgousg,:clasificacionesteatosis)");
                 $sql->execute(array(
-                    ':descripcion_artritis'=>$artritis,
-                    ':id_paciente'=>$id_check
+                    ':id_usg'=>uniqid('hraei'),
+                    ':id_paciente'=>$id_usuario,
+                    ':detalleusghepatico'=>$usghepatico,
+                    ':hallazgousg'=>$hallazgousg,
+                    ':clasificacionesteatosis'=>$clasificacionesteatosis
+                ));
+        $sql = $conexionCancer->prepare("INSERT into clinicaartritis(id_clinica,id_paciente,articulacionesinflamadassjc28,articulacionesdolorosastjc28,evglobalpga,evega)
+        values(:id_clinica,:id_paciente,:articulacionesinflamadassjc28,:articulacionesdolorosastjc28,:evglobalpga,:evega)");
+                $sql->execute(array(
+                    ':id_clinica'=>uniqid('hraei'),
+                    ':id_paciente'=>$id_usuario,
+                    ':articulacionesinflamadassjc28'=>$articulacionesInflamadasSJC28,
+                    ':articulacionesdolorosastjc28'=>$articulacionesDolorosasTJC28,
+                    ':evglobalpga'=>$evglobalpga,
+                    ':evega'=>$evega
                 ));
 
-        }
         if($sql != false) {
             echo "<script>swal({
                         title: 'Good job!',

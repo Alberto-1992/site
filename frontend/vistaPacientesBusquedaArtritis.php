@@ -197,17 +197,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php echo $dataRegistro['talla'] ?>
+        <td id="td"><?php echo $dataRegistro['tallaartritis'] ?>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php echo $dataRegistro['peso'] ?>
+        <td id="td"><?php echo $dataRegistro['pesoartritis'] ?>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php echo $dataRegistro['imc'] ?>
+        <td id="td"><?php echo $dataRegistro['imcartritis'] ?>
     </tr>
     </tr>
 </table>
@@ -239,82 +239,82 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Plaquetas:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['plaquetas'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['frbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['frnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">PCR:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['pcr'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vitaminadbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vitaminadnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['anticppbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['anticppnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">VSG:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vsg'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgobasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgonominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgpbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgpnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Glucosa:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['glucosa'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Colesterol:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['colesterol'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Trigliceridos:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
     </tr>
 </table>
 <!--FINALIZA SECCIÓN DE LABORATORIOS-->
@@ -329,17 +329,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">USG Hepático:</th>
-        <td></td>
+        <td id="td"><?php echo $dataRegistro['detalleusghepatico'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Hallazgo USG:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['hallazgousg'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Clasificación Cirrosis:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['clasificacionesteatosis'] ?></td>
     </tr>
 </table>
 <!-- FINALIZA SECCIÓN USG HEPÁTICO-->
@@ -355,34 +355,34 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Articulaciones Inflamadas SJC28:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesinflamadassjc28'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Articulaciones Dolorosas TJC28:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesdolorosastjc28'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación Global PGA:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['evglobalpga'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación del Evaluador EGA:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['evega'] ?></td>
     </tr>
 
     <tr>
         <th id="th">RESULTADO CDAI:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"></td>
 
         <!-- Aquí se debe hacer un calculo con base en los valores de los campos de la sección CLINICA, la formula es: 
             CDAI = SJC28 + TJC28 + PGA + EGA
             El resultado debe clasificarse en uno de los siguientes rubros:
             * <2.8,	remision
             * 2.8 - 10,	actividad de enfermedad baja
-            * 10 - 222,	actividad de enfermedad moderada
+            * 10 - 22,	actividad de enfermedad moderada
             * >22,	actividad de enfermedad alta
         -->
     </tr>

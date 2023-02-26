@@ -75,7 +75,7 @@ function curp2date(curp) {
 }
 $(document).ready(function () {
 
-    $('#mscancer').change(function (e) {
+    $('#msartritis').change(function (e) {
 
 
     }).multipleSelect({
@@ -152,3 +152,18 @@ window.addEventListener('DOMContentLoaded', (evento) => {
     document.querySelector("input[name='fecha']").max = hoy_fecha;
 
 });
+
+function calculaIMC() {
+
+    let talla = document.getElementById('talla').value;
+    let peso = document.getElementById('peso').value;
+
+
+    imccalculo = Math.pow(talla, 2);
+    let limitimcalculo = imccalculo.toFixed(2);
+    let calculoimc = peso / limitimcalculo;
+    let limitcalculofinal = calculoimc.toFixed(1);
+
+    document.formularioartritis.imc.value = limitcalculofinal;
+
+}

@@ -90,7 +90,7 @@ date_default_timezone_set('America/Monterey');
         }elseif($imccalculo > 35 and $imccalculo <= 39.9 ){
             $showimc = "<span class='obesidad2'> $obe2";
         }
-            require '../esclerosis/conexion.php';
+            require 'conexionCancer.php';
             $sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
             $rows = mysqli_fetch_assoc($sqls);
             

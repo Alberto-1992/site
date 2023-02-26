@@ -59,7 +59,7 @@ function curp2date(curp) {
     var sexo = miCurp.substr(-8, 1);
     var m = miCurp.match(/^\w{4}(\w{2})(\w{2})(\w{2})/);
     //miFecha = new Date(año,mes,dia) 
-    var anyo = parseInt(m[1], 10) + 1800;
+    var anyo = parseInt(m[1], 10) + 1900;
     if (anyo < 1920) anyo += 100;
     var mes = parseInt(m[2], 10) - 1;
     var dia = parseInt(m[3], 10);
