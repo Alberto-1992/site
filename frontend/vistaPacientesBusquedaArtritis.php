@@ -7,38 +7,16 @@ date_default_timezone_set('America/Monterrey');
 $fecha_actual = new DateTime(date('Y-m-d'));
 
 
-$id_paciente = $dataRegistro['id'];
+$id_paciente = $dataRegistro['id_usuarioartritis'];
 $curp = $dataRegistro['curp'];
 $id = $dataRegistro['id_paciente'];
-$municipio = $dataRegistro['municipio'];
-$estado = $dataRegistro['estado'];
+
 require 'conexionCancer.php';
 
-$clues = $dataRegistro['clues'];
-$sql_f = $conexion2->query("SELECT unidad from hospitales where clues = '$clues'");
-$rown = mysqli_fetch_assoc($sql_f);
-
-$sql = $conexion2->query("SELECT id_paciente, datoantecedentefamiliar
-            FROM antecedentesfamiliarescancer
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM antecedentesfamiliarescancer
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
-
-$sql_m = $conexion2->query("SELECT id_paciente, descripcioncancer
-            FROM cancerpaciente
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM cancerpaciente
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
 
 
+
+/*
 $sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
             FROM antecedentespatopersonales
             WHERE id_paciente
@@ -47,21 +25,7 @@ $sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
             GROUP BY id_paciente
             HAVING count(id_paciente) >= 1)
             and id_paciente = $id_paciente
-            ORDER BY id_paciente");
-
-$sql_q = $conexion2->query("SELECT id_quirurgico, realizoquirurgico, lateralidad, tipo, curpusuario 
-            FROM quirurgico 
-            WHERE curpusuario
-            IN (SELECT curpusuario FROM quirurgico
-            GROUP BY curpusuario
-            HAVING count(curpusuario) >= 1)
-            and curpusuario = '$curp'
-            ORDER BY curpusuario");
-
-
-
-
-
+            ORDER BY id_paciente");*/
 
 
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
@@ -89,12 +53,7 @@ if ($imccalculo <= 18.5) {
 } elseif ($imccalculo > 35 and $imccalculo <= 39.9) {
     $showimc = "<span class='obesidad2'> $obe2";
 }
-require '../esclerosis/conexion.php';
-$sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
-$rows = mysqli_fetch_assoc($sqls);
 
-$sqlsm = $conexion2->query("SELECT * from t_municipio where id_municipio = $municipio");
-$rowsm = mysqli_fetch_assoc($sqlsm);
 
 
 
@@ -102,23 +61,23 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
-<input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
+<input type="hidden" id="artritispaciente" value="<?php echo $dataRegistro['descripcion_artritis']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php
-
-    $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = $id_paciente");
+/*
+    $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = $id_paciente");
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
-    $validaid = $validacion['id_paciente'];
+    $validaid = $validacion['id_paciente'];*/
     if ($dataRegistro['curp'] != '') {
-        if ($validaid != $id_paciente) { ?>
+       /* if ($validaid != $id_paciente) { ?>
             <a href="#" class="mandaid" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
-        <?php } ?>
+        <?php }*/ ?>
         <script>
             function seguimiento() {
 
@@ -162,7 +121,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
                             background: #EBEBEB;
                     }
                 </style>
-</div>
+ 
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
 
@@ -183,7 +142,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['escolaridad'] ?>
     </tr>
 
     <tr>
@@ -197,17 +156,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['tallaartritis'] ?>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['pesoartritis'] ?>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['imcartritis'] ?>
     </tr>
     </tr>
 </table>
@@ -239,82 +198,82 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Plaquetas:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['plaquetas'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['frbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['frnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">PCR:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['pcr'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vitaminadbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vitaminadnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['anticppbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['anticppnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">VSG:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['vsg'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgobasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgonominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Basal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgpbasal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Nominal:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tgpnominal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Glucosa:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['glucosa'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Colesterol:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['colesterol'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Trigliceridos:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
     </tr>
 </table>
 <!--FINALIZA SECCIÓN DE LABORATORIOS-->
@@ -329,17 +288,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">USG Hepático:</th>
-        <td></td>
+        <td id="td"><?php echo $dataRegistro['detalleusghepatico'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Hallazgo USG:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['hallazgousg'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Clasificación Cirrosis:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['clasificacionesteatosis'] ?></td>
     </tr>
 </table>
 <!-- FINALIZA SECCIÓN USG HEPÁTICO-->
@@ -355,34 +314,34 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Articulaciones Inflamadas SJC28:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesinflamadassjc28'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Articulaciones Dolorosas TJC28:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesdolorosastjc28'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación Global PGA:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['evglobalpga'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación del Evaluador EGA:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['evega'] ?></td>
     </tr>
 
     <tr>
         <th id="th">RESULTADO CDAI:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"></td>
 
         <!-- Aquí se debe hacer un calculo con base en los valores de los campos de la sección CLINICA, la formula es: 
             CDAI = SJC28 + TJC28 + PGA + EGA
             El resultado debe clasificarse en uno de los siguientes rubros:
             * <2.8,	remision
             * 2.8 - 10,	actividad de enfermedad baja
-            * 10 - 222,	actividad de enfermedad moderada
+            * 10 - 22,	actividad de enfermedad moderada
             * >22,	actividad de enfermedad alta
         -->
     </tr>
@@ -455,26 +414,26 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <script>
     function eliminarRegistro() {
         var id = $("#idcurp").val();
-        var cancer = $("#cancer").val();
+        var artritis = $("#artritispaciente").val();
         var nombrepaciente = $("#nombrepaciente").val();
         var mensaje = confirm("el registro se eliminara");
         let parametros = {
             id: id,
-            cancer: cancer,
+            artritis: artritis,
             nombrepaciente: nombrepaciente
         }
         if (mensaje == true) {
             $.ajax({
                 data: parametros,
-                url: 'aplicacion/eliminarRegistroCancer.php',
+                url: 'aplicacion/eliminarRegistroArtritis.php',
                 type: 'post',
                 beforeSend: function() {
                     $("#mensaje").html("Procesando, espere por favor");
                 },
                 success: function(response) {
                     $("#mensaje").html(response);
-                    $("#tabla_resultadobus").load('consultacancerdemama.php');
-                    $("#tabla_resultado").load('consultaCancerdeMamaBusqueda.php');
+                    $("#tabla_resultadobus").load('consultaArtritis.php');
+                    $("#tabla_resultado").load('consultaArtritisBusqueda.php');
 
                 }
             });

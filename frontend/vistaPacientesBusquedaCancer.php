@@ -90,7 +90,7 @@ date_default_timezone_set('America/Monterey');
         }elseif($imccalculo > 35 and $imccalculo <= 39.9 ){
             $showimc = "<span class='obesidad2'> $obe2";
         }
-            require '../esclerosis/conexion.php';
+            require 'conexionCancer.php';
             $sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
             $rows = mysqli_fetch_assoc($sqls);
             
@@ -104,6 +104,7 @@ date_default_timezone_set('America/Monterey');
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
 <input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
+<input type="hidden" id="curpvalidar" value="<?php echo $dataRegistro['curp']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php
@@ -717,7 +718,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
 
     </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosmastectomia();" <?php } }?>>        
 
     <div class="containerr3">Mastectomia</div>
     <tr>
@@ -727,7 +728,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $dataRegistro['fecha'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fecha_mastecto'] ?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -739,7 +740,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
     </tr>
     <tr>
         <th id="th">Fecha:</th>
-        <td id="td"><?php echo $dataRegistro['fecha']?></td>
+        <td id="td"><?php echo $dataRegistro['fechatipogaglionar']?></td>
     </tr>
     </table>
     <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
@@ -1015,6 +1016,12 @@ function editarmolecularmamaderecha() {
 }
 function editarmolecularmamaizquierda() {
     $("#editardatosMolecularMamaIz").modal('show');
+}
+function editardatostratamiento() {
+    $("#editardatostratamiento").modal('show');
+}
+function editardatosmastectomia() {
+    $("#editardatosmastectomia").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();

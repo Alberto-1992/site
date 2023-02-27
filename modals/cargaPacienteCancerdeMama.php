@@ -14,7 +14,8 @@
 
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
-                <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined">
+                    person_add
                 </span>
 
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
@@ -1259,7 +1260,7 @@
                                     
                                     <!--finaliza region ganglionar inzquierda inmuno-->
                                     <!--Inicia mama molecular derecha-->
-                                    <hr>
+                                    
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">MOLECULAR</strong>
@@ -1554,7 +1555,7 @@
                                         </div>
                                     </div>-->
                                     <!--finaliza mama molecular region ganglionar izquierda-->
-                                    <hr>
+                                    
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
                                         <strong id="titulos">TRATAMIENTO</strong>

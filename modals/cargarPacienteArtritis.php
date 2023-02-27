@@ -8,7 +8,7 @@
 
     <link href="css/estilosMenu.css" rel="stylesheet">
     <script src="js/getCatalogos.js"></script>
-    <script src="js/scriptModalvalidacionCancerMama.js"></script>
+    <script src="js/scriptModalvalidacionArtritis.js"></script>
     <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
     <div class="modal-dialog modal-lg">
 
@@ -41,14 +41,14 @@
                                     DATOS DEL PACIENTE</h4>
                             </div>
 
-                            <form name="formulario" id="formulario" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formularioartritis" id="formularioartritis" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
-                                        $("#formulario").on("submit", function(e) {
+                                        $("#formularioartritis").on("submit", function(e) {
                                             if ($('input[name=curp]').val().length == 0 || $(
                                                     'input[name=nombrecompleto]')
-                                                .val().length == 0 || $('select[name=cbx_estado]').val().length == 0
+                                                .val().length == 0
                                             ) {
                                                 alert('Ingrese los datos requeridos');
 
@@ -58,12 +58,12 @@
                                             e.preventDefault();
 
                                             var formData = new FormData(document.getElementById(
-                                                "formulario"));
+                                                "formularioartritis"));
                                             formData.append("dato", "valor");
 
                                             $.ajax({
 
-                                                url: "aplicacion/registrarpacienteCancer.php",
+                                                url: "aplicacion/registarpacienteArtritis.php",
                                                 type: "post",
                                                 dataType: "html",
                                                 data: formData,
@@ -136,7 +136,15 @@
                                         <strong>Sexo</strong>
                                         <input type="text" class="form-control" id="sexo" onclick="curp2date();" name="sexo" readonly>
                                     </div>
-
+                                    <script>
+                                        /*
+                                    $(document).ready(function() {
+                                        $('#presionarterial').mask('000/000');
+                                    });*/
+                                    $(document).ready(function() {
+                                        $('#talla').mask('0.00');
+                                    });
+                                    </script>
                                     <div class="col-md-4">
                                         <strong>Talla</strong>
                                         <input type="number" step="any" class="form-control" id="talla" name="talla" required>
@@ -175,7 +183,7 @@
                                             Hiperlipidemia
                                         -->
 
-                                        <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
+                                        <select id="msartritis" name="msartritis[]" multiple="multiple" class="form-control">
                                             <?php
                                             $query = $conexionCancer->prepare("SELECT relacion FROM antecedentescancer");
                                             $query->execute();
@@ -203,82 +211,82 @@
 
                                     <div class="col-md-3">
                                         <strong>Plaquetas</strong>
-                                        <input type="number" step="any" class="form-control" id="plaquetas" name="plaquetas" required>
+                                        <input type="number" step="any" class="form-control" id="plaquetas" name="plaquetas" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Factor Reumatoide Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="frbasal" name="frbasal" required>
+                                        <input type="number" step="any" class="form-control" id="frbasal" name="frbasal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Factor Reumatoide Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="frnominal" name="frbasal" required>
+                                        <input type="number" step="any" class="form-control" id="frnominal" name="frnominal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>PCR</strong>
-                                        <input type="number" step="any" class="form-control" id="pcr" name="pcr" required>
+                                        <input type="number" step="any" class="form-control" id="pcr" name="pcr" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Vitamina D Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="vitaminaDBasal" name="vitaminaDBasal" required>
+                                        <input type="number" step="any" class="form-control" id="vitaminaDBasal" name="vitaminaDBasal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Vitamina D Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="vitaminaDNominal" name="vitaminaDNominal" required>
+                                        <input type="number" step="any" class="form-control" id="vitaminaDNominal" name="vitaminaDNominal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>AC Anticpp Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="anticppbasal" name="anticppbasal" required>
+                                        <input type="number" step="any" class="form-control" id="anticppbasal" name="anticppbasal">
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>AC Anticpp Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="anticppnominal" name="anticppnominal" required>
+                                        <input type="number" step="any" class="form-control" id="anticppnominal" name="anticppnominal">
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>VSG</strong>
-                                        <input type="number" step="any" class="form-control" id="vsg" name="vsg" required>
+                                        <input type="number" step="any" class="form-control" id="vsg" name="vsg" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>TGO Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgobasal" name="tgobasal" required>
+                                        <input type="number" step="any" class="form-control" id="tgobasal" name="tgobasal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>TGO Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgonominal" name="tgonominal" required>
+                                        <input type="number" step="any" class="form-control" id="tgonominal" name="tgonominal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>TGP Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgpbasal" name="tgpbasal" required>
+                                        <input type="number" step="any" class="form-control" id="tgpbasal" name="tgpbasal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>TGP Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgpnominal" name="tgpnominal" required>
+                                        <input type="number" step="any" class="form-control" id="tgpnominal" name="tgpnominal" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Glucosa</strong>
-                                        <input type="number" step="any" class="form-control" id="glucosa" name="glucosa" required>
+                                        <input type="number" step="any" class="form-control" id="glucosa" name="glucosa" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Colesterol</strong>
-                                        <input type="number" step="any" class="form-control" id="colesterol" name="colesterol" required>
+                                        <input type="number" step="any" class="form-control" id="colesterol" name="colesterol" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Trigliceridos</strong>
-                                        <input type="number" step="any" class="form-control" id="trigliceridos" name="trigliceridos " required>
+                                        <input type="number" step="any" class="form-control" id="trigliceridos" name="trigliceridos">
                                     </div>
                                     <!--Finaliza sección de Laboratorio-->
 
@@ -296,8 +304,8 @@
                                         <strong>USG Hepático</strong>
                                         <select name="usghepatico" id="usghepatico" class="form-select">
                                             <option value="0">Seleccione...</option>
-                                            <option value="si">Sí</option>
-                                            <option value="no">No</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
 
@@ -305,7 +313,7 @@
 
                                     <div class="col-md-4">
                                         <strong>Hallazgo USG</strong>
-                                        <select name=" hallazgousg" id="hallazgousg" class="form-select">
+                                        <select name="hallazgousg" id="hallazgousg" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="normal">Normal</option>
                                             <option value="cirrosishepatica">Cirrosis Hepática</option>
@@ -340,7 +348,7 @@
                                             <label for="articulacionesInflamadasSJC28"> <strong>
                                                     Articulaciones Inflamadas SJC28
                                                 </strong></label>
-                                            <input type="number" class="form-control" id="articulacionesInflamadasSJC28" placeholder="Ingrese valor...">
+                                            <input type="number" class="form-control" id="articulacionesInflamadasSJC28" name="articulacionesInflamadasSJC28" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
 
@@ -349,7 +357,7 @@
                                             <label for="articulacionesDolorosasSJC28"> <strong>
                                                     Articulaciones Dolorosas TJC28
                                                 </strong></label>
-                                            <input type="number" class="form-control" id="articulacionesDolorosasTJC28" placeholder="Ingrese valor...">
+                                            <input type="number" class="form-control" id="articulacionesDolorosasTJC28" name="articulacionesDolorosasTJC28" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
 
@@ -358,7 +366,7 @@
                                             <label for="evglobalpga"> <strong>
                                                     Evaluación Global PGA
                                                 </strong></label>
-                                            <input type="number" class="form-control" id="evglobalpga" placeholder="Ingrese valor...">
+                                            <input type="number" class="form-control" id="evglobalpga" name="evglobalpga" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
 
@@ -368,7 +376,7 @@
                                             <label for="evega"> <strong>
                                                     Evaluación del Evaluador EGA
                                                 </strong></label>
-                                            <input type="number" class="form-control" id="evega" placeholder="Ingrese valor...">
+                                            <input type="number" class="form-control" id="evega" name="evega" placeholder="Ingrese valor...">
                                         </div>
                                     </div>
                                     <!--
@@ -412,7 +420,7 @@
 
                                     <div class="col-md-3" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanal" name="dosisSemanalmetro" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -425,7 +433,7 @@
 
                                     <div class="col-md-3" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanalfemua" name="dosisSemanalfemua" type="text" class="form-control" value="">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -438,7 +446,7 @@
 
                                     <div class="col-md-3" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanalsulfa" name="dosisSemanalsulfa" type="text" class="form-control" value="">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -451,7 +459,7 @@
 
                                     <div class="col-md-3" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanalteco" name="dosisSemanalteco" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -474,7 +482,7 @@
 
                                     <div class="col-md-4" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanaltrata" name="dosisSemanaltrata" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -487,13 +495,13 @@
 
                                     <div class="col-md-3" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanal" type="text" class="form-control" value="" required>
+                                        <input id="dosisSemanalvitad" name="dosisSemanalvitad" type="text" class="form-control" value="">
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>
                                             Biológico</strong>
-                                        <select name="gestas" id="gestas" class="form-select">
+                                        <select name="biologico" id="biologico" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="si">Sí</option>
                                             <option value="no">No</option>
@@ -503,7 +511,7 @@
                                     <!--Si el usuario selecciona Sí en la opción Biológico, se deben mostrar los siguientes dos selects-->
                                     <div class="col-md-3">
                                         <strong>Tratamiento</strong>
-                                        <select name="usghepatico" id="usghepatico" class="form-select">
+                                        <select name="tratamientobiologico" id="tratamientobiologico" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="rituximab">Rituximab</option>
                                             <option value="abatacept">Abatacept</option>
@@ -516,7 +524,7 @@
                                     <div class="col-md-3">
                                         <strong>
                                             Apego a Tratamiento</strong>
-                                        <select name="gestas" id="gestas" class="form-select">
+                                        <select name="apegotratamiento" id="apegotratamiento" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="parcial">Parcial</option>
                                             <option value="total">Total</option>

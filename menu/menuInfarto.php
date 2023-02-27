@@ -17,7 +17,7 @@
                     </span>
                 </a>
             </li>
-            <hr>
+        
             <li class="has-subnav">
                 <a href="infarto">
                     <i class="fa fa-ambulance fa-2x" id="icon-color"></i>
@@ -31,21 +31,20 @@
                 
                     </ul>-->
             </li>
-            <hr>
-            <li class="has-subnav">
+            <!--<li class="has-subnav">
                 <a href="angina">
                     <i class="fa fa-heartbeat fa-2x" id="icon-color"></i>
                     <span class="nav-text">
                         Angina
                     </span>
                 </a>
-                <!--  <ul>
+                <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
                       
-                    </ul>-->
-            </li>
-            <hr>
+                    </ul>
+            </li>-->
+            
             <li class="has-subnav">
                 <a href="cancer">
                     <i class="fa fa-child fa-2x" id="icon-color"></i>
@@ -59,7 +58,7 @@
                       
                     </ul>-->
             </li>
-            <hr>
+            
             <li class="has-subnav">
                 <a href="artritis">
                     <i class="fa fa-hand-spock-o fa-2x" id="icon-color"></i>
@@ -73,7 +72,7 @@
                       
                     </ul>-->
             </li>
-            <hr>
+            
             <!--
                 <li class="has-subnav">
                     <a href="vistaCisfa.php">
@@ -108,7 +107,7 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>-->
             </li>
-            <hr>
+            
             <li>
                 <a href="#">
                     <i class="fa fa-heart-o fa-2x" id="icon-color"></i>
@@ -123,7 +122,7 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>-->
             </li>
-            <hr>
+        
             <!-- <li>
                 <a href="#">
                     <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
@@ -152,7 +151,7 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>-->
             </li>
-            <hr>
+            
             <li>
                 <a href="#">
                     <i class="fa fa-map-marker fa-2x" id="icon-color"></i>
@@ -171,7 +170,7 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>-->
             </li>
-            <hr>
+            
             <li>
                 <a href="#">
                     <i class="fa fa-info fa-2x" id="icon-color"></i>
@@ -189,7 +188,7 @@
                 </ul>
 -->
             </li>
-            <hr>
+            
         </ul>
 
         <ul class="logout">

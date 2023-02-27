@@ -1,28 +1,32 @@
 <?php
 include("../conexionCancer.php");
+//error_reporting(0);
 date_default_timezone_set('America/Monterrey');
 $hoy = date("Y-m-d");
     extract($_POST);
 		
-	//buscamos el email	
-    
+	//buscamos el email	   
 	$sql_busqueda = $conexionCancer->prepare("SELECT curp, id from dato_usuario where curp = :curp");
-	    $sql_busqueda->bindParam(':curp',$curp,PDO::PARAM_STR);
+	$sql_busqueda->bindParam(':curp',$curp,PDO::PARAM_STR);
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
+    if(is_array($validacion)){
         $validaCurp = $validacion['curp'];
         $id_check = $validacion['id'];
-        
-         $sql = $conexionCancer->prepare("SELECT id_paciente from cancerpaciente where id_paciente = :id_paciente limit 1");
+    }
+            $sql = $conexionCancer->prepare("SELECT id_paciente from cancerpaciente where id_paciente = :id_paciente limit 1");
                             $sql->execute(array(
             
                                 ':id_paciente' => $id_check
                             
                             ));
+                            
                             $row = $sql->fetch();
+                            if(is_array($row)){
                             $id_valida = $row['id_paciente'];
-    if($id_valida != false){
+                            }
+    if(isset($id_valida) != false){
         echo "<script>swal({
             title: 'Fatal!',
             text: 'Error!! ya existe un paciente con este CURP y registro de cancer!',
@@ -33,7 +37,7 @@ $hoy = date("Y-m-d");
         
     }else{
 	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO
-        if($validaCurp != $curp){
+        //if($validaCurp != $curp){
         
 	$sql = $conexionCancer->prepare("INSERT into dato_usuario(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, raza, estado, municipio, year) 
     
@@ -105,10 +109,8 @@ $hoy = date("Y-m-d");
                                         $sql->bindParam(':descripcioncancer',$tipodecancer,PDO::PARAM_STR,20);
                                         $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                     $sql->execute();
-                                    
-                            $checked_contador = count($check_listapato);
-                            //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                            // Bucle para almacenar y visualizar valores activados checkbox.
+                        $check_listapato;
+                        if(is_array($check_listapato) || is_object($check_listapato)){
                             foreach($check_listapato as $seleccion) {
                                 $sql_s = $conexionCancer->prepare("INSERT into antecedentespatopersonales(descripcionantecedente, id_paciente) 
                 
@@ -119,9 +121,9 @@ $hoy = date("Y-m-d");
                                                     ':id_paciente'=>$id_usuario
                                     ));
                             }
-                            
-
-                                    $ms_contador = count($mscancer);
+                        } 
+                        $mscancer;
+                        if(is_array($mscancer) || is_object($mscancer)){
                             foreach($mscancer as $heredo) {
                                 $sql_s = $conexionCancer->prepare("INSERT into antecedentesfamiliarescancer(datoantecedentefamiliar, id_paciente) 
                 
@@ -133,6 +135,7 @@ $hoy = date("Y-m-d");
             
                                 ));
                             }
+                        }
                             $sql = $conexionCancer->prepare("INSERT into atencionclinica(fechaatencioninicial, biradsreferencia, biradshraei, lateralidadmama, estadioclinico, etapaclinica, tamaniotumoral, compromisolenfatico, metastasis, calidaddevidaecog, mastectoextrainstituto, lateralidadmastectoextrainstituto, fechamastectoextrainstituto, id_usuario)
                             values(:fechaatencioninicial, :biradsreferencia, :biradshraei, :lateralidadmama, :estadioclinico, :etapaclinica, :tamaniotumoral, :compromisolenfatico, :metastasis, :calidaddevidaecog, :mastectoextrainstituto, :lateralidadmastectoextrainstituto, :fechamastectoextrainstituto, :id_usuario)");
 
@@ -151,8 +154,8 @@ $hoy = date("Y-m-d");
                             $sql->bindParam(':fechamastectoextrainstituto',$fechamastectoextra,PDO::PARAM_STR);
                             $sql->bindParam(':id_usuario',$id_usuario,PDO::PARAM_INT);
                         $sql->execute();
-                                    
-                                    $ms_sitiometa = count($sitiometastasis);
+                        $sitiometastasis;         
+                        if(is_array($sitiometastasis) || is_object($sitiometastasis)){
                             foreach($sitiometastasis as $heredositiometa) {
                                 $sql_s = $conexionCancer->prepare("INSERT into atencionclinicasitiometastasis(descripcionsitiometastasisi, id_paciente) 
                 
@@ -164,8 +167,9 @@ $hoy = date("Y-m-d");
             
                                 ));
                             }
-                                    
-                                    $ms_histo = count($mamaseleccion);
+                        }
+                        $mamaseleccion;
+                        if(is_array($mamaseleccion) || is_object($mamaseleccion)){       
                             foreach($mamaseleccion as $heredohistopato) {
                                 $sql_s = $conexionCancer->prepare("INSERT into mamahistopatologia(mamahistopato, id_paciente) 
                 
@@ -177,7 +181,7 @@ $hoy = date("Y-m-d");
             
                                 ));
                             }
-
+                        }
                             $sql = $conexionCancer->prepare("INSERT into histopatologia(dxhistopatologico, fechadxhistopatologico, nottingham, escalasbr, id_usuario)
                                         values(:dxhistopatologico, :fechadxhistopatologico, :nottingham, :escalasbr, :id_usuario)");
 
@@ -279,20 +283,20 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':fishrgiz',$fishizrgi,PDO::PARAM_STR,25);
                                                         $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
-
-                                            $ms_molecular = count($mamaseleccionmolecular);
-                                                            foreach($mamaseleccionmolecular as $heredomolecular) {
-                                                                $sql_s = $conexionCancer->prepare("INSERT into mamamolecular(mamaseleccion, id_paciente) 
+                        $mamaseleccionmolecular;
+                        if(is_array($mamaseleccionmolecular) || is_object($mamaseleccionmolecular)){
+                                foreach($mamaseleccionmolecular as $heredomolecular) {
+                                            $sql_s = $conexionCancer->prepare("INSERT into mamamolecular(mamaseleccion, id_paciente) 
                                                 
-                                                                values(:mamaseleccion, :id_paciente)");
+                                                values(:mamaseleccion, :id_paciente)");
                                             
-                                                                $sql_s->execute(array(
+                                                        $sql_s->execute(array(
                                                                     ':mamaseleccion'=>$heredomolecular,
                                                                     ':id_paciente'=>$id_usuario
                                             
-                                                                ));
-                                                            }           
-                                                            
+                                                            ));
+                                                    }           
+                                                }     
                                                             $sql = $conexionCancer->prepare("INSERT into molecular(luminala, luminalb, enriquecidoher2, basal, id_paciente) values(:luminala, :luminalb, :enriquecidoher2, :basal, :id_paciente)");
                                                             $sql->bindParam(':luminala',$luminala,PDO::PARAM_STR,10);
                                                             $sql->bindParam(':luminalb',$luminalb,PDO::PARAM_STR,10);
@@ -339,8 +343,8 @@ $hoy = date("Y-m-d");
                                                                                                         ));
                                                                                                         $row_id = $sql_id->fetch();
                                                                                                         $ultimoid = $row_id['id_quirurgico'];
-                                                                                                            
-                                                                    
+                                                $quirurgicotipo;
+                                                    if(is_array($quirurgicotipo) || is_object($quirurgicotipo)){
                                                             foreach($quirurgicotipo as $heredoquirurgico) {
                                                                 $sql_f = $conexionCancer->prepare("INSERT into quirugicotipo(descripciontipoquirurgico, id_quirurgico) 
                                                                                                         
@@ -352,11 +356,12 @@ $hoy = date("Y-m-d");
                                                                                                     
                                                                 ));
                                                             } 
-                                                            $sql = $conexionCancer->prepare("INSERT into mastecto_gaglionar(tipomastecto, fecha, tipoganglionar, fechatipogaglionar, id_paciente)
-                                                            values(:tipomastecto, :fecha, :tipoganglionar, :fechatipogaglionar, :id_paciente)");  
+                                                    }
+                                                            $sql = $conexionCancer->prepare("INSERT into mastecto_gaglionar(tipomastecto, fecha_mastecto, tipoganglionar, fechatipogaglionar, id_paciente)
+                                                            values(:tipomastecto, :fecha_mastecto, :tipoganglionar, :fechatipogaglionar, :id_paciente)");  
                                                                     $sql->execute(array(
                                                                         ':tipomastecto'=>$mastectomiatipo,
-                                                                        ':fecha'=>$fechatipomastecto,
+                                                                        ':fecha_mastecto'=>$fechatipomastecto,
                                                                         ':tipoganglionar'=>$ganglionartipo,
                                                                         ':fechatipogaglionar'=>$fechatipoganglio,
                                                                         ':id_paciente'=>$id_usuario
@@ -444,7 +449,7 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':causadefuncion',$causadefuncion,PDO::PARAM_STR);
                                                         $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
-        }else{
+        /*}else{
             $sql = $conexionCancer->prepare("SELECT id from dato_usuario where curp = :curp");
                             $sql->execute(array(
             
@@ -503,15 +508,10 @@ $hoy = date("Y-m-d");
                                 ));
                             }
                             
-                            /*$sql = $conexionCancer->prepare("INSERT INTO cancerpaciente(descripcioncancer, id_paciente)
-                                        values(:descripcioncancer, :id_paciente)");
-                                        $sql->bindParam(':descripcioncancer',$tipodecancer,PDO::PARAM_STR,100);
-                                        $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
-                                    $sql->execute();*/
+                
                                     
                             $checked_contador = count($check_listapato);
-                            //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                            // Bucle para almacenar y visualizar valores activados checkbox.
+                        
                             foreach($check_listapato as $seleccion) {
                                 $sql_s = $conexionCancer->prepare("INSERT into antecedentespatopersonales(descripcionantecedente, id_paciente) 
                 
@@ -851,7 +851,7 @@ $hoy = date("Y-m-d");
                                                         $sql->bindParam(':causadefuncion',$causadefuncion,PDO::PARAM_STR);
                                                         $sql->bindParam(':id_paciente',$id_usuario,PDO::PARAM_INT);
                                                             $sql->execute();
-        }
+        }*/
                             if($sql != false) {
                                 echo "<script>swal({
                                             title: 'Good job!',
