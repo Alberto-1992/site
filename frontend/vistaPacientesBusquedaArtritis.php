@@ -7,38 +7,16 @@ date_default_timezone_set('America/Monterrey');
 $fecha_actual = new DateTime(date('Y-m-d'));
 
 
-$id_paciente = $dataRegistro['id'];
+$id_paciente = $dataRegistro['id_usuarioartritis'];
 $curp = $dataRegistro['curp'];
 $id = $dataRegistro['id_paciente'];
-$municipio = $dataRegistro['municipio'];
-$estado = $dataRegistro['estado'];
+
 require 'conexionCancer.php';
 
-$clues = $dataRegistro['clues'];
-$sql_f = $conexion2->query("SELECT unidad from hospitales where clues = '$clues'");
-$rown = mysqli_fetch_assoc($sql_f);
-
-$sql = $conexion2->query("SELECT id_paciente, datoantecedentefamiliar
-            FROM antecedentesfamiliarescancer
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM antecedentesfamiliarescancer
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
-
-$sql_m = $conexion2->query("SELECT id_paciente, descripcioncancer
-            FROM cancerpaciente
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM cancerpaciente
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
 
 
+
+/*
 $sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
             FROM antecedentespatopersonales
             WHERE id_paciente
@@ -47,21 +25,7 @@ $sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
             GROUP BY id_paciente
             HAVING count(id_paciente) >= 1)
             and id_paciente = $id_paciente
-            ORDER BY id_paciente");
-
-$sql_q = $conexion2->query("SELECT id_quirurgico, realizoquirurgico, lateralidad, tipo, curpusuario 
-            FROM quirurgico 
-            WHERE curpusuario
-            IN (SELECT curpusuario FROM quirurgico
-            GROUP BY curpusuario
-            HAVING count(curpusuario) >= 1)
-            and curpusuario = '$curp'
-            ORDER BY curpusuario");
-
-
-
-
-
+            ORDER BY id_paciente");*/
 
 
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
@@ -89,12 +53,7 @@ if ($imccalculo <= 18.5) {
 } elseif ($imccalculo > 35 and $imccalculo <= 39.9) {
     $showimc = "<span class='obesidad2'> $obe2";
 }
-require '../esclerosis/conexion.php';
-$sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
-$rows = mysqli_fetch_assoc($sqls);
 
-$sqlsm = $conexion2->query("SELECT * from t_municipio where id_municipio = $municipio");
-$rowsm = mysqli_fetch_assoc($sqlsm);
 
 
 
@@ -102,23 +61,23 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
-<input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
+<input type="hidden" id="artritispaciente" value="<?php echo $dataRegistro['descripcion_artritis']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php
-
+/*
     $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = $id_paciente");
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
-    $validaid = $validacion['id_paciente'];
+    $validaid = $validacion['id_paciente'];*/
     if ($dataRegistro['curp'] != '') {
-        if ($validaid != $id_paciente) { ?>
+       /* if ($validaid != $id_paciente) { ?>
             <a href="#" class="mandaid" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
-        <?php } ?>
+        <?php }*/ ?>
         <script>
             function seguimiento() {
 
@@ -162,7 +121,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
                             background: #EBEBEB;
                     }
                 </style>
-</div>
+ 
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
 
@@ -455,18 +414,18 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <script>
     function eliminarRegistro() {
         var id = $("#idcurp").val();
-        var cancer = $("#cancer").val();
+        var artritis = $("#artritispaciente").val();
         var nombrepaciente = $("#nombrepaciente").val();
         var mensaje = confirm("el registro se eliminara");
         let parametros = {
             id: id,
-            cancer: cancer,
+            artritis: artritis,
             nombrepaciente: nombrepaciente
         }
         if (mensaje == true) {
             $.ajax({
                 data: parametros,
-                url: 'aplicacion/eliminarRegistroCancer.php',
+                url: 'aplicacion/eliminarRegistroArtritis.php',
                 type: 'post',
                 beforeSend: function() {
                     $("#mensaje").html("Procesando, espere por favor");

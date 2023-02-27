@@ -28,9 +28,9 @@ overflow:visible;
 
 .main-menu {
   background: #ffffff;
-    border-right: 1px solid #e5e5e5;
+    border-right: 1px solid #bababa;
 position: relative;
-margin-top: 50px;
+margin-top: 48px;
 bottom:0;
 height: 95%;
 left:0;
@@ -126,7 +126,7 @@ nav.main-menu li.active>a,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
    color: white;
-  background-color: #babcbf;
+  background-color: #739ddb;
     width: 100%;
 
 }

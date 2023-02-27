@@ -47,7 +47,6 @@ $artritis = 'Artritis reumatoide';
                                     ':sexo'=>$sexo,
                                     ':year'=>$hoy
         )); 
-        
         $sql = $conexionCancer->prepare("SELECT id_usuarioartritis from dato_usuarioartritis where curp = :curp");
         $sql->execute(array(
 
