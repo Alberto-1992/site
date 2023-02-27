@@ -615,7 +615,7 @@
 
                                     <!-- El select PET solo desplegará dos opciones, PATRON MATH y PATRON MISMATCH-->
                                     <div class="col-md-4" id="">
-                                        <strong>*PET</strong>
+                                        <strong>*Patrón</strong>
                                         <select name="pet" id="pet" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="math">Patrón Math</option>
@@ -650,7 +650,7 @@
 
                                     <!-- El siguiente SELECT solo muestra dos opciones: NEGATIVO / POSITIVO-->
                                     <div class="col-md-4" id="">
-                                        <strong>*Gamagrama Cardiaco</strong>
+                                        <strong>* Resultado de Gamagrama Cardiaco</strong>
                                         <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="bezafibrato">Positivo</option>
@@ -660,7 +660,7 @@
 
                                     <!-- Si en el select anterior, se seleccionó POSITIVO, se debenera mostrar el siguiente select-->
                                     <div class="col-md-4" id="">
-                                        <strong>Positivo</strong>
+                                        <strong>Localización</strong>
                                         <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="anterior">Anterior</option>
@@ -769,7 +769,7 @@
 
                                     <!-- Suspención de estudio-->
                                     <div class="col-md-3" id="">
-                                        <strong>Suspención de Estudio</strong>
+                                        <strong>Suspensión de Estudio</strong>
                                         <select name="suspencionestudio" id="suspencionestudio" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="disminucion">Disminucion De Tas -10Mmhg Debajo De La Inicial +Evidencia De Isquemia</option>
@@ -780,30 +780,41 @@
                                             <option value="detenerse">Deseo Del Paciente De Detenerse</option>
                                             <option value="elevacionst">Elevacion Del Segmento St (< 1Mm) </option>
                                             <option value="taquicardiavs">Taquicardia Ventricular Sostenida</option>
+                                            <option value="na">No Aplica</option>
                                         </select>
                                     </div>
 
+
+
+
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>ECOCARDIOGRAMA</strong>
+                                    </div>
 
                                     <!-- El siguiente select Ecocardiograma tiene 3 opciones, las cuales tienen dependencias:-->
-                                    <div class="col-md-3" id="">
-                                        <strong>*Ecocardiograma</strong>
-                                        <select name="eco" id="eco" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="diametro">Diámetro</option>
-                                            <option value="fevi">FEVI</option>
-                                            <option value="movilidad">Movilidad</option>
-                                        </select>
-                                    </div>
 
-                                    <!-- Si el usuario selecciona Diámetro, se habilitan las siguientes opciones-->
-                                    <div class="col-md-3" id="">
-                                        <strong>Diámetro</strong>
-                                        <select name="diametroop" id="diametroop" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="diastolico">Diastólico</option>
-                                            <option value="sistolico">Sistólico</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <strong>Diastólico</strong>
+                                        <input type="number" id="ldl" name="ldl" placeholder="Ingrese..." class="form-control">
                                     </div>
+                                    <div class="col-md-3">
+                                        <strong>Sistólico</strong>
+                                        <input type="number" id="hdl" name="hdl" placeholder="Ingrese..." class="form-control">
+                                    </div><br><br><br>
+
+
+
+
+
 
                                     <!-- Si el usuario selecciona FEVI, se habilitan las siguientes opciones-->
                                     <div class="col-md-3" id="">
@@ -845,6 +856,26 @@
                                         </select>
                                     </div>
 
+                                    <br>
+                                    <br>
+                                    <br>
+
+
+
+
+
+
+
+
+
+
+
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>Defunción</strong>
+                                    </div>
 
                                     <!-- El siguiente select tiene dependencia:-->
                                     <div class="col-md-3" id="">
@@ -853,17 +884,6 @@
                                             <option value="0">Seleccione...</option>
                                             <option value="sidefuncion">Sí</option>
                                             <option value="nodefuncion">No</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Si el usuario selecciona sí, debe habilitar lo siguiente:-->
-
-                                    <div class="col-md-3" id="">
-                                        <strong>Tiempo</strong>
-                                        <select name="tiempo" id="tiempo" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="dias">30 días</option>
-                                            <option value="meses">06 meses</option>
                                         </select>
                                     </div>
 

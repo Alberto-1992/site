@@ -377,6 +377,22 @@
                                     </div>
 
 
+
+
+
+                                    <!-- SGOP (210423): Se agrega el MACE hospitalario como se indica en el excel-->
+                                    <div class="col-md-6">
+                                        <strong>MACE Hospitalario</strong>
+                                        <select name="macehospitalario" id="macehospitalario" class="form-control" style="width:100%;" require>
+                                            <option value="0">Seleccione...</option>
+                                            <option value="KillipKimball">Killip Kimball</option>
+                                            <option value="reinfarto">Reinfarto</option>
+                                            <option value="evc">EVC</option>
+                                            <option value="muerte">Muerte</option>
+                                        </select>
+                                    </div>
+                                    <!-- SGOP (210423): Los Factores de Riesgo Cardiovascular van del 1 al 12-->
+
                                     <div class="col-md-6">
                                         <strong>Killip Kimball</strong>
                                         <select name="choque" id="choque" class="form-control" style="width: 100%;" required>
@@ -392,7 +408,12 @@
 
 
                                         </select>
-                                    </div><br><br><br>
+                                    </div>
+                                    <br><br><br>
+
+
+
+
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>PARACLINICOS</strong>
                                     </div>
@@ -465,8 +486,17 @@
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>TRATAMIENTO</strong>
                                     </div>
-                                    <div class="col-md-12">
+
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
                                         <strong>Trombolisis</strong>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <strong>Fibrinólisis</strong>
                                         <select name="trombolisis" id="trombolisis" class="form-control">
                                             <option value="">Seleccione</option>
                                             <option value="Si">Si</option>
@@ -492,14 +522,54 @@
                                     </div>
                                     <div class="col-md-12">
                                     </div>
+
+
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>ANGIOPLASTIA CORONARIA TRANSLUMINAL PERCUTANEA</strong>
+                                    </div>
+
+
+                                    <div class="col-md-3" id="">
+                                        <strong>Fecha/hora</strong>
+                                        <input type="datetime-local" id="inicioprocedimiento" name="inicioprocedimiento" placeholder="Describa" class="form-control">
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <strong>Tipo de Procedimiento</strong>
+                                        <select name="tipo" id="tipo" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="primaria">Primaria</option>
+                                            <option value="rescate">Rescate</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <strong>Sitio de Punción</strong>
+                                        <select name="tipo" id="tipo" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="primaria">Braquial</option>
+                                            <option value="rescate">Femoral</option>
+                                            <option value="rescate">Radial</option>
+                                        </select>
+                                    </div>
+
                                     <div class="col-md-3">
                                         <strong>Lesiones coronarias</strong>
                                         <select name="lesionescoronarias" id="lesionescoronarias" class="form-control">
                                             <option value="">Seleccione</option>
-                                            <option value="si">Si</option>
-                                            <option value="no">No</option>
+                                            <option value="Cincunfleja">Cincunfleja</option>
+                                            <option value="coronarioderecha">Coronario Derecha</option>
+                                            <option value="Descendente Anterior">Descendente Anterior</option>
+                                            <option value="ramo">Ramo Intermedio</option>
+                                            <option value="tronco">Tronco Coronario Izquierdo</option>
                                         </select>
                                     </div>
+
+
                                     <div class="col-md-3">
                                         <strong>Clasificación DUKE</strong>
                                         <select name="clasificacionduke" id="clasificacionduke" class="form-control">
@@ -547,42 +617,73 @@
 
 
 
-
-
-
-                                    <div class="col-md-6">
-                                        <strong>Vasos Coronarios Comprometidos</strong>
-                                        <select name="procedimientorealizado" id="procedimientorealizado" class="form-control">
-                                            <option value="">Seleccione...</option>
-                                            <option value="si">Sí</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-
-
-                                    <div class="col-md-6" id="tipoprocedimiento">
-                                        <strong>Tipo de procedimiento</strong>
-                                        <select name="tipodeprocedimiento" id="tipodeprocedimiento" class="form-control">
+                                    <div class="col-md-3" id="">
+                                        <strong>Protesis Endovascular</strong>
+                                        <select name="endo" id="endo" class="form-control">
                                             <option value="">Seleccione</option>
-                                            
-                                            
-                                            <?php
+                                            <option value="absorb">Absorb</option>
 
-                                            $query = "SELECT * FROM procedimiento";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombreprocedimiento']; ?>">
-                                                    <?php echo $row['nombreprocedimiento']; ?></option>
-                                            <?php } ?>
+                                            <option value="conmedicacion">Con Medicacion</option>
+                                            <option value="sinmedicacion">Sin Medicación</option>
+
                                         </select>
                                     </div>
 
-                                    
-                                    <div class="col-md-3" id="iniciodeprocedimiento">
-                                        <strong>Fecha/hora</strong>
-                                        <input type="datetime-local" id="inicioprocedimiento" name="inicioprocedimiento" placeholder="Describa" class="form-control">
+
+
+                                    <!--Al seleccionar con medicación, se debe habilitar 1 Y 2 GENERACION-->
+
+
+                                    <div class="col-md-3">
+                                        <strong>1er GENERACIÓN</strong>
+                                        <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
+                                            <option value="siralimus">Siralimus</option>
+                                            <option value="paclitaxel">Paclitaxel</option>
+
+                                        </select>
                                     </div>
-                                    
+
+                                    <div class="col-md-3">
+                                        <strong>2da GENERACIÓN</strong>
+                                        <select id="msfactores" name="check_lista[]" multiple=" multiple" class="form-control">
+                                            <option value="everilimus">Everulimus</option>
+                                            <option value="bloqueoconduccion">Ridaforulimus</option>
+                                            <option value="zotarolimus">Zotarolimus</option>
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <strong>Número de Protesis</strong>
+                                        <input type="number" id="ndp" name="ndp" placeholder="Ingrese..." class="form-control">
+                                    </div>
+
+
+
+                                    <div class="col-md-3" id="procedimientofueexitoso">
+                                        <strong>Tratamiento del Vaso</strong>
+                                        <select name="tratamientovaso" id="tratamientovaso" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="lesionculpable">Lesión Culpable</option>
+                                            <option value="todaslaslesiones">Todas las Lesiones</option>
+                                        </select>
+                                    </div>
+
+
+
+                                    <div class="col-md-3" id="procedimientofueexitoso">
+                                        <strong>Revascularización</strong>
+                                        <select name="revas" id="revas" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="completa">Completa</option>
+                                            <option value="incompleta">Incompleta</option>
+                                        </select>
+                                    </div>
+
+
+
+
                                     <div class="col-md-3" id="procedimientofueexitoso">
                                         <strong>Procedimiento exitoso</strong>
                                         <select name="procedimientoexitoso" id="procedimientoexitoso" class="form-control">
@@ -591,40 +692,23 @@
                                             <option value="no">No</option>
                                         </select>
                                     </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
 
-                                    <!--
-                                    <div class="col-md-4" id="idestrategia">
-                                        <strong>Estrategia</strong>
-                                        <select name="estrategia" id="estrategia" class="form-control">
-                                            <option value="">Seleccione una opción</option>
-                                            <?php
-
-                                            $query = "SELECT * FROM estrategia";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                            <option value="<?php echo $row['nombreestrategia']; ?>">
-                                                <?php echo $row['nombreestrategia']; ?></option>
-                                            <?php } ?>
-                                        </select>
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>MARCAPASOS TEMPORAL</strong>
                                     </div>
-                -->
 
 
-                                    <!-- Opciones que se muestran en caso de seleccionar CORONARIOGRAFÍA -->
-                                    <div class="col-md-3" id="idsitiopuncion">
-                                        <strong>Sitio de punción</strong>
-                                        <select name="sitiodepuncion" id="sitiodepuncion" class="form-control">
-                                            <option value="">Seleccione</option>
-                                            <?php
 
-                                            $query = "SELECT * FROM sitiopuncion";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['lugarsitiopuncion']; ?>">
-                                                    <?php echo $row['lugarsitiopuncion']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
+
+
+
 
                                     <div class="col-md-3" id="idstend">
                                         <strong>Stent</strong>
@@ -660,23 +744,10 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="idolusion">
-                                        <strong>Vasos comprometidos</strong>
-                                        <select name="olusion" id="olusion" class="form-control">
-                                            <option value="">Seleccione</option>
-                                            <?php
 
-                                            $query = "SELECT * FROM olusionesdistalescronicas";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombreolusion']; ?>">
-                                                    <?php echo $row['nombreolusion']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
                                     <!--Finalizan opciones-->
 
-                                    
+
 
                                     <!--en caso de seleccionar OTC-->
                                     <div class="col-md-3" id="idotc">
@@ -910,40 +981,6 @@
                                     </div>
                                     ******************************************** -->
 
-
-
-                                    <!-- SGOP (210423): Se agrega el MACE hospitalario como se indica en el excel-->
-                                    <div class="col-md-4">
-                                        <strong>MACE Hospitalario</strong>
-                                        <select name="macehospitalario" id="macehospitalario" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="KillipKimball">Killip Kimball</option>
-                                            <option value="reinfarto">Reinfarto</option>
-                                            <option value="evc">EVC</option>
-                                            <option value="muerte">Muerte</option>
-                                        </select>
-                                    </div>
-                                    <!-- SGOP (210423): Los Factores de Riesgo Cardiovascular van del 1 al 12-->
-
-
-                                    <div class="col-md-4">
-                                        <strong>Factores de Riesgo Cardiovascular</strong>
-                                        <select name="factoresRiesgo" id="factoresRiesgo" class="form-control" style="width: 100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
 
                                     <!-- SGOP (210423): La Fecha de Egreso solo se mueve de lugar-->
                                     <div class="col-md-4">
