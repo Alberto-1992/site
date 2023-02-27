@@ -91,7 +91,7 @@
                                             <option value="">Seleccione</option>
                                             <?php
                                             require 'conexionCancer.php';
-                                            $query = $conexionCancer->prepare("SELECT curp FROM dato_usuario ");
+                                            $query = $conexionCancer->prepare("SELECT curp FROM dato_usuarioartritis ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) { ?>
@@ -111,7 +111,7 @@
                                         <select id="escolaridad" name="escolaridad" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -185,6 +185,7 @@
 
                                         <select id="msartritis" name="msartritis[]" multiple="multiple" class="form-control">
                                             <?php
+                                            require 'conexionCancer.php';
                                             $query = $conexionCancer->prepare("SELECT relacion FROM antecedentescancer");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
