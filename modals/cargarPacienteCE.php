@@ -340,7 +340,7 @@
                                     <div class="col-md-6">
                                         <strong>Electrocardiograma</strong>
                                         <select name="" id="" class="form-control">
-                                            <option value="">Seleccione una opción</option>
+                                            <option value="">Seleccione...</option>
                                             <option value="Normal">Normal</option>
                                             <option value="lesion">Lesión</option>
                                             <option value="Isquemia">Isquemia</option>
@@ -351,7 +351,7 @@
                                         <strong>Localización Electrocardiograma</strong>
 
                                         <select name="localizacion" id="localizacion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Seleccionar</option>
+                                            <option value="0">Seleccione...</option>
                                             <?php
                                             require 'conexionCancer.php';
                                             $query = "SELECT id_localizacion, nombre_localizacion FROM localizacion ";
@@ -369,7 +369,7 @@
                                     <div class="col-md-6">
                                         <strong>Con o sin elevación</strong>
                                         <select name="identificador" id="identificador" class="form-control" required>
-                                            <option value="">Seleccione una opción</option>
+                                            <option value="">Seleccione...</option>
                                             <option value="cest">Con elevación del ST</option>
                                             <option value="sest">Sin elevacion del ST</option>
 
@@ -380,7 +380,7 @@
                                     <div class="col-md-6">
                                         <strong>Killip Kimball</strong>
                                         <select name="choque" id="choque" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
+                                            <option value="0">Seleccione...</option>
                                             <?php
 
                                             $query = "SELECT * FROM choquecardiogenico ";
@@ -527,7 +527,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <strong>CLASIFICACION ACC/AHA</strong>
+                                        <strong>Clasificación ACC/AHA</strong>
                                         <select name="lesionangeo" id="lesionangeo" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php
@@ -543,18 +543,29 @@
                                             Consultar referencia</a>-->
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <strong>Procedimiento</strong>
+
+
+
+
+
+
+
+                                    <div class="col-md-6">
+                                        <strong>Vasos Coronarios Comprometidos</strong>
                                         <select name="procedimientorealizado" id="procedimientorealizado" class="form-control">
-                                            <option value="">Seleccione</option>
-                                            <option value="si">Si</option>
+                                            <option value="">Seleccione...</option>
+                                            <option value="si">Sí</option>
                                             <option value="no">No</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3" id="tipoprocedimiento">
+
+
+                                    <div class="col-md-6" id="tipoprocedimiento">
                                         <strong>Tipo de procedimiento</strong>
                                         <select name="tipodeprocedimiento" id="tipodeprocedimiento" class="form-control">
                                             <option value="">Seleccione</option>
+                                            
+                                            
                                             <?php
 
                                             $query = "SELECT * FROM procedimiento";
@@ -565,10 +576,13 @@
                                             <?php } ?>
                                         </select>
                                     </div>
+
+                                    
                                     <div class="col-md-3" id="iniciodeprocedimiento">
                                         <strong>Fecha/hora</strong>
                                         <input type="datetime-local" id="inicioprocedimiento" name="inicioprocedimiento" placeholder="Describa" class="form-control">
                                     </div>
+                                    
                                     <div class="col-md-3" id="procedimientofueexitoso">
                                         <strong>Procedimiento exitoso</strong>
                                         <select name="procedimientoexitoso" id="procedimientoexitoso" class="form-control">
@@ -594,6 +608,9 @@
                                         </select>
                                     </div>
                 -->
+
+
+                                    <!-- Opciones que se muestran en caso de seleccionar CORONARIOGRAFÍA -->
                                     <div class="col-md-3" id="idsitiopuncion">
                                         <strong>Sitio de punción</strong>
                                         <select name="sitiodepuncion" id="sitiodepuncion" class="form-control">
@@ -623,6 +640,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
+
                                     <div class="col-md-3" id="cantidadstend">
                                         <strong>N° stent implantados</strong>
                                         <select name="stentcantidad" id="stentcantidad" class="form-control">
@@ -641,6 +659,7 @@
 
                                         </select>
                                     </div>
+
                                     <div class="col-md-3" id="idolusion">
                                         <strong>Vasos comprometidos</strong>
                                         <select name="olusion" id="olusion" class="form-control">
@@ -655,15 +674,11 @@
                                             <?php } ?>
                                         </select>
                                     </div>
+                                    <!--Finalizan opciones-->
 
-                                    <div class="col-md-3" id="idseveridad">
-                                        <strong>Clasificacion severidad</strong>
-                                        <select name="severidad" id="severidad" class="form-control">
-                                            <option value="">Seleccione</option>
-                                            <option value="OTC">OTC</option>
-                                            <option value="SINTAX">SINTAX</option>
-                                        </select>
-                                    </div>
+                                    
+
+                                    <!--en caso de seleccionar OTC-->
                                     <div class="col-md-3" id="idotc">
                                         <strong>Nivel de OTC</strong>
                                         <select name="otc" id="otc" class="form-control">
@@ -673,6 +688,8 @@
                                             <option value="4 a 5">4 a 5</option>
                                         </select>
                                     </div>
+
+                                    <!-- En caso de seleccionar sintax, se habilita la siguiente opción:-->
                                     <div class="col-md-3" id="idsintax">
                                         <strong>Nivel de SINTAX</strong>
                                         <select name="sintax" id="sintax" class="form-control">
@@ -682,6 +699,10 @@
                                             <option value="Mas de 33">Mas de 33</option>
                                         </select>
                                     </div>
+
+
+                                    <!--Finaliza opción SINTAX-->
+
                                     <div class="col-md-3" id="idolusion2">
                                         <strong>Olusiones distales cronicas</strong>
                                         <select name="olusion2" id="olusion2" class="form-control">
@@ -721,7 +742,7 @@
                                         <input type="text" id="mediodecontraste" name="mediodecontraste" placeholder="Describa" class="form-control">
                                     </div>
 
-
+                                    <!--
                                     <div class="col-md-3" id="iniciofibri">
                                         <strong>Fecha/hora inicio</strong>
                                         <input type="datetime-local" id="iniciofibrilonitico" name="iniciofibrilonitico" placeholder="Describa" class="form-control">
@@ -729,7 +750,7 @@
                                     <div class="col-md-3" id="finalizofibri">
                                         <strong>Fecha/hora finaliza</strong>
                                         <input type="datetime-local" id="finalizofibrilonitico" name="finalizofibrilonitico" placeholder="Describa" class="form-control">
-                                    </div>
+                                    </div>-->
 
                                     <div class="col-md-3" id="revasculariza">
                                         <strong>Revascularización</strong>
@@ -749,75 +770,102 @@
 
 
 
+
+
+
+
+
                                     <!--***************************************** Sección de COMPLICACIONES *****************************************s-->
-                                    <div class="col-md-12"
-                                    style="text-align: center; 
+
+                                    <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#CD114E;">
-                                    
-                                    <strong>COMPLICACIONES</strong>
+
+                                        <strong>COMPLICACIONES</strong>
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <strong>Seleccione las complicaciones</strong>
+                                    <div class="col-md-6">
+                                        <strong>Seleccione las Complicaciones</strong>
                                         <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
-                                            <?php
-                                            $query = $conexionCancer->prepare("SELECT * FROM complicaciones ");
-                                            $query->execute();
-                                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                                            while ($row = $query->fetch()) { ?>
-                                                <option value="<?php echo $row['nombre_compliacion']; ?>">
-                                                    <?php echo $row['nombre_compliacion']; ?></option>
-                                            <?php } ?>
+                                            <option value="arritmia">Arritmia</option>
+                                            <option value="bloqueoconduccion">Bloqueo Conducción</option>
+                                            <option value="diseccionaortica">Disección Aórtica</option>
+                                            <option value="hematomapuncion">Hematoma en Sitio de Punción</option>
+                                            <option value="iamperi">IAM Periprocedimiento</option>
+                                            <option value="nefropatia">Nefropatía por medio de contraste</option>
+                                            <option value="paradacardiaca">Parada Cardiaca</option>
+                                            <option value="perforacion">Perforación</option>
+                                            <option value="sangradomayor">Sangrado Mayor</option>
+                                            <option value="tamponade">Tamponade</option>
+                                            <option value="trombosisdefinitiva">Trombosis Definitiva</option>
                                         </select>
                                     </div>
 
 
-                                    <!-- Al seleccionar la Complicación ARRITMIA, deben mostrarse las siguientes opciones:
-                                    
-                                    Taquicardia Auricular
-                                    Fibrilación Auricular
-                                    Bradicardia
-                                    Taquicardia Ventricular
-                                    Fibrilación Auricular
+                                    <!-- Al seleccionar la Complicación ARRITMIA, deben mostrarse las siguientes opciones, (es un select simple):
                                     Bloqueo AV
-                                                ***** Al seleccionar Bloqueo AV se deben mostrar las siguientes opciones:
+                                    Bradicardia
+                                    Fibrilación Auricular
+                                    Fibrilación Ventricular
+                                    Taquicardia Auricular
+                                    Taquicardia Ventricular
+                                    -->
+
+
+
+                                    <div class="col-md-6">
+                                        <strong>Arritmia</strong>
+                                        <select name="arritmia" id="arritmia" class="form-control" style="width:100%;" require>
+                                            <option value="0">Seleccione...</option>
+                                            <option value="bloqueoav">Bloqueo AV</option>
+                                            <option value="bradicardia">Bradicardia</option>
+                                            <option value="extrasistolesven">Extrasístoles Ventriculares</option>
+                                            <option value="fibrilacionauri">Fibrilación Auricular</option>
+                                            <option value="febrilacionventri">Fibrilación Ventricular</option>
+                                            <option value="taquicardiauri">Taquicardia Auricular</option>
+                                            <option value="taquicardiaventri">Taquicardia Ventricular</option>
+                                        </select>
+                                    </div>
+
+
+                                    <!-- ***** Al seleccionar Bloqueo AV en el select de Arritmia, se deben mostrar las siguientes opciones (select simple):
                                                 I
                                                 II
-                                                III
-                                    Extrasistoles Ventriculares
-                                                ***** Al seleccionar Extrasistoles Ventriculares, se deben mostrar las siguientes opciones:
+                                                III-->
+
+                                    <div class="col-md-6" id="">
+                                        <strong>Bloqueo AV</strong>
+                                        <select name="bloqueo" id="bloqueo" class="form-control" style="width:100%;" require>
+                                            <option value="0">Seleccione...</option>
+                                            <option value="bloqueouno">I</option>
+                                            <option value="bloqueodos">II</option>
+                                            <option value="bloqueotres">III</option>
+                                        </select>
+                                    </div>
+
+
+
+                                    <!--**** Al seleccionar Extrasístoles Ventriculares en el select de Arritmia,se deben mostrar las siguientes opciones (select simple):
                                                 Unifocales
                                                 Multifocales
                                                 Pareadas
                                                 Bigeminismo
                                             -->
 
-                                    <div class="col-md-3" id="arritmias">
-                                        <strong>Tipo de Arritmia</strong>
-                                        <select name="arritmia" id="arritmia" class="form-control" style="width: 100%;" required>
+                                    <div class="col-md-6" id="">
+                                        <strong>Extrasístoles Ventriculares</strong>
+                                        <select name="extraventri" id="extraventri" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                                <?php
-                                                $query = "SELECT * FROM arritmia";
-                                                $resultado = $conexion2->query($query);
-                                                    while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion']; ?>">
-                                                    <?php echo $row['descripcion']; ?></option>
-                                                    <?php } 
-                                                ?>
-
+                                            <option value="bigeminismo">Bigeminismo</option>
+                                            <option value="multifocales">Multifocales</option>
+                                            <option value="pareadas">Pareadas</option>
+                                            <option value="unifocales">Unifocales</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="tipobloqueo">
-                                        <strong>Tipo de bloqueo</strong>
-                                        <select name="bloqueo" id="bloqueo" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <option value="I">I</option>
-                                            <option value="II">II</option>
-                                            <option value="III">III</option>
-                                        </select>
-                                    </div>
+
+
+
 
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E; margin-top: 15px;">
                                         <strong>SEGUIMIENTO POSTPROCEDIMIENTO</strong>
@@ -924,22 +972,16 @@
                                         <input type="datetime-local" name="fechadefuncion" id="fechadefuncion" class="form-control">
                                     </div>
 
-                                    <div class="col-md-12"></div>
-                                    <br>
+                                    <div class="col-md-12">
+                                        <br>
+                                        <br>
+                                        <!--Se cambia value=Finalizar por value=Cancelar-->
+                                        <input type="button" id="recargarArtritis" onclick="window.location.reload();" value="Cancelar">
+                                        <!--Se cambia value=Registrar por value=Guardar-->
+                                        <input type="submit" id="registrarArtritis" value="Guardar">
+                                        <br>
+                                    </div>
 
-                                    <input type="button" onclick="window.location.reload();"
-                                    value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
-
-
-                                    <input type="submit" id="registrar" value="Registrar">&nbsp;&nbsp;
-                                    <input type="button" id="recargar" onclick="window.location.reload();" value="Finalizar">
-
-                                    <input type="submit"  value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
-                                
-
-
-                                    <br>
-                                </div>
                             </form>
                             <div id="tabla_resultado2"></div>
                         </div>

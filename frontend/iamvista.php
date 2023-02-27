@@ -23,9 +23,11 @@
         <header class="headerinfarto">
 
             <span id="cabecera">
-                
-                SINDROME CORONARIO AGUDO</span>
-                
+                <span class="material-symbols-outlined">
+                    cardiology
+                </span>
+                Sindrome Coronario Agudo</span>
+
 
         </header>
 
@@ -91,7 +93,7 @@
 
     require 'modals/cargarPacienteCE.php';
     require 'modals/seguimientoPaciente.php';
-    
+
 
     ?>
 
