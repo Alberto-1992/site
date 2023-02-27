@@ -91,7 +91,7 @@
                                             <option value="">Seleccione</option>
                                             <?php
                                             require 'conexionCancer.php';
-                                            $query = $conexionCancer->prepare("SELECT curp FROM dato_usuario ");
+                                            $query = $conexionCancer->prepare("SELECT curp FROM dato_usuarioartritis ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) { ?>
@@ -111,7 +111,7 @@
                                         <select id="escolaridad" name="escolaridad" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -189,8 +189,8 @@
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) { ?>
-                                                <option value="<?php echo $row['relacion']; ?>">
-                                                    <?php echo $row['relacion']; ?></option>
+                                                <option value="<?php echo $row['descripcionantecedente']; ?>">
+                                                    <?php echo $row['descripcionantecedente']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -300,7 +300,7 @@
                                     </div>
 
                                     <!-- Los siguientes tres select son de selección simple-->
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <strong>USG Hepático</strong>
                                         <select name="usghepatico" id="usghepatico" class="form-select">
                                             <option value="0">Seleccione...</option>
@@ -311,7 +311,7 @@
 
                                     <!--Si el usuario Selecciona Sí en USG Hepático, se debe abrir el siguiente select-->
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6" id="hallazgodeusg">
                                         <strong>Hallazgo USG</strong>
                                         <select name="hallazgousg" id="hallazgousg" class="form-select">
                                             <option value="0">Seleccione...</option>
@@ -321,7 +321,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6" id="esteatosis">
                                         <strong>
                                             Clasificación Esteatosis</strong>
                                         <select name="clasificacionesteatosis" id="clasificacionesteatosis" class="form-select">
@@ -411,63 +411,63 @@
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-2">
                                         <strong>Metrotexate</strong>
                                         <br>
                                         <input type="radio" name="metrotexate" id="metrotexate1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="metrotexate" id="metrotexate2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="metrotexate" id="metrotexate2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanal" name="dosisSemanalmetro" type="text" class="form-control" value="" >
+                                        <input id="dosisSemanalmetro" name="dosisSemanalmetro" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-2">
                                         <strong>Leflunomide</strong>
                                         <br>
                                         <input type="radio" name="leflunomide" id="leflunomide1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="leflunomide" id="leflunomide2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="leflunomide" id="leflunomide2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanalfemua" name="dosisSemanalfemua" type="text" class="form-control" value="">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-2">
                                         <strong>Sulfazalasina</strong>
                                         <br>
                                         <input type="radio" name="sulfazalasina" id="sulfazalasina1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="sulfazalasina" id="sulfazalasina2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="sulfazalasina" id="sulfazalasina2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanalsulfa" name="dosisSemanalsulfa" type="text" class="form-control" value="">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-2">
                                         <strong>Tocoferol</strong>
                                         <br>
                                         <input type="radio" name="tecoferol" id="tecoferol1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="tecoferol" id="tecoferol2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="tecoferol" id="tecoferol2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanalteco" name="dosisSemanalteco" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-4">
+                                    <fieldset class="col-md-2">
                                         <strong>Glucocorticoide</strong>
                                         <br>
                                         <input type="radio" name="glucocorticoide" id="glucocorticoide1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="glucocorticoide" id="glucocorticoide2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="glucocorticoide" id="glucocorticoide2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <!--Si el usuario selecciona Sí en la opción Glucocorticoide, se deben mostrar los siguientes dos selects-->
@@ -480,25 +480,25 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-4" id="dosisSemanal">
+                                    <div class="col-md-2" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanaltrata" name="dosisSemanaltrata" type="text" class="form-control" value="" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
-                                    <fieldset class="col-md-3">
+                                    <fieldset class="col-md-2">
                                         <strong>Vitamina D</strong>
                                         <br>
                                         <input type="radio" name="vitaminaD" id="vitaminaD1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="vitaminaD" id="vitaminaD2" class="check" value="no">&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="vitaminaD" id="vitaminaD2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-3" id="dosisSemanal">
+                                    <div class="col-md-2" id="dosisSemanal">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanalvitad" name="dosisSemanalvitad" type="text" class="form-control" value="">
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>
                                             Biológico</strong>
                                         <select name="biologico" id="biologico" class="form-select">

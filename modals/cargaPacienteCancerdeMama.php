@@ -32,7 +32,7 @@
                             <div class="form-header">
                                 <h3 class="form-title"
                                     >
-                                    FICHA DE DATOS</h3>
+                                    FICHA DE DATOS.</h3>
 
                             </div>
 
