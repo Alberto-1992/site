@@ -167,3 +167,37 @@ function calculaIMC() {
     document.formularioartritis.imc.value = limitcalculofinal;
 
 }
+$(document).ready(function () {
+    $("#usghepatico").change(function (e) {
+        let valorusg = $('#usghepatico').val();
+
+        if (valorusg == 'Si') {
+
+            $('#hallazgodeusg').prop("hidden", false);
+            $('#esteatosis').prop("hidden", false);
+            $('#hallazgousg').prop("selectedIndex", 0);
+            $('#clasificacionesteatosis').prop("selectedIndex", 0);
+
+
+        } else if (valorusg == 'No') {
+            $('#hallazgodeusg').prop("hidden", true);
+            $('#esteatosis').prop("hidden", true);
+            $('#hallazgousg').prop("selectedIndex", 0);
+            $('#clasificacionesteatosis').prop("selectedIndex", 0);
+
+
+        }
+    })
+});
+$(function () {
+    $('#hallazgodeusg').prop("hidden", true);
+    $('#esteatosis').prop("hidden", true);
+    $('#hallazgousg').prop("selectedIndex", 0);
+    $('#clasificacionesteatosis').prop("selectedIndex", 0);
+    $('#dosisSemanalmetro').prop("disabled", true);
+    $('#dosisSemanalfemua').prop("disabled", true);
+    $('#dosisSemanalsulfa').prop("disabled", true);
+    $("#dosisSemanalteco").prop("disabled", true);
+    $("#dosisSemanaltrata").prop("disabled", true);
+
+})
