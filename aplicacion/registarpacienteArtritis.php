@@ -115,15 +115,17 @@ $artritis = 'Artritis reumatoide';
                     ':hallazgousg'=>$hallazgousg,
                     ':clasificacionesteatosis'=>$clasificacionesteatosis
                 ));
-        $sql = $conexionCancer->prepare("INSERT into clinicaartritis(id_clinica,id_paciente,articulacionesinflamadassjc28,articulacionesdolorosastjc28,evglobalpga,evega)
-        values(:id_clinica,:id_paciente,:articulacionesinflamadassjc28,:articulacionesdolorosastjc28,:evglobalpga,:evega)");
+        $sql = $conexionCancer->prepare("INSERT into clinicaartritis(id_clinica,id_paciente,articulacionesinflamadassjc28,articulacionesdolorosastjc28,evglobalpga,evega,resultadocdai,resultadosdai)
+        values(:id_clinica,:id_paciente,:articulacionesinflamadassjc28,:articulacionesdolorosastjc28,:evglobalpga,:evega,:resultadocdai,:resultadosdai)");
                 $sql->execute(array(
                     ':id_clinica'=>uniqid('hraei'),
                     ':id_paciente'=>$id_usuario,
                     ':articulacionesinflamadassjc28'=>$articulacionesInflamadasSJC28,
                     ':articulacionesdolorosastjc28'=>$articulacionesDolorosasTJC28,
                     ':evglobalpga'=>$evglobalpga,
-                    ':evega'=>$evega
+                    ':evega'=>$evega,
+                    ':resultadocdai'=>$resultadocdai,
+                    ':resultadosdai'=>$resultadosdai
                 ));
         $sql = $conexionCancer->prepare("INSERT into tratamientoartritis(id_tratamientoartritis,id_paciente,metrotexate,dosissemanalmetro,leflunomide,dosissemanalfemua,sulfazalasina,
         dosissemanalsulfa,tecoferol,dosissemanalteco,glucocorticoide,usghepatico,dosissemanaltrata,vitaminad,dosissemanalvitad,biologico,tratamientobiologico,apegotratamiento)

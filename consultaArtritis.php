@@ -40,7 +40,7 @@
         while($dataRegistro= $query->fetch())
         { ?>
         
-        <div class="item-comentario" id="<?php echo $dataRegistro['id']; ?>" >
+        <div class="item-comentario" id="<?php echo $dataRegistro['id_usuarioartritis']; ?>" >
             <?php
             error_reporting(0);
             $id = $dataRegistro['id_usuarioartritis'];
@@ -168,4 +168,5 @@ function pageScroll() {
         }
     });
 }
+
 </script>

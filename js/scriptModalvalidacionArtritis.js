@@ -213,6 +213,8 @@ $(function () {
     $("#dosisSemanalsulfa").val('0');
     $("#dosisSemanalteco").val('0');
     $("#dosisSemanaltrata").val('0');
+    $("#clasisesteatosis").prop("hidden", true);
+    $("#usghallazgo").prop("hidden", true);
 
 })
 function metrotexatesi(){
@@ -335,3 +337,77 @@ function Biologico() {
     }
 
 }
+
+$(document).ready(function() {
+
+    $('#calcularCDAI').on('click',function(e) {
+    let valor1 = parseFloat($("#articulacionesInflamadasSJC28").val());
+    let valor2 = parseFloat($("#articulacionesDolorosasTJC28").val());
+    let valor3 = parseFloat($("#evglobalpga").val());
+    let valor4 = parseFloat($("#evega").val());
+
+
+    let sumar = valor1 + valor2 + valor3 + valor4;
+    if(sumar <= 2.8){
+    $("#resultadocdai").val(sumar);
+    }else if(sumar >= 2.9 && sumar <= 10){
+        $("#resultadocdai").val(sumar);  
+    }else if(sumar >11 && sumar <= 22){
+    $("#resultadocdai").val(sumar); 
+    }else if(sumar > 23){
+        $("#resultadocdai").val(sumar); 
+    }
+   
+});
+});
+$(document).ready(function() {
+
+    $('#calcularSDAI').on('click',function(e) {
+    let valor1 = parseFloat($("#articulacionesInflamadasSJC28").val());
+    let valor2 = parseFloat($("#articulacionesDolorosasTJC28").val());
+    let valor3 = parseFloat($("#evglobalpga").val());
+    let valor4 = parseFloat($("#evega").val());
+    let valor5 = parseFloat($("#pcr").val());
+
+    let sumar = valor1 + valor2 + valor3 + valor4;
+    let sumar2 = sumar + valor5;
+    
+    if(sumar2 <= 3.3){
+        $("#resultadosdai").val(sumar2);
+    }else if(sumar2 >= 3.4 && sumar2 <= 11){
+        $("#resultadosdai").val(sumar2); 
+    }else if(sumar2 >=12 && sumar2 <= 26){
+        $("#resultadosdai").val(sumar2);  
+    }else if(sumar2 > 27){
+        $("#resultadosdai").val(sumar2);
+    }
+});
+});
+$(document).ready(function() {
+
+    $('#hallazgousg').change(function(e) {
+    let hallazgo = $("#hallazgousg").val();
+    
+    if(hallazgo == 'Esteatosis'){
+        $("#clasisesteatosis").prop("hidden", false);
+    }else{
+        $("#clasisesteatosis").prop("hidden", true);
+        $("#clasificacionesteatosis").prop("selectedIndex",0);
+    }
+});
+});
+$(document).ready(function() {
+
+    $('#usghepatico').change(function(e) {
+    let hallazgo = $("#usghepatico").val();
+    
+    if(hallazgo == 'Si'){
+        $("#usghallazgo").prop("hidden", false);
+    }else{
+        $("#usghallazgo").prop("hidden", true);
+        $("#hallazgousg").prop("selectedIndex",0);
+        $("#clasisesteatosis").prop("hidden", true);
+        $("#clasificacionesteatosis").prop("selectedIndex",0);
+    }
+});
+});
