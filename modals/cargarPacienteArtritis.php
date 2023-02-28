@@ -16,17 +16,11 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalArtritis">
-                <!--Se agrega icon de Agregar persona-->
                 <span class="material-symbols-outlined">
                     person_add
                 </span>
-                <!--Finaliza icon-->
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
             </div>
-            <!--Finaliza Modal header-->
-
-
-            <!--Inicia Modal Body-->
             <div class="modal-body">
                 <div id="panel_editar">
                     <div class="contrato-nuevo">
@@ -77,13 +71,6 @@
                                             })
                                         })
                                     </script>
-                                    <!-- Finaliza Titulo de Datos del Paciente -->
-
-
-
-
-
-                                    <!--Inicia el formulario de Datos del Paciente-->
                                     <div class="col-md-4">
                                         <strong>CURP</strong>
                                         <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value="" onblur="curp2date();" minlength="18" maxlength="18" required>
@@ -160,11 +147,6 @@
                                         <input type="text" class="form-control" id="imc" onblur="calculaIMC();" name="imc" value="" readonly>
                                     </div>
                                     <!--FINALIZA FORMULARIO DE DATOS PERSONALES-->
-
-
-
-
-
                                     <!--Inicia formulario de Antecedentes Personales Patológicos-->
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
                                         ANTECEDENTES PERSONALES PATOLÓGICOS

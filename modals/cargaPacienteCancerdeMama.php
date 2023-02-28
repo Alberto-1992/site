@@ -2009,8 +2009,8 @@
 
                                 <br>
                         </div>
-                                    </form>
-                     <div id="tabla_resultado2"></div>
+                    </form>
+                    <div id="tabla_resultado2"></div>
                     </div>
 
 
