@@ -172,23 +172,29 @@
 
                                     <div class="col-md-12">
                                         <strong>Antecedentes Personales Patológicos</strong>
+                                        <!-- En el select se deben reemplazar los datos de la tabla 'antecedentescancer' por los siguientes datos,
+                                        también debe considerarse que es un múltiple select:
+                                            Tabaquismo
+                                            Alcoholismo
+                                            Esteatosis Hepatica
+                                            Diabetes Mellitus
+                                            Hipertensión Arterial
+                                            Obesidad
+                                            Hiperlipidemia
+                                        -->
 
                                         <select id="msartritis" name="msartritis[]" multiple="multiple" class="form-control">
-                                            <option value="0" selected>Seleccione...</option>
-                                            <option value="Tabaquismo">Tabaquismo</option>
-                                            <option value="Alcoholismo">Alcoholismo</option>
-                                            <option value="Esteatosis Hepatica">Esteatosis Hepatica</option>
-                                            <option value="Diabetes Mellitus">Diabetes Mellitus</option>
-                                            <option value="Hipertensión Arterial">Hipertensión Arterial</option>
-                                            <option value="Obesidad">Obesidad</option>
-                                            <option value="Hiperlipidemia">Hiperlipidemia</option>
+                                            <?php
+                                            $query = $conexionCancer->prepare("SELECT relacion FROM antecedentescancer");
+                                            $query->execute();
+                                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                                            while ($row = $query->fetch()) { ?>
+                                                <option value="<?php echo $row['descripcionantecedente']; ?>">
+                                                    <?php echo $row['descripcionantecedente']; ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                     <!--Finaliza formulario de Antecedentes Personales Patológicos-->
-
-
-
-
 
                                     <!--Inicia sección de Laboratorios, aquí el usuario deberá poder capturar los valores de cada estudio realizado al paciente-->
                                     <div class="col-md-12">
@@ -334,40 +340,32 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="articulacionesInflamadasSJC28"> <strong>
-                                                    Articulaciones Inflamadas SJC28
-                                                </strong></label>
+                                    
+                                            <strong>Articulaciones Inflamadas SJC28</strong>
                                             <input type="number" class="form-control" id="articulacionesInflamadasSJC28" name="articulacionesInflamadasSJC28" placeholder="Ingrese valor...">
-                                        </div>
+                                
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="articulacionesDolorosasSJC28"> <strong>
-                                                    Articulaciones Dolorosas TJC28
-                                                </strong></label>
+                                        
+                                            <strong>Articulaciones Dolorosas TJC28</strong>
                                             <input type="number" class="form-control" id="articulacionesDolorosasTJC28" name="articulacionesDolorosasTJC28" placeholder="Ingrese valor...">
-                                        </div>
+                                    
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="evglobalpga"> <strong>
-                                                    Evaluación Global PGA
-                                                </strong></label>
+                                    
+                                        <strong>Evaluación Global PGA</strong>
                                             <input type="number" class="form-control" id="evglobalpga" name="evglobalpga" placeholder="Ingrese valor...">
-                                        </div>
+                                    
                                     </div>
 
 
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="evega"> <strong>
-                                                    Evaluación del Evaluador EGA
-                                                </strong></label>
+                                                    
+                                                <strong>Evaluación del Evaluador EGA</strong>
                                             <input type="number" class="form-control" id="evega" name="evega" placeholder="Ingrese valor...">
-                                        </div>
+                                    
                                     </div>
                                     <!--
                                     <div class="col-md-4">
@@ -404,8 +402,8 @@
                                     <fieldset class="col-md-2">
                                         <strong>Metrotexate</strong>
                                         <br>
-                                        <input type="radio" name="metrotexate" id="metrotexate1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="metrotexate" id="metrotexate2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="metrotexate" id="metrotexate1" class="check" value="si" onclick="metrotexatesi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="metrotexate" id="metrotexate2" class="check" value="no" checked onclick="metrotexateno();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <div class="col-md-2">
@@ -417,8 +415,8 @@
                                     <fieldset class="col-md-2">
                                         <strong>Leflunomide</strong>
                                         <br>
-                                        <input type="radio" name="leflunomide" id="leflunomide1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="leflunomide" id="leflunomide2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="leflunomide" id="leflunomide1" class="check" value="si" onclick="Leflunomidesi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="leflunomide" id="leflunomide2" class="check" value="no" checked onclick="Leflunomideno();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <div class="col-md-2">
@@ -430,8 +428,8 @@
                                     <fieldset class="col-md-2">
                                         <strong>Sulfazalasina</strong>
                                         <br>
-                                        <input type="radio" name="sulfazalasina" id="sulfazalasina1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="sulfazalasina" id="sulfazalasina2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="sulfazalasina" id="sulfazalasina1" class="check" value="si" onclick="Sulfazalasinasi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="sulfazalasina" id="sulfazalasina2" class="check" value="no" checked onclick="Sulfazalasinano();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <div class="col-md-2">
@@ -443,8 +441,8 @@
                                     <fieldset class="col-md-2">
                                         <strong>Tocoferol</strong>
                                         <br>
-                                        <input type="radio" name="tecoferol" id="tecoferol1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="tecoferol" id="tecoferol2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="tecoferol" id="tecoferol1" class="check" value="si" onclick="Tocoferolsi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="tecoferol" id="tecoferol2" class="check" value="no" checked onclick="Tocoferolno();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <div class="col-md-2">
@@ -456,21 +454,21 @@
                                     <fieldset class="col-md-2">
                                         <strong>Glucocorticoide</strong>
                                         <br>
-                                        <input type="radio" name="glucocorticoide" id="glucocorticoide1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="glucocorticoide" id="glucocorticoide2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="glucocorticoide" id="glucocorticoide1" class="check" value="si" onclick="Glucocorticoidesi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="glucocorticoide" id="glucocorticoide2" class="check" value="no" checked onclick="Glucocorticoideno();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
                                     <!--Si el usuario selecciona Sí en la opción Glucocorticoide, se deben mostrar los siguientes dos selects-->
                                     <div class="col-md-4">
                                         <strong>Tratamiento</strong>
-                                        <select name="usghepatico" id="usghepatico" class="form-select">
+                                        <select name="tratamientogluco" id="tratamientogluco" class="form-select">
                                             <option value="0">Seleccione...</option>
                                             <option value="deflazacort">Deflazacort</option>
                                             <option value="prednisona">Prednisona</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-2" id="dosisSemanal">
+                                    <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanaltrata" name="dosisSemanaltrata" type="text" class="form-control" value="" >
                                     </div>
@@ -479,11 +477,11 @@
                                     <fieldset class="col-md-2">
                                         <strong>Vitamina D</strong>
                                         <br>
-                                        <input type="radio" name="vitaminaD" id="vitaminaD1" class="check" value="si">&nbsp;Sí&nbsp;&nbsp;
-                                        <input type="radio" name="vitaminaD" id="vitaminaD2" class="check" value="no" checked>&nbsp;No&nbsp;&nbsp;
+                                        <input type="radio" name="vitaminaD" id="vitaminaD1" class="check" value="si" onclick="vitaminadsi();">&nbsp;Sí&nbsp;&nbsp;
+                                        <input type="radio" name="vitaminaD" id="vitaminaD2" class="check" value="no" checked onclick="vitaminadno();">&nbsp;No&nbsp;&nbsp;
                                     </fieldset>
 
-                                    <div class="col-md-2" id="dosisSemanal">
+                                    <div class="col-md-2" >
                                         <strong>Dosis Semanal:</strong>
                                         <input id="dosisSemanalvitad" name="dosisSemanalvitad" type="text" class="form-control" value="">
                                     </div>
@@ -491,7 +489,7 @@
                                     <div class="col-md-2">
                                         <strong>
                                             Biológico</strong>
-                                        <select name="biologico" id="biologico" class="form-select">
+                                        <select name="biologico" id="biologico" class="form-select" onchange="Biologico();">
                                             <option value="0">Seleccione...</option>
                                             <option value="si">Sí</option>
                                             <option value="no">No</option>
