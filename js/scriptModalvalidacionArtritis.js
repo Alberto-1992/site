@@ -329,3 +329,49 @@ function Biologico() {
     }
 
 }
+
+$(document).ready(function() {
+
+    $('#calcularCDAI').on('click',function(e) {
+    let valor1 = parseFloat($("#articulacionesInflamadasSJC28").val());
+    let valor2 = parseFloat($("#articulacionesDolorosasTJC28").val());
+    let valor3 = parseFloat($("#evglobalpga").val());
+    let valor4 = parseFloat($("#evega").val());
+
+
+    let sumar = valor1 + valor2 + valor3 + valor4;
+    if(sumar <= 2.8){
+    $("#resultadocdai").val('Remision');
+    }else if(sumar >= 2.9 && sumar <= 10){
+        $("#resultadocdai").val('Actividad de enfermedad baja');  
+    }else if(sumar >11 && sumar <= 22){
+    $("#resultadocdai").val('Actividad de enfermedad moderada'); 
+    }else if(sumar > 23){
+        $("#resultadocdai").val('Actividad de enfermedad alta'); 
+    }
+   
+});
+});
+$(document).ready(function() {
+
+    $('#calcularSDAI').on('click',function(e) {
+    let valor1 = parseFloat($("#articulacionesInflamadasSJC28").val());
+    let valor2 = parseFloat($("#articulacionesDolorosasTJC28").val());
+    let valor3 = parseFloat($("#evglobalpga").val());
+    let valor4 = parseFloat($("#evega").val());
+    let valor5 = parseFloat($("#pcr").val());
+
+    let sumar = valor1 + valor2 + valor3 + valor4;
+    let sumar2 = sumar + valor5;
+    
+    if(sumar2 <= 3.3){
+        $("#resultadosdai").val('Remision');
+    }else if(sumar2 >= 3.4 && sumar2 <= 11){
+        $("#resultadosdai").val('Actividad baja'); 
+    }else if(sumar2 >=12 && sumar <= 26){
+        $("#resultadosdai").val('Actividad moderada');  
+    }else if(sumar2 > 27){
+        $("#resultadosdai").val('Actividad alta');
+    }
+});
+});
