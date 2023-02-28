@@ -343,13 +343,13 @@ $(document).ready(function() {
 
     let sumar = valor1 + valor2 + valor3 + valor4;
     if(sumar <= 2.8){
-    $("#resultadocdai").val('Remision');
+    $("#resultadocdai").val(sumar);
     }else if(sumar >= 2.9 && sumar <= 10){
-        $("#resultadocdai").val('Actividad de enfermedad baja');  
+        $("#resultadocdai").val(sumar);  
     }else if(sumar >11 && sumar <= 22){
-    $("#resultadocdai").val('Actividad de enfermedad moderada'); 
+    $("#resultadocdai").val(sumar); 
     }else if(sumar > 23){
-        $("#resultadocdai").val('Actividad de enfermedad alta'); 
+        $("#resultadocdai").val(sumar); 
     }
    
 });
@@ -367,13 +367,13 @@ $(document).ready(function() {
     let sumar2 = sumar + valor5;
     
     if(sumar2 <= 3.3){
-        $("#resultadosdai").val('Remision');
+        $("#resultadosdai").val(sumar2);
     }else if(sumar2 >= 3.4 && sumar2 <= 11){
-        $("#resultadosdai").val('Actividad baja'); 
-    }else if(sumar2 >=12 && sumar <= 26){
-        $("#resultadosdai").val('Actividad moderada');  
+        $("#resultadosdai").val(sumar2); 
+    }else if(sumar2 >=12 && sumar2 <= 26){
+        $("#resultadosdai").val(sumar2);  
     }else if(sumar2 > 27){
-        $("#resultadosdai").val('Actividad alta');
+        $("#resultadosdai").val(sumar2);
     }
 });
 });

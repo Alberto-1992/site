@@ -34,7 +34,7 @@ $sql_r = $conexion2->query("SELECT id_paciente, detalleantecedente
 //$intervalo = $fecha1->diff($fecha2);
 
 // $diasDiferencia = $intervalo->format('%d days %H horas %i minutos');
-$imccalculo = $dataRegistro['imc'];
+$imccalculo = $dataRegistro['imcartritis'];
 $imcbajo = "IMC bajo";
 $imcok = "IMC ok";
 $imcsobre = "Sobrepeso";
@@ -54,7 +54,37 @@ if ($imccalculo <= 18.5) {
     $showimc = "<span class='obesidad2'> $obe2";
 }
 
+$cdaicalculo = $dataRegistro['resultadocdai'];
+$cdairemision = "Remision";
+$cdaibaja= "Baja";
+$cdaimoderada = "Moderada";
+$cdaialta = "Alta";
 
+if($cdaicalculo <= 2.8 ){
+$cdai = "<span class='imcbajo'> $cdairemision";
+}elseif($cdaicalculo >= 2.9 and $cdaicalculo <= 10 ){
+$cdai = "<span class='imcok'> $cdaibaja";
+}elseif($cdaicalculo > 11 and $cdaicalculo <= 22 ){
+$cdai = "<span class='imcsobre'> $cdaimoderada";
+}elseif($cdaicalculo > 23 ){
+$cdai = "<span class='obesidad1'> $cdaialta";
+}
+
+$sdaicalculo = $dataRegistro['resultadosdai'];
+$sdairemision = "Remision";
+$sdaibaja= "Baja";
+$sdaimoderada = "Moderada";
+$sdaialta = "Alta";
+
+if($sdaicalculo <= 3.3 ){
+$sdai = "<span class='imcbajo'> $sdairemision";
+}elseif($sdaicalculo >= 3.4 and $sdaicalculo <= 11 ){
+$sdai = "<span class='imcok'> $sdaibaja";
+}elseif($sdaicalculo >= 12 and $sdaicalculo <= 26 ){
+$sdai = "<span class='imcsobre'> $sdaimoderada";
+}elseif($sdaicalculo > 27 ){
+$sdai = "<span class='obesidad1'> $sdaialta";
+}
 
 
 ?>
@@ -132,41 +162,41 @@ if ($imccalculo <= 18.5) {
 
     <tr>
         <th id="th">CURP:</th>
-        <td id="td"><?php echo $dataRegistro['curp'] ?>
+        <td id="td"><?php echo $dataRegistro['curp'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Nombre:</th>
-        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?>
+        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php echo $dataRegistro['escolaridad'] ?>
+        <td id="td"><?php echo $dataRegistro['escolaridad'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Edad:</th>
-        <td id="td"><?php echo $dataRegistro['edad'] ?>
+        <td id="td"><?php echo $dataRegistro['edad'] ?></td>
     </tr>
     <tr>
         <th id="th">Sexo:</th>
-        <td id="td"><?php echo $dataRegistro['sexo'] ?>
+        <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php echo $dataRegistro['tallaartritis'] ?>
+        <td id="td"><?php echo $dataRegistro['tallaartritis'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php echo $dataRegistro['pesoartritis'] ?>
+        <td id="td"><?php echo $dataRegistro['pesoartritis'] ?></td>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php echo $dataRegistro['imcartritis'] ?>
+        <td id="td"><?php echo $dataRegistro['imcartritis'].'&nbsp'; if($id_paciente != ''){ echo $showimc;}?></td>
     </tr>
     </tr>
 </table>
@@ -332,7 +362,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">RESULTADO CDAI:</th>
-        <td id="td"><?php echo $dataRegistro['resultadocdai'] ?></td>
+        <td id="td"><?php echo $dataRegistro['resultadocdai'].'&nbsp'; if($id_paciente != ''){ echo $cdai;}?></td>
 
         <!-- Aquí se debe hacer un calculo con base en los valores de los campos de la sección CLINICA, la formula es: 
             CDAI = SJC28 + TJC28 + PGA + EGA
@@ -346,7 +376,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">RESULTADO SDAI:</th>
-        <td id="td"><?php echo $dataRegistro['resultadosdai']?></td>
+        <td id="td"><?php echo $dataRegistro['resultadosdai'].'&nbsp'; if($id_paciente != ''){ echo $sdai;}?></td>
         <!-- Aquí se debe hacer un calculo con base en la siguiente formula:
             SDAI = CDAI + PCR 
             (EL CAMPO PCR ESTÁ EN LA SECCIÓN LABORATORIOS)
