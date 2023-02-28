@@ -269,7 +269,7 @@
                                     <!-- Los siguientes tres select son de selección simple-->
                                     <div class="col-md-12">
                                         <strong>USG Hepático</strong>
-                                        <select name="usghepatico" id="usghepatico" class="form-select">
+                                        <select name="usghepatico" id="usghepatico" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="Si">Sí</option>
                                             <option value="No">No</option>
@@ -278,9 +278,9 @@
 
                                     <!--Si el usuario Selecciona Sí en USG Hepático, se debe abrir el siguiente select-->
 
-                                    <div class="col-md-6" id="hallazgodeusg">
+                                    <div class="col-md-6">
                                         <strong>Hallazgo USG</strong>
-                                        <select name="hallazgousg" id="hallazgousg" class="form-select">
+                                        <select name="hallazgousg" id="hallazgousg" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="normal">Normal</option>
                                             <option value="cirrosishepatica">Cirrosis Hepática</option>
@@ -288,10 +288,10 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6" id="esteatosis">
+                                    <div class="col-md-6" id="clasisesteatosis">
                                         <strong>
                                             Clasificación Esteatosis</strong>
-                                        <select name="clasificacionesteatosis" id="clasificacionesteatosis" class="form-select">
+                                        <select name="clasificacionesteatosis" id="clasificacionesteatosis" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="leve">Leve</option>
                                             <option value="moderada">Moderada</option>
