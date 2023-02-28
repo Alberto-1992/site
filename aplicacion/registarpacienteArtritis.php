@@ -74,7 +74,7 @@ $artritis = 'Artritis reumatoide';
                             foreach($msartritis as $seleccion) {
                                 $sql_s = $conexionCancer->prepare("INSERT into antecedentespatologicosartritis(detalleantecedente,id_paciente) 
                 
-                                            values(:detalleantecedente,id_paciente)");
+                                            values(:detalleantecedente,:id_paciente)");
 
                                                 $sql_s->execute(array(
                                                     
@@ -124,6 +124,30 @@ $artritis = 'Artritis reumatoide';
                     ':articulacionesdolorosastjc28'=>$articulacionesDolorosasTJC28,
                     ':evglobalpga'=>$evglobalpga,
                     ':evega'=>$evega
+                ));
+        $sql = $conexionCancer->prepare("INSERT into tratamientoartritis(id_tratamientoartritis,id_paciente,metrotexate,dosissemanalmetro,leflunomide,dosissemanalfemua,sulfazalasina,
+        dosissemanalsulfa,tecoferol,dosissemanalteco,glucocorticoide,usghepatico,dosissemanaltrata,vitaminad,dosissemanalvitad,biologico,tratamientobiologico,apegotratamiento)
+        values(:id_tratamientoartritis,:id_paciente,:metrotexate,:dosissemanalmetro,:leflunomide,:dosissemanalfemua,:sulfazalasina,
+        :dosissemanalsulfa,:tecoferol,:dosissemanalteco,:glucocorticoide,:usghepatico,:dosissemanaltrata,:vitaminad,:dosissemanalvitad,:biologico,:tratamientobiologico,:apegotratamiento)");
+                $sql->execute(array(
+                    ':id_tratamientoartritis'=>uniqid('hraei'),
+                    ':id_paciente'=>$id_usuario,
+                    ':metrotexate'=>$metrotexate,
+                    ':dosissemanalmetro'=>$dosisSemanalmetro,
+                    ':leflunomide'=>$leflunomide,
+                    ':dosissemanalfemua'=>$dosisSemanalfemua,
+                    ':sulfazalasina'=>$sulfazalasina,
+                    ':dosissemanalsulfa'=>$dosisSemanalsulfa,
+                    ':tecoferol'=>$tecoferol,
+                    ':dosissemanalteco'=>$dosisSemanalteco,
+                    ':glucocorticoide'=>$glucocorticoide,
+                    ':usghepatico'=>$tratamientogluco,
+                    ':dosissemanaltrata'=>$dosisSemanaltrata,
+                    ':vitaminad'=>$vitaminaD,
+                    ':dosissemanalvitad'=>$dosisSemanalvitad,
+                    ':biologico'=>$biologico,
+                    ':tratamientobiologico'=>$tratamientobiologico,
+                    ':apegotratamiento'=>$apegotratamiento
                 ));
 
         if($sql != false) {

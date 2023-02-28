@@ -172,25 +172,15 @@
 
                                     <div class="col-md-12">
                                         <strong>Antecedentes Personales Patológicos</strong>
-                                        <!-- En el select se deben reemplazar los datos de la tabla 'antecedentescancer' por los siguientes datos,
-                                        también debe considerarse que es un múltiple select:
-                                            Tabaquismo
-                                            Alcoholismo
-                                            Esteatosis Hepatica
-                                            Diabetes Mellitus
-                                            Hipertensión Arterial
-                                            Obesidad
-                                            Hiperlipidemia
-                                        -->
-
+                                
                                         <select id="msartritis" name="msartritis[]" multiple="multiple" class="form-control">
-                                           <option value="Tabaquismo">Tabaquismo</option>
-                                           <option value="Alcoholismo">Alcoholismo</option>
-                                           <option value="Esteatosis Hepatica">Esteatosis Hepatica</option>
-                                           <option value="Diabetes Mellitus">Diabetes Mellitus</option>
-                                           <option value="Hipertensión Arterial">Hipertensión Arterial</option>
-                                           <option value="Obesidad">Obesidad</option>
-                                           <option value="Hiperlipidemia">Hiperlipidemia</option>
+                                            <option value="Tabaquismo">Tabaquismo</option>
+                                            <option value="Alcoholismo">Alcoholismo</option>
+                                            <option value="Esteatosis Hepatica">Esteatosis Hepatica</option>
+                                            <option value="Diabetes Mellitus">Diabetes Mellitus</option>
+                                            <option value="Hipertensión Arterial">Hipertensión Arterial</option>
+                                            <option value="Obesidad">Obesidad</option>
+                                            <option value="Hiperlipidemia">Hiperlipidemia</option>
                                         </select>
                                     </div>
                                     <!--Finaliza formulario de Antecedentes Personales Patológicos-->
@@ -407,7 +397,7 @@
 
                                     <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanalmetro" name="dosisSemanalmetro" type="text" class="form-control" value="" >
+                                        <input id="dosisSemanalmetro" name="dosisSemanalmetro" type="text" class="form-control" value="0" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -420,7 +410,7 @@
 
                                     <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanalfemua" name="dosisSemanalfemua" type="text" class="form-control" value="">
+                                        <input id="dosisSemanalfemua" name="dosisSemanalfemua" type="text" class="form-control" value="0">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -433,7 +423,7 @@
 
                                     <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanalsulfa" name="dosisSemanalsulfa" type="text" class="form-control" value="">
+                                        <input id="dosisSemanalsulfa" name="dosisSemanalsulfa" type="text" class="form-control" value="0">
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -446,7 +436,7 @@
 
                                     <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanalteco" name="dosisSemanalteco" type="text" class="form-control" value="" >
+                                        <input id="dosisSemanalteco" name="dosisSemanalteco" type="text" class="form-control" value="0" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -469,7 +459,7 @@
 
                                     <div class="col-md-2">
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanaltrata" name="dosisSemanaltrata" type="text" class="form-control" value="" >
+                                        <input id="dosisSemanaltrata" name="dosisSemanaltrata" type="text" class="form-control" value="0" >
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -482,7 +472,7 @@
 
                                     <div class="col-md-2" >
                                         <strong>Dosis Semanal:</strong>
-                                        <input id="dosisSemanalvitad" name="dosisSemanalvitad" type="text" class="form-control" value="">
+                                        <input id="dosisSemanalvitad" name="dosisSemanalvitad" type="text" class="form-control" value="0">
                                     </div>
 
                                     <div class="col-md-2">
@@ -502,7 +492,7 @@
                                             <option value="0">Seleccione...</option>
                                             <option value="rituximab">Rituximab</option>
                                             <option value="abatacept">Abatacept</option>
-                                            <option value="aalimumab">Adalimumab</option>
+                                            <option value="alimumab">Adalimumab</option>
                                             <option value="tocilizumab">Tocilizumab</option>
                                             <option value="pertuzumab">Pertuzumab</option>
                                         </select>
@@ -515,7 +505,7 @@
                                             <option value="0">Seleccione...</option>
                                             <option value="parcial">Parcial</option>
                                             <option value="total">Total</option>
-                                            <option value="sinapego">Sin Apego</option>
+                                            <option value="sin apego">Sin Apego</option>
                                         </select>
                                     </div>
 

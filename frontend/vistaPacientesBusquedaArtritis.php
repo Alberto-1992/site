@@ -16,16 +16,16 @@ require 'conexionCancer.php';
 
 
 
-/*
-$sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
-            FROM antecedentespatopersonales
+
+$sql_r = $conexion2->query("SELECT id_paciente, detalleantecedente
+            FROM antecedentespatologicosartritis
             WHERE id_paciente
             IN (SELECT id_paciente
-            FROM antecedentespatopersonales
+            FROM antecedentespatologicosartritis
             GROUP BY id_paciente
             HAVING count(id_paciente) >= 1)
             and id_paciente = $id_paciente
-            ORDER BY id_paciente");*/
+            ORDER BY id_paciente");
 
 
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
@@ -181,16 +181,15 @@ if ($imccalculo <= 18.5) {
 
     <div class="containerr3">Antecedentes Personales Patológicos</div>
     <tr>
-        <th id="th">Antecedentes Personales Patológicos:</th>
-        <td id="td"><?php  ?></td>
+    <th id="th">Antecedentes Personales Patologicos:</th>
+
+        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql_r))
+{
+echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
+
     </tr>
 </table>
 <!--Inicia Antecedentes Personales Patológicos-->
-
-
-
-
-
 
 <!--Inicia LABORATORIOS-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
@@ -375,35 +374,67 @@ if ($imccalculo <= 18.5) {
     <!-- En los siguientes campos se deberá recuperar la dosis del medicamento-->
     <tr>
         <th id="th">Metrotexate:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['metrotexate']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Metrotexate:</th>
+        <td id="td"><?php echo $dataRegistro['dosissemanalmetro']?></td>
     </tr>
     <tr>
         <th id="th">Leflunomide:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php  echo $dataRegistro['leflunomide']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Leflunomide:</th>
+        <td id="td"><?php  echo $dataRegistro['dosissemanalfemua']?></td>
     </tr>
     <tr>
         <th id="th">Sulfazalasina:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php  echo $dataRegistro['sulfazalasina']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Sulfazalasina:</th>
+        <td id="td"><?php  echo $dataRegistro['dosissemanalsulfa']?></td>
     </tr>
     <tr>
         <th id="th">Tocoferol:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php  echo $dataRegistro['tecoferol']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Tocoferol:</th>
+        <td id="td"><?php  echo $dataRegistro['dosissemanalteco']?></td>
     </tr>
     <tr>
         <th id="th">Glucocorticoide:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['glucocorticoide']?></td>
+    </tr>
+    <tr>
+        <th id="th">Tratamiento:</th>
+        <td id="td"><?php echo $dataRegistro['usghepatico']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Tratamiento:</th>
+        <td id="td"><?php echo $dataRegistro['dosissemanaltrata']?></td>
     </tr>
     <tr>
         <th id="th">Vitamina D:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['vitaminad']?></td>
+    </tr>
+    <tr>
+        <th id="th">Dosis Vitamina D:</th>
+        <td id="td"><?php echo $dataRegistro['dosissemanalvitad']?></td>
     </tr>
     <tr>
         <th id="th">Biológico:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['biologico']?></td>
+    </tr>
+    <tr>
+        <th id="th">Tratamiento Biológico:</th>
+        <td id="td"><?php echo $dataRegistro['tratamientobiologico']?></td>
     </tr>
     <tr>
         <th id="th">Apego a Tratamiento:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['apegotratamiento']?></td>
     </tr>
 </table>
 <!-- INICIA SECCIÓN TRATAMIENTO -->

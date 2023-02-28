@@ -202,12 +202,18 @@ $(function () {
     $("#tratamientogluco").prop("disabled", true);
     $("#dosisSemanalvitad").prop("disabled", true);
     $("#tratamientobiologico").prop("disabled", true);
+    $("#dosisSemanalmetro").val('0');
+    $("#dosisSemanalfemua").val('0');
+    $("#dosisSemanalsulfa").val('0');
+    $("#dosisSemanalteco").val('0');
+    $("#dosisSemanaltrata").val('0');
 
 })
 function metrotexatesi(){
     let metrotexate = $("#metrotexate1").val();
     if(metrotexate == 'si'){
         $("#dosisSemanalmetro").prop('disabled', false);
+        $("#dosisSemanalmetro").val('');
     };
     
 }
@@ -215,7 +221,7 @@ function metrotexateno(){
     let metrotexate = $("#metrotexate2").val();
     if(metrotexate == 'no'){
         $("#dosisSemanalmetro").prop('disabled', true);
-        $("#dosisSemanalmetro").val('');
+        $("#dosisSemanalmetro").val('0');
 
     };
     
@@ -226,6 +232,7 @@ function Leflunomidesi() {
 
     if(Leflunomide == 'si'){
         $("#dosisSemanalfemua").prop('disabled', false);
+        $("#dosisSemanalfemua").val('');
 
     }
 }
@@ -234,7 +241,7 @@ function Leflunomideno() {
 
     if(Leflunomide == 'no'){
         $("#dosisSemanalfemua").prop('disabled', true);
-        $("#dosisSemanalfemua").val('');
+        $("#dosisSemanalfemua").val('0');
 
     }
 }
@@ -244,6 +251,7 @@ function Sulfazalasinasi() {
 
     if(Sulfazalasina == 'si'){
         $("#dosisSemanalsulfa").prop('disabled', false);
+        $("#dosisSemanalsulfa").val('');
     }
 }
 function Sulfazalasinano() {
@@ -251,7 +259,7 @@ function Sulfazalasinano() {
 
     if(Sulfazalasina == 'no'){
         $("#dosisSemanalsulfa").prop('disabled', true);
-        $("#dosisSemanalsulfa").val('');
+        $("#dosisSemanalsulfa").val('0');
     }
 }
 
@@ -260,6 +268,7 @@ function Tocoferolsi() {
 
     if(Tocoferol == 'si'){
         $("#dosisSemanalteco").prop('disabled', false);
+        $("#dosisSemanalteco").val('');
     }
 }
 function Tocoferolno() {
@@ -267,7 +276,7 @@ function Tocoferolno() {
 
     if(Tocoferol == 'no'){
         $("#dosisSemanalteco").prop('disabled', true);
-        $("#dosisSemanalteco").val('');
+        $("#dosisSemanalteco").val('0');
     }
 }
 
@@ -277,6 +286,7 @@ function Glucocorticoidesi() {
     if(Glucocorticoide == 'si'){
         $("#tratamientogluco").prop('disabled', false);
         $("#dosisSemanaltrata").prop('disabled', false);
+        $("#dosisSemanaltrata").val('');
     }
 }
 
@@ -287,7 +297,7 @@ function Glucocorticoideno() {
         $("#tratamientogluco").prop('disabled', true);
         $("#tratamientogluco").prop('selectedIndex', 0);
         $("#dosisSemanaltrata").prop('disabled', true);
-        $("#dosisSemanaltrata").val('');
+        $("#dosisSemanaltrata").val('0');
     }
 }
 
@@ -296,6 +306,7 @@ function vitaminadsi() {
 
         if(vitaminade == 'si'){
             $("#dosisSemanalvitad").prop("disabled", false);
+            $("#dosisSemanalvitad").val('');
         }
 }
 function vitaminadno() {
@@ -303,7 +314,7 @@ function vitaminadno() {
 
         if(vitaminade == 'no'){
             $("#dosisSemanalvitad").prop("disabled", true);
-            $("#dosisSemanalvitad").val('');
+            $("#dosisSemanalvitad").val('0');
         }
 }
 

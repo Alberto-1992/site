@@ -8,13 +8,15 @@ artritispaciente.* ,
 somatometriaartritis.*,
 laboratoriosartritis.*,
 clinicaartritis.*,
-usghepaticoartritis.*
+usghepaticoartritis.*,
+tratamientoartritis.*
 FROM dato_usuarioartritis 
 left outer join artritispaciente on artritispaciente.id_paciente = dato_usuarioartritis.id_usuarioartritis
 left outer join somatometriaartritis on somatometriaartritis.id_paciente = dato_usuarioartritis.id_usuarioartritis
 left outer join laboratoriosartritis on laboratoriosartritis.id_paciente = dato_usuarioartritis.id_usuarioartritis
 left outer join clinicaartritis on clinicaartritis.id_paciente = dato_usuarioartritis.id_usuarioartritis
 left outer join usghepaticoartritis on usghepaticoartritis.id_paciente = dato_usuarioartritis.id_usuarioartritis
+left outer join tratamientoartritis on tratamientoartritis.id_paciente = dato_usuarioartritis.id_usuarioartritis
 where dato_usuarioartritis.id_usuarioartritis = $id");
 $query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();
