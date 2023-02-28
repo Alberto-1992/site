@@ -184,14 +184,13 @@
                                         -->
 
                                         <select id="msartritis" name="msartritis[]" multiple="multiple" class="form-control">
-                                            <?php
-                                            $query = $conexionCancer->prepare("SELECT relacion FROM antecedentescancer");
-                                            $query->execute();
-                                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                                            while ($row = $query->fetch()) { ?>
-                                                <option value="<?php echo $row['descripcionantecedente']; ?>">
-                                                    <?php echo $row['descripcionantecedente']; ?></option>
-                                            <?php } ?>
+                                           <option value="Tabaquismo">Tabaquismo</option>
+                                           <option value="Alcoholismo">Alcoholismo</option>
+                                           <option value="Esteatosis Hepatica">Esteatosis Hepatica</option>
+                                           <option value="Diabetes Mellitus">Diabetes Mellitus</option>
+                                           <option value="Hipertensión Arterial">Hipertensión Arterial</option>
+                                           <option value="Obesidad">Obesidad</option>
+                                           <option value="Hiperlipidemia">Hiperlipidemia</option>
                                         </select>
                                     </div>
                                     <!--Finaliza formulario de Antecedentes Personales Patológicos-->
