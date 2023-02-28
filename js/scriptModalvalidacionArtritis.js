@@ -207,6 +207,8 @@ $(function () {
     $("#dosisSemanalsulfa").val('0');
     $("#dosisSemanalteco").val('0');
     $("#dosisSemanaltrata").val('0');
+    $("#clasisesteatosis").prop("hidden", true);
+    $("#usghallazgo").prop("hidden", true);
 
 })
 function metrotexatesi(){
@@ -372,6 +374,34 @@ $(document).ready(function() {
         $("#resultadosdai").val('Actividad moderada');  
     }else if(sumar2 > 27){
         $("#resultadosdai").val('Actividad alta');
+    }
+});
+});
+$(document).ready(function() {
+
+    $('#hallazgousg').change(function(e) {
+    let hallazgo = $("#hallazgousg").val();
+    
+    if(hallazgo == 'Esteatosis'){
+        $("#clasisesteatosis").prop("hidden", false);
+    }else{
+        $("#clasisesteatosis").prop("hidden", true);
+        $("#clasificacionesteatosis").prop("selectedIndex",0);
+    }
+});
+});
+$(document).ready(function() {
+
+    $('#usghepatico').change(function(e) {
+    let hallazgo = $("#usghepatico").val();
+    
+    if(hallazgo == 'Si'){
+        $("#usghallazgo").prop("hidden", false);
+    }else{
+        $("#usghallazgo").prop("hidden", true);
+        $("#hallazgousg").prop("selectedIndex",0);
+        $("#clasisesteatosis").prop("hidden", true);
+        $("#clasificacionesteatosis").prop("selectedIndex",0);
     }
 });
 });

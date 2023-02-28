@@ -278,24 +278,24 @@
 
                                     <!--Si el usuario Selecciona Sí en USG Hepático, se debe abrir el siguiente select-->
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12" id="usghallazgo">
                                         <strong>Hallazgo USG</strong>
                                         <select name="hallazgousg" id="hallazgousg" class="form-control">
                                             <option value="0">Seleccione...</option>
-                                            <option value="normal">Normal</option>
-                                            <option value="cirrosishepatica">Cirrosis Hepática</option>
-                                            <option value="esteatosis">Esteatosis</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Cirrosis hepatica">Cirrosis Hepática</option>
+                                            <option value="Esteatosis">Esteatosis</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6" id="clasisesteatosis">
+                                    <div class="col-md-12" id="clasisesteatosis">
                                         <strong>
                                             Clasificación Esteatosis</strong>
                                         <select name="clasificacionesteatosis" id="clasificacionesteatosis" class="form-control">
                                             <option value="0">Seleccione...</option>
-                                            <option value="leve">Leve</option>
-                                            <option value="moderada">Moderada</option>
-                                            <option value="severa">Severa</option>
+                                            <option value="Leve">Leve</option>
+                                            <option value="Moderada">Moderada</option>
+                                            <option value="Severa">Severa</option>
                                         </select>
                                     </div>
                                     <!--Finalizan los Select simples-->
@@ -434,8 +434,8 @@
                                         <strong>Tratamiento</strong>
                                         <select name="tratamientogluco" id="tratamientogluco" class="form-select">
                                             <option value="0">Seleccione...</option>
-                                            <option value="deflazacort">Deflazacort</option>
-                                            <option value="prednisona">Prednisona</option>
+                                            <option value="Deflazacort">Deflazacort</option>
+                                            <option value="Prednisona">Prednisona</option>
                                         </select>
                                     </div>
 
@@ -472,11 +472,11 @@
                                         <strong>Tratamiento</strong>
                                         <select name="tratamientobiologico" id="tratamientobiologico" class="form-select">
                                             <option value="0">Seleccione...</option>
-                                            <option value="rituximab">Rituximab</option>
-                                            <option value="abatacept">Abatacept</option>
-                                            <option value="alimumab">Adalimumab</option>
-                                            <option value="tocilizumab">Tocilizumab</option>
-                                            <option value="pertuzumab">Pertuzumab</option>
+                                            <option value="Rituximab">Rituximab</option>
+                                            <option value="Abatacept">Abatacept</option>
+                                            <option value="Alimumab">Adalimumab</option>
+                                            <option value="Tocilizumab">Tocilizumab</option>
+                                            <option value="Pertuzumab">Pertuzumab</option>
                                         </select>
                                     </div>
 
@@ -485,9 +485,9 @@
                                             Apego a Tratamiento</strong>
                                         <select name="apegotratamiento" id="apegotratamiento" class="form-select">
                                             <option value="0">Seleccione...</option>
-                                            <option value="parcial">Parcial</option>
-                                            <option value="total">Total</option>
-                                            <option value="sin apego">Sin Apego</option>
+                                            <option value="Parcial">Parcial</option>
+                                            <option value="Total">Total</option>
+                                            <option value="Sin apego">Sin Apego</option>
                                         </select>
                                     </div>
 
@@ -495,9 +495,11 @@
                                         <br>
                                         <br>
                                         <!--Se cambia value=Finalizar por value=Cancelar-->
-                                        <input type="button" id="recargarArtritis" onclick="window.location.reload();" value="Cancelar">
-                                        <!--Se cambia value=Registrar por value=Guardar-->
-                                        <input type="submit" id="registrarArtritis" value="Guardar">
+                                        <input type="submit"  value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                                <input type="button" onclick="window.location.reload();"
+                                    value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+
+
                                         <br>
                                     </div>
 
