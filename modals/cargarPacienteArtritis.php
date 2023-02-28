@@ -188,7 +188,12 @@
 
                                     <div class="col-md-3">
                                         <strong>Factor Reumatoide Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="frnominal" name="frnominal" >
+                                        <select name="frnominal" id="frnominal" class="form-control">
+                                            <option value="">Seleccione..</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        </select>
+                                        
                                     </div>
 
                                     <div class="col-md-3">
@@ -200,21 +205,30 @@
                                         <strong>Vitamina D Basal</strong>
                                         <input type="number" step="any" class="form-control" id="vitaminaDBasal" name="vitaminaDBasal" >
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Vitamina D Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="vitaminaDNominal" name="vitaminaDNominal" >
+                                        <select name="vitaminaDNominal" id="vitaminaDNominal" class="form-control">
+                                            <option value="">Seleccione..</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Deficiente">Deficiente</option>
+                                        </select>
+                                        
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>AC Anticpp Basal</strong>
                                         <input type="number" step="any" class="form-control" id="anticppbasal" name="anticppbasal">
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>AC Anticpp Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="anticppnominal" name="anticppnominal">
+                                        <select name="anticppnominal" id="anticppnominal" class="form-control">
+                                            <option value="">Seleccione..</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        </select>
+                                        
                                     </div>
+                                    
 
                                     <div class="col-md-3">
                                         <strong>VSG</strong>
@@ -225,21 +239,30 @@
                                         <strong>TGO Basal</strong>
                                         <input type="number" step="any" class="form-control" id="tgobasal" name="tgobasal" >
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>TGO Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgonominal" name="tgonominal" >
+                                        <select name="tgonominal" id="tgonominal" class="form-control">
+                                            <option value="">Seleccione..</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                        
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>TGP Basal</strong>
                                         <input type="number" step="any" class="form-control" id="tgpbasal" name="tgpbasal" >
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>TGP Nominal</strong>
-                                        <input type="number" step="any" class="form-control" id="tgpnominal" name="tgpnominal" >
+                                        <select name="tgpnominal" id="tgpnominal" class="form-control">
+                                            <option value="">Seleccione..</option>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                        
                                     </div>
+                                
 
                                     <div class="col-md-3">
                                         <strong>Glucosa</strong>
