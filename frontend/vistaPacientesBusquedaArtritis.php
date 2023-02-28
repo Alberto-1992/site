@@ -190,7 +190,6 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
     </tr>
 </table>
 <!--Inicia Antecedentes Personales Patológicos-->
-
 <!--Inicia LABORATORIOS-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
     <div class="containerr3">Laboratorios</div>
