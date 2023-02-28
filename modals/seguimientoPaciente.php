@@ -61,16 +61,16 @@
                                     text-transform: uppercase;
                                 }
                             </style>
-                            <form name="formularioseguimiento" id="formularioseguimiento" onSubmit="return limpiar()">
+                            <form name="formularioseguimientoinfarto" id="formularioseguimientoinfarto" onSubmit="return limpiar()">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
-                                        $("#formularioseguimiento").on("submit", function(e) {
+                                        $("#formularioseguimientoinfarto").on("submit", function(e) {
                                             let checked = this.querySelectorAll('input[type=checkbox]:checked');
                                             e.preventDefault();
 
                                             var formData = new FormData(document.getElementById(
-                                                "formularioseguimiento"));
+                                                "formularioseguimientoinfarto"));
                                             formData.append("dato", "valor");
 
                                             $.ajax({

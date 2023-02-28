@@ -44,11 +44,11 @@
 
 
 
-                        <form name="formulario" id="formulario" onSubmit="return limpiar()" autocomplete="off">
+                        <form name="formulariocancerbucal" id="formulariocancerbucal" onSubmit="return limpiar()" autocomplete="off">
                             <div class="form-row">
                                 <div id="mensaje"></div>
                                 <script>
-                                    $("#formulario").on("submit", function(e) {
+                                    $("#formulariocancerbucal").on("submit", function(e) {
                                         if ($('input[name=curp]').val().length == 0 || $(
                                                 'input[name=nombrecompleto]')
                                             .val().length == 0 || $('select[name=cbx_estado]').val().length == 0
@@ -62,12 +62,12 @@
                                         e.preventDefault();
 
                                         var formData = new FormData(document.getElementById(
-                                            "formulario"));
+                                            "formulariocancerbucal"));
                                         formData.append("dato", "valor");
 
                                         $.ajax({
 
-                                            url: "aplicacion/registrarpacienteCancer.php",
+                                            url: "aplicacion/registrarpacienteCancerBucal.php",
                                             type: "post",
                                             dataType: "html",
                                             data: formData,
@@ -122,7 +122,7 @@
                                     <select id="escolaridad" name="escolaridad" class="form-control" style="font-size: 12px;">
                                         <option value="Sin registro">Sin registro</option>
                                         <?php
-                                        require 'conexionInfarto.php';
+                                        require 'conexionCancer.php';
                                         $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                                         $query->execute();
                                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -185,7 +185,7 @@
                                     <select name="cbx_estado" id="cbx_estado" class="form-control" style="width: 100%;" required>
                                         <option value="Sin registro" selected>Sin registro</option>
                                         <?php
-                                        require '../esclerosis/conexion.php';
+                                        require 'conexionCancer.php';
                                         $query = "SELECT id_estado, estado FROM t_estado ";
                                         $resultado = $conexion2->query($query);
                                         while ($row = $resultado->fetch_assoc()) { ?>
@@ -219,6 +219,7 @@
                                     <datalist id="referencias">
                                         <option value="Sin registro">Sin registro</option>
                                         <?php
+                                        require 'conexionCancer.php';
                                         $query = $conexionCancer->prepare("SELECT clues, unidad FROM hospitales");
                                         $query->execute();
                                         $query->setFetchMode(PDO::FETCH_ASSOC);

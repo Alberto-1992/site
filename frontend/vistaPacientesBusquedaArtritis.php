@@ -13,10 +13,6 @@ $id = $dataRegistro['id_paciente'];
 
 require 'conexionCancer.php';
 
-
-
-
-
 $sql_r = $conexion2->query("SELECT id_paciente, detalleantecedente
             FROM antecedentespatologicosartritis
             WHERE id_paciente

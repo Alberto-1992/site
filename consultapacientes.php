@@ -28,7 +28,7 @@
         ?>
 <input type="submit" id="totalregistro" value="<?php echo $total_registro; ?>">
 
-<input type="submit" data-bs-toggle="modal" data-bs-target="#pacienteconelevacion" value="+Cargar Paciente"
+<input type="submit" data-bs-toggle="modal" data-bs-target="#modalinfarto" value="+Cargar Paciente"
     id="boton_infarto">
 <hr id="hrinicial">
     <input type="hidden" name="total_registro" id="total_registro" value="<?php echo $total_registro; ?>" />

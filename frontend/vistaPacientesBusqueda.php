@@ -245,7 +245,7 @@ function eliminarRegistro() {
     if (mensaje == true) {
         $.ajax({
             data: parametros,
-            url: 'aplicacion/eliminarRegistroCancer.php',
+            url: 'aplicacion/eliminarRegistroinfarto.php',
             type: 'post',
             beforeSend: function() {
                 $("#mensaje").html("Procesando, espere por favor");

@@ -89,7 +89,7 @@ if ($imccalculo <= 18.5) {
 } elseif ($imccalculo > 35 and $imccalculo <= 39.9) {
     $showimc = "<span class='obesidad2'> $obe2";
 }
-require '../esclerosis/conexion.php';
+require 'conexionCancer.php';
 $sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
 $rows = mysqli_fetch_assoc($sqls);
 
@@ -114,7 +114,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     $validaid = $validacion['id_paciente'];
     if ($dataRegistro['curp'] != '') {
         if ($validaid != $id_paciente) { ?>
-            <a href="#" class="mandaid" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
+            <a href="#" class="mandaidbucal" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>

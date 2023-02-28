@@ -36,11 +36,11 @@
 
                             </div>
 
-                            <form name="formulario" id="formulario" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formulariocancerdemama" id="formulariocancerdemama" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
-                                    $("#formulario").on("submit", function(e) {
+                                    $("#formulariocancerdemama").on("submit", function(e) {
                                             if($('input[name=curp]').val().length == 0 || $(
                                                 'input[name=nombrecompleto]')
                                             .val().length == 0 || $('select[name=cbx_estado]').val().length == 0
@@ -54,7 +54,7 @@
                                         e.preventDefault();
 
                                         var formData = new FormData(document.getElementById(
-                                            "formulario"));
+                                            "formulariocancerdemama"));
                                         formData.append("dato", "valor");
 
                                         $.ajax({

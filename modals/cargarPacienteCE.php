@@ -1,4 +1,4 @@
-<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="pacienteconelevacion">
+<div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="modalinfarto">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -51,15 +51,15 @@
 
 
 
-                            <form name="formulario" id="formulario" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formularioinfarto" id="formularioinfarto" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
-                                        $("#formulario").on("submit", function(e) {
+                                        $("#formularioinfarto").on("submit", function(e) {
                                             let checked = this.querySelectorAll('input[type=checkbox]:checked');
                                             e.preventDefault();
 
-                                            var formData = new FormData(document.getElementById("formulario"));
+                                            var formData = new FormData(document.getElementById("formularioinfarto"));
                                             formData.append("dato", "valor");
 
                                             $.ajax({
