@@ -338,24 +338,24 @@
                                             <input type="number" class="form-control" id="evega" name="evega" placeholder="Ingrese valor...">
                                     
                                     </div>
-                                    <!--
+                                
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="evapaciente"> <strong>
-                                                    EVA Paciente
-                                                </strong></label>
-                                            <input type="number" class="form-control" id="evapaciente" placeholder="Ingrese valor...">
-                                        </div>
+                                            <strong>Resultado CDAI</strong>
+                                            <input type="text" class="form-control" id="resultadocdai" name="resultadocdai" readonly value="">
+                                    
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="evamedico"> <strong>
-                                                    EVA Médico
-                                                </strong></label>
-                                            <input type="number" class="form-control" id="evamedico" placeholder="Ingrese valor...">
-                                        </div>
-                                    </div>-->
+                                            <strong>Resultado SDAI</strong>
+                                            <input type="text" class="form-control" id="resultadosdai" name="resultadosdai" readonly value="">
+                                        
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <a href="#"  id="calcularCDAI" style="font-style: italic;">Calcular CDAI</a></div>
+                                    <div class="col-md-4">
+                                        <a href="#"  id="calcularSDAI" style="font-style: italic;">Calcular SDAI</a>
+                                    </div>
 
 
                                     <!--Finaliza la Sección Clinica-->

@@ -332,7 +332,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">RESULTADO CDAI:</th>
-        <td id="td"></td>
+        <td id="td"><?php echo $dataRegistro['resultadocdai'] ?></td>
 
         <!-- Aquí se debe hacer un calculo con base en los valores de los campos de la sección CLINICA, la formula es: 
             CDAI = SJC28 + TJC28 + PGA + EGA
@@ -346,7 +346,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">RESULTADO SDAI:</th>
-        <td id="td"><?php ?></td>
+        <td id="td"><?php echo $dataRegistro['resultadosdai']?></td>
         <!-- Aquí se debe hacer un calculo con base en la siguiente formula:
             SDAI = CDAI + PCR 
             (EL CAMPO PCR ESTÁ EN LA SECCIÓN LABORATORIOS)
