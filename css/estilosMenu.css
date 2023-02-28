@@ -201,9 +201,9 @@ height: 100%;
   top: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 0 1rem;
-  background-color: #b02642;
+  background-color:#7d0022;
   z-index: 99;
   transition: .5s
 }
@@ -222,7 +222,7 @@ height: 100%;
 }
 #boton_cancerBucal{
   text-decoration: none; 
-  background-color: #6e0a1d; 
+  background-color:  #7d0022; 
   text-align: center;
   color: white; 
   cursor: pointer; 
@@ -419,7 +419,7 @@ height: 100%;
 
 
 #cabeceraModalBucal{
-  background-color: #aa263e;
+  background-color:  #7d0022;
 }
 #recargar{
   width: 170px; 

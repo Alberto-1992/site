@@ -18,10 +18,18 @@
 
     <div class="box1">
         <header class="headercancerbucal">
-            <!--  <input type="text" class="form-control" id="busqueda" name="busqueda" value="" placeholder="Buscar...">-->
-            <span id="cabecera">Cáncer Bucal</span>
-
+            <span id="cabecera"><span class="material-symbols-outlined">
+                    dentistry
+                </span> Cáncer Bucal
+            </span>
         </header>
+
+
+
+
+
+
+
         <?php
         if (isset($_SESSION['usuarioAdmin'])) {
             require 'menu/menuInfarto.php';

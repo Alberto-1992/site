@@ -244,37 +244,7 @@
                                     <!-- ********************************* FINALIZA la sección FACTORES DE RIESGO ********************************* -->
 
 
-                                    <!--
-                                    <fieldset class="col-md-12">
-
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Diabetes">&nbsp;Diabetes&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Hipertencion">&nbsp;Hipertensión&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Tabaquismo">&nbsp;Tabaquismo&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Enfermedad renal cronica">&nbsp;Enfermedad renal cronica&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Hiperuricemia">&nbsp;Hiperuricemia&nbsp;&nbsp;<br>
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Obesidad">&nbsp;Obesidad&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="IAM Previo">&nbsp;IAM Previo&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Revascularización Cardiaca Previa">&nbsp;Revascularización Cardiaca
-                                        Previa&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Enfermedad multivaso">&nbsp;Enfermedad multivaso&nbsp;&nbsp;<br>
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Ectasia Coronaria">&nbsp;Ectasia Coronaria&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Cardiomiopatia de Takotsubo">&nbsp;Cardiomiopatia de
-                                        Takotsubo&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista[]" id="check_lista[]" class="check"
-                                            value="Hiperlipidemia">&nbsp;Hiperlipidemia&nbsp;&nbsp;
-
-                                    </fieldset>--><br><br>
+                                    <br><br>
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>ATENCIÓN CLINICA</strong>
                                     </div>
@@ -487,6 +457,7 @@
                                         <strong>TRATAMIENTO</strong>
                                     </div>
 
+
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
@@ -502,6 +473,7 @@
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
+                                        <br>
                                     </div>
                                     <div class="col-md-4" id="iniciotromb">
                                         <strong>Fecha/hora inicio</strong>
@@ -519,9 +491,10 @@
                                             <option value="Alteplasa">Alteplasa</option>
                                             <option value="Estreptoginasa">Estreptoquinasa</option>
                                         </select>
+                                        <br>
                                     </div>
-                                    <div class="col-md-12">
-                                    </div>
+
+
 
 
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
@@ -615,7 +588,15 @@
 
 
 
-
+                                    <div class="col-md-3" id="">
+                                        <strong>Severidad <i><a target="_blank" href="https://www.syntaxscore.org/calculator/syntaxscore/frameset.htm">Sintax</a></i></strong>
+                                        <select name="sintax" id="sintax" class="form-control">
+                                            <option value="">Seleccione...</option>
+                                            <option value="menos22">Score Bajo: < 22</option>
+                                            <option value="23a32">Score Intermedio: 23 a 32</option>
+                                            <option value="mas33">Score Alto: > 33</option>
+                                        </select>
+                                    </div>
 
                                     <div class="col-md-3" id="">
                                         <strong>Protesis Endovascular</strong>
@@ -636,7 +617,7 @@
 
                                     <div class="col-md-3">
                                         <strong>1er GENERACIÓN</strong>
-                                        <select id="" name=""  class="form-control">
+                                        <select id="" name="" class="form-control">
                                             <option value="siralimus">Siralimus</option>
                                             <option value="paclitaxel">Paclitaxel</option>
 
@@ -645,7 +626,7 @@
 
                                     <div class="col-md-3">
                                         <strong>2da GENERACIÓN</strong>
-                                        <select id="msfactores" name="check_lista[]"  class="form-control">
+                                        <select id="msfactores" name="check_lista[]" class="form-control">
                                             <option value="everilimus">Everulimus</option>
                                             <option value="bloqueoconduccion">Ridaforulimus</option>
                                             <option value="zotarolimus">Zotarolimus</option>

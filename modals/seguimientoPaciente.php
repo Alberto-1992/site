@@ -620,15 +620,17 @@
                                         <strong>PET</strong>
                                     </div>
 
-                                    <!--EN ESTA SECCIÓN HAY VARIOS SELECT DEPENDIENTES, LOS SELECT QUE SE DEBEN DE VER DE MANERA INICIAL 
-                                    ESTÁN MARCADOS CON UN ASTERISCO (*)-->
+                                    
+
+
+
 
                                     <!-- El select PET solo desplegará dos opciones, PATRON MATH y PATRON MISMATCH-->
                                     <div class="col-md-4" id="">
                                         <strong>*Patrón</strong>
                                         <select name="pet" id="pet" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="math">Patrón Math</option>
+                                            <option value="match">Patrón Match</option>
                                             <option value="mismatch">Patrón Mismatch</option>
                                         </select>
                                     </div>
@@ -636,8 +638,8 @@
                                     <!--Si se selecciona PATRON MATH, se debe habilitar el siguiente select-->
 
                                     <div class="col-md-4" id="">
-                                        <strong>Segmento Math</strong>
-                                        <select name="segmentomath" id="segmentomath" class="form-control" style="width:100%;" require>
+                                        <strong>Segmento Match</strong>
+                                        <select name="segmentomatch" id="segmentomatch" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="aplical">Apical</option>
                                             <option value="basal">Basal</option>
@@ -655,6 +657,15 @@
                                             <option value="Medio">Medio</option>
                                         </select>
                                     </div>
+
+
+
+
+
+
+
+
+
 
 
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
@@ -687,6 +698,10 @@
                                         </select>
                                     </div>
 
+
+
+
+
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
@@ -701,20 +716,7 @@
                                         </select>
                                     </div>
 
-                                    <!--Selección de Etapa de Protocolo Bruce
-                                    <div class="col-md-3" id="">
-                                        <strong>*Protocolo Bruce</strong>
-                                        <select name="protocoloBruce" id="protocoloBruce" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
-                                            <option value="etapa1">Etapa 1</option>
-                                            <option value="etapa2">Etapa 2</option>
-                                            <option value="etapa3">Etapa 3</option>
-                                            <option value="etapa4">Etapa 4</option>
-                                            <option value="etapa5">Etapa 5</option>
-                                            <option value="etapa6">Etapa 6</option>
-                                            <option value="etapa7">Etapa 7</option>
-                                        </select>
-                                    </div>-->
+                                
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
                                     <div class="col-md-3" id="">

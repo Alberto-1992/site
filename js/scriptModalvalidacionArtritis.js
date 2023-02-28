@@ -73,6 +73,8 @@ function curp2date(curp) {
     }
 
 }
+
+
 $(document).ready(function () {
 
     $('#msartritis').change(function (e) {
@@ -82,6 +84,10 @@ $(document).ready(function () {
         width: '100%'
     });
 });
+
+
+
+
 $(document).ready(function () {
 
     $('#mspato').change(function (e) {
