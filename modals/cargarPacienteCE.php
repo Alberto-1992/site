@@ -636,7 +636,7 @@
 
                                     <div class="col-md-3">
                                         <strong>1er GENERACIÓN</strong>
-                                        <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
+                                        <select id="" name=""  class="form-control">
                                             <option value="siralimus">Siralimus</option>
                                             <option value="paclitaxel">Paclitaxel</option>
 
@@ -645,7 +645,7 @@
 
                                     <div class="col-md-3">
                                         <strong>2da GENERACIÓN</strong>
-                                        <select id="msfactores" name="check_lista[]" multiple=" multiple" class="form-control">
+                                        <select id="msfactores" name="check_lista[]"  class="form-control">
                                             <option value="everilimus">Everulimus</option>
                                             <option value="bloqueoconduccion">Ridaforulimus</option>
                                             <option value="zotarolimus">Zotarolimus</option>
@@ -697,12 +697,35 @@
                                     <br>
                                     <br>
 
+
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>MARCAPASOS TEMPORAL</strong>
                                     </div>
+
+                                    <div class="col-md-3" id="marcapa">
+                                        <strong>Marca Pasos</strong>
+                                        <select name="marcapa" id="marca" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="si">Sí</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-3" id="marcapa">
+                                        <strong>Soporte Ventricular</strong>
+                                        <select name="soporteven" id="soporteven" class="form-control">
+                                            <option value="">Seleccione</option>
+                                            <option value="balon">Balón de Contrapulsación</option>
+                                            <option value="ecmo">ECMO</option>
+                                            <option value="impella">IMPELLA</option>
+                                        </select>
+                                    </div>
+
+
+
 
 
 

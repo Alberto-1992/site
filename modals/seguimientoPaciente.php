@@ -610,6 +610,16 @@
                                         <strong>Viabilidad y Perfusión Miocardia</strong>
                                     </div>
 
+                                    
+
+
+                                    <!--Inicia sección PET-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>PET</strong>
+                                    </div>
+
                                     <!--EN ESTA SECCIÓN HAY VARIOS SELECT DEPENDIENTES, LOS SELECT QUE SE DEBEN DE VER DE MANERA INICIAL 
                                     ESTÁN MARCADOS CON UN ASTERISCO (*)-->
 
@@ -647,7 +657,12 @@
                                     </div>
 
 
-
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>Gamagrama Cardiaco</strong>
+                                    </div>
                                     <!-- El siguiente SELECT solo muestra dos opciones: NEGATIVO / POSITIVO-->
                                     <div class="col-md-4" id="">
                                         <strong>* Resultado de Gamagrama Cardiaco</strong>
@@ -672,7 +687,12 @@
                                         </select>
                                     </div>
 
-
+                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color: white; 
+                                    background-color:#eda9ab;">
+                                        <strong>Ergometría</strong>
+                                    </div>
                                     <!-- ERGOMETRÍA no se seleccionará, solo se visualizará-->
                                     <div class="col-md-3">
                                         <strong>*Ergometría</strong>
@@ -898,7 +918,7 @@
 
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
-                                    background-color:#white;">
+                                    background-color:white;">
                                         <strong>Viabilidad y Perfusión Miocardia</strong>
                                     </div>
 
