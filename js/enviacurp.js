@@ -10,4 +10,14 @@ $(function () {
   })
 
 })
+$(function () {
+  $(".mandaidbucal").click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('id');
+    $(".curp").html(id);
+    $("#seguimientobucal").modal('show');
+
+  })
+
+})
 

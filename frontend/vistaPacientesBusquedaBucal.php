@@ -7,7 +7,7 @@ date_default_timezone_set('America/Monterrey');
 $fecha_actual = new DateTime(date('Y-m-d'));
 
 
-$id_paciente = $dataRegistro['id'];
+$id_paciente = $dataRegistro['id_bucal'];
 $curp = $dataRegistro['curp'];
 $id = $dataRegistro['id_paciente'];
 $municipio = $dataRegistro['municipio'];
@@ -106,13 +106,13 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php
-
-    $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancer where id_paciente = $id_paciente");
+    require 'conexionCancer.php';
+    $sql_busqueda = $conexionCancer->prepare("SELECT id_pacientebucal from seguimientocancerbucal where id_pacientebucal = $id_paciente");
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
-    $validaid = $validacion['id_paciente'];
-    if ($dataRegistro['curp'] != '') {
+    $validaid = $validacion['id_pacientebucal'];
+    if ($dataRegistro['curpbucal'] != '') {
         if ($validaid != $id_paciente) { ?>
             <a href="#" class="mandaidbucal" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
@@ -167,56 +167,56 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">CURP:</th>
-        <td id="td"><?php echo $dataRegistro['curp'] ?>
+        <td id="td"><?php echo $dataRegistro['curpbucal'] ?>
     </tr>
 
     <tr>
         <th id="th">Nombre:</th>
-        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?>
+        <td id="td"><?php echo $dataRegistro['nombrecompletobucal'] ?>
     </tr>
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro['escolaridadbucal'] ?>
     </tr>
 
     <tr>
         <th id="th">Edad:</th>
-        <td id="td"><?php echo $dataRegistro['edad'] ?>
+        <td id="td"><?php echo $dataRegistro['edadbucal'] ?>
     </tr>
     <tr>
         <th id="th">Sexo:</th>
-        <td id="td"><?php echo $dataRegistro['sexo'] ?>
+        <td id="td"><?php echo $dataRegistro['sexobucal'] ?>
     </tr>
 
     <tr>
         <th id="th">Raza:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  echo $dataRegistro['razabucal']?>
     </tr>
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  echo $dataRegistro['']?>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  echo $dataRegistro['']?>
     </tr>
 
     <tr>
         <th id="th">Estado de Residencia:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  echo $dataRegistro['estadobucal']?>
     </tr>
 
     <tr>
         <th id="th">Delegación / Municipio:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  echo $dataRegistro['municipiobucal']?>
     </tr>
 
     <tr>

@@ -10,23 +10,23 @@
 <?php
 
 require 'conexionCancer.php';
-$sqlQueryComentarios  = $conexion2->query("SELECT dato_usuariobucal.id  FROM dato_usuariobucal");
+$sqlQueryComentarios  = $conexion2->query("SELECT dato_usuariobucal.id_bucal  FROM dato_usuariobucal");
 $total_registro       = mysqli_num_rows($sqlQueryComentarios);
 
-$sql = "SELECT COUNT(*) total FROM dato_usuario";
+$sql = "SELECT COUNT(*) total FROM dato_usuariobucal";
 $result = mysqli_query($conexion2, $sql);
 $fila = mysqli_fetch_assoc($result);
 
-$query = $conexionCancer->prepare("SELECT dato_usuariobucal.id, dato_usuariobucal.curp, dato_usuariobucal.nombrecompleto, dato_usuariobucal.poblacionindigena, dato_usuariobucal.escolaridad, dato_usuariobucal.fechanacimiento, dato_usuariobucal.edad, dato_usuariobucal.sexo, dato_usuariobucal.raza, dato_usuariobucal.estado, dato_usuariobucal.municipio FROM dato_usuariobucal order by dato_usuariobucal.id DESC LIMIT 25 ");
+$query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.poblacionindigenabucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal order by dato_usuariobucal.id_bucal DESC LIMIT 23  ");
 if (isset($_POST['pacientes'])) {
     $q = $conexion2->real_escape_string($_POST['pacientes']);
-    $query = $conexionCancer->prepare("SELECT dato_usuariobucal.id, dato_usuariobucal.curp, dato_usuariobucal.nombrecompleto, dato_usuariobucal.poblacionindigena, dato_usuariobucal.escolaridad, dato_usuariobucal.fechanacimiento, dato_usuariobucal.edad, dato_usuariobucal.sexo, dato_usuariobucal.raza, dato_usuariobucal.estado, dato_usuariobucal.municipio FROM dato_usuariobucal  where
-		dato_usuariobucal.id LIKE '%" . $q . "%' OR
-        dato_usuariobucal.nombrecompleto LIKE '%" . $q . "%' OR
-		dato_usuariobucal.fechanacimiento LIKE '%" . $q . "%' OR
-		dato_usuariobucal.edad LIKE '%" . $q . "%' OR
-		dato_usuariobucal.sexo LIKE '%" . $q . "%' OR
-		dato_usuariobucal.curp LIKE '%" . $q . "%' group by dato_usuariobucal.id");
+    $query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.poblacionindigenabucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal  where
+		dato_usuariobucal.id_bucal LIKE '%" . $q . "%' OR
+        dato_usuariobucal.nombrecompletobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.fechanacimientobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.edadbucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.sexobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.curpbucal LIKE '%" . $q . "%' group by dato_usuariobucal.id_bucal");
 }
 ?>
 <input type="submit" id="totalregistro" value="<?php echo $fila['total']; ?>">
@@ -43,19 +43,19 @@ if (isset($_POST['pacientes'])) {
         while($dataRegistro= $query->fetch())
         { ?>
         
-        <div class="item-comentario" id="<?php echo $dataRegistro['id']; ?>" >
+        <div class="item-comentario" id="<?php echo $dataRegistro['id_bucal']; ?>" >
             <?php
             error_reporting(0);
-            $id = $dataRegistro['id'];
-                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientocancerbucal where id_paciente = :id_paciente");
+            $id = $dataRegistro['id_bucal'];
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_pacientebucal from seguimientocancerbucal where id_pacientebucal = :id_pacientebucal");
                 $sql_busqueda->execute(array(
-                    ':id_paciente'=>$id
+                    ':id_pacientebucal'=>$id
                 ));
                 $validacion = $sql_busqueda->fetch();
-                $validaid = $validacion['id_paciente'];
+                $validaid = $validacion['id_pacientebucal'];
             ?>
                 <div id='<?php echo $id ?>' class='ver-info' >
-                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>';
+                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompletobucal'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curpbucal'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexobucal'].'</strong>';
                     if($validaid == $id){ 
             ?><input type="submit" value="En seguimiento" style="padding: 1px; cursor-pointer: none; background: red; border: none;color: white; margin-left: 1%; font-size: 10px; font-style: arial; margin-top: 0px;"><?php } ?>
             

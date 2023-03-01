@@ -36,7 +36,7 @@ date_default_timezone_set('America/Mexico_City');
         }elseif($imccalculo > 35 and $imccalculo <= 39.9 ){
             $showimc = "<span class='obesidad2'> $obe2";
         }
-            require '../esclerosis/conexion.php';
+            require 'conexionCancer.php';
             $sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
             $rows = mysqli_fetch_assoc($sqls);
             
@@ -68,26 +68,26 @@ date_default_timezone_set('America/Mexico_City');
 
     <tr>
         <th id="th">CURP:</th>
-        <td id="td"><?php echo $dataRegistro['curp'] ?>
+        <td id="td"><?php echo $dataRegistro['curp'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Nombre:</th>
-        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?>
+        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php  ?>
+        <td id="td"><?php  ?></td>
     </tr>
 
     <tr>
         <th id="th">Edad:</th>
-        <td id="td"><?php echo $dataRegistro['edad'] ?>
+        <td id="td"><?php echo $dataRegistro['edad'] ?></td>
     </tr>
     <tr>
         <th id="th">Sexo:</th>
-        <td id="td"><?php echo $dataRegistro['sexo'] ?>
+        <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
     </tr>
 </table>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
@@ -95,15 +95,15 @@ date_default_timezone_set('America/Mexico_City');
     <div class="containerr3">Somatometria</div>
     <tr>
         <th id="th">Peso</th>
-        <td><?php echo $dataRegistro['peso'] ?></td>
+        <td id="td"><?php echo $dataRegistro['peso'] ?></td>
     </tr>
     <tr>
         <th id="th">Talla</th>
-        <td><?php echo $dataRegistro['talla'] ?></td>
+        <td id="td"><?php echo $dataRegistro['talla'] ?></td>
     </tr>
     <tr>
         <th id="th">IMC</th>
-        <td><?php echo $dataRegistro['imc'].'&nbsp'.$showimc ?></td>
+        <td id="td"><?php echo $dataRegistro['imc'].'&nbsp'.$showimc ?></td>
     </tr>
     </table>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
@@ -111,51 +111,51 @@ date_default_timezone_set('America/Mexico_City');
     <div class="containerr3">Atnecion clinica</div>
     <tr>
         <th id="th">Killip Kimball</th>
-        <td><?php echo $dataRegistro['killipkimball'] ?></td>
+        <td id="td"><?php echo $dataRegistro['killipkimball'] ?></td>
     </tr>
     <tr>
         <th id="th">Fevi</th>
-        <td><?php echo $dataRegistro['fevi'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fevi'] ?></td>
     </tr>
     <tr>
         <th id="th">Choque cardiogenico</th>
-        <td><?php echo $dataRegistro['choquecardogenico'] ?></td>
+        <td id="td"><?php echo $dataRegistro['choquecardogenico'] ?></td>
     </tr>
     <tr>
         <th id="th">Revascularización previa</th>
-        <td><?php echo $dataRegistro['revascularizacionprevia'] ?></td>
+        <td id="td"><?php echo $dataRegistro['revascularizacionprevia'] ?></td>
     </tr>
     <tr>
         <th id="th">Revascularización</th>
-        <td><?php echo $dataRegistro['revascularizacion'] ?></td>
+        <td id="td"><?php echo $dataRegistro['revascularizacion'] ?></td>
     </tr>
     <tr>
         <th id="th">Localización</th>
-        <td><?php echo $dataRegistro['localizacion'] ?></td>
+        <td id="td"><?php echo $dataRegistro['localizacion'] ?></td>
     </tr>
     <tr>
         <th id="th">Inicio de sintomas</th>
-        <td><?php echo $dataRegistro['iniciosintomas'] ?></td>
+        <td id="td"><?php echo $dataRegistro['iniciosintomas'] ?></td>
     </tr>
     <tr>
         <th id="th">Inicio de triage</th>
-        <td><?php echo $dataRegistro['primercontacto'] ?></td>
+        <td id="td"><?php echo $dataRegistro['primercontacto'] ?></td>
     </tr>
     <tr>
         <th id="th">Termino de triage</th>
-        <td><?php echo $dataRegistro['puertabalon'] ?></td>
+        <td id="td"><?php echo $dataRegistro['puertabalon'] ?></td>
     </tr>
     <tr>
         <th id="th">Trombolisis</th>
-        <td><?php echo $dataRegistro['trombolisis']; ?></td>
+        <td id="td"><?php echo $dataRegistro['trombolisis']; ?></td>
     </tr>
     <tr>
         <th id="th">Fecha/hora inicio trombolisis</th>
-        <td><?php echo $dataRegistro['fechainiciotrombolisis']; ?></td>
+        <td id="td"><?php echo $dataRegistro['fechainiciotrombolisis']; ?></td>
     </tr>
     <tr>
         <th id="th">Fecha/hora termino trombolisis</th>
-        <td><?php echo $dataRegistro['fechaterminotrombolisis']; ?></td>
+        <td id="td"><?php echo $dataRegistro['fechaterminotrombolisis']; ?></td>
     </tr>
     <tr>
         <th id="th">Tiempo inicio sintomas/finalizo trombolisis</th>
@@ -163,63 +163,63 @@ date_default_timezone_set('America/Mexico_City');
     </tr>
     <tr>
         <th id="th">Disección</th>
-        <td><?php echo $dataRegistro['diseccion']; ?></td>
+        <td id="td"><?php echo $dataRegistro['diseccion']; ?></td>
     </tr>
     <tr>
         <th id="th">IAM periprocedimiento</th>
-        <td><?php echo $dataRegistro['iam_periprocedimiento']; ?></td>
+        <td id="td"><?php echo $dataRegistro['iam_periprocedimiento']; ?></td>
     </tr>
     <tr>
         <th id="th">Complicaciones</th>
-        <td><?php echo $dataRegistro['complicaciones']; ?></td>
+        <td id="td"><?php echo $dataRegistro['complicaciones']; ?></td>
     </tr>
     <tr>
         <th id="th">Flujo microvascular TMP</th>
-        <td><?php echo $dataRegistro['flujo_microvascular_tmp'] ?></td>
+        <td id="td"><?php echo $dataRegistro['flujo_microvascular_tmp'] ?></td>
     </tr>
     <tr>
         <th id="th">Fujo final TFG</th>
-        <td><?php echo$dataRegistro['flujo_final_tfj'] ?></td>
+        <td id="td"><?php echo$dataRegistro['flujo_final_tfj'] ?></td>
     </tr>
     <tr>
         <th id="th">Trombosis definitiva</th>
-        <td><?php echo $dataRegistro['trombosis_definitiva']; ?></td>
+        <td id="td"><?php echo $dataRegistro['trombosis_definitiva']; ?></td>
     </tr>
     <tr>
         <th id="th">Marca pasos temporal</th>
-        <td><?php echo $dataRegistro['marcapasos_temporal']; ?></td>
+        <td id="td"><?php echo $dataRegistro['marcapasos_temporal']; ?></td>
     </tr>
     <tr>
         <th id="th">Estancia hospitalaria</th>
-        <td><?php echo $dataRegistro['estancia_hospitalaria']; ?></td>
+        <td id="td"><?php echo $dataRegistro['estancia_hospitalaria']; ?></td>
     </tr>
     <tr>
         <th id="th">Reestenosis</th>
-        <td><?php echo $dataRegistro['reestenosis_instrastent']; ?></td>
+        <td id="td"><?php echo $dataRegistro['reestenosis_instrastent']; ?></td>
     </tr>
     <tr>
         <th id="th">Reehopitalización 1 año</th>
-        <td><?php echo $dataRegistro['reehospitalizacion_one_year']; ?></td>
+        <td id="td"><?php echo $dataRegistro['reehospitalizacion_one_year']; ?></td>
     </tr>
     <tr>
         <th id="th">Escalas de riesgo</th>
-        <td><?php echo $dataRegistro['escalas_riesgo']; ?></td>
+        <td id="td"><?php echo $dataRegistro['escalas_riesgo']; ?></td>
     </tr>
     <tr>
         <th id="th">IAM tres años</th>
-        <td><?php echo $dataRegistro['iam_tres_years']; ?></td>
+        <td id="td"><?php echo $dataRegistro['iam_tres_years']; ?></td>
     </tr>
     <tr>
         <th id="th">CRUC tres años</th>
-        <td><?php echo $dataRegistro['cruc_tres_years']; ?></td>
+        <td id="td"><?php echo $dataRegistro['cruc_tres_years']; ?></td>
     </tr>
     <tr>
         <th id="th">Defuncion</th>
-        <td><?php echo $dataRegistro['defuncion']; ?></td>
+        <td id="td"><?php echo $dataRegistro['defuncion']; ?></td>
     </tr>
     <tr>
         <th id="th">Causa defunción</th>
-        <td><?php echo $dataRegistro['causadefuncion']; ?></td>
+        <td id="td"><?php echo $dataRegistro['causadefuncion']; ?></td>
     </tr>
 
 </table>
@@ -231,7 +231,7 @@ function eliminarRegistro() {
     var id = $("#idcurp").val();
     if(id == ''){
         swal({
-            title: Error!',
+            title: Error!,
             text: 'Seleccione un paciente a eliminar',
             icon: 'error',
 
