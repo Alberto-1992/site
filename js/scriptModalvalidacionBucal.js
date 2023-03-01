@@ -172,3 +172,12 @@ $(document).ready(function() {
     });
 });
 
+// Select multiple de TIPO DE LESIÓN
+$(document).ready(function() {
+    $('#msubicacion').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+

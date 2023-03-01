@@ -394,6 +394,7 @@
                                 </div>
 
 
+                                <!-- del select múltiple de Afectaciones Orales, si se selecciona Afectación Dental, se debe abrir la siguiente sección-->
                                 <!--inicia Afectación Dental-->
                                 <div class="col-md-12" id="tituloafectaciondental" style="text-align: center; 
                                 background-color: #c6b7bf;
@@ -419,7 +420,6 @@
 
 
                                 <!--Si selecciona ORGANO DENTAL FRACTURADO, se deben habilitar los siguientes 4 multi select:-->
-
                                 <!--Superior derecho-->
                                 <div class="col-md-3" id="maxilarsd">
                                     <strong>Maxilar Superior Derecho</strong>
@@ -480,8 +480,12 @@
                                     </select>
                                 </div>
                                 <!--Finalizan los 4 multi select-->
+                                <!--Finaliza la sección ORGANO DENTAL FRACTURADO-->
 
 
+
+
+                                <!-- del select múltiple de Afectaciones Orales, si se selecciona LESIONES ORALES, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
                                 <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
                                 background-color: #c6b7bf;
@@ -501,7 +505,6 @@
                                     </select>
                                 </div>
 
-
                                 <!--Select múltiple de tipo de lesión -->
                                 <div class="col-md-4" id="tipolesion">
                                     <strong>Tipo Lesión:</strong>
@@ -517,7 +520,6 @@
                                     </select>
                                 </div>
 
-
                                 <!--Si se selecciona la opción PIGMENTADA se debe habilitar el siguiente select simple-->
                                 <div class="col-md-4" id="">
                                     <strong>Coloración:</strong>
@@ -528,9 +530,11 @@
                                         <option value="blancaroja">Blanca / Roja</option>
                                     </select>
                                 </div>
+                                <!-- Fin sección LESIONES ORALES-->
 
 
 
+                                <!-- del select múltiple de Afectaciones Orales, si se selecciona UBICACIÓN, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
                                 <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
                                 background-color: #c6b7bf;
@@ -543,12 +547,11 @@
 
                                 <!--Select múltiple de ubicación -->
                                 <div class="col-md-4" id="ubicacion">
-                                    <strong>Tipo Lesión:</strong>
+                                    <strong>Ubicación:</strong>
                                     <select id="msubicacion" name="msubicacion[]" multiple="multiple" class="form-control">
-                                        <option value="melatonica"> Melatónica</option>
-                                        <option value="nodulo"> Nodulo</option>
-                                        <option value="pigmentada"> Pigmentada</option>
-                                    </select>
+                                        <option value="derecha"> Derecha</option>
+                                        <option value="izquierda"> Izquierda</option>
+                                        < </select>
                                 </div>
 
 
