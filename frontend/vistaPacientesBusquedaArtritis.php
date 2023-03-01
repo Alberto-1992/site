@@ -91,19 +91,19 @@ $sdai = "<span class='obesidad1'> $sdaialta";
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <?php
-/*
+
     $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = $id_paciente");
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
-    $validaid = $validacion['id_paciente'];*/
+    $validaid = $validacion['id_pacienteartritis'];
     if ($dataRegistro['curp'] != '') {
-       /* if ($validaid != $id_paciente) { ?>
-            <a href="#" class="mandaid" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
+        if ($validaid != $id_paciente) { ?>
+            <a href="#" class="mandaidartritis" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
-        <?php }*/ ?>
+        <?php } ?>
         <script>
             function seguimiento() {
 
