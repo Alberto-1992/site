@@ -974,6 +974,14 @@ table {
   padding: 4px;
   margin-left: 2px;
 }
+.mandaidbucal {
+  color: white;
+  background: orange;
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 2px;
+}
 
 .mandaid:hover {
   color: black;

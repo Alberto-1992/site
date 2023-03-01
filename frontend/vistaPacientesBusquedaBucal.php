@@ -143,7 +143,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
             };
         </script>
-        <a href="consultaExpediente?id=<?php echo $id_paciente ?>" class="" id="expediente">Expediente</a>
         <?php session_start();
         if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { ?>
             <a href="#" onclick="editarRegistro();" id="editarregistro">Editar registro</a>
