@@ -53,8 +53,6 @@ date_default_timezone_set('America/Mexico_City');
 <div class="containerr">
 <a href="#" class="mandaid" id="<?php echo $id_paciente ?>"
             >Seguimiento</a>
-            <a href="consultaExpediente?id=<?php echo $id_paciente ?>" class="" id="expediente"
-            >Expediente</a>
             <?php session_start();
                 if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { ?>
             <a href="#" onclick="editarRegistro();" id="editarregistro"

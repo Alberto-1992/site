@@ -468,6 +468,92 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
 
 <script>
+    
+    function editarRegistro(){
+        var id = $("#idcurp").val();
+    var artritis = $("#artritispaciente").val();
+    var valor = 1;
+    var nombrepaciente = $("#nombrepaciente").val();
+    var mensaje = confirm("Desea continuar con la edición de los datos");
+    let parametros = {
+        id: id, artritis:artritis, valor:valor, nombrepaciente:nombrepaciente
+    }
+            if(mensaje == true){
+                $.ajax({
+            data: parametros,
+            url: 'aplicacion/editarRegistro.php',
+            type: 'post',
+            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#idcurp").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaArtritisBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                
+                                            }
+        });
+            }else{
+                alert('proceso cancelado')
+            }
+    }
+    function finalizarEdicion(){
+        var id = $("#idcurp").val();
+    var artritis = $("#artritispaciente").val();
+    var valor = 0;
+    var nombrepaciente = $("#nombrepaciente").val();
+    var mensaje = confirm("Desea finalizar con la edición de los datos");
+    let parametros = {
+        id: id, artritis:artritis, valor:valor, nombrepaciente:nombrepaciente
+    }
+            if(mensaje == true){
+                $.ajax({
+            data: parametros,
+            url: 'aplicacion/editarRegistro.php',
+            type: 'post',
+        
+            success: function(datos) {
+                                                $("#mensaje").html(datos);
+                                                let id = $("#idcurp").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaArtritisBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                
+                                            }
+        });
+            }else{
+                alert('proceso cancelado')
+            }
+    }
     function eliminarRegistro() {
         var id = $("#idcurp").val();
         var artritis = $("#artritispaciente").val();
