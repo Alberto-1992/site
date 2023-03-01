@@ -312,7 +312,7 @@ return false;
                                         <option value="<?php echo $dataRegistro['escolaridad'] ?>" selected><?php echo $dataRegistro['escolaridad'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
-				    require 'conexionInfarto.php';
+				    require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -396,7 +396,7 @@ return false;
                                             <option value="<?php echo $rows['id_estado'] ?>" selected><?php echo $rows['estado'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
-				    require '../esclerosis/conexion.php';
+				    require 'conexionCancer.php';
 				  $query = "SELECT id_estado, estado FROM t_estado ";
 	                $resultado=$conexion2->query($query);
 				while($row = $resultado->fetch_assoc()) { ?>
@@ -528,6 +528,7 @@ return false;
                                             <option value="<?php echo $rown['unidad']; ?>" selected><?php echo $rown['unidad']; ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT clues, unidad FROM hospitales");
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -770,6 +771,7 @@ return false;
                                             class="form-control">
 
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionantecedente FROM antecedentespersonalespatologicos");
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -1179,6 +1181,7 @@ $(document).ready(function () {
                                             <option value="<?php echo $dataRegistro['biradsreferencia']?>" selected><?php echo $dataRegistro['biradsreferencia']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				            $query = $conexionCancer->prepare("SELECT descripcionbrad FROM birads_atencion_inicial");
                                 $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1196,6 +1199,7 @@ $(document).ready(function () {
                                             <option value="<?php echo $dataRegistro['biradshraei']?>" selected><?php echo $dataRegistro['biradshraei']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				            $query = $conexionCancer->prepare("SELECT descripcionbrad FROM birads_atencion_inicial");
                                 $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1247,6 +1251,7 @@ $(document).ready(function () {
                                             <option value="<?php echo $dataRegistro['tamaniotumoral']?>" selected><?php echo $dataRegistro['tamaniotumoral']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_size_tumoral FROM size_tumoral");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1264,6 +1269,7 @@ $(document).ready(function () {
                                             <option value="<?php echo $dataRegistro['compromisolenfatico']?>" selected><?php echo $dataRegistro['compromisolenfatico']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_linfatico_nodal FROM compromiso_linfatico_nodal");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1326,6 +1332,7 @@ $(document).ready(function () {
                                         <select name="sitiometastasisedit[]" id="sitiometastasis2edit" multiple="multiple" class="form-control">
                                            
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionsitiometastasis FROM sitiometastasis");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1344,6 +1351,7 @@ $(document).ready(function () {
                                             <option value="<?php echo $dataRegistro['calidaddevidaecog']?>" selected><?php echo $dataRegistro['calidaddevidaecog']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionecog FROM calidadvidaecog");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1538,6 +1546,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['dxhistopatologico'] ?>"><?php echo $dataRegistro['dxhistopatologico'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1571,6 +1580,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['escalasbr'] ?>"><?php echo $dataRegistro['escalasbr'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1680,6 +1690,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['dxhistopatologicorgd'] ?>"><?php echo $dataRegistro['dxhistopatologicorgd'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1713,6 +1724,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['escalasbrrgd'] ?>"><?php echo $dataRegistro['escalasbrrgd'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1824,6 +1836,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['dxhistopatologicoiz'] ?>"><?php echo $dataRegistro['dxhistopatologicoiz'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1857,6 +1870,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['escalasbriz'] ?>"><?php echo $dataRegistro['escalasbriz'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -1969,6 +1983,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['dxhistopatologicorgi'] ?>"><?php echo $dataRegistro['dxhistopatologicorgi'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion_dx_histopalogico FROM dxhistopalogico");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -2002,6 +2017,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['escalasbrrgi'] ?>"><?php echo $dataRegistro['escalasbrrgi'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionescalasbr FROM escalasbr");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -2988,6 +3004,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['primeralinea'];?>"><?php echo $dataRegistro['primeralinea'];?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionprimeralinea FROM primeralinea");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -3009,6 +3026,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['segundalinea'];?>"><?php echo $dataRegistro['segundalinea'];?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcionsegundalinea FROM segundalinea");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -3030,6 +3048,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['antraciclinas'];?>"><?php echo $dataRegistro['antraciclinas'];?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
+                                            require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT descripcion FROM atraciclina");
                         $query->setFetchMode(PDO::FETCH_ASSOC);
                             $query->execute();
@@ -3258,7 +3277,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                 let ob = {
                                                             id: id
                                                             };
-  
+
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",

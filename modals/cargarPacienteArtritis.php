@@ -269,14 +269,18 @@
                                         <input type="number" step="any" class="form-control" id="glucosa" name="glucosa" >
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Colesterol</strong>
                                         <input type="number" step="any" class="form-control" id="colesterol" name="colesterol" >
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Trigliceridos</strong>
                                         <input type="number" step="any" class="form-control" id="trigliceridos" name="trigliceridos">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <strong>FIB 4</strong>
+                                        <input type="number" step="any" class="form-control" id="fib4" name="fib4" readonly>
                                     </div>
                                     <!--Finaliza sección de Laboratorio-->
 
