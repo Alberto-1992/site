@@ -37,7 +37,7 @@
 
                                 function limpiarformularioseguimiento() {
 
-                                    setTimeout('document.formularioseguimiento.reset()', 1000);
+                                    setTimeout('document.formularioseguimientoinfarto.reset()', 1000);
                                     return false;
                                 }
                             </script>

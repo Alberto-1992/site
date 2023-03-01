@@ -51,7 +51,7 @@ function calcularEdad() {
 
 
     var edad = Edad(fecha);
-    document.formulario.edad.value = edad;
+    document.formulariocancerbucal.edad.value = edad;
 
 }
 function curp2date(curp) {
@@ -63,11 +63,11 @@ function curp2date(curp) {
     if (anyo < 1940) anyo += 100;
     var mes = parseInt(m[2], 10) - 1;
     var dia = parseInt(m[3], 10);
-    document.formulario.fecha.value = (new Date(anyo, mes, dia));
+    document.formulariocancerbucal.fecha.value = (new Date(anyo, mes, dia));
     if (sexo == 'M') {
-        document.formulario.sexo.value = 'Femenino';
+        document.formulariocancerbucal.sexo.value = 'Femenino';
     } else if (sexo == 'H') {
-        document.formulario.sexo.value = 'Masculino';
+        document.formulariocancerbucal.sexo.value = 'Masculino';
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }

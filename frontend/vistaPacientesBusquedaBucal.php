@@ -476,8 +476,8 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
                 },
                 success: function(response) {
                     $("#mensaje").html(response);
-                    $("#tabla_resultadobus").load('consultacancerdemama.php');
-                    $("#tabla_resultado").load('consultaCancerdeMamaBusqueda.php');
+                    $("#tabla_resultadobus").load('consultacancerbucal.php');
+                    $("#tabla_resultado").load('consultaCancerBucalBusqueda.php');
 
                 }
             });

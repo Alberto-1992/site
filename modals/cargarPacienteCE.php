@@ -368,7 +368,7 @@
                                         <select name="choque" id="choque" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccione...</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM choquecardiogenico ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -574,7 +574,7 @@
                                         <select name="lesionangeo" id="lesionangeo" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM lesionangeografica";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -719,7 +719,7 @@
                                         <select name="stent" id="stent" class="form-control">
                                             <option value="">Seleccione</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM stend";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -783,7 +783,7 @@
                                         <select name="olusion2" id="olusion2" class="form-control">
                                             <option value="">Seleccione</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM olusionesdistalescronicas";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -832,7 +832,7 @@
                                         <select name="revascularizacion" id="revascularizacion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM revascularizacion ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -953,7 +953,7 @@
                                             style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-
+ require 'conexionCancer.php';
                                             $query = "SELECT * FROM marcapasos_temporal ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -974,7 +974,7 @@
                                             <option value="0">Selecciona</option>
                                             
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM killip_kimball ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -997,7 +997,7 @@
                                         <select name="causadefuncion" id="causadefuncion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM causa ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>

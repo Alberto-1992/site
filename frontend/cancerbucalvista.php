@@ -23,13 +23,6 @@
                 </span> Cáncer Bucal
             </span>
         </header>
-
-
-
-
-
-
-
         <?php
         if (isset($_SESSION['usuarioAdmin'])) {
             require 'menu/menuInfarto.php';
@@ -85,7 +78,7 @@
             }
         </style>
         <div class="autoheight">
-            <input type="text" class="control col-md-12" id="busqueda" name="busqueda" value="" placeholder="Buscar...">
+            <input type="text" class="form-control" id="busqueda" name="busqueda" value="" placeholder="Buscar...">
             <div id="tabla_resultadobus">
 
             </div>
