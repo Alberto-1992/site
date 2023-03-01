@@ -21,3 +21,14 @@ $(function () {
 
 })
 
+$(function () {
+  $(".mandaidartritis").click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('id');
+    $(".curp").html(id);
+    $("#seguimientoArtritis").modal('show');
+
+  })
+
+})
+
