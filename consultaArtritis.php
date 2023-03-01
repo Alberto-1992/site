@@ -146,7 +146,7 @@ function pageScroll() {
 
                 $("#tabla_resultadobus").off("scroll");
                 $.ajax({
-                    url: 'obteniedoMasDatosCancerMama.php?utimoId=' + utimoId + '&totalregistro' +
+                    url: 'obteniedoMasDatosArtritis.php?utimoId=' + utimoId + '&totalregistro' +
                         totalregistro,
                     type: "get",
                     beforeSend: function() {

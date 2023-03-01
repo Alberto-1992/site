@@ -37,7 +37,7 @@
 
                                 function limpiarformularioseguimiento() {
 
-                                    setTimeout('document.formularioseguimiento.reset()', 1000);
+                                    setTimeout('document.formularioseguimientoinfarto.reset()', 1000);
                                     return false;
                                 }
                             </script>
@@ -61,16 +61,16 @@
                                     text-transform: uppercase;
                                 }
                             </style>
-                            <form name="formularioseguimiento" id="formularioseguimiento" onSubmit="return limpiar()">
+                            <form name="formularioseguimientoinfarto" id="formularioseguimientoinfarto" onSubmit="return limpiar()">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
-                                        $("#formularioseguimiento").on("submit", function(e) {
+                                        $("#formularioseguimientoinfarto").on("submit", function(e) {
                                             let checked = this.querySelectorAll('input[type=checkbox]:checked');
                                             e.preventDefault();
 
                                             var formData = new FormData(document.getElementById(
-                                                "formularioseguimiento"));
+                                                "formularioseguimientoinfarto"));
                                             formData.append("dato", "valor");
 
                                             $.ajax({
@@ -148,7 +148,7 @@
                                         <select name="diseccion" id="diseccion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM diseccion ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -166,7 +166,7 @@
                                         <select name="iamperiprocedimiento" id="iamperiprocedimiento" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM iam_periprocedimiento ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -182,7 +182,7 @@
                                         <select name="complicaciones" id="complicaciones" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM complicaciones ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -200,7 +200,7 @@
                                         <select name="flujomicrovasculartmp" id="flujomicrovasculartmp" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM flujo_microvascular_tmp ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -218,7 +218,7 @@
                                         <select name="flujofinaltfg" id="flujofinaltfg" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM flujo_final_tfg ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -237,7 +237,7 @@
                                         <select name="trombosisdefinitiva" id="trombosisdefinitiva" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM trombosis_definitiva ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -256,7 +256,7 @@
                                         <select name="marcapasostemporal" id="marcapasostemporal" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM marcapasos_temporal ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -282,7 +282,7 @@
                                         <select name="reesentosis" id="reesentosis" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM reestenosis_intrastent ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -301,7 +301,7 @@
                                         <select name="rehospitalizacion" id="rehospitalizacion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM rehospitalacion_one_year ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -320,7 +320,7 @@
                                         <select name="escaladeriesgo" id="escaladeriesgo" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM escalas_riesgo ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -339,7 +339,7 @@
                                         <select name="iamtresyears" id="iamtresyears" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM iam_tres_years ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -357,7 +357,7 @@
                                         <select name="cruc" id="cruc" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                           require 'conexionCancer.php';
                                             $query = "SELECT * FROM cruce_a_tres_years ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -375,7 +375,7 @@
                                         <select name="defuncion" id="defuncion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM defuncion ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -394,7 +394,7 @@
                                         <select name="causadefuncion" id="causadefuncion" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                            require 'conexionInfarto.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM causa ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -413,7 +413,7 @@
                                         <select name="fevi" id="fevi" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-
+require 'conexionCancer.php';
                                             $query = "SELECT * FROM fevi ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>

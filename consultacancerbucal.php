@@ -1,61 +1,70 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-</script>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+<style>
+    .ver-info:hover{
+        background: grey;
+        color: white;
+        cursor: pointer;
+    }
+    
+    </style>
+<div id="lista-comentarios">
 <?php
 
 require 'conexionCancer.php';
-$sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id  FROM dato_usuario");
+$sqlQueryComentarios  = $conexion2->query("SELECT dato_usuariobucal.id_bucal  FROM dato_usuariobucal");
 $total_registro       = mysqli_num_rows($sqlQueryComentarios);
 
-$sql = "SELECT COUNT(*) total FROM dato_usuario";
+$sql = "SELECT COUNT(*) total FROM dato_usuariobucal";
 $result = mysqli_query($conexion2, $sql);
 $fila = mysqli_fetch_assoc($result);
 
-$query = $conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio FROM dato_usuario order by dato_usuario.id DESC LIMIT 5 ");
+$query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.poblacionindigenabucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal order by dato_usuariobucal.id_bucal DESC LIMIT 23  ");
 if (isset($_POST['pacientes'])) {
     $q = $conexion2->real_escape_string($_POST['pacientes']);
-    $query = $conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.curp, dato_usuario.nombrecompleto, dato_usuario.poblacionindigena, dato_usuario.escolaridad, dato_usuario.fechanacimiento, dato_usuario.edad, dato_usuario.sexo, dato_usuario.raza, dato_usuario.estado, dato_usuario.municipio FROM dato_usuario  where
-		dato_usuario.id LIKE '%" . $q . "%' OR
-        dato_usuario.nombrecompleto LIKE '%" . $q . "%' OR
-		dato_usuario.fechanacimiento LIKE '%" . $q . "%' OR
-		dato_usuario.edad LIKE '%" . $q . "%' OR
-		dato_usuario.sexo LIKE '%" . $q . "%' OR
-		dato_usuario.curp LIKE '%" . $q . "%' group by dato_usuario.id");
+    $query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.poblacionindigenabucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal  where
+		dato_usuariobucal.id_bucal LIKE '%" . $q . "%' OR
+        dato_usuariobucal.nombrecompletobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.fechanacimientobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.edadbucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.sexobucal LIKE '%" . $q . "%' OR
+		dato_usuariobucal.curpbucal LIKE '%" . $q . "%' group by dato_usuariobucal.id_bucal");
 }
 ?>
 <input type="submit" id="totalregistro" value="<?php echo $fila['total']; ?>">
 
-<input type="submit" data-bs-toggle="modal" data-bs-target="#cancerBucal" value="+Cargar Paciente" id="boton_cancerBucal">
+<input type="submit" data-bs-toggle="modal" data-bs-target="#cancerbucal" value="+Cargar Paciente" id="boton_cancerBucal">
 
-<table class="table table-responsive  table-bordered table-striped table-hover display" id="lista-comentarios">
+<hr id="hrinicial">
 
-    <tbody>
-        <input type="hidden" name="total_registro" id="total_registro" value="<?php echo $total_registro; ?>" />
+    <input type="hidden" name="total_registro" id="total_registro" value="<?php echo $total_registro; ?>" />
         <?php
-
-
+        
+        
         $query->execute();
-        $query->setFetchMode(PDO::FETCH_ASSOC);
-        while ($dataRegistro = $query->fetch()) { ?>
-            <div class="row border_special item-comentario" id="<?php echo $dataRegistro['id']; ?>">
-                <?php
-                $id = $dataRegistro['id'];
-                ?>
-                <tr>
-                    <td id='<?php echo $id ?>' class='ver-info' style="font-size: 12px">
-                        <?php echo $dataRegistro['nombrecompleto'] . '<br>' . '<strong style="font-size: 9px;">&nbsp' . $dataRegistro['curp'] . '</strong>' . '.<br>' . '<strong style="float:right; font-size: 7px; margin-top: -20px;">&nbsp' . $dataRegistro['sexo'] . '</strong>' ?>
-                    </td>
-
-                </tr>
+        while($dataRegistro= $query->fetch())
+        { ?>
+        
+        <div class="item-comentario" id="<?php echo $dataRegistro['id_bucal']; ?>" >
             <?php
-        } ?>
-    </tbody>
-
-</table>
-</script>
+            error_reporting(0);
+            $id = $dataRegistro['id_bucal'];
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_pacientebucal from seguimientocancerbucal where id_pacientebucal = :id_pacientebucal");
+                $sql_busqueda->execute(array(
+                    ':id_pacientebucal'=>$id
+                ));
+                $validacion = $sql_busqueda->fetch();
+                $validaid = $validacion['id_pacientebucal'];
+            ?>
+                <div id='<?php echo $id ?>' class='ver-info' >
+                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompletobucal'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curpbucal'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexobucal'].'</strong>';
+                    if($validaid == $id){ 
+            ?><input type="submit" value="En seguimiento" style="padding: 1px; cursor-pointer: none; background: red; border: none;color: white; margin-left: 1%; font-size: 10px; font-style: arial; margin-top: 0px;"><?php } ?>
+            
+            </div> 
+            <hr>
+            </div>
+            <?php 
+        }?>
+</div>
 
 <div class="col-md-12 col-sm-12">
     <div class="ajax-loader text-center">
@@ -69,7 +78,7 @@ if (isset($_POST['pacientes'])) {
 <script>
     $(function() {
 
-        $('table').on('click', '.ver-info', function() {
+        $('.item-comentario').on('click', '.ver-info', function() {
 
             var id = $(this).prop('id');
 
@@ -93,7 +102,7 @@ if (isset($_POST['pacientes'])) {
         });
     });
     $(document).ready(function() {
-        $('table').on('click', '.ver-info', function() {
+        $('.item-comentario').on('click', '.ver-info', function() {
 
             //Añadimos la imagen de carga en el contenedor
             $('#tabla_resultado').html(
@@ -137,7 +146,7 @@ if (isset($_POST['pacientes'])) {
 
                     $("#tabla_resultadobus").off("scroll");
                     $.ajax({
-                        url: 'obteniedoMasDatosCancerMama.php?utimoId=' + utimoId + '&totalregistro' +
+                        url: 'obteniedoMasDatosCancerBucal.php?utimoId=' + utimoId + '&totalregistro' +
                             totalregistro,
                         type: "get",
                         beforeSend: function() {
