@@ -180,4 +180,58 @@ $(document).ready(function() {
     });
 });
 
+// Select multiple de TIPO DE LESIÓN
+$(document).ready(function() {
+    $('#msqueva').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+// Select multiple de TIPO DE LESIÓN
+$(document).ready(function() {
+    $('#msqueva2').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+// UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR SUPERIOR DERECHO
+$(document).ready(function() {
+    $('#msmaxisd').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+// UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR INFERIOR DERECHO
+$(document).ready(function() {
+    $('#msmaxiid').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+// UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR SUPERIOR IZQUIERDO
+$(document).ready(function() {
+    $('#msmaxisi').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+// UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR INFERIOR IZQUIERDO
+$(document).ready(function() {
+    $('#msmaxiiz').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+
 

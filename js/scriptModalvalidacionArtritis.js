@@ -195,6 +195,10 @@ $(document).ready(function () {
         }
     })
 });
+
+
+
+
 $(function () {
     $('#hallazgodeusg').prop("hidden", true);
     $('#esteatosis').prop("hidden", true);

@@ -8,14 +8,17 @@
 
         <!-- Modal content-->
         <div class="modal-content" style="width: 950px; height: auto; color:black; left: 50%; transform: translate(-50%); ">
+
+
             <div class="modal-header" id="cabeceraModalArtritis">
+                <span class="material-symbols-outlined">
+                    edit_note
+                </span>
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarformularioseguimiento();">&times;</button>
-                <h5 class="modal-title">Seguimiento paciente</h5>
+
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
 
 
@@ -28,7 +31,6 @@
                                 });
 
                                 function limpiarformularioseguimiento() {
-
                                     setTimeout('document.formularioseguimiento.reset()', 1000);
                                     return false;
                                 }
@@ -38,131 +40,51 @@
 
 
                             <!-- form start -->
-
-
                             <div class="form-header">
-                                <h3 class="form-title">Seguimiento paciente</h3>
-
+                                <h5 class="form-title" style="text-align: center;
+                                color:aliceblue; 
+                                background-color:#A9DFBF; 
+                                margin-top: 5px; 
+                                font-size: 17px;">
+                                    DATOS DEL PACIENTE </h5>
                             </div>
-                            <style>
-                                #fecha,
-                                #curp,
-                                #nombrecompleto,
-                                #edad {
-                                    text-transform: uppercase;
-                                }
-                            </style>
+
                             <form name="formularioseguimientoartritis" id="formularioseguimientoartrits" onSubmit="return limpiar()">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
-                                    <script>
-                                        $("#formularioseguimientoartritis").on("submit", function(e) {
-                                            let checked = this.querySelectorAll('input[type=checkbox]:checked');
-                                            e.preventDefault();
 
-                                            var formData = new FormData(document.getElementById(
-                                                "formularioseguimientoartrits"));
-                                            formData.append("dato", "valor");
-
-                                            $.ajax({
-
-                                                url: "aplicacion/registrarSeguimientoPaciente.php",
-                                                type: "post",
-                                                dataType: "html",
-                                                data: formData,
-                                                cache: false,
-                                                contentType: false,
-                                                processData: false,
-                                                success: function(datos) {
-                                                    $("#mensaje").html(datos);
-
-                                                }
-                                            })
-                                        })
-                                        var idcurp;
-
-                                        function obtenerid() {
-
-                                            var textoadjunto = document.getElementById("curps").value = idcurp;
-
-
-                                        }
-                                    </script>
-
-
-
-                                    <input id="year" name="year" class="form-control" type="hidden" value="2022" required="required" onkeyup="mayus(this);" readonly>
-
-                                    <div class="col-md-6">
-                                        <strong>Seguimiento</strong>
-                                        <select name="seguimiento" id="seguimiento" class="form-control" required onclick="obtenerid();">
-                                            <option value="">Seleccione una opción</option>
-                                            <option value="3 meses">Tres meses</option>
-                                            <option value="6 meses">Seis meses</option>
-                                            <option value="un anio">Un año</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <strong>CURP:&nbsp;</strong>
+                                    <div class="col-md-4">
+                                        <strong>CURP:</strong>
                                         <input id="curps" name="curps" class="form-control" type="text" value="" readonly>
                                         <span id="curp" class="curp" name="curp"></span>
                                     </div>
-                                    <script>
-                                        $(document).ready(function() {
-
-                                            $('#referenciado').change(function(e) {
-                                                if ($(this).val() === "1") {
-
-                                                    $('#refe').prop("hidden", false);
-                                                    $('#diag').prop("hidden", false);
-                                                } else {
-                                                    $('#refe').prop("hidden", true);
-                                                    $('#diag').prop("hidden", true);
-
-                                                }
-                                            })
-                                        });
-
-                                        $(function() {
-                                            // $('#refe').prop("hidden", true);
-                                            // $('#diag').prop("hidden", true);
-                                        })
-                                    </script>
-                                    <br>
-
-
-                                    <div class="col-md-12"></div>
-                                    <br>
-
-                                    <!-- Titulo de Datos del Paciente -->
-                                    <div class="form-header">
-                                        <h4 class="form-title" style="text-align: center;
-                                    color:aliceblue  ;
-                                    background-color:#A9DFBF;
-                                    margin-top: 5px;">
-                                            DATOS DEL PACIENTE</h4>
-                                    </div>
 
                                     <div class="col-md-4">
-                                        <strong>Talla</strong>
+                                        <strong>Talla:</strong>
                                         <input type="number" step="any" class="form-control" id="talla" name="talla" required>
-
                                     </div>
+
                                     <div class="col-md-4">
-                                        <strong>Peso</strong>
+                                        <strong>Peso:</strong>
                                         <input type="number" step="any" class="form-control" id="peso" onblur="calculaIMC();" name="peso" required>
                                     </div>
+                                    <br>
+                                    <br>
 
 
-                                    <!-- Titulo de Datos del Paciente -->
-                                    <div class="form-header">
-                                        <h4 class="form-title" style="text-align: center;
-                                    color:aliceblue  ;
-                                    background-color:#A9DFBF;
-                                    margin-top: 5px;">
-                                            SEGUIMIENTO LABORATORIOS</h4>
+
+
+
+                                    <!-- Titulo de SEGUIMIENTO LABORATORIOS -->
+                                    <div class="col-md-12" style="text-align: center; 
+                                    color:aliceblue; 
+                                    background-color:#A9DFBF; 
+                                    margin-top: 5px; 
+                                    font-size: 17px;">
+                                        SEGUIMIENTO LABORATORIOS
                                     </div>
 
+                                    <br>
                                     <div class="col-md-3">
                                         <strong>Plaquetas</strong>
                                         <input type="number" step="any" class="form-control" id="plaquetas" name="plaquetas">
@@ -247,7 +169,6 @@
                                             <option value="Normal">Normal</option>
                                             <option value="Anormal">Anormal</option>
                                         </select>
-
                                     </div>
 
 
@@ -256,16 +177,25 @@
                                         <input type="number" step="any" class="form-control" id="glucosa" name="glucosa">
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Colesterol</strong>
                                         <input type="number" step="any" class="form-control" id="colesterol" name="colesterol">
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Trigliceridos</strong>
                                         <input type="number" step="any" class="form-control" id="trigliceridos" name="trigliceridos">
                                     </div>
+
+                                    <div class="col-md-2">
+                                        <strong>FIB 4</strong>
+                                        <input type="number" step="any" class="form-control" id="fib" name="fib" readonly>
+                                    </div>
                                     <!--Finaliza sección de Laboratorio-->
+
+
+
+
 
 
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
@@ -501,6 +431,10 @@
 
 
 
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
 
                                     <!--Botón Guardar y Cancelar-->
                                     <input type="submit" value="Registrar" style="width: 170px; 
