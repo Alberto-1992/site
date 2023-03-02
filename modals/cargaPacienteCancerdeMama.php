@@ -1,7 +1,6 @@
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="cancerdeMama">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="js/getCatalogos.js"></script>
     <!--la siguiente liga es para el icon de Agregar persona que se muestra en el Modal CargarPacienteArtritis-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -15,7 +14,7 @@
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
             <span class="material-symbols-outlined">
-                    person_add
+                    📝
                 </span>
 
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
@@ -32,7 +31,7 @@
                             <div class="form-header">
                                 <h3 class="form-title"
                                     >
-                                    FICHA DE DATOS.</h3>
+                                    DATOS DEL PACIENTE 👩🏻</h3>
 
                             </div>
 
@@ -116,7 +115,7 @@
 
                                         </select>
                                     </div>
-                                   
+                                
                                     <div class="col-md-3">
                                         <strong>Discapacidad</strong>
                                         <select name="discapacidad" id="discapacidad" class="form-control">
@@ -264,7 +263,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES HEREDOFAMILIARES</strong>
+                                        <strong id="titulos">ANTECEDENTES HEREDOFAMILIARES 👨‍👩‍👦‍👦</strong>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Cancer</strong>
@@ -306,7 +305,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES GINECOOBSTETRICOS</strong>
+                                        <strong id="titulos">ANTECEDENTES GINECOOBSTETRICOS 🤰🏻</strong>
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Menarca</strong>
@@ -416,7 +415,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS</strong>
+                                        <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS 🏥</strong>
                                     </div>
                                     <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
@@ -460,7 +459,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ATENCIÓN CLINICA</strong>
+                                        <strong id="titulos">ATENCIÓN CLINICA 🩺</strong>
                                     </div>
 
                                     <div class="col-md-3">
@@ -648,7 +647,7 @@
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">HISTOPATOLOGIA</strong>
+                                        <strong id="titulos">HISTOPATOLOGIA 🔬</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -871,7 +870,7 @@
                                 <!--inicia mama derecha inmuno-->
                                     <div class="col-md-12"
                                         style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">INMUNOHISTOQUIMICA</strong>
+                                        <strong id="titulos">INMUNOHISTOQUIMICA 🕳</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -1263,7 +1262,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">MOLECULAR</strong>
+                                        <strong id="titulos">MOLECULAR 🧬</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -1558,7 +1557,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">TRATAMIENTO</strong>
+                                        <strong id="titulos">TRATAMIENTO 💊</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>QUIRURGICO</strong>
@@ -1702,7 +1701,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">QUIMIOTERAPIA</strong>
+                                        <strong id="titulos">QUIMIOTERAPIA 💉</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>QUIMIOTERAPIA</strong>
@@ -1922,7 +1921,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">RADIOTERAPIA</strong>
+                                        <strong id="titulos">RADIOTERAPIA ⚠️</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>RADIOTERAPIA</strong>
@@ -1952,7 +1951,7 @@
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">BRAQUITERAPIA</strong>
+                                        <strong id="titulos">BRAQUITERAPIA ⭕️</strong>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>BRAQUITERAPIA</strong>
@@ -1970,7 +1969,7 @@
                                 
                                 <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">DEFUNCIÓN</strong>
+                                        <strong id="titulos">DEFUNCIÓN 💀</strong>
                                     </div>
                                     
                                      <fieldset class="col-md-2">

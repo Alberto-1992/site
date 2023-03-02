@@ -145,13 +145,6 @@
             sprintf('title="%s"', $el.attr('title'))));
 
         // add placeholder to choice button
-        this.$choice = $(sprintf([
-                '<button type="button" class="mscancer-choice">',
-                '<span class="placeholder">%s</span>',
-                '<div></div>',
-                '</button>'
-            ].join(''),
-            this.options.placeholder));
 
         // default position is bottom
         this.$drop = $(sprintf('<div class="mscancer-drop %s"%s></div>',

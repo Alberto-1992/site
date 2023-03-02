@@ -299,6 +299,14 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
         <th id="th">Trigliceridos:</th>
         <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
     </tr>
+    <tr>
+        <th id="th">FIB 4:</th>
+        <td id="td"><?php echo $dataRegistro['fib4'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Resultado fib 4:</th>
+        <td id="td"><?php echo $dataRegistro['resultadofib4'] ?></td>
+    </tr>
 </table>
 <!--FINALIZA SECCIÓN DE LABORATORIOS-->
 

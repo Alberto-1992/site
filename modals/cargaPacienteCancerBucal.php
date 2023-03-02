@@ -1,6 +1,6 @@
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="cancerbucal">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!--se agrega estilos para icon-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="css/estilosMenu.css" rel="stylesheet">
@@ -286,28 +286,28 @@
 
 
                                 <!-- Inicia Sección de Toxicomanias-->
-                                <div class="col-md-4" id="tipodetoxicomanias">
+                                <div class="col-md-12" id="tipodetoxicomanias">
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
-                                        <option value="alcoholismo"> Alcoholismo</option>
-                                        <option value="cocaina"> Cocaina</option>
-                                        <option value="marihuana"> Marihuana</option>
-                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
-                                        <option value="solventes"> Solventes</option>
-                                        <option value="tabaquismo"> Tabaquismo</option>
+                                        <option value="Alcoholismo"> Alcoholismo</option>
+                                        <option value="Tabaquismo"> Tabaquismo</option>
+                                        <option value="Cocaina"> Cocaina</option>
+                                        <option value="Marihuana"> Marihuana</option>
+                                        <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
+                                        <option value="Solventes"> Solventes</option>
                                     </select>
                                 </div>
                                 <!-- si selecciona SÍ en Tabaquismo, se deben habiliar los siguientes dos campos:-->
-                                <div class="col-md-4" id="anostabaquismo">
+                                <div class="col-md-4" id="yearstabaquismo">
                                     <strong>Años Tabaquismo:</strong>
                                     <input id="anostabaquismo" name="anostabaquismo" type="number" class="form-control" placeholder="Ingrese años..." value="" required>
                                 </div>
-                                <div class="col-md-4" id="cigarrosdia">
+                                <div class="col-md-4" id="diacigarros">
                                     <strong>Cigarros al día:</strong>
                                     <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="" required>
                                 </div>
                                 <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
-                                <div class="col-md-4">
+                                <div class="col-md-4" id="alcoholfrecuencia">
                                     <strong>Frecuencia Alcoholismo:</strong>
                                     <select name="frecuenciaal" id="frecuenciaal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -452,7 +452,7 @@
                                 </div>
 
                                 <!--Superior izquierdo-->
-                                <div class="col-md-3" id="maxilarsd">
+                                <div class="col-md-3" id="maxilarsd2">
                                     <strong>Maxilar Superior Izquierdo</strong>
                                     <select id="msmaxilarsuperiorizquierdo" name="msmaxilarsuperiorizquierdo[]" multiple="multiple" class="form-control">
                                         <option value="21"> 21</option>
@@ -467,7 +467,7 @@
                                 </div>
 
                                 <!--Inferior izquierdo -->
-                                <div class="col-md-3" id="maxilarid">
+                                <div class="col-md-3" id="maxilarid2">
                                     <strong>Maxilar Inferior Izquierdo</strong>
                                     <select id="msmaxilarinferiorizquierdo" name="msmaxilarinferiorizquierdo[]" multiple="multiple" class="form-control">
                                         <option value="31"> 31</option>

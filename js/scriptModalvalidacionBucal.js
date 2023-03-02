@@ -258,6 +258,62 @@ $(document).ready(function() {
     });
 });
 
+$(function () {
+    $('#medioreferencia').prop("hidden", true);
+    $('#yearstabaquismo').prop("hidden", true);
+    $('#diacigarros').prop("hidden", true);
+    $('#alcoholfrecuencia').prop("hidden", true);
 
+    /**afectaciones dentales */
+    $('#afectaciondental').prop('#hidden',true);
+    $('#tituloafectaciondental').prop('hidden',true);
+    $('#tipodeodf').prop('hidden',true);
+    $('#maxilarsd').prop('hidden',true);
+    $('#maxilarid').prop('hidden',true);
+    $('#maxilarsd2').prop('hidden',true);
+    $('#maxilarid2').prop('hidden',true);
+    
+})
+
+$(document).ready(function () {
+    $("#referenciado").change(function (e) {
+        if (referenciado.options[1].selected == true) {
+
+            $('#medioreferencia').prop("hidden", false);
+        } else if (referenciado.options[2].selected == true) {
+            $('#medioreferencia').prop("hidden", true);
+            $('#unidadreferencia').prop('selectedIndex',0);
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#mstoxicomanias").change(function (e) {
+        if (mstoxicomanias.options[0].selected == true) {
+
+            $('#alcoholfrecuencia').prop("hidden", false);
+        } else if (mstoxicomanias.options[0].selected == false) {
+            $('#alcoholfrecuencia').prop("hidden", true);
+            $('#frecuenciaal').prop('selectedIndex',0);
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#mstoxicomanias").change(function (e) {
+        if(mstoxicomanias.options[1].selected == true) {
+            $('#yearstabaquismo').prop("hidden", false);
+            $('#diacigarros').prop("hidden", false);
+
+        }else if(mstoxicomanias.options[1].selected == false) {
+            $('#yearstabaquismo').prop("hidden", true);
+            $('#diacigarros').prop("hidden", true);
+            $('#cigarrosdia').val('');
+            $('#anostabaquismo').val('');
+
+        }
+
+    })
+});
 
 
