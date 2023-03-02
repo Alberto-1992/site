@@ -1,6 +1,7 @@
 <?php
 include("../conexionCancer.php");
 //error_reporting(0);
+
 date_default_timezone_set('America/Monterrey');
 $hoy = date("Y-m-d");
     extract($_POST);
@@ -18,7 +19,7 @@ $hoy = date("Y-m-d");
             $sql = $conexionCancer->prepare("SELECT id_pacientebucal from cancerbucal where id_pacientebucal = :id_pacientebucal limit 1");
                             $sql->execute(array(
             
-                                ':id_pacientebucal' => $id_check
+                                ':id_pacientebucal' =>$id_check
                             
                             ));
                             
@@ -52,7 +53,7 @@ $hoy = date("Y-m-d");
                                     ':razabucal'=>$raza,
                                     ':estadobucal'=>$cbx_estado,  
                                     ':municipiobucal'=>$cbx_municipio,  
-                                    ':yearbucal'=>$hoy,
+                                    ':yearbucal'=>$hoy
                                 )); 
 
                             $sql = $conexionCancer->prepare("SELECT id_bucal from dato_usuariobucal where curpbucal = :curpbucal");
