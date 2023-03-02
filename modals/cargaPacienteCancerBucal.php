@@ -95,17 +95,17 @@
                                 <!-- Inicia formulario de Datos del Paciente-->
                                 <div class="col-md-4">
                                     <strong>CURP</strong>
-                                    <input list="curpusuario" id="curp" name="curp" type="text" class="control form-control" value="" onblur="curp2date();" minlength="18" maxlength="18" required>
+                                    <input list="curpusuario" id="curp" name="curp" type="text" class="control form-control" onblur="curp2datebucal();" minlength="18" maxlength="18" required>
                                     <datalist id="curpusuario">
                                         <option value="">Seleccione</option>
                                         <?php
                                         require 'conexionCancer.php';
-                                        $query = $conexionCancer->prepare("SELECT curp FROM dato_usuario ");
+                                        $query = $conexionCancer->prepare("SELECT curpbucal FROM dato_usuariobucal ");
                                         $query->execute();
                                         $query->setFetchMode(PDO::FETCH_ASSOC);
                                         while ($row = $query->fetch()) { ?>
-                                            <option value="<?php echo $row['curp']; ?>">
-                                                <?php echo $row['curp']; ?></option>
+                                            <option value="<?php echo $row['curpbucal']; ?>">
+                                                <?php echo $row['curpbucal']; ?></option>
                                         <?php } ?>
                                     </datalist>
                                 </div>
@@ -113,7 +113,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Nombre Completo</strong>
-                                    <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdad();" type="text" class="control form-control" value="" required>
+                                    <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadbucal();" type="text" class="control form-control" required>
                                 </div>
 
 
@@ -136,21 +136,21 @@
 
                                 <div class="col-md-4">
                                     <strong>Fecha de nacimiento</strong>
-                                    <input id="fecha" name="fecha" type="date" value="" onblur="curp2date();" class="control form-control" readonly>
+                                    <input id="fecha" name="fecha" type="date" onblur="curp2datebucal();" class="form-control" readonly>
                                 </div>
                                 <div class="col-md-4">
                                     <strong>Edad</strong>
-                                    <input id="edad" name="edad" type="text" class="control form-control" value="" readonly>
+                                    <input id="edad" name="edad" type="text" class="form-control" readonly>
                                 </div>
 
                                 <div class="col-md-4">
                                     <strong>Sexo</strong>
-                                    <input type="text" class="control form-control" id="sexo" onclick="curp2date();" name="sexo" readonly>
+                                    <input type="text" class="form-control" id="sexo" onclick="curp2datebucal();" name="sexo" readonly>
 
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Raza</strong>
-                                    <input type="text" class="form-control" id="raza" onclick="curp2date();" name="raza">
+                                    <input type="text" class="form-control" id="raza" onclick="curp2datebucal();" name="raza">
                                 </div>
 
                                 <script>
@@ -159,23 +159,23 @@
                                         $('#presionarterial').mask('000/000');
                                     });*/
                                     $(document).ready(function() {
-                                        $('#talla').mask('0.00');
+                                        $('#tallabucal').mask('0.00');
                                     });
                                 </script>
 
                                 <div class="col-md-3">
                                     <strong>Talla</strong>
-                                    <input type="number" step="any" class="form-control" id="talla" name="talla" required>
+                                    <input type="number" step="any" class="form-control" id="tallabucal" name="tallabucal" required>
 
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Peso</strong>
-                                    <input type="number" step="any" class="form-control" id="peso" onblur="calculaIMC();" name="peso" required>
+                                    <input type="number" step="any" class="form-control" id="pesobucal" onblur="calculaIMC();" name="pesobucal" required>
 
                                 </div>
                                 <div class="col-md-3">
                                     <strong>IMC</strong>
-                                    <input type="text" class="form-control" id="imc" onblur="calculaIMC();" name="imc" value="" readonly>
+                                    <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" value="" readonly>
 
                                 </div>
 
