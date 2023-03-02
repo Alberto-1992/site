@@ -428,13 +428,7 @@
                                             <option value="Sin apego">Sin Apego</option>
                                         </select>
                                     </div>
-
-
-
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
+                                    <br><br><br><br>
 
                                     <!--Botón Guardar y Cancelar-->
                                     <input type="submit" value="Registrar" style="width: 170px; 
@@ -447,9 +441,6 @@
                                     text-decoration: none; 
                                     border: none; 
                                     border-radius: 15px;">
-
-
-
                                     <input type="button" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; 
                                     height: 27px; 
                                     color: white; 

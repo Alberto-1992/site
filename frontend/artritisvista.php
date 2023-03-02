@@ -32,6 +32,8 @@
             require 'menu/menuInfarto.php';
         } elseif (isset($_SESSION['usuarioJefe'])) {
             require 'menu/menuMedico.php';
+        }else if(isset($_SESSION['artritis'])) {
+            require 'menu/menuArtritis.php';
         }
         ?>
 
