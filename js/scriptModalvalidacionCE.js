@@ -115,11 +115,13 @@ $(document).ready(function() {
             $('#iniciotromb').prop("hidden", false);
             $('#finalizotromb').prop("hidden", false);
             $('#fibrinolitico').prop("hidden", false);
+            $('#exitotromb').prop("hidden", false);
 
         } else if ($(this).val() === "No") {
             $('#iniciotromb').prop("hidden", true);
             $('#finalizotromb').prop("hidden", true);
             $('#fibrinolitico').prop("hidden", true);
+            $('#exitotromb').prop("hidden", true);
 
         }
     })
@@ -129,6 +131,8 @@ $(function() {
     $('#iniciotromb').prop("hidden", true);
     $('#finalizotromb').prop("hidden", true);
     $('#fibrinolitico').prop("hidden", true);
+    $('#exitotromb').prop("hidden", true);
+
 
 })
 
@@ -632,3 +636,7 @@ $(function() {
     
 
 })
+
+
+
+//Se agrega condición en protesis endovascular

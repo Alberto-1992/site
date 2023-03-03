@@ -89,10 +89,10 @@
         
        
         <article class="card" id="lupus">
-            <a href=".#">
+            <a href="lupus">
                 <hr id="hr7">
                 <p>Lupus</p>
-                <a id="link" href="#" class="btn btn-warning">Lupus</a>
+                <a id="link" href="lupus" class="btn btn-warning">Lupus</a>
             </a>
         </article>
         <!--

@@ -1,4 +1,4 @@
-<div id="seguimiento" class="modal fade bd-example-modal-xl" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+<div id="seguimiento" class="modal fade" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--Finaliza url para agregar icon-->
     <script src="js/enviacurp.js"></script>
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
 
 
         <!-- Cabecera del modal-->
-        <div class="modal-content">
+        <div class="modal-content" style="width: 950px;
+        height: auto;
+        color:black;
+        left: 50%;
+        transform: translate(-50%); ">
 
             <div class="modal-header" id="cabeceraModalInfarto">
                 <span class="material-symbols-outlined">
@@ -108,9 +112,9 @@
                                         <strong>Seguimiento</strong>
                                         <select name="seguimiento" id="seguimiento" class="form-control" required onclick="obtenerid();">
                                             <option value="">Seleccione...</option>
-                                            <option value="3 meses">Tres meses</option>
-                                            <option value="6 meses">Seis meses</option>
-                                            <option value="un anio">Un año</option>
+                                            <option value="Tres meses">Tres meses</option>
+                                            <option value="Seis meses">Seis meses</option>
+                                            <option value="Un año">Un año</option>
                                         </select>
                                     </div>
 
@@ -353,7 +357,7 @@
                                         <select name="cruc" id="cruc" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-                                           require 'conexionCancer.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM cruce_a_tres_years ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -409,7 +413,7 @@
                                         <select name="fevi" id="fevi" class="form-control" style="width: 100%;" required>
                                             <option value="0">Selecciona</option>
                                             <?php
-require 'conexionCancer.php';
+                                            require 'conexionCancer.php';
                                             $query = "SELECT * FROM fevi ";
                                             $resultado = $conexion2->query($query);
                                             while ($row = $resultado->fetch_assoc()) { ?>
@@ -434,11 +438,11 @@ require 'conexionCancer.php';
                                         <strong>Anticoagulantes</strong>
                                         <select name="anticoagulantes" id="anticoagulantes" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="acidoacetil">Acido Acetil Salicilico</option>
+                                            <option value="Acido Acetil Salicilico">Acido Acetil Salicilico</option>
                                             <option value="Clopidogrel">Clopidogrel</option>
                                             <option value="Eptifibatida">Eptifibatida</option>
                                             <option value="Prasugrel">Prasugrel</option>
-                                            <option value="rivarox">Rivaroxaban/Apixaban</option>
+                                            <option value="Rivaroxaban Apixaban">Rivaroxaban/Apixaban</option>
                                             <option value="ticagrelor">Ticagrelor</option>
                                         </select>
                                     </div>
@@ -448,12 +452,12 @@ require 'conexionCancer.php';
                                         <strong>Betabloqueadores</strong>
                                         <select name="betabloqueadores" id="betabloqueadores" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="acetubolol">Acetubolol</option>
-                                            <option value="atenolol">Atenolol</option>
-                                            <option value="bisoprolol">Bisoprolol</option>
-                                            <option value="esmolol">Esmolol</option>
-                                            <option value="metoprolol">Metoprolol</option>
-                                            <option value="nebivolol">Nebivolol</option>
+                                            <option value="Acetubolol">Acetubolol</option>
+                                            <option value="Atenolol">Atenolol</option>
+                                            <option value="Bisoprolol">Bisoprolol</option>
+                                            <option value="Esmolol">Esmolol</option>
+                                            <option value="Metoprolol">Metoprolol</option>
+                                            <option value="Nebivolol">Nebivolol</option>
                                         </select>
                                     </div>
 
@@ -461,9 +465,9 @@ require 'conexionCancer.php';
                                         <strong>IECA</strong>
                                         <select name="ieca" id="ieca" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="enalapril">Enalapril</option>
-                                            <option value="lisinopril">Lisinopril</option>
-                                            <option value="ramipril">Ramipril</option>
+                                            <option value="Enalapril">Enalapril</option>
+                                            <option value="Lisinopril">Lisinopril</option>
+                                            <option value="Ramipril">Ramipril</option>
                                         </select>
                                     </div>
 
@@ -472,40 +476,38 @@ require 'conexionCancer.php';
                                         <strong>Calcioantagonistas</strong>
                                         <select name="calcio" id="calcio" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="amlodipino">Amlodipino</option>
-                                            <option value="diltiazem">Diltiazem</option>
-                                            <option value="felodipino">Felodipino</option>
-                                            <option value="lercadipino">Lercadipino</option>
-                                            <option value="manidipino">Manidipino</option>
-                                            <option value="nifedpino">Nifedpino</option>
-                                            <option value="nimodipino">Nimodipino</option>
-                                            <option value="verapamilo">Verapamilo</optio>
+                                            <option value="Amlodipino">Amlodipino</option>
+                                            <option value="Diltiazem">Diltiazem</option>
+                                            <option value="Felodipino">Felodipino</option>
+                                            <option value="Lercadipino">Lercadipino</option>
+                                            <option value="Manidipino">Manidipino</option>
+                                            <option value="Nifedpino">Nifedpino</option>
+                                            <option value="Nimodipino">Nimodipino</option>
+                                            <option value="Verapamilo">Verapamilo</optio>
                                         </select>
                                     </div>
-
 
                                     <div class="col-md-3" id="">
                                         <strong>ARA II</strong>
                                         <select name="araii" id="araii" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="candesartan">Candesartan</option>
-                                            <option value="ibesartan">Ibesartan</option>
-                                            <option value="losartan">Losartan</option>
-                                            <option value="olmesartan">Olmesartan</option>
-                                            <option value="telmisartan">Telmisartan</option>
-                                            <option value="valsartan">Valsartan</option>
+                                            <option value="Candesartan">Candesartan</option>
+                                            <option value="Ibesartan">Ibesartan</option>
+                                            <option value="Losartan">Losartan</option>
+                                            <option value="Olmesartan">Olmesartan</option>
+                                            <option value="Telmisartan">Telmisartan</option>
+                                            <option value="Valsartan">Valsartan</option>
                                         </select>
                                     </div>
-
 
                                     <div class="col-md-3" id="">
                                         <strong>Estatinas</strong>
                                         <select name="estatinas" id="estatinas" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="atorvastatina">Atorvastatina</option>
-                                            <option value="pravastatina">Pravastatina</option>
-                                            <option value="rosuvastatina">Rosuvastatina</option>
-                                            <option value="simvastatina">Simvastatina</option>
+                                            <option value="Atorvastatina">Atorvastatina</option>
+                                            <option value="Pravastatina">Pravastatina</option>
+                                            <option value="Rosuvastatina">Rosuvastatina</option>
+                                            <option value="Simvastatina">Simvastatina</option>
                                         </select>
                                     </div>
 
@@ -513,7 +515,7 @@ require 'conexionCancer.php';
                                         <strong>Fibratos</strong>
                                         <select name="fibratos" id="fibratos" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="bezafibrato">Bezafibrato</option>
+                                            <option value="Bezafibrato">Bezafibrato</option>
                                             <option value="cipofibrato">Cipofibrato</option>
                                             <option value="fenobifrato">Fenobifrato</option>
                                             <option value="gembibrozilo">Gembibrozilo</option>
@@ -606,7 +608,7 @@ require 'conexionCancer.php';
                                         <strong>Viabilidad y Perfusión Miocardia</strong>
                                     </div>
 
-                                    
+
 
 
                                     <!--Inicia sección PET-->
@@ -616,7 +618,7 @@ require 'conexionCancer.php';
                                         <strong>PET</strong>
                                     </div>
 
-                                    
+
 
 
 
@@ -626,8 +628,8 @@ require 'conexionCancer.php';
                                         <strong>*Patrón</strong>
                                         <select name="pet" id="pet" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="match">Patrón Match</option>
-                                            <option value="mismatch">Patrón Mismatch</option>
+                                            <option value="Patron Match">Patrón Match</option>
+                                            <option value="Patron Mismatch">Patrón Mismatch</option>
                                         </select>
                                     </div>
 
@@ -637,8 +639,8 @@ require 'conexionCancer.php';
                                         <strong>Segmento Match</strong>
                                         <select name="segmentomatch" id="segmentomatch" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="aplical">Apical</option>
-                                            <option value="basal">Basal</option>
+                                            <option value="Apical">Apical</option>
+                                            <option value="Basal">Basal</option>
                                             <option value="Medio">Medio</option>
                                         </select>
                                     </div>
@@ -648,8 +650,8 @@ require 'conexionCancer.php';
                                         <strong>Segmento Mismatch</strong>
                                         <select name="segmentomismatch" id="segmentomismatch" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="aplical">Apical</option>
-                                            <option value="basal">Basal</option>
+                                            <option value="Apical">Apical</option>
+                                            <option value="Basal">Basal</option>
                                             <option value="Medio">Medio</option>
                                         </select>
                                     </div>
@@ -670,13 +672,15 @@ require 'conexionCancer.php';
                                     background-color:#eda9ab;">
                                         <strong>Gamagrama Cardiaco</strong>
                                     </div>
+
+
                                     <!-- El siguiente SELECT solo muestra dos opciones: NEGATIVO / POSITIVO-->
                                     <div class="col-md-4" id="">
                                         <strong>* Resultado de Gamagrama Cardiaco</strong>
                                         <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="bezafibrato">Positivo</option>
-                                            <option value="cipofibrato">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
                                         </select>
                                     </div>
 
@@ -685,17 +689,14 @@ require 'conexionCancer.php';
                                         <strong>Localización</strong>
                                         <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="anterior">Anterior</option>
-                                            <option value="aplical">Apical</option>
-                                            <option value="diafragmatica">Diafragmatica</option>
-                                            <option value="lateral">Lateral</option>
-                                            <option value="leteralbajo">Lateral Bajo</option>
-                                            <option value="septal">Septal</option>
+                                            <option value="Anterior">Anterior</option>
+                                            <option value="Apical">Apical</option>
+                                            <option value="Diafragmatica">Diafragmática</option>
+                                            <option value="Lateral">Lateral</option>
+                                            <option value="Lateral Bajo">Lateral Bajo</option>
+                                            <option value="Septal">Septal</option>
                                         </select>
                                     </div>
-
-
-
 
 
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
@@ -712,12 +713,12 @@ require 'conexionCancer.php';
                                         </select>
                                     </div>
 
-                                
+
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapauno">
                                         <strong>Etapa 1</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapauno" id="etapauno" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -725,9 +726,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapados">
                                         <strong>Etapa 2</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapados" id="etapados" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -735,9 +736,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapatres">
                                         <strong>Etapa 3</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapatres" id="etapatres" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -745,9 +746,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapacuatro">
                                         <strong>Etapa 4</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapacuatro" id="etapacuatro" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -755,9 +756,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapacinco">
                                         <strong>Etapa 5</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapacinco" id="etapacinco" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -765,9 +766,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapaseis">
                                         <strong>Etapa 6</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapaseis" id="etapaseis" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -775,9 +776,9 @@ require 'conexionCancer.php';
                                     </div>
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="idetapasiete">
                                         <strong>Etapa 7</strong>
-                                        <select name="posinega" id="posinega" class="form-control" style="width:100%;" require>
+                                        <select name="etapasiete" id="etapasiete" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="positivo">Positivo</option>
                                             <option value="negativo">Negativo</option>
@@ -790,22 +791,17 @@ require 'conexionCancer.php';
                                         <strong>Suspensión de Estudio</strong>
                                         <select name="suspencionestudio" id="suspencionestudio" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="disminucion">Disminucion De Tas -10Mmhg Debajo De La Inicial +Evidencia De Isquemia</option>
-                                            <option value="arritmiaSuspencion">Arritmia</option>
-                                            <option value="anginamoderada">Angina Moderada</option>
-                                            <option value="aasn">Aumento De Actividad De Sistema Nervioso</option>
-                                            <option value="palidez">Cianosis/Palidez</option>
-                                            <option value="detenerse">Deseo Del Paciente De Detenerse</option>
-                                            <option value="elevacionst">Elevacion Del Segmento St (< 1Mm) </option>
-                                            <option value="taquicardiavs">Taquicardia Ventricular Sostenida</option>
-                                            <option value="na">No Aplica</option>
+                                            <option value="Disminucion De Tas -10Mmhg Debajo De La Inicial +Evidencia De Isquemia">Disminución De Tas -10Mmhg Debajo De La Inicial +Evidencia De Isquemia</option>
+                                            <option value="Arritmia">Arritmia</option>
+                                            <option value="Angina Moderada">Angina Moderada</option>
+                                            <option value="Aumento De Actividad De Sistema Nervioso">Aumento De Actividad De Sistema Nervioso</option>
+                                            <option value="Cianosis Palidez">Cianosis/Palidez</option>
+                                            <option value="Deseo Del Paciente De Detenerse">Deseo Del Paciente De Detenerse</option>
+                                            <option value="Elevacion Del Segmento St">Elevacion Del Segmento St (< 1Mm) </option>
+                                            <option value="Taquicardia Ventricular Sostenida">Taquicardia Ventricular Sostenida</option>
+                                            <option value="NA">No Aplica</option>
                                         </select>
                                     </div>
-
-
-
-
-
                                     <br>
                                     <br>
                                     <br>
@@ -828,10 +824,6 @@ require 'conexionCancer.php';
                                         <strong>Sistólico</strong>
                                         <input type="number" id="hdl" name="hdl" placeholder="Ingrese..." class="form-control">
                                     </div><br><br><br>
-
-
-
-
 
 
                                     <!-- Si el usuario selecciona FEVI, se habilitan las siguientes opciones-->

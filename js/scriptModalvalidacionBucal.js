@@ -258,6 +258,23 @@ $(document).ready(function() {
     });
 });
 
+
+// SITIO METÁSTASIS
+$(document).ready(function() {
+    $('#mssitiometastasis').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
+// COMPLICACIONES RT
+$(document).ready(function() {
+    $('#mscomplicaciones').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
 $(function () {
     $('#medioreferencia').prop("hidden", true);
     $('#yearstabaquismo').prop("hidden", true);
@@ -316,4 +333,88 @@ $(document).ready(function () {
     })
 });
 
+Date.prototype.toString = function() {
+    var anyo = this.getFullYear();
+    var mes = this.getMonth() + 1;
+    if (mes <= 9) mes = "0" + mes;
+    var dia = this.getDate();
+    if (dia <= 9) dia = "0" + dia;
+    return anyo + "-" + mes + "-" + dia;
+}
+window.addEventListener('DOMContentLoaded', (evento) => {
+    const hoy_fecha = new Date().toISOString().substring(0, 10);
+    document.querySelector("input[name='fecha']").max = hoy_fecha;
 
+});
+function calculaIMC() {
+
+    let talla = document.getElementById('tallabucal').value;
+    let peso = document.getElementById('pesobucal').value;
+
+
+    imccalculo = Math.pow(talla, 2);
+    let limitimcalculo = imccalculo.toFixed(2);
+    let calculoimc = peso / limitimcalculo;
+    let limitcalculofinal = calculoimc.toFixed(1);
+
+    document.formulariocancerbucal.imcbucal.value = limitcalculofinal;
+
+}
+
+$(function () {
+    $('#medioreferencia').prop("hidden", true);
+    $('#yearstabaquismo').prop("hidden", true);
+    $('#diacigarros').prop("hidden", true);
+    $('#alcoholfrecuencia').prop("hidden", true);
+
+    /**afectaciones dentales */
+    $('#afectaciondental').prop('#hidden',true);
+    $('#tituloafectaciondental').prop('hidden',true);
+    $('#tipodeodf').prop('hidden',true);
+    $('#maxilarsd').prop('hidden',true);
+    $('#maxilarid').prop('hidden',true);
+    $('#maxilarsd2').prop('hidden',true);
+    $('#maxilarid2').prop('hidden',true);
+    
+})
+
+$(document).ready(function () {
+    $("#referenciado").change(function (e) {
+        if (referenciado.options[1].selected == true) {
+
+            $('#medioreferencia').prop("hidden", false);
+        } else if (referenciado.options[2].selected == true) {
+            $('#medioreferencia').prop("hidden", true);
+            $('#unidadreferencia').prop('selectedIndex',0);
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#mstoxicomanias").change(function (e) {
+        if (mstoxicomanias.options[0].selected == true) {
+
+            $('#alcoholfrecuencia').prop("hidden", false);
+        } else if (mstoxicomanias.options[0].selected == false) {
+            $('#alcoholfrecuencia').prop("hidden", true);
+            $('#frecuenciaal').prop('selectedIndex',0);
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#mstoxicomanias").change(function (e) {
+        if(mstoxicomanias.options[1].selected == true) {
+            $('#yearstabaquismo').prop("hidden", false);
+            $('#diacigarros').prop("hidden", false);
+
+        }else if(mstoxicomanias.options[1].selected == false) {
+            $('#yearstabaquismo').prop("hidden", true);
+            $('#diacigarros').prop("hidden", true);
+            $('#cigarrosdia').val('');
+            $('#anostabaquismo').val('');
+
+        }
+
+    })
+});
