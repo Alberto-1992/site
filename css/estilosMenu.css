@@ -930,6 +930,17 @@ table {
   padding: 4px;
   margin-left: 5px;
 }
+#abandonopaciente {
+  color: white;
+  background: rgb(248, 213, 12);
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 5px;
+}
+#abandonopaciente:hover{
+  color: blue;
+}
 
 #eliminarregistro:hover {
   color: black;

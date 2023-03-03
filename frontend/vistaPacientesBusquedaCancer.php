@@ -1,4 +1,3 @@
-<script src="js/enviacurp.js"></script>
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <link rel="stylesheet" href="css/estilosMenu.css">
 <?php
@@ -116,8 +115,8 @@ date_default_timezone_set('America/Monterey');
         $validaid = $validacion['id_paciente'];
     if($dataRegistro['curp'] != ''){ 
         if($validaid != $id_paciente){ ?>
-<input type="submit" class="mandaid" id="<?php echo $id_paciente ?>" value="Seguimiento"> <?php }else{ ?>
-            <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
+<input type="submit" class="mandaid" id="<?php echo $id_paciente ?>" value="Seguimiento" onclick="AplicarSeguimiento();"> <?php }else{ ?>
+    <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <input type="submit" onclick="seguimiento();"  id="verseguimiento" value="Ver seguimiento">
             <?php }?>
         <script>
@@ -155,7 +154,9 @@ date_default_timezone_set('America/Monterey');
 
                 <?php }
             };?>
+            <input type="submit" onclick="abandonopaciente();" id="abandonopaciente" value="Abandono paciente">
             <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
+            
             <?php
     }?>
                 </div>
@@ -925,6 +926,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
 <?php
 
 require 'modals/editarDatosPaciente.php';
+require 'modals/seguimientoCancerMama.php';
 ?>
 <script>
 function eliminarRegistro() {
@@ -958,6 +960,59 @@ function eliminarRegistro() {
 
         });
     }
+}
+function abandonopaciente() {
+    var id = $("#idcurp").val();
+    var cancer = $("#cancer").val();
+    var nombrepaciente = $("#nombrepaciente").val();
+    var mensaje = confirm("Paciente abandono tratamiento");
+    let parametros = {
+        id: id, cancer:cancer, nombrepaciente:nombrepaciente
+    }
+    if (mensaje == true) {
+        $.ajax({
+            data: parametros,
+            url: 'aplicacion/abandonoPacienteCancerMama.php',
+            type: 'post',
+            beforeSend: function() {
+                $("#mensaje").html("Procesando, espere por favor");
+            },
+            success: function(datos) {
+
+                                                $("#mensaje").html(datos);
+                                                let id = $("#idcurp").val();
+                                                let ob = {
+                                                            id: id
+                                                            };
+  
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaCancerdeMamaBusqueda.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            $("#tabla_resultadobus").load('consultacancerdemama.php');
+                                                            
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                
+                                            }
+        });
+    } else {
+        swal({
+            title: 'Cancelado!',
+            text: 'Proceso cancelado',
+            icon: 'warning',
+
+        });
+    }
+}
+function AplicarSeguimiento() {
+    $("#seguimientocancerdemama").modal('show');  
 }
 function editardatos() {
 

@@ -1,9 +1,8 @@
-<div id="seguimiento" class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+<div id="seguimientocancerdemama" class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
-    <script src="js/enviacurp.js"></script>
     <script src="js/scriptseguimientocancermama.js"></script>
     <div class="modal-dialog modal-lg">
 
@@ -78,10 +77,12 @@
                                             processData: false,
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
+                                                $("#tabla_resultadobus").load('consultacancerdemama.php')
 
                                             }
                                         })
                                     })
+                                    /** 
                                     var idcurp;
 
                                     function obtenerid() {
@@ -90,6 +91,7 @@
 
 
                                     }
+                                    */
                                     </script>
                                     <?php
                                     date_default_timezone_set('America/Monterrey');
@@ -102,13 +104,12 @@
                                         required="required" onkeyup="mayus(this);" readonly>
                                     <div class="col-md-12">
                                         <strong>ID:&nbsp;</strong>
-                                        <input id="curps" name="curps" class="form-control" type="hidden" value=""
+                                        <input id="curps" name="curps" class="form-control" type="textw" value="<?php echo $dataRegistro['id']; ?>"
                                             readonly>
-                                        <span id="curp" class="curp" name="curp"></span>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Calidad de vida ECOG</strong>
-                                        <select name="calidadvidaecog" id="calidadvidaecog" class="form-control" onclick="obtenerid();">
+                                        <select name="calidadvidaecog" id="calidadvidaecog" class="form-control" >
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
 				        $query = $conexionCancer->prepare("SELECT descripcionecog FROM calidadvidaecog");

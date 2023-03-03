@@ -8,30 +8,31 @@ include("../conexionCancer.php");
         tiporadioterapia, fechainicioradio, numerosesiones, ameritabraquiterapia, fechainiciobraquiterapia, cuidadospaliativos, tipocuidadopaliativo, protocoloclinico, protocoloinvestigacion, id_paciente) values(:calidadvidaecog, :progresionenfermedad, :fechadxprogresion, :recurrenciaenfermedad, :fecharecurrencia, :ameritareintervencion, :fechareintervencion, :lateralidad, :ameritanuevaqt, :fechanuevaqt, :tiponuevaqt, :tratamientoqt, :ameritaradioterapia,
         :tiporadioterapia, :fechainicioradio, :numerosesiones, :ameritabraquiterapia, :fechainiciobraquiterapia, :cuidadospaliativos, :tipocuidadopaliativo, :protocoloclinico, :protocoloinvestigacion, :id_paciente)");
         
-                $sql->bindParam(':calidadvidaecog',$calidadvidaecog,PDO::PARAM_STR);
-                $sql->bindParam(':progresionenfermedad',$progresionenfermedad,PDO::PARAM_STR);
-                $sql->bindParam(':fechadxprogresion',$fechadxprogresion,PDO::PARAM_STR);
-                $sql->bindParam(':recurrenciaenfermedad',$recurrencianenfermedad,PDO::PARAM_STR);
-                $sql->bindParam(':fecharecurrencia',$fecharecurrencia,PDO::PARAM_STR);
-                $sql->bindParam(':ameritareintervencion',$ameritareintervencion,PDO::PARAM_STR);
-                $sql->bindParam(':fechareintervencion',$fechareintenvencion,PDO::PARAM_STR);
-                $sql->bindParam(':lateralidad',$lateralidadreintervencion,PDO::PARAM_STR);
-                $sql->bindParam(':ameritanuevaqt',$ameritanuevaqt,PDO::PARAM_STR);
-                $sql->bindParam(':fechanuevaqt',$fechanuevaqt,PDO::PARAM_STR);
-                $sql->bindParam(':tiponuevaqt',$tipoqt,PDO::PARAM_STR);
-                $sql->bindParam(':tratamientoqt',$tratameintoqt,PDO::PARAM_STR);
-                $sql->bindParam(':ameritaradioterapia',$ameritaradioterapia,PDO::PARAM_STR);
-                $sql->bindParam(':tiporadioterapia',$tipoderadioterapia,PDO::PARAM_STR);
-                $sql->bindParam(':fechainicioradio',$fechadeinicioradio,PDO::PARAM_STR);
-                $sql->bindParam(':numerosesiones',$numerodesesiones,PDO::PARAM_STR);
-                $sql->bindParam(':ameritabraquiterapia',$ameritabraquiterapia,PDO::PARAM_STR);
-                $sql->bindParam(':fechainiciobraquiterapia',$fechabraquiterapia,PDO::PARAM_STR);
-                $sql->bindParam(':cuidadospaliativos',$cuidadospaliativos,PDO::PARAM_STR);
-                $sql->bindParam(':tipocuidadopaliativo',$clinicapaliativa,PDO::PARAM_STR);
-                $sql->bindParam(':protocoloclinico',$protocoloclinico,PDO::PARAM_STR);
-                $sql->bindParam(':protocoloinvestigacion',$protocoloinvestigacion,PDO::PARAM_STR);
-                $sql->bindParam(':id_paciente',$curps,PDO::PARAM_INT);
-                    $sql->execute();
+                $sql->execute(array(
+                    ':calidadvidaecog'=>$calidadvidaecog,
+                    ':progresionenfermedad'=>$progresionenfermedad,
+                    ':fechadxprogresion'=>$fechadxprogresion,
+                    ':recurrenciaenfermedad'=>$recurrencianenfermedad,
+                    ':fecharecurrencia'=>$fecharecurrencia,
+                    ':ameritareintervencion'=>$ameritareintervencion,
+                    ':fechareintervencion'=>$fechareintenvencion,
+                    ':lateralidad'=>$lateralidadreintervencion,
+                    ':ameritanuevaqt'=>$ameritanuevaqt,
+                    ':fechanuevaqt'=>$fechanuevaqt,
+                    ':tiponuevaqt'=>$tipoqt,
+                    ':tratamientoqt'=>$tratameintoqt,
+                    ':ameritaradioterapia'=>$ameritaradioterapia,
+                    ':tiporadioterapia'=>$tipoderadioterapia,
+                    ':fechainicioradio'=>$fechadeinicioradio,
+                    ':numerosesiones'=>$numerodesesiones,
+                    ':ameritabraquiterapia'=>$ameritabraquiterapia,
+                    ':fechainiciobraquiterapia'=>$fechabraquiterapia,
+                    ':cuidadospaliativos'=>$cuidadospaliativos,
+                    ':tipocuidadopaliativo'=>$clinicapaliativa,
+                    ':protocoloclinico'=>$protocoloclinico,
+                    ':protocoloinvestigacion'=>$protocoloinvestigacion,
+                    ':id_paciente'=>$curps
+                ));
                     
                     if($sql != false) {
 					echo "<script>swal({
