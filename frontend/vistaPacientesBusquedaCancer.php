@@ -965,7 +965,7 @@ function abandonopaciente() {
     var id = $("#idcurp").val();
     var cancer = $("#cancer").val();
     var nombrepaciente = $("#nombrepaciente").val();
-    var mensaje = confirm("Paciente abandono tratamiento");
+    var mensaje = confirm("Paciente ya no acudio a consulta");
     let parametros = {
         id: id, cancer:cancer, nombrepaciente:nombrepaciente
     }
@@ -984,7 +984,7 @@ function abandonopaciente() {
                                                 let ob = {
                                                             id: id
                                                             };
-  
+
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",

@@ -9,21 +9,21 @@
 <?php 
 
 	require 'conexionCancer.php';
-    $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id, tratamiento.identificador, tratamiento.id_paciente FROM dato_usuario inner join tratamiento on tratamiento.id_paciente = dato_usuario.id where tratamiento.identificador = 'cest' and tratamiento.seguimiento = 'inicial'");
+    $sqlQueryComentarios  = $conexion2->query("SELECT dato_personalinfarto.id FROM dato_personalinfarto inner join infartopaciente on infartopaciente.id_pacienteinfarto = dato_personalinfarto.id");
     $total_registro       = mysqli_num_rows($sqlQueryComentarios);
     
 
-    $query= $conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.nombrecompleto, dato_usuario.edad, dato_usuario.curp, dato_usuario.sexo, dato_usuario.fechanacimiento, tratamiento.identificador, tratamiento.seguimiento FROM dato_usuario inner join tratamiento on tratamiento.id_paciente = dato_usuario.id where tratamiento.identificador = 'cest' and tratamiento.seguimiento = 'inicial' order by dato_usuario.id DESC LIMIT 5 ");
+    $query= $conexionCancer->prepare("SELECT dato_personalinfarto.id, dato_personalinfarto.nombrecompleto, dato_personalinfarto.edad, dato_personalinfarto.curp, dato_personalinfarto.sexo, dato_personalinfarto.fechanacimiento, infartopaciente.id_pacienteinfarto FROM dato_personalinfarto inner join infartopaciente on infartopaciente.id_pacienteinfarto = dato_personalinfarto.id  order by dato_personalinfarto.id DESC LIMIT 25 ");
     if(isset($_POST['pacientes']))
 {
 	$q=$conexion2->real_escape_string($_POST['pacientes']);
-	$query=$conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.nombrecompleto, dato_usuario.edad, dato_usuario.curp, dato_usuario.sexo, dato_usuario.fechanacimiento, tratamiento.identificador, tratamiento.seguimiento FROM dato_usuario inner join tratamiento on tratamiento.id_paciente = dato_usuario.id  where
-		dato_usuario.id LIKE '%".$q."%' OR
-        dato_usuario.nombrecompleto LIKE '%".$q."%' OR
-		dato_usuario.fechanacimiento LIKE '%".$q."%' OR
-		dato_usuario.edad LIKE '%".$q."%' OR
-		dato_usuario.sexo LIKE '%".$q."%' OR
-		dato_usuario.curp LIKE '%".$q."%' AND tratamiento.seguimiento = 'incial' group by dato_usuario.id");
+	$query=$conexionCancer->prepare("SELECT dato_personalinfarto.id, dato_personalinfarto.nombrecompleto, dato_personalinfarto.edad, dato_personalinfarto.curp, dato_personalinfarto.sexo, dato_personalinfarto.fechanacimiento, infartopaciente.id_pacienteinfarto FROM dato_personalinfarto inner join infartopaciente on infartopaciente.id_pacienteinfarto = dato_personalinfarto.id   where
+		dato_personalinfarto.id LIKE '%".$q."%' OR
+        dato_personalinfarto.nombrecompleto LIKE '%".$q."%' OR
+		dato_personalinfarto.fechanacimiento LIKE '%".$q."%' OR
+		dato_personalinfarto.edad LIKE '%".$q."%' OR
+		dato_personalinfarto.sexo LIKE '%".$q."%' OR
+		dato_personalinfarto.curp LIKE '%".$q."%' group by dato_personalinfarto.id");
 }
         ?>
 <input type="submit" id="totalregistro" value="<?php echo $total_registro; ?>">
