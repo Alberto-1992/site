@@ -40,7 +40,7 @@
         }
     }
 }
-function Edad(FechaNacimiento) {
+function Edadedit(FechaNacimiento) {
 
     var fechaNace = new Date(FechaNacimiento);
     var fechaActual = new Date()
@@ -64,7 +64,7 @@ function calcularEdadedit() {
     var fecha = document.getElementById('fechaedit').value;
 
 
-    var edad = Edad(fecha);
+    var edad = Edadedit(fecha);
     document.formularioartritisediciondp.edadedit.value = edad;
 
 }

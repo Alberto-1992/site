@@ -35,7 +35,7 @@
 
                             </div>
 
-                            <form name="formulariocancerdemama" id="formulariocancerdemama" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formulariocancerdemama" id="formulariocancerdemama" onsubmit="return limpiar();" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
@@ -85,7 +85,7 @@
                                     <div class="col-md-3">
                                         <strong>CURP</strong>
                                         <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value=""
-                                            onblur="curp2date();" minlength="18" maxlength="18" required onkeypress="return soloLetras(event);" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
+                                            onblur="curp2dateCancer();" minlength="18" maxlength="18" required onkeypress="return soloLetras(event);" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
                                             <datalist id="curpusuario">
                                             <option value="">Seleccione</option>
                                             <?php 
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Nombre Completo</strong>
-                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdad();"
+                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadCancer();"
                                             type="text" class="form-control" value="" required>
                                     </div>
                                     <div class="col-md-3">
@@ -130,7 +130,7 @@
                                         <select id="escolaridad" name="escolaridad" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
-				    require 'conexionInfarto.php';
+				    require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -144,7 +144,7 @@
 
                                     <div class="col-md-3">
                                         <strong>Fecha de nacimiento</strong>
-                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2date();"
+                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2dateCancer();"
                                             class="form-control" readonly>
                                     </div>
                                     <div class="col-md-2">
@@ -154,13 +154,13 @@
 
                                     <div class="col-md-2">
                                         <strong>Sexo</strong>
-                                        <input type="text" class="form-control" id="sexo" onclick="curp2date();"
+                                        <input type="text" class="form-control" id="sexo" onclick="curp2dateCancer();"
                                             name="sexo" readonly>
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Raza</strong>
-                                        <input type="text" class="form-control" id="raza" onclick="curp2date();"
+                                        <input type="text" class="form-control" id="raza" onclick="curp2dateCancer();"
                                             name="raza" value="Sin registro">
 
                                     </div>
@@ -196,12 +196,12 @@
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="peso"
-                                            onblur="calculaIMC();" name="peso" required>
+                                            onblur="calculaIMCCancer();" name="peso" required>
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>IMC</strong>
-                                        <input type="text" class="form-control" id="imc" onblur="calculaIMC();"
+                                        <input type="text" class="form-control" id="imc" onblur="calculaIMCCancer();"
                                             name="imc" value="" readonly>
 
                                     </div>

@@ -18,16 +18,16 @@ $limite  = 10;
 
     <div class="item-comentario" id="<?php echo $dataRegistro['id']; ?>">
         <?php
-           $id = $dataRegistro['id'];
-           ?>
-           
-               <div id='<?php echo $id ?>' class='ver-info' style="cursor: pointer;">
-                   <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-top: 0px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
-           </div> 
-           <hr>
-           </div>
-        <?php 
-       
+            $id = $dataRegistro['id'];
+        ?>
+        
+            <div id='<?php echo $id ?>' class='ver-info' style="cursor: pointer;">
+                <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-top: 0px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
+        </div> 
+        <hr>
+    </div>
+    <?php 
+    
         }?>
 <script>
 $(function() {

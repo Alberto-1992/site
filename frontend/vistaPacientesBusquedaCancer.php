@@ -120,7 +120,7 @@ date_default_timezone_set('America/Monterey');
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <input type="submit" onclick="seguimiento();"  id="verseguimiento" value="Ver seguimiento">
             <?php }?>
-           <script>
+        <script>
             function seguimiento(){
 
             let id = $("#seguimiento").val();
@@ -146,7 +146,7 @@ date_default_timezone_set('America/Monterey');
     </script>
     
             <?php session_start();
-                if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { 
+                if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico']) or isset($_SESSION['residentes'])) { 
                     if($dataRegistro['editopaciente'] == 0 ) {?>
                     
             <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
@@ -164,7 +164,7 @@ date_default_timezone_set('America/Monterey');
                             background: #EBEBEB;
                     }
                 </style>
-<table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatos();" <?php } }?> >
+<table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatos();" <?php } }else if(isset($_SESSION['residentes'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatos();" <?php } }?>>
 
     <div class="containerr2">Datos Personales</div>
     <tr>
@@ -192,7 +192,7 @@ date_default_timezone_set('America/Monterey');
             
         </td></tr>
     </tr></table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosreferencia();" <?php } }?>>        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosreferencia();" <?php } }else if(isset($_SESSION['residentes'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatosreferencia();" <?php } }?>>        
     
     <div class="containerr3">Unidad de refernecia</div>
     <tr>
@@ -203,7 +203,7 @@ date_default_timezone_set('America/Monterey');
             <td id="td"><?php echo $rown['unidad']; ?></td>
         </tr>
         </table>
-    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoscancer();" <?php } }?>>        
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoscancer();" <?php } }else if(isset($_SESSION['residentes'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatoscancer();" <?php } }?>>        
     <div class="containerr3">Cancer</div>
     <tr>
         <th id="th">Tipo de cancer:</th>
