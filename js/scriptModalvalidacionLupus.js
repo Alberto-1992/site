@@ -233,23 +233,5 @@ $(document).ready(function() {
 });
 
 
-// SITIO METÁSTASIS
-$(document).ready(function() {
-    $('#mssitiometastasis').change(function(e) { 
-    }).multipleSelect({
-        width: '100%'
-    });
-});
-
-
-// COMPLICACIONES RT
-$(document).ready(function() {
-    $('#mscomplicaciones').change(function(e) { 
-    }).multipleSelect({
-        width: '100%'
-    });
-});
-
-
 
 

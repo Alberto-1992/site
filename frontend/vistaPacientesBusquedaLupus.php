@@ -1,6 +1,8 @@
 <script src="js/enviacurp.js"></script>
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <link rel="stylesheet" href="css/estilosMenu.css">
+
+
 <?php
 error_reporting(0);
 date_default_timezone_set('America/Monterrey');
@@ -457,255 +459,255 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
 
     <!--Inicia la sección ATENCIÓN CLINICA-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">ATENCIÓN CLINICA</div>
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">ATENCIÓN CLINICA</div>
 
-            <tr>
-                <th id="th">Fecha primer atención:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">Fecha primer atención:</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">Estadío Clínico:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">Estadío Clínico:</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">Etapa Clínica:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">Etapa Clínica:</th>
+            <td></td>
+        </tr>
 
-        </table>
-
-
-        <!--Inicia la sección HISTOPATOLOGÍA-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">HISTOPATOLOGÍA</div>
-
-            <tr>
-                <th id="th">Dx Histopatológico:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Fecha de Reporte:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Tipo:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Maligno:</th>
-                <td></td>
-            </tr>
-
-        </table>
+    </table>
 
 
-        <!--Inicia la sección INMUNOHISTOQUÍMICA-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">INMUNOHISTOQUÍMICA</div>
+    <!--Inicia la sección HISTOPATOLOGÍA-->
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">HISTOPATOLOGÍA</div>
 
-            <tr>
-                <th id="th">¿Se realizó PDL?</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">Dx Histopatológico:</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">PDL:</th>
-                <td></td>
-            </tr>
-        </table>
+        <tr>
+            <th id="th">Fecha de Reporte:</th>
+            <td></td>
+        </tr>
 
+        <tr>
+            <th id="th">Tipo:</th>
+            <td></td>
+        </tr>
 
-        <!--Inicia la sección TRATAMIENTO-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">TRATAMIENTO</div>
+        <tr>
+            <th id="th">Maligno:</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">Quirurgico:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Tipo de Cirugía:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Maxilectomia de Infraestructura:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Lugar:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Tipo:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Nivel Cervical:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Reconstrucción:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Tipo de Reconstrucción:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Radioterapia:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Fecha:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Complicaciones:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Momento RT:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Tx Complicaciones Orales:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Dosis:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Fracciones:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">No. Fracciones:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Técnica:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">OARS Dosis:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Dosis Máxima:</th>
-                <td></td>
-            </tr>
-
-            <tr>
-                <th id="th">Dosis Promedio:</th>
-                <td></td>
-            </tr>
-        </table>
+    </table>
 
 
+    <!--Inicia la sección INMUNOHISTOQUÍMICA-->
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">INMUNOHISTOQUÍMICA</div>
 
-        <!--Inicia la sección DEFUNCIÓN-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">DEFUNCIÓN</div>
+        <tr>
+            <th id="th">¿Se realizó PDL?</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">¿Defunción?:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">PDL:</th>
+            <td></td>
+        </tr>
+    </table>
 
-            <tr>
-                <th id="th">Fecha Defunción:</th>
-                <td></td>
-            </tr>
 
-            <tr>
-                <th id="th">Causa:</th>
-                <td></td>
-            </tr>
-        </table>
+    <!--Inicia la sección TRATAMIENTO-->
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">TRATAMIENTO</div>
+
+        <tr>
+            <th id="th">Quirurgico:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Tipo de Cirugía:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Maxilectomia de Infraestructura:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Lugar:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Tipo:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Nivel Cervical:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Reconstrucción:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Tipo de Reconstrucción:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Radioterapia:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Fecha:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Complicaciones:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Momento RT:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Tx Complicaciones Orales:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Dosis:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Fracciones:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">No. Fracciones:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Técnica:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">OARS Dosis:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Dosis Máxima:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Dosis Promedio:</th>
+            <td></td>
+        </tr>
+    </table>
 
 
 
-        <!--Inicia la sección CASO ÉXITOSO-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-            <div class="containerr3">CASO ÉXITOSO</div>
+    <!--Inicia la sección DEFUNCIÓN-->
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">DEFUNCIÓN</div>
 
-            <tr>
-                <th id="th">¿Caso éxitoso?:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">¿Defunción?:</th>
+            <td></td>
+        </tr>
 
-            <tr>
-                <th id="th">Respuesta al Tratamiento:</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th id="th">Fecha Defunción:</th>
+            <td></td>
+        </tr>
 
-        </table>
+        <tr>
+            <th id="th">Causa:</th>
+            <td></td>
+        </tr>
+    </table>
 
 
+
+    <!--Inicia la sección CASO ÉXITOSO-->
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+        <div class="containerr3">CASO ÉXITOSO</div>
+
+        <tr>
+            <th id="th">¿Caso éxitoso?:</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th id="th">Respuesta al Tratamiento:</th>
+            <td></td>
+        </tr>
+
+    </table>
 
 
 
 
 
 
-        <script>
-            function eliminarRegistro() {
-                var id = $("#idcurp").val();
-                var cancer = $("#cancer").val();
-                var nombrepaciente = $("#nombrepaciente").val();
-                var mensaje = confirm("el registro se eliminara");
-                let parametros = {
-                    id: id,
-                    cancer: cancer,
-                    nombrepaciente: nombrepaciente
-                }
-                if (mensaje == true) {
-                    $.ajax({
-                        data: parametros,
-                        url: 'aplicacion/eliminarRegistroCancer.php',
-                        type: 'post',
-                        beforeSend: function() {
-                            $("#mensaje").html("Procesando, espere por favor");
-                        },
-                        success: function(response) {
-                            $("#mensaje").html(response);
-                            $("#tabla_resultadobus").load('consultacancerbucal.php');
-                            $("#tabla_resultado").load('consultaCancerBucalBusqueda.php');
 
-                        }
-                    });
-                } else {
-                    swal({
-                        title: 'Cancelado!',
-                        text: 'Proceso cancelado',
-                        icon: 'warning',
 
-                    });
-                }
+    <script>
+        function eliminarRegistro() {
+            var id = $("#idcurp").val();
+            var cancer = $("#cancer").val();
+            var nombrepaciente = $("#nombrepaciente").val();
+            var mensaje = confirm("el registro se eliminara");
+            let parametros = {
+                id: id,
+                cancer: cancer,
+                nombrepaciente: nombrepaciente
             }
-        </script>
+            if (mensaje == true) {
+                $.ajax({
+                    data: parametros,
+                    url: 'aplicacion/eliminarRegistroCancer.php',
+                    type: 'post',
+                    beforeSend: function() {
+                        $("#mensaje").html("Procesando, espere por favor");
+                    },
+                    success: function(response) {
+                        $("#mensaje").html(response);
+                        $("#tabla_resultadobus").load('consultacancerbucal.php');
+                        $("#tabla_resultado").load('consultaCancerBucalBusqueda.php');
+
+                    }
+                });
+            } else {
+                swal({
+                    title: 'Cancelado!',
+                    text: 'Proceso cancelado',
+                    icon: 'warning',
+
+                });
+            }
+        }
+    </script>

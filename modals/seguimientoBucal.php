@@ -8,14 +8,14 @@
 
         <!-- Modal content-->
         <div class="modal-content" style="width: 950px; height: auto; color:black; left: 50%; transform: translate(-50%); ">
-            <div class="modal-header" id="cabeceraModalArtritis">
+            <div class="modal-header" id="cabeceraModalBucal">
+
+
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarformularioseguimiento();">&times;</button>
-                <h5 class="modal-title">Seguimiento paciente</h5>
+                
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
 
 
@@ -91,21 +91,45 @@
 
 
 
-                                    <input id="year" name="year" class="form-control" type="hidden" value="2022" required="required" onkeyup="mayus(this);" readonly>
-
-                                    <div class="col-md-6">
-                                        <strong>Seguimiento</strong>
-                                        <select name="seguimiento" id="seguimiento" class="form-control" required onclick="obtenerid();">
-                                            <option value="">Seleccione una opción</option>
-                                            <option value="3 meses">Tres meses</option>
-                                            <option value="6 meses">Seis meses</option>
-                                            <option value="un anio">Un año</option>
+                                    <!-- INICIA FORMULARIO DE SEGUIMIENTO-->
+                                    <div class="col-md-4">
+                                        <strong>Progresión de la enfermedad</strong>
+                                        <select name="progresionenfermedad" id="progresionenfermedad" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <strong>CURP:&nbsp;</strong>
-                                        <input id="curps" name="curps" class="form-control" type="text" value="" readonly>
-                                        <span id="curp" class="curp" name="curp"></span>
+                                    <div class="col-md-4" id="dxprogresion">
+                                        <strong>Fecha Dx Progresión</strong>
+                                        <input type="date" id="fechadxprogresion" name="fechadxprogresion" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Recurrencia de la Enfermedad</strong>
+                                        <select name="recurrencianenfermedad" id="recurrencianenfermedad" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">SÍ</option>
+                                            <option value="No">No</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-4" id="recurrenciadate">
+                                        <strong>Fecha de recurrencia</strong>
+                                        <input type="date" id="fecharecurrencia" name="fecharecurrencia" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>¿Amerita reintervención?</strong>
+                                        <select name="ameritareintervencion" id="ameritareintervencion" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">SÍ</option>
+                                            <option value="No">No</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-4" id="datereintervencion">
+                                        <strong>Fecha de Reintervención</strong>
+                                        <input type="date" id="fechareintenvencion" name="fechareintenvencion" class="form-control">
                                     </div>
                                     <script>
                                         $(document).ready(function() {
@@ -130,257 +154,133 @@
                                     </script>
                                     <br>
 
-                                    <div class="col-md-3">
-                                        <strong>Disección</strong>
-                                        <select name="diseccion" id="diseccion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM diseccion ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion']; ?>">
-                                                    <?php echo $row['descripcion']; ?></option>
-                                            <?php } ?>
+                                    <div class="col-md-4" id="lateralidadqt">
+                                        <strong>Lateralidad Reintervención QX</strong>
+                                        <select name="lateralidadreintervencion" id="lateralidadreintervencion" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Derecha">Derecha</option>
+                                            <option value="Izquierda">Izquierda</option>
+                                            <option value="Bilateral">Bilateral</option>
+                                        </select>
 
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>¿Amerita Nueva QT?</strong>
+                                        <select name="ameritanuevaqt" id="ameritanuevaqt" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">SÍ</option>
+                                            <option value="No">No</option>
 
                                         </select>
+
                                     </div>
-                                    <div class="col-md-3">
-                                        <strong>IAM Periprocedimiento</strong>
-                                        <select name="iamperiprocedimiento" id="iamperiprocedimiento" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM iam_periprocedimiento ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_aimperi']; ?>">
-                                                    <?php echo $row['nombre_aimperi']; ?></option>
-                                            <?php } ?>
-
-
+                                    <div class="col-md-4" id="fechadelanuevaqt">
+                                        <strong>Fecha de nueva QT</strong>
+                                        <input type="date" id="fechanuevaqt" name="fechanuevaqt" class="form-control">
+                                    </div>
+                                    <div class="col-md-4" id="tipodelaqt">
+                                        <strong>Tipo</strong>
+                                        <select name="tipoqt" id="tipoqt" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Neoadyuvante">Neoadyuvante</option>
+                                            <option value="Coadyuvante">Coadyuvante</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3">
-                                        <strong>Complicaciones</strong>
-                                        <select name="complicaciones" id="complicaciones" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
+                                    <div class="col-md-4" id="tratamientodelaqt">
+                                        <strong>Tratamiento QT</strong>
+                                        <select name="tratameintoqt" id="tratameintoqt" class="form-control">
+                                            <option value="0">Seleccione...</option>
                                             <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM complicaciones ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_compliacion']; ?>">
-                                                    <?php echo $row['nombre_compliacion']; ?></option>
+                                            $query = $conexionCancer->prepare("SELECT descripciontratameinto FROM tratamientoqt");
+                                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                                            $query->execute();
+                                            while ($row = $query->fetch()) { ?>
+                                                <option value="<?php echo $row['descripciontratameinto']; ?>">
+                                                    <?php echo $row['descripciontratameinto']; ?></option>
                                             <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <strong>Flujo microvascular tmp</strong>
-                                        <select name="flujomicrovasculartmp" id="flujomicrovasculartmp" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM flujo_microvascular_tmp ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_flujo_microvascular']; ?>">
-                                                    <?php echo $row['nombre_flujo_microvascular']; ?></option>
-                                            <?php } ?>
-
 
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>TIMI Final</strong>
-                                        <select name="flujofinaltfg" id="flujofinaltfg" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM flujo_final_tfg ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_flujo_final']; ?>">
-                                                    <?php echo $row['nombre_flujo_final']; ?></option>
-                                            <?php } ?>
-
-
+                                        <strong>¿Amerita Radioterapia?</strong>
+                                        <select name="ameritaradioterapia" id="ameritaradioterapia" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
+                                    </div>
+                                    <div class="col-md-4" id="aplicoradio">
+                                        <strong>Tipo Radioterapia</strong>
+                                        <select name="tipoderadioterapia" id="tipoderadioterapia" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Ciclo Mamario Completo">Ciclo Mamario Completo</option>
+                                            <option value="Tangencial">Tangencial</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" id="fecharadio">
+                                        <strong>Fecha de inicio</strong>
+                                        <input type="date" id="fechadeinicioradio" name="fechadeinicioradio" class="form-control">
+                                    </div>
+                                    <div class="col-md-4" id="sesionescanti">
+                                        <strong>N° de sesiones</strong>
+                                        <input type="number" id="numerodesesiones" name="numerodesesiones" class="form-control">
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>Trombosis definitiva</strong>
-                                        <select name="trombosisdefinitiva" id="trombosisdefinitiva" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM trombosis_definitiva ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_trombosis']; ?>">
-                                                    <?php echo $row['nombre_trombosis']; ?></option>
-                                            <?php } ?>
-
-
+                                        <strong>¿Amerita Braquiterapia?</strong>
+                                        <select name="ameritabraquiterapia" id="ameritabraquiterapia" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
+                                    </div>
+                                    <div class="col-md-4" id="fechadelabraqui">
+                                        <strong>Fecha de inicio</strong>
+                                        <input type="date" id="fechabraquiterapia" name="fechabraquiterapia" class="form-control">
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>Marca pasos temporal</strong>
-                                        <select name="marcapasostemporal" id="marcapasostemporal" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM marcapasos_temporal ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion']; ?>">
-                                                    <?php echo $row['descripcion']; ?></option>
-                                            <?php } ?>
-
-
+                                        <strong>Cuidados paliativos</strong>
+                                        <select name="cuidadospaliativos" id="cuidadospaliativos" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
+                                    </div>
+                                    <div class="col-md-4" id="paliativaclinica">
+                                        <strong>Tipo de cuidado paliativo</strong>
+                                        <select name="clinicapaliativa" id="clinicapaliativa" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Clinca del dolor">Clinca del Dolor</option>
+                                            <option value="Medicina paliativa">Medicina Paliativa</option>
+                                        </select>
+
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>Estancia hospitalaria</strong>
-                                        <textarea id="estanciahospitalaria" name="estanciahospitalaria" placeholder="Describa" class="form-control" onkeyup="mayus(this);" rows="2"></textarea>
+                                        <strong>Protocolo clínico</strong>
+                                        <select name="protocoloclinico" id="protocoloclinico" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
+
+                                        </select>
+
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>Reestentosis intrastent</strong>
-                                        <select name="reesentosis" id="reesentosis" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM reestenosis_intrastent ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion_resentosis']; ?>">
-                                                    <?php echo $row['descripcion_resentosis']; ?></option>
-                                            <?php } ?>
-
-
+                                        <strong>Protocolo de investigación</strong>
+                                        <select name="protocoloinvestigacion" id="protocoloinvestigacion" class="form-control">
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
+
                                     </div>
-                                    <div class="col-md-4">
-                                        <strong>Rehospitalización</strong>
-                                        <select name="rehospitalizacion" id="rehospitalizacion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM rehospitalacion_one_year ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion_rehospi']; ?>">
-                                                    <?php echo $row['descripcion_rehospi']; ?></option>
-                                            <?php } ?>
 
 
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>Escala de riesgo</strong>
-                                        <select name="escaladeriesgo" id="escaladeriesgo" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM escalas_riesgo ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_escala']; ?>">
-                                                    <?php echo $row['nombre_escala']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>IAM 3 años</strong>
-                                        <select name="iamtresyears" id="iamtresyears" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM iam_tres_years ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion_iam_tres_years']; ?>">
-                                                    <?php echo $row['descripcion_iam_tres_years']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>CRUC A LOS 3 AÑOS</strong>
-                                        <select name="cruc" id="cruc" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM cruce_a_tres_years ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion_cruce_tres_years']; ?>">
-                                                    <?php echo $row['descripcion_cruce_tres_years']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>Defunción</strong>
-                                        <select name="defuncion" id="defuncion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM defuncion ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['descripcion']; ?>">
-                                                    <?php echo $row['descripcion']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <strong>Causa defunción</strong>
-                                        <select name="causadefuncion" id="causadefuncion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM causa ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_causa']; ?>">
-                                                    <?php echo $row['nombre_causa']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <strong>Fevi</strong>
-                                        <select name="fevi" id="fevi" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-require 'conexionCancer.php';
-                                            $query = "SELECT * FROM fevi ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombrefevi']; ?>">
-                                                    <?php echo $row['nombrefevi']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
                                     <div class="col-md-12"></div>
                                     <br>
 
 
-                                    <input type="submit" id="registrar" value="Registrar">
-                                    <a href='' id="recargar" onclick="window.reload();">Finalizar</a>
-
+                                    <input type="submit" id="registrar" value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #00B6FF; margin-left: auto; margin-right: auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">&nbsp;&nbsp;
+                                    <input type="button" id="recargar" onclick="window.location.reload();" value="Finalizar" style="width: 170px; height: 27px; color: white; background-color: #FA0000; margin-left: auto; margin-right: auto; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                                     <br>
                                 </div>
                             </form>

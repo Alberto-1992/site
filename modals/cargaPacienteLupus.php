@@ -255,9 +255,9 @@
                                     <strong>Comidas al día</strong>
                                     <select name="comidas" id="comidas" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3 o más</option>
+                                        <option value="unacomida">1</option>
+                                        <option value="doscomidas">2</option>
+                                        <option value="trescomidas">3 o más</option>
                                     </select>
                                 </div>
 
@@ -265,9 +265,9 @@
                                     <strong>Higiene Bucal</strong>
                                     <select name="comidas" id="comidas" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="1 vez al dia">1 vez al día</option>
-                                        <option value="2 veces al dia">2 veces al día</option>
-                                        <option value="3 o mas veces al dia">3 o más veces al día</option>
+                                        <option value="unavez">1 vez al día</option>
+                                        <option value="dosveces">2 veces al día</option>
+                                        <option value="tresveces">3 o más veces al día</option>
                                     </select>
                                 </div>
                                 <!-- Finaliza Sección de Antecedentes No Patológicos-->
@@ -292,7 +292,7 @@
                                         <option value="alcoholismo"> Alcoholismo</option>
                                         <option value="cocaina"> Cocaina</option>
                                         <option value="marihuana"> Marihuana</option>
-                                        <option value="medicamentos controlados"> Medicamentos Controlados</option>
+                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
                                         <option value="solventes"> Solventes</option>
                                         <option value="tabaquismo"> Tabaquismo</option>
                                     </select>
@@ -311,8 +311,8 @@
                                     <strong>Frecuencia Alcoholismo:</strong>
                                     <select name="frecuenciaal" id="frecuenciaal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Embriaguez">Embriaguez</option>
+                                        <option value="social">Social</option>
+                                        <option value="embriaguez">Embriaguez</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
@@ -322,14 +322,14 @@
                                 <div class="col-md-3" id="tipodehabitos">
                                     <strong>Hábitos</strong>
                                     <select id="mshabitos" name="mshabitos[]" multiple="multiple" class="form-control">
-                                        <option value="Autolesiones"> Autolesiones</option>
-                                        <option value="Bruxismo"> Bruxismo</option>
-                                        <option value="Interposicion Lingual"> Interposición Lingual</option>
-                                        <option value="Onicofagia"> Onicofagía</option>
-                                        <option value="Queilofagia"> Queilofagía</option>
-                                        <option value="Respiracion Oral"> Respiración Oral</option>
-                                        <option value="Succion Labial"> Succión Labial</option>
-                                        <option value="Succion Digital"> Succión Digital</option>
+                                        <option value="autolesiones"> Autolesiones</option>
+                                        <option value="bruxismo"> Bruxismo</option>
+                                        <option value="interposicionlingual"> Interposición Lingual</option>
+                                        <option value="onicofagia"> Onicofagía</option>
+                                        <option value="queilofagia"> Queilofagía</option>
+                                        <option value="respiracionoral"> Respiración Oral</option>
+                                        <option value="succionlabial"> Succión Labial</option>
+                                        <option value="succiondigital"> Succión Digital</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple HÁBITOS-->
@@ -339,9 +339,9 @@
                                 <div class="col-md-3" id="tipodevirus">
                                     <strong>Virus</strong>
                                     <select id="msvirus" name="msvirus[]" multiple="multiple" class="form-control">
-                                        <option value="VIH"> VIH </option>
-                                        <option value="VPH"> VPH</option>
-                                        <option value="I. Epstein Barr"> I. Epstein Barr</option>
+                                        <option value="vih"> VIH </option>
+                                        <option value="vph"> VPH</option>
+                                        <option value="ieb"> I. Epstein Barr</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple  Virus-->
@@ -351,22 +351,22 @@
                                 <div class="col-md-3" id="tipodecancer">
                                     <strong>Cáncer</strong>
                                     <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
-                                        <option value="Colon y Recto"> Colon y Recto </option>
-                                        <option value="Endometrio"> Endometrio</option>
-                                        <option value="Gastrico"> Gastrico</option>
-                                        <option value="Higado"> Hígado </option>
-                                        <option value="Leucemia"> Leucemia</option>
-                                        <option value="Linfoma No Hodgkin"> Linfoma No Hodgkin</option>
-                                        <option value="Mama"> Mama </option>
-                                        <option value="Melanoma"> Melanoma</option>
-                                        <option value="Ovario"> Ovario</option>
-                                        <option value="Pancreas"> Páncreas </option>
-                                        <option value="Prostata"> Próstata</option>
-                                        <option value="Pulmon"> Pulmón</option>
-                                        <option value="Rinon"> Riñón </option>
-                                        <option value="Testiculo"> Testículo</option>
-                                        <option value="Tiroides"> Tiroides</option>
-                                        <option value="Vejiga"> Vejiga</option>
+                                        <option value="colon"> Colon y Recto </option>
+                                        <option value="endometrio"> Endometrio</option>
+                                        <option value="gastrico"> Gastrico</option>
+                                        <option value="higado"> Hígado </option>
+                                        <option value="leucemia"> Leucemia</option>
+                                        <option value="linfoma"> Linfoma No Hodgkin</option>
+                                        <option value="mama"> Mama </option>
+                                        <option value="melanoma"> Melanoma</option>
+                                        <option value="ovario"> Ovario</option>
+                                        <option value="pancreas"> Páncreas </option>
+                                        <option value="prostata"> Prostata</option>
+                                        <option value="pulmon"> Pulmón</option>
+                                        <option value="rinon"> Riñón </option>
+                                        <option value="testiculo"> Testículo</option>
+                                        <option value="tiroides"> Tiroides</option>
+                                        <option value="vejiga"> Vejiga</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple CÁNCER-->
@@ -388,9 +388,9 @@
                                 <div class="col-md-12" id="tipodeao">
                                     <strong>Afectaciones Orales</strong>
                                     <select id="msao" name="msao[]" multiple="multiple" class="form-control">
-                                        <option value="Afectacion Dental"> Afectación Dental </option>
-                                        <option value="Lesiones Orales"> Lesiones Orales</option>
-                                        <option value="Ubicacion"> Ubicación</option>
+                                        <option value="eperiodontal"> Afectación Dental </option>
+                                        <option value="odf"> Lesiones Orales</option>
+                                        <option value="protesisfd"> Ubicación</option>
                                     </select>
                                 </div>
 
@@ -409,12 +409,12 @@
                                 <div class="col-md-12" id="tipodeodf">
                                     <strong>Órgano Oral Lesionado</strong>
                                     <select id="msodf" name="msodf[]" multiple="multiple" class="form-control">
-                                        <option value="Enfermedad Periodontal"> Enfermedad Periodontal </option>
-                                        <option value="Organo Dental Fracturado"> Órgano Dental Fracturado</option>
-                                        <option value="Protesis Fija Desajustada"> Protesis Fija Desajustada</option>
-                                        <option value="Protesis Fija Fracturada"> Protesis Fija Fracturada</option>
-                                        <option value="Protesis Removible Desajustada"> Protesis Removible Desajustada </option>
-                                        <option value="Protesis Removible Fracturada"> Protesis Removible Fracturada</option>
+                                        <option value="eperiodontal"> Enfermedad Periodontal </option>
+                                        <option value="odf"> Órgano Dental Fracturado</option>
+                                        <option value="protesisfd"> Protesis Fija Desajustada</option>
+                                        <option value="protesisff"> Protesis Fija Fracturada</option>
+                                        <option value="protesisrd"> Protesis Removible Desajustada </option>
+                                        <option value="protesisrf"> Protesis Removible Fracturada</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple AFECTACIONES ORALES-->
@@ -425,14 +425,14 @@
                                 <div class="col-md-3" id="maxilarsd">
                                     <strong>Maxilar Superior Derecho</strong>
                                     <select id="msmaxilarsuperiorderecho" name="msmaxilarsuperiorderecho[]" multiple="multiple" class="form-control">
-                                        <option value="11"> 11</option>
-                                        <option value="12"> 12</option>
-                                        <option value="13"> 13</option>
-                                        <option value="14"> 14</option>
-                                        <option value="15"> 15</option>
-                                        <option value="16"> 16</option>
-                                        <option value="17"> 17</option>
-                                        <option value="18"> 18</option>
+                                        <option value="once"> 11</option>
+                                        <option value="doce"> 12</option>
+                                        <option value="trce"> 13</option>
+                                        <option value="catorce"> 14</option>
+                                        <option value="quince"> 15</option>
+                                        <option value="dieciseis"> 16</option>
+                                        <option value="diecisiete"> 17</option>
+                                        <option value="dieciocho"> 18</option>
                                     </select>
                                 </div>
 
@@ -501,8 +501,8 @@
                                     <strong>¿Lesión Oral?:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Sí">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="silesion">Sí</option>
+                                        <option value="nolesion">No</option>
                                     </select>
                                 </div>
 
@@ -511,8 +511,8 @@
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Blando">Blando</option>
-                                        <option value="Duro">Duro</option>
+                                        <option value="blando">Blando</option>
+                                        <option value="duro">Duro</option>
                                     </select>
                                 </div>
 
@@ -520,13 +520,13 @@
                                 <div class="col-md-3" id="tipolesion">
                                     <strong>Tipo Lesión:</strong>
                                     <select id="mstipodelesion" name="mstipodelesion[]" multiple="multiple" class="form-control">
-                                        <option value="Melatonica"> Melatónica</option>
-                                        <option value="Nodulo"> Nodulo</option>
-                                        <option value="Pigmentada"> Pigmentada</option>
-                                        <option value="Tumor">Tumor</option>
-                                        <option value="Ulcera"> Ulcera</option>
-                                        <option value="Verruga"> Verruga</option>
-                                        <option value="Vesicula"> Vesicula</option>
+                                        <option value="melatonica"> Melatónica</option>
+                                        <option value="nodulo"> Nodulo</option>
+                                        <option value="pigmentada"> Pigmentada</option>
+                                        <option value="tumor">Tumor</option>
+                                        <option value="ulcera"> Ulcera</option>
+                                        <option value="verruga"> Verruga</option>
+                                        <option value="vesicula"> Vesicula</option>
 
                                     </select>
                                 </div>
@@ -536,9 +536,9 @@
                                     <strong>Coloración:</strong>
                                     <select name="colorpigmentada" id="colorpigmentada" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Blanca">Blanca</option>
-                                        <option value="Roja">Roja</option>
-                                        <option value="Blanca y Roja">Blanca / Roja</option>
+                                        <option value="blanca">Blanca</option>
+                                        <option value="roja">Roja</option>
+                                        <option value="blancaroja">Blanca / Roja</option>
                                     </select>
                                 </div>
                                 <!-- Fin sección LESIONES ORALES-->
@@ -560,8 +560,8 @@
                                 <div class="col-md-12" id="ubicacion">
                                     <strong>Ubicación:</strong>
                                     <select id="msubicacion" name="msubicacion[]" multiple="multiple" class="form-control">
-                                        <option value="Derecha"> Derecha</option>
-                                        <option value="Izquierda"> Izquierda</option>
+                                        <option value="derecha"> Derecha</option>
+                                        <option value="izquierda"> Izquierda</option>
                                     </select>
                                 </div>
 
@@ -578,20 +578,21 @@
                                 <div class="col-md-12" id="">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva" name="msqueva[]" multiple="multiple" class="form-control">
-                                        <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
-                                        <option value="Encia Superior"> Encia Superior</option>
-                                        <option value="Labios"> Labios</option>
-                                        <option value="Lengua"> Lengua</option>
-                                        <option value="Encia Inferior"> Encia Inferior </option>
-                                        <option value="Maxilar Posterior"> Maxilar Posterior</option>
-                                        <option value="Mucosa Bucal"> Mucosa Bucal</option>
-                                        <option value="Paladar Blando"> Paladar Blando</option>
-                                        <option value="Paladar Duro"> Paladar Duro</option>
-                                        <option value="Piso"> Piso</option>
-                                        <option value="Premaxilar"> Premaxilar</option>
-                                        <option value="Proceso Alveolar"> Proceso Alveolar</option>
-                                        <option value="Rama Mandibular"> Rama Mandibular</option>
-                                        <option value="Trigono Retromolar"> Trigono Retromolar</option>
+                                        <option value="cuerpomandibular"> Cuerpo Mandibular</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="labios"> Labios</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="lengua"> Lengua</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="maxilarposterior"> Maxilar Posterior</option>
+                                        <option value="mucosabucal"> Mucosa Bucal</option>
+                                        <option value="paladarblando"> Paladar Blando</option>
+                                        <option value="paladarduro"> Paladar Duro</option>
+                                        <option value="piso"> Piso</option>
+                                        <option value="premaxilar"> Premaxilar</option>
+                                        <option value="procesoalveolar"> Proceso Alveolar</option>
+                                        <option value="ramamandibular"> Rama Mandibular</option>
+                                        <option value="trigono"> Trigono Retromolar</option>
                                     </select>
                                 </div>
 
@@ -601,8 +602,8 @@
                                     <strong>Labios:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Labio Inferior">Labio Inferior</option>
-                                        <option value="Labio Superior">Labio Superior</option>
+                                        <option value="labioinferior">Labio Inferior</option>
+                                        <option value="labiosuperior">Labio Superior</option>
                                     </select>
                                 </div>
 
@@ -611,9 +612,9 @@
                                     <strong>Lengua:</strong>
                                     <select name="lengua" id="lengua" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Borde Lateral">Borde Lateral</option>
-                                        <option value="Cara Ventral">Cara Ventral</option>
-                                        <option value="Dorso">Dorso</option>
+                                        <option value="bordelateral">Borde Lateral</option>
+                                        <option value="caraventral">Cara Ventral</option>
+                                        <option value="dorso">Dorso</option>
                                     </select>
                                 </div>
 
@@ -622,8 +623,8 @@
                                     <strong>Paladar Blando:</strong>
                                     <select name="paladarblando" id="paladarblando" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Boveda de Paladar">Boveda de Paladar</option>
-                                        <option value="Velo de Paladar">Velo de Paladar</option>
+                                        <option value="boveda">Boveda de Paladar</option>
+                                        <option value="velo">Velo de Paladar</option>
                                     </select>
                                 </div>
 
@@ -632,10 +633,10 @@
                                     <strong>Encia:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Bucal">Bucal</option>
-                                        <option value="Interpapilar">Interpapilar</option>
-                                        <option value="Lingual">Lingual</option>
-                                        <option value="Paladar">Paladar</option>
+                                        <option value="bucal">Bucal</option>
+                                        <option value="interpapilar">Interpapilar</option>
+                                        <option value="lingual">Lingual</option>
+                                        <option value="paladar">Paladar</option>
                                     </select>
                                 </div>
 
@@ -645,8 +646,8 @@
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
                                     <select name="relacion" id="relacion" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="si">Sí</option>
+                                        <option value="no">No</option>
                                     </select>
                                 </div><br><br>
 
@@ -655,14 +656,14 @@
                                 <div class="col-md-3" id="maxisd">
                                     <strong>Maxilar Superior Derecho</strong>
                                     <select id="msmaxisd" name="msmaxisd[]" multiple="multiple" class="form-control">
-                                        <option value="11"> 11</option>
-                                        <option value="12"> 12</option>
-                                        <option value="13"> 13</option>
-                                        <option value="14"> 14</option>
-                                        <option value="15"> 15</option>
-                                        <option value="16"> 16</option>
-                                        <option value="17"> 17</option>
-                                        <option value="18"> 18</option>
+                                        <option value="once"> 11</option>
+                                        <option value="doce"> 12</option>
+                                        <option value="trce"> 13</option>
+                                        <option value="catorce"> 14</option>
+                                        <option value="quince"> 15</option>
+                                        <option value="dieciseis"> 16</option>
+                                        <option value="diecisiete"> 17</option>
+                                        <option value="dieciocho"> 18</option>
                                     </select>
                                 </div>
 
@@ -695,20 +696,21 @@
                                 <div class="col-md-12" id="">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva2" name="msqueva2[]" multiple="multiple" class="form-control">
-                                        <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
-                                        <option value="Encia Superior"> Encia Superior</option>
-                                        <option value="Labios"> Labios</option>
-                                        <option value="Lengua"> Lengua</option>
-                                        <option value="Encia Inferior"> Encia Inferior </option>
-                                        <option value="Maxilar Posterior"> Maxilar Posterior</option>
-                                        <option value="Mucosa Bucal"> Mucosa Bucal</option>
-                                        <option value="Paladar Blando"> Paladar Blando</option>
-                                        <option value="Paladar Duro"> Paladar Duro</option>
-                                        <option value="Piso"> Piso</option>
-                                        <option value="Premaxilar"> Premaxilar</option>
-                                        <option value="Proceso Alveolar"> Proceso Alveolar</option>
-                                        <option value="Rama Mandibular"> Rama Mandibular</option>
-                                        <option value="Trigono Retromolar"> Trigono Retromolar</option>
+                                        <option value="cuerpomandibular"> Cuerpo Mandibular</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="labios"> Labios</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="lengua"> Lengua</option>
+                                        <option value="encia"> Encia</option>
+                                        <option value="maxilarposterior"> Maxilar Posterior</option>
+                                        <option value="mucosabucal"> Mucosa Bucal</option>
+                                        <option value="paladarblando"> Paladar Blando</option>
+                                        <option value="paladarduro"> Paladar Duro</option>
+                                        <option value="piso"> Piso</option>
+                                        <option value="premaxilar"> Premaxilar</option>
+                                        <option value="procesoalveolar"> Proceso Alveolar</option>
+                                        <option value="ramamandibular"> Rama Mandibular</option>
+                                        <option value="trigono"> Trigono Retromolar</option>
                                     </select>
                                 </div>
 
@@ -718,8 +720,8 @@
                                     <strong>Labios:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Labio Inferior">Labio Inferior</option>
-                                        <option value="Labio Superior">Labio Superior</option>
+                                        <option value="labioinferior">Labio Inferior</option>
+                                        <option value="labiosuperior">Labio Superior</option>
                                     </select>
                                 </div>
 
@@ -728,9 +730,9 @@
                                     <strong>Lengua:</strong>
                                     <select name="lengua" id="lengua" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Borde Lateral">Borde Lateral</option>
-                                        <option value="Cara Ventral">Cara Ventral</option>
-                                        <option value="Dorso">Dorso</option>
+                                        <option value="bordelateral">Borde Lateral</option>
+                                        <option value="caraventral">Cara Ventral</option>
+                                        <option value="dorso">Dorso</option>
                                     </select>
                                 </div>
 
@@ -739,8 +741,8 @@
                                     <strong>Paladar Blando:</strong>
                                     <select name="paladarblando" id="paladarblando" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Boveda de Paladar">Boveda de Paladar</option>
-                                        <option value="Velo de Paladar">Velo de Paladar</option>
+                                        <option value="boveda">Boveda de Paladar</option>
+                                        <option value="velo">Velo de Paladar</option>
                                     </select>
                                 </div>
 
@@ -749,10 +751,10 @@
                                     <strong>Encia:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Bucal">Bucal</option>
-                                        <option value="Interpapilar">Interpapilar</option>
-                                        <option value="Lingual">Lingual</option>
-                                        <option value="Paladar">Paladar</option>
+                                        <option value="bucal">Bucal</option>
+                                        <option value="interpapilar">Interpapilar</option>
+                                        <option value="lingual">Lingual</option>
+                                        <option value="paladar">Paladar</option>
                                     </select>
                                 </div><br><br>
 
@@ -761,8 +763,8 @@
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
                                     <select name="relacion" id="relacion" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="si">Sí</option>
+                                        <option value="no">No</option>
                                     </select>
                                 </div><br><br>
 
@@ -837,76 +839,6 @@
 
                                     </select>
                                 </div>
-
-
-
-                                <div class="col-md-4">
-                                    <strong>Tamaño tumoral</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="TX: Tumor primario no puede ser evaluado">TX: Tumor primario no puede ser evaluado </option>
-                                        <option value="Tis: Carcinoma insitu">Tis: Carcinoma insitu </option>
-                                        <option value="T1 Menor o igual a 2cm">T1 Menor o igual a 2cm</option>
-                                        <option value="T3 mas de 5cm">T3 mas de 5cm </option>
-                                        <option value="T4 cualquier tamaño extension a piel o pared toracica">T4 cualquier tamaño extension a piel o pared toracica</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-md-4">
-                                    <strong>Compromiso Linfático Nodal</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="NX: No puede ser evaluado por falta de datos">NX: No puede ser evaluado por falta de datos </option>
-                                        <option value="N0:Ausencia de adenopatias palpables">N0:Ausencia de adenopatias palpables</option>
-                                        <option value="N1: Mets. Axilar homolateral movil palpable">N1: Mets. Axilar homolateral movil palpable</option>
-                                        <option value="N2. Mets. Axilar homolateral fija o mets en mamaria interna detectable por imagen o por E.F. en ausencia clinica de mets en axila">N2. Mets. Axilar homolateral fija o mets en mamaria interna detectable por imagen o por E.F. en ausencia clinica de mets en axila </option>
-                                        <option value="N3. Metastasis en ganglios infra o supraclaviculares">N3. Metastasis en ganglios infra o supraclaviculares</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-md-4">
-                                    <strong>Metástasis</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="MX: No se pueden evaluar metastasis distantes">MX: No se pueden evaluar metastasis distantes</option>
-                                        <option value="M0 Sin enfermedad a distancia">M0 Sin enfermedad a distancia</option>
-                                        <option value="M1 Con enfermedad metastasica">M1 Con enfermedad metastasica</option>
-                                    </select>
-                                </div>
-
-                                <!-- SI SE SELECCIONA M1 EN METÁSTASIS, SE DEBE HABILITAR EL SIGUIENTE SELECT MÚLTIPLE-->
-                                <div class="col-md-4">
-                                    <strong>Sitio Metástasis</strong>
-                                    <select id="mssitiometastasis" name="mssitiometastasis[]" multiple="multiple" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="Hepatica">Hepatica</option>
-                                        <option value="Pulmonar">Pulmonar</option>
-                                        <option value="Cerebrales">Cerebrales</option>
-                                        <option value="Oseas">Óseas</option>
-                                        <option value="Cervicouterino">Cervicouterino</option>
-                                        <option value="Mediastino">Mediastino</option>
-                                        <option value="Suprarrenal">Suprarrenal</option>
-                                        <option value="Tiroidea">Tiroidea</option>
-                                        <option value="Ganglionar">Ganglionar</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-md-4">
-                                    <strong>Calidad de vida ECOG</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="Ecog 0  Desempeño Funcional Normal">Ecog 0 Desempeño Funcional Normal</option>
-                                        <option value="Ecog 1 Desempeño Leve">Ecog 1 Desempeño Leve</option>
-                                        <option value="Ecog 2 El 50% Del Tiempo Postrado">Ecog 2 El 50% Del Tiempo Postrado</option>
-                                        <option value="Ecog 3 Mas Del 50% Postrado">Ecog 3 Mas Del 50% Postrado </option>
-                                        <option value="Ecog 4 Dependiente Al 100% Para Vida Basica">Ecog 4 Dependiente Al 100% Para Vida Basica</option>
-                                        <option value="Ecog 5 Fallecio">Ecog 5 Fallecio</option>
-                                    </select>
-                                </div>
-
                                 <!--********************************************************************************************************************************************************************-->
 
 
@@ -926,17 +858,17 @@
                                     <strong>Dx Histopatologico</strong>
                                     <select name="dxhistopatologico" id="dxhistopatologico" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
-                                        <option value="Adenocarcinoma">Adenocarcinoma</option>
-                                        <option value="Adenoideoquistico">Adenoideoquistico</option>
-                                        <option value="Basocelular">Basocelular</option>
-                                        <option value="Carcinoma Ameloblastico">Carcinoma Ameloblastico</option>
-                                        <option value="Epidermoide o Celulas Escamosas (Verrucoso o Basaloide)">Epidermoide o Celulas Escamosas (Verrucoso o Basaloide)</option>
-                                        <option value="Linfoma">Linfoma</option>
-                                        <option value="Melanoma">Melanoma</option>
-                                        <option value="Metastasico">Metastásico</option>
-                                        <option value="Neuroendocrino">Neuroendocrino</option>
-                                        <option value="Sarcoma de Kaposi">Sarcoma de Kaposi</option>
-                                        <option value="Sarcomatoide">Sarcomatoide</option>
+                                        <option value="adenocarcinoma">Adenocarcinoma</option>
+                                        <option value="adenoideoquistico">Adenoideoquistico</option>
+                                        <option value="basocelular">Basocelular</option>
+                                        <option value="carcinomaame">Carcinoma Ameloblastico</option>
+                                        <option value="epidermoide">Epidermoide o Celulas Escamosas (Verrucoso o Basaloide)</option>
+                                        <option value="lindoma">Linfoma</option>
+                                        <option value="melanoma">Melanoma</option>
+                                        <option value="metastasico">Metastásico</option>
+                                        <option value="neuroendocrino">Neuroendocrino</option>
+                                        <option value="sarcomakaposi">Sarcoma de Kaposi</option>
+                                        <option value="sarcomatoide">Sarcomatoide</option>
                                     </select>
                                 </div>
 
@@ -952,8 +884,8 @@
                                     <strong>Tipo:</strong>
                                     <select name="tipohisto" id="tipohisto" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Benigno">Benigno</option>
-                                        <option value="Maligno">Maligno</option>
+                                        <option value="benigno">Benigno</option>
+                                        <option value="maligno">Maligno</option>
                                     </select>
                                 </div>
 
@@ -962,9 +894,9 @@
                                     <strong>Maligno:</strong>
                                     <select name="maligno" id="maligno" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Bien Diferenciado">Bien Diferenciado</option>
-                                        <option value="Poco Diferenciado">Poco Diferenciado</option>
-                                        <option value="Indefinido">Indefinido</option>
+                                        <option value="biendefinido">Bien Diferenciado</option>
+                                        <option value="pocodefinido">Poco Diferenciado</option>
+                                        <option value="indefinido">Indefinido</option>
                                     </select>
                                 </div>
 
@@ -982,8 +914,8 @@
                                     <strong>¿Se realizó PDL?</strong>
                                     <select name="pdl" id="pdl" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="pdlsi">Sí</option>
+                                        <option value="pdlno">No</option>
                                     </select>
                                 </div>
 
@@ -1009,8 +941,8 @@
                                     <strong>*Quirurgico</strong>
                                     <select name="quirurgico" id="quirurgico" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="quirurgicosi">Sí</option>
+                                        <option value="quirurgicono">No</option>
                                     </select>
                                 </div>
 
@@ -1019,16 +951,16 @@
                                     <strong>Tipo de Cirugía</strong>
                                     <select name="tipoquirurgico" id="tipoquirurgico" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Amigdalectomia">Amigdalectomía</option>
-                                        <option value="Comando">Comando</option>
-                                        <option value="Diseccion Radical Modificada de Cuello">Disección Radical Modificada de Cuello</option>
-                                        <option value="Excision Local Amplia">Excision Local Amplia</option>
-                                        <option value="Glosectomia Parcial">Glosectomía Parcial</option>
-                                        <option value="Hemiglosectomia">Hemiglosectomía</option>
-                                        <option value="Mandibulectomia (Parcial, Segmentaria, Maginal)">Mandibulectomía (Parcial, Segmentaria, Maginal)</option>
-                                        <option value="Maxilectomia de Infraestructura">Maxilectomia de Infraestructura</option>
-                                        <option value="Maxilectomia de Superestructura">Maxilectomia de Superestructura</option>
-                                        <option value="Reseccion de Glandula Salival Menor">Resección de Glándula Salival Menor</option>
+                                        <option value="amigdalectomia">Amigdalectomía</option>
+                                        <option value="comando">Comando</option>
+                                        <option value="diseccionradical">Disección Radical Modificada de Cuello</option>
+                                        <option value="excisionlocalamplia">Excision Local Amplia</option>
+                                        <option value="glosectomiaparcial">Glosectomía Parcial</option>
+                                        <option value="hemiglosectomia">Hemiglosectomía</option>
+                                        <option value="mandibulectomia">Mandibulectomía (Parcial, Segmentaria, Maginal)</option>
+                                        <option value="maxilectomiainfra">Maxilectomia de Infraestructura</option>
+                                        <option value="maxilectomiasuper">Maxilectomia de Superestructura</option>
+                                        <option value="reseccionglandula">Resección de Glándula Salival Menor</option>
                                     </select>
                                 </div>
 
@@ -1037,28 +969,28 @@
                                     <strong>Maxilectomia de Infraestructura</strong>
                                     <select name="maxinfra" id="maxinfra" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Clase I. Reseccion quirurgica clasica del maxilar que abarca paladar duro y dentición hasta la linea media, es unilateral.">Clase I. Resección quirúrgica clásica del maxilar que abarca paladar duro y dentición hasta la línea media, es unilateral.</option>
-                                        <option value="Clase II. Incluye defectos que mantienen la denticion del lado contralateral. Es unilateral posterior que no abarca hasta la linea media.">Clase II . Incluye defectos que mantienen la dentición del lado contralateral. Es unilateral posterior que no abarca hasta la línea media.</option>
-                                        <option value="Clase III. Implica un defecto en la línea media del paladar duro y puede incluir una porcion del velo del paladar, sin involucrar proceso alveolar ni organos dentarios">Clase III. Implica un defecto en la línea media del paladar duro y puede incluir una porción del velo del paladar, sin involucrar proceso alveolar ni órganos dentarios</option>
-                                        <option value="Clase IV. Es un defecto extenso bilateral anterior, involucra dientes anteriores y posteriores.">Clase IV. Es un defecto extenso bilateral anterior, involucra dientes anteriores y posteriores.</option>
-                                        <option value="Clase V. Defecto bilateral posterior, situado por detras de los dientes remanentes.">Clase V. Defecto bilateral posterior, situado por detrás de los dientes remanentes.</option>
-                                        <option value="Clase VI. Defecto bilateral de la zona anterior sin involucrar dientes posteriores.">Clase VI. Defecto bilateral de la zona anterior sin involucrar dientes posteriores.</option>
+                                        <option value="claseuno">Clase I. Resección quirúrgica clásica del maxilar que abarca paladar duro y dentición hasta la línea media, es unilateral.</option>
+                                        <option value="clasedos">Clase II . Incluye defectos que mantienen la dentición del lado contralateral. Es unilateral posterior que no abarca hasta la línea media.</option>
+                                        <option value="clasetres">Clase III. Implica un defecto en la línea media del paladar duro y puede incluir una porción del velo del paladar, sin involucrar proceso alveolar ni órganos dentarios</option>
+                                        <option value="clasecuatro">Clase IV. Es un defecto extenso bilateral anterior, involucra dientes anteriores y posteriores.</option>
+                                        <option value="clasecinco">Clase V. Defecto bilateral posterior, situado por detrás de los dientes remanentes.</option>
+                                        <option value="claseseis">Clase VI. Defecto bilateral de la zona anterior sin involucrar dientes posteriores.</option>
                                     </select>
                                 </div>
 
 
                                 <!--Si se selecciona DISECCION RADICAL MODIFICADA DE CUELLO, se deben mostrar los siguientes 3 select: LUGAR, TIPO Y NIVEL CERVICAL-->
                                 <div class="col-md-4" id="idlugar">
-                                    <strong>Lugar DRMC </strong>
+                                    <strong>Lugar</strong>
                                     <select name="maxinfra" id="maxinfra" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Bilateral">Bilateral</option>
-                                        <option value="Unilateral">Unilateral</option>
+                                        <option value="bilateral">Bilateral</option>
+                                        <option value="unilateral">Unilateral</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-4" id="idtipo">
-                                    <strong>Tipo DRMC</strong>
+                                    <strong>Tipo</strong>
                                     <select name="maxinfra" id="maxinfra" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Selectiva">Selectiva</option>
@@ -1087,23 +1019,23 @@
                                 <!--SEGUNDO SELECT VISIBLE DE INICIO, RECONSTRUCCIÓN-->
                                 <div class="col-md-6" id="idqreconstruccion">
                                     <strong>*Reconstrucción</strong>
-                                    <select name="reconstruccion" id="reconstruccion" class="form-control">
+                                    <select name="quirurgico" id="quirurgico" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="reconstruccionsi">Sí</option>
+                                        <option value="reconstruccionno">No</option>
                                     </select>
                                 </div>
 
                                 <!--Si selecciona SÍ en reconstrucción, se debe mostrar lo siguiente-->
-                                <div class="col-md-6" id="idtiporeconstruccion">
+                                <div class="col-md-6" id="idnivelcervical">
                                     <strong>Tipo de Reconstrucción</strong>
-                                    <select name="tiporeconstruccion" id="tiporeconstruccion" class="form-control">
+                                    <select name="nivelcervical" id="nivelcervical" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Colgajo Microvascular">Colgajo Microvascular</option>
-                                        <option value="Injerto Oseo Autologo o Cadaverico">Injerto Óseo Autólogo o Cadavérico</option>
-                                        <option value="Material de Osteosintesis">Material de Osteosíntesis</option>
-                                        <option value="Rotacion de Colgajo">Rotación de Colgajo</option>
-                                        <option value="Toma y Aplicacion de Injerto">Toma y Aplicación de Injerto</option>
+                                        <option value="colgajomicro">Colgajo Microvascular</option>
+                                        <option value="injertooseo">Injerto Óseo Autólogo o Cadavérico</option>
+                                        <option value="materialdeosteo">Material de Osteosíntesis</option>
+                                        <option value="rotaciondecolgajo">Rotación de Colgajo</option>
+                                        <option value="tomayaplicaciondeinjertos">Toma y Aplicación de Injerto</option>
                                     </select>
                                 </div>
 
@@ -1116,8 +1048,8 @@
                                     <strong>*Radioterapia</strong>
                                     <select name="radio" id="radio" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Sí">Sí</option>
-                                        <option value="No">No</option>
+                                        <option value="reconstruccionsi">Sí</option>
+                                        <option value="reconstruccionno">No</option>
                                     </select>
                                 </div>
 
@@ -1127,21 +1059,9 @@
                                     <input type="date" id="fecharadio" name="fecharadio" class="form-control">
                                 </div>
 
-
-
-                                <div class="col-md-4" id="idmomentort">
-                                    <strong>Momento RT</strong>
-                                    <select name="moentort" id="momentort" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="Adyuvante">Adyuvante</option>
-                                        <option value="Paliativa">Paliativa</option>
-                                        <option value="Radical">Radical</option>
-                                    </select>
-                                </div>
-
                                 <div class="col-md-4" id="idcomplicaciones">
-                                    <strong>Complicaciones RT</strong>
-                                    <select id="mscomplicaciones" name="mscomplicaciones[]" multiple="multiple" class="form-control">
+                                    <strong>Complicaciones</strong>
+                                    <select name="complicaciones" id="complicaciones" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Caries">Caries</option>
                                         <option value="Disgeusia">Disgeusia</option>
@@ -1160,18 +1080,28 @@
                                     </select>
                                 </div>
 
+                                <div class="col-md-4" id="idmomentort">
+                                    <strong>Momento RT</strong>
+                                    <select name="moentort" id="momentort" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="adyuvante">Adyuvante</option>
+                                        <option value="paliativa">Paliativa</option>
+                                        <option value="radical">Radical</option>
+                                    </select>
+                                </div>
+
                                 <!--AQUI FINALIZAN LOS COMBOS QUE SE MUESTRAN SI SE SELECCIONA SÍ EN RADIOTERAPIA-->
 
                                 <!--AQUI FALTA REVISAR SI ESTOS COMBOS SE VAN A MOSTRAR DESDE UN INICIO O SI DEPENDEN DE UNA SELECCION (TX COMPLICACIONES ORALES, DOSIS, FRACCIONES, TECNICA,OARS DOSIS)-->
 
 
                                 <div class="col-md-3" id="idtxcomplicaciones">
-                                    <strong>Tx Complicaciones</strong>
+                                    <strong>Tx Complicaciones Orales</strong>
                                     <select name="txcomplicaciones" id="txcomplicaciones" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
+                                        <option value="Farmacológico">Farmacológico</option>
+                                        <option value="Laser">Laser</option>
                                     </select>
                                 </div>
 
@@ -1199,38 +1129,34 @@
                                     <strong>Tecnica</strong>
                                     <select name="tecnica" id="tecnica" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="3D Conformal">3D Conformal</option>
-                                        <option value="Braquiterapia">Braquiterapia</option>
-                                        <option value="IMRT">IMRT</option>
+                                        <option value="3D">3D Conformal</option>
+                                        <option value="braquiterapia">Braquiterapia</option>
+                                        <option value="imrt">IMRT</option>
                                     </select>
                                 </div>
 
-
-                                <!--Select multiple-->
                                 <div class="col-md-5" id="idoars">
                                     <strong>OARS Dosis</strong>
                                     <select name="oarsdosis" id="oarsdosis" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
-                                        <option value="Cavidad Oral">Cavidad Oral</option>
-                                        <option value="Cocleas">Cocleas</option>
-                                        <option value="Crsitalinos">Crsitalinos</option>
-                                        <option value="Esofago">Esófago</option>
-                                        <option value="Labios">Labios</option>
-                                        <option value="Laringe">Laringe</option>
-                                        <option value="Mandibula">Mandibula</option>
-                                        <option value="Medula">Médula </option>
-                                        <option value="Nervio Óptico">Nervio Óptico</option>
-                                        <option value="Ojos">Ojos</option>
-                                        <option value="Pared Faringea Posterior">Pared Faringea Posterior</option>
-                                        <option value="Parotidas">Parotidas</option>
-                                        <option value="Sublinguales">Sublinguales</option>
-                                        <option value="Tallo">Tallo</option>
-                                        <option value="Tiroides">Tiroides</option>
+                                        <option value="cavidadoral">Cavidad Oral</option>
+                                        <option value="cocleas">Cocleas</option>
+                                        <option value="cristalinos">Crsitalinos</option>
+                                        <option value="esofago">Esófago</option>
+                                        <option value="labios">Labios</option>
+                                        <option value="laringe">Laringe</option>
+                                        <option value="mandibula">Mandibula</option>
+                                        <option value="medula">Médula </option>
+                                        <option value="nerviooptico">Nervio Óptico</option>
+                                        <option value="ojos">Ojos</option>
+                                        <option value="pared">Pared Faringea Posterior</option>
+                                        <option value="parotidas">Parotidas</option>
+                                        <option value="sublinguales">Sublinguales</option>
+                                        <option value="tallo">Tallo</option>
+                                        <option value="tiroides">Tiroides</option>
                                     </select>
                                 </div>
 
-
-                                <!--DE CADA OARS dosis se debe habilitar dosis max y prom-->
                                 <div class="col-md-2">
                                     <strong>Dosis Máxima</strong>
                                     <input type="number" class="form-control" id="dosismaxima" name="dosismaxima" placeholder="Ingrese...">
@@ -1304,9 +1230,9 @@
                                 <strong>Respuesta al Tratamiento</strong>
                                 <select name="respuestatratamiento" id="respuestatratamiento" class="form-control">
                                     <option value="Sin registro">Sin registro</option>
-                                    <option value="Completa">Completa</option>
-                                    <option value="Nula">Nula</option>
-                                    <option value="Parcial">Parcial</option>
+                                    <option value="completa">Completa</option>
+                                    <option value="nula">Nula</option>
+                                    <option value="parcial">Parcial</option>
                                 </select>
                             </div>
                     </div>
