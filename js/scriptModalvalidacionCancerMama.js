@@ -295,7 +295,7 @@ $(function() {
     $('#fishizrgi').prop("selectedIndex", 0);
 
 })
-function calculaIMC() {
+function calculaIMCCancer() {
 
     let talla = document.getElementById('talla').value;
     let peso = document.getElementById('peso').value;
@@ -306,7 +306,7 @@ function calculaIMC() {
     let calculoimc = peso / limitimcalculo;
     let limitcalculofinal = calculoimc.toFixed(1);
 
-    document.formulario.imc.value = limitcalculofinal;
+    document.formulariocancerdemama.imc.value = limitcalculofinal;
 
 }
 
