@@ -10,7 +10,7 @@ date_default_timezone_set("America/Monterrey");
     $nombrepaciente = $_POST['nombrepaciente'];
     $hora = date("Y-m-d h:i:sa");
         
-        $sql = $conexionCancer->prepare("UPDATE dato_usuario set editopaciente = 0 where id = :id");
+        $sql = $conexionCancer->prepare("UPDATE dato_usuario set abandonopaciente = 1 where id = :id");
             $sql->bindParam(':id',$id, PDO::PARAM_INT);
             $sql->execute();
             
@@ -25,10 +25,8 @@ date_default_timezone_set("America/Monterrey");
 
 echo "<script>swal({
     title: 'Proceso exitoso!',
-    text: 'Edicion desabilitada!',
+    text: 'Edicion habilitada!',
     icon: 'success',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";
@@ -37,8 +35,6 @@ echo "<script>swal({
     title: 'ooho oho proceso fallido!',
     text: 'Error al editar los datos!',
     icon: 'error',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";
@@ -52,7 +48,7 @@ echo "<script>swal({
     $nombrepaciente = $_POST['nombrepaciente'];
      $hora = date("Y-m-d h:i:sa");
         
-     $sql = $conexionCancer->prepare("UPDATE dato_usuario set editopaciente = 0 where id = :id");
+     $sql = $conexionCancer->prepare("UPDATE dato_usuario set abandonopaciente = 1 where id = :id");
      $sql->bindParam(':id',$id, PDO::PARAM_INT);
      $sql->execute();
             
@@ -67,10 +63,8 @@ echo "<script>swal({
 
 echo "<script>swal({
     title: 'Proceso exitoso!',
-    text: 'Edicion desabilitada!',
+    text: 'Edicion habilitada!',
     icon: 'success',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";
@@ -79,8 +73,6 @@ echo "<script>swal({
     title: 'ooho oho proceso fallido!',
     text: 'Error al editar los datos!',
     icon: 'error',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";
@@ -94,7 +86,7 @@ echo "<script>swal({
     $nombrepaciente = $_POST['nombrepaciente'];
      $hora = date("Y-m-d h:i:sa");
         
-     $sql = $conexionCancer->prepare("UPDATE dato_usuario set editopaciente = 0 where id = :id");
+     $sql = $conexionCancer->prepare("UPDATE dato_usuario set abandonopaciente = 1 where id = :id");
      $sql->bindParam(':id',$id, PDO::PARAM_INT);
      $sql->execute();
             
@@ -109,10 +101,8 @@ echo "<script>swal({
 
 echo "<script>swal({
     title: 'Proceso exitoso!',
-    text: 'Edicion desabilitada!',
+    text: 'Edicion habilitada!',
     icon: 'success',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";
@@ -121,8 +111,6 @@ echo "<script>swal({
     title: 'ooho oho proceso fallido!',
     text: 'Error al editar los datos!',
     icon: 'error',
-    timer: 1500,
-                    showConfirmButton: false
     
 });
 </script>";

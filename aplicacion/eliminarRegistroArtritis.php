@@ -150,6 +150,54 @@ echo "<script>swal({
 });
 </script>";
 }
+}else if (isset($_SESSION['artritis'])) {
+    $usernameSesion = $_SESSION['artritis'];
+    date_default_timezone_set("America/Monterrey");
+    $id = $_POST['id'];
+    $artritis = $_POST['artritis'];
+    $nombrepaciente = $_POST['nombrepaciente'];
+     $hora = date("Y-m-d h:i:sa");
+        
+    /* $sql = $conexion2->query("SELECT curp from dato_usuario where id = $id");
+                $row = mysqli_fetch_assoc($sql);
+                $curpusuario = $row['curp'];*/
+    
+                $sql = $conexionCancer->prepare("DELETE from artritispaciente where id_paciente = :id_paciente");
+                $sql->bindParam(':id_paciente',$id, PDO::PARAM_INT);
+                $sql->execute();
+        $sql = $conexionCancer->prepare("DELETE from dato_usuarioartritis where id_usuarioartritis = :id_usuarioartritis");
+            $sql->bindParam(':id_usuarioartritis',$id, PDO::PARAM_INT);
+            $sql->execute();
+    
+            /* $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
+            $sql->bindParam(':curpusuario',$curpusuario, PDO::PARAM_STR);
+            $sql->execute();*/
+            
+            $sql = $conexionCancer->prepare("INSERT INTO registroeliminado(detalleregistro, usuarioelimino, fechahoraelimino, nombrepaciente) values(:detalleregistro, :usuarioelimino, :fechahoraelimino, :nombrepaciente)");
+                $sql->bindParam(':detalleregistro',$artritis, PDO::PARAM_STR);
+                $sql->bindParam(':usuarioelimino',$usernameSesion, PDO::PARAM_STR);
+                $sql->bindParam(':fechahoraelimino',$hora, PDO::PARAM_STR);
+                $sql->bindParam(':nombrepaciente',$nombrepaciente, PDO::PARAM_STR);
+                    $sql->execute();
+                
+            if($sql != false){
+    
+    echo "<script>swal({
+        title: 'Proceso exitoso!',
+        text: 'Datos eliminados!',
+        icon: 'success',
+        
+    });
+    </script>";
+    }else{
+        echo "<script>swal({
+        title: 'ooho oho proceso fallido!',
+        text: 'Error al eliminar los datos!',
+        icon: 'error',
+        
+    });
+    </script>";
+    }
 }
 
 ?>

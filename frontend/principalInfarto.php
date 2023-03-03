@@ -441,6 +441,7 @@
             require 'menu/menuResidentes.php';
 
             ?>
+            
 <article class="card" id="cancer">
             <a href="cancer">
                 <hr id="hrcancermama">
@@ -448,6 +449,23 @@
                 <a id="linkcancer" href="cancer" class="btn btn-warning">Cancer</a>
             </a>
         </article>
+
+
+            <?php
+        }else if (isset($_SESSION['artritis'])) {
+            require 'menu/menuArtritis.php';
+
+            ?>
+            
+<article class="card" id="artritis">
+            <a href="artritis">
+                <hr id="hr7">
+                <p>Artritis</p>
+                <a id="link" href="artritis" class="btn btn-warning">Artritis</a>
+            </a>
+        </article>
+            
+            <br>
 
 
             <?php

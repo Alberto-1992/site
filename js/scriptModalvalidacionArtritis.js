@@ -415,3 +415,17 @@ $(document).ready(function() {
     }
 });
 });
+$(document).ready(function() {
+
+    $('#resultadofib').on('click', function(e) {
+    let valor = parseFloat($("#fib4").val());
+    
+    if(valor >= 0 && valor <= 2.9){
+        $("#resultadofib").val("Fibrosis leve");
+    }else if(valor >= 3 && valor <= 4.9){
+        $("#resultadofib").val("Fibrosis moderada"); 
+    }else if(valor >=5 && valor <= 6){
+        $("#resultadofib").val("Fibrosis severa");  
+    }
+});
+});

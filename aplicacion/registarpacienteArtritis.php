@@ -84,8 +84,8 @@ $artritis = 'Artritis reumatoide';
                                     ));
                             }
                         }
-        $sql = $conexionCancer->prepare("INSERT into laboratoriosartritis(id_laboratorio,plaquetas,frbasal,frnominal,pcr,vitaminadbasal,vitaminadnominal,anticppbasal,anticppnominal,vsg,tgobasal,tgonominal,tgpbasal,tgpnominal,glucosa,colesterol,trigliceridos,id_paciente)
-        values(:id_laboratorio,:plaquetas,:frbasal,:frnominal,:pcr,:vitaminadbasal,:vitaminadnominal,:anticppbasal,:anticppnominal,:vsg,:tgobasal,:tgonominal,:tgpbasal,:tgpnominal,:glucosa,:colesterol,:trigliceridos,:id_paciente)");
+        $sql = $conexionCancer->prepare("INSERT into laboratoriosartritis(id_laboratorio,plaquetas,frbasal,frnominal,pcr,vitaminadbasal,vitaminadnominal,anticppbasal,anticppnominal,vsg,tgobasal,tgonominal,tgpbasal,tgpnominal,glucosa,colesterol,trigliceridos,fib4,resultadofib4,id_paciente)
+        values(:id_laboratorio,:plaquetas,:frbasal,:frnominal,:pcr,:vitaminadbasal,:vitaminadnominal,:anticppbasal,:anticppnominal,:vsg,:tgobasal,:tgonominal,:tgpbasal,:tgpnominal,:glucosa,:colesterol,:trigliceridos,:fib4,:resultadofib4,:id_paciente)");
                     $sql->execute(array(
                         ':id_laboratorio'=>uniqid('hraei'),
                         ':plaquetas'=>$plaquetas,
@@ -104,6 +104,8 @@ $artritis = 'Artritis reumatoide';
                         ':glucosa'=>$glucosa,
                         ':colesterol'=>$colesterol,
                         ':trigliceridos'=>$trigliceridos,
+                        ':fib4'=>$fib4,
+                        ':resultadofib4'=>$resultadofib,
                         ':id_paciente'=>$id_usuario
                     ));
         $sql = $conexionCancer->prepare("INSERT into usghepaticoartritis(id_usg,id_paciente,detalleusghepatico,hallazgousg,clasificacionesteatosis)

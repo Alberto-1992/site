@@ -826,10 +826,6 @@
                                     </div><br><br><br>
 
 
-
-
-
-
                                     <!-- Si el usuario selecciona FEVI, se habilitan las siguientes opciones-->
                                     <div class="col-md-3" id="">
                                         <strong>FEVI</strong>

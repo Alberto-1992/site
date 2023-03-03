@@ -129,7 +129,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
             };
         </script>
         <?php session_start();
-                if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { 
+                if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico']) or isset($_SESSION['artritis'])) { 
                     if($dataRegistro['editopaciente'] == 0 ) {?>
                     
             <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
@@ -147,8 +147,8 @@ $sdai = "<span class='obesidad1'> $sdaialta";
                             background: #EBEBEB;
                     }
                 </style>
- 
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonales();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonales();" <?php } }?>>
 
 
 
@@ -203,7 +203,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
 
 
 <!--Inicia Antecedentes Personales Patológicos-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }?>>
 
     <div class="containerr3">Antecedentes Personales Patológicos</div>
     <tr>
@@ -217,7 +217,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 </table>
 <!--Inicia Antecedentes Personales Patológicos-->
 <!--Inicia LABORATORIOS-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }?>>
     <div class="containerr3">Laboratorios</div>
 
     <tr>
@@ -299,6 +299,14 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
         <th id="th">Trigliceridos:</th>
         <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
     </tr>
+    <tr>
+        <th id="th">FIB 4:</th>
+        <td id="td"><?php echo $dataRegistro['fib4'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Resultado fib 4:</th>
+        <td id="td"><?php echo $dataRegistro['resultadofib4'] ?></td>
+    </tr>
 </table>
 <!--FINALIZA SECCIÓN DE LABORATORIOS-->
 
@@ -307,7 +315,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
 
 <!-- INCIA SECCIÓN USG HEPÁTICO-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="artritisusghepatic();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="artritisusghepatic();" <?php } }?>>
     <div class="containerr3">USG HEPÁTICO</div>
 
     <tr>
@@ -463,7 +471,10 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
     </tr>
 </table>
 <!-- INICIA SECCIÓN TRATAMIENTO -->
+<?php
 
+require 'modals/edicionArtritis.php';
+?>
 
 
 
@@ -588,4 +599,16 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
             });
         }
     }
+function editardatospersonales() {
+    $("#artritisdatospersonales").modal('show');
+}
+function editarantecedentespato() {
+    $("#artritisantecedentespato").modal('show');
+}
+function editarlaboratoriosartritis() {
+    $("#artritislaboratorios").modal('show');
+}
+function artritisusghepatic() {
+    $("#artritisusghepatico").modal('show');
+}
 </script>

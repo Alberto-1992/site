@@ -1,24 +1,5 @@
 <?php session_start();
 error_reporting(0);
-/*if(isset($_SESSION['usuarioDatos'])) {
-    header('location: index');
-}
-if(isset($_SESSION['usuarioAdmin'])) {
-    header('location: index');
-}
-if(isset($_SESSION['usuarioJefe'])) {
-    header('location: index');
-}
-if(isset($_SESSION['usuarioMedico'])) {
-    header('location: index');
-}
-if(isset($_SESSION['rh'])) {
-    header('location: indexRh');
-}
-if(isset($_SESSION['controlados'])) {
-    header('location: indexControlados');
-}
-*/
 $error = '';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -114,20 +95,20 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
             if ($resultado3 != false){
             $_SESSION['residentes'] = $correo;
         header('location: principal');
-        /*
+        
     }else{
-        $statement4 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :usuario  AND clave_acceso = :password and rol_acceso = 4');
-        $statement4->execute(array(
+        $statement6 = $conexion->prepare('SELECT correo_electronico, clave_acceso, rol_acceso from login where correo_electronico = :usuario  AND clave_acceso = :password and rol_acceso = 12');
+        $statement6->execute(array(
             
             ':usuario' => $correo,
             ':password' => $password
         ));
-        $resultado4 = $statement4->fetch();
+        $resultado6 = $statement6->fetch();
         
-            if ($resultado4 != false){
-            $_SESSION['controlados'] = $correo;
-        header('location: controlados');
-            */
+            if ($resultado6 != false){
+            $_SESSION['artritis'] = $correo;
+        header('location: principal');
+            
     }else{
         $statement4 = $conexion->prepare('SELECT correo, rol, password FROM usuarioslogeojefes WHERE correo= :correo AND password = :password and rol = :rol and eliminado = :eliminado');
         $statement4->execute(array(
@@ -170,6 +151,7 @@ for( $i=0 ; $i < strlen($correo) ; $i++ ) {
                 }
         }
     }   
+}
 }
     /* }
     }

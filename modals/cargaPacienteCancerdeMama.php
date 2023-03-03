@@ -1,7 +1,6 @@
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="cancerdeMama">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="js/getCatalogos.js"></script>
     <!--la siguiente liga es para el icon de Agregar persona que se muestra en el Modal CargarPacienteArtritis-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -15,7 +14,7 @@
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
             <span class="material-symbols-outlined">
-                    person_add
+                    📝
                 </span>
 
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
@@ -32,11 +31,11 @@
                             <div class="form-header">
                                 <h3 class="form-title"
                                     >
-                                    FICHA DE DATOS.</h3>
+                                    DATOS DEL PACIENTE 👩🏻</h3>
 
                             </div>
 
-                            <form name="formulariocancerdemama" id="formulariocancerdemama" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formulariocancerdemama" id="formulariocancerdemama" onsubmit="return limpiar();" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
@@ -86,7 +85,7 @@
                                     <div class="col-md-3">
                                         <strong>CURP</strong>
                                         <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value=""
-                                            onblur="curp2date();" minlength="18" maxlength="18" required onkeypress="return soloLetras(event);" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
+                                            onblur="curp2dateCancer();" minlength="18" maxlength="18" required onkeypress="return soloLetras(event);" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
                                             <datalist id="curpusuario">
                                             <option value="">Seleccione</option>
                                             <?php 
@@ -103,7 +102,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Nombre Completo</strong>
-                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdad();"
+                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadCancer();"
                                             type="text" class="form-control" value="" required>
                                     </div>
                                     <div class="col-md-3">
@@ -116,7 +115,7 @@
 
                                         </select>
                                     </div>
-                                   
+                                
                                     <div class="col-md-3">
                                         <strong>Discapacidad</strong>
                                         <select name="discapacidad" id="discapacidad" class="form-control">
@@ -131,7 +130,7 @@
                                         <select id="escolaridad" name="escolaridad" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
-				    require 'conexionInfarto.php';
+				    require 'conexionCancer.php';
 				        $query = $conexionCancer->prepare("SELECT id_escolaridad, gradoacademico FROM escolaridad");
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -145,7 +144,7 @@
 
                                     <div class="col-md-3">
                                         <strong>Fecha de nacimiento</strong>
-                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2date();"
+                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2dateCancer();"
                                             class="form-control" readonly>
                                     </div>
                                     <div class="col-md-2">
@@ -155,13 +154,13 @@
 
                                     <div class="col-md-2">
                                         <strong>Sexo</strong>
-                                        <input type="text" class="form-control" id="sexo" onclick="curp2date();"
+                                        <input type="text" class="form-control" id="sexo" onclick="curp2dateCancer();"
                                             name="sexo" readonly>
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Raza</strong>
-                                        <input type="text" class="form-control" id="raza" onclick="curp2date();"
+                                        <input type="text" class="form-control" id="raza" onclick="curp2dateCancer();"
                                             name="raza" value="Sin registro">
 
                                     </div>
@@ -197,12 +196,12 @@
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="peso"
-                                            onblur="calculaIMC();" name="peso" required>
+                                            onblur="calculaIMCCancer();" name="peso" required>
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>IMC</strong>
-                                        <input type="text" class="form-control" id="imc" onblur="calculaIMC();"
+                                        <input type="text" class="form-control" id="imc" onblur="calculaIMCCancer();"
                                             name="imc" value="" readonly>
 
                                     </div>
@@ -264,7 +263,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES HEREDOFAMILIARES</strong>
+                                        <strong id="titulos">ANTECEDENTES HEREDOFAMILIARES 👨‍👩‍👦‍👦</strong>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Cancer</strong>
@@ -306,7 +305,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES GINECOOBSTETRICOS</strong>
+                                        <strong id="titulos">ANTECEDENTES GINECOOBSTETRICOS 🤰🏻</strong>
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Menarca</strong>
@@ -416,7 +415,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS</strong>
+                                        <strong id="titulos">ANTECEDENTES PERSONALES PATOLOGICOS 🏥</strong>
                                     </div>
                                     <!--<div class="col-md-12">
                                         <strong>Antecedentes</strong>
@@ -460,7 +459,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">ATENCIÓN CLINICA</strong>
+                                        <strong id="titulos">ATENCIÓN CLINICA 🩺</strong>
                                     </div>
 
                                     <div class="col-md-3">
@@ -648,7 +647,7 @@
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">HISTOPATOLOGIA</strong>
+                                        <strong id="titulos">HISTOPATOLOGIA 🔬</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -871,7 +870,7 @@
                                 <!--inicia mama derecha inmuno-->
                                     <div class="col-md-12"
                                         style="text-align: center; color: blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">INMUNOHISTOQUIMICA</strong>
+                                        <strong id="titulos">INMUNOHISTOQUIMICA 🕳</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -1263,7 +1262,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">MOLECULAR</strong>
+                                        <strong id="titulos">MOLECULAR 🧬</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione la mama</strong>
@@ -1558,7 +1557,7 @@
                                     
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">TRATAMIENTO</strong>
+                                        <strong id="titulos">TRATAMIENTO 💊</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>QUIRURGICO</strong>
@@ -1702,7 +1701,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">QUIMIOTERAPIA</strong>
+                                        <strong id="titulos">QUIMIOTERAPIA 💉</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>QUIMIOTERAPIA</strong>
@@ -1922,7 +1921,7 @@
 
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">RADIOTERAPIA</strong>
+                                        <strong id="titulos">RADIOTERAPIA ⚠️</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>RADIOTERAPIA</strong>
@@ -1952,7 +1951,7 @@
                                     </div>
                                     <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">BRAQUITERAPIA</strong>
+                                        <strong id="titulos">BRAQUITERAPIA ⭕️</strong>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>BRAQUITERAPIA</strong>
@@ -1970,7 +1969,7 @@
                                 
                                 <div class="col-md-12"
                                         style="text-align: center; color:blueviolet; background-color:antiquewhite; margin-top: 5px;">
-                                        <strong id="titulos">DEFUNCIÓN</strong>
+                                        <strong id="titulos">DEFUNCIÓN 💀</strong>
                                     </div>
                                     
                                      <fieldset class="col-md-2">

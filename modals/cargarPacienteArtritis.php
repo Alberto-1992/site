@@ -17,7 +17,7 @@
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalArtritis">
                 <span class="material-symbols-outlined">
-                    person_add
+                    📝
                 </span>
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
             </div>
@@ -32,7 +32,7 @@
                                     color:aliceblue  ;
                                     background-color:#A9DFBF;
                                     margin-top: 5px;">
-                                    DATOS DEL PACIENTE</h4>
+                                    DATOS DEL PACIENTE 🙍🏻‍♂️</h4>
                             </div>
 
                             <form name="formularioartritis" id="formularioartritis" onSubmit="return limpiar()" autocomplete="off">
@@ -149,7 +149,7 @@
                                     <!--FINALIZA FORMULARIO DE DATOS PERSONALES-->
                                     <!--Inicia formulario de Antecedentes Personales Patológicos-->
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
-                                        ANTECEDENTES PERSONALES PATOLÓGICOS
+                                        ANTECEDENTES PERSONALES PATOLÓGICOS 🏥
                                     </div>
 
                                     <div class="col-md-12">
@@ -170,7 +170,7 @@
                                     <!--Inicia sección de Laboratorios, aquí el usuario deberá poder capturar los valores de cada estudio realizado al paciente-->
                                     <div class="col-md-12">
                                         <div class="form-title" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 18px;">
-                                            LABORATORIOS
+                                            LABORATORIOS 🧪
                                         </div>
                                     </div>
 
@@ -269,18 +269,23 @@
                                         <input type="number" step="any" class="form-control" id="glucosa" name="glucosa" >
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <strong>Colesterol</strong>
                                         <input type="number" step="any" class="form-control" id="colesterol" name="colesterol" >
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <strong>Trigliceridos</strong>
                                         <input type="number" step="any" class="form-control" id="trigliceridos" name="trigliceridos">
                                     </div>
-                                    <div class="col-md-2">
-                                        <strong>FIB 4</strong>
-                                        <input type="number" step="any" class="form-control" id="fib4" name="fib4" readonly>
+                                    <div class="col-md-3">
+                                        <i><a sytle="font-size: 7px;" href="https://www.hepatitisc.uw.edu/page/clinical-calculators/fib-4" target="_blank">Fib 4</a></i>
+                                        <input type="number" step="any" class="form-control" id="fib4" name="fib4">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <strong id="calcularresultado">Resultado FIB 4</strong>
+                                        <input type="text" class="form-control"  id="resultadofib" value="" name="resultadofib" readonly>
+
                                     </div>
                                     <!--Finaliza sección de Laboratorio-->
 
@@ -290,7 +295,7 @@
 
                                     <!--Inicia sección USG HEPÁTICO-->
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
-                                        USG HEPÁTICO
+                                        USG HEPÁTICO 🖥
                                     </div>
 
                                     <!-- Los siguientes tres select son de selección simple-->
@@ -334,7 +339,7 @@
 
                                     <!--Inicia la sección Clinica-->
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
-                                        CLINICA
+                                        CLINICA 🩺
                                     </div>
 
                                     <div class="col-md-4">
@@ -393,7 +398,7 @@
 
                                     <!-- Inicia sección Tratamiento-->
                                     <div class="col-md-12" style="text-align: center; color:aliceblue; background-color:#A9DFBF; margin-top: 5px; font-size: 17px;">
-                                        TRATAMIENTO
+                                        TRATAMIENTO 💊
                                     </div>
 
                                     <!-- si selecciona SÍ en el medicamento, se debe abrir el campo de "Dosis Semanal":-->
@@ -486,7 +491,7 @@
 
                                     <div class="col-md-2">
                                         <strong>
-                                            Biológico</strong>
+                                            Biológico </strong>
                                         <select name="biologico" id="biologico" class="form-select" onchange="Biologico();">
                                             <option value="0">Seleccione...</option>
                                             <option value="si">Sí</option>

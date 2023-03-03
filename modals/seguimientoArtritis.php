@@ -1,13 +1,13 @@
-<div id="seguimientoArtritis" class="modal fade" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+<div id="seguimientoArtritis" class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
     <script src="js/enviacurp.js"></script>
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
 
         <!-- Modal content-->
-        <div class="modal-content" style="width: 950px; height: auto; color:black; left: 50%; transform: translate(-50%); ">
+        <div class="modal-content">
 
 
             <div class="modal-header" id="cabeceraModalArtritis">
@@ -428,13 +428,7 @@
                                             <option value="Sin apego">Sin Apego</option>
                                         </select>
                                     </div>
-
-
-
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
+                                    <br><br><br><br>
 
                                     <!--Botón Guardar y Cancelar-->
                                     <input type="submit" value="Registrar" style="width: 170px; 
@@ -447,9 +441,6 @@
                                     text-decoration: none; 
                                     border: none; 
                                     border-radius: 15px;">
-
-
-
                                     <input type="button" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; 
                                     height: 27px; 
                                     color: white; 

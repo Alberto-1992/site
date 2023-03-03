@@ -82,6 +82,22 @@
                                 echo "<script>alert('No tienes acceso a este apartado');window.history.back();
                                 </script>;";
                             }
+                        }else if(isset($_SESSION['artritis'])){
+                            $usernameSesion = $_SESSION['artritis'];
+                            require '../cisfa/conexion.php';
+                            $statement = $conexion->prepare("SELECT correo_electronico, nombre_trabajador, rol_acceso FROM login WHERE correo_electronico= :correo_electronico AND rol_acceso = :rol_acceso");
+                                $statement->execute(array(
+                                        ':correo_electronico' => $usernameSesion,
+                                        ':rol_acceso'=>12
+                                    ));
+                                    $rw = $statement->fetch();
+                                    if($rw != false){
+                                        $_SESSION['artritis'] = $usernameSesion;
+                                            require 'frontend/principalInfarto.php';
+                                    }else{
+                                        echo "<script>alert('No tienes acceso a este apartado');window.history.back();
+                                        </script>;";
+                                    }
     }else{
         header ('location: index');
     }
