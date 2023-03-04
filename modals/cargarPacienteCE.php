@@ -226,19 +226,20 @@
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione los Factores</strong>
-                                        <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control">
-
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = $conexionCancer->prepare("SELECT * FROM factor_riesgocombo");
-                                            $query->execute();
-                                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                                            while ($row = $query->fetch()) { ?>
-                                                <option value="<?php echo $row['descripcion_factor']; ?>">
-                                                    <?php echo $row['descripcion_factor']; ?></option>
-                                            <?php } ?>
-
-
+                                        <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control" required>
+                                                <option value="Ninguna">Ninguna</option>
+                                                <option value="Hiperlipidemia">Hiperlipidemia</option>
+                                                <option value="Cardiomiopatia de takotsubo">Cardiomiopatia de takotsubo</option>
+                                                <option value="Diabetes">Diabetes</option>
+                                                <option value="Hipertensión">Hipertensión</option>
+                                                <option value="Tabaquismo">Tabaquismo</option>
+                                                <option value="Enfermedad renal cronica">Enfermedad renal cronica</option>
+                                                <option value="Hiperuricemia">Hiperuricemia</option>
+                                                <option value="Obesidad">Obesidad</option>
+                                                <option value="IAM previo">IAM previo</option>
+                                                <option value="Revascularización cardiaca previa">Revascularización cardiaca previa</option>
+                                                <option value="Enfermedad multivaso">Enfermedad multivaso</option>
+                                                <option value="Ectasia coronaria">Ectasia coronaria</option>
                                         </select>
                                     </div><br>
 
@@ -923,7 +924,8 @@
 
                                     <div class="col-md-6">
                                         <strong>Seleccione las Complicaciones</strong>
-                                        <select id="mscancer" name="mscomplicacion[]" multiple="multiple" class="form-control">
+                                        <select id="mscancer" name="mscomplicacion[]" multiple="multiple" class="form-control" required>
+                                            <option value="Ninguna">Ninguna</option>
                                             <option value="arritmia">Arritmia</option>
                                             <option value="Bloqueo Conduccion">Bloqueo Conducción</option>
                                             <option value="Disección Aortica">Disección Aórtica</option>

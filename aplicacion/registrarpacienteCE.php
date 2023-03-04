@@ -130,7 +130,7 @@ $hoy = date("d-m-Y");
                                             ':revascularizacionangio'=>$tratamientovaso,
                                             ':procedimientoexitosoangio'=>$procedimientoexitoso,
                                             ':airbusangio'=>$airbus,
-                                            ':resultadoairbusangio'=>$resulairbus,
+                                            ':resultadoairbusangio'=>$resultadoirbus,
                                             ':octangio'=>$oct,
                                             ':id_pacienteinfarto'=>$identi
                                         ));
