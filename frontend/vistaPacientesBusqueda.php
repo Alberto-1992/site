@@ -322,6 +322,63 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionfrinfarto'].'--'.'';} ?></td>
     <td id="td"><?php echo $dataRegistro['octangio'] ?></td>
 </tr>
 </table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">LITOTRICIA INTRACORONARIA</div>
+<tr>
+    <th id="th">SCHOCKWAVE C2</th>
+    <td id="td"><?php echo $dataRegistro['schockwaveangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Resultado de SCHOCKWAVE C2</th>
+    <td id="td"><?php echo $dataRegistro['resultadoairbuslito'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">MARCAPASOS TEMPORAL</div>
+<tr>
+    <th id="th">Marca Pasos</th>
+    <td id="td"><?php echo $dataRegistro['marcapasostratamiento'] ?></td>
+</tr>
+<tr>
+    <th id="th">Soporte Ventricular</th>
+    <td id="td"><?php echo $dataRegistro['soporteventricular'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">COMPLICACIONES</div>
+<tr>
+    <th id="th">Arritmia</th>
+    <td id="td"><?php echo $dataRegistro['arritimia'] ?></td>
+</tr>
+<tr>
+    <th id="th">Bloqueo AV</th>
+    <td id="td"><?php echo $dataRegistro['bloqueoav'] ?></td>
+</tr>
+<tr>
+    <th id="th">Extrasístoles Ventriculares</th>
+    <td id="td"><?php echo $dataRegistro['extrasistolesventri'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">SEGUIMIENTO POSTPROCEDIMIENTO</div>
+<tr>
+    <th id="th">Fecha de Egreso</th>
+    <td id="td"><?php echo $dataRegistro['fechaegresopost'] ?></td>
+</tr>
+<tr>
+    <th id="th">Causa defunción</th>
+    <td id="td"><?php echo $dataRegistro['causadefuncionpost'] ?></td>
+</tr>
+<tr>
+    <th id="th">Fecha Defunción</th>
+    <td id="td"><?php echo $dataRegistro['fechadefuncionpost'] ?></td>
+</tr>
+
+</table>
 </div>
 
 
