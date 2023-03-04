@@ -1,4 +1,4 @@
-function Edad(FechaNacimiento) {
+function Edadinfarto(FechaNacimiento) {
 
     var fechaNace = new Date(FechaNacimiento);
     var fechaActual = new Date()
@@ -18,15 +18,15 @@ function Edad(FechaNacimiento) {
 
 }
 
-function calcularEdad() {
+function calcularEdadinfarto() {
     var fecha = document.getElementById('fecha').value;
 
 
-    var edad = Edad(fecha);
-    document.formulario.edad.value = edad;
+    var edad = Edadinfarto(fecha);
+    document.formularioinfarto.edad.value = edad;
 
 }
-function curp2date(curp) {
+function curp2dateinfarto(curp) {
     var miCurp = document.getElementById('curp').value.toUpperCase();
     var sexo = miCurp.substr(-8, 1);
     var m = miCurp.match(/^\w{4}(\w{2})(\w{2})(\w{2})/);
@@ -35,11 +35,11 @@ function curp2date(curp) {
     if (anyo < 1940) anyo += 100;
     var mes = parseInt(m[2], 10) - 1;
     var dia = parseInt(m[3], 10);
-    document.formulario.fecha.value = (new Date(anyo, mes, dia));
+    document.formularioinfarto.fecha.value = (new Date(anyo, mes, dia));
     if (sexo == 'M') {
-        document.formulario.sexo.value = 'Femenino';
+        document.formularioinfarto.sexo.value = 'Femenino';
     } else if (sexo == 'H') {
-        document.formulario.sexo.value = 'Masculino';
+        document.formularioinfarto.sexo.value = 'Masculino';
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }
@@ -79,7 +79,7 @@ $(function() {
     // $('#diag').prop("hidden", true);
 })
 
-function calculaIMC() {
+function calculaIMCinfarto() {
 
     let talla = document.getElementById('talla').value;
     let peso = document.getElementById('peso').value;
@@ -90,7 +90,7 @@ function calculaIMC() {
     let calculoimc = peso / limitimcalculo;
     let limitcalculofinal = calculoimc.toFixed(1);
 
-    document.formulario.imc.value = limitcalculofinal;
+    document.formularioinfarto.imc.value = limitcalculofinal;
 
 }
 

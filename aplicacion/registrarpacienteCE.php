@@ -1,6 +1,6 @@
 <?php
 include("../conexionCancer.php");
-date_default_timezone_set('America/Mexico_City');
+date_default_timezone_set('America/Monterrey');
 $hoy = date("d-m-Y");
     extract($_POST);
 		
@@ -10,221 +10,179 @@ $hoy = date("d-m-Y");
 	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO
 
     
-	$sql = $conexionCancer->prepare("INSERT into dato_usuario(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, raza, estado, municipio,  year) 
+	$sql = $conexionCancer->prepare("INSERT into dato_personalinfarto(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, raza, estado, municipio,  year) 
     
                                     values (:curp, :nombrecompleto, :poblacionindigena, :escolaridad, :fechanacimiento, :edad, :sexo, :raza, :estado, :municipio, :year)");
-                    
-                    $sql->bindParam(':curp', $curp, PDO::PARAM_STR, 25);
-                    $sql->bindParam(':nombrecompleto',$nombrecompleto, PDO::PARAM_STR, 100);
-                    $sql->bindParam(':poblacionindigena',$poblacionindigena, PDO::PARAM_STR, 100);
-                    $sql->bindParam(':escolaridad',$escolaridad, PDO::PARAM_STR, 100);
-                    $sql->bindParam(':fechanacimiento',$fecha, PDO::PARAM_STR); 
-                    $sql->bindParam(':edad',$edad, PDO::PARAM_INT); 
-                    $sql->bindParam(':sexo',$sexo, PDO::PARAM_STR, 10); 
-                    $sql->bindParam(':raza',$raza, PDO::PARAM_STR, 100); 
-                    $sql->bindParam(':estado',$cbx_estado, PDO::PARAM_INT); 
-                    $sql->bindParam(':municipio',$cbx_municipio, PDO::PARAM_INT); 
-                    $sql->bindParam(':year',$hoy, PDO::PARAM_STR);
-                            $sql->execute(); 
-            $query = $conexion2->query("SELECT id from dato_usuario where curp = '".$curp."'");
-                    $rows = mysqli_fetch_assoc($query);
-
-                    $id_carga = $rows['id'];
-                $query2 = $conexionCancer->prepare("INSERT into tratamiento(killipkimball, fevi, choquecardiogenico, revascularizacionprevia, localizacion, caracteristicasdolor, 
-                iniciosintomas, primercontacto, puertabalon, trombolisis, fechainiciotrombolisis, fechaterminotrombolisis, tipofibrinolitico, tiempoisquemiatotal, revascularizacion, 
-                diseccion, iam_periprocedimiento, complicaciones, flujo_microvascular_tmp, flujo_final_tfj, trombosis_definitiva, marcapasos_temporal, estancia_hospitalaria, reestenosis_instrastent, 
-                reehospitalizacion_one_year, escalas_riesgo, iam_tres_years, cruc_tres_years, defuncion, causadefuncion, id_paciente, identificador, 
-                peso, talla, imc, electroconcambios, seguimiento)
-                                    values(:killipkimball, 
-                                    :fevi,
-                                    :choquecardiogenico,
-                                    :revascularizacionprevia,
-                                    :localizacion, 
-                                    :caracteristicasdolor,
-                                    :iniciosintomas, 
-                                    :primercontacto, 
-                                    :puertabalon, 
-                                    :trombolisis, 
-                                    :fechainiciotrombolisis, 
-                                    :fechaterminotrombolisis, 
-                                    :tipofibrinolitico,
-                                    :tiempoisquemiatotal,
-                                    :revascularizacion,
-                                    :diseccion,
-                                    :iam_periprocedimiento,
-                                    :complicaciones,
-                                    :flujo_microvascular_tmp,
-                                    :flujo_final_tfj,
-                                    :trombosis_definitiva,
-                                    :marcapasos_temporal,
-                                    :estancia_hospitalaria,
-                                    :reestenosis_instrastent,
-                                    :reehospitalizacion_one_year,
-                                    :escalas_riesgo,
-                                    :iam_tres_years,
-                                    :cruc_tres_years, 
-                                    :defuncion,
-                                    :causadefuncion, 
-                                    :id_paciente, 
-                                    :identificador, 
-                                    :peso, 
-                                    :talla, :imc, :electroconcambios, 'inicial')");
-                        $query2->execute(array(
-                            ':killipkimball'=>$killip,
-                            ':fevi'=>$fevi,
-                            ':choquecardiogenico'=>$choque,
-                            ':revascularizacionprevia'=>$revascularizacionprevia,
-                            ':localizacion'=>$localizacion,
-                            ':caracteristicasdolor'=>$caractipicasatipicas,
-                            ':iniciosintomas'=>$iniciotrombolisis,
-                            ':primercontacto'=>$primercontacto,
-                            ':puertabalon'=>$puertabalon,
-                            ':trombolisis'=>$trombolisis,
-                            ':fechainiciotrombolisis'=>$iniciotrombolisis,
-                            ':fechaterminotrombolisis'=>$finalizotrombolisis,
-                            ':tipofibrinolitico'=>$fibrinoliticos,
-                            ':tiempoisquemiatotal'=>$tiempoisquemia,
-                            ':revascularizacion'=>$revascularizacion,
-                            ':diseccion'=>$diseccion,
-                            ':iam_periprocedimiento'=>$iamperiprocedimiento,
-                            ':complicaciones'=>$complicaciones,
-                            ':flujo_microvascular_tmp'=>$flujomicrovasculartmp,
-                            ':flujo_final_tfj'=>$flujofinaltfg,
-                            ':trombosis_definitiva'=>$trombosisdefinitiva,
-                            ':marcapasos_temporal'=>$marcapasostemporal,
-                            ':estancia_hospitalaria'=>$estanciahospitalaria,
-                            ':reestenosis_instrastent'=>$reesentosis,
-                            ':reehospitalizacion_one_year'=>$rehospitalizacion,
-                            ':escalas_riesgo'=>$escaladeriesgo,
-                            ':iam_tres_years'=>$iamtresyears,
-                            ':cruc_tres_years'=>$cruc,
-                            ':defuncion'=>$defuncion,
-                            ':causadefuncion'=>$causadefuncion,
-                            ':id_paciente'=>$id_carga,
-                            ':identificador'=> $identificador,
-                            ':peso'=>$peso,
-                            ':talla'=>$talla, 
-                            ':imc'=>$imc, 
-                            ':electroconcambios'=>$electrocardio
-                            ));
-
-                    $sql_s = $conexionCancer->prepare("INSERT into paraclinicos(
-                        ck, 
-                        ckmb, 
-                        troponinas, 
-                        glucosa, 
-                        urea, 
-                        creatinina, 
-                        colesterol, 
-                        trigliceridos, 
-                        acidourico, 
-                        hbglucosilada, 
-                        proteinas, 
-                        colesteroltotal, 
-                        ldl, 
-                        hdl, 
-                        id_paciente)
-                                    values(
-                                        :ck,
-                                        :ckmb,
-                                        :troponinas,
-                                        :glucosa,
-                                        :urea,
-                                        :creatinina,
-                                        :colesterol,
-                                        :trigliceridos,
-                                        :acidourico,
-                                        :hbglucosilada,
-                                        :proteinas,
-                                        :colesteroltotal,
-                                        :ldl,
-                                        :hdl,
-                                        :id_paciente)");     
-                        $sql_s->execute(array(
-                            ':ck'=>$ck, 
-                            ':ckmb'=>$ckmb, 
-                            ':troponinas'=>$troponinas, 
-                            ':glucosa'=>$glucosa, 
-                            ':urea'=>$urea, 
-                            ':creatinina'=>$creatinina, 
-                            ':colesterol'=>$colesterol, 
-                            ':trigliceridos'=>$trigliceridos, 
-                            ':acidourico'=>$acidourico, 
-                            ':hbglucosilada'=>$hbglucosilada, 
-                            ':proteinas'=>$proteinas, 
-                            ':colesteroltotal'=>$colesterol, 
-                            ':ldl'=>$ldl, 
-                            ':hdl'=>$hdl, 
-                            ':id_paciente'=>$id_carga
-
-
-                        ));
-                        
-                        
-                        $checked_contador = count($check_lista);
-                //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                // Bucle para almacenar y visualizar valores activados checkbox.
-                foreach($check_lista as $seleccion) {
-                    $sql = $conexionCancer->prepare("INSERT into factores_riesgo(nombrefactor, id_paciente) 
-    
-                    values ('".$seleccion."', '".$id_carga."')");
-
                     $sql->execute(array(
-                        ':nombrefactor'=>$seleccion,
-                        ':id_paciente'=>$id_carga
+                                ':curp'=>$curp,
+                                ':nombrecompleto'=>$nombrecompleto, 
+                                ':poblacionindigena'=>$poblacionindigena, 
+                                ':escolaridad'=>$escolaridad, 
+                                ':fechanacimiento'=>$fecha,
+                                ':edad'=>$edad, 
+                                ':sexo'=>$sexo,
+                                ':raza'=>$raza,
+                                ':estado'=>$cbx_estado, 
+                                ':municipio'=>$cbx_municipio, 
+                                ':year'=>$hoy
+                            )); 
 
-                    ));
-                }
-                $checked_contador2 = count($check_lista2);
-                //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                // Bucle para almacenar y visualizar valores activados checkbox.
-                foreach($check_lista2 as $seleccion2) {
-                    $sql = $conexionCancer->prepare("INSERT into caracteristicasdolortipicas(descripcioncaracteristica, id_paciente) 
-    
-                    values ('".$seleccion2."', '".$id_carga."')");
+                        $sql = $conexionCancer->prepare("SELECT id from dato_personalinfarto where curp = :curp");
+                                $sql->execute(array(
+                                    ':curp'=>$curp
+                                ));
+                                $row = $sql->fetch();
+                                $identi = $row['id'];
+                        $sql = $conexionCancer->prepare("INSERT into infartopaciente(descripcioninfarto, id_pacienteinfarto)
+                                values(:descripcioninfarto,:id_pacienteinfarto)");
+                                    $sql->execute(array(
+                                        ':descripcioninfarto'=>$consinelevacion,
+                                        ':id_pacienteinfarto'=>$identi
+                                    ));
+                                    $msfactoresinfarto;
+                                    if(is_array($msfactoresinfarto) || is_object($msfactoresinfarto)){       
+                                        foreach($msfactoresinfarto as $factorinfarto) {
+                                            $sql_s = $conexionCancer->prepare("INSERT into factoresriesgoinfarto(descripcionfrinfarto, id_pacienteinfarto) 
+                            
+                                            values(:descripcionfrinfarto, :id_pacienteinfarto)");
+                        
+                                            $sql_s->execute(array(
+                                                ':descripcionfrinfarto'=>$factorinfarto,
+                                                ':id_pacienteinfarto'=>$identi
+                        
+                                            ));
+                                        }
+                                    }
+                                    $sql = $conexionCancer->prepare("INSERT into somatometriainfarto(id_somatometriainfa,id_pacienteinfarto,fc,pa,tallainfarto,pesoinfarto,imcinfarto)
+                                            values(:id_somatometriainfa,:id_pacienteinfarto,:fc,:pa,:tallainfarto,:pesoinfarto,:imcinfarto)");
+                                                $sql->execute(array(
+                                                    ':id_somatometriainfa'=>uniqid('hraei'),
+                                                    ':id_pacienteinfarto'=>$identi,
+                                                    ':fc'=>$frecuenciacardiaca,
+                                                    ':pa'=>$presionarterial,
+                                                    ':tallainfarto'=>$talla,
+                                                    ':pesoinfarto'=>$peso,
+                                                    ':imcinfarto'=>$imc
+                                                ));
+                                    $sql = $conexionCancer->prepare("INSERT into atencionclinicainfarto(id_atencionclinica,iniciosintomas,caracterisiticasdolor,iniciotriage,terminotriage,electrocardiograma,localizacionelectro,consinelevacion,macehospi,killipkimball,id_pacienteinfarto)
+                                            value(:id_atencionclinica,:iniciosintomas,:caracterisiticasdolor,:iniciotriage,:terminotriage,:electrocardiograma,:localizacionelectro,:consinelevacion,:macehospi,:killipkimball,:id_pacienteinfarto)");
+                                                $sql->execute(array(
+                                                    ':id_atencionclinica'=>uniqid('hraei'),
+                                                    ':iniciosintomas'=>$fechasintomas,
+                                                    ':caracterisiticasdolor'=>$caractipicasatipicas,
+                                                    ':iniciotriage'=>$primercontacto,
+                                                    ':terminotriage'=>$terminotriage,
+                                                    ':electrocardiograma'=>$elctrocardio,
+                                                    ':localizacionelectro'=>$localizacion,
+                                                    ':consinelevacion'=>$consinelevacion,
+                                                    ':macehospi'=>$macehospitalario,
+                                                    ':killipkimball'=>$killipkimball,
+                                                    ':id_pacienteinfarto'=>$identi
+                                                ));
+                                    $sql = $conexionCancer->prepare("INSERT into paraclinicos(id_paraclinico,ck,ckmb,troponinas,glucosa,urea,creatinina,colesterol,trigliceridos,acidourico,hbglucosilada,proteinas,colesteroltotal,ldl,hdl,id_paciente)
+                                            values(:id_paraclinico,:ck,:ckmb,:troponinas,:glucosa,:urea,:creatinina,:colesterol,:trigliceridos,:acidourico,:hbglucosilada,:proteinas,:colesteroltotal,:ldl,:hdl,:id_paciente)");
+                                            $sql->execute(array(
+                                                ':id_paraclinico'=>uniqid('hraei'),
+                                                ':ck'=>$ck,
+                                                ':ckmb'=>$ckmb,
+                                                ':troponinas'=>$troponinas,
+                                                ':glucosa'=>$glucosa,
+                                                ':urea'=>$urea,
+                                                ':creatinina'=>$creatinina,
+                                                ':colesterol'=>$colesterol,
+                                                ':trigliceridos'=>$trigliceridos,
+                                                ':acidourico'=>$acidourico,
+                                                ':hbglucosilada'=>$hbglucosilada,
+                                                ':proteinas'=>$proteinas,
+                                                ':colesteroltotal'=>$colesteroltotal,
+                                                ':ldl'=>$ldl,
+                                                ':hdl'=>$hdl,
+                                                ':id_paciente'=>$identi
 
-                    $sql->execute(array(
-                        ':descripcioncaracteristica'=>$seleccion2, 
-                        ':id_paciente'=>$id_carga
-                    ));
-                }
-                $checked_contador3 = count($check_lista3);
-                //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                // Bucle para almacenar y visualizar valores activados checkbox.
-                foreach($check_lista3 as $seleccion3) {
-                    $sql = $conexionCancer->prepare("INSERT into caracteristicasdoloratipicas(descripcioncaracteristica, id_paciente) 
-    
-                    values ('".$seleccion3."', '".$id_carga."')");
-                        $sql->execute(array(
-                            ':descripcioncaracteristica'=>$seleccion3, 
-                            ':id_paciente'=>$id_carga
-                        ));
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into tratamientoinfarto(id_tratamientoinfarto,fibrinolisis,horainiciofibro,horaterminofibro,tipofibrinolitico,procedimientoexitoso,id_pacienteinfarto)
+                                    values(:id_tratamientoinfarto,:fibrinolisis,:horainiciofibro,:horaterminofibro,:tipofibrinolitico,:procedimientoexitoso,:id_pacienteinfarto)");
+                                        $sql->execute(array(
+                                            ':id_tratamientoinfarto'=>uniqid('hraei'),
+                                            ':fibrinolisis'=>$trombolisis,
+                                            ':horainiciofibro'=>$iniciotrombolisis,
+                                            ':horaterminofibro'=>$finalizotrombolisis,
+                                            ':tipofibrinolitico'=>$fibrinoliticos,
+                                            ':procedimientoexitoso'=>$exitotrombolisis,
+                                            ':id_pacienteinfarto'=>$identi
+                                        ));
+                                    $sql = $conexionCancer->prepare("INSERT into angiocoronaria(id_angiocorono,fechahoraangio,tipoprocedimientoangio,sitiopuncionangio,lesionescoronoangio,clasificaciondukeangio,clasiificacionmedinaangio,clasificacionaccahaangio,severidadangio,protesisendovascularangio,primerageneracionangio,segundageneracionangio,numeroprotesisangio,revascularizacionangio,procedimientoexitosoangio,airbusangio,resultadoairbusangio,octangio,id_pacienteinfarto)
+                                        values(:id_angiocorono,:fechahoraangio,:tipoprocedimientoangio,:sitiopuncionangio,:lesionescoronoangio,:clasificaciondukeangio,:clasiificacionmedinaangio,:clasificacionaccahaangio,:severidadangio,:protesisendovascularangio,:primerageneracionangio,:segundageneracionangio,:numeroprotesisangio,:revascularizacionangio,:procedimientoexitosoangio,:airbusangio,:resultadoairbusangio,:octangio,:id_pacienteinfarto)");
+                                        $sql->execute(array(
+                                            ':id_angiocorono'=>uniqid('hraei'),
+                                            ':fechahoraangio'=>$inicioprocedimiento,
+                                            ':tipoprocedimientoangio'=>$tipoangioplastia,
+                                            ':sitiopuncionangio'=>$tipositiopuncion,
+                                            ':lesionescoronoangio'=>$lesionescoronarias,
+                                            ':clasificaciondukeangio'=>$clasificacionduke,
+                                            ':clasiificacionmedinaangio'=>$clasificacionmedina,
+                                            ':clasificacionaccahaangio'=>$lesionangeo,
+                                            ':severidadangio'=>$severidadangio,
+                                            ':protesisendovascularangio'=>$endo,
+                                            ':primerageneracionangio'=>$primergeneracion,
+                                            ':segundageneracionangio'=>$segundageneracion,
+                                            ':numeroprotesisangio'=>$ndp,
+                                            ':revascularizacionangio'=>$tratamientovaso,
+                                            ':procedimientoexitosoangio'=>$procedimientoexitoso,
+                                            ':airbusangio'=>$airbus,
+                                            ':resultadoairbusangio'=>$resulairbus,
+                                            ':octangio'=>$oct,
+                                            ':id_pacienteinfarto'=>$identi
+                                        ));
+                                    $sql = $conexionCancer->prepare("INSERT into litotriciaangio(id_litotriciaangio,schockwaveangio,resultadoairbuslito,id_pacienteinfarto)
+                                    values(:id_litotriciaangio,:schockwaveangio,:resultadoairbuslito,:id_pacienteinfarto)");
+                                        $sql->execute(array(
+                                            ':id_litotriciaangio'=>uniqid('hraei'),
+                                            ':schockwaveangio'=>$shockwavedato,
+                                            ':resultadoairbuslito'=>$resultadoshockwavedato,
+                                            ':id_pacienteinfarto'=>$identi
+                                        ));
+                                        $msmscomplicacion;
+                                        if(is_array($mscomplicacion) || is_object($mscomplicacion)){       
+                                            foreach($mscomplicacion as $complicacioninfarto) {
+                                                $sql_s = $conexionCancer->prepare("INSERT into complicacionesinfarto(descripcioncomplicacion, id_pacienteinfarto) 
+                                
+                                                values(:descripcioncomplicacion, :id_pacienteinfarto)");
+                            
+                                                $sql_s->execute(array(
+                                                    ':descripcioncomplicacion'=>$complicacioninfarto,
+                                                    ':id_pacienteinfarto'=>$identi
+                            
+                                                ));
+                                            }
+                                        }
+                                    $sql = $conexionCancer->prepare("INSERT into detallecomplicaciones(arritimia,bloqueoav,extrasistolesventri,id_pacienteinfarto)
+                                        values(:arritimia,:bloqueoav,:extrasistolesventri,:id_pacienteinfarto)");
+                                            $sql->execute(array(
+                                                ':arritimia'=>$arritmiadetalle,
+                                                ':bloqueoav'=>$bloqueoav,
+                                                ':extrasistolesventri'=>$extraventri,
+                                                ':id_pacienteinfarto'=>$identi
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into marcapasostratamiento(id_marcapasostrata,marcapasostratamiento,soporteventricular,id_pacienteinfarto)
+                                        values(:id_marcapasostrata,:marcapasostratamiento,:soporteventricular,:id_pacienteinfarto)");
+                                            $sql->execute(array(
+                                                ':id_marcapasostrata'=>uniqid('hraei'),
+                                                ':marcapasostratamiento'=>$marcapasossino,
+                                                ':soporteventricular'=>$soporteven,
+                                                ':id_pacienteinfarto'=>$identi
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into seguimientopostprocedimiento(id_seguimientopost,fechaegresopost,causadefuncionpost,fechadefuncionpost,id_pacienteinfarto)
+                                        values(:id_seguimientopost,:fechaegresopost,:causadefuncionpost,:fechadefuncionpost,:id_pacienteinfarto)");
+                                            $sql->execute(array(
+                                                ':id_seguimientopost'=>uniqid('hraei'),
+                                                ':fechaegresopost'=>$fechadeegreso,
+                                                ':causadefuncionpost'=>$causadefuncion,
+                                                ':fechadefuncionpost'=>$fechadefuncion,
+                                                ':id_pacienteinfarto'=>$identi
+                                            ));
 
-                }
-                $checked_contador4 = count($check_lista4);
-                //echo "<p>Has seleccionado los siguientes ".$checked_contador." opcione(s):</p> <br/>";
-                // Bucle para almacenar y visualizar valores activados checkbox.
-                foreach($check_lista4 as $seleccion4) {
-                    $sql = $conexionCancer->prepare("INSERT into electrocardiograma(derivacionesafectadas, id_paciente) 
-    
-                    values ('".$seleccion4."', '".$id_carga."')");
-                        $sql->execute(array(
-                            ':derivacionesafectadas'=>$seleccion4, 
-                            ':id_paciente'=>$id_carga
-
-                        ));
-                }
-                /*              
-                $query3 = $conexion2->query("INSERT into tratamiento(id_paciente, id_medicamento, indicacion)
-                                    values('".$id."', '".$medicamento."', '".$tratamiento."')");
-	                    if($refe != ''){
-                $query4 = $conexion2->query("INSERT into referecnias(id_paciente, datosreferencia) 
-                                    values('".$id."', '".$refe."')");
-	                    }else{
-	                        
-	                    };*/												    										 
-	//MENSAJE DE CONFIRMACIÓN												 
-					if($query2 != false) {
+					if($sql != false) {
 					echo "<script>swal({
                                 title: 'Good job!',
                                 text: 'Datos guardados exitosamente!',
@@ -241,12 +199,9 @@ $hoy = date("d-m-Y");
                                 icon: 'error',
                                 });</script>";
                             
-                            $sql1 = $conexion2->query("DELETE from factores_riesgo where id_paciente = '$id_carga'");
-                            $sql2 = $conexion2->query("DELETE from caracteristicasdolortipicas where id_paciente = '$id_carga'");
-                            $sql0 = $conexion2->query("DELETE from dato_personal where id = '$id_carga'");
-                        $conexion2->close();
+            
 
-					    }
+					}
 	
 	
 				

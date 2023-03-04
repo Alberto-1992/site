@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <strong>CURP</strong>
-                                        <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value="" onblur="curp2date();" minlength="18" maxlength="18" required>
+                                        <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value="" onblur="curp2dateinfarto();" minlength="18" maxlength="18" required>
                                         <datalist id="curpusuario">
                                             <option value="">Seleccione</option>
                                             <?php
@@ -107,7 +107,7 @@
 
                                     <div class="col-md-4">
                                         <strong>Nombre Completo</strong>
-                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdad();" type="text" class="form-control" value="" required>
+                                        <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadinfarto();" type="text" class="form-control" value="" required>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Población indígena</strong>
@@ -133,7 +133,7 @@
 
                                     <div class="col-md-3">
                                         <strong>Fecha de nacimiento</strong>
-                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2date();" class="form-control" readonly>
+                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2dateinfarto();" class="form-control" readonly>
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Edad</strong>
@@ -142,12 +142,12 @@
 
                                     <div class="col-md-3">
                                         <strong>Sexo</strong>
-                                        <input type="text" class="form-control" id="sexo" onclick="curp2date();" name="sexo" readonly>
+                                        <input type="text" class="form-control" id="sexo" onclick="curp2dateinfarto();" name="sexo" readonly>
 
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Raza</strong>
-                                        <input type="text" class="form-control" id="raza" onclick="curp2date();" name="raza">
+                                        <input type="text" class="form-control" id="raza" onclick="curp2dateinfarto();" name="raza">
 
                                     </div>
                                     <div class="col-md-3">
@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Presión arterial</strong>
-                                        <input type="text" class="form-control" id="persionarterial" name="persionarterial">
+                                        <input type="text" class="form-control" id="presionarterial" name="presionarterial">
 
                                     </div>
                                     <div class="col-md-3">
@@ -170,18 +170,19 @@
                                             $('#talla').mask('0.00');
                                         });
                                         $(document).ready(function() {
-                                            $('#persionarterial').mask('000/00');
+                                            $('#presionarterial').mask('000/00');
                                         });
+                                        
                                     </script>
 
                                     <div class="col-md-3">
                                         <strong>Peso</strong>
-                                        <input type="number" step="any" class="form-control" id="peso" onblur="calculaIMC();" name="peso" required>
+                                        <input type="number" step="any" class="form-control" id="peso" onblur="calculaIMCinfarto();" name="peso" required>
 
                                     </div>
                                     <div class="col-md-3">
                                         <strong>IMC</strong>
-                                        <input type="text" class="form-control" id="imc" onblur="calculaIMC();" name="imc" value="" readonly>
+                                        <input type="text" class="form-control" id="imc" onblur="calculaIMCinfarto();" name="imc" value="" readonly>
 
                                     </div>
 
@@ -225,7 +226,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione los Factores</strong>
-                                        <select id="msfactores" name="check_lista[]" multiple="multiple" class="form-control">
+                                        <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control">
 
                                             <?php
                                             require 'conexionCancer.php';
@@ -266,7 +267,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Termino de Triage</strong>
-                                        <input type="datetime-local" id="puertabalon" name="puertabalon" placeholder="Describa" class="form-control">
+                                        <input type="datetime-local" id="terminotriage" name="terminotriage" placeholder="Describa" class="form-control">
                                     </div>
                                     <fieldset id="tipicascombos" class="col-md-12">
                                         <strong>Caracteristicas Típicas</strong><br>
@@ -309,7 +310,7 @@
                                     </fieldset>
                                     <div class="col-md-6">
                                         <strong>Electrocardiograma</strong>
-                                        <select name="" id="" class="form-control">
+                                        <select name="elctrocardio" id="elctrocardio" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Normal">Normal</option>
                                             <option value="lesion">Lesión</option>
@@ -338,7 +339,7 @@
 
                                     <div class="col-md-6">
                                         <strong>Con o Sin Elevación</strong>
-                                        <select name="identificador" id="identificador" class="form-control" required>
+                                        <select name="consinelevacion" id="consinelevacion" class="form-control" required>
                                             <option value="">Seleccione...</option>
                                             <option value="Con elevacion del ST">Con elevación del ST</option>
                                             <option value="Sin elevacion del ST">Sin elevación del ST</option>
@@ -364,7 +365,7 @@
 
                                     <div class="col-md-6">
                                         <strong>Killip Kimball</strong>
-                                        <select name="choque" id="choque" class="form-control" style="width: 100%;" required>
+                                        <select name="killipkimball" id="killipkimball" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccione...</option>
                                             <?php
                                             require 'conexionCancer.php';
@@ -524,7 +525,7 @@
 
                                     <div class="col-md-3">
                                         <strong>Tipo de Procedimiento</strong>
-                                        <select name="tipo" id="tipo" class="form-control">
+                                        <select name="tipoangioplastia" id="tipoangioplastia" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Primaria">Primaria</option>
                                             <option value="Rescate">Rescate</option>
@@ -534,7 +535,7 @@
 
                                     <div class="col-md-3">
                                         <strong>Sitio de Punción</strong>
-                                        <select name="tipo" id="tipo" class="form-control">
+                                        <select name="tipositiopuncion" id="tipositiopuncion" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Braquial">Braquial</option>
                                             <option value="Femoral">Femoral</option>
@@ -604,7 +605,7 @@
 
                                     <div class="col-md-3" id="">
                                         <strong>Severidad <i><a target="_blank" href="https://www.syntaxscore.org/calculator/syntaxscore/frameset.htm">Sintax</a></i></strong>
-                                        <select name="sintax" id="sintax" class="form-control">
+                                        <select name="severidadangio" id="severidadangio" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Score Bajo">Score Bajo: < 22</option>
                                             <option value="Score Intermedio">Score Intermedio: 23 a 32</option>
@@ -640,7 +641,7 @@
 
                                     <div class="col-md-3">
                                         <strong>2da Generación</strong>
-                                        <select id="msfactores" name="check_lista[]" class="form-control">
+                                        <select id="segundageneracion" name="segundageneracion" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="Everulimus">Everulimus</option>
                                             <option value="Ridaforulimus">Ridaforulimus</option>
@@ -726,7 +727,7 @@
 
                                     <div class="col-md-6" id="SCHOCKWAVE">
                                         <strong>SCHOCKWAVE C2</strong>
-                                        <select name="SCHOCKWAVE" id="SCHOCKWAVE" class="form-control">
+                                        <select name="shockwavedato" id="shockwavedato" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="si">Sí</option>
                                             <option value="no">No</option>
@@ -734,8 +735,8 @@
                                     </div>
 
                                     <div class="col-md-6" id="resulairbus">
-                                        <strong>Resultado de AIRBUS</strong>
-                                        <select name="resulairbus" id="resulibus" class="form-control">
+                                        <strong>Resultado de SCHOCKWAVE C2</strong>
+                                        <select name="resultadoshockwavedato" id="resultadoshockwavedato" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Perforacion">Perforación</option>
                                             <option value="Diseccion">Disección</option>
@@ -756,7 +757,7 @@
 
                                     <div class="col-md-6" id="marcapa">
                                         <strong>Marca Pasos</strong>
-                                        <select name="marcapa" id="marca" class="form-control">
+                                        <select name="marcapasossino" id="marcasossino" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="si">Sí</option>
                                             <option value="no">No</option>
@@ -922,7 +923,7 @@
 
                                     <div class="col-md-6">
                                         <strong>Seleccione las Complicaciones</strong>
-                                        <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
+                                        <select id="mscancer" name="mscomplicacion[]" multiple="multiple" class="form-control">
                                             <option value="arritmia">Arritmia</option>
                                             <option value="Bloqueo Conduccion">Bloqueo Conducción</option>
                                             <option value="Disección Aortica">Disección Aórtica</option>
@@ -952,7 +953,7 @@
 
                                     <div class="col-md-6">
                                         <strong>Arritmia</strong>
-                                        <select name="arritmia" id="arritmia" class="form-control" style="width:100%;" require>
+                                        <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="Bloqueo AV">Bloqueo AV</option>
                                             <option value="Bradicardia">Bradicardia</option>
@@ -972,7 +973,7 @@
 
                                     <div class="col-md-6" id="">
                                         <strong>Bloqueo AV</strong>
-                                        <select name="bloqueo" id="bloqueo" class="form-control" style="width:100%;" require>
+                                        <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <!--<option value="bloqueouno">I</option>-->
                                             <option value="II">II</option>
