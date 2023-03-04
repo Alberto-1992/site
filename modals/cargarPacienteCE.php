@@ -251,7 +251,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Inicio de Síntomas</strong>
-                                        <input id="fechasintomas" name="fechasintomas" type="datetime-local" value="" class="form-control">
+                                        <input id="fechasintomas" name="fechasintomas" type="datetime-local" class="form-control">
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Caracteristica Dolor</strong>
@@ -695,7 +695,7 @@
                                     <!-- Si es sí:-->
                                     <div class="col-md-3" id="resulairbus">
                                         <strong>Resultado de AIRBUS</strong>
-                                        <select name="resulairbus" id="resulibus" class="form-control">
+                                        <select name="resultadoirbus" id="resultadoirbus" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Estenosis">Estenosis</option>
                                             <option value="Diseccion">Disección</option>
