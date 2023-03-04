@@ -2,12 +2,12 @@
 sleep(0.5);
 
 $utimoId = $_POST['utimoId'];
-$limite  = 3;
+$limite  = 10;
 	require 'conexionCancer.php';
-    $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id, tratamiento.identificador, tratamiento.id_paciente FROM dato_usuario inner join tratamiento on tratamiento.id_paciente = dato_usuario.id where tratamiento.identificador = 'cest' and tratamiento.seguimiento = 'inicial'");
+    $sqlQueryComentarios  = $conexion2->query("SELECT dato_personalinfarto.id, infartopaciente.id_pacienteinfarto FROM dato_personalinfarto inner join infartopaciente on infartopaciente.id_pacienteinfarto = dato_personalinfarto.id");
     $total_registro       = mysqli_num_rows($sqlQueryComentarios);
 
-    $sqlComentLimit = $conexionCancer->prepare("SELECT dato_usuario.id, dato_usuario.nombrecompleto, dato_usuario.edad, dato_usuario.curp, dato_usuario.sexo, dato_usuario.fechanacimiento, tratamiento.identificador FROM dato_usuario inner join tratamiento on tratamiento.id_paciente = dato_usuario.id WHERE dato_usuario.id < '".$utimoId."' ORDER BY dato_usuario.id DESC LIMIT ".$limite."");
+    $sqlComentLimit = $conexionCancer->prepare("SELECT dato_personalinfarto.id, dato_personalinfarto.nombrecompleto, dato_personalinfarto.edad, dato_personalinfarto.curp, dato_personalinfarto.sexo, dato_personalinfarto.fechanacimiento FROM dato_personalinfarto inner join infartopaciente on infartopaciente.id_pacienteinfarto = dato_personalinfarto.id WHERE dato_personalinfarto.id < '".$utimoId."' ORDER BY dato_personalinfarto.id DESC LIMIT ".$limite."");
     $sqlComentLimit->execute();
 	?>
 
@@ -17,19 +17,16 @@ $limite  = 3;
         { ?>
 
     <div class="item-comentario" id="<?php echo $dataRegistro['id']; ?>">
-        <?php
-            $id = $dataRegistro['id'];
+    
 
-            if($dataRegistro['identificador'] == 'cest'){
-            ?>
-
-<div id='<?php echo $id ?>' class='ver-info' style="cursor: pointer;">
-                   <?php echo '<strong style="font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
-           </div> 
-                <hr>
-
-        <?php } ?>
-        </div>
+    <div id='<?php echo $dataRegistro['id']; ?>' class='ver-info' >
+                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>';
+                    ?>
+            </div> 
+                    <hr>
+            
+        
+            </div>
         <?php
         }?>
 <script>
@@ -75,7 +72,6 @@ $(document).ready(function() {
 <?php
     
 if ($total_registro <= $limite) { ?>
-
 <div class="col-md-12 col-sm-12">
     <h4>No hay más Registros ...</h4>
 </div>
@@ -87,6 +83,7 @@ if ($total_registro <= $limite) { ?>
         <br>
         Cargando los Registros...
     </div>
-</div>-->
+</div>
+-->
 <?php } 
 ?>

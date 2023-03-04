@@ -43,8 +43,9 @@
 
                 
             ?>
-                <div id='<?php echo $id ?>' class='ver-info'>
-                    <?php echo '<strong style="font-family: monospace; white-space: nowrap; font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
+            <div id='<?php echo $id ?>' class='ver-info' >
+                    <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>';
+                    ?>
             </div> 
                     <hr>
             
@@ -54,7 +55,7 @@
         }?>
     
     </div>
-<div class="col-md-12 col-sm-12">
+    <div class="col-md-12 col-sm-12">
     <div class="ajax-loader text-center">
         <img src="img/cargando.svg">
         <br>
@@ -91,7 +92,8 @@ $(function() {
 });
 $(document).ready(function() {
     $('.item-comentario').on('click', '.ver-info', function() {
-
+//const nombre = document.querySelector(".ver-info");
+ //nombre.style.color = "blue";
         //Añadimos la imagen de carga en el contenedor
         $('#tabla_resultado').html(
             '<div id="tabla_resultado" style="position: fixed;  top: 0px; left: 0px;  width: 100%; height: 100%; z-index: 9999;  opacity: .7; background: url(imagenes/loader2.gif) 50% 50% no-repeat rgb(249,249,249);"><br/></div>'
@@ -121,7 +123,6 @@ function pageScroll() {
     $("#tabla_resultadobus").on("scroll", function() {
         var scrollHeight = $(document).height();
         var scrollPos = $("#tabla_resultadobus").height() + $("#tabla_resultadobus").scrollTop();
-        var totalregistro = $("#total_registro").val();
 
         if ((((scrollHeight - 250) >= scrollPos) / scrollHeight == 0) || (((scrollHeight - 300) >=
                 scrollPos) / scrollHeight == 0) || (((scrollHeight - 350) >= scrollPos) / scrollHeight ==
@@ -130,8 +131,9 @@ function pageScroll() {
                 0)) {
             if ($(".item-comentario").length < $("#total_registro").val()) {
                 var utimoId = $(".item-comentario:last").attr("id");
-                let datos = {totalregistro:totalregistro, utimoId:utimoId};
-
+                var totalregistro = $("#total_registro").val();
+            
+                let datos = {utimoId:utimoId, totalregistro:totalregistro};
                 $("#tabla_resultadobus").off("scroll");
                 $.ajax({
                     url: 'obteniedoMasDatos.php',
@@ -151,7 +153,7 @@ function pageScroll() {
 
 
             } else {
-
+            
             }
         }
     });
