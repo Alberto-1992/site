@@ -41,14 +41,14 @@
             <?php
             $id = $dataRegistro['id'];
 
-                if($dataRegistro['identificador'] == 'cest' and $dataRegistro['seguimiento'] == 'inicial'){
+                
             ?>
                 <div id='<?php echo $id ?>' class='ver-info'>
                     <?php echo '<strong style="font-family: monospace; white-space: nowrap; font-size: 12px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="float:right; font-size: 8px; margin-top: -20px; margin-right: 8px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
             </div> 
                     <hr>
-               
-            <?php } ?>
+            
+        
             </div>
             <?php
         }?>

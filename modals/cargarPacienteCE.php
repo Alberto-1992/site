@@ -714,7 +714,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <br>
+                                  
 
 
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
@@ -775,17 +775,6 @@
                                     <br>
                                     <br>
                                     <br>
-
-
-
-
-
-
-
-
-
-
-
                                     <div class="col-md-3" id="idstend">
                                         <strong>Stent</strong>
                                         <select name="stent" id="stent" class="form-control">
