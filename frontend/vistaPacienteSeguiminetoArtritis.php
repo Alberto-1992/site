@@ -174,7 +174,10 @@ $sdai = "<span class='obesidad1'> $sdaialta";
     <!-- Primera sección "Datos del Paciente, se agregan los campos que se solicitan en el formulario -->
 
     <div class="containerr2">Datos del Paciente</div>
-
+    <tr>
+        <th id="th">Fecha de inicio de seguimiento:</th>
+        <td id="td"><?php echo $dataRegistro['fechainicioseguiartritis'] ?></td>
+    </tr>
     <tr>
         <th id="th">CURP:</th>
         <td id="td"><?php echo $dataRegistro['curpseguiart'] ?></td>
