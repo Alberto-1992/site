@@ -6,22 +6,11 @@ date_default_timezone_set('America/Monterrey');
 $fecha_actual = new DateTime(date('Y-m-d'));
 
 
-$id_paciente = $dataRegistro['id_usuarioartritis'];
-$curp = $dataRegistro['curp'];
+$id_paciente = $dataRegistro['id_paciente'];
+$curp = $dataRegistro['curpseguiart'];
 $id = $dataRegistro['id_paciente'];
 
 require 'conexionCancer.php';
-
-$sql_r = $conexion2->query("SELECT id_paciente, detalleantecedente
-            FROM antecedentespatologicosartritis
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM antecedentespatologicosartritis
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
-
 
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
 // $fecha2 = new DateTime($dataRegistro['fechaterminotrombolisis']);//fecha de cierre
@@ -29,7 +18,7 @@ $sql_r = $conexion2->query("SELECT id_paciente, detalleantecedente
 //$intervalo = $fecha1->diff($fecha2);
 
 // $diasDiferencia = $intervalo->format('%d days %H horas %i minutos');
-$imccalculo = $dataRegistro['imcartritis'];
+$imccalculo = $dataRegistro['imcaeguiart'];
 $imcbajo = "IMC bajo";
 $imcok = "IMC ok";
 $imcsobre = "Sobrepeso";
@@ -49,7 +38,7 @@ if ($imccalculo <= 18.5) {
     $showimc = "<span class='obesidad2'> $obe2";
 }
 
-$cdaicalculo = $dataRegistro['resultadocdai'];
+$cdaicalculo = $dataRegistro['resultadocdaiseguiart'];
 $cdairemision = "Remision";
 $cdaibaja= "Baja";
 $cdaimoderada = "Moderada";
@@ -65,7 +54,7 @@ $cdai = "<span class='imcsobre'> $cdaimoderada";
 $cdai = "<span class='obesidad1'> $cdaialta";
 }
 
-$sdaicalculo = $dataRegistro['resultadosdai'];
+$sdaicalculo = $dataRegistro['resultadosdaiseguiart'];
 $sdairemision = "Remision";
 $sdaibaja= "Baja";
 $sdaimoderada = "Moderada";
@@ -95,13 +84,11 @@ $sdai = "<span class='obesidad1'> $sdaialta";
     $sql_busqueda->execute();
     $sql_busqueda->setFetchMode(PDO::FETCH_ASSOC);
     $validacion = $sql_busqueda->fetch();
-    $validaid = $validacion['id_pacienteartritis'];
-    if ($dataRegistro['curp'] != '') {
+    $validaid = $validacion['id_paciente'];
+    if ($dataRegistro['curpseguiart'] != '') {
         if ($validaid != $id_paciente) { ?>
             <input type="submit" class="mandaidartritis" id="<?php echo $id_paciente ?>" value="Seguimiento" onclick="aplicarSeguimientoArtritis();"> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
-            <a href="#" onclick="seguimiento();" style="color: blue;">
-                Ver seguimiento</a>
         <?php } ?>
         <script>
             function seguimiento() {
@@ -152,9 +139,9 @@ $sdai = "<span class='obesidad1'> $sdaialta";
                 if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico']) or isset($_SESSION['artritis'])) { 
                     if($dataRegistro['editopaciente'] == 0 ) {?>
             
-            <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
+           <!-- <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">-->
                 <?php }else{ ?>
-                    <input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">
+                    <!--<input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">-->
 
                 <?php }
             };?>
@@ -170,7 +157,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
                                                 <?php echo $row['fechainicioseguiartritis']; ?></option>
                                             <?php } ?>
                                         </select>
-            <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
+            <!--<input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">-->
             <?php
     }?>
                 </div>
@@ -190,154 +177,116 @@ $sdai = "<span class='obesidad1'> $sdaialta";
 
     <tr>
         <th id="th">CURP:</th>
-        <td id="td"><?php echo $dataRegistro['curp'] ?></td>
+        <td id="td"><?php echo $dataRegistro['curpseguiart'] ?></td>
     </tr>
-
-    <tr>
-        <th id="th">Nombre:</th>
-        <td id="td"><?php echo $dataRegistro['nombrecompleto'] ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Escolaridad:</th>
-        <td id="td"><?php echo $dataRegistro['escolaridad'] ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Edad:</th>
-        <td id="td"><?php echo $dataRegistro['edad'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Sexo:</th>
-        <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
-    </tr>
-
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php echo $dataRegistro['tallaartritis'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tallaseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php echo $dataRegistro['pesoartritis'] ?></td>
+        <td id="td"><?php echo $dataRegistro['pesoartsegui'] ?></td>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php echo $dataRegistro['imcartritis'].'&nbsp'; if($id_paciente != ''){ echo $showimc;}?></td>
+        <td id="td"><?php echo $dataRegistro['imcseguiart'].'&nbsp'; if($id_paciente != ''){ echo $showimc;}?></td>
     </tr>
     </tr>
 </table>
 <!--Finaliza Datos del Paciente-->
 
-
-
-
-
-<!--Inicia Antecedentes Personales Patológicos-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }?>>
-
-    <div class="containerr3">Antecedentes Personales Patológicos</div>
-    <tr>
-    <th id="th">Antecedentes Personales Patologicos:</th>
-
-        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql_r))
-{
-echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
-
-    </tr>
-</table>
-<!--Inicia Antecedentes Personales Patológicos-->
 <!--Inicia LABORATORIOS-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }?>>
     <div class="containerr3">Laboratorios</div>
 
     <tr>
         <th id="th">Plaquetas:</th>
-        <td id="td"><?php echo $dataRegistro['plaquetas'] ?></td>
+        <td id="td"><?php echo $dataRegistro['plaquetasseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Basal:</th>
-        <td id="td"><?php echo $dataRegistro['frbasal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['frbasalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">FR Nominal:</th>
-        <td id="td"><?php echo $dataRegistro['frnominal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['frnominalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">PCR:</th>
-        <td id="td"><?php echo $dataRegistro['pcr'] ?></td>
+        <td id="td"><?php echo $dataRegistro['pcrseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Basal:</th>
-        <td id="td"><?php echo $dataRegistro['vitaminadbasal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['vitaminadbasalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Vitamina D Nominal:</th>
-        <td id="td"><?php echo $dataRegistro['vitaminadnominal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['vitaminadnominalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Basal:</th>
-        <td id="td"><?php echo $dataRegistro['anticppbasal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['anticppbasalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">AC Anticpp Nominal:</th>
-        <td id="td"><?php echo $dataRegistro['anticppnominal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['anticppnominalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">VSG:</th>
-        <td id="td"><?php echo $dataRegistro['vsg'] ?></td>
+        <td id="td"><?php echo $dataRegistro['vsgseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Basal:</th>
-        <td id="td"><?php echo $dataRegistro['tgobasal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tgobasalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGO Nominal:</th>
-        <td id="td"><?php echo $dataRegistro['tgonominal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tgonominalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Basal:</th>
-        <td id="td"><?php echo $dataRegistro['tgpbasal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tgpbasalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">TGP Nominal:</th>
-        <td id="td"><?php echo $dataRegistro['tgpnominal'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tgpnominalseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Glucosa:</th>
-        <td id="td"><?php echo $dataRegistro['glucosa'] ?></td>
+        <td id="td"><?php echo $dataRegistro['glucosaseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Colesterol:</th>
-        <td id="td"><?php echo $dataRegistro['colesterol'] ?></td>
+        <td id="td"><?php echo $dataRegistro['colesterolseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Trigliceridos:</th>
-        <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
+        <td id="td"><?php echo $dataRegistro['trigliceridosseguiart'] ?></td>
     </tr>
     <tr>
         <th id="th">FIB 4:</th>
-        <td id="td"><?php echo $dataRegistro['fib4'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fib4seguiart'] ?></td>
     </tr>
     <tr>
         <th id="th">Resultado fib 4:</th>
-        <td id="td"><?php echo $dataRegistro['resultadofib4'] ?></td>
+        <td id="td"><?php echo $dataRegistro['resultadofib4seguiart'] ?></td>
     </tr>
 </table>
 <!--FINALIZA SECCIÓN DE LABORATORIOS-->
@@ -352,17 +301,17 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">USG Hepático:</th>
-        <td id="td"><?php echo $dataRegistro['detalleusghepatico'] ?></td>
+        <td id="td"><?php echo $dataRegistro['detalleusghepaticoseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Hallazgo USG:</th>
-        <td id="td"><?php echo $dataRegistro['hallazgousg'] ?></td>
+        <td id="td"><?php echo $dataRegistro['hallazgousgseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Clasificación Cirrosis:</th>
-        <td id="td"><?php echo $dataRegistro['clasificacionesteatosis'] ?></td>
+        <td id="td"><?php echo $dataRegistro['clasificacionesteatosisseguiart'] ?></td>
     </tr>
 </table>
 <!-- FINALIZA SECCIÓN USG HEPÁTICO-->
@@ -378,27 +327,27 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">Articulaciones Inflamadas SJC28:</th>
-        <td id="td"><?php echo $dataRegistro['articulacionesinflamadassjc28'] ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesinflamadassjc28seguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Articulaciones Dolorosas TJC28:</th>
-        <td id="td"><?php echo $dataRegistro['articulacionesdolorosastjc28'] ?></td>
+        <td id="td"><?php echo $dataRegistro['articulacionesdolorosastjc28seguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación Global PGA:</th>
-        <td id="td"><?php echo $dataRegistro['evglobalpga'] ?></td>
+        <td id="td"><?php echo $dataRegistro['evglobalpgaseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Evaluación del Evaluador EGA:</th>
-        <td id="td"><?php echo $dataRegistro['evega'] ?></td>
+        <td id="td"><?php echo $dataRegistro['evegaseguiart'] ?></td>
     </tr>
 
     <tr>
         <th id="th">RESULTADO CDAI:</th>
-        <td id="td"><?php echo $dataRegistro['resultadocdai'].'&nbsp'; if($id_paciente != ''){ echo $cdai;}?></td>
+        <td id="td"><?php echo $dataRegistro['resultadocdaiseguiart'].'&nbsp'; if($id_paciente != ''){ echo $cdai;}?></td>
 
         <!-- Aquí se debe hacer un calculo con base en los valores de los campos de la sección CLINICA, la formula es: 
             CDAI = SJC28 + TJC28 + PGA + EGA
@@ -412,7 +361,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 
     <tr>
         <th id="th">RESULTADO SDAI:</th>
-        <td id="td"><?php echo $dataRegistro['resultadosdai'].'&nbsp'; if($id_paciente != ''){ echo $sdai;}?></td>
+        <td id="td"><?php echo $dataRegistro['resultadosdaiseguiart'].'&nbsp'; if($id_paciente != ''){ echo $sdai;}?></td>
         <!-- Aquí se debe hacer un calculo con base en la siguiente formula:
             SDAI = CDAI + PCR 
             (EL CAMPO PCR ESTÁ EN LA SECCIÓN LABORATORIOS)
@@ -439,67 +388,67 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
     <!-- En los siguientes campos se deberá recuperar la dosis del medicamento-->
     <tr>
         <th id="th">Metrotexate:</th>
-        <td id="td"><?php echo $dataRegistro['metrotexate']?></td>
+        <td id="td"><?php echo $dataRegistro['metrotexateseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Metrotexate:</th>
-        <td id="td"><?php echo $dataRegistro['dosissemanalmetro']?></td>
+        <td id="td"><?php echo $dataRegistro['dosissemanalmetroseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Leflunomide:</th>
-        <td id="td"><?php  echo $dataRegistro['leflunomide']?></td>
+        <td id="td"><?php  echo $dataRegistro['leflunomideseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Leflunomide:</th>
-        <td id="td"><?php  echo $dataRegistro['dosissemanalfemua']?></td>
+        <td id="td"><?php  echo $dataRegistro['dosissemanalfemuaseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Sulfazalasina:</th>
-        <td id="td"><?php  echo $dataRegistro['sulfazalasina']?></td>
+        <td id="td"><?php  echo $dataRegistro['sulfazalasinaseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Sulfazalasina:</th>
-        <td id="td"><?php  echo $dataRegistro['dosissemanalsulfa']?></td>
+        <td id="td"><?php  echo $dataRegistro['dosissemanalsulfaseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Tocoferol:</th>
-        <td id="td"><?php  echo $dataRegistro['tecoferol']?></td>
+        <td id="td"><?php  echo $dataRegistro['tecoferolseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Tocoferol:</th>
-        <td id="td"><?php  echo $dataRegistro['dosissemanalteco']?></td>
+        <td id="td"><?php  echo $dataRegistro['dosissemanaltecoseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Glucocorticoide:</th>
-        <td id="td"><?php echo $dataRegistro['glucocorticoide']?></td>
+        <td id="td"><?php echo $dataRegistro['glucocorticoideseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Tratamiento:</th>
-        <td id="td"><?php echo $dataRegistro['usghepatico']?></td>
+        <td id="td"><?php echo $dataRegistro['usghepaticoseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Tratamiento:</th>
-        <td id="td"><?php echo $dataRegistro['dosissemanaltrata']?></td>
+        <td id="td"><?php echo $dataRegistro['dosissemanaltrataseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Vitamina D:</th>
-        <td id="td"><?php echo $dataRegistro['vitaminad']?></td>
+        <td id="td"><?php echo $dataRegistro['vitaminadseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Dosis Vitamina D:</th>
-        <td id="td"><?php echo $dataRegistro['dosissemanalvitad']?></td>
+        <td id="td"><?php echo $dataRegistro['dosissemanalvitadseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Biológico:</th>
-        <td id="td"><?php echo $dataRegistro['biologico']?></td>
+        <td id="td"><?php echo $dataRegistro['biologicoseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Tratamiento Biológico:</th>
-        <td id="td"><?php echo $dataRegistro['tratamientobiologico']?></td>
+        <td id="td"><?php echo $dataRegistro['tratamientobiologicoseguiart']?></td>
     </tr>
     <tr>
         <th id="th">Apego a Tratamiento:</th>
-        <td id="td"><?php echo $dataRegistro['apegotratamiento']?></td>
+        <td id="td"><?php echo $dataRegistro['apegotratamientoseguiart']?></td>
     </tr>
 </table>
 <!-- INICIA SECCIÓN TRATAMIENTO -->
