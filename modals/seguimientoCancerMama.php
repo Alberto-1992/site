@@ -104,7 +104,7 @@
                                         required="required" onkeyup="mayus(this);" readonly>
                                     <div class="col-md-12">
                                         <strong>ID:&nbsp;</strong>
-                                        <input id="curps" name="curps" class="form-control" type="textw" value="<?php echo $dataRegistro['id']; ?>"
+                                        <input id="curps" name="curps" class="form-control" type="text" value="<?php echo $dataRegistro['id']; ?>"
                                             readonly>
                                     </div>
                                     <div class="col-md-4">

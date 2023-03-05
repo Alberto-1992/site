@@ -1,4 +1,3 @@
-<script src="js/enviacurp.js"></script>
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <link rel="stylesheet" href="css/estilosMenu.css">
 <?php
@@ -99,7 +98,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
     $validaid = $validacion['id_pacienteartritis'];
     if ($dataRegistro['curp'] != '') {
         if ($validaid != $id_paciente) { ?>
-            <a href="#" class="mandaidartritis" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
+            <input type="submit" class="mandaidartritis" id="<?php echo $id_paciente ?>" value="Seguimiento" onclick="aplicarSeguimientoArtritis();"> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
@@ -131,13 +130,25 @@ $sdai = "<span class='obesidad1'> $sdaialta";
         <?php session_start();
                 if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico']) or isset($_SESSION['artritis'])) { 
                     if($dataRegistro['editopaciente'] == 0 ) {?>
-                    
+            
             <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
                 <?php }else{ ?>
                     <input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">
 
                 <?php }
             };?>
+            <select id="seguimientos" name="seguimientos">
+                <option value="Ver seguimientos">Ver seguimientos</option>
+            <?php 
+				    require 'conexionCancer.php';
+				        $query = $conexionCancer->prepare("SELECT DISTINCT fechainicioseguiartritis FROM seguimientoartritis where id_paciente = $id_paciente order by fechainicioseguiartritis desc");
+                        $query->execute();
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+				                    while($row = $query->fetch()) { ?>
+                                            <option value="<?php echo $row['fechainicioseguiartritis']; ?>">
+                                                <?php echo $row['fechainicioseguiartritis']; ?></option>
+                                            <?php } ?>
+                                        </select>
             <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
             <?php
     }?>
@@ -474,6 +485,7 @@ echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
 <?php
 
 require 'modals/edicionArtritis.php';
+require 'modals/seguimientoArtritis.php';
 ?>
 
 
@@ -599,6 +611,9 @@ require 'modals/edicionArtritis.php';
             });
         }
     }
+function aplicarSeguimientoArtritis() {
+    $("#seguimientoArtritis").modal('show');
+}
 function editardatospersonales() {
     $("#artritisdatospersonales").modal('show');
 }

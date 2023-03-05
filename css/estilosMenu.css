@@ -963,6 +963,15 @@ table {
   padding: 4px;
   margin-left: 5px;
 }
+#seguimientos {
+  color: black;
+  background: rgb(248, 197, 12);
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+}
 #abandonopaciente:hover{
   color: blue;
 }
