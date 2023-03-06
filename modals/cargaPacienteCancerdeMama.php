@@ -439,7 +439,7 @@
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Tabaquismo">&nbsp;Tabaquismo&nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
-                                            class="check" value="Hipertencion Arterial">&nbsp;Hipertensión
+                                            class="check" value="Hipertension Arterial">&nbsp;Hipertensión
                                         Arterial&nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Enfermedad Renal Cronica">&nbsp;Enfermedad Renal

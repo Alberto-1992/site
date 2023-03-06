@@ -567,6 +567,9 @@ $(document).ready(function() {
         
     })
 });
+
+
+
 $(function() {
     $('#arritmias').prop("hidden", true);
 
@@ -574,7 +577,7 @@ $(function() {
 })
 $(document).ready(function() {
 
-    $('#mscancer').change(function(e) {
+    $('#mscomplicacion').change(function(e) {
 
         
     }).multipleSelect({
@@ -638,5 +641,62 @@ $(function() {
 })
 
 
+//Select multiple de MACE HOSPITALARIO
+$(document).ready(function() {
+    $('#msmacehospitalario').change(function(e) {  
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+// Habilita Complicaciones de SCHOCKWAVE C2
+$(document).ready(function() {
+    $('#shockwavedato').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#resultadoshock').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#resultadoshock').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#resultadoshock').prop("hidden", true);
+})
+
+
+
+// Habilita Soporte Ventricular
+$(document).ready(function() {
+    $('#marcasossino').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#marcapa').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#marcapa').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#marcapa').prop("hidden", true);
+})
+
+
+
+// Habilita Soporte Ventricular
+$(document).ready(function() {
+    $('#marcasossino').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#marcapa').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#marcapa').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#marcapa').prop("hidden", true);
+})
+
+
+
 
 //Se agrega condición en protesis endovascular
+
