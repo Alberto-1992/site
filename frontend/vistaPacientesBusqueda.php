@@ -115,23 +115,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <th id="th">Sexo</th>
         <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
     </tr>
-
-    <tr>
-        <th id="th">Raza</th>
-        <td id="td"><?php echo $dataRegistro['raza'] ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Frecuencia Cardiaca</th>
-        <td id="td"><?php echo $dataRegistro[''] ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Presión Arterial</th>
-        <td id="td"><?php echo $dataRegistro[''] ?></td>
-    </tr>
-
-
 </table>
 
 
@@ -150,7 +133,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <th id="th">IMC</th>
         <td id="td"><?php echo $dataRegistro['imcinfarto'] . '&nbsp' . $showimc ?></td>
     </tr>
-</table>
+    </table>
 
 
 
