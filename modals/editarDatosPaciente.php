@@ -508,7 +508,7 @@ return false;
                                                 let ob = {
                                                             id: id
                                                             };
-  
+
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",
@@ -1167,7 +1167,7 @@ $(document).ready(function () {
                                                 let ob = {
                                                             id: id
                                                             };
-  
+
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",
@@ -2977,7 +2977,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             data: formData,
                                             cache: false,
                                             contentType: false,
-                                            processData: false,
+                                            processData: false
                                             success: function(datos) {
                                                 $("#mensaje").html(datos);
                                                 let id = $("#id_paciente").val();
@@ -3004,18 +3004,18 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                     });
                                                     $("#editardatosQuimio").modal('hide');
                                             }
-                                        })
-                                    })
+                                        });
+                                    });
                                 
                                     
                                     </script> 
                                     <div class="col-md-12">
-                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id']; ?>">
+                                            <input id="id_paciente" name="id_paciente" type="hidden" class="form-control" value="<?php echo $dataRegistro['id'] ?>">
                                         </div>
                                     <div class="col-md-12" style="color: #BD9FD6;">
                                         <strong>QUIMIOTERAPIA</strong>
                                         <select name="aplicoquimioedit" id="aplicoquimioedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['aplicoquimio'];?>"><?php echo $dataRegistro['aplicoquimio'];?></option>
+                                            <option value="<?php echo $dataRegistro['aplicoquimio']?>"><?php echo $dataRegistro['aplicoquimio']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
@@ -3025,12 +3025,12 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     <div class="col-md-4">
                                         <strong>Fecha inicio</strong>
                                         <input type="date" id="fechadeinicioquimioedit" name="fechadeinicioquimioedit"
-                                            class="form-control" value="<?php echo $dataRegistro['fechainicio'];?>">
+                                            class="form-control" value="<?php echo $dataRegistro['fechainicio']?>">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>1er Linea QT</strong>
                                         <select name="primerlineaedit" id="primerlineaedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['primeralinea'];?>"><?php echo $dataRegistro['primeralinea'];?></option>
+                                            <option value="<?php echo $dataRegistro['primeralinea']?>"><?php echo $dataRegistro['primeralinea']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
                                             require 'conexionCancer.php';
@@ -3040,19 +3040,19 @@ $('#mstectoextra2edit').prop("hidden", true);
 				                    while($row = $query->fetch()) { ?>
                                             <option value="<?php echo $row['descripcionprimeralinea']; ?>">
                                                 <?php echo $row['descripcionprimeralinea']; ?></option>
-                                            <?php } ?>
+                                            <?php }; ?>
 
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Ciclos 1er linea</strong>
                                         <input type="number" id="ciclosprimerlineaqtedit" name="ciclosprimerlineaqtedit"
-                                            class="form-control" value="<?php echo $dataRegistro['ciclosprimerlineaqt'];?>">
+                                            class="form-control" value="<?php echo $dataRegistro['ciclosprimerlineaqt']?>">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>2da Linea QT</strong>
                                         <select name="segundalineaedit" id="segundalineaedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['segundalinea'];?>"><?php echo $dataRegistro['segundalinea'];?></option>
+                                            <option value="<?php echo $dataRegistro['segundalinea']?>"><?php echo $dataRegistro['segundalinea']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
                                             require 'conexionCancer.php';
@@ -3062,19 +3062,19 @@ $('#mstectoextra2edit').prop("hidden", true);
 				                    while($row = $query->fetch()) { ?>
                                             <option value="<?php echo $row['descripcionsegundalinea']; ?>">
                                                 <?php echo $row['descripcionsegundalinea']; ?></option>
-                                            <?php } ?>
+                                            <?php }; ?>
 
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Ciclos 2da linea</strong>
                                         <input type="number" id="ciclossegundalineaqtedit" name="ciclossegundalineaqtedit"
-                                            class="form-control" value="<?php echo $dataRegistro['ciclossegundalineaqt'];?>">
+                                            class="form-control" value="<?php echo $dataRegistro['ciclossegundalineaqt']?>">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Antraciclinas</strong>
                                         <select name="antraciclinasedit" id="antraciclinasedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['antraciclinas'];?>"><?php echo $dataRegistro['antraciclinas'];?></option>
+                                            <option value="<?php echo $dataRegistro['antraciclinas'] ?>"><?php echo $dataRegistro['antraciclinas'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
                                             require 'conexionCancer.php';
@@ -3084,14 +3084,14 @@ $('#mstectoextra2edit').prop("hidden", true);
 				                    while($row = $query->fetch()) { ?>
                                             <option value="<?php echo $row['descripcion']; ?>">
                                                 <?php echo $row['descripcion']; ?></option>
-                                            <?php } ?>
+                                            <?php }; ?>
 
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>Momento de la QT</strong>
                                         <select name="momentoquimioedit" id="momentoquimioedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['momentodelaqt'];?>"><?php echo $dataRegistro['momentodelaqt'];?></option>
+                                            <option value="<?php echo $dataRegistro['momentodelaqt']?>"><?php echo $dataRegistro['momentodelaqt']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Neoadyuvante">Neoadyuvante</option>
                                             <option value="Coadyuvante">Coadyuvante</option>
@@ -3108,7 +3108,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     <div class="col-md-3">
                                         <strong style="color:red;">Tipo Hormonoterapia</strong>
                                         <select name="tipohormonoterapiaedit" id="tipohormonoterapiaedit" class="form-control">
-                                            <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia'];?></option>
+                                            <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Letrazol">Letrazol</option>
                                             <option value="Anastrazol">Anastrazol</option>
@@ -3119,7 +3119,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     <div class="col-md-3">
                                         <strong style="color:red;">Momento Hormonoterapia</strong>
                                         <select name="momentohormonoterapiaedit" id="momentohormonoterapiaedit" class="form-control">
-                                        <option value="<?php echo $dataRegistro['momentohormonoterapia'] ?>"><?php echo $dataRegistro['momentohormonoterapia'];?></option>
+                                        <option value="<?php echo $dataRegistro['momentohormonoterapia'] ?>"><?php echo $dataRegistro['momentohormonoterapia']?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Adyuvante">Adyuvante</option>
                                             <option value="Neoadyuvante">Neoadyuvante</option>
@@ -3907,7 +3907,7 @@ $(function () {
  
 
 
-})
+});
                                         </script>
                                     <div class="col-md-6">
                                         <strong>QUIRURGICO</strong>
