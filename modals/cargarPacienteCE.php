@@ -31,8 +31,9 @@
                     <div class="contrato-nuevo">
                         <div class="modal-body">
 
-                            <!-- ********************************* INICIA la sección de DATOS DEL PACIENTE ********************************* -->
 
+
+                            <!-- ********************************* INICIA la sección de DATOS DEL PACIENTE ********************************* -->
                             <div class="form-header">
                                 <h3 class="form-title" style="text-align: center;
                                 color: white;
@@ -110,7 +111,7 @@
                                         <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadinfarto();" type="text" class="form-control" value="" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>Población indígena</strong>
+                                        <strong>Población Indígena</strong>
                                         <input id="poblacionindigena" name="poblacionindigena" type="text" class="form-control" value="" required>
                                     </div>
                                     <div class="col-md-3">
@@ -132,7 +133,7 @@
 
 
                                     <div class="col-md-3">
-                                        <strong>Fecha de nacimiento</strong>
+                                        <strong>Fecha de Nacimiento</strong>
                                         <input id="fecha" name="fecha" type="date" value="" onblur="curp2dateinfarto();" class="form-control" readonly>
                                     </div>
                                     <div class="col-md-3">
@@ -151,12 +152,12 @@
 
                                     </div>
                                     <div class="col-md-3">
-                                        <strong>Frecuencia cardiaca</strong>
+                                        <strong>Frecuencia Cardiaca</strong>
                                         <input type="text" class="form-control" id="frecuenciacardiaca" name="frecuenciacardiaca">
 
                                     </div>
                                     <div class="col-md-3">
-                                        <strong>Presión arterial</strong>
+                                        <strong>Presión Arterial</strong>
                                         <input type="text" class="form-control" id="presionarterial" name="presionarterial">
 
                                     </div>
@@ -172,7 +173,6 @@
                                         $(document).ready(function() {
                                             $('#presionarterial').mask('000/00');
                                         });
-                                        
                                     </script>
 
                                     <div class="col-md-3">
@@ -187,7 +187,7 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <strong>Selecciona el Estado</strong>
+                                        <strong>Estado Residencia</strong>
 
                                         <select name="cbx_estado" id="cbx_estado" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccionar Estado</option>
@@ -206,17 +206,13 @@
 
                                     </div>
                                     <div class="col-md-6">
-                                        <strong>Delegación o Municipio</strong>
+                                        <strong>Alcaldía o Municipio</strong>
                                         <select name="cbx_municipio" id="cbx_municipio" class="form-control" style="width: 100%;" required>
 
                                         </select>
                                     </div><br><br><br>
 
                                     <!-- ********************************* Finaliza la sección de DATOS DEL PACIENTE ********************************* -->
-
-
-
-
 
 
 
@@ -227,19 +223,19 @@
                                     <div class="col-md-12">
                                         <strong>Seleccione los Factores</strong>
                                         <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control" required>
-                                                <option value="Ninguna">Ninguna</option>
-                                                <option value="Hiperlipidemia">Hiperlipidemia</option>
-                                                <option value="Cardiomiopatia de takotsubo">Cardiomiopatia de takotsubo</option>
-                                                <option value="Diabetes">Diabetes</option>
-                                                <option value="Hipertensión">Hipertensión</option>
-                                                <option value="Tabaquismo">Tabaquismo</option>
-                                                <option value="Enfermedad renal cronica">Enfermedad renal cronica</option>
-                                                <option value="Hiperuricemia">Hiperuricemia</option>
-                                                <option value="Obesidad">Obesidad</option>
-                                                <option value="IAM previo">IAM previo</option>
-                                                <option value="Revascularización cardiaca previa">Revascularización cardiaca previa</option>
-                                                <option value="Enfermedad multivaso">Enfermedad multivaso</option>
-                                                <option value="Ectasia coronaria">Ectasia coronaria</option>
+                                            <option value="Ninguna">Ninguna</option>
+                                            <option value="Hiperlipidemia">Hiperlipidemia</option>
+                                            <option value="Cardiomiopatia de takotsubo">Cardiomiopatia de takotsubo</option>
+                                            <option value="Diabetes">Diabetes</option>
+                                            <option value="Hipertensión">Hipertensión</option>
+                                            <option value="Tabaquismo">Tabaquismo</option>
+                                            <option value="Enfermedad renal cronica">Enfermedad renal cronica</option>
+                                            <option value="Hiperuricemia">Hiperuricemia</option>
+                                            <option value="Obesidad">Obesidad</option>
+                                            <option value="IAM previo">IAM previo</option>
+                                            <option value="Revascularización cardiaca previa">Revascularización cardiaca previa</option>
+                                            <option value="Enfermedad multivaso">Enfermedad multivaso</option>
+                                            <option value="Ectasia coronaria">Ectasia coronaria</option>
                                         </select>
                                     </div><br>
 
@@ -354,8 +350,8 @@
                                     <!-- Se agrega el MACE hospitalario como se indica en el excel-->
                                     <div class="col-md-6">
                                         <strong>MACE Hospitalario</strong>
-                                        <select name="macehospitalario" id="macehospitalario" class="form-control" style="width:100%;" require>
-                                            <option value="0">Seleccione...</option>
+                                        <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" style="width:100%;" require>
+
                                             <option value="EVC">EVC</option>
                                             <option value="Killip Kimball">Killip Kimball</option>
                                             <option value="Reinfarto">Reinfarto</option>
@@ -716,7 +712,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                  
+
 
 
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
@@ -726,21 +722,24 @@
                                         <strong>LITOTRICIA INTRACORONARIA</strong>
                                     </div>
 
-                                    <div class="col-md-6" id="SCHOCKWAVE">
+                                    <div class="col-md-6">
                                         <strong>SCHOCKWAVE C2</strong>
                                         <select name="shockwavedato" id="shockwavedato" class="form-control">
                                             <option value="">Seleccione...</option>
-                                            <option value="si">Sí</option>
-                                            <option value="no">No</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6" id="resulairbus">
-                                        <strong>Resultado de SCHOCKWAVE C2</strong>
+                                    <div class="col-md-6" id="resultadoshock">
+                                        <strong>Complicaciones de SCHOCKWAVE C2</strong>
                                         <select name="resultadoshockwavedato" id="resultadoshockwavedato" class="form-control">
                                             <option value="">Seleccione...</option>
-                                            <option value="Perforacion">Perforación</option>
                                             <option value="Diseccion">Disección</option>
+                                            <option value="No Reflow">No Reflow</option>
+                                            <option value="Perforacion">Perforación</option>
+                                            <option value="Slow Flow">Slow Flow</option>
+
                                         </select>
                                     </div>
                                     <br>
@@ -756,12 +755,12 @@
                                         <strong>MARCAPASOS TEMPORAL</strong>
                                     </div>
 
-                                    <div class="col-md-6" id="marcapa">
+                                    <div class="col-md-6">
                                         <strong>Marca Pasos</strong>
                                         <select name="marcapasossino" id="marcasossino" class="form-control">
                                             <option value="">Seleccione...</option>
-                                            <option value="si">Sí</option>
-                                            <option value="no">No</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
 
@@ -777,6 +776,10 @@
                                     <br>
                                     <br>
                                     <br>
+
+
+
+                                    <!-- STENTS
                                     <div class="col-md-3" id="idstend">
                                         <strong>Stent</strong>
                                         <select name="stent" id="stent" class="form-control">
@@ -806,10 +809,10 @@
                                             <option value="8">8</option>
                                             <option value="9">9</option>
                                             <option value="10">10</option>
-                                            <option value="Mas de 10">Mas de 10</option>
+                                            <option value="Mas de 10">Más de 10</option>
 
                                         </select>
-                                    </div>
+                                    </div>-->
 
 
                                     <!--Finalizan opciones-->
@@ -924,9 +927,9 @@
 
                                     <div class="col-md-6">
                                         <strong>Seleccione las Complicaciones</strong>
-                                        <select id="mscancer" name="mscomplicacion[]" multiple="multiple" class="form-control" required>
+                                        <select id="mscomplicacion" name="mscomplicacion[]" multiple="multiple" class="form-control" required>
                                             <option value="Ninguna">Ninguna</option>
-                                            <option value="arritmia">Arritmia</option>
+                                            <option value="Arritmia">Arritmia</option>
                                             <option value="Bloqueo Conduccion">Bloqueo Conducción</option>
                                             <option value="Disección Aortica">Disección Aórtica</option>
                                             <option value="Hematoma en Sitio de Puncion">Hematoma en Sitio de Punción</option>
@@ -953,7 +956,7 @@
 
 
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" id="idarritmia">
                                         <strong>Arritmia</strong>
                                         <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
