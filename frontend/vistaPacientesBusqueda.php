@@ -61,7 +61,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
-    <a href="#" class="mandaid" id="<?php echo $id_paciente ?>">Seguimiento</a>
+    <a href="#" class="mandaid" onclick="abrirseguimiento();" id="<?php echo $id_paciente ?>">Seguimiento</a>
     <?php session_start();
     if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { ?>
         <a href="#" onclick="editarRegistro();" id="editarregistro">Editar registro</a>
@@ -133,7 +133,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <th id="th">IMC</th>
         <td id="td"><?php echo $dataRegistro['imcinfarto'] . '&nbsp' . $showimc ?></td>
     </tr>
-    </table>
+</table>
 
 
 
@@ -422,7 +422,18 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 </div>
 
 
+
+<?php
+require 'modals/seguimientoPaciente.php';
+?>
+
+
 <script>
+    function abrirseguimiento() {
+        $('#seguimiento').modal('show')
+    }
+
+
     function eliminarRegistro() {
         var id = $("#idcurp").val();
         if (id == '') {

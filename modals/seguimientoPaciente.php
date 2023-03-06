@@ -2,6 +2,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
+    <script src="js/scriptModalvalidacionCE.js"></script>
     <!--URL para agregar el icon-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--Finaliza url para agregar icon-->
@@ -98,13 +99,13 @@
 
                                     <input id="year" name="year" class="form-control" type="hidden" value="2022" required="required" onkeyup="mayus(this);" readonly>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <strong>CURP:&nbsp;</strong>
                                         <input id="curps" name="curps" class="form-control" type="text" value="" readonly>
                                         <span id="curp" class="curp" name="curp"></span>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <strong>Seguimiento</strong>
                                         <select name="seguimiento" id="seguimiento" class="form-control" required onclick="obtenerid();">
                                             <option value="">Seleccione...</option>
@@ -113,6 +114,7 @@
                                             <option value="Un año">Un año</option>
                                         </select>
                                     </div>
+                                    <br>
 
 
 
@@ -426,11 +428,11 @@
                                     color: white; 
                                     background-color:#e16c70;">
 
-                                        <strong>Tratamiento</strong>
+                                        <strong>TRATAMIENTO</strong>
                                     </div>
 
                                     <!-- Los siguientes select, de la sección TRATAMIENTO son de selección simple-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-4" id="">
                                         <strong>Anticoagulantes</strong>
                                         <select name="anticoagulantes" id="anticoagulantes" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -444,7 +446,7 @@
                                     </div>
 
 
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-4" id="">
                                         <strong>Betabloqueadores</strong>
                                         <select name="betabloqueadores" id="betabloqueadores" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -457,7 +459,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-4" id="">
                                         <strong>IECA</strong>
                                         <select name="ieca" id="ieca" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -516,8 +518,10 @@
                                             <option value="fenobifrato">Fenobifrato</option>
                                             <option value="gembibrozilo">Gembibrozilo</option>
                                         </select>
-                                    </div><br><br><br>
-
+                                    </div><br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <!-- Finaliza la sección TRATAMIENTO-->
 
 
@@ -527,84 +531,84 @@
                                     color: white; 
                                     background-color:#e16c70;">
 
-                                        <strong>Paraclinicos</strong>
+                                        <strong>PARACLINICOS</strong>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>CK</strong>
                                         <input type="number" id="ck" name="ck" placeholder="Ingrese..." class="form-control">
 
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>CK-MB</strong>
                                         <input type="number" id="ckmb" name="ckmb" placeholder="Ingrese..." class="form-control">
 
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Troponinas</strong>
                                         <input type="number" id="troponinas" name="troponinas" placeholder="Ingrese..." class="form-control">
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Glucosa</strong>
                                         <input type="number" id="glucosa" name="glucosa" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>UREA</strong>
-                                        <input type="number" id="urea" name="urea" placeholder="Ingrese Urea..." class="form-control">
+                                        <input type="number" id="urea" name="urea" placeholder="Ingrese..." class="form-control">
 
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Creatinina</strong>
                                         <input type="number" id="creatinina" name="creatinina" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Colesterol</strong>
                                         <input type="number" id="colesterol" name="colesterol" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Trigliceridos</strong>
                                         <input type="number" id="trigliceridos" name="trigliceridos" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Ácido Urico</strong>
                                         <input type="number" id="acidourico" name="acidourico" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>HB Glucosilada</strong>
                                         <input type="number" id="hbglucosilada" name="hbglucosilada" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Proteinas</strong>
                                         <input type="number" id="proteinas" name="proteinas" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>Colesterol Total</strong>
                                         <input type="number" id="colesteroltotal" name="colesteroltotal" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>LDL</strong>
                                         <input type="number" id="ldl" name="ldl" placeholder="Ingrese..." class="form-control">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <strong>HDL</strong>
                                         <input type="number" id="hdl" name="hdl" placeholder="Ingrese..." class="form-control">
-                                    </div><br><br><br>
-
+                                    </div><br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <!-- FINALIZA sección PARACLINICOS-->
 
+
+
+
                                     <!--***********************************************************************************-->
-
-
-
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#e16c70;">
-                                        <strong>Viabilidad y Perfusión Miocardia</strong>
+                                        <strong>VIABILIDAD Y PERFUSIÓN MIOCARDIA</strong>
                                     </div>
-
-
 
 
                                     <!--Inicia sección PET-->
@@ -614,14 +618,18 @@
                                         <strong>PET</strong>
                                     </div>
 
-
-
-
-
+                                    <div class="col-md-4">
+                                        <strong>PET</strong>
+                                        <select name="idpet" id="idpet" class="form-control" style="width:100%;" require>
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
 
                                     <!-- El select PET solo desplegará dos opciones, PATRON MATH y PATRON MISMATCH-->
-                                    <div class="col-md-4" id="">
-                                        <strong>*Patrón</strong>
+                                    <div class="col-md-4" id="patron">
+                                        <strong>Patrón</strong>
                                         <select name="pet" id="pet" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="Patron Match">Patrón Match</option>
@@ -630,8 +638,7 @@
                                     </div>
 
                                     <!--Si se selecciona PATRON MATH, se debe habilitar el siguiente select-->
-
-                                    <div class="col-md-4" id="">
+                                    <div class="col-md-4" id="idmatch">
                                         <strong>Segmento Match</strong>
                                         <select name="segmentomatch" id="segmentomatch" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -642,7 +649,7 @@
                                     </div>
 
                                     <!-- Si se selecciona PATRON MISMATCH, se debe habilitar el siguiente select-->
-                                    <div class="col-md-4" id="">
+                                    <div class="col-md-4" id="idmismatch">
                                         <strong>Segmento Mismatch</strong>
                                         <select name="segmentomismatch" id="segmentomismatch" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -651,14 +658,10 @@
                                             <option value="Medio">Medio</option>
                                         </select>
                                     </div>
-
-
-
-
-
-
-
-
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
 
 
 
@@ -669,10 +672,18 @@
                                         <strong>Gamagrama Cardiaco</strong>
                                     </div>
 
+                                    <div class="col-md-4">
+                                        <strong>Gamagrama Cardiaco</strong>
+                                        <select name="idgamagrama" id="idgamagrama" class="form-control" style="width:100%;" require>
+                                            <option value="0">Seleccione...</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
 
-                                    <!-- El siguiente SELECT solo muestra dos opciones: NEGATIVO / POSITIVO-->
-                                    <div class="col-md-4" id="">
-                                        <strong>* Resultado de Gamagrama Cardiaco</strong>
+                                    <!--Si se selecciona que SÍ se debe habilitar el siguiente select RESULTADO DE GAMAGRAMA CARDIACO-->
+                                    <div class="col-md-4" id="gamagra">
+                                        <strong>Resultado de Gamagrama Cardiaco</strong>
                                         <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="Positivo">Positivo</option>
@@ -680,10 +691,10 @@
                                         </select>
                                     </div>
 
-                                    <!-- Si en el select anterior, se seleccionó POSITIVO, se debenera mostrar el siguiente select-->
-                                    <div class="col-md-4" id="">
+                                    <!-- Si en el select anterior, se seleccionó POSITIVO, se deberá mostrar el siguiente select-->
+                                    <div class="col-md-4" id="localizaciongamagrama">
                                         <strong>Localización</strong>
-                                        <select name="gamagrama" id="gamagrama" class="form-control" style="width:100%;" require>
+                                        <select name="localizaciongamagra" id="localizaciongamagra" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
                                             <option value="Anterior">Anterior</option>
                                             <option value="Apical">Apical</option>
@@ -693,23 +704,30 @@
                                             <option value="Septal">Septal</option>
                                         </select>
                                     </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
 
 
+
+
+
+                                    <!--**************************************************************************************************************-->
                                     <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>Ergometría</strong>
                                     </div>
+
                                     <!-- ERGOMETRÍA no se seleccionará, solo se visualizará-->
                                     <div class="col-md-3">
-                                        <strong>*Ergometría</strong>
+                                        <strong>Ergometría</strong>
                                         <select name="bruce" id="bruce" class="form-control" readonly>
                                             <option value="bruce" selected>Protocolo Bruce</option>
                                         </select>
                                     </div>
-
-
 
                                     <!-- Cuando se seleccione una etapa, se debe seleccionar si es positivo/negativo-->
                                     <div class="col-md-3" id="idetapauno">
@@ -783,7 +801,7 @@
 
 
                                     <!-- Suspención de estudio-->
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-3" id="suspencion">
                                         <strong>Suspensión de Estudio</strong>
                                         <select name="suspencionestudio" id="suspencionestudio" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -798,6 +816,7 @@
                                             <option value="NA">No Aplica</option>
                                         </select>
                                     </div>
+                                    <br>
                                     <br>
                                     <br>
                                     <br>
@@ -827,8 +846,8 @@
                                         <strong>FEVI</strong>
                                         <select name="feviop" id="feviop" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="treinta">Menos del 30%</option>
-                                            <option value="cincuenta">Del 31% - 50%</option>
+                                            <option value="Menos del 30%">Menos del 30%</option>
+                                            <option value="Del 31% - 50%">Del 31% - 50%</option>
                                             <option value="setenta">Del 51% - 70%</option>
                                             <option value="cien">Más del 71%</option>
                                         </select>
@@ -839,11 +858,11 @@
                                         <strong>Movilidad</strong>
                                         <select name="movilidadop" id="movilidadop" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="acinesia">Acinesia</option>
-                                            <option value="aneurismatico">Aneurismatico</option>
-                                            <option value="discinecia">Discinecia</option>
-                                            <option value="hipocinesia">Hipocinesia</option>
-                                            <option value="normal">Normal</option>
+                                            <option value="Acinesia">Acinesia</option>
+                                            <option value="Aneurismatico">Aneurismatico</option>
+                                            <option value="Discinecia">Discinecia</option>
+                                            <option value="Hipocinesia">Hipocinesia</option>
+                                            <option value="Normal">Normal</option>
                                         </select>
                                     </div>
 
@@ -853,15 +872,15 @@
                                         <strong>Segmento</strong>
                                         <select name="segmento" id="segmento" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="anterior">Anterior</option>
-                                            <option value="apical">Apical</option>
-                                            <option value="diafragmatica">Diafragmática</option>
-                                            <option value="lateral">Lateral</option>
-                                            <option value="lateralbajo">Lateral Bajo</option>
-                                            <option value="septal">Septal</option>
+                                            <option value="Anterior">Anterior</option>
+                                            <option value="Apical">Apical</option>
+                                            <option value="Diafragmatica">Diafragmática</option>
+                                            <option value="Lateral">Lateral</option>
+                                            <option value="Lateral Bajo">Lateral Bajo</option>
+                                            <option value="Septal">Septal</option>
                                         </select>
                                     </div>
-
+                                    <br>
                                     <br>
                                     <br>
                                     <br>
@@ -884,29 +903,25 @@
                                     </div>
 
                                     <!-- El siguiente select tiene dependencia:-->
-                                    <div class="col-md-3" id="">
-                                        <strong>*Defunción</strong>
+                                    <div class="col-md-6">
+                                        <strong>Defunción</strong>
                                         <select name="defuncion" id="defuncion" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="sidefuncion">Sí</option>
-                                            <option value="nodefuncion">No</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="">
+                                    <div class="col-md-6" id="causadefuncion">
                                         <strong>Causa</strong>
                                         <select name="causa" id="causa" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
-                                            <option value="cardiaca">Cardiaca</option>
-                                            <option value="nocardiaca">No Cardiaca</option>
+                                            <option value="Cardiaca">Cardiaca</option>
+                                            <option value="No Cardiaca">No Cardiaca</option>
                                         </select>
-                                    </div> <br><br><br>
+                                    </div> <br><br><br><br>
 
-                                    <div class="col-md-12" style="text-align: center; 
-                                    color: white; 
-                                    background-color:white;">
-                                        <strong>Viabilidad y Perfusión Miocardia</strong>
-                                    </div>
+
 
 
                                     <div class="col-md-12">

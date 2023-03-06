@@ -649,6 +649,15 @@ $(document).ready(function() {
     });
 });
 
+
+//Select multiple de MACE HOSPITALARIO
+$(document).ready(function() {
+    $('#mslesionescoronarias').change(function(e) {  
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
 // Habilita Complicaciones de SCHOCKWAVE C2
 $(document).ready(function() {
     $('#shockwavedato').change(function(e) {
@@ -665,38 +674,173 @@ $(function() {
 
 
 
-// Habilita Soporte Ventricular
+
+// Habilita PROTESIS ENDOVASCULAR
 $(document).ready(function() {
-    $('#marcasossino').change(function(e) {
-        if ($(this).val() === "Si") {
-            $('#marcapa').prop("hidden", false);
+    $('#protesisendovascular').change(function(e) {
+        if ($(this).val() === "Con Medicacion") {
+            $('#idprimerageneracion').prop("hidden", false);
+            $('#idsegundageneracion').prop("hidden", false);
         } else if ($(this).val() === "No") {
-            $('#marcapa').prop("hidden", true);
+            $('#idprimerageneracion').prop("hidden", true);
+            $('#idsegundageneracion').prop("hidden", true);
         }
     })
 });
 $(function() {
-    $('#marcapa').prop("hidden", true);
+    $('#idprimerageneracion').prop("hidden", true);
+    $('#idsegundageneracion').prop("hidden", true);
 })
 
 
-
-// Habilita Soporte Ventricular
+// Habilita AIRBUS
 $(document).ready(function() {
-    $('#marcasossino').change(function(e) {
+    $('#airbus').change(function(e) {
         if ($(this).val() === "Si") {
-            $('#marcapa').prop("hidden", false);
+            $('#resultadoirbus').prop("hidden", false);
         } else if ($(this).val() === "No") {
-            $('#marcapa').prop("hidden", true);
+            $('#resultadoirbus').prop("hidden", true);
         }
     })
 });
 $(function() {
-    $('#marcapa').prop("hidden", true);
+    $('#resultadoirbus').prop("hidden", true);
 })
 
 
 
 
-//Se agrega condición en protesis endovascular
 
+// Habilita GAMAGRAMA EN seguimiento
+$(document).ready(function() {
+    $('#idgamagrama').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#gamagra').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#gamagra').prop("hidden", true);
+             $('#localizaciongamagrama').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#gamagra').prop("hidden", true);
+    $('#localizaciongamagrama').prop("hidden", true);
+})
+
+// Habilita la LOCALIZACIÓN GAMAGRAMA en seguimiento
+$(document).ready(function() {
+    $('#gamagrama').change(function(e) {
+        if ($(this).val() === "Positivo") {
+            $('#localizaciongamagrama').prop("hidden", false);
+        } else if ($(this).val() === "Negativo") {
+            $('#localizaciongamagrama').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#localizaciongamagrama').prop("hidden", true);
+})
+
+
+// Habilita PATRÓN PET en seguimiento
+$(document).ready(function() {
+    $('#idpet').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#patron').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#patron').prop("hidden", true);
+            $('#idmatch').prop("hidden", true);
+            $('#idmismatch').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#patron').prop("hidden", true);
+    $('#idmatch').prop("hidden", true);
+    $('#idmismatch').prop("hidden", true);
+})
+
+// Habilita Segmento Match en seguimiento
+$(document).ready(function() {
+    $('#pet').change(function(e) {
+        if ($(this).val() === "Patron Match") {
+            $('#idmatch').prop("hidden", false);
+        } else if ($(this).val() === "Patron Mismatch") {
+            $('#idmatch').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idmatch').prop("hidden", true);
+})
+
+
+// Habilita Segmento Mismatch en seguimiento
+$(document).ready(function() {
+    $('#pet').change(function(e) {
+        if ($(this).val() === "Patron Mismatch") {
+            $('#idmismatch').prop("hidden", false);
+        } else if ($(this).val() === "Patron Match") {
+            $('#idmismatch').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idmismatch').prop("hidden", true);
+})
+
+
+
+
+
+
+// Habilita Bloqueo AV
+$(document).ready(function() {
+    $('#arritmiadetalle').change(function(e) {
+        if ($(this).val() === "Bloqueo AV") {
+            $('#bloqueo').prop("hidden", false);
+        } else if ($(this).val() === "Extrasistoles Ventriculares") {
+            $('#bloqueo').prop("hidden", true);
+
+        }
+        
+    })
+});
+$(function() {
+    $('#bloqueo').prop("hidden", true);
+
+})
+
+// Habilita Extrasístoles Ventriculares
+$(document).ready(function() {
+    $('#arritmiadetalle').change(function(e) {
+        if ($(this).val() === "Extrasistoles Ventriculares") {
+            $('#ventricularesextra').prop("hidden", false);
+        } else if ($(this).val() === "Bloqueo AV") {
+            $('#ventricularesextra').prop("hidden", true);
+
+        }
+    })
+});
+$(function() {
+    $('#ventricularesextra').prop("hidden", true);
+
+})
+
+
+
+// Habilita DEFUNCION en SEGUIMIENTO
+$(document).ready(function() {
+    $('#defuncion').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#causadefuncion').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#causadefuncion').prop("hidden", true);
+
+        }
+    })
+});
+$(function() {
+    $('#causadefuncion').prop("hidden", true);
+
+})

@@ -360,7 +360,7 @@
                                     </div>
                                     <!-- Los Factores de Riesgo Cardiovascular van del 1 al 12-->
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" id="killip">
                                         <strong>Killip Kimball</strong>
                                         <select name="killipkimball" id="killipkimball" class="form-control" style="width: 100%;" required>
                                             <option value="0">Seleccione...</option>
@@ -544,8 +544,8 @@
 
                                     <div class="col-md-3">
                                         <strong>Lesiones coronarias</strong>
-                                        <select name="lesionescoronarias" id="lesionescoronarias" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                        <select id="mslesionescoronarias" name="mslesionescoronarias[]" multiple="multiple" class="form-control">
+
                                             <option value="Cincunfleja">Cincunfleja</option>
                                             <option value="Coronario Derecha">Coronario Derecha</option>
                                             <option value="Descendente Anterior">Descendente Anterior</option>
@@ -594,8 +594,6 @@
                                                     <?php echo $row['tipolesion']; ?></option>
                                             <?php } ?>
                                         </select>
-                                        <!--<a href="img/clasificacion cardio 1.png" style="color: red" target="_blank">
-                                            Consultar referencia</a>-->
                                     </div>
 
 
@@ -610,9 +608,9 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="protesisendovascular">
+                                    <div class="col-md-3">
                                         <strong>Protesis Endovascular</strong>
-                                        <select name="endo" id="endo" class="form-control">
+                                        <select name="protesisendovascular" id="protesisendovascular" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Absorb">Absorb</option>
                                             <option value="Con Medicacion">Con Medicación</option>
@@ -624,26 +622,23 @@
 
 
                                     <!--Al seleccionar con medicación, se debe habilitar 1 Y 2 GENERACION-->
-
-
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" id="idprimerageneracion">
                                         <strong>1er Generación</strong>
-                                        <select id="idprimergeneracion" name="primergeneracion" class="form-control">
+                                        <select id="primergeneracion" name="primergeneracion" class="form-control">
                                             <option value="0">Seleccione...</option>
-                                            <option value="Siralimus">Siralimus</option>
+                                            <option value="Sirolimus">Sirolimús</option>
                                             <option value="Paclitaxel">Paclitaxel</option>
 
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" id="idsegundageneracion">
                                         <strong>2da Generación</strong>
                                         <select id="segundageneracion" name="segundageneracion" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="Everulimus">Everulimus</option>
                                             <option value="Ridaforulimus">Ridaforulimus</option>
                                             <option value="Zotarolimus">Zotarolimus</option>
-
                                         </select>
                                     </div>
 
@@ -680,17 +675,19 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-3" id="airbus">
+
+
+                                    <div class="col-md-3">
                                         <strong>AIRBUS</strong>
-                                        <select name="airbus" id="aibus" class="form-control">
+                                        <select name="airbus" id="airbus" class="form-control">
                                             <option value="">Seleccione...</option>
-                                            <option value="si">Si</option>
-                                            <option value="no">No</option>
+                                            <option value="Si">Sí</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
 
                                     <!-- Si es sí:-->
-                                    <div class="col-md-3" id="resulairbus">
+                                    <div class="col-md-3" id="resultadoirbus">
                                         <strong>Resultado de AIRBUS</strong>
                                         <select name="resultadoirbus" id="resultadoirbus" class="form-control">
                                             <option value="">Seleccione...</option>
@@ -698,6 +695,9 @@
                                             <option value="Diseccion">Disección</option>
                                         </select>
                                     </div>
+
+
+
 
 
                                     <div class="col-md-3" id="oct">
@@ -756,7 +756,7 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <strong>Marca Pasos</strong>
+                                        <strong>Marcapasos</strong>
                                         <select name="marcapasossino" id="marcasossino" class="form-control">
                                             <option value="">Seleccione...</option>
                                             <option value="Si">Sí</option>
@@ -976,7 +976,7 @@
                                                 II
                                                 III-->
 
-                                    <div class="col-md-6" id="">
+                                    <div class="col-md-6" id="bloqueo">
                                         <strong>Bloqueo AV</strong>
                                         <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -995,7 +995,7 @@
                                                 Bigeminismo
                                             -->
 
-                                    <div class="col-md-6" id="">
+                                    <div class="col-md-6" id="ventricularesextra">
                                         <strong>Extrasístoles Ventriculares</strong>
                                         <select name="extraventri" id="extraventri" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
