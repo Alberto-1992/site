@@ -123,6 +123,35 @@ let limitcalculofinal = calculoimc.toFixed(1);
 document.formularioedicion.imcedit.value = limitcalculofinal;
 
 }
+function calcularmestruacionedit(){
+    
+    var fecha1 = $("#fechaultimamestruacionedit").val();
+    var fechaActual = new Date()
+    if(fecha1 == ''){
+    }else{
+    const fecha_compare_1 = new Date(fecha1)
+    const fecha_compare_2 = new Date(fechaActual)
+    
+    fecha_compare_1.setMonth(fecha_compare_1.getMonth()+ 12);
+    
+    //alert(`fecha1 es mayor a 12 meses? > ${fecha_compare_1> fecha_compare_2} `  )
+        const menopausea = 'Menopausia';
+        const perimenopausea = 'Perimenopausia';
+    if (fecha_compare_1< fecha_compare_2){
+        $('#menopauperimenopauedit').prop("hidden", false);
+        $('#menopauseaedit').val(menopausea);
+    }else{
+        $('#menopauperimenopauedit').prop("hidden", false);
+        $('#menopauseaedit').val(perimenopausea);
+    }
+    
+    }
+    }
+    $(function() {
+        $('#menopauperimenopauedit').prop("hidden", false);
+        
+    
+    })
 $(document).ready(function() {
 
 $('#mscanceredit').change(function(e) {
@@ -866,7 +895,7 @@ return false;
                                                 let ob = {
                                                             id: id
                                                             };
-  
+
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",

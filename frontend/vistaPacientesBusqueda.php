@@ -97,6 +97,14 @@ date_default_timezone_set('America/Mexico_City');
         <th id="th">Sexo:</th>
         <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
     </tr>
+    <tr>
+        <th id="th">Población indigena</th>
+        <td id="td"><?php echo $dataRegistro['poblacionindigena'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Raza</th>
+        <td id="td"><?php echo $dataRegistro['raza'] ?></td>
+    </tr>
 </table>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
@@ -112,6 +120,14 @@ date_default_timezone_set('America/Mexico_City');
     <tr>
         <th id="th">IMC</th>
         <td id="td"><?php echo $dataRegistro['imcinfarto'].'&nbsp'.$showimc ?></td>
+    </tr>
+    <tr>
+        <th id="th">Frecuencia cardiaca</th>
+        <td id="td"><?php echo $dataRegistro['fc'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Presión arterial</th>
+        <td id="td"><?php echo $dataRegistro['pa'] ?></td>
     </tr>
     </table>
 

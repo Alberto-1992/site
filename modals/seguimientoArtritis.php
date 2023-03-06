@@ -1,19 +1,18 @@
 <div id="seguimientoArtritis" class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
     <div class="modal-dialog modal-lg">
 <script>
-    function calculaIMCart() {
+    function calcularIMCart() {
 
-let talla = document.getElementById('tallaseguiart').value;
-let peso = document.getElementById('pesoseguiart').value;
+let tallasegui = document.getElementById('tallaseguiart').value;
+let pesosegui= document.getElementById('pesoseguiart').value;
 
 
-imccalculo = Math.pow(talla, 2);
+imccalculo = Math.pow(tallasegui, 2);
 let limitimcalculo = imccalculo.toFixed(2);
-let calculoimc = peso / limitimcalculo;
+let calculoimc = pesosegui / limitimcalculo;
 let limitcalculofinal = calculoimc.toFixed(1);
 document.formularioseguiart.imcsegui.value = limitcalculofinal;
 
@@ -378,15 +377,15 @@ $(document).ready(function() {
                 
                                     ?>
                                     <div class="col-md-4">
-                                        <strong>Fecha:</strong>
+                                        <strong>Fecha</strong>
                                         <input type="text" value="<?php echo $hoy ?>" class="form-control" name="fechahoy" id="fechahoy" readonly>
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>ID:</strong>
+                                        <strong>ID</strong>
                                         <input type="text" value="<?php echo $dataRegistro['id_usuarioartritis']; ?>" class="form-control" name="seguiart" id="seguiart" readonly>
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>CURP:</strong>
+                                        <strong>CURP</strong>
                                         <input id="curpseguiart" name="curpseguiart" class="form-control" type="text" value="<?php echo $dataRegistro['curp']; ?>" readonly>
                                     </div>
                                     <script>
@@ -395,17 +394,17 @@ $(document).ready(function() {
                                     });
                                     </script>
                                     <div class="col-md-4">
-                                        <strong>Talla:</strong>
+                                        <strong>Talla</strong>
                                         <input type="number" step="any" class="form-control" id="tallaseguiart" name="tallaseguiart" required>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <strong>Peso:</strong>
-                                        <input type="number" step="any" class="form-control" id="pesoseguiart" onblur="calculaIMCart();" name="pesoseguiart" required>
+                                        <strong>Peso</strong>
+                                        <input type="number" step="any" class="form-control" id="pesoseguiart" onblur="calcularIMCart();" name="pesoseguiart" required>
                                     </div>
                                     <div class="col-md-4">
-                                        <strong>IMC:</strong>
-                                        <input type="number" step="any" class="form-control" id="imcsegui" onblur="calculaIMCart();" name="imcsegui"  value="">
+                                        <strong>IMC</strong>
+                                        <input type="number" step="any" class="form-control" id="imcsegui" onblur="calcularIMCart();" name="imcsegui"  value="">
                                     </div>
                                     <br>
                                     <br>

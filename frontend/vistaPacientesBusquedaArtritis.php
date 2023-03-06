@@ -211,8 +211,24 @@ $sdai = "<span class='obesidad1'> $sdaialta";
         <th id="th">Sexo:</th>
         <td id="td"><?php echo $dataRegistro['sexo'] ?></td>
     </tr>
+</table>
+<!--Finaliza Datos del Paciente-->
 
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }?>>
+
+    <div class="containerr3">Antecedentes Personales Patológicos</div>
     <tr>
+    <th id="th">Antecedentes Personales Patologicos:</th>
+
+        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql_r))
+{
+echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
+
+    </tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<div class="containerr3">Somatometria</div>
+<tr>
         <th id="th">Talla:</th>
         <td id="td"><?php echo $dataRegistro['tallaartritis'] ?></td>
     </tr>
@@ -226,28 +242,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
         <th id="th">IMC:</th>
         <td id="td"><?php echo $dataRegistro['imcartritis'].'&nbsp'; if($id_paciente != ''){ echo $showimc;}?></td>
     </tr>
-    </tr>
-</table>
-<!--Finaliza Datos del Paciente-->
-
-
-
-
-
-<!--Inicia Antecedentes Personales Patológicos-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarantecedentespato();" <?php } }?>>
-
-    <div class="containerr3">Antecedentes Personales Patológicos</div>
-    <tr>
-    <th id="th">Antecedentes Personales Patologicos:</th>
-
-        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql_r))
-{
-echo '&nbsp&nbsp'.$dataRegist['detalleantecedente'].'--'.'';} ?></td>
-
-    </tr>
-</table>
-<!--Inicia Antecedentes Personales Patológicos-->
+</table> 
 <!--Inicia LABORATORIOS-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editarlaboratoriosartritis();" <?php } }?>>
     <div class="containerr3">Laboratorios</div>

@@ -42,7 +42,14 @@ require 'menu/menuPrincipal.php';
 
             </a>
         </article>
+        <article class="card" id="cancer-bucal">
+                <a href="cancerbucal">
+                    <hr id="hr3">
+                    <p>Cáncer Bucal</p>
+                    <a id="link" href="cancerbucal" class="btn btn-danger">Ver Información...</a>
 
+                </a>
+            </article>
         <article class="card" id="cancer-ovario">
             <a href="cancedeovario">
                 <hr id="hr4">
@@ -82,16 +89,8 @@ require 'menu/menuPrincipal.php';
                 <a id="link" href="#" class="btn btn-info">CREHER</a>
             </a>
         </article>
-        <article class="card" id="cancer-bucal">
-                <a href="cancerbucal">
-                    <hr id="hr3">
-                    <p>Cáncer Bucal</p>
-                    <a id="link" href="cancerbucal" class="btn btn-danger">Ver Información...</a>
-
-                </a>
-            </article>
         
-         <article class="card" id="paladarhendido">
+        <article class="card" id="paladarhendido">
             <a href=".#">
                 <hr id="hr7">
                 <p>Paladar hendido</p>
