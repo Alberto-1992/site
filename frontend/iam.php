@@ -8,7 +8,7 @@
     <link href="css/estilosMenuNew.css" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
     <!--<script defer src="https://app.embed.im/snow.js"></script>-->
-    <title>Document</title>
+    <title>SCA</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
     <header class="header">
 
-        <span id="cabecera">Infarto Agudo al Miocardio</span>
+        <span id="cabecera">SINDROME CORONARIO AGUDO</span>
 
     </header>
 
