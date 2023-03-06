@@ -7,17 +7,27 @@ date_default_timezone_set('America/Mexico_City');
         $fecha_actual = new DateTime(date('Y-m-d'));
         
             $id_paciente = $dataRegistro['id'];
-            $id = $dataRegistro['id_paciente'];
+            $id = $dataRegistro['id_pacienteinfarto'];
             $municipio = $dataRegistro['municipio'];
             $estado = $dataRegistro['estado'];
-            
+
+            $sql = $conexion2->query("SELECT descripcionfrinfarto, id_pacienteinfarto
+            FROM factoresriesgoinfarto
+            WHERE id_pacienteinfarto
+            IN (SELECT id_pacienteinfarto
+            FROM factoresriesgoinfarto
+            GROUP BY id_pacienteinfarto
+            HAVING count(id_pacienteinfarto) >= 1)
+            and id_pacienteinfarto = $id_paciente
+            ORDER BY id_pacienteinfarto");
+
             $fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
             $fecha2 = new DateTime($dataRegistro['fechaterminotrombolisis']);//fecha de cierre
             
             $intervalo = $fecha1->diff($fecha2);
             
             $diasDiferencia = $intervalo->format('%d days %H horas %i minutos');
-            $imccalculo = $dataRegistro['imc'];
+            $imccalculo = $dataRegistro['imcinfarto'];
             $imcbajo = "IMC bajo";
             $imcok= "IMC ok";
             $imcsobre = "Sobrepeso";
@@ -76,7 +86,7 @@ date_default_timezone_set('America/Mexico_City');
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['escolaridad'] ?></td>
     </tr>
 
     <tr>
@@ -93,132 +103,280 @@ date_default_timezone_set('America/Mexico_City');
     <div class="containerr3">Somatometria</div>
     <tr>
         <th id="th">Peso</th>
-        <td id="td"><?php echo $dataRegistro['peso'] ?></td>
+        <td id="td"><?php echo $dataRegistro['pesoinfarto'] ?></td>
     </tr>
     <tr>
         <th id="th">Talla</th>
-        <td id="td"><?php echo $dataRegistro['talla'] ?></td>
+        <td id="td"><?php echo $dataRegistro['tallainfarto'] ?></td>
     </tr>
     <tr>
         <th id="th">IMC</th>
-        <td id="td"><?php echo $dataRegistro['imc'].'&nbsp'.$showimc ?></td>
+        <td id="td"><?php echo $dataRegistro['imcinfarto'].'&nbsp'.$showimc ?></td>
     </tr>
     </table>
+
+    <table  class="table table-responsive  table-bordered " cellspacing="0" width="100%">        
+    <tr>
+    <div class="containerr3">Factores riesgo</div>
+
+        <th id="th">Factores de riesgo:</th>
+
+        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql))
+{
+echo '&nbsp&nbsp'.$dataRegist['descripcionfrinfarto'].'--'.'';} ?></td>
+
+    </tr></table>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
     <div class="containerr3">Atnecion clinica</div>
     <tr>
-        <th id="th">Killip Kimball</th>
-        <td id="td"><?php echo $dataRegistro['killipkimball'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Fevi</th>
-        <td id="td"><?php echo $dataRegistro['fevi'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Choque cardiogenico</th>
-        <td id="td"><?php echo $dataRegistro['choquecardogenico'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Revascularización previa</th>
-        <td id="td"><?php echo $dataRegistro['revascularizacionprevia'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Revascularización</th>
-        <td id="td"><?php echo $dataRegistro['revascularizacion'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Localización</th>
-        <td id="td"><?php echo $dataRegistro['localizacion'] ?></td>
-    </tr>
-    <tr>
-        <th id="th">Inicio de sintomas</th>
+        <th id="th">Fecha/Hora inicio de sintomas</th>
         <td id="td"><?php echo $dataRegistro['iniciosintomas'] ?></td>
     </tr>
     <tr>
-        <th id="th">Inicio de triage</th>
-        <td id="td"><?php echo $dataRegistro['primercontacto'] ?></td>
+        <th id="th">Caracteristicas del dolor</th>
+        <td id="td"><?php echo $dataRegistro['caracterisiticasdolor'] ?></td>
     </tr>
     <tr>
-        <th id="th">Termino de triage</th>
-        <td id="td"><?php echo $dataRegistro['puertabalon'] ?></td>
+        <th id="th">Fecha/hora inicio de triage</th>
+        <td id="td"><?php echo $dataRegistro['iniciotriage'] ?></td>
     </tr>
     <tr>
-        <th id="th">Trombolisis</th>
-        <td id="td"><?php echo $dataRegistro['trombolisis']; ?></td>
+        <th id="th">Fecha/hora termino de triage</th>
+        <td id="td"><?php echo $dataRegistro['terminotriage'] ?></td>
     </tr>
     <tr>
-        <th id="th">Fecha/hora inicio trombolisis</th>
-        <td id="td"><?php echo $dataRegistro['fechainiciotrombolisis']; ?></td>
+        <th id="th">Electrocardiograma</th>
+        <td id="td"><?php echo $dataRegistro['electrocardiograma'] ?></td>
     </tr>
     <tr>
-        <th id="th">Fecha/hora termino trombolisis</th>
-        <td id="td"><?php echo $dataRegistro['fechaterminotrombolisis']; ?></td>
+        <th id="th">Localización</th>
+        <td id="td"><?php echo $dataRegistro['localizacionelectro'] ?></td>
     </tr>
     <tr>
-        <th id="th">Tiempo inicio sintomas/finalizo trombolisis</th>
-        <td style="color: red;"><?php echo $diasDiferencia; ?></td>
+        <th id="th">Con o sin elevación</th>
+        <td id="td"><?php echo $dataRegistro['consinelevacion'] ?></td>
     </tr>
     <tr>
-        <th id="th">Disección</th>
-        <td id="td"><?php echo $dataRegistro['diseccion']; ?></td>
+        <th id="th">Mace hospitalario</th>
+        <td id="td"><?php echo $dataRegistro['macehospi'] ?></td>
     </tr>
     <tr>
-        <th id="th">IAM periprocedimiento</th>
-        <td id="td"><?php echo $dataRegistro['iam_periprocedimiento']; ?></td>
+        <th id="th">Killip Kimball</th>
+        <td id="td"><?php echo $dataRegistro['killipkimball'] ?></td>
+    </tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+    <div class="containerr3">Paraclinicos</div>
+    <tr>
+        <th id="th">CK</th>
+        <td id="td"><?php echo $dataRegistro['ck'] ?></td>
     </tr>
     <tr>
-        <th id="th">Complicaciones</th>
-        <td id="td"><?php echo $dataRegistro['complicaciones']; ?></td>
+        <th id="th">CK-MB</th>
+        <td id="td"><?php echo $dataRegistro['ckmb'] ?></td>
     </tr>
     <tr>
-        <th id="th">Flujo microvascular TMP</th>
-        <td id="td"><?php echo $dataRegistro['flujo_microvascular_tmp'] ?></td>
+        <th id="th">Troponinas</th>
+        <td id="td"><?php echo $dataRegistro['troponinas'] ?></td>
     </tr>
     <tr>
-        <th id="th">Fujo final TFG</th>
-        <td id="td"><?php echo$dataRegistro['flujo_final_tfj'] ?></td>
+        <th id="th">Glucosa</th>
+        <td id="td"><?php echo $dataRegistro['glucosa'] ?></td>
     </tr>
     <tr>
-        <th id="th">Trombosis definitiva</th>
-        <td id="td"><?php echo $dataRegistro['trombosis_definitiva']; ?></td>
+        <th id="th">Urea</th>
+        <td id="td"><?php echo $dataRegistro['urea'] ?></td>
     </tr>
     <tr>
-        <th id="th">Marca pasos temporal</th>
-        <td id="td"><?php echo $dataRegistro['marcapasos_temporal']; ?></td>
+        <th id="th">Creatinina</th>
+        <td id="td"><?php echo $dataRegistro['creatinina'] ?></td>
     </tr>
     <tr>
-        <th id="th">Estancia hospitalaria</th>
-        <td id="td"><?php echo $dataRegistro['estancia_hospitalaria']; ?></td>
+        <th id="th">Colesterol</th>
+        <td id="td"><?php echo $dataRegistro['colesterol'] ?></td>
     </tr>
     <tr>
-        <th id="th">Reestenosis</th>
-        <td id="td"><?php echo $dataRegistro['reestenosis_instrastent']; ?></td>
+        <th id="th">Trigliceridos</th>
+        <td id="td"><?php echo $dataRegistro['trigliceridos'] ?></td>
     </tr>
     <tr>
-        <th id="th">Reehopitalización 1 año</th>
-        <td id="td"><?php echo $dataRegistro['reehospitalizacion_one_year']; ?></td>
+        <th id="th">Ácido Úrico</th>
+        <td id="td"><?php echo $dataRegistro['acidourico'] ?></td>
     </tr>
     <tr>
-        <th id="th">Escalas de riesgo</th>
-        <td id="td"><?php echo $dataRegistro['escalas_riesgo']; ?></td>
+        <th id="th">HB Glucosilada</th>
+        <td id="td"><?php echo $dataRegistro['hbglucosilada'] ?></td>
     </tr>
     <tr>
-        <th id="th">IAM tres años</th>
-        <td id="td"><?php echo $dataRegistro['iam_tres_years']; ?></td>
+        <th id="th">Proteinas</th>
+        <td id="td"><?php echo $dataRegistro['proteinas'] ?></td>
     </tr>
     <tr>
-        <th id="th">CRUC tres años</th>
-        <td id="td"><?php echo $dataRegistro['cruc_tres_years']; ?></td>
+        <th id="th">Colesterol Total</th>
+        <td id="td"><?php echo $dataRegistro['colesteroltotal'] ?></td>
     </tr>
     <tr>
-        <th id="th">Defuncion</th>
-        <td id="td"><?php echo $dataRegistro['defuncion']; ?></td>
+        <th id="th">LDL</th>
+        <td id="td"><?php echo $dataRegistro['ldl'] ?></td>
     </tr>
     <tr>
-        <th id="th">Causa defunción</th>
-        <td id="td"><?php echo $dataRegistro['causadefuncion']; ?></td>
+        <th id="th">HDL</th>
+        <td id="td"><?php echo $dataRegistro['hdl'] ?></td>
     </tr>
+</table>
+    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+    <div class="containerr3">Tratamiento/trombolisis</div>
+    <tr>
+        <th id="th">Fibrinólisis</th>
+        <td id="td"><?php echo $dataRegistro['fibrinolisis'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Fecha/hora inicio</th>
+        <td id="td"><?php echo $dataRegistro['horainiciofibro'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Fecha/hora finaliza</th>
+        <td id="td"><?php echo $dataRegistro['horaterminofibro'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">Tipo de Fibrinolítico</th>
+        <td id="td"><?php echo $dataRegistro['tipofibrinolitico'] ?></td>
+    </tr>
+    <tr>
+        <th id="th">¿Procedimiento exitoso?</th>
+        <td id="td"><?php echo $dataRegistro['procedimientoexitoso'] ?></td>
+    </tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">ANGIOPLASTIA CORONARIA TRANSLUMINAL PERCUTANEA</div>
+<tr>
+    <th id="th">Fecha/Hora</th>
+    <td id="td"><?php echo $dataRegistro['fechahoraangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Tipo de Procedimiento</th>
+    <td id="td"><?php echo $dataRegistro['tipoprocedimientoangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Sitio de Punción</th>
+    <td id="td"><?php echo $dataRegistro['sitiopuncionangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Lesiones coronarias</th>
+    <td id="td"><?php echo $dataRegistro['lesionescoronoangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Clasificación DUKE</th>
+    <td id="td"><?php echo $dataRegistro['clasificaciondukeangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Clasificación Medina</th>
+    <td id="td"><?php echo $dataRegistro['clasiificacionmedinaangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Clasificación ACC/AHA</th>
+    <td id="td"><?php echo $dataRegistro['clasificacionaccahaangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Severidad Sintax</th>
+    <td id="td"><?php echo $dataRegistro['severidadangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Protesis Endovascular</th>
+    <td id="td"><?php echo $dataRegistro['protesisendovascularangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">1er Generación</th>
+    <td id="td"><?php echo $dataRegistro['primerageneracionangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">2da Generación</th>
+    <td id="td"><?php echo $dataRegistro['segundageneracionangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Número de Protesis</th>
+    <td id="td"><?php echo $dataRegistro['numeroprotesisangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Revascularización</th>
+    <td id="td"><?php echo $dataRegistro['revascularizacionangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">¿Procedimiento exitoso?</th>
+    <td id="td"><?php echo $dataRegistro['procedimientoexitosoangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">AIRBUS</th>
+    <td id="td"><?php echo $dataRegistro['airbusangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Resultado de AIRBUS</th>
+    <td id="td"><?php echo $dataRegistro['esultadoairbusangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">OCT</th>
+    <td id="td"><?php echo $dataRegistro['octangio'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">LITOTRICIA INTRACORONARIA</div>
+<tr>
+    <th id="th">SCHOCKWAVE C2</th>
+    <td id="td"><?php echo $dataRegistro['schockwaveangio'] ?></td>
+</tr>
+<tr>
+    <th id="th">Resultado de SCHOCKWAVE C2</th>
+    <td id="td"><?php echo $dataRegistro['resultadoairbuslito'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">MARCAPASOS TEMPORAL</div>
+<tr>
+    <th id="th">Marca Pasos</th>
+    <td id="td"><?php echo $dataRegistro['marcapasostratamiento'] ?></td>
+</tr>
+<tr>
+    <th id="th">Soporte Ventricular</th>
+    <td id="td"><?php echo $dataRegistro['soporteventricular'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">COMPLICACIONES</div>
+<tr>
+    <th id="th">Arritmia</th>
+    <td id="td"><?php echo $dataRegistro['arritimia'] ?></td>
+</tr>
+<tr>
+    <th id="th">Bloqueo AV</th>
+    <td id="td"><?php echo $dataRegistro['bloqueoav'] ?></td>
+</tr>
+<tr>
+    <th id="th">Extrasístoles Ventriculares</th>
+    <td id="td"><?php echo $dataRegistro['extrasistolesventri'] ?></td>
+</tr>
+</table>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+
+<div class="containerr3">SEGUIMIENTO POSTPROCEDIMIENTO</div>
+<tr>
+    <th id="th">Fecha de Egreso</th>
+    <td id="td"><?php echo $dataRegistro['fechaegresopost'] ?></td>
+</tr>
+<tr>
+    <th id="th">Causa defunción</th>
+    <td id="td"><?php echo $dataRegistro['causadefuncionpost'] ?></td>
+</tr>
+<tr>
+    <th id="th">Fecha Defunción</th>
+    <td id="td"><?php echo $dataRegistro['fechadefuncionpost'] ?></td>
+</tr>
 
 </table>
 </div>

@@ -1,4 +1,4 @@
-<div id="seguimiento" class="modal fade" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+<div id="seguimiento" class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/estilosMenu.css" rel="stylesheet">
@@ -6,15 +6,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--Finaliza url para agregar icon-->
     <script src="js/enviacurp.js"></script>
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
 
         <!-- Cabecera del modal-->
-        <div class="modal-content" style="width: 950px;
-        height: auto;
-        color:black;
-        left: 50%;
-        transform: translate(-50%); ">
+        <div class="modal-content">
 
             <div class="modal-header" id="cabeceraModalInfarto">
                 <span class="material-symbols-outlined">
