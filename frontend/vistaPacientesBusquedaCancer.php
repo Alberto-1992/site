@@ -1084,7 +1084,7 @@ function editarRegistro(){
     var nombrepaciente = $("#nombrepaciente").val();
     var mensaje = confirm("Desea continuar con la edición de los datos");
     let parametros = {
-        id: id, cancer:cancer, nombrepaciente:nombrepaciente
+        id:id, cancer:cancer, nombrepaciente:nombrepaciente
     }
             if(mensaje == true){
                 $.ajax({
