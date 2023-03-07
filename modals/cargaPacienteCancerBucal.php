@@ -290,13 +290,13 @@
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
                                         <option value="Alcoholismo"> Alcoholismo</option>
-<<<<<<< HEAD
+
                                         <option value="Cocaina"> Cocaína</option>
                                         <option value="Marihuana"> Marihuana</option>
                                         <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
                                         <option value="Solventes"> Solventes</option>
                                         <option value="Tabaquismo"> Tabaquismo</option>
-=======
+
                                         <option value="Tabaquismo"> Tabaquismo</option>
                                         <option value="Cocaina"> Cocaina</option>
                                         <option value="Marihuana"> Marihuana</option>
@@ -311,7 +311,7 @@
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Social">Social</option>
                                         <option value="Embriaguez">Embriaguez</option>
->>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
+
                                     </select>
                                 </div>
 
@@ -506,15 +506,10 @@
                                 </div>
 
                                 <!--Seleccion de sí o no en lesión oral:-->
-<<<<<<< HEAD
+
                                 <div class="col-md-3">
                                     <strong>¿Lesión Oral?:</strong>
                                     <select name="lesionoral" id="lesionoral" class="form-control">
-=======
-                                <div class="col-md-3" id="lesionoral">
-                                    <strong>¿Lesión Oral?:</strong>
-                                    <select name="orallesion" id="orallesion" class="form-control">
->>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
@@ -522,11 +517,7 @@
                                 </div>
 
                                 <!--Sí hay lesión oral, se hablitan:-->
-<<<<<<< HEAD
-                                <div class="col-md-3" id="idtipotejido">
-=======
                                 <div class="col-md-3" id="tejidotipo">
->>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
