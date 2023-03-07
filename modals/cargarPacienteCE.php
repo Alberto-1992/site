@@ -411,8 +411,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <!-- Se agrega el MACE hospitalario como se indica en el excel-->
                                     <div class="col-md-6">
                                         <strong>MACE Hospitalario</strong>
-                                        <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" style="width:100%;" require>
-
+                                        <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" style="width:100%;" >
                                             <option value="EVC">EVC</option>
                                             <option value="Killip Kimball">Killip Kimball</option>
                                             <option value="Reinfarto">Reinfarto</option>
@@ -423,7 +422,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 
                                     <div class="col-md-6" id="killip">
                                         <strong>Killip Kimball</strong>
-                                        <select name="killipkimball" id="killipkimball" class="form-control" style="width: 100%;" required>
+                                        <select name="killipkimball" id="killipkimball" class="form-control" style="width: 100%;">
                                             <option value="0">Seleccione...</option>
                                             <?php
                                             require 'conexionCancer.php';
@@ -978,7 +977,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <strong>COMPLICACIONES</strong>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <strong>Seleccione las Complicaciones</strong>
                                         <select id="mscomplicacion" name="mscomplicacion[]" multiple="multiple" class="form-control" required>
                                             <option value="Ninguna">Ninguna</option>
@@ -1009,7 +1008,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 
 
 
-                                    <div class="col-md-6" id="idarritmia">
+                                    <div class="col-md-12" id="idarritmia">
                                         <strong>Arritmia</strong>
                                         <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>

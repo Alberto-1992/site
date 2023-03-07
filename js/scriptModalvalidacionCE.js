@@ -781,5 +781,32 @@ $(document).ready(function() {
 });
 $(function() {
     $('#causadefuncion').prop("hidden", true);
+    $("#killip").prop("hidden", true);
+    $("#mscomplicacion").prop("hidden", true);
+    $("#idarritmia").prop("hidden", true);
 
-})
+});
+$(document).ready(function () {
+    $("#msmacehospitalario").change(function (e) {
+
+        if (msmacehospitalario.options[1].selected == true) {
+            $('#killip').prop("hidden", false);
+
+        }else if(msmacehospitalario.options[1].selected == false){
+            $('#killip').prop("hidden", true);
+        }
+
+    })
+});
+$(document).ready(function () {
+    $("#mscomplicacion").change(function (e) {
+
+        if (mscomplicacion.options[1].selected == true) {
+            $("#idarritmia").prop("hidden", false);
+
+        }else if(mscomplicacion.options[1].selected == false){
+            $("#idarritmia").prop("hidden", true);
+        }
+
+    })
+});
