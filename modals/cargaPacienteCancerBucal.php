@@ -303,7 +303,7 @@
                                         <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
                                         <option value="Solventes"> Solventes</option>
                                     </select>
-                                        </div>
+                                </div>
                                 <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
                                 <div class="col-md-4" id="alcoholismofrecuencia">
                                     <strong>Frecuencia Alcoholismo:</strong>
@@ -1200,8 +1200,35 @@
 
                                 <!--Si se selecciona una complicación, se debe mostrar lo siguiente-->
                                 <div class="col-md-3" id="idtxcomplicaciones">
-                                    <strong>Tx Complicaciones</strong>
+                                    <strong>Tx Complicaciones caries</strong>
                                     <select name="txcomplicaciones" id="txcomplicaciones" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdisguesia">
+                                    <strong>Tx Complicaciones Disgeusia</strong>
+                                    <select name="txcomplicacionesdisguesia" id="txcomplicacionesdisguesia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdolor">
+                                    <strong>Tx Complicaciones Dolor</strong>
+                                    <select name="txcomplicacionesdolor" id="txcomplicacionesdolor" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesfractura">
+                                    <strong>Tx Complicaciones Fractura</strong>
+                                    <select name="txcomplicacionesfractua" id="txcomplicacionesfractura" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
                                         <option value="Farmacologico">Farmacológico</option>
@@ -1409,7 +1436,7 @@
 
 
 
-<!--****************************************************************-->
+                                <!--****************************************************************-->
 
 
                                 <!--Inicia la sección de CASO EXITOSO-->
@@ -1437,39 +1464,44 @@
                                         <option value="Parcial">Parcial</option>
                                     </select>
                                 </div>
-                            <div class="col-md-12"></div>
-                            <div class="form-title" style="text-align: center; background-color: #d9a4a5;
+                                <div class="col-md-12"></div>
+                                <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
-                                <strong>DEFUNCIÓN</strong>
+                                    <strong>DEFUNCIÓN</strong>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <strong>Defunción</strong>
+                                    <select name="defuncion" id="defuncion" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Si">Sí</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4" id="defuncionfecha">
+                                    <strong>Fecha Defunción</strong>
+                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                                </div>
+
+                                <div class="col-md-4" id="defuncioncausa">
+                                    <strong>Causa</strong>
+                                    <select name="causadefuncion" id="causadefuncion" class="form-control">
+                                        <option value="Sin registro">Sin registro</option>
+                                        <option value="Oncologica">Oncologica</option>
+                                        <option value="No oncologica">No oncologica</option>
+                                    </select>
+                                </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <strong>Defunción</strong>
-                                <select name="defuncion" id="defuncion" class="form-control">
-                                    <option value="Seleccione">Seleccione...</option>
-                                    <option value="Si">Sí</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
+                            <div class="col-md-12"></div>
+                            <br>
 
-                            <div class="col-md-4" id="defuncionfecha">
-                                <strong>Fecha Defunción</strong>
-                                <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
-                            </div>
 
-                            <div class="col-md-4" id="defuncioncausa">
-                                <strong>Causa</strong>
-                                <select name="causadefuncion" id="causadefuncion" class="form-control">
-                                    <option value="Sin registro">Sin registro</option>
-                                    <option value="Oncologica">Oncologica</option>
-                                    <option value="No oncologica">No oncologica</option>
-                                </select>
-                            </div>
+                            <input type="submit" value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                            <input type="button" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
 
-                            <!--********************************************************************************************************************************************************************-->
 
-                            <input type="submit" id="registrar" value="Guardar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
-                            <input type="button" id="recargar" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                             <br>
                     </div>
                     </form>

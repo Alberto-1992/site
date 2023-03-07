@@ -751,7 +751,7 @@ $(document).ready(function() {
             $('#idfracciones').prop("hidden", true);
             $('#idnofracciones').prop("hidden", true);
             $('#idtecnica').prop("hidden", true);
-            $('#idcomplicaciones').prop("hidden", false);
+            $('#idcomplicaciones').prop("hidden", true);
 
         }
     })
@@ -763,7 +763,7 @@ $(function() {
     $('#idfracciones').prop("hidden", true);
     $('#idnofracciones').prop("hidden", true);
     $('#idtecnica').prop("hidden", true);
-    $('#idcomplicaciones').prop("hidden", false);
+    $('#idcomplicaciones').prop("hidden", true);
 
 })
 
@@ -785,4 +785,48 @@ $(document).ready(function() {
 $(function() {
     $('#defuncionfecha').prop("hidden", true);
     $('#defuncioncausa').prop("hidden", true);
+    $('#idtxcomplicaciones').prop("hidden", true);
+    $('#idtxcomplicacionesdisguesia').prop("hidden", true);
+    $('#idtxcomplicacionesdolor').prop("hidden", true);
+    $('#idtxcomplicacionesfractura').prop("hidden", true);
+   
+
 })
+$(document).ready(function () {
+    $("#mscomplicaciones").change(function (e) {
+        if(mscomplicaciones.options[0].selected == true) {
+            $('#idtxcomplicaciones').prop("hidden", false);
+        
+
+        }else if(mscomplicaciones.options[0].selected == false) {
+            $('#idtxcomplicaciones').prop("hidden", true);
+
+        }
+        if(mscomplicaciones.options[1].selected == true) {
+            $('#idtxcomplicacionesdisguesia').prop("hidden", false);
+        
+
+        }else if(mscomplicaciones.options[1].selected == false) {
+             $('#idtxcomplicacionesdisguesia').prop("hidden", true);
+
+        }
+         if(mscomplicaciones.options[2].selected == true) {
+            $('#idtxcomplicacionesdolor').prop("hidden", false);
+        
+
+        }else if(mscomplicaciones.options[2].selected == false) {
+            $('#idtxcomplicacionesdolor').prop("hidden", true);
+
+        }
+        if(mscomplicaciones.options[3].selected == true) {
+           $('#idtxcomplicacionesfractura').prop("hidden", false);
+        
+
+        }else if(mscomplicaciones.options[3].selected == false) {
+           $('#idtxcomplicacionesfractura').prop("hidden", true);
+
+        }
+
+
+    })
+});
