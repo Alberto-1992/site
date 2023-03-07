@@ -268,6 +268,15 @@ $(document).ready(function() {
 });
 
 
+// OARS Dosis
+$(document).ready(function() {
+    $('#msoarsdosis').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
 // COMPLICACIONES RT
 $(document).ready(function() {
     $('#mscomplicaciones').change(function(e) { 
@@ -418,3 +427,161 @@ $(document).ready(function () {
 
     })
 });
+
+
+
+
+// Habilita Tipo de Tejido:
+$(document).ready(function() {
+    $('#lesionoral').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#idtipotejido').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#idtipotejido').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idtipotejido').prop("hidden", true);
+})
+
+
+
+// Habilita QUIRURGICO:
+$(document).ready(function() {
+    $('#quirurgico').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#idtipoquirurgico').prop("hidden", false);
+            
+        } else if ($(this).val() === "No") {
+            $('#idtipoquirurgico').prop("hidden", true);
+            $('#tipoquirurgico').prop('selectedIndex',0); //es para resetear el valor (.val(''); -> para resetear un input)
+        }
+    })
+});
+$(function() {
+    $('#idtipoquirurgico').prop("hidden", true);
+
+})
+
+
+
+// Habilita Maxilectomia de Infraestructura:
+$(document).ready(function() {
+    $('#tipoquirurgico').change(function(e) {
+        if ($(this).val() === "Maxilectomia de Infraestructura") {
+            $('#idmaxinfra').prop("hidden", false);
+        } else if ($(this).val() === "0") {
+            $('#idmaxinfra').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idmaxinfra').prop("hidden", true);
+})
+
+// Habilita DISECCIÓN RADICAL MODIFICADA:
+$(document).ready(function() {
+    $('#tipoquirurgico').change(function(e) {
+        if ($(this).val() === "Diseccion Radical Modificada de Cuello") {
+            $('#idlugar').prop("hidden", false);
+            $('#idtipo').prop("hidden", false);
+            $('#idnivelcervical').prop("hidden", false);
+        } else if ($(this).val() === "0") {
+            $('#idlugar').prop("hidden", true);
+            $('#idtipo').prop("hidden", true);
+            $('#idnivelcervical').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idlugar').prop("hidden", true);
+    $('#idtipo').prop("hidden", true);
+    $('#idnivelcervical').prop("hidden", true);
+})
+
+// Habilita PDL
+$(document).ready(function() {
+    $('#pdl').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#idpdl').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#idpdl').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#idpdl').prop("hidden", true);
+})
+
+// Habilita INICIO, RECONSTRUCCIÓN:
+$(document).ready(function() {
+    $('#reconstruccion').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#idtiporeconstruccion').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#idtiporeconstruccion').prop("hidden", true);
+            $('#tiporeconstruccion').prop('selectedIndex',0); 
+        }
+    })
+});
+$(function() {
+    $('#idtiporeconstruccion').prop("hidden", true);
+})
+
+
+// Habilita las opciones de RADIOTERAPIA en el modal de carga
+$(document).ready(function() {
+    $('#radio').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#idfecharadio').prop("hidden", false);
+            $('#idmomentort').prop("hidden", false);
+            $('#iddosisradio').prop("hidden", false);
+            $('#idfracciones').prop("hidden", false);
+            $('#idnofracciones').prop("hidden", false);
+            $('#idtecnica').prop("hidden", false);
+            $('#idcomplicaciones').prop("hidden", false);
+
+
+        } else if ($(this).val() === "No") {
+            $('#idfecharadio').prop("hidden", true);
+            $('#idmomentort').prop("hidden", true);
+            $('#iddosisradio').prop("hidden", true);
+            $('#idfracciones').prop("hidden", true);
+            $('#idnofracciones').prop("hidden", true);
+            $('#idtecnica').prop("hidden", true);
+            $('#idcomplicaciones').prop("hidden", false);
+
+        }
+    })
+});
+$(function() {
+    $('#idfecharadio').prop("hidden", true);
+    $('#idmomentort').prop("hidden", true);
+    $('#iddosisradio').prop("hidden", true);
+    $('#idfracciones').prop("hidden", true);
+    $('#idnofracciones').prop("hidden", true);
+    $('#idtecnica').prop("hidden", true);
+    $('#idcomplicaciones').prop("hidden", false);
+
+})
+
+
+
+
+// Habilita  DEFUNCION:
+$(document).ready(function() {
+    $('#defuncion').change(function(e) {
+        if ($(this).val() === "Si") {
+            $('#defuncionfecha').prop("hidden", false);
+            $('#defuncioncausa').prop("hidden", false);
+        } else if ($(this).val() === "No") {
+            $('#defuncionfecha').prop("hidden", true);
+            $('#defuncioncausa').prop("hidden", true);
+        }
+    })
+});
+$(function() {
+    $('#defuncionfecha').prop("hidden", true);
+    $('#defuncioncausa').prop("hidden", true);
+})
