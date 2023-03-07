@@ -23,7 +23,68 @@
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
             </div>
             <!--Finaliza el header del modal-->
+<script>
+    function Edadinfarto(FechaNacimiento) {
 
+var fechaNace = new Date(FechaNacimiento);
+var fechaActual = new Date()
+
+var mes = fechaActual.getMonth();
+var dia = fechaActual.getDate();
+var año = fechaActual.getFullYear();
+
+fechaActual.setDate(dia);
+fechaActual.setMonth(mes);
+fechaActual.setFullYear(año);
+
+edad = Math.floor(((fechaActual - fechaNace) / (1000 * 60 * 60 * 24) / 365));
+
+return edad;
+
+
+}
+
+function calcularEdadinfarto() {
+var fecha = document.getElementById('fechainfarto').value;
+
+var edad = Edadinfarto(fecha);
+document.formularioinfarto.edadinfarto.value = edad;
+
+}
+function curp2dateinfarto(curp) {
+var miCurp = document.getElementById('curpinfarto').value.toUpperCase();
+var sexo = miCurp.substr(-8, 1);
+var m = miCurp.match(/^\w{4}(\w{2})(\w{2})(\w{2})/);
+//miFecha = new Date(año,mes,dia) 
+var anyo = parseInt(m[1], 10) + 1900;
+if (anyo < 1940) anyo += 100;
+var mes = parseInt(m[2], 10) - 1;
+var dia = parseInt(m[3], 10);
+document.formularioinfarto.fechainfarto.value = (new Date(anyo, mes, dia));
+if (sexo == 'M') {
+    document.formularioinfarto.sexoinfarto.value = 'Femenino';
+} else if (sexo == 'H') {
+    document.formularioinfarto.sexoinfarto.value = 'Masculino';
+} else if (sexo != 'M' || 'H') {
+    alert('Error de CURP');
+}
+calcularEdadinfarto();
+}
+Date.prototype.toString = function() {
+var anyo = this.getFullYear();
+var mes = this.getMonth() + 1;
+if (mes <= 9) mes = "0" + mes;
+var dia = this.getDate();
+if (dia <= 9) dia = "0" + dia;
+return anyo + "-" + mes + "-" + dia;
+}
+window.addEventListener('DOMContentLoaded', (evento) => {
+const hoy_fecha = new Date().toISOString().substring(0, 10);
+document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
+
+});
+
+</script>
 
 
             <div class="modal-body">
@@ -52,7 +113,7 @@
 
 
 
-                            <form name="formularioinfarto" id="formularioinfarto" onSubmit="return limpiar()" autocomplete="off">
+                            <form name="formularioinfarto" id="formularioinfarto" onsubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>
@@ -90,7 +151,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <strong>CURP</strong>
-                                        <input list="curpusuario" id="curp" name="curp" type="text" class="form-control" value="" onblur="curp2dateinfarto();" minlength="18" maxlength="18" required>
+                                        <input list="curpusuario" id="curpinfarto" name="curpinfarto" type="text" class="form-control" value="" onblur="curp2dateinfarto();" minlength="18" maxlength="18" required>
                                         <datalist id="curpusuario">
                                             <option value="">Seleccione</option>
                                             <?php
@@ -134,16 +195,16 @@
 
                                     <div class="col-md-3">
                                         <strong>Fecha de Nacimiento</strong>
-                                        <input id="fecha" name="fecha" type="date" value="" onblur="curp2dateinfarto();" class="form-control" readonly>
+                                        <input id="fechainfarto" name="fechainfarto" type="date" value="" onblur="curp2dateinfarto();" class="form-control" readonly>
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Edad</strong>
-                                        <input id="edad" name="edad" type="text" class="form-control" value="" readonly>
+                                        <input id="edadinfarto" name="edadinfarto" type="text" class="form-control" value="" readonly>
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Sexo</strong>
-                                        <input type="text" class="form-control" id="sexo" onclick="curp2dateinfarto();" name="sexo" readonly>
+                                        <input type="text" class="form-control" id="sexoinfarto" onclick="curp2dateinfarto();" name="sexoinfarto" readonly>
 
                                     </div>
                                     <div class="col-md-3">
@@ -471,9 +532,9 @@
                                             <option value="Si">Sí</option>
                                             <option value="No">No</option>
                                         </select>
-                                        <br>
+                                        
                                     </div>
-
+                                        <br><br>
                                     <!-- Si se selecciona SÍ en Fibrinólisis, se deben mostrar los siguientes 4 campos: FECHA HORA INICIO, FECHA HORA FIN, TIPO DE FIBRINOLITICO, PROCEDIMIENTO EXITOSO-->
                                     <div class="col-md-6" id="iniciotromb">
                                         <strong>Fecha/hora inicio</strong>
@@ -908,14 +969,6 @@
                                         </select>
                                     </div>
 
-
-
-
-
-
-
-
-
                                     <!--***************************************** Sección de COMPLICACIONES *****************************************s-->
 
                                     <div class="col-md-12" style="text-align: center; 
@@ -1084,10 +1137,10 @@
                                     <div class="col-md-12">
                                         <br>
                                         <br>
-                                        <!--Se cambia value=Finalizar por value=Cancelar-->
-                                        <input type="button" id="recargarArtritis" onclick="window.location.reload();" value="Cancelar">
-                                        <!--Se cambia value=Registrar por value=Guardar-->
-                                        <input type="submit" id="registrarArtritis" value="Guardar">
+                                        <input type="submit"  value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                                <input type="button" onclick="window.location.reload();"
+                                    value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+
                                         <br>
                                     </div>
                             </form>

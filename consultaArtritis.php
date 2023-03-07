@@ -17,7 +17,7 @@
     if(isset($_POST['pacientes']))
 {
 	$q=$conexion2->real_escape_string($_POST['pacientes']);
-	$query=$conexionCancer->prepare("SELECT dato_usuarioartritis.id_usuarioartritis, dato_usuarioartritis.curp, dato_usuarioartritis.nombrecompleto, dato_usuarioartritis.escolaridad, dato_usuarioartritis.fechanacimiento, dato_usuarioartritis.edad, dato_usuarioartritis.sexo, artritispaciente.id_paciente FROM dato_usuarioartritis inner join artritispaciente on artritispaciente.id_paciente = dato_usuarioartritis.id_usuarioartritis order by dato_usuarioartritis.id_usuarioartritis where
+	$query=$conexionCancer->prepare("SELECT dato_usuarioartritis.id_usuarioartritis, dato_usuarioartritis.curp, dato_usuarioartritis.nombrecompleto, dato_usuarioartritis.escolaridad, dato_usuarioartritis.fechanacimiento, dato_usuarioartritis.edad, dato_usuarioartritis.sexo, artritispaciente.id_paciente FROM dato_usuarioartritis inner join artritispaciente on artritispaciente.id_paciente = dato_usuarioartritis.id_usuarioartritis where
 		dato_usuarioartritis.id_usuarioartritis LIKE '%".$q."%' OR
         dato_usuarioartritis.nombrecompleto LIKE '%".$q."%' OR
 		dato_usuarioartritis.fechanacimiento LIKE '%".$q."%' OR

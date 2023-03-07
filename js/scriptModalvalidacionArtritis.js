@@ -71,7 +71,7 @@ function curp2date(curp) {
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }
-
+calcularEdad();
 }
 
 

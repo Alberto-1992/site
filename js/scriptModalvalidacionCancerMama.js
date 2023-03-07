@@ -71,6 +71,7 @@ function curp2dateCancer(curp) {
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }
+    calcularEdadCancer();
 
 }
 $(document).ready(function() {

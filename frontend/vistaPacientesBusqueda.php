@@ -86,19 +86,19 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Población Indígena</th>
-        <td id="td"><?php echo $dataRegistro[''] ?></td>
+        <td id="td"><?php echo $dataRegistro['poblacionindigena'] ?></td>
     </tr>
 
 
 
     <tr>
         <th id="th">Estado de Residencia</th>
-        <td id="td"><?php echo $dataRegistro[''] ?></td>
+        <td id="td"><?php echo $rows['estado'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Alcaldía / Municipio</th>
-        <td id="td"><?php echo $dataRegistro[''] ?></td>
+        <td id="td"><?php echo $rowsm['municipio'] ?></td>
     </tr>
 
     <tr>

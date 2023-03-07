@@ -58,7 +58,7 @@
                                     text-transform: uppercase;
                                 }
                             </style>
-                            <form name="formularioseguimientoinfarto" id="formularioseguimientoinfarto" onSubmit="return limpiar()">
+                            <form name="formularioseguimientoinfarto" id="formularioseguimientoinfarto" onsubmit="return limpiar()">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
                                     <script>

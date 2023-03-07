@@ -85,7 +85,7 @@ function curp2dateedit(curp) {
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }
-
+calcularEdadedit();
 }
 function calculaIMCedit() {
 

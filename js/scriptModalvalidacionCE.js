@@ -1,64 +1,3 @@
-function Edadinfarto(FechaNacimiento) {
-
-    var fechaNace = new Date(FechaNacimiento);
-    var fechaActual = new Date()
-
-    var mes = fechaActual.getMonth();
-    var dia = fechaActual.getDate();
-    var año = fechaActual.getFullYear();
-
-    fechaActual.setDate(dia);
-    fechaActual.setMonth(mes);
-    fechaActual.setFullYear(año);
-
-    edad = Math.floor(((fechaActual - fechaNace) / (1000 * 60 * 60 * 24) / 365));
-
-    return edad;
-
-
-}
-
-function calcularEdadinfarto() {
-    var fecha = document.getElementById('fecha').value;
-
-
-    var edad = Edadinfarto(fecha);
-    document.formularioinfarto.edad.value = edad;
-
-}
-function curp2dateinfarto(curp) {
-    var miCurp = document.getElementById('curp').value.toUpperCase();
-    var sexo = miCurp.substr(-8, 1);
-    var m = miCurp.match(/^\w{4}(\w{2})(\w{2})(\w{2})/);
-    //miFecha = new Date(año,mes,dia) 
-    var anyo = parseInt(m[1], 10) + 1900;
-    if (anyo < 1940) anyo += 100;
-    var mes = parseInt(m[2], 10) - 1;
-    var dia = parseInt(m[3], 10);
-    document.formularioinfarto.fecha.value = (new Date(anyo, mes, dia));
-    if (sexo == 'M') {
-        document.formularioinfarto.sexo.value = 'Femenino';
-    } else if (sexo == 'H') {
-        document.formularioinfarto.sexo.value = 'Masculino';
-    } else if (sexo != 'M' || 'H') {
-        alert('Error de CURP');
-    }
-
-}
-Date.prototype.toString = function() {
-    var anyo = this.getFullYear();
-    var mes = this.getMonth() + 1;
-    if (mes <= 9) mes = "0" + mes;
-    var dia = this.getDate();
-    if (dia <= 9) dia = "0" + dia;
-    return anyo + "-" + mes + "-" + dia;
-}
-window.addEventListener('DOMContentLoaded', (evento) => {
-    const hoy_fecha = new Date().toISOString().substring(0, 10);
-    document.querySelector("input[name='fecha']").max = hoy_fecha;
-
-});
-
 $(document).ready(function() {
 
     $('#referenciado').change(function(e) {
@@ -103,7 +42,7 @@ $(window).load(function() {
 
 function limpiar() {
 
-    setTimeout('document.formulario.reset()', 1000);
+    setTimeout('document.formularioinfarto.reset()', 1000);
     return false;
 }
 

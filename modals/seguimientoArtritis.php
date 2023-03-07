@@ -4,7 +4,7 @@
     <link href="css/estilosMenu.css" rel="stylesheet">
     <div class="modal-dialog modal-lg">
 <script>
-    function calcularIMCart() {
+    function calculaIMCart() {
 
 let tallasegui = document.getElementById('tallaseguiart').value;
 let pesosegui= document.getElementById('pesoseguiart').value;
@@ -15,7 +15,6 @@ let limitimcalculo = imccalculo.toFixed(2);
 let calculoimc = pesosegui / limitimcalculo;
 let limitcalculofinal = calculoimc.toFixed(1);
 document.formularioseguiart.imcsegui.value = limitcalculofinal;
-
 }
 Date.prototype.toString = function () {
     var anyo = this.getFullYear();
@@ -400,11 +399,11 @@ $(document).ready(function() {
 
                                     <div class="col-md-4">
                                         <strong>Peso</strong>
-                                        <input type="number" step="any" class="form-control" id="pesoseguiart" onblur="calcularIMCart();" name="pesoseguiart" required>
+                                        <input type="number" step="any" class="form-control" id="pesoseguiart" onblur="calculaIMCart();" name="pesoseguiart" required>
                                     </div>
                                     <div class="col-md-4">
                                         <strong>IMC</strong>
-                                        <input type="number" step="any" class="form-control" id="imcsegui" onblur="calcularIMCart();" name="imcsegui"  value="">
+                                        <input type="number" step="any" class="form-control" id="imcsegui" onblur="calculaIMCart();" name="imcsegui" >
                                     </div>
                                     <br>
                                     <br>
