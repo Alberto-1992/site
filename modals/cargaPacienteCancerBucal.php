@@ -289,29 +289,12 @@
                                 <div class="col-md-12">
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
-                                        <option value="Alcoholismo"> Alcoholismo</option>
-
-                                        <option value="Cocaina"> Cocaína</option>
-                                        <option value="Marihuana"> Marihuana</option>
-                                        <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
-                                        <option value="Solventes"> Solventes</option>
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-                                        <option value="Cocaina"> Cocaina</option>
-                                        <option value="Marihuana"> Marihuana</option>
-                                        <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
-                                        <option value="Solventes"> Solventes</option>
-                                    </select>
-                                </div>
-                                <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
-                                <div class="col-md-4" id="alcoholismofrecuencia">
-                                    <strong>Frecuencia Alcoholismo:</strong>
-                                    <select name="frecuenciaal" id="frecuenciaal" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Embriaguez">Embriaguez</option>
-
+                                        <option value="alcoholismo"> Alcoholismo</option>
+                                        <option value="cocaina"> Cocaina</option>
+                                        <option value="marihuana"> Marihuana</option>
+                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
+                                        <option value="solventes"> Solventes</option>
+                                        <option value="tabaquismo"> Tabaquismo</option>
                                     </select>
                                 </div>
 
@@ -507,9 +490,9 @@
 
                                 <!--Seleccion de sí o no en lesión oral:-->
 
-                                <div class="col-md-3" id="lesionoral">
+                                <div class="col-md-3">
                                     <strong>¿Lesión Oral?:</strong>
-                                    <select name="tipolesionoral" id="tipolesionoral" class="form-control">
+                                    <select name="lesionoral" id="lesionoral" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
@@ -1200,7 +1183,7 @@
 
                                 <!--Si se selecciona una complicación, se debe mostrar lo siguiente-->
                                 <div class="col-md-3" id="idtxcomplicaciones">
-                                    <strong>Tx Caries</strong>
+                                    <strong>Tx Complicaciones caries</strong>
                                     <select name="txcomplicaciones" id="txcomplicaciones" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1209,7 +1192,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesdisguesia">
-                                    <strong>Tx Disgeusia</strong>
+                                    <strong>Tx Complicaciones Disgeusia</strong>
                                     <select name="txcomplicacionesdisguesia" id="txcomplicacionesdisguesia" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1218,7 +1201,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesdolor">
-                                    <strong>Tx Dolor</strong>
+                                    <strong>Tx Complicaciones Dolor</strong>
                                     <select name="txcomplicacionesdolor" id="txcomplicacionesdolor" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1227,98 +1210,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesfractura">
-                                    <strong>Tx Fractura</strong>
+                                    <strong>Tx Complicaciones Fractura</strong>
                                     <select name="txcomplicacionesfractua" id="txcomplicacionesfractura" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesinfeccion">
-                                    <strong>Tx Infección</strong>
-                                    <select name="txcomplicacionesinfeccion" id="txcomplicacionesinfeccion" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesdisguesiahemorragia">
-                                    <strong>Tx Hemorragias</strong>
-                                    <select name="txcomplicacioneshemorragia" id="txcomplicacioneshemorragia" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesmucositis">
-                                    <strong>Tx Mucositis</strong>
-                                    <select name="txcomplicacionesmucositis" id="txcomplicacionesdmucositis" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesosteonecrosis">
-                                    <strong>Tx Osteonecrosis</strong>
-                                    <select name="txcomplicacionessteonecrosis" id="txcomplicacionessteonecrosis" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesParestesia">
-                                    <strong>Tx Parestesia</strong>
-                                    <select name="txcomplicacionesParestesia" id="txcomplicacionesParestesia" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesalocal">
-                                    <strong>Tx Anestesia Local</strong>
-                                    <select name="txcomplicacionesalocal" id="txcomplicacionesalocal" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesradiodermitis">
-                                    <strong>Tx Radiodermitis</strong>
-                                    <select name="txcomplicacionesradiodermitis" id="txcomplicacionesradiodermitis" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesalergia">
-                                    <strong>Tx Reaccion Alergica</strong>
-                                    <select name="txcomplicacionesalergia" id="txcomplicacionesalergia" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionetrismus">
-                                    <strong>Tx Trismus</strong>
-                                    <select name="txcomplicacionestrismus" id="txcomplicacionesdtrismus" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="crioterapia">Crioterapia</option>
-                                        <option value="Farmacologico">Farmacológico</option>
-                                        <option value="Laser">Láser</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" id="idtxcomplicacionesxerostomia">
-                                    <strong>Tx Xerostomia</strong>
-                                    <select name="txcomplicacionesxerostomia" id="txcomplicacionesxerostomia" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
                                         <option value="Farmacologico">Farmacológico</option>
@@ -1413,129 +1306,14 @@
                                     <strong>Dosis Máx Labios</strong>
                                     <input type="number" class="form-control" id="labios1" name="labios1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Labios</strong>
-                                    <input type="number" class="form-control" id="labios2" name="labios2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--LARINGE-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Laringe</strong>
-                                    <input type="number" class="form-control" id="laringe1" name="laringe1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Laringe</strong>
-                                    <input type="number" class="form-control" id="laringe2" name="laringe2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--MANDIBULA-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Mandibula</strong>
-                                    <input type="number" class="form-control" id="mandibula1" name="mandibula1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Mandibula</strong>
-                                    <input type="number" class="form-control" id="mandibula2" name="mandibula2" placeholder="Ingrese...">
-                                </div>
-
-                                <!--Médula-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Médula</strong>
-                                    <input type="number" class="form-control" id="medula1" name="medula1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Médula</strong>
-                                    <input type="number" class="form-control" id="medula2" name="medula2" placeholder="Ingrese...">
-                                </div>
+                            </div>
 
 
 
-                                <!--Nervio Óptico-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Nervio Óptico</strong>
-                                    <input type="number" class="form-control" id="nerviooptico1" name="nerviooptico1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Nervio Óptico</strong>
-                                    <input type="number" class="form-control" id="nerviooptico2" name="nerviooptico2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Ojos-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Ojos</strong>
-                                    <input type="number" class="form-control" id="ojos1" name="ojos1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Ojos</strong>
-                                    <input type="number" class="form-control" id="ojos2" name="ojos2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Pared Faringea Posterior-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx PFP</strong>
-                                    <input type="number" class="form-control" id="pfp1" name="pfp1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom PFP</strong>
-                                    <input type="number" class="form-control" id="pfp2" name="pfp2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Parotidas-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Parotidas</strong>
-                                    <input type="number" class="form-control" id="Parotidas1" name="Parotidas1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Parotidas</strong>
-                                    <input type="number" class="form-control" id="Parotidas2" name="Parotidas2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Sublinguales-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Sublinguales</strong>
-                                    <input type="number" class="form-control" id="Sublinguales1" name="Sublinguales1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Sublinguales</strong>
-                                    <input type="number" class="form-control" id="Sublinguales2" name="Sublinguales2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Tallo-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Tallo</strong>
-                                    <input type="number" class="form-control" id="Tallo1" name="Tallo1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Tallo</strong>
-                                    <input type="number" class="form-control" id="Tallo2" name="Tallo2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Tiroides-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Tiroides</strong>
-                                    <input type="number" class="form-control" id="Tiroides1" name="Tiroides1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Tiroides</strong>
-                                    <input type="number" class="form-control" id="Tiroides2" name="Tiroides2" placeholder="Ingrese...">
-                                </div>
-
-
-
-                                <!--****************************************************************-->
-
-
-                                <!--Inicia la sección de CASO EXITOSO-->
-                                <div class="col-md-12"></div>
-                                <div class="form-title" style="text-align: center; background-color: #d9a4a5;
+                            <!--********************************************************************************************************************************************************************-->
+                            <!--Inicia la sección de CASO ÉXITOSO-->
+                            <div class="col-md-12"></div>
+                            <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
                                     <strong>CASO EXITOSO</strong>
                                 </div>
@@ -1558,44 +1336,45 @@
                                         <option value="Parcial">Parcial</option>
                                     </select>
                                 </div>
-                                <div class="col-md-12"></div>
-                                <div class="form-title" style="text-align: center; background-color: #d9a4a5;
-                                    color:aliceblue; margin-top: 5px; font-size: 18px; ">
-                                    <strong>DEFUNCIÓN</strong>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <strong>Defunción</strong>
-                                    <select name="defuncion" id="defuncion" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="Si">Sí</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-4" id="defuncionfecha">
-                                    <strong>Fecha Defunción</strong>
-                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
-                                </div>
-
-                                <div class="col-md-4" id="defuncioncausa">
-                                    <strong>Causa</strong>
-                                    <select name="causadefuncion" id="causadefuncion" class="form-control">
-                                        <option value="Sin registro">Sin registro</option>
-                                        <option value="Oncologica">Oncologica</option>
-                                        <option value="No oncologica">No oncologica</option>
-                                    </select>
-                                </div>
                             </div>
 
+
+                            <!--********************************************************************************************************************************************************************-->
+
+                            <!--Inicia la sección de CASO EXITOSO-->
                             <div class="col-md-12"></div>
-                            <br>
+                            <div class="form-title" style="text-align: center; background-color: #d9a4a5;
+                                    color:aliceblue; margin-top: 5px; font-size: 18px; ">
+                                <strong>DEFUNCIÓN</strong>
+                            </div>
 
+                            <div class="col-md-4">
+                                <strong>Defunción</strong>
+                                <select name="defuncion" id="defuncion" class="form-control">
+                                    <option value="Seleccione">Seleccione...</option>
+                                    <option value="Si">Sí</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
 
-                            <input type="submit" value="Registrar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
-                            <input type="button" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                            <div class="col-md-4" id="defuncionfecha">
+                                <strong>Fecha Defunción</strong>
+                                <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                            </div>
 
+                            <div class="col-md-4" id="defuncioncausa">
+                                <strong>Causa</strong>
+                                <select name="causadefuncion" id="causadefuncion" class="form-control">
+                                    <option value="Sin registro">Sin registro</option>
+                                    <option value="Oncologica">Oncologica</option>
+                                    <option value="No oncologica">No oncologica</option>
+                                </select>
+                            </div>
 
+                            <!--********************************************************************************************************************************************************************-->
+
+                            <input type="submit" id="registrar" value="Guardar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                            <input type="button" id="recargar" onclick="window.location.reload();" value="Cerrar formulario" style="width: 170px; height: 27px; color: white; background-color: #FA0000; float: left; margin-left: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
                             <br>
                     </div>
                     </form>
