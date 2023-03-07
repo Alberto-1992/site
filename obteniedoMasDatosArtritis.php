@@ -17,12 +17,22 @@ $total_registro       = mysqli_num_rows($sqlQueryComentarios);
         { ?>
 
     <div class="item-comentario" id="<?php echo $dataRegistro['id_usuarioartritis']; ?>">
-        <?php
-            $id = $dataRegistro['id'];
+    <?php
+            error_reporting(0);
+            $id = $dataRegistro['id_usuarioartritis'];
+                $sql_busqueda = $conexionCancer->prepare("SELECT id_paciente from seguimientoartritis where id_paciente = :id_paciente");
+                $sql_busqueda->execute(array(
+                    ':id_paciente'=>$id
+                ));
+                $validacion = $sql_busqueda->fetch();
+                $validaid = $validacion['id_paciente'];
             ?>
         
             <div id='<?php echo $id ?>' class='ver-info' style="cursor: pointer;">
-                <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-top: 0px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>' ?>
+                <?php echo '<strong style="font-family: Arial; white-space: nowrap; font-size: 10px; margin-left: 7px; text-transform: uppercase;">&nbsp'.$dataRegistro['nombrecompleto'].'</strong>'.'<br>'.'<strong style="font-size: 9px; margin-left: 7px;">&nbsp'.$dataRegistro['curp'].'</strong>'.'<br>'.'<strong style="font-size: 8px; margin-top: 0px; margin-left: 7px;">&nbsp'.$dataRegistro['sexo'].'</strong>'
+                    if($validaid == $id){ 
+                    ?><input type="submit" value="En seguimiento" style="padding: 1px; cursor-pointer: none; background: rgb(248, 197, 12); border: none;color: white; margin-left: 1%; font-size: 10px; font-style: arial; margin-top: 0px;"><?php } ?>
+                    
         </div> 
         <hr>
     </div>
