@@ -289,12 +289,21 @@
                                 <div class="col-md-12" id="tipodetoxicomanias">
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
-                                        <option value="alcoholismo"> Alcoholismo</option>
-                                        <option value="cocaina"> Cocaina</option>
-                                        <option value="marihuana"> Marihuana</option>
-                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
-                                        <option value="solventes"> Solventes</option>
-                                        <option value="tabaquismo"> Tabaquismo</option>
+                                        <option value="Alcoholismo"> Alcoholismo</option>
+                                        <option value="Tabaquismo"> Tabaquismo</option>
+                                        <option value="Cocaina"> Cocaina</option>
+                                        <option value="Marihuana"> Marihuana</option>
+                                        <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
+                                        <option value="Solventes"> Solventes</option>
+                                    </select>
+                                        </div>
+                                <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
+                                <div class="col-md-4" id="alcoholismofrecuencia">
+                                    <strong>Frecuencia Alcoholismo:</strong>
+                                    <select name="frecuenciaal" id="frecuenciaal" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Social">Social</option>
+                                        <option value="Embriaguez">Embriaguez</option>
                                     </select>
                                 </div>
                                 <!-- si selecciona SÍ en Tabaquismo, se deben habiliar los siguientes dos campos:-->
@@ -306,20 +315,11 @@
                                     <strong>Cigarros al día:</strong>
                                     <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="" required>
                                 </div>
-                                <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
-                                <div class="col-md-4">
-                                    <strong>Frecuencia Alcoholismo:</strong>
-                                    <select name="frecuenciaal" id="frecuenciaal" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Embriaguez">Embriaguez</option>
-                                    </select>
-                                </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
 
 
                                 <!-- Select múltiple HÁBITOS-->
-                                <div class="col-md-3" id="tipodehabitos">
+                                <div class="col-md-4" id="tipodehabitos">
                                     <strong>Hábitos</strong>
                                     <select id="mshabitos" name="mshabitos[]" multiple="multiple" class="form-control">
                                         <option value="Autolesiones"> Autolesiones</option>
@@ -336,7 +336,7 @@
 
 
                                 <!-- Select múltiple  Virus-->
-                                <div class="col-md-3" id="tipodevirus">
+                                <div class="col-md-4" id="tipodevirus">
                                     <strong>Virus</strong>
                                     <select id="msvirus" name="msvirus[]" multiple="multiple" class="form-control">
                                         <option value="VIH"> VIH </option>
@@ -348,7 +348,7 @@
 
 
                                 <!-- Select múltiple  CÁNCER-->
-                                <div class="col-md-3" id="tipodecancer">
+                                <div class="col-md-4" id="tipodecancer">
                                     <strong>Cáncer</strong>
                                     <select id="mscancer" name="mscancer[]" multiple="multiple" class="form-control">
                                         <option value="Colon y Recto"> Colon y Recto </option>
@@ -497,9 +497,9 @@
                                 </div>
 
                                 <!--Seleccion de sí o no en lesión oral:-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lesionoral">
                                     <strong>¿Lesión Oral?:</strong>
-                                    <select name="tipotejido" id="tipotejido" class="form-control">
+                                    <select name="orallesion" id="orallesion" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Sí">Sí</option>
                                         <option value="No">No</option>
@@ -507,7 +507,7 @@
                                 </div>
 
                                 <!--Sí hay lesión oral, se hablitan:-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="tejidotipo">
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -532,7 +532,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PIGMENTADA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="coloracion">
                                     <strong>Coloración:</strong>
                                     <select name="colorpigmentada" id="colorpigmentada" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -547,7 +547,7 @@
 
                                 <!-- del select múltiple de Afectaciones Orales, si se selecciona UBICACIÓN, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacion" style="text-align: center; 
                                 background-color: #c6b7bf;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -567,7 +567,7 @@
 
 
                                 <!---->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacionderecha" style="text-align: center; 
                                 background-color: #b3cefd;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -575,7 +575,7 @@
                                     <strong>Ubicación Derecha</strong>
                                 </div>
 
-                                <div class="col-md-12" id="">
+                                <div class="col-md-12" id="subanatomico">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva" name="msqueva[]" multiple="multiple" class="form-control">
                                         <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
@@ -597,7 +597,7 @@
 
 
                                 <!--Si se selecciona la opción LABIOS se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="labiospanel">
                                     <strong>Labios:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -607,7 +607,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción LENGUA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lenguapanel">
                                     <strong>Lengua:</strong>
                                     <select name="lengua" id="lengua" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -618,7 +618,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PALADAR BLANDO se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="paladarblandopanel">
                                     <strong>Paladar Blando:</strong>
                                     <select name="paladarblando" id="paladarblando" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -628,9 +628,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="enciapanel">
                                     <strong>Encia:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="encia" id="encia" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
                                         <option value="Interpapilar">Interpapilar</option>
@@ -641,14 +641,14 @@
 
 
                                 <!-- esta pendiente definir con qué campo se relaciona-->
-                                <div class="col-md-6" id="">
+                                <div class="col-md-6" id="relacionpanel">
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
                                     <select name="relacion" id="relacion" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
                                     </select>
-                                </div><br><br>
+                                </div>
 
                                 <!--Si SÍ está comprometido con un órgano dental, se deben mostrar los siguientes MS-->
                                 <!--Superior derecho-->
@@ -683,7 +683,7 @@
 
 
                                 <!---->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacionizquierda" style="text-align: center; 
                                 background-color: #b3cefd;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -692,7 +692,7 @@
                                 </div>
 
 
-                                <div class="col-md-12" id="">
+                                <div class="col-md-12" id="subanatomicoiz">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva2" name="msqueva2[]" multiple="multiple" class="form-control">
                                         <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
@@ -714,9 +714,9 @@
 
 
                                 <!--Si se selecciona la opción LABIOS se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="labiospaneliz">
                                     <strong>Labios:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="labiosiz" id="labiosiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Labio Inferior">Labio Inferior</option>
                                         <option value="Labio Superior">Labio Superior</option>
@@ -724,9 +724,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción LENGUA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lenguapaneliz">
                                     <strong>Lengua:</strong>
-                                    <select name="lengua" id="lengua" class="form-control">
+                                    <select name="lenguaiz" id="lenguaiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Borde Lateral">Borde Lateral</option>
                                         <option value="Cara Ventral">Cara Ventral</option>
@@ -735,9 +735,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PALADAR BLANDO se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="paladarblandopaneliz">
                                     <strong>Paladar Blando:</strong>
-                                    <select name="paladarblando" id="paladarblando" class="form-control">
+                                    <select name="paladarblandoiz" id="paladarblandoiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Boveda de Paladar">Boveda de Paladar</option>
                                         <option value="Velo de Paladar">Velo de Paladar</option>
@@ -745,9 +745,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="enciapaneliz">
                                     <strong>Encia:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="enciaiz" id="enciaiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
                                         <option value="Interpapilar">Interpapilar</option>
@@ -757,21 +757,21 @@
                                 </div><br><br>
 
                                 <!-- esta pendiente definir con qué campo se relaciona-->
-                                <div class="col-md-6" id="">
+                                <div class="col-md-6" id="relacionpaneliz">
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
-                                    <select name="relacion" id="relacion" class="form-control">
+                                    <select name="relacioniz" id="relacioniz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
                                     </select>
-                                </div><br><br>
+                                </div>
 
 
                                 <!--Si SÍ está comprometido con un órgano dental, se deben mostrar los siguientes MS-->
                                 <!--Superior izquierdo-->
-                                <div class="col-md-3" id="maxisi">
+                                <div class="col-md-3" id="maxisdiz">
                                     <strong>Maxilar Superior Izquierdo</strong>
-                                    <select id="msmaxisi" name="msmaxisi[]" multiple="multiple" class="form-control">
+                                    <select id="msmaxisiiz" name="msmaxisiiz[]" multiple="multiple" class="form-control">
                                         <option value="21"> 21</option>
                                         <option value="22"> 22</option>
                                         <option value="23"> 23</option>
@@ -784,7 +784,7 @@
                                 </div>
 
                                 <!--Inferior izquierdo -->
-                                <div class="col-md-3" id="maxiiz">
+                                <div class="col-md-3" id="maxiidiz">
                                     <strong>Maxilar Inferior Izquierdo</strong>
                                     <select id="msmaxiiz" name="msmaxiiz[]" multiple="multiple" class="form-control">
                                         <option value="31"> 31</option>
@@ -1279,12 +1279,7 @@
                                         <option value="No oncologica">No oncologica</option>
                                     </select>
                                 </div>
-                            </div>
-
-
-
-                            <!--********************************************************************************************************************************************************************-->
-                            <!--Inicia la sección de CASO ÉXITOSO-->
+                    
                             <div class="col-md-12"></div>
                             <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
