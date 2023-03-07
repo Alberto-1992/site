@@ -489,7 +489,7 @@
                                 </div>
 
                                 <!--Seleccion de sí o no en lesión oral:-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lesionoral">
                                     <strong>¿Lesión Oral?:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -499,7 +499,7 @@
                                 </div>
 
                                 <!--Sí hay lesión oral, se hablitan:-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="tejidotipo">
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
