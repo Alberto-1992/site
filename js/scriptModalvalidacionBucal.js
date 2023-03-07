@@ -785,10 +785,21 @@ $(document).ready(function() {
 $(function() {
     $('#defuncionfecha').prop("hidden", true);
     $('#defuncioncausa').prop("hidden", true);
-    $('#idtxcomplicaciones').prop("hidden", true);
+    $('#idtxcomplicaciones').prop("hidden", true);//caries
     $('#idtxcomplicacionesdisguesia').prop("hidden", true);
     $('#idtxcomplicacionesdolor').prop("hidden", true);
     $('#idtxcomplicacionesfractura').prop("hidden", true);
+    $('#idtxcomplicacionesinfeccion').prop("hidden", true);
+    $('#idtxcomplicacionesdisguesiahemorragia').prop("hidden", true);
+    $('#idtxcomplicacionesmucositis').prop("hidden", true);
+    $('#idtxcomplicacionesosteonecrosis').prop("hidden", true);
+    $('#idtxcomplicacionesParestesia').prop("hidden", true);
+    $('#idtxcomplicacionesalocal').prop("hidden", true);
+    $('#idtxcomplicacionesradiodermitis').prop("hidden", true);
+    $('#idtxcomplicacionesalergia').prop("hidden", true);
+    $('#idtxcomplicacionetrismus').prop("hidden", true);
+    $('#idtxcomplicacionesxerostomia').prop("hidden", true);
+    
    
 
 })
@@ -820,13 +831,79 @@ $(document).ready(function () {
         }
         if(mscomplicaciones.options[3].selected == true) {
            $('#idtxcomplicacionesfractura').prop("hidden", false);
-        
-
         }else if(mscomplicaciones.options[3].selected == false) {
            $('#idtxcomplicacionesfractura').prop("hidden", true);
-
         }
 
+        //AQUI
+        if(mscomplicaciones.options[4].selected == true) {
+           $('#idtxcomplicacionesinfeccion').prop("hidden", false);
+        }else if(mscomplicaciones.options[4].selected == false) {
+           $('#idtxcomplicacionesinfeccion').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[5].selected == true) {
+           $('#idtxcomplicacionesdisguesiahemorragia').prop("hidden", false);
+        }else if(mscomplicaciones.options[5].selected == false) {
+           $('#idtxcomplicacionesdisguesiahemorragia').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[6].selected == true) {
+           $('#idtxcomplicacionesmucositis').prop("hidden", false);
+        }else if(mscomplicaciones.options[6].selected == false) {
+           $('#idtxcomplicacionesmucositis').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[7].selected == true) {
+           $('#idtxcomplicacionesosteonecrosis').prop("hidden", false);
+        }else if(mscomplicaciones.options[7].selected == false) {
+           $('#idtxcomplicacionesosteonecrosis').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[8].selected == true) {
+           $('#idtxcomplicacionesParestesia').prop("hidden", false);
+        }else if(mscomplicaciones.options[8].selected == false) {
+           $('#idtxcomplicacionesParestesia').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[9].selected == true) {
+           $('#idtxcomplicacionesalocal').prop("hidden", false);
+        }else if(mscomplicaciones.options[9].selected == false) {
+           $('#idtxcomplicacionesalocal').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[10].selected == true) {
+           $('#idtxcomplicacionesradiodermitis').prop("hidden", false);
+        }else if(mscomplicaciones.options[10].selected == false) {
+           $('#idtxcomplicacionesradiodermitis').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[11].selected == true) {
+           $('#idtxcomplicacionesalergia').prop("hidden", false);
+        }else if(mscomplicaciones.options[11].selected == false) {
+           $('#idtxcomplicacionesalergia').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[12].selected == true) {
+           $('#idtxcomplicacionetrismus').prop("hidden", false);
+        }else if(mscomplicaciones.options[12].selected == false) {
+           $('#idtxcomplicacionetrismus').prop("hidden", true);
+        }
+
+        //AQUI
+        if(mscomplicaciones.options[13].selected == true) {
+           $('#idtxcomplicacionesxerostomia').prop("hidden", false);
+        }else if(mscomplicaciones.options[13].selected == false) {
+           $('#idtxcomplicacionesxerostomia').prop("hidden", true);
+        }
 
     })
 });

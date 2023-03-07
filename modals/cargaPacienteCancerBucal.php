@@ -507,9 +507,9 @@
 
                                 <!--Seleccion de sí o no en lesión oral:-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="lesionoral">
                                     <strong>¿Lesión Oral?:</strong>
-                                    <select name="lesionoral" id="lesionoral" class="form-control">
+                                    <select name="tipolesionoral" id="tipolesionoral" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
@@ -1163,13 +1163,13 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-3" id="idnofracciones">
+                                <div class="col-md-6" id="idnofracciones">
                                     <strong>No. Fracciones</strong>
                                     <input type="number" class="form-control" id="fracciones" name="fracciones" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3" id="idtecnica">
-                                    <strong>Tecnica</strong>
+                                <div class="col-md-6" id="idtecnica">
+                                    <strong>Técnica</strong>
                                     <select name="tecnica" id="tecnica" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="3D Conformal">3D Conformal</option>
@@ -1178,14 +1178,14 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-3" id="idcomplicaciones">
+                                <div class="col-md-6" id="idcomplicaciones">
                                     <strong>Complicaciones RT</strong>
                                     <select id="mscomplicaciones" name="mscomplicaciones[]" multiple="multiple" class="form-control">
                                         <option value="Caries">Caries</option>
                                         <option value="Disgeusia">Disgeusia</option>
                                         <option value="Dolor">Dolor</option>
                                         <option value="Fractura">Fractura</option>
-                                        <option value="Infeccion">Infeccion</option>
+                                        <option value="Infeccion">Infección</option>
                                         <option value="Hemorragias">Hemorragias</option>
                                         <option value="Mucositis">Mucositis</option>
                                         <option value="Osteonecrosis">Osteonecrosis</option>
@@ -1200,7 +1200,7 @@
 
                                 <!--Si se selecciona una complicación, se debe mostrar lo siguiente-->
                                 <div class="col-md-3" id="idtxcomplicaciones">
-                                    <strong>Tx Complicaciones caries</strong>
+                                    <strong>Tx Caries</strong>
                                     <select name="txcomplicaciones" id="txcomplicaciones" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1209,7 +1209,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesdisguesia">
-                                    <strong>Tx Complicaciones Disgeusia</strong>
+                                    <strong>Tx Disgeusia</strong>
                                     <select name="txcomplicacionesdisguesia" id="txcomplicacionesdisguesia" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1218,7 +1218,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesdolor">
-                                    <strong>Tx Complicaciones Dolor</strong>
+                                    <strong>Tx Dolor</strong>
                                     <select name="txcomplicacionesdolor" id="txcomplicacionesdolor" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1227,7 +1227,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3" id="idtxcomplicacionesfractura">
-                                    <strong>Tx Complicaciones Fractura</strong>
+                                    <strong>Tx Fractura</strong>
                                     <select name="txcomplicacionesfractua" id="txcomplicacionesfractura" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="crioterapia">Crioterapia</option>
@@ -1235,7 +1235,101 @@
                                         <option value="Laser">Láser</option>
                                     </select>
                                 </div>
+                                <div class="col-md-3" id="idtxcomplicacionesinfeccion">
+                                    <strong>Tx Infección</strong>
+                                    <select name="txcomplicacionesinfeccion" id="txcomplicacionesinfeccion" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdisguesiahemorragia">
+                                    <strong>Tx Hemorragias</strong>
+                                    <select name="txcomplicacioneshemorragia" id="txcomplicacioneshemorragia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesmucositis">
+                                    <strong>Tx Mucositis</strong>
+                                    <select name="txcomplicacionesmucositis" id="txcomplicacionesdmucositis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesosteonecrosis">
+                                    <strong>Tx Osteonecrosis</strong>
+                                    <select name="txcomplicacionessteonecrosis" id="txcomplicacionessteonecrosis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesParestesia">
+                                    <strong>Tx Parestesia</strong>
+                                    <select name="txcomplicacionesParestesia" id="txcomplicacionesParestesia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesalocal">
+                                    <strong>Tx Anestesia Local</strong>
+                                    <select name="txcomplicacionesalocal" id="txcomplicacionesalocal" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesradiodermitis">
+                                    <strong>Tx Radiodermitis</strong>
+                                    <select name="txcomplicacionesradiodermitis" id="txcomplicacionesradiodermitis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesalergia">
+                                    <strong>Tx Reaccion Alergica</strong>
+                                    <select name="txcomplicacionesalergia" id="txcomplicacionesalergia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionetrismus">
+                                    <strong>Tx Trismus</strong>
+                                    <select name="txcomplicacionestrismus" id="txcomplicacionesdtrismus" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesxerostomia">
+                                    <strong>Tx Xerostomia</strong>
+                                    <select name="txcomplicacionesxerostomia" id="txcomplicacionesxerostomia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
 
+
+
+
+                                <!--**********************************-->
                                 <!--AQUI FINALIZAN LOS COMBOS QUE SE MUESTRAN SI SE SELECCIONA SÍ EN RADIOTERAPIA-->
 
 
