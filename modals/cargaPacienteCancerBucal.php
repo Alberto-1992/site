@@ -289,12 +289,29 @@
                                 <div class="col-md-12">
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
-                                        <option value="alcoholismo"> Alcoholismo</option>
-                                        <option value="cocaina"> Cocaina</option>
-                                        <option value="marihuana"> Marihuana</option>
-                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
-                                        <option value="solventes"> Solventes</option>
-                                        <option value="tabaquismo"> Tabaquismo</option>
+                                        <option value="Alcoholismo"> Alcoholismo</option>
+<<<<<<< HEAD
+                                        <option value="Cocaina"> Cocaína</option>
+                                        <option value="Marihuana"> Marihuana</option>
+                                        <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
+                                        <option value="Solventes"> Solventes</option>
+                                        <option value="Tabaquismo"> Tabaquismo</option>
+=======
+                                        <option value="Tabaquismo"> Tabaquismo</option>
+                                        <option value="Cocaina"> Cocaina</option>
+                                        <option value="Marihuana"> Marihuana</option>
+                                        <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
+                                        <option value="Solventes"> Solventes</option>
+                                    </select>
+                                        </div>
+                                <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
+                                <div class="col-md-4" id="alcoholismofrecuencia">
+                                    <strong>Frecuencia Alcoholismo:</strong>
+                                    <select name="frecuenciaal" id="frecuenciaal" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Social">Social</option>
+                                        <option value="Embriaguez">Embriaguez</option>
+>>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
                                     </select>
                                 </div>
 
@@ -489,9 +506,15 @@
                                 </div>
 
                                 <!--Seleccion de sí o no en lesión oral:-->
-                                <div class="col-md-3" id="">
+<<<<<<< HEAD
+                                <div class="col-md-3">
                                     <strong>¿Lesión Oral?:</strong>
-                                    <select name="tipotejido" id="tipotejido" class="form-control">
+                                    <select name="lesionoral" id="lesionoral" class="form-control">
+=======
+                                <div class="col-md-3" id="lesionoral">
+                                    <strong>¿Lesión Oral?:</strong>
+                                    <select name="orallesion" id="orallesion" class="form-control">
+>>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
@@ -499,7 +522,11 @@
                                 </div>
 
                                 <!--Sí hay lesión oral, se hablitan:-->
-                                <div class="col-md-3" id="">
+<<<<<<< HEAD
+                                <div class="col-md-3" id="idtipotejido">
+=======
+                                <div class="col-md-3" id="tejidotipo">
+>>>>>>> 3fe6f7b61de972c6807cbd9c8df2dd13893500ba
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -1274,14 +1301,129 @@
                                     <strong>Dosis Máx Labios</strong>
                                     <input type="number" class="form-control" id="labios1" name="labios1" placeholder="Ingrese...">
                                 </div>
-                            </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Labios</strong>
+                                    <input type="number" class="form-control" id="labios2" name="labios2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--LARINGE-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Laringe</strong>
+                                    <input type="number" class="form-control" id="laringe1" name="laringe1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Laringe</strong>
+                                    <input type="number" class="form-control" id="laringe2" name="laringe2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--MANDIBULA-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Mandibula</strong>
+                                    <input type="number" class="form-control" id="mandibula1" name="mandibula1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Mandibula</strong>
+                                    <input type="number" class="form-control" id="mandibula2" name="mandibula2" placeholder="Ingrese...">
+                                </div>
+
+                                <!--Médula-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Médula</strong>
+                                    <input type="number" class="form-control" id="medula1" name="medula1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Médula</strong>
+                                    <input type="number" class="form-control" id="medula2" name="medula2" placeholder="Ingrese...">
+                                </div>
 
 
 
-                            <!--********************************************************************************************************************************************************************-->
-                            <!--Inicia la sección de CASO ÉXITOSO-->
-                            <div class="col-md-12"></div>
-                            <div class="form-title" style="text-align: center; background-color: #d9a4a5;
+                                <!--Nervio Óptico-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Nervio Óptico</strong>
+                                    <input type="number" class="form-control" id="nerviooptico1" name="nerviooptico1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Nervio Óptico</strong>
+                                    <input type="number" class="form-control" id="nerviooptico2" name="nerviooptico2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Ojos-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Ojos</strong>
+                                    <input type="number" class="form-control" id="ojos1" name="ojos1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Ojos</strong>
+                                    <input type="number" class="form-control" id="ojos2" name="ojos2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Pared Faringea Posterior-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx PFP</strong>
+                                    <input type="number" class="form-control" id="pfp1" name="pfp1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom PFP</strong>
+                                    <input type="number" class="form-control" id="pfp2" name="pfp2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Parotidas-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Parotidas</strong>
+                                    <input type="number" class="form-control" id="Parotidas1" name="Parotidas1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Parotidas</strong>
+                                    <input type="number" class="form-control" id="Parotidas2" name="Parotidas2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Sublinguales-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Sublinguales</strong>
+                                    <input type="number" class="form-control" id="Sublinguales1" name="Sublinguales1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Sublinguales</strong>
+                                    <input type="number" class="form-control" id="Sublinguales2" name="Sublinguales2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Tallo-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Tallo</strong>
+                                    <input type="number" class="form-control" id="Tallo1" name="Tallo1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Tallo</strong>
+                                    <input type="number" class="form-control" id="Tallo2" name="Tallo2" placeholder="Ingrese...">
+                                </div>
+
+
+                                <!--Tiroides-->
+                                <div class="col-md-3">
+                                    <strong>Dosis Máx Tiroides</strong>
+                                    <input type="number" class="form-control" id="Tiroides1" name="Tiroides1" placeholder="Ingrese...">
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Dosis Prom Tiroides</strong>
+                                    <input type="number" class="form-control" id="Tiroides2" name="Tiroides2" placeholder="Ingrese...">
+                                </div>
+
+
+
+<!--****************************************************************-->
+
+
+                                <!--Inicia la sección de CASO EXITOSO-->
+                                <div class="col-md-12"></div>
+                                <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
                                     <strong>CASO EXITOSO</strong>
                                 </div>
@@ -1304,12 +1446,6 @@
                                         <option value="Parcial">Parcial</option>
                                     </select>
                                 </div>
-                            </div>
-
-
-                            <!--********************************************************************************************************************************************************************-->
-
-                            <!--Inicia la sección de CASO EXITOSO-->
                             <div class="col-md-12"></div>
                             <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
