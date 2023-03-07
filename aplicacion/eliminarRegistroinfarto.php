@@ -167,7 +167,7 @@ echo "<script>swal({
             $sql->execute();
     $sql = $conexionCancer->prepare("DELETE from dato_personalinfarto where id = :id");
         $sql->bindParam(':id',$id, PDO::PARAM_INT);
-        $sql->execute();
+        $sql->execute(); 
     
             /* $sql = $conexionCancer->prepare("DELETE from quirurgico where curpusuario = :curpusuario");
             $sql->bindParam(':curpusuario',$curpusuario, PDO::PARAM_STR);
