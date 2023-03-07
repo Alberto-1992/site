@@ -289,12 +289,12 @@
                                 <div class="col-md-12">
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
-                                        <option value="Alcoholismo"> Alcoholismo</option>
-                                        <option value="Cocaina"> Cocaína</option>
-                                        <option value="Marihuana"> Marihuana</option>
-                                        <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
-                                        <option value="Solventes"> Solventes</option>
-                                        <option value="Tabaquismo"> Tabaquismo</option>
+                                        <option value="alcoholismo"> Alcoholismo</option>
+                                        <option value="cocaina"> Cocaina</option>
+                                        <option value="marihuana"> Marihuana</option>
+                                        <option value="medicamentoscontrolados"> Medicamentos Controlados</option>
+                                        <option value="solventes"> Solventes</option>
+                                        <option value="tabaquismo"> Tabaquismo</option>
                                     </select>
                                 </div>
 
@@ -306,15 +306,6 @@
                                 <div class="col-md-4" id="diacigarros">
                                     <strong>Cigarros al día:</strong>
                                     <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="" required>
-                                </div>
-                                <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
-                                <div class="col-md-4">
-                                    <strong>Frecuencia Alcoholismo:</strong>
-                                    <select name="frecuenciaal" id="frecuenciaal" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Embriaguez">Embriaguez</option>
-                                    </select>
                                 </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
 
@@ -498,9 +489,9 @@
                                 </div>
 
                                 <!--Seleccion de sí o no en lesión oral:-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="">
                                     <strong>¿Lesión Oral?:</strong>
-                                    <select name="lesionoral" id="lesionoral" class="form-control">
+                                    <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
@@ -508,7 +499,7 @@
                                 </div>
 
                                 <!--Sí hay lesión oral, se hablitan:-->
-                                <div class="col-md-3" id="idtipotejido">
+                                <div class="col-md-3" id="">
                                     <strong>Tipo de Tejido:</strong>
                                     <select name="tipotejido" id="tipotejido" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -533,7 +524,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PIGMENTADA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="coloracion">
                                     <strong>Coloración:</strong>
                                     <select name="colorpigmentada" id="colorpigmentada" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -548,7 +539,7 @@
 
                                 <!-- del select múltiple de Afectaciones Orales, si se selecciona UBICACIÓN, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacion" style="text-align: center; 
                                 background-color: #c6b7bf;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -568,7 +559,7 @@
 
 
                                 <!---->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacionderecha" style="text-align: center; 
                                 background-color: #b3cefd;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -576,7 +567,7 @@
                                     <strong>Ubicación Derecha</strong>
                                 </div>
 
-                                <div class="col-md-12" id="">
+                                <div class="col-md-12" id="subanatomico">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva" name="msqueva[]" multiple="multiple" class="form-control">
                                         <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
@@ -598,7 +589,7 @@
 
 
                                 <!--Si se selecciona la opción LABIOS se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="labiospanel">
                                     <strong>Labios:</strong>
                                     <select name="labios" id="labios" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -608,7 +599,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción LENGUA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lenguapanel">
                                     <strong>Lengua:</strong>
                                     <select name="lengua" id="lengua" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -619,7 +610,7 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PALADAR BLANDO se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="paladarblandopanel">
                                     <strong>Paladar Blando:</strong>
                                     <select name="paladarblando" id="paladarblando" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
@@ -629,9 +620,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="enciapanel">
                                     <strong>Encia:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="encia" id="encia" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
                                         <option value="Interpapilar">Interpapilar</option>
@@ -642,14 +633,14 @@
 
 
                                 <!-- esta pendiente definir con qué campo se relaciona-->
-                                <div class="col-md-6" id="">
+                                <div class="col-md-6" id="relacionpanel">
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
                                     <select name="relacion" id="relacion" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
                                     </select>
-                                </div><br><br>
+                                </div>
 
                                 <!--Si SÍ está comprometido con un órgano dental, se deben mostrar los siguientes MS-->
                                 <!--Superior derecho-->
@@ -684,7 +675,7 @@
 
 
                                 <!---->
-                                <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
+                                <div class="col-md-12" id="tituloubicacionizquierda" style="text-align: center; 
                                 background-color: #b3cefd;
                                 color: aliceblue;
                                 margin-top: 5px; 
@@ -693,7 +684,7 @@
                                 </div>
 
 
-                                <div class="col-md-12" id="">
+                                <div class="col-md-12" id="subanatomicoiz">
                                     <strong>Subsitio Anatómico:</strong>
                                     <select id="msqueva2" name="msqueva2[]" multiple="multiple" class="form-control">
                                         <option value="Cuerpo Mandibular"> Cuerpo Mandibular</option>
@@ -715,9 +706,9 @@
 
 
                                 <!--Si se selecciona la opción LABIOS se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="labiospaneliz">
                                     <strong>Labios:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="labiosiz" id="labiosiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Labio Inferior">Labio Inferior</option>
                                         <option value="Labio Superior">Labio Superior</option>
@@ -725,9 +716,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción LENGUA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="lenguapaneliz">
                                     <strong>Lengua:</strong>
-                                    <select name="lengua" id="lengua" class="form-control">
+                                    <select name="lenguaiz" id="lenguaiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Borde Lateral">Borde Lateral</option>
                                         <option value="Cara Ventral">Cara Ventral</option>
@@ -736,9 +727,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción PALADAR BLANDO se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="paladarblandopaneliz">
                                     <strong>Paladar Blando:</strong>
-                                    <select name="paladarblando" id="paladarblando" class="form-control">
+                                    <select name="paladarblandoiz" id="paladarblandoiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Boveda de Paladar">Boveda de Paladar</option>
                                         <option value="Velo de Paladar">Velo de Paladar</option>
@@ -746,9 +737,9 @@
                                 </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
-                                <div class="col-md-3" id="">
+                                <div class="col-md-3" id="enciapaneliz">
                                     <strong>Encia:</strong>
-                                    <select name="labios" id="labios" class="form-control">
+                                    <select name="enciaiz" id="enciaiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
                                         <option value="Interpapilar">Interpapilar</option>
@@ -758,21 +749,21 @@
                                 </div><br><br>
 
                                 <!-- esta pendiente definir con qué campo se relaciona-->
-                                <div class="col-md-6" id="">
+                                <div class="col-md-6" id="relacionpaneliz">
                                     <strong>¿Está relacionado con un órgano dental?:</strong>
-                                    <select name="relacion" id="relacion" class="form-control">
+                                    <select name="relacioniz" id="relacioniz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Si">Sí</option>
                                         <option value="No">No</option>
                                     </select>
-                                </div><br><br>
+                                </div>
 
 
                                 <!--Si SÍ está comprometido con un órgano dental, se deben mostrar los siguientes MS-->
                                 <!--Superior izquierdo-->
-                                <div class="col-md-3" id="maxisi">
+                                <div class="col-md-3" id="maxisdiz">
                                     <strong>Maxilar Superior Izquierdo</strong>
-                                    <select id="msmaxisi" name="msmaxisi[]" multiple="multiple" class="form-control">
+                                    <select id="msmaxisiiz" name="msmaxisiiz[]" multiple="multiple" class="form-control">
                                         <option value="21"> 21</option>
                                         <option value="22"> 22</option>
                                         <option value="23"> 23</option>
@@ -785,7 +776,7 @@
                                 </div>
 
                                 <!--Inferior izquierdo -->
-                                <div class="col-md-3" id="maxiiz">
+                                <div class="col-md-3" id="maxiidiz">
                                     <strong>Maxilar Inferior Izquierdo</strong>
                                     <select id="msmaxiiz" name="msmaxiiz[]" multiple="multiple" class="form-control">
                                         <option value="31"> 31</option>
@@ -1283,129 +1274,14 @@
                                     <strong>Dosis Máx Labios</strong>
                                     <input type="number" class="form-control" id="labios1" name="labios1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Labios</strong>
-                                    <input type="number" class="form-control" id="labios2" name="labios2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--LARINGE-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Laringe</strong>
-                                    <input type="number" class="form-control" id="laringe1" name="laringe1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Laringe</strong>
-                                    <input type="number" class="form-control" id="laringe2" name="laringe2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--MANDIBULA-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Mandibula</strong>
-                                    <input type="number" class="form-control" id="mandibula1" name="mandibula1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Mandibula</strong>
-                                    <input type="number" class="form-control" id="mandibula2" name="mandibula2" placeholder="Ingrese...">
-                                </div>
-
-                                <!--Médula-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Médula</strong>
-                                    <input type="number" class="form-control" id="medula1" name="medula1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Médula</strong>
-                                    <input type="number" class="form-control" id="medula2" name="medula2" placeholder="Ingrese...">
-                                </div>
+                            </div>
 
 
 
-                                <!--Nervio Óptico-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Nervio Óptico</strong>
-                                    <input type="number" class="form-control" id="nerviooptico1" name="nerviooptico1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Nervio Óptico</strong>
-                                    <input type="number" class="form-control" id="nerviooptico2" name="nerviooptico2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Ojos-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Ojos</strong>
-                                    <input type="number" class="form-control" id="ojos1" name="ojos1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Ojos</strong>
-                                    <input type="number" class="form-control" id="ojos2" name="ojos2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Pared Faringea Posterior-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx PFP</strong>
-                                    <input type="number" class="form-control" id="pfp1" name="pfp1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom PFP</strong>
-                                    <input type="number" class="form-control" id="pfp2" name="pfp2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Parotidas-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Parotidas</strong>
-                                    <input type="number" class="form-control" id="Parotidas1" name="Parotidas1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Parotidas</strong>
-                                    <input type="number" class="form-control" id="Parotidas2" name="Parotidas2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Sublinguales-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Sublinguales</strong>
-                                    <input type="number" class="form-control" id="Sublinguales1" name="Sublinguales1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Sublinguales</strong>
-                                    <input type="number" class="form-control" id="Sublinguales2" name="Sublinguales2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Tallo-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Tallo</strong>
-                                    <input type="number" class="form-control" id="Tallo1" name="Tallo1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Tallo</strong>
-                                    <input type="number" class="form-control" id="Tallo2" name="Tallo2" placeholder="Ingrese...">
-                                </div>
-
-
-                                <!--Tiroides-->
-                                <div class="col-md-3">
-                                    <strong>Dosis Máx Tiroides</strong>
-                                    <input type="number" class="form-control" id="Tiroides1" name="Tiroides1" placeholder="Ingrese...">
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Dosis Prom Tiroides</strong>
-                                    <input type="number" class="form-control" id="Tiroides2" name="Tiroides2" placeholder="Ingrese...">
-                                </div>
-
-
-
-<!--****************************************************************-->
-
-
-                                <!--Inicia la sección de CASO EXITOSO-->
-                                <div class="col-md-12"></div>
-                                <div class="form-title" style="text-align: center; background-color: #d9a4a5;
+                            <!--********************************************************************************************************************************************************************-->
+                            <!--Inicia la sección de CASO ÉXITOSO-->
+                            <div class="col-md-12"></div>
+                            <div class="form-title" style="text-align: center; background-color: #d9a4a5;
                                     color:aliceblue; margin-top: 5px; font-size: 18px; ">
                                     <strong>CASO EXITOSO</strong>
                                 </div>

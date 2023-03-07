@@ -243,12 +243,11 @@ $(document).ready(function() {
 
 // UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR SUPERIOR IZQUIERDO
 $(document).ready(function() {
-    $('#msmaxisi').change(function(e) { 
+    $('#msmaxisiiz').change(function(e) { 
     }).multipleSelect({
         width: '100%'
     });
 });
-
 
 // UBICACIÓN DERECHA - MULTIPLE SELECT DE MAXILAR INFERIOR IZQUIERDO
 $(document).ready(function() {
@@ -298,9 +297,66 @@ $(function () {
     $('#maxilarid').prop('hidden',true);
     $('#maxilarsd2').prop('hidden',true);
     $('#maxilarid2').prop('hidden',true);
-    
-})
+/*defuncion si no */
+    $('#defuncionfecha').prop('hidden', true);
+    $('#defuncioncausa').prop('hidden', true);
+/*finaliza defuncion si no */
+    $('#medioreferencia').prop("hidden", true);
+    $('#yearstabaquismo').prop("hidden", true);
+    $('#diacigarros').prop("hidden", true);
+    $('#alcoholfrecuencia').prop("hidden", true);
+    /**afectaciones dentales */
+    $('#afectaciondental').prop('#hidden',true);
+    $('#tituloafectaciondental').prop('hidden',true);
+    $('#tipodeodf').prop('hidden',true);
+    $('#maxilarsd').prop('hidden',true);
+    $('#maxilarid').prop('hidden',true);
+    $('#maxilarsd2').prop('hidden',true);
+    $('#maxilarid2').prop('hidden',true);
+    /* afectaciones dentales */
+    $('#titulolesionesorales').prop('hidden', true);
+    $('#lesionoral').prop('hidden', true);
+    $('#tejidotipo').prop('hidden', true);
+    $('#tipolesion').prop('hidden', true);
+    $('#coloracion').prop('hidden', true);
+    /*ubicaciones orales */
+    $('#tituloubicacion').prop('hidden', true);
+    $('#ubicacion').prop('hidden', true);
 
+    /*alcoholiso frencuencia */
+    $('#alcoholismofrecuencia').prop('hidden', true);   
+    /*ubicacion derecha*/
+    $('#tituloubicacionderecha').prop('hidden', true);
+    $('#subanatomico').prop('hidden', true);
+    $('#labiospanel').prop('hidden', true);
+    $('#lenguapanel').prop('hidden', true);
+    $('#paladarblandopanel').prop('hidden', true);
+    $('#enciapanel').prop('hidden', true);
+    $('#relacionpanel').prop('hidden', true);
+    $('#maxisd').prop('hidden', true);
+    $('#maxiid').prop('hidden', true);
+    /*ubicacion izquierda*/
+    $('#tituloubicacionizquierda').prop('hidden', true);
+    $('#subanatomicoiz').prop('hidden', true);
+    $('#labiospaneliz').prop('hidden', true);
+    $('#lenguapaneliz').prop('hidden', true);
+    $('#paladarblandopaneliz').prop('hidden', true);
+    $('#enciapaneliz').prop('hidden', true);
+    $('#relacionpaneliz').prop('hidden', true);
+    $('#maxisdiz').prop('hidden', true);
+    $('#maxiidiz').prop('hidden', true);
+
+});
+function defusi() {
+    $('#defuncionfecha').prop('hidden', false);
+    $('#defuncioncausa').prop('hidden', false);
+};
+function defuno() {
+    $('#defuncionfecha').prop('hidden', true);
+    $('#defuncioncausa').prop('hidden', true);
+    $('#fechadeladefuncion').val('');
+    $('#causadefuncion').prop('selectedIndex', 0);
+};
 $(document).ready(function () {
     $("#referenciado").change(function (e) {
         if (referenciado.options[1].selected == true) {
@@ -313,13 +369,175 @@ $(document).ready(function () {
 
     })
 });
+/*afectaciones orales */
+$(document).ready(function () {
+    $("#msao").change(function (e) {
+        if (msao.options[0].selected == true) {
+            $('#afectaciondental').prop('#hidden',false);
+            $('#tituloafectaciondental').prop('hidden',false);
+            $('#tipodeodf').prop('hidden',false);
+            $('#maxilarsd').prop('hidden',false);
+            $('#maxilarid').prop('hidden',false);
+            $('#maxilarsd2').prop('hidden',false);
+            $('#maxilarid2').prop('hidden',false);
+        }else if (msao.options[0].selected == false) {
+            $('#afectaciondental').prop('#hidden',true);
+            $('#tituloafectaciondental').prop('hidden',true);
+            $('#tipodeodf').prop('hidden',true);
+            $('#maxilarsd').prop('hidden',true);
+            $('#maxilarid').prop('hidden',true);
+            $('#maxilarsd2').prop('hidden',true);
+            $('#maxilarid2').prop('hidden',true);
+
+            $('#tituloubicacionderecha').prop('hidden', true);
+            $('#subanatomico').prop('hidden', true);
+            $('#labiospanel').prop('hidden', true);
+            $('#lenguapanel').prop('hidden', true);
+            $('#paladarblandopanel').prop('hidden', true);
+            $('#enciapanel').prop('hidden', true);
+            $('#relacionpanel').prop('hidden', true);
+            $('#maxisd').prop('hidden', true);
+            $('#maxiid').prop('hidden', true);
+
+            $('#msqueva').prop('selectedIndex', 0);
+            $('#labios').prop('selectedIndex', 0);
+            $('#lengua').prop('selectedIndex', 0);
+            $('#paladarblando').prop('selectedIndex', 0);
+            $('#encia').prop('selectedIndex', 0);
+            $('#relacion').prop('selectedIndex', 0);
+            $('#msmaxisd').prop('selectedIndex', 0);
+            $('#msmaxiid').prop('selectedIndex', 0);
+            
+            $('#tituloubicacionizquierda').prop('hidden', true);
+            $('#subanatomicoiz').prop('hidden', true);
+            $('#labiospaneliz').prop('hidden', true);
+            $('#lenguapaneliz').prop('hidden', true);
+            $('#paladarblandopaneliz').prop('hidden', true);
+            $('#enciapaneliz').prop('hidden', true);
+            $('#relacionpaneliz').prop('hidden', true);
+            $('#maxisdiz').prop('hidden', true);
+            $('#maxiidiz').prop('hidden', true);
+
+            $('#msqueva2').prop('selectedIndex', 0);
+            $('#labiosiz').prop('selectedIndex', 0);
+            $('#lenguaiz').prop('selectedIndex', 0);
+            $('#paladarblandoiz').prop('selectedIndex', 0);
+            $('#enciaiz').prop('selectedIndex', 0);
+            $('#relacioniz').prop('selectedIndex', 0);
+            $('#msmaxisiiz').prop('selectedIndex', 0);
+            $('#msmaxiiz').prop('selectedIndex', 0);
+
+
+        }
+    })
+});
+/*finaliza afectaciones orales */
+/*inicia lesiones orales */
+
+$(document).ready(function () {
+    $("#msubicacion").change(function (e) {
+        if (msubicacion.options[0].selected == true) {
+            $('#tituloubicacionderecha').prop('hidden', false);
+            $('#subanatomico').prop('hidden', false);
+            $('#labiospanel').prop('hidden', false);
+            $('#lenguapanel').prop('hidden', false);
+            $('#paladarblandopanel').prop('hidden', false);
+            $('#enciapanel').prop('hidden', false);
+            $('#relacionpanel').prop('hidden', false);
+            $('#maxisd').prop('hidden', false);
+            $('#maxiid').prop('hidden', false);
+    }else if (msubicacion.options[0].selected == false) {
+            $('#tituloubicacionderecha').prop('hidden', true);
+            $('#subanatomico').prop('hidden', true);
+            $('#labiospanel').prop('hidden', true);
+            $('#lenguapanel').prop('hidden', true);
+            $('#paladarblandopanel').prop('hidden', true);
+            $('#enciapanel').prop('hidden', true);
+            $('#relacionpanel').prop('hidden', true);
+            $('#maxisd').prop('hidden', true);
+            $('#maxiid').prop('hidden', true);
+
+            $('#msqueva').prop('selectedIndex', 0);
+            $('#labios').prop('selectedIndex', 0);
+            $('#lengua').prop('selectedIndex', 0);
+            $('#paladarblando').prop('selectedIndex', 0);
+            $('#encia').prop('selectedIndex', 0);
+            $('#relacion').prop('selectedIndex', 0);
+            $('#msmaxisd').prop('selectedIndex', 0);
+            $('#msmaxiid').prop('selectedIndex', 0);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msubicacion").change(function (e) {
+        if (msubicacion.options[1].selected == true) {
+            $('#tituloubicacionizquierda').prop('hidden', false);
+            $('#subanatomicoiz').prop('hidden', false);
+            $('#labiospaneliz').prop('hidden', false);
+            $('#lenguapaneliz').prop('hidden', false);
+            $('#paladarblandopaneliz').prop('hidden', false);
+            $('#enciapaneliz').prop('hidden', false);
+            $('#relacionpaneliz').prop('hidden', false);
+            $('#maxisdiz').prop('hidden', false);
+            $('#maxiidiz').prop('hidden', false);
+    }else if (msubicacion.options[1].selected == false) {
+            $('#tituloubicacionizquierda').prop('hidden', true);
+            $('#subanatomicoiz').prop('hidden', true);
+            $('#labiospaneliz').prop('hidden', true);
+            $('#lenguapaneliz').prop('hidden', true);
+            $('#paladarblandopaneliz').prop('hidden', true);
+            $('#enciapaneliz').prop('hidden', true);
+            $('#relacionpaneliz').prop('hidden', true);
+            $('#maxisdiz').prop('hidden', true);
+            $('#maxiidiz').prop('hidden', true);
+
+            $('#msqueva2').prop('selectedIndex', 0);
+            $('#labiosiz').prop('selectedIndex', 0);
+            $('#lenguaiz').prop('selectedIndex', 0);
+            $('#paladarblandoiz').prop('selectedIndex', 0);
+            $('#enciaiz').prop('selectedIndex', 0);
+            $('#relacioniz').prop('selectedIndex', 0);
+            $('#msmaxisiiz').prop('selectedIndex', 0);
+            $('#msmaxiiz').prop('selectedIndex', 0);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msao").change(function (e) {
+        if (msao.options[1].selected == true) {
+        $('#titulolesionesorales').prop('hidden', false);
+        $('#lesionoral').prop('hidden', false);
+        $('#tejidotipo').prop('hidden', false);
+        $('#tipolesion').prop('hidden', false);
+        $('#coloracion').prop('hidden', false);
+    }else if (msao.options[1].selected == false) {
+        $('#titulolesionesorales').prop('hidden', true);
+        $('#lesionoral').prop('hidden', true);
+        $('#tejidotipo').prop('hidden', true);
+        $('#tipolesion').prop('hidden', true);
+        $('#coloracion').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msao").change(function (e) {
+        if (msao.options[2].selected == true) {
+            $('#tituloubicacion').prop('hidden', false);
+            $('#ubicacion').prop('hidden', false);
+    }else if (msao.options[2].selected == false) {
+        $('#tituloubicacion').prop('hidden', true);
+        $('#ubicacion').prop('hidden', true);
+        }
+    })
+});
+/*finaliza lesiones orale */
 $(document).ready(function () {
     $("#mstoxicomanias").change(function (e) {
         if (mstoxicomanias.options[0].selected == true) {
 
-            $('#alcoholfrecuencia').prop("hidden", false);
+            $('#alcoholismofrecuencia').prop("hidden", false);
         } else if (mstoxicomanias.options[0].selected == false) {
-            $('#alcoholfrecuencia').prop("hidden", true);
+            $('#alcoholismofrecuencia').prop("hidden", true);
             $('#frecuenciaal').prop('selectedIndex',0);
         }
 
@@ -369,23 +587,6 @@ function calculaIMC() {
     document.formulariocancerbucal.imcbucal.value = limitcalculofinal;
 
 }
-
-$(function () {
-    $('#medioreferencia').prop("hidden", true);
-    $('#yearstabaquismo').prop("hidden", true);
-    $('#diacigarros').prop("hidden", true);
-    $('#alcoholfrecuencia').prop("hidden", true);
-
-    /**afectaciones dentales */
-    $('#afectaciondental').prop('#hidden',true);
-    $('#tituloafectaciondental').prop('hidden',true);
-    $('#tipodeodf').prop('hidden',true);
-    $('#maxilarsd').prop('hidden',true);
-    $('#maxilarid').prop('hidden',true);
-    $('#maxilarsd2').prop('hidden',true);
-    $('#maxilarid2').prop('hidden',true);
-    
-})
 
 $(document).ready(function () {
     $("#referenciado").change(function (e) {

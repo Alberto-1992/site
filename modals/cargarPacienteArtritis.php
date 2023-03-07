@@ -178,12 +178,12 @@
 
                                     <div class="col-md-3">
                                         <strong>Plaquetas</strong>
-                                        <input type="number" step="any" class="form-control" id="plaquetas" name="plaquetas" >
+                                        <input type="number" step="any" class="form-control" id="plaquetas" onclick="calculaIMC();" name="plaquetas" >
                                     </div>
 
                                     <div class="col-md-3">
                                         <strong>Factor Reumatoide Basal</strong>
-                                        <input type="number" step="any" class="form-control" id="frbasal" name="frbasal" >
+                                        <input type="number" step="any" class="form-control" id="frbasal" onclick="calculaIMC();" name="frbasal" >
                                     </div>
 
                                     <div class="col-md-3">

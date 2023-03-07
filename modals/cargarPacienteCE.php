@@ -1028,7 +1028,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 II
                                                 III-->
 
-                                    <div class="col-md-6" id="bloqueo">
+                                    <div class="col-md-12" id="bloqueo">
                                         <strong>Bloqueo AV</strong>
                                         <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>
@@ -1047,7 +1047,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 Bigeminismo
                                             -->
 
-                                    <div class="col-md-6" id="ventricularesextra">
+                                    <div class="col-md-12" id="ventricularesextra">
                                         <strong>Extrasístoles Ventriculares</strong>
                                         <select name="extraventri" id="extraventri" class="form-control" style="width:100%;" require>
                                             <option value="0">Seleccione...</option>

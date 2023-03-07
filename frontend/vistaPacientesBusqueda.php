@@ -58,7 +58,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
 <div id="mensaje"></div>
 <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
-<input type="hidden" id="cancer" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
+<input type="hidden" id="infartopaciente" value="<?php echo $dataRegistro['descripcioncancer']; ?>">
 <input type="hidden" id="nombrepaciente" value="<?php echo $dataRegistro['nombrecompleto']; ?>">
 <div class="containerr">
     <a href="#" class="mandaid" onclick="abrirseguimiento();" id="<?php echo $id_paciente ?>">Seguimiento</a>
@@ -66,7 +66,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico'])) { ?>
         <a href="#" onclick="editarRegistro();" id="editarregistro">Editar registro</a>
     <?php }; ?>
-    <a href="#" onclick="eliminarRegistro();" id="eliminarregistro">Eliminar registro</a>
+    <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
 </div>
 
 
@@ -432,46 +432,39 @@ require 'modals/seguimientoPaciente.php';
     function abrirseguimiento() {
         $('#seguimiento').modal('show')
     }
-
-
     function eliminarRegistro() {
         var id = $("#idcurp").val();
-        if (id == '') {
-            swal({
-                title: 'Error!',
-                text: 'Seleccione un paciente a eliminar',
-                icon: 'error',
+        var infarto = $("#infartopaciente").val();
+        var nombrepaciente = $("#nombrepaciente").val();
+        var mensaje = confirm("el registro se eliminara");
+        let parametros = {
+            id: id,
+            infarto: infarto,
+            nombrepaciente: nombrepaciente
+        }
+        if (mensaje == true) {
+            $.ajax({
+                data: parametros,
+                url: 'aplicacion/eliminarRegistroinfarto.php',
+                type: 'post',
+                beforeSend: function() {
+                    $("#mensaje").html("Procesando, espere por favor");
+                },
+                success: function(response) {
+                    $("#mensaje").html(response);
+                    $("#tabla_resultadobus").load('consultapacientes.php');
+                    $("#tabla_resultado").load('consultaPacienteBusqueda.php');
 
+                }
             });
         } else {
-            //var mensaje = confirm("el registro se eliminara")
-            let parametros = {
-                id: id
-            }
+            swal({
+                title: 'Cancelado!',
+                text: 'Proceso cancelado',
+                icon: 'warning',
 
-            if (mensaje == true) {
-                $.ajax({
-                    data: parametros,
-                    url: 'aplicacion/eliminarRegistroinfarto.php',
-                    type: 'post',
-                    beforeSend: function() {
-                        $("#mensaje").html("Procesando, espere por favor");
-                    },
-                    success: function(response) {
-                        $("#mensaje").html(response);
-                        $("#tabla_resultadobus").load('consultapacientes.php');
-                        $("#tabla_resultado").load('consultaPacienteBusqueda.php');
-
-                    }
-                });
-            } else {
-                swal({
-                    title: 'Cancelado!',
-                    text: 'Proceso cancelado',
-                    icon: 'warning',
-
-                });
-            }
+            });
         }
     }
+
 </script>

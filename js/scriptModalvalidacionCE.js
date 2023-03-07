@@ -736,18 +736,26 @@ $(function() {
 // Habilita Bloqueo AV
 $(document).ready(function() {
     $('#arritmiadetalle').change(function(e) {
-        if ($(this).val() === "Bloqueo AV") {
+        if (arritmiadetalle.options[1].selected == true) {
             $('#bloqueo').prop("hidden", false);
-        } else if ($(this).val() === "Extrasistoles Ventriculares") {
+        }else if(arritmiadetalle.options[1].selected == false){
             $('#bloqueo').prop("hidden", true);
+            $('#bloqueoav').prop('selectedIndex', 0);
+            $('#ventricularesextra').prop("hidden", true);
+            $('#extraventri').prop('selectedIndex', 0);
+        } else if (arritmiadetalle.options[3].selected == true) {
+            $('#ventricularesextra').prop("hidden", false);
 
+        }else if (arritmiadetalle.options[3].selected == false) {
+            $('#ventricularesextra').prop("hidden", true);
+            $("#extraventri").prop('selectedIndex', 0);
         }
         
     })
 });
 $(function() {
     $('#bloqueo').prop("hidden", true);
-
+    $('#ventricularesextra').prop("hidden", true);
 })
 
 // Habilita Extrasístoles Ventriculares
@@ -761,12 +769,6 @@ $(document).ready(function() {
         }
     })
 });
-$(function() {
-    $('#ventricularesextra').prop("hidden", true);
-
-})
-
-
 
 // Habilita DEFUNCION en SEGUIMIENTO
 $(document).ready(function() {
@@ -806,6 +808,11 @@ $(document).ready(function () {
 
         }else if(mscomplicacion.options[1].selected == false){
             $("#idarritmia").prop("hidden", true);
+            $("#bloqueo").prop("hidden", true);
+            $("#bloqueoav").prop("selectedIndex", 0);
+            $("#arritmiadetalle").prop('selectedIndex', 0);
+            $("#ventricularesextra").prop("hidden", true);
+            $("#extraventri").prop("selectedIndex", 0);
         }
 
     })
