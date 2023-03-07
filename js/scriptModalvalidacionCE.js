@@ -617,10 +617,10 @@ $(function() {
 // Habilita PROTESIS ENDOVASCULAR
 $(document).ready(function() {
     $('#protesisendovascular').change(function(e) {
-        if ($(this).val() === "Con Medicacion") {
+        if (protesisendovascular.options[2].selected == true) {
             $('#idprimerageneracion').prop("hidden", false);
             $('#idsegundageneracion').prop("hidden", false);
-        } else if ($(this).val() === "No") {
+        } else if(protesisendovascular.options[2].selected== false) {
             $('#idprimerageneracion').prop("hidden", true);
             $('#idsegundageneracion').prop("hidden", true);
         }
