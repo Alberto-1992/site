@@ -327,45 +327,47 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <strong>Termino de Triage</strong>
                                         <input type="datetime-local" id="terminotriage" name="terminotriage" placeholder="Describa" class="form-control">
                                     </div>
-                                    <fieldset id="tipicascombos" class="col-md-12">
-                                        <strong>Caracteristicas Típicas</strong><br>
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Dolor retroesternal">&nbsp;Dolor retroesternal&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Opresivo">&nbsp;Opresivo&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Irradacion brazo izquierdo">&nbsp;Irradacion brazo
-                                        izquierdo&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Mas de 10 minutos">&nbsp;Mas de 10 minutos
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Nauseas">&nbsp;Nauseas&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Diaforesis">&nbsp;Diaforesis&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista2[]" id="check_lista2[]" class="check" value="Sincupe">&nbsp;Sincope&nbsp;&nbsp;
-
-                                    </fieldset>
+                                    <div class="col-md-12" id="tipicascombos">
+                                        <strong>Caracteristicas tipicas</strong>
+                                    <select class="form-control" name="check_lista2[]" id="check_lista2" multiple>
+                                            <option value="Dolor retroesternal">Dolor retroesternal</option>
+                                            <option value="Opresivo">Opresivo</option>
+                                            <option value="Irradacion brazo izquierdo">Irradacion brazo izquierdo</option>
+                                            <option value="Mas de 10 minutos">Mas de 10 minutos</option>
+                                            <option value="Nauseas">Nauseas</option>
+                                            <option value="Diaforesis">Diaforesis</option>
+                                            <option value="Sincupe">Sincupe</option>
+                                    </select>
+                                            </div>
+                                
 
                                     <fieldset id="tipicascombos2" class="col-md-12">
                                         <strong>Intensidad del Dolor</strong><br>
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="1/10">&nbsp;1/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="2/10">&nbsp;2/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="3/10">&nbsp;3/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="4/10">&nbsp;4/10
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="5/10">&nbsp;5/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="6/10">&nbsp;6/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="7/10">&nbsp;7/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="7/10">&nbsp;8/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="7/10">&nbsp;9/10&nbsp;&nbsp;
-                                        <input type="radio" name="check_lista5[]" id="check_lista5[]" class="check" value="7/10">&nbsp;10/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="1/10">&nbsp;1/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="2/10">&nbsp;2/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="3/10">&nbsp;3/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="4/10">&nbsp;4/10
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="5/10">&nbsp;5/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="6/10">&nbsp;6/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;7/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;8/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;9/10&nbsp;&nbsp;
+                                        <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;10/10&nbsp;&nbsp;
 
                                     </fieldset>
-
-                                    <fieldset id="atipicascombos" class="col-md-12">
-                                        <strong>Caracteristicas Atípicas</strong><br>
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Dolor epigastrio">&nbsp;Dolor epigastrio&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Punzante">&nbsp;Punzante&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Pleuritico">&nbsp;Pleuritico&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Disnea">&nbsp;Disnea&nbsp;
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Palpitación">&nbsp;Palpitación&nbsp;&nbsp;
-                                        <input type="checkbox" name="check_lista3[]" id="check_lista3[]" class="check" value="Sincupe">&nbsp;Sincope&nbsp;&nbsp;
-
-
-                                    </fieldset>
+                                    <div class="col-md-12" id="atipicascombos">
+                                        <strong>Caracteristicas Atípicas</strong>
+                                    <select class="form-control" name="check_lista3[]" id="caracatipicas" multiple>
+                                            <option value="Dolor epigastrio">Dolor epigastrio</option>
+                                            <option value="Punzante">Punzante</option>
+                                            <option value="Pleuritico">Pleuritico</option>
+                                            <option value="Disnea">Disnea</option>
+                                            <option value="Palpitación">Palpitación</option>
+                                            <option value="Diaforesis">Diaforesis</option>
+                                            <option value="Sincupe">Sincupe</option>
+                                    </select>
+                                            </div>
+                                
                                     <div class="col-md-6">
                                         <strong>Electrocardiograma</strong>
                                         <select name="elctrocardio" id="elctrocardio" class="form-control">
@@ -411,7 +413,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <!-- Se agrega el MACE hospitalario como se indica en el excel-->
                                     <div class="col-md-6">
                                         <strong>MACE Hospitalario</strong>
-                                        <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" style="width:100%;" >
+                                        <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" >
                                             <option value="EVC">EVC</option>
                                             <option value="Killip Kimball">Killip Kimball</option>
                                             <option value="Reinfarto">Reinfarto</option>
@@ -605,7 +607,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-3">
                                         <strong>Lesiones coronarias</strong>
                                         <select id="mslesionescoronarias" name="mslesionescoronarias[]" multiple="multiple" class="form-control">
-
                                             <option value="Cincunfleja">Cincunfleja</option>
                                             <option value="Coronario Derecha">Coronario Derecha</option>
                                             <option value="Descendente Anterior">Descendente Anterior</option>
@@ -794,7 +795,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6" id="resultadoshock">
                                         <strong>Complicaciones de SCHOCKWAVE C2</strong>
                                         <select name="resultadoshockwavedato" id="resultadoshockwavedato" class="form-control">
-                                            <option value="">Seleccione...</option>
                                             <option value="Diseccion">Disección</option>
                                             <option value="No Reflow">No Reflow</option>
                                             <option value="Perforacion">Perforación</option>
