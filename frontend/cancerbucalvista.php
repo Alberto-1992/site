@@ -67,16 +67,7 @@
                 }
             });
         </script>
-        <style>
-            .control {
-                border: none;
-                outline: none;
-                border-bottom: 1px solid grey;
-                font-size: 18px;
-                height: 35px;
-                text-transform: uppercase;
-            }
-        </style>
+    
         <div class="autoheight">
             <input type="text" class="form-control" id="busqueda" name="busqueda" value="" placeholder="Buscar...">
             <div id="tabla_resultadobus">

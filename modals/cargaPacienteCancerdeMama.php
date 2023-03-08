@@ -383,7 +383,7 @@
                                     <div class="col-md-2" id="probableparto">
                                         <strong>F.P.P</strong>
                                         <input type="date" class="form-control" id="fechaprobableparto"
-                                            name="fechaprobableparto" value="0000/00/00">
+                                            name="fechaprobableparto">
 
                                     </div>
                                     <div class="col-md-4">
@@ -1983,7 +1983,7 @@
                                     </fieldset>
                                     <div class="col-md-3" id="defuncionfecha">
                                         <strong>Fecha defunción</strong>
-                                        <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                                        <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control">
                                           
                                     </div>
                                     <div class="col-md-3" id="defuncioncausa">

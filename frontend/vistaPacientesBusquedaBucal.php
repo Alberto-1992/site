@@ -462,20 +462,39 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
             <div class="containerr3">ATENCIÓN CLINICA</div>
 
             <tr>
-                <th id="th">Fecha primer atención:</th>
-                <td></td>
+                <th id="th">Fecha primer atención</th>
+                <td id="td"><?php echo $dataRegistro['fechaprimeratencionbucal']?></td>
             </tr>
 
             <tr>
-                <th id="th">Estadío Clínico:</th>
-                <td></td>
+                <th id="th">Estadío Clínico</th>
+                <td id="td"><?php echo $dataRegistro['estadoclinicobucal']?></td>
             </tr>
 
             <tr>
-                <th id="th">Etapa Clínica:</th>
-                <td></td>
+                <th id="th">Etapa Clínica</th>
+                <td id="td"><?php echo $dataRegistro['etapaclinicabucal']?></td>
             </tr>
-
+            <tr>
+                <th id="th">Tamaño tumoral</th>
+                <td id="td"><?php echo $dataRegistro['tamaniotumoralbucal']?></td>
+            </tr>
+            <tr>
+                <th id="th">Compromiso Linfático Nodal</th>
+                <td id="td"><?php echo $dataRegistro['compromisolinfaticobucal']?></td>
+            </tr>
+            <tr>
+                <th id="th">Metastasis</th>
+                <td id="td"><?php echo $dataRegistro['metastasisbucal']?></td>
+            </tr>
+            <tr>
+                <th id="th">Sitio metastasis</th>
+                <td id="td"><?php ?></td>
+            </tr>
+            <tr>
+                <th id="th">Calidad de vida ECOG</th>
+                <td id="td"><?php echo $dataRegistro['calidadvidaecog']?></td>
+            </tr>
         </table>
 
 
@@ -485,22 +504,22 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
             <tr>
                 <th id="th">Dx Histopatológico:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['dxhistopatologicobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Fecha de Reporte:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['fechareportebucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['tipobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Maligno:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['malignobucal'] ?></td>
             </tr>
 
         </table>

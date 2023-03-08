@@ -168,6 +168,30 @@ $hoy = date("Y-m-d");
                                                 ));
                                             }
                                         }; 
+                                    $sql = $conexionCancer->prepare("INSERT into atencionclinicabucal(id_atencionclinicabucal,id_pacientebucal,fechaprimeratencionbucal,estadoclinicobucal,etapaclinicabucal,tamaniotumoralbucal,compromisolinfaticobucal,metastasisbucal,calidadvidaecog)
+                                        values(:id_atencionclinicabucal,:id_pacientebucal,:fechaprimeratencionbucal,:estadoclinicobucal,:etapaclinicabucal,:tamaniotumoralbucal,:compromisolinfaticobucal,:metastasisbucal,:calidadvidaecog)");
+                                            $sql->execute(array(
+                                                ':id_atencionclinicabucal'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':fechaprimeratencionbucal'=>$fechaatencioninicial,
+                                                ':estadoclinicobucal'=>$estadioclinico,
+                                                ':etapaclinicabucal'=>$etapaclinica,
+                                                ':tamaniotumoralbucal'=>$tamaniotumoral,
+                                                ':compromisolinfaticobucal'=>$compromisolinfatico,
+                                                ':metastasisbucal'=>$metastasisbucal,
+                                                ':calidadvidaecog'=>$calidadvidaecogbucal
+
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into histopatologiacancerbucal(id_hitopatologiabucal,id_pacientebucal,dxhistopatologicobucal,fechareportebucal,tipobucal,malignobucal)
+                                        values(:id_hitopatologiabucal,:id_pacientebucal,:dxhistopatologicobucal,:fechareportebucal,:tipobucal,:malignobucal)");
+                                            $sql->execute(array(
+                                                ':id_hitopatologiabucal'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':dxhistopatologicobucal'=>$dxhistopatologico,
+                                                ':fechareportebucal'=>$fechareporte,
+                                                ':tipobucal'=>$tipohisto,
+                                                ':malignobucal'=>$maligno
+                                            ));
                                     if($sql != false) {
                                         echo "<script>swal({
                                                     title: 'Good job!',

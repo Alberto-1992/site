@@ -6,13 +6,16 @@ $id = $_POST['id'];
 $query= $conexionCancer->prepare("SELECT *,
 somatometriabucal.*,
 unidadreferenciadobucal.*,
-antecedentesnopatologicosbucal.*
+antecedentesnopatologicosbucal.*,
+atencionclinicabucal.*,
+histopatologiacancerbucal.*
 FROM dato_usuariobucal
 left outer join somatometriabucal on somatometriabucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join unidadreferenciadobucal on unidadreferenciadobucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join seguimientocancerbucal on seguimientocancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join antecedentesnopatologicosbucal on antecedentesnopatologicosbucal.id_pacientebucal = dato_usuariobucal.id_bucal
-
+left outer join atencionclinicabucal on atencionclinicabucal.id_pacientebucal = dato_usuariobucal.id_bucal
+left outer join histopatologiacancerbucal on histopatologiacancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal
 where dato_usuariobucal.id_bucal = $id");
 $query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();

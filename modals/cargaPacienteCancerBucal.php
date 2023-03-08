@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>IMC</strong>
-                                    <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" value="" readonly>
+                                    <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" readonly>
 
                                 </div>
 
@@ -315,7 +315,7 @@
                                 </div>
                                 <div class="col-md-4" id="diacigarros">
                                     <strong>Cigarros al día:</strong>
-                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="">
+                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día...">
                                 </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
 
@@ -854,7 +854,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Compromiso Linfático Nodal</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="compromisolinfatico" id="compromisolinfatico" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="NX: No puede ser evaluado por falta de datos">NX: No puede ser evaluado por falta de datos </option>
                                         <option value="N0:Ausencia de adenopatias palpables">N0:Ausencia de adenopatias palpables</option>
@@ -867,7 +867,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Metástasis</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="metastasisbucal" id="metastasisbucal" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="MX: No se pueden evaluar metastasis distantes">MX: No se pueden evaluar metastasis distantes</option>
                                         <option value="M0 Sin enfermedad a distancia">M0 Sin enfermedad a distancia</option>
@@ -895,7 +895,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Calidad de vida ECOG</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="calidadvidaecogbucal" id="calidadvidaecogbucal" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="Ecog 0  Desempeño Funcional Normal">Ecog 0 Desempeño Funcional Normal</option>
                                         <option value="Ecog 1 Desempeño Leve">Ecog 1 Desempeño Leve</option>
@@ -967,9 +967,6 @@
                                     </select>
                                 </div>
 
-
-
-                                <!--********************************************************************************************************************************************************************-->
                                 <!--Inicia la sección de INMUNOHISTOQUIMICA-->
                                 <div class="col-md-12"></div>
                                 <div class="form-title" style="text-align: center; background-color: #d9a4a5;
@@ -991,12 +988,9 @@
 
                                 <div class="col-md-6" id="idpdl">
                                     <strong id="inmuno-title">PDL</strong>
-                                    <input type="number" id="idpdl" name="idpdl" placeholder="%" class="form-control" value="%">
+                                    <input type="number" id="idpdl" name="idpdl" placeholder="%" class="form-control">
                                 </div>
 
-
-
-                                <!--********************************************************************************************************************************************************************-->
                                 <!--Inicia la sección de TRATAMIENTO, en esta sección se deben ver, de inicio solo tres campos QUIRURGICO, RECONSTRUCCIÓN Y RADIOTERAPIA-->
                                 <div class="col-md-12"></div>
                                 <div class="form-title" style="text-align: center; background-color: #d9a4a5;
@@ -1564,7 +1558,7 @@
 
                                 <div class="col-md-4" id="defuncionfecha">
                                     <strong>Fecha Defunción</strong>
-                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control">
                                 </div>
 
                                 <div class="col-md-4" id="defuncioncausa">
