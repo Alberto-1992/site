@@ -3,13 +3,13 @@ include("../conexionCancer.php");
 date_default_timezone_set('America/Monterrey');
 
     extract($_POST);
-        $sql = $conexionCancer->prepare("INSERT into seguimientoartritis(fechainicioseguiartritis,curpseguiart,tallaseguiart,pesoartsegui,imcseguiart,plaquetasseguiart,frbasalseguiart,frnominalseguiart,pcrseguiart,vitaminadbasalseguiart,
+        $sql = $conexionCancer->prepare("INSERT into seguimientoartritis(fechainicioseguiartritis,fechaseguimiento,curpseguiart,tallaseguiart,pesoartsegui,imcseguiart,plaquetasseguiart,frbasalseguiart,frnominalseguiart,pcrseguiart,vitaminadbasalseguiart,
         vitaminadnominalseguiart,anticppbasalseguiart,anticppnominalseguiart,vsgseguiart,tgobasalseguiart,tgonominalseguiart,tgpbasalseguiart,tgpnominalseguiart,glucosaseguiart,colesteroseguiart,trigliceridosseguiart,fib4seguiart,
         resultadofib4seguiart,detalleusghepaticoseguiart,hallazgousgseguiart,clasificacionesteatosisseguiart,articulacionesinflamadassjc28seguiart,articulacionesdolorosastjc28seguiart,evglobalpgaseguiart,evegaseguiart,resultadocdaiseguiart,
         resultadosdaiseguiart,metrotexateseguiart,dosissemanalmetroseguiart,leflunomideseguiart,dosissemanalfemuaseguiart,sulfazalasinaseguiart,dosissemanalsulfaseguiart,tecoferolseguiart,dosissemanaltecoseguiart,glucocorticoideseguiart,
         usghepaticoseguiart,dosissemanaltrataseguiart,vitaminadseguiart,dosissemanalvitadseguiart,biologicoseguiart,tratamientobiologicoseguiart,apegotratamientoseguiart,id_paciente)
 
-            values(:fechainicioseguiartritis,:curpseguiart,:tallaseguiart,:pesoartsegui,:imcseguiart,:plaquetasseguiart,:frbasalseguiart,:frnominalseguiart,:pcrseguiart,:vitaminadbasalseguiart,
+            values(:fechainicioseguiartritis,:fechaseguimiento,:curpseguiart,:tallaseguiart,:pesoartsegui,:imcseguiart,:plaquetasseguiart,:frbasalseguiart,:frnominalseguiart,:pcrseguiart,:vitaminadbasalseguiart,
         :vitaminadnominalseguiart,:anticppbasalseguiart,:anticppnominalseguiart,:vsgseguiart,:tgobasalseguiart,:tgonominalseguiart,:tgpbasalseguiart,:tgpnominalseguiart,:glucosaseguiart,:colesteroseguiart,:trigliceridosseguiart,:fib4seguiart,
         :resultadofib4seguiart,:detalleusghepaticoseguiart,:hallazgousgseguiart,:clasificacionesteatosisseguiart,:articulacionesinflamadassjc28seguiart,:articulacionesdolorosastjc28seguiart,:evglobalpgaseguiart,:evegaseguiart,:resultadocdaiseguiart,
         :resultadosdaiseguiart,:metrotexateseguiart,:dosissemanalmetroseguiart,:leflunomideseguiart,:dosissemanalfemuaseguiart,:sulfazalasinaseguiart,:dosissemanalsulfaseguiart,:tecoferolseguiart,:dosissemanaltecoseguiart,:glucocorticoideseguiart,
@@ -17,6 +17,7 @@ date_default_timezone_set('America/Monterrey');
 
             $sql->execute(array(
                 ':fechainicioseguiartritis'=>$fechahoy,
+                ':fechaseguimiento'=>$fechaseguimientoart,
                 ':curpseguiart'=>$curpseguiart,
                 ':tallaseguiart'=>$tallaseguiart,
                 ':pesoartsegui'=>$pesoseguiart,

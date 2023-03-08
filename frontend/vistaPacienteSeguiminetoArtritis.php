@@ -176,7 +176,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
     <div class="containerr2">Datos del Paciente</div>
     <tr>
         <th id="th">Fecha de inicio de seguimiento:</th>
-        <td id="td"><?php echo $dataRegistro['fechainicioseguiartritis'] ?></td>
+        <td id="td"><?php echo $dataRegistro['fechaseguimiento'] ?></td>
     </tr>
     <tr>
         <th id="th">CURP:</th>

@@ -75,6 +75,7 @@ $(function () {
     $("#dosisSemanaltratasegui").val('0');
     $("#clasisesteatosissegui").prop("hidden", true);
     $("#usghallazgosegui").prop("hidden", true);
+    $("#fehareferenciacarga").prop("hidden", true);
 
 })
 function metrotexatesisegui(){
@@ -375,9 +376,13 @@ $(document).ready(function() {
                                     $hoy = date("Y-m-d h:i:s");
                 
                                     ?>
-                                    <div class="col-md-4">
-                                        <strong>Fecha</strong>
+                                    <div class="col-md-4" id="fehareferenciacarga">
+                                        <strong>Fecha hoy</strong>
                                         <input type="text" value="<?php echo $hoy ?>" class="form-control" name="fechahoy" id="fechahoy" readonly>
+                                        </div>
+                                    <div class="col-md-4">
+                                        <strong>Fecha inicio seguimiento</strong>
+                                        <input type="date" class="form-control" name="fechaseguimientoart" id="fechaseguimientoart">
                                     </div>
                                     <div class="col-md-4">
                                         <strong>ID</strong>
@@ -407,10 +412,6 @@ $(document).ready(function() {
                                     </div>
                                     <br>
                                     <br>
-
-
-
-
 
                                     <!-- Titulo de SEGUIMIENTO LABORATORIOS -->
                                     <div class="col-md-12" style="text-align: center; 

@@ -10,11 +10,11 @@ $fecha_actual = new DateTime(date('Y-m-d'));
 $id_paciente = $dataRegistro['id_bucal'];
 $curp = $dataRegistro['curp'];
 $id = $dataRegistro['id_paciente'];
-$municipio = $dataRegistro['municipio'];
-$estado = $dataRegistro['estado'];
+$municipio = $dataRegistro['municipiobucal'];
+$estado = $dataRegistro['estadobucal'];
 require 'conexionCancer.php';
 
-$clues = $dataRegistro['clues'];
+$clues = $dataRegistro['cluesbucal'];
 $sql_f = $conexion2->query("SELECT unidad from hospitales where clues = '$clues'");
 $rown = mysqli_fetch_assoc($sql_f);
 
@@ -196,36 +196,37 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Talla:</th>
-        <td id="td"><?php echo $dataRegistro[''] ?>
+        <td id="td"><?php echo $dataRegistro['tallabucal'] ?>
     </tr>
 
     <tr>
         <th id="th">Peso:</th>
-        <td id="td"><?php echo $dataRegistro[''] ?>
+        <td id="td"><?php echo $dataRegistro['pesobucal'] ?>
     </tr>
 
     <tr>
         <th id="th">IMC:</th>
-        <td id="td"><?php echo $dataRegistro[''] ?>
+        <td id="td"><?php echo $dataRegistro['imcbucal'] ?>
     </tr>
 
-    <tr>
-        <th id="th">Estado de Residencia:</th>
-        <td id="td"><?php echo $dataRegistro['estadobucal'] ?>
-    </tr>
-
-    <tr>
-        <th id="th">Delegación / Municipio:</th>
-        <td id="td"><?php echo $dataRegistro['municipiobucal'] ?>
-    </tr>
-
-    <tr>
-        <th id="th">Referencia:</th>
-        <td id="td"><?php  ?>
-    </tr>
-
+    <th id="th">Estado:</th>
+        <td id="td"><?php echo $rows['estado'] ?></td></tr>
+        <tr>
+    <th id="th">Municipio:</th>
+        <td id="td"><?php echo $rowsm['municipio'] ?>
     </tr>
 </table>
+<table  class="table table-responsive  table-bordered " cellspacing="0" width="100%" >        
+    
+    <div class="containerr3">Unidad de refernecia</div>
+    <tr>
+        <th id="th">Referenciado:</th>  
+        <td id="td"><?php echo $dataRegistro['referenciadobucal'] ?></td>
+        <tr>
+            <th id="th">Unidad de referencia</th>
+            <td id="td"><?php echo $rown['unidad']; ?></td>
+        </tr>
+        </table>
 <!--Finaliza Datos del Paciente-->
 
 
@@ -238,17 +239,17 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     <div class="containerr3">Antecedentes No Patológicos</div>
     <tr>
         <th id="th">Exposición Solar:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['exposicionsolarbucal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Comidas al día:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['comidasbucal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Higiene Bucal:</th>
-        <td id="td"><?php  ?></td>
+        <td id="td"><?php echo $dataRegistro['higienebucal'] ?></td>
     </tr>
 </table>
 <!--Inicia Antecedentes Personales Patológicos-->

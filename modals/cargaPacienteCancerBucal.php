@@ -244,7 +244,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Exposición Solar</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="exposicionsolarbucal" id="exposicionsolarbucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="si">Sí</option>
                                         <option value="no">No</option>
@@ -253,7 +253,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Comidas al Día</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="comidasbucal" id="comidasbucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -263,7 +263,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Higiene Bucal</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="higienebucal" id="higienebucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="1 vez al dia">1 vez al día</option>
                                         <option value="2 veces al dia">2 veces al día</option>
@@ -290,17 +290,10 @@
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
                                         <option value="Alcoholismo"> Alcoholismo</option>
-
+                                        <option value="Tabaquismo"> Tabaquismo</option>
                                         <option value="Cocaina"> Cocaína</option>
                                         <option value="Marihuana"> Marihuana</option>
                                         <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
-                                        <option value="Solventes"> Solventes</option>
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-                                        <option value="Cocaina"> Cocaina</option>
-                                        <option value="Marihuana"> Marihuana</option>
-                                        <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
                                         <option value="Solventes"> Solventes</option>
                                     </select>
                                 </div>
@@ -318,11 +311,11 @@
                                 <!-- si selecciona SÍ en Tabaquismo, se deben habiliar los siguientes dos campos:-->
                                 <div class="col-md-4" id="yearstabaquismo">
                                     <strong>Años Tabaquismo:</strong>
-                                    <input id="anostabaquismo" name="anostabaquismo" type="number" class="form-control" placeholder="Ingrese años..." value="" required>
+                                    <input id="anostabaquismo" name="anostabaquismo" type="number" class="form-control" placeholder="Ingrese años..." >
                                 </div>
                                 <div class="col-md-4" id="diacigarros">
                                     <strong>Cigarros al día:</strong>
-                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="" required>
+                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="">
                                 </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
 
@@ -491,10 +484,6 @@
                                 </div>
                                 <!--Finalizan los 4 multi select-->
                                 <!--Finaliza la sección ORGANO DENTAL FRACTURADO-->
-
-
-
-
                                 <!-- del select múltiple de Afectaciones Orales, si se selecciona LESIONES ORALES, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
                                 <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
