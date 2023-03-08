@@ -114,7 +114,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     $validaid = $validacion['id_pacientebucal'];
     if ($dataRegistro['curpbucal'] != '') {
         if ($validaid != $id_paciente) { ?>
-            <a href="#" class="mandaidbucal" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
+            <input type="submit" class="mandaidbucal" id="<?php echo $id_paciente ?>" value="Seguimiento" onclick="aplicarSeguimientoBucal();"> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
@@ -686,14 +686,10 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
         </table>
 
-
-
-
-
-
-
-
         <script>
+            function aplicarSeguimientoBucal() {
+                $("#seguimientobucal").modal('show');
+            }
             function eliminarRegistro() {
                 var id = $("#idcurp").val();
                 var cancer = $("#cancer").val();
