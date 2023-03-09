@@ -181,6 +181,15 @@ date_default_timezone_set('America/Monterey');
         <th id="th">Sexo:</th>
         <td id="td"><?php echo $dataRegistro['sexo'] ?></td></tr>
         <tr>
+        <th id="th">Población indegena:</th>
+        <td id="td"><?php echo $dataRegistro['poblacionindigena'] ?></td></tr>
+        <tr>
+        <th id="th">Raza:</th>
+        <td id="td"><?php echo $dataRegistro['raza'] ?></td></tr>
+        <tr>
+        <th id="th">Discapacidad:</th>
+        <td id="td"><?php echo $dataRegistro['discapacidad'] ?></td></tr>
+        <tr>
         <th id="th">Estado:</th>
         <td id="td"><?php echo $rows['estado'] ?></td></tr>
         <tr>

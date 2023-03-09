@@ -3106,7 +3106,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia'];?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Letrazol">Letrazol</option>
-                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Anastrozol">Anastrozol</option>
                                             <option value="Tomoxifeno">Tomoxifeno</option>
                                             <option value="Exemetastino">Exemetastino</option>
                                         </select>

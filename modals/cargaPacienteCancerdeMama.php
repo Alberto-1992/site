@@ -1793,7 +1793,7 @@
                                         <select name="tipohormonoterapia" id="tipohormonoterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Letrazol">Letrazol</option>
-                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Anastrozol">Anastrozol</option>
                                             <option value="Tomoxifeno">Tomoxifeno</option>
                                             <option value="Exemetastino">Exemetastino</option>
                                         </select>

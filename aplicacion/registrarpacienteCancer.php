@@ -39,9 +39,9 @@ $hoy = date("Y-m-d");
 	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO
         //if($validaCurp != $curp){
         
-	$sql = $conexionCancer->prepare("INSERT into dato_usuario(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, raza, estado, municipio, year) 
+	$sql = $conexionCancer->prepare("INSERT into dato_usuario(curp, nombrecompleto, poblacionindigena, escolaridad, fechanacimiento, edad, sexo, discapacidad, raza, estado, municipio, year) 
     
-                                    values (:curp, :nombrecompleto, :poblacionindigena, :escolaridad, :fechanacimiento, :edad, :sexo, :raza, :estado, :municipio, :year)");
+                                    values (:curp, :nombrecompleto, :poblacionindigena, :escolaridad, :fechanacimiento, :edad, :sexo, :discapacidad, :raza, :estado, :municipio, :year)");
                     
                                 $sql->bindParam(':curp', $curp, PDO::PARAM_STR, 25);
                                 $sql->bindParam(':nombrecompleto',$nombrecompleto, PDO::PARAM_STR, 100);
@@ -50,6 +50,7 @@ $hoy = date("Y-m-d");
                                 $sql->bindParam(':fechanacimiento',$fecha, PDO::PARAM_STR); 
                                 $sql->bindParam(':edad',$edad, PDO::PARAM_INT); 
                                 $sql->bindParam(':sexo',$sexo, PDO::PARAM_STR, 10); 
+                                $sql->bindParam(':discapacidad',$discapacidad, PDO::PARAM_STR, 15); 
                                 $sql->bindParam(':raza',$raza, PDO::PARAM_STR, 100); 
                                 $sql->bindParam(':estado',$cbx_estado, PDO::PARAM_INT); 
                                 $sql->bindParam(':municipio',$cbx_municipio, PDO::PARAM_INT); 
