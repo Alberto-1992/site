@@ -250,7 +250,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6">
                                         <strong>Estado Residencia</strong>
 
-                                        <select name="cbx_estado" id="cbx_estado" class="form-control" style="width: 100%;" required>
+                                        <select name="cbx_estado" id="cbx_estado" class="form-control">
                                             <option value="0">Seleccionar Estado</option>
                                             <?php
                                             require 'conexionCancer.php';
@@ -268,22 +268,16 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Alcaldía o Municipio</strong>
-                                        <select name="cbx_municipio" id="cbx_municipio" class="form-control" style="width: 100%;" required>
+                                        <select name="cbx_municipio" id="cbx_municipio" class="form-control">
 
                                         </select>
                                     </div><br><br><br>
-
-                                    <!-- ********************************* Finaliza la sección de DATOS DEL PACIENTE ********************************* -->
-
-
-
-                                    <!-- ********************************* INICIA la sección FACTORES DE RIESGO ********************************* -->
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>FACTORES DE RIESGO</strong>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Seleccione los Factores</strong>
-                                        <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control" required>
+                                        <select id="msfactores" name="msfactoresinfarto[]" multiple="multiple" class="form-control">
                                             <option value="Ninguna">Ninguna</option>
                                             <option value="Hiperlipidemia">Hiperlipidemia</option>
                                             <option value="Cardiomiopatia de takotsubo">Cardiomiopatia de takotsubo</option>
@@ -382,7 +376,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6">
                                         <strong>Localización Electrocardiograma</strong>
 
-                                        <select name="localizacion" id="localizacion" class="form-control" style="width: 100%;" required>
+                                        <select name="localizacion" id="localizacion" class="form-control" required>
                                             <option value="0">Seleccione...</option>
                                             <?php
                                             require 'conexionCancer.php';
@@ -405,11 +399,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Sin elevacion del ST">Sin elevación del ST</option>
                                         </select>
                                     </div>
-
-
-
-
-
                                     <!-- Se agrega el MACE hospitalario como se indica en el excel-->
                                     <div class="col-md-6">
                                         <strong>MACE Hospitalario</strong>
@@ -805,10 +794,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <br>
                                     <br>
                                     <br>
-
-
-
-                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
@@ -836,50 +821,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <br>
                                     <br>
                                     <br>
-
-
-
-                                    <!-- STENTS
-                                    <div class="col-md-3" id="idstend">
-                                        <strong>Stent</strong>
-                                        <select name="stent" id="stent" class="form-control">
-                                            <option value="">Seleccione...</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM stend";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['tipostend']; ?>">
-                                                    <?php echo $row['tipostend']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-3" id="cantidadstend">
-                                        <strong>N° stent implantados</strong>
-                                        <select name="stentcantidad" id="stentcantidad" class="form-control">
-                                            <option value="0">Seleccione...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="Mas de 10">Más de 10</option>
-
-                                        </select>
-                                    </div>-->
-
-
-                                    <!--Finalizan opciones-->
-
-
-
-                                    <!--en caso de seleccionar OTC-->
                                     <div class="col-md-3" id="idotc">
                                         <strong>Nivel de OTC</strong>
                                         <select name="otc" id="otc" class="form-control">
@@ -900,9 +841,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Mas de 33">Mas de 33</option>
                                         </select>
                                     </div>
-
-
-                                    <!--Finaliza opción SINTAX-->
 
                                     <div class="col-md-3" id="idolusion2">
                                         <strong>Olusiones distales cronicas</strong>
@@ -943,19 +881,9 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <input type="text" id="mediodecontraste" name="mediodecontraste" placeholder="Describa" class="form-control">
                                     </div>
 
-                                    <!--
-                                    <div class="col-md-3" id="iniciofibri">
-                                        <strong>Fecha/hora inicio</strong>
-                                        <input type="datetime-local" id="iniciofibrilonitico" name="iniciofibrilonitico" placeholder="Describa" class="form-control">
-                                    </div>
-                                    <div class="col-md-3" id="finalizofibri">
-                                        <strong>Fecha/hora finaliza</strong>
-                                        <input type="datetime-local" id="finalizofibrilonitico" name="finalizofibrilonitico" placeholder="Describa" class="form-control">
-                                    </div>-->
-
                                     <div class="col-md-3" id="revasculariza">
                                         <strong>Revascularización</strong>
-                                        <select name="revascularizacion" id="revascularizacion" class="form-control" style="width: 100%;" required>
+                                        <select name="revascularizacion" id="revascularizacion" class="form-control" style="width: 100%;">
                                             <option value="0">Selecciona</option>
                                             <?php
                                             require 'conexionCancer.php';
@@ -968,8 +896,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         </select>
                                     </div>
 
-                                    <!--***************************************** Sección de COMPLICACIONES *****************************************s-->
-
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#CD114E;">
@@ -979,7 +905,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 
                                     <div class="col-md-12">
                                         <strong>Seleccione las Complicaciones</strong>
-                                        <select id="mscomplicacion" name="mscomplicacion[]" multiple="multiple" class="form-control" required>
+                                        <select id="mscomplicacion" name="mscomplicacion[]" multiple="multiple" class="form-control">
                                             <option value="Ninguna">Ninguna</option>
                                             <option value="Arritmia">Arritmia</option>
                                             <option value="Bloqueo Conduccion">Bloqueo Conducción</option>
@@ -996,21 +922,9 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         </select>
                                     </div>
 
-
-                                    <!-- Al seleccionar la Complicación ARRITMIA, deben mostrarse las siguientes opciones, (es un select simple):
-                                    Bloqueo AV
-                                    Bradicardia
-                                    Fibrilación Auricular
-                                    Fibrilación Ventricular
-                                    Taquicardia Auricular
-                                    Taquicardia Ventricular
-                                    -->
-
-
-
                                     <div class="col-md-12" id="idarritmia">
                                         <strong>Arritmia</strong>
-                                        <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;" require>
+                                        <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;">
                                             <option value="0">Seleccione...</option>
                                             <option value="Bloqueo AV">Bloqueo AV</option>
                                             <option value="Bradicardia">Bradicardia</option>
@@ -1021,35 +935,17 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Taquicardia Ventricular">Taquicardia Ventricular</option>
                                         </select>
                                     </div>
-
-
-                                    <!-- ***** Al seleccionar Bloqueo AV en el select de Arritmia, se deben mostrar las siguientes opciones (select simple):
-                                                
-                                                II
-                                                III-->
-
                                     <div class="col-md-12" id="bloqueo">
                                         <strong>Bloqueo AV</strong>
-                                        <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;" require>
+                                        <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;">
                                             <option value="0">Seleccione...</option>
-                                            <!--<option value="bloqueouno">I</option>-->
                                             <option value="II">II</option>
                                             <option value="III">III</option>
                                         </select>
                                     </div>
-
-
-
-                                    <!--**** Al seleccionar Extrasístoles Ventriculares en el select de Arritmia,se deben mostrar las siguientes opciones (select simple):
-                                                Unifocales
-                                                Multifocales
-                                                Pareadas
-                                                Bigeminismo
-                                            -->
-
                                     <div class="col-md-12" id="ventricularesextra">
                                         <strong>Extrasístoles Ventriculares</strong>
-                                        <select name="extraventri" id="extraventri" class="form-control" style="width:100%;" require>
+                                        <select name="extraventri" id="extraventri" class="form-control" style="width:100%;">
                                             <option value="0">Seleccione...</option>
                                             <option value="Bigeminismo">Bigeminismo</option>
                                             <option value="Multifocales">Multifocales</option>
@@ -1065,67 +961,17 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E; margin-top: 15px;">
                                         <strong>SEGUIMIENTO POSTPROCEDIMIENTO</strong>
                                     </div>
-
-                                    <!--
-                                    <div class="col-md-3">
-                                        <strong>Marca pasos temporal</strong>
-                                        <select name="marcapasostemporal" id="marcapasostemporal" class="form-control"
-                                            style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM marcapasos_temporal ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                            <option value="<?php echo $row['descripcion']; ?>">
-                                                <?php echo $row['descripcion']; ?></option>
-                                            <?php } ?>
-
-
-                                        </select>
-                                    </div>
--->
-
-                                    <!-- ********************************************SGOP (210423): Se comenta este segmento para agregar el siguiente
-                                    <div class="col-md-4">
-                                        
-                                        <strong>MACE Hospitalario</strong>
-                                        <select name="killip" id="killip" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM killip_kimball ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_killip']; ?>">
-                                                    <?php echo $row['nombre_killip']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    ******************************************** -->
-
-
-                                    <!-- SGOP (210423): La Fecha de Egreso solo se mueve de lugar-->
                                     <div class="col-md-4">
                                         <strong>Fecha de Egreso</strong>
-                                        <input type="date" id="fechadeegreso" name="fechadeegreso" placeholder="Describa" class="form-control" rows="2"></input>
+                                        <input type="date" id="fechadeegreso" name="fechadeegreso" placeholder="Describa" class="form-control"></input>
                                     </div>
 
                                     <div class="col-md-4">
                                         <strong>Causa defunción</strong>
-                                        <select name="causadefuncion" id="causadefuncion" class="form-control" style="width: 100%;" required>
-                                            <option value="0">Selecciona</option>
-                                            <?php
-                                            require 'conexionCancer.php';
-                                            $query = "SELECT * FROM causa ";
-                                            $resultado = $conexion2->query($query);
-                                            while ($row = $resultado->fetch_assoc()) { ?>
-                                                <option value="<?php echo $row['nombre_causa']; ?>">
-                                                    <?php echo $row['nombre_causa']; ?></option>
-                                            <?php } ?>
-
-
+                                        <select name="causadefuncion" id="causadefuncion" class="form-control">
+                                            <option value="Sin registro">Sin registro</option>
+                                            <option value="Cardiaca">Cardiaca</option>
+                                            <option value="No cardiaca">No cardiaca</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
