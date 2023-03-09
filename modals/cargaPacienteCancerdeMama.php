@@ -1023,7 +1023,6 @@
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
-
                                             </select>
                                     
                                     </div>
@@ -1043,7 +1042,6 @@
                                                 class="form-control" value="0">
                                         
                                     </div>
-
                                     <div class="col-md-2" id="inmunoderecha9rgd">
                                         
                                             <strong>Oncogen HER2</strong>
@@ -1053,9 +1051,7 @@
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
-
                                             </select>
-                                        
                                     </div>
                                     <div class="col-md-2" id="inmunoderecha10rgd">
                                     
@@ -1769,7 +1765,6 @@
                                             <option value="<?php echo $row['descripcion']; ?>">
                                                 <?php echo $row['descripcion']; ?></option>
                                             <?php } ?>
-
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="quimiomomento">

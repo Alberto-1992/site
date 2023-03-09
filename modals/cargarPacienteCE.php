@@ -91,10 +91,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                 <div id="panel_editar">
                     <div class="contrato-nuevo">
                         <div class="modal-body">
-
-
-
-                            <!-- ********************************* INICIA la sección de DATOS DEL PACIENTE ********************************* -->
                             <div class="form-header">
                                 <h3 class="form-title" style="text-align: center;
                                 color: white;
@@ -110,9 +106,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     text-transform: uppercase;
                                 }
                             </style>
-
-
-
                             <form name="formularioinfarto" id="formularioinfarto" onsubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
@@ -120,12 +113,9 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         $("#formularioinfarto").on("submit", function(e) {
                                             let checked = this.querySelectorAll('input[type=checkbox]:checked');
                                             e.preventDefault();
-
                                             var formData = new FormData(document.getElementById("formularioinfarto"));
                                             formData.append("dato", "valor");
-
                                             $.ajax({
-
                                                 url: "aplicacion/registrarpacienteCE.php",
                                                 type: "post",
                                                 dataType: "html",
@@ -135,7 +125,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 processData: false,
                                                 success: function(datos) {
                                                     $("#mensaje").html(datos);
-
                                                 }
                                             })
                                         })
@@ -260,16 +249,12 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 <option value="<?php echo $row['id_estado']; ?>">
                                                     <?php echo $row['estado']; ?></option>
                                             <?php } ?>
-
                                             <!--<option value="1">Otro</option>-->
-
                                         </select>
-
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Alcaldía o Municipio</strong>
                                         <select name="cbx_municipio" id="cbx_municipio" class="form-control">
-
                                         </select>
                                     </div><br><br><br>
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
@@ -293,10 +278,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Ectasia coronaria">Ectasia coronaria</option>
                                         </select>
                                     </div><br>
-
-                                    <!-- ********************************* FINALIZA la sección FACTORES DE RIESGO ********************************* -->
-
-
                                     <br><br>
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>ATENCIÓN CLINICA</strong>
