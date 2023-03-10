@@ -18,45 +18,46 @@ $clues = $dataRegistro['cluesbucal'];
 $sql_f = $conexion2->query("SELECT unidad from hospitales where clues = '$clues'");
 $rown = mysqli_fetch_assoc($sql_f);
 
-$sql = $conexion2->query("SELECT id_paciente, datoantecedentefamiliar
-            FROM antecedentesfamiliarescancer
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM antecedentesfamiliarescancer
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
+$sql_c = $conexion2->query("SELECT id_pacientebucal, descripcioncancerpatobucal
+            FROM cancerpatopatobucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM cancerpatopatobucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
-$sql_m = $conexion2->query("SELECT id_paciente, descripcioncancer
-            FROM cancerpaciente
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM cancerpaciente
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
+$sql_m = $conexion2->query("SELECT id_pacientebucal, descripcionviruspatobucal
+            FROM viruspatobucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM viruspatobucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
 
-$sql_r = $conexion2->query("SELECT id_paciente, descripcionantecedente
-            FROM antecedentespatopersonales
-            WHERE id_paciente
-            IN (SELECT id_paciente
-            FROM antecedentespatopersonales
-            GROUP BY id_paciente
-            HAVING count(id_paciente) >= 1)
-            and id_paciente = $id_paciente
-            ORDER BY id_paciente");
+$sql_r = $conexion2->query("SELECT id_pacientebucal,descripcionhabitopatobucal
+            FROM habitospersonalespatobucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM habitospersonalespatobucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
-$sql_q = $conexion2->query("SELECT id_quirurgico, realizoquirurgico, lateralidad, tipo, curpusuario 
-            FROM quirurgico 
-            WHERE curpusuario
-            IN (SELECT curpusuario FROM quirurgico
-            GROUP BY curpusuario
-            HAVING count(curpusuario) >= 1)
-            and curpusuario = '$curp'
-            ORDER BY curpusuario");
+$sql_t = $conexion2->query("SELECT id_pacientebucal,descripcionantecedentepatobucal
+            FROM antecedentespersonalespatotoxicobucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM antecedentespersonalespatotoxicobucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
 
 
@@ -265,37 +266,45 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <tr>
         <th id="th">Toxicomanias:</th>
-        <td id="td">
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_t))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionantecedentepatobucal'].'--'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Años Tabaquismo:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['tiempotabaquismobucal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Cigarros al Día:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['cigarrosaldiabucal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Frecuencia Alcoholismo:</th>
-        <td id="td">
+        <td id="td"><?php echo $dataRegistro['frecuenciaalcoholbucal'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Hábitos:</th>
-        <td id="td">
+        <td id="td"><?php while($dataRegist= mysqli_fetch_assoc($sql_r))
+{
+echo '&nbsp&nbsp'.$dataRegist['descripcionhabitopatobucal'].'--'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Virus:</th>
-        <td id="td">
+        <td id="td"><?php while($dataRegis= mysqli_fetch_assoc($sql_m))
+{
+echo '&nbsp&nbsp'.$dataRegis['descripcionviruspatobucal'].'--'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Cáncer:</th>
-        <td id="td">
+        <td id="td"><?php while($dataRegi= mysqli_fetch_assoc($sql_c))
+{
+echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
     </tr>
 </table>
 <!--FINALIZA SECCIÓN DE ANTECEDENTES PERSONALES PATOLÓGICOS-->
