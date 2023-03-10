@@ -116,9 +116,9 @@ $hoy = date("Y-m-d");
                                                 ));
                                             }
                                         };  
-                                        $msodf;
-                        if(is_array($msodf) || is_object($msodf)){
-                            foreach($msodf as $afectoral) {
+                                        $msao;
+                        if(is_array($msao) || is_object($msao)){
+                            foreach($msao as $afectoral) {
                                 $sql_s = $conexionCancer->prepare("INSERT into afectacionesoralesbucal(descripcionafectacionoral, id_pacientebucal) 
                 
                                 values(:descripcionafectacionoral, :id_pacientebucal)");
@@ -130,6 +130,77 @@ $hoy = date("Y-m-d");
                                 ));
                             }
                         };
+                        $msodf;
+                        if(is_array($msodf) || is_object($msodf)){
+                            foreach($msodf as $afectoraldaniado) {
+                                $sql_s = $conexionCancer->prepare("INSERT into afectaciondentalorganoorallesionado(descripcionorganorallesionado, id_pacientebucal) 
+                
+                                values(:descripcionorganorallesionado, :id_pacientebucal)");
+            
+                                $sql_s->execute(array(
+                                    ':descripcionorganorallesionado'=>$afectoraldaniado,
+                                    ':id_pacientebucal'=>$id_usuario
+            
+                                ));
+                            }
+                        };
+                        $msmaxilarsuperiorderecho;
+                        if(is_array($msmaxilarsuperiorderecho) || is_object($msmaxilarsuperiorderecho)){
+                            foreach($msmaxilarsuperiorderecho as $maxsupderecho) {
+                                $sql_s = $conexionCancer->prepare("INSERT into maxisupderecho(descripcionmaxisupdere, id_pacientebucal) 
+                
+                                values(:descripcionmaxisupdere, :id_pacientebucal)");
+            
+                                $sql_s->execute(array(
+                                    ':descripcionmaxisupdere'=>$maxsupderecho,
+                                    ':id_pacientebucal'=>$id_usuario
+            
+                                ));
+                            }
+                        };
+                        $msmaxilarinferiorderecho;
+                        if(is_array($msmaxilarinferiorderecho) || is_object($msmaxilarinferiorderecho)){
+                            foreach($msmaxilarinferiorderecho as $maxinfderecho) {
+                                $sql_s = $conexionCancer->prepare("INSERT into maxinfderecho(descripcionmaxinfderecho, id_pacientebucal) 
+                
+                                values(:descripcionmaxinfderecho, :id_pacientebucal)");
+            
+                                $sql_s->execute(array(
+                                    ':descripcionmaxinfderecho'=>$maxinfderecho,
+                                    ':id_pacientebucal'=>$id_usuario
+            
+                                ));
+                            }
+                        };
+                        $msmaxilarsuperiorizquierdo;
+                        if(is_array($msmaxilarsuperiorizquierdo) || is_object($msmaxilarsuperiorizquierdo)){
+                            foreach($msmaxilarsuperiorizquierdo as $maxsupeizquierdo) {
+                                $sql_s = $conexionCancer->prepare("INSERT into maxsupizquierdo(descripcionmaxsupizquierdo, id_pacientebucal) 
+                
+                                values(:descripcionmaxsupizquierdo, :id_pacientebucal)");
+            
+                                $sql_s->execute(array(
+                                    ':descripcionmaxsupizquierdo'=>$maxsupeizquierdo,
+                                    ':id_pacientebucal'=>$id_usuario
+            
+                                ));
+                            }
+                        };
+                        $msmaxilarinferiorizquierdo;
+                        if(is_array($msmaxilarinferiorizquierdo) || is_object($msmaxilarinferiorizquierdo)){
+                            foreach($msmaxilarinferiorizquierdo as $maxinfeizquierdo) {
+                                $sql_s = $conexionCancer->prepare("INSERT into maxinfizquierdo(descripcionmaxinfizquierdo, id_pacientebucal) 
+                
+                                values(:descripcionmaxinfizquierdo, :id_pacientebucal)");
+            
+                                $sql_s->execute(array(
+                                    ':descripcionmaxinfizquierdo'=>$maxinfeizquierdo,
+                                    ':id_pacientebucal'=>$id_usuario
+            
+                                ));
+                            }
+                        };
+
                             $sql = $conexionCancer->prepare("INSERT into alcoholismotabaquismobucal(id_alcoholtabacobucal,id_pacientebucal,frecuenciaalcoholbucal,tiempotabaquismobucal,cigarrosaldiabucal)
                                     values(:id_alcoholtabacobucal,:id_pacientebucal,:frecuenciaalcoholbucal,:tiempotabaquismobucal,:cigarrosaldiabucal)");
                                         $sql->execute(array(
