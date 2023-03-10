@@ -676,6 +676,7 @@ return false;
                                             
                                                 <option value="Madre CM">Madre</option>
                                                 <option value="Hermana CM">Hermana</option>
+                                                <option value="Hija CM">Hija</option>
                                                 <option value="Abuela materna CM">Abuela materna</option>
                                                 <option value="Abuela paterna CM">Abuela paterna</option>
                                                 <option value="Tia paterna CM">Tia paterna</option>
@@ -686,6 +687,7 @@ return false;
                                             <optgroup label="Cancer de ovario">
                                                 <option value="Madre CO">Madre</option>
                                                 <option value="Hermana CO">Hermana</option>
+                                                <option value="Hija CO">Hija</option>
                                                 <option value="Abuela materna CO">Abuela materna</option>
                                                 <option value="Abuela paterna CO">Abuela paterna</option>
                                                 <option value="Tia paterna CO">Tia paterna</option>
@@ -825,6 +827,9 @@ return false;
                                         <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
+                                            class="check" value="Cancer de mama">&nbsp;Cancer de mama
+                                        &nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
                                             class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;                                 
                                     </fieldset>

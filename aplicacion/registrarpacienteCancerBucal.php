@@ -102,15 +102,29 @@ $hoy = date("Y-m-d");
                                             ':comidasbucal'=>$comidasbucal,
                                             ':higienebucal'=>$higienebucal
                                         ));
-                                        $mstoxicomanias;
-                        if(is_array($mstoxicomanias) || is_object($mstoxicomanias)){
-                            foreach($mstoxicomanias as $toxicoheredo) {
-                                $sql_s = $conexionCancer->prepare("INSERT into antecedentespersonalespatotoxicobucal(descripcionantecedentepatobucal, id_pacientebucal) 
+                                        $mshabitos;
+                                        if(is_array($mshabitos) || is_object($mshabitos)){
+                                            foreach($mshabitos as $habitos) {
+                                                $sql = $conexionCancer->prepare("INSERT into habitospersonalespatobucal(descripcionhabitopatobucal, id_pacientebucal) 
+                                
+                                                values(:descripcionhabitopatobucal, :id_pacientebucal)");
+                            
+                                                $sql->execute(array(
+                                                    ':descripcionhabitopatobucal'=>$habitos,
+                                                    ':id_pacientebucal'=>$id_usuario
+                            
+                                                ));
+                                            }
+                                        };  
+                                        $msodf;
+                        if(is_array($msodf) || is_object($msodf)){
+                            foreach($msodf as $afectoral) {
+                                $sql_s = $conexionCancer->prepare("INSERT into afectacionesoralesbucal(descripcionafectacionoral, id_pacientebucal) 
                 
-                                values(:descripcionantecedentepatobucal, :id_pacientebucal)");
+                                values(:descripcionafectacionoral, :id_pacientebucal)");
             
                                 $sql_s->execute(array(
-                                    ':descripcionantecedentepatobucal'=>$toxicoheredo,
+                                    ':descripcionafectacionoral'=>$afectoral,
                                     ':id_pacientebucal'=>$id_usuario
             
                                 ));
