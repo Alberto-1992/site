@@ -765,6 +765,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6" id="resultadoshock">
                                         <strong>Complicaciones de SCHOCKWAVE C2</strong>
                                         <select name="resultadoshockwavedato" id="resultadoshockwavedato" class="form-control">
+                                            <option value="Sin registro">Sin rergistro</option>
                                             <option value="Diseccion">Disección</option>
                                             <option value="No Reflow">No Reflow</option>
                                             <option value="Perforacion">Perforación</option>
@@ -784,7 +785,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6">
                                         <strong>Marcapasos</strong>
                                         <select name="marcapasossino" id="marcasossino" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="Si">Sí</option>
                                             <option value="No">No</option>
                                         </select>
@@ -793,7 +794,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-6" id="marcapa">
                                         <strong>Soporte Ventricular</strong>
                                         <select name="soporteven" id="soporteven" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="Balon de Contrapulsacion">Balón de Contrapulsación</option>
                                             <option value="ECMO">ECMO</option>
                                             <option value="IMPELLA">IMPELLA</option>
@@ -805,7 +806,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-3" id="idotc">
                                         <strong>Nivel de OTC</strong>
                                         <select name="otc" id="otc" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="0 a 1">0 a 1</option>
                                             <option value="2 a 3">2 a 3</option>
                                             <option value="4 a 5">4 a 5</option>
@@ -816,7 +817,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-3" id="idsintax">
                                         <strong>Nivel de SINTAX</strong>
                                         <select name="sintax" id="sintax" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="Menos de 22">Menos de 22</option>
                                             <option value="23 a 32">23 a 32</option>
                                             <option value="Mas de 33">Mas de 33</option>
@@ -826,7 +827,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-3" id="idolusion2">
                                         <strong>Olusiones distales cronicas</strong>
                                         <select name="olusion2" id="olusion2" class="form-control">
-                                            <option value="">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <?php
                                             require 'conexionCancer.php';
                                             $query = "SELECT * FROM olusionesdistalescronicas";
@@ -906,7 +907,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-12" id="idarritmia">
                                         <strong>Arritmia</strong>
                                         <select name="arritmiadetalle" id="arritmiadetalle" class="form-control" style="width:100%;">
-                                            <option value="0">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="Bloqueo AV">Bloqueo AV</option>
                                             <option value="Bradicardia">Bradicardia</option>
                                             <option value="Extrasistoles Ventriculares">Extrasístoles Ventriculares</option>
@@ -919,7 +920,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-12" id="bloqueo">
                                         <strong>Bloqueo AV</strong>
                                         <select name="bloqueoav" id="bloqueoav" class="form-control" style="width:100%;">
-                                            <option value="0">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="II">II</option>
                                             <option value="III">III</option>
                                         </select>
@@ -927,7 +928,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-12" id="ventricularesextra">
                                         <strong>Extrasístoles Ventriculares</strong>
                                         <select name="extraventri" id="extraventri" class="form-control" style="width:100%;">
-                                            <option value="0">Seleccione...</option>
+                                            <option value="Sin registro">Sin registro</option>
                                             <option value="Bigeminismo">Bigeminismo</option>
                                             <option value="Multifocales">Multifocales</option>
                                             <option value="Pareadas">Pareadas</option>
