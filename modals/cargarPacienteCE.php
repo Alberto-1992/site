@@ -85,8 +85,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 });
 
 </script>
-
-
             <div class="modal-body">
                 <div id="panel_editar">
                     <div class="contrato-nuevo">
@@ -97,7 +95,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                 background-color: #CD114E;">
                                     DATOS DEL PACIENTE</h3>
                             </div>
-
                             <style>
                                 #fecha,
                                 #curp,
@@ -129,13 +126,10 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             })
                                         })
                                     </script>
-
                                     <div class="col-md-6" autocomplete="off">
-
                                         <input id="year" name="year" class="form-control" type="hidden" value="2022" required="required" readonly>
                                     </div>
                                     <div class="col-md-12">
-
                                         <input id="cest" name="cest" type="hidden" class="form-control" value="cest">
                                     </div>
                                     <div class="col-md-4">
@@ -152,10 +146,8 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 <option value="<?php echo $row['curp']; ?>">
                                                     <?php echo $row['curp']; ?></option>
                                             <?php } ?>
-
                                         </datalist>
                                     </div>
-
                                     <div class="col-md-4">
                                         <strong>Nombre Completo</strong>
                                         <input id="nombrecompleto" name="nombrecompleto" onblur="calcularEdadinfarto();" type="text" class="form-control" value="" required>
@@ -177,11 +169,8 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 <option value="<?php echo $row['gradoacademico']; ?>">
                                                     <?php echo $row['gradoacademico']; ?></option>
                                             <?php } ?>
-
                                         </select>
                                     </div>
-
-
                                     <div class="col-md-3">
                                         <strong>Fecha de Nacimiento</strong>
                                         <input id="fechainfarto" name="fechainfarto" type="date" value="" onblur="curp2dateinfarto();" class="form-control" readonly>
@@ -190,31 +179,25 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <strong>Edad</strong>
                                         <input id="edadinfarto" name="edadinfarto" type="text" class="form-control" value="" readonly>
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Sexo</strong>
                                         <input type="text" class="form-control" id="sexoinfarto" onclick="curp2dateinfarto();" name="sexoinfarto" readonly>
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Raza</strong>
                                         <input type="text" class="form-control" id="raza" onclick="curp2dateinfarto();" name="raza">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Frecuencia Cardiaca</strong>
                                         <input type="text" class="form-control" id="frecuenciacardiaca" name="frecuenciacardiaca">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Presión Arterial</strong>
                                         <input type="text" class="form-control" id="presionarterial" name="presionarterial">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Talla</strong>
                                         <input type="number" step="any" class="form-control" id="talla" name="talla" required>
-
                                     </div>
                                     <script>
                                         $(document).ready(function() {
@@ -224,21 +207,16 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             $('#presionarterial').mask('000/00');
                                         });
                                     </script>
-
                                     <div class="col-md-3">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="peso" onblur="calculaIMCinfarto();" name="peso" required>
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>IMC</strong>
                                         <input type="text" class="form-control" id="imc" onblur="calculaIMCinfarto();" name="imc" value="" readonly>
-
                                     </div>
-
                                     <div class="col-md-6">
                                         <strong>Estado Residencia</strong>
-
                                         <select name="cbx_estado" id="cbx_estado" class="form-control">
                                             <option value="0">Seleccionar Estado</option>
                                             <?php
@@ -314,8 +292,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Sincupe">Sincupe</option>
                                     </select>
                                             </div>
-                                
-
                                     <fieldset id="tipicascombos2" class="col-md-12">
                                         <strong>Intensidad del Dolor</strong><br>
                                         <input type="radio" name="check_lista5" id="check_lista5" class="check" value="1/10">&nbsp;1/10&nbsp;&nbsp;
@@ -328,7 +304,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;8/10&nbsp;&nbsp;
                                         <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;9/10&nbsp;&nbsp;
                                         <input type="radio" name="check_lista5" id="check_lista5" class="check" value="7/10">&nbsp;10/10&nbsp;&nbsp;
-
                                     </fieldset>
                                     <div class="col-md-12" id="atipicascombos">
                                         <strong>Caracteristicas Atípicas</strong>
@@ -342,7 +317,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Sincupe">Sincupe</option>
                                     </select>
                                             </div>
-                                
                                     <div class="col-md-6">
                                         <strong>Electrocardiograma</strong>
                                         <select name="elctrocardio" id="elctrocardio" class="form-control">
@@ -353,10 +327,8 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Necrosis">Necrosis</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-6">
                                         <strong>Localización Electrocardiograma</strong>
-
                                         <select name="localizacion" id="localizacion" class="form-control" required>
                                             <option value="0">Seleccione...</option>
                                             <?php
@@ -370,8 +342,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <!--<option value="1">Otro</option>-->
                                         </select>
                                     </div>
-
-
                                     <div class="col-md-6">
                                         <strong>Con o Sin Elevación</strong>
                                         <select name="consinelevacion" id="consinelevacion" class="form-control" required>
@@ -380,7 +350,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Sin elevacion del ST">Sin elevación del ST</option>
                                         </select>
                                     </div>
-                                    <!-- Se agrega el MACE hospitalario como se indica en el excel-->
                                     <div class="col-md-6">
                                         <strong>MACE Hospitalario</strong>
                                         <select id="msmacehospitalario" name="msmacehospitalario[]" multiple="multiple" class="form-control" >
@@ -390,8 +359,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Muerte">Muerte</option>
                                         </select>
                                     </div>
-                                    <!-- Los Factores de Riesgo Cardiovascular van del 1 al 12-->
-
                                     <div class="col-md-6" id="killip">
                                         <strong>Killip Kimball</strong>
                                         <select name="killipkimball" id="killipkimball" class="form-control" style="width: 100%;">
@@ -404,33 +371,24 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                                 <option value="<?php echo $row['nombre_choque']; ?>">
                                                     <?php echo $row['nombre_choque']; ?></option>
                                             <?php } ?>
-
-
                                         </select>
                                     </div>
                                     <br><br><br>
-
-
-
-
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>PARACLINICOS</strong>
                                     </div>
                                     <div class="col-md-3">
                                         <strong>CK</strong>
                                         <input type="text" id="ck" name="ck" placeholder="Describa" class="form-control">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>CK-MB</strong>
                                         <input type="text" id="ckmb" name="ckmb" placeholder="Describa" class="form-control">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Troponinas</strong>
                                         <input type="text" id="troponinas" name="troponinas" placeholder="Describa" class="form-control">
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Glucosa</strong>
                                         <input type="text" id="glucosa" name="glucosa" placeholder="Describa" class="form-control">
@@ -438,7 +396,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-3">
                                         <strong>Urea</strong>
                                         <input type="text" id="urea" name="urea" placeholder="Describa" class="form-control">
-
                                     </div>
                                     <div class="col-md-3">
                                         <strong>Creatinina</strong>
@@ -485,17 +442,11 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                     <div class="col-md-12" style="text-align: center; color: white; background-color:#CD114E;">
                                         <strong>TRATAMIENTO</strong>
                                     </div>
-
-
-                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>TROMBÓLISIS</strong>
                                     </div>
-
-
-                                    <!--Sección FIBRINÓLISIS-->
                                     <div class="col-md-12">
                                         <strong>Fibrinólisis</strong>
                                         <select name="trombolisis" id="trombolisis" class="form-control">
@@ -511,12 +462,10 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         <strong>Fecha/hora inicio</strong>
                                         <input type="datetime-local" id="iniciotrombolisis" name="iniciotrombolisis" placeholder="Describa" class="form-control">
                                     </div>
-
                                     <div class="col-md-6" id="finalizotromb">
                                         <strong>Fecha/hora finaliza</strong>
                                         <input type="datetime-local" id="finalizotrombolisis" name="finalizotrombolisis" placeholder="Describa" class="form-control">
                                     </div>
-
                                     <div class="col-md-6" id="fibrinolitico">
                                         <strong>Tipo de Fibrinolítico</strong>
                                         <select name="fibrinoliticos" id="fibrinoliticos" class="form-control">
@@ -527,7 +476,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                         </select>
                                         <br>
                                     </div>
-
                                     <div class="col-md-6" id="exitotromb">
                                         <strong>¿Procedimiento exitoso?</strong>
                                         <select name="exitotrombolisis" id="exitotrombolisis" class="form-control">
@@ -536,22 +484,16 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="no">No</option>
                                         </select>
                                     </div>
-
-                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
                                     <br>
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>ANGIOPLASTIA CORONARIA TRANSLUMINAL PERCUTANEA</strong>
                                     </div>
-
-
                                     <div class="col-md-3" id="">
                                         <strong>Fecha/Hora</strong>
                                         <input type="datetime-local" id="inicioprocedimiento" name="inicioprocedimiento" placeholder="Describa" class="form-control">
                                     </div>
-
-
                                     <div class="col-md-3">
                                         <strong>Tipo de Procedimiento</strong>
                                         <select name="tipoangioplastia" id="tipoangioplastia" class="form-control">
@@ -561,7 +503,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Farmacoinvasivo">Farmacoinvasivo</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Sitio de Punción</strong>
                                         <select name="tipositiopuncion" id="tipositiopuncion" class="form-control">
@@ -573,7 +514,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Transradial Distal">Transradial Distal</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Lesiones coronarias</strong>
                                         <select id="mslesionescoronarias" name="mslesionescoronarias[]" multiple="multiple" class="form-control">
@@ -584,8 +524,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Tronco Coronario Izquierdo">Tronco Coronario Izquierdo</option>
                                         </select>
                                     </div>
-
-
                                     <div class="col-md-3">
                                         <strong>Clasificación DUKE</strong>
                                         <select name="clasificacionduke" id="clasificacionduke" class="form-control">
@@ -626,9 +564,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <?php } ?>
                                         </select>
                                     </div>
-
-
-
                                     <div class="col-md-3" id="">
                                         <strong>Severidad <i><a target="_blank" href="https://www.syntaxscore.org/calculator/syntaxscore/frameset.htm">Sintax</a></i></strong>
                                         <select name="severidadangio" id="severidadangio" class="form-control">
@@ -638,7 +573,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Score Alto">Score Alto: > 33</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-3">
                                         <strong>Protesis Endovascular</strong>
                                         <select name="protesisendovascular" id="protesisendovascular" class="form-control">
@@ -646,23 +580,16 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Absorb">Absorb</option>
                                             <option value="Con Medicacion">Con Medicación</option>
                                             <option value="Sin Medicacion">Sin Medicación</option>
-
                                         </select>
                                     </div>
-
-
-
-                                    <!--Al seleccionar con medicación, se debe habilitar 1 Y 2 GENERACION-->
                                     <div class="col-md-3" id="idprimerageneracion">
                                         <strong>1er Generación</strong>
                                         <select id="primergeneracion" name="primergeneracion" class="form-control">
                                             <option value="0">Seleccione...</option>
                                             <option value="Sirolimus">Sirolimús</option>
                                             <option value="Paclitaxel">Paclitaxel</option>
-
                                         </select>
                                     </div>
-
                                     <div class="col-md-3" id="idsegundageneracion">
                                         <strong>2da Generación</strong>
                                         <select id="segundageneracion" name="segundageneracion" class="form-control">
@@ -672,13 +599,10 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Zotarolimus">Zotarolimus</option>
                                         </select>
                                     </div>
-
-
                                     <div class="col-md-3">
                                         <strong>Número de Protesis</strong>
                                         <input type="number" id="ndp" name="ndp" placeholder="Ingrese..." class="form-control">
                                     </div>
-
                                     <div class="col-md-3" id="procedimientofueexitoso">
                                         <strong>Tratamiento del Vaso</strong>
                                         <select name="tratamientovaso" id="tratamientovaso" class="form-control">
@@ -687,7 +611,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Todas las Lesiones">Todas las Lesiones</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-3" id="procedimientofueexitoso">
                                         <strong>Revascularización</strong>
                                         <select name="revas" id="revas" class="form-control">
@@ -696,7 +619,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Incompleta">Incompleta</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-3" id="procedimientofueexitoso">
                                         <strong>¿Procedimiento exitoso?</strong>
                                         <select name="procedimientoexitoso" id="procedimientoexitoso" class="form-control">
@@ -705,9 +627,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="no">No</option>
                                         </select>
                                     </div>
-
-
-
                                     <div class="col-md-3">
                                         <strong>AIRBUS</strong>
                                         <select name="airbus" id="airbus" class="form-control">
@@ -716,8 +635,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-
-                                    <!-- Si es sí:-->
                                     <div class="col-md-3" id="resultadoirbus">
                                         <strong>Resultado de AIRBUS</strong>
                                         <select name="resultadoirbus" id="resultadoirbus" class="form-control">
@@ -726,11 +643,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="Diseccion">Disección</option>
                                         </select>
                                     </div>
-
-
-
-
-
                                     <div class="col-md-3" id="oct">
                                         <strong>OCT</strong>
                                         <select name="oct" id="oct" class="form-control">
@@ -740,19 +652,12 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 
                                         </select>
                                     </div>
-                                    <br>
-                                    <br>
-                                    <br>
-
-
-
-                                    <!--Inicia sección Viabilidad y Perfusión Miocardia-->
+                                    <br><br><br>
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>LITOTRICIA INTRACORONARIA</strong>
                                     </div>
-
                                     <div class="col-md-6">
                                         <strong>SCHOCKWAVE C2</strong>
                                         <select name="shockwavedato" id="shockwavedato" class="form-control">
@@ -761,7 +666,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-6" id="resultadoshock">
                                         <strong>Complicaciones de SCHOCKWAVE C2</strong>
                                         <select name="resultadoshockwavedato" id="resultadoshockwavedato" class="form-control">
@@ -773,15 +677,12 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
 
                                         </select>
                                     </div>
-                                    <br>
-                                    <br>
-                                    <br>
+                                    <br><br><br>
                                     <div class="col-md-12" style="text-align: center; 
                                     color: white; 
                                     background-color:#eda9ab;">
                                         <strong>MARCAPASOS TEMPORAL</strong>
                                     </div>
-
                                     <div class="col-md-6">
                                         <strong>Marcapasos</strong>
                                         <select name="marcapasossino" id="marcasossino" class="form-control">
@@ -790,7 +691,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-
                                     <div class="col-md-6" id="marcapa">
                                         <strong>Soporte Ventricular</strong>
                                         <select name="soporteven" id="soporteven" class="form-control">
@@ -800,9 +700,7 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="IMPELLA">IMPELLA</option>
                                         </select>
                                     </div>
-                                    <br>
-                                    <br>
-                                    <br>
+                                    <br><br><br>
                                     <div class="col-md-3" id="idotc">
                                         <strong>Nivel de OTC</strong>
                                         <select name="otc" id="otc" class="form-control">
@@ -812,8 +710,6 @@ document.querySelector("input[name='fechainfarto']").max = hoy_fecha;
                                             <option value="4 a 5">4 a 5</option>
                                         </select>
                                     </div>
-
-                                    <!-- En caso de seleccionar sintax, se habilita la siguiente opción:-->
                                     <div class="col-md-3" id="idsintax">
                                         <strong>Nivel de SINTAX</strong>
                                         <select name="sintax" id="sintax" class="form-control">
