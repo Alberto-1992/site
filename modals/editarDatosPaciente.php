@@ -2287,9 +2287,9 @@ $('#mstectoextra2edit').prop("hidden", true);
                                         
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenedit" id="oncogenedit" class="form-control">
-                                                
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="<?php echo $dataRegistro['oncogenher2'] ?>" selected><?php echo $dataRegistro['oncogenher2'] ?></option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2544,6 +2544,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <select name="oncogenrgdedit" id="oncogenrgdedit" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="<?php echo $dataRegistro['oncogenher2rgd'] ?>" selected><?php echo $dataRegistro['oncogenher2rgd'] ?></option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2720,6 +2721,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <select name="oncogenizedit" id="oncogenizedit" class="form-control">
                                                 <option value="<?php echo $dataRegistro['oncogenher2iz'] ?>"><?php echo $dataRegistro['oncogenher2iz'] ?></option>
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
