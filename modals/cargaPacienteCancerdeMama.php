@@ -1588,9 +1588,8 @@
                                         <strong>Tipo de mastectomia</strong>
                                         <select name="mastectomiatipo" id="mastectomiatipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="Mastectomia conservadora">Mastectomia conservadora</option>
-                                            <option value="Mastectomia paliativa">Mastectomia paliativa</option>
-
+                                            <option value="Mastectomia total">Mastectomia total</option>
+                                            <option value="Mastectomia parcial">Mastectomia parcial</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="fechatipomastectomia">

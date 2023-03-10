@@ -321,27 +321,27 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
     <div class="containerr4">Afectación Dental</div>
     <tr>
         <th id="th">Órgano Oral Lesionado:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Superior Derecho:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Inferior Derecho:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Superior Izquierdo:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Inferior Izquierdo:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 </table>
 
@@ -349,22 +349,22 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
     <div class="containerr4">Lesiones Orales</div>
     <tr>
         <th id="th">¿Lesión Oral?:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Tipo Tejido:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Tipo Lesión:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 
     <tr>
         <th id="th">Coloración:</th>
-        <td></td>
+        <td id="td"></td>
     </tr>
 </table>
 
@@ -376,42 +376,42 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
         <div class="containerr5">Ubicación Derecha</div>
         <tr>
             <th id="th">Subsitio Anatómico:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Labios:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Lengua:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Paladar Blando:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Encia:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">¿Está relacionado con un órgano dental?:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Maxilar Superior Derecho</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Maxilar Inferior Derecho:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
     </table>
 
@@ -421,42 +421,42 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
         <div class="containerr5">Ubicación Izquierda</div>
         <tr>
             <th id="th">Subsitio Anatómico:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Labios:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Lengua:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Paladar Blando:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Encia:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">¿Está relacionado con un órgano dental?:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Maxilar Superior Izquierdo</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
 
         <tr>
             <th id="th">Maxilar Inferior Izquierdo:</th>
-            <td></td>
+            <td id="td"></td>
         </tr>
     </table>
 
@@ -540,12 +540,12 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
 
             <tr>
                 <th id="th">¿Se realizó PDL?</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['realizoinmunobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">PDL:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['descripcioninmunobucal'] ?></td>
             </tr>
         </table>
 
@@ -556,102 +556,102 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
 
             <tr>
                 <th id="th">Quirurgico:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo de Cirugía:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Maxilectomia de Infraestructura:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Lugar:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Nivel Cervical:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Reconstrucción:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo de Reconstrucción:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Radioterapia:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Fecha:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Complicaciones:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Momento RT:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Tx Complicaciones Orales:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Dosis:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Fracciones:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">No. Fracciones:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Técnica:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">OARS Dosis:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Dosis Máxima:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
 
             <tr>
                 <th id="th">Dosis Promedio:</th>
-                <td></td>
+                <td id="td"></td>
             </tr>
         </table>
 
@@ -663,17 +663,17 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
 
             <tr>
                 <th id="th">¿Defunción?:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['defuncionbucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Fecha Defunción:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['fechadefuncionbucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Causa:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['causadefuncionbucal'] ?></td>
             </tr>
         </table>
 
@@ -685,12 +685,12 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
 
             <tr>
                 <th id="th">¿Caso éxitoso?:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['exitosobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Respuesta al Tratamiento:</th>
-                <td></td>
+                <td id="td"><?php echo $dataRegistro['respiuestatratamientobucal'] ?></td>
             </tr>
 
         </table>

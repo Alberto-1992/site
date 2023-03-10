@@ -192,6 +192,31 @@ $hoy = date("Y-m-d");
                                                 ':tipobucal'=>$tipohisto,
                                                 ':malignobucal'=>$maligno
                                             ));
+                                    $sql = $conexionCancer->prepare("INSERT into inmunohistoquimicabucal(id_inumobucal,realizoinmunobucal,descripcioninmunobucal,id_pacientebucal)
+                                        values(:id_inumobucal,:realizoinmunobucal,:descripcioninmunobucal,:id_pacientebucal)");
+                                            $sql->execute(array(
+                                                ':id_inumobucal'=>uniqid('hraei'),
+                                                ':realizoinmunobucal'=>$pdl,
+                                                ':descripcioninmunobucal'=>$descripcioninmunobucal,
+                                                ':id_pacientebucal'=>$id_usuario
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into casoexitosobucal(id_casoexitosobucal,id_pacientebucal,exitosobucal,respiuestatratamientobucal)
+                                        values(:id_casoexitosobucal,:id_pacientebucal,:exitosobucal,:respiuestatratamientobucal)");
+                                            $sql->execute(array(
+                                                ':id_casoexitosobucal'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':exitosobucal'=>$casoexitoso,
+                                                ':respiuestatratamientobucal'=>$respuestatratamiento
+                                            ));
+                                    $sql = $conexionCancer->prepare("INSERT into defuncionbucal(id_defuncionbucal,id_pacientebucal,defuncionbucal,fechadefuncionbucal,causadefuncionbucal)
+                                        values(:id_defuncionbucal,:id_pacientebucal,:defuncionbucal,:fechadefuncionbucal,:causadefuncionbucal)");
+                                            $sql->execute(array(
+                                                ':id_defuncionbucal'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':defuncionbucal'=>$defuncion,
+                                                ':fechadefuncionbucal'=>$fechadeladefuncion,
+                                                ':causadefuncionbucal'=>$causadefuncion
+                                            ));
                                     if($sql != false) {
                                         echo "<script>swal({
                                                     title: 'Good job!',

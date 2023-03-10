@@ -3940,8 +3940,8 @@ $(function () {
                                         <select name="mastectomiatipoedit" id="mastectomiatipoedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['tipomastecto'] ;?>"><?php echo $dataRegistro['tipomastecto'] ;?></option>
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="Mastectomia conservadora">Mastectomia conservadora</option>
-                                            <option value="Mastectomia paliativa">Mastectomia paliativa</option>
+                                            <option value="Mastectomia total">Mastectomia total</option>
+                                            <option value="Mastectomia parcial">Mastectomia parcial</option>
 
                                         </select>
                                     </div>
