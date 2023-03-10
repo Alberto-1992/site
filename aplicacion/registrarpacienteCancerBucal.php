@@ -253,6 +253,68 @@ $hoy = date("Y-m-d");
                                 ));
                             }
                         };
+                        $sql = $conexionCancer->prepare("INSERT into lesionoralbucal(id_lesionoralbucal,id_pacientebucal,lesionoral,tipotejido,coloracionbucal)
+                                    values(:id_lesionoralbucal,:id_pacientebucal,:lesionoral,:tipotejido,:coloracionbucal)");
+                                        $sql->execute(array(
+                                            ':id_lesionoralbucal'=>uniqid('hraei'),
+                                            ':id_pacientebucal'=>$id_usuario,
+                                            ':lesionoral'=>$tipolesionoral,
+                                            ':tipotejido'=>$tipotejido,
+                                            ':coloracionbucal'=>$colorpigmentada
+                                        ));
+                                        $mstipodelesion;
+                                        if(is_array($mstipodelesion) || is_object($mstipodelesion)){
+                                            foreach($mstipodelesion as $tipodelesionoral) {
+                                                $sql_s = $conexionCancer->prepare("INSERT into tipolesionoral(descripciontipolesionoral, id_pacientebucal) 
+                                
+                                                values(:descripciontipolesionoral, :id_pacientebucal)");
+                            
+                                                $sql_s->execute(array(
+                                                    ':descripciontipolesionoral'=>$tipodelesionoral,
+                                                    ':id_pacientebucal'=>$id_usuario
+                            
+                                                ));
+                                            }
+                                        };
+                                        $msubicacion;
+                                        if(is_array($msubicacion) || is_object($msubicacion)){
+                                            foreach($msubicacion as $ubicacionoraldental) {
+                                                $sql_s = $conexionCancer->prepare("INSERT into ubicacionesoralesdentales(descripcionubicacionoral, id_pacientebucal) 
+                                
+                                                values(:descripcionubicacionoral, :id_pacientebucal)");
+                            
+                                                $sql_s->execute(array(
+                                                    ':descripcionubicacionoral'=>$ubicacionoraldental,
+                                                    ':id_pacientebucal'=>$id_usuario
+                            
+                                                ));
+                                            }
+                                        };
+                                        $msqueva;
+                                        if(is_array($msqueva) || is_object($msqueva)){
+                                            foreach($msqueva as $subatomico) {
+                                                $sql_s = $conexionCancer->prepare("INSERT into ubicacionderechasubsitioatomico(descripcionubicderechasubatomico, id_pacientebucal) 
+                                
+                                                values(:descripcionubicderechasubatomico, :id_pacientebucal)");
+                            
+                                                $sql_s->execute(array(
+                                                    ':descripcionubicderechasubatomico'=>$subatomico,
+                                                    ':id_pacientebucal'=>$id_usuario
+                            
+                                                ));
+                                            }
+                                        };
+                                        $sql = $conexionCancer->prepare("INSERT into subatomicoderecha(id_subatomicodere,id_pacientebucal,labios,lengua,paladarblando,encia,relacionadoconorganodental)
+                                            values(:id_subatomicodere,:id_pacientebucal,:labios,:lengua,:paladarblando,:encia,:relacionadoconorganodental)");
+                                            $sql->execute(array(
+                                                ':id_subatomicodere'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':labios'=>$labios,
+                                                ':lengua'=>$lengua,
+                                                ':paladarblando'=>$paladarblando,
+                                                ':encia'=>$encia,
+                                                ':relacionadoconorganodental'=>$relacion
+                                            ));
                                     $sql = $conexionCancer->prepare("INSERT into atencionclinicabucal(id_atencionclinicabucal,id_pacientebucal,fechaprimeratencionbucal,estadoclinicobucal,etapaclinicabucal,tamaniotumoralbucal,compromisolinfaticobucal,metastasisbucal,calidadvidaecog)
                                         values(:id_atencionclinicabucal,:id_pacientebucal,:fechaprimeratencionbucal,:estadoclinicobucal,:etapaclinicabucal,:tamaniotumoralbucal,:compromisolinfaticobucal,:metastasisbucal,:calidadvidaecog)");
                                             $sql->execute(array(

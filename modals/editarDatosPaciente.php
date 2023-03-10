@@ -396,13 +396,13 @@ return false;
                                     <div class="col-md-2">
                                         <strong>Talla</strong>
                                         <input type="number" step="any" class="form-control" id="tallaedit" name="tallaedit"
-                                            required value="<?php echo $dataRegistro['talla'] ?>">
+                                            value="<?php echo $dataRegistro['talla'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="pesoedit"
-                                            onblur="calculaIMCEdit();" name="pesoedit" required value="<?php echo $dataRegistro['peso'] ?>">
+                                            onblur="calculaIMCEdit();" name="pesoedit" value="<?php echo $dataRegistro['peso'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
@@ -416,7 +416,7 @@ return false;
                                         <strong>Estado de residencia</strong>
 
                                         <select name="cbx_estadoedit" id="cbx_estadoedit" class="form-control"
-                                            style="width: 100%;" required>
+                                            style="width: 100%;" >
                                             <option value="<?php echo $rows['id_estado'] ?>" selected><?php echo $rows['estado'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -1779,27 +1779,17 @@ $('#mstectoextra2edit').prop("hidden", true);
                                 <!--finaliza region ganglionar izquierda-->
                                 <!--inicia mama izquierda--> 
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosMamaIz">
-    
     <div class="modal-dialog modal-lg">
-
         <!-- Modal content-->
-
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
-                
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
-            
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
                         <div class="modal-body">
-
                             <!-- form start -->
-                        
-
                             <form name="formularioedicionmamaizquierda" id="formularioedicionmamaizquierda" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
@@ -1889,8 +1879,6 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
                                             <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
                                             <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
-                                           
-
                                         </select>
                                     </div>
                                     <div class="col-md-12" >
@@ -1925,27 +1913,17 @@ $('#mstectoextra2edit').prop("hidden", true);
         
                                 <!--finaliza mama izquierda -->
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosRgmamaIz">
-    
     <div class="modal-dialog modal-lg">
-
         <!-- Modal content-->
-
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
-                
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
-            
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
                         <div class="modal-body">
-
                             <!-- form start -->
-                        
-
                             <form name="formularioedicionrgmamaiz" id="formularioedicionrgmamaiz" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
@@ -1953,13 +1931,10 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     $("#formularioedicionrgmamaiz").on("submit", function(e) {
                                         checked = this.querySelectorAll('input[type=checkbox]:checked');
                                         e.preventDefault();
-
                                         var formData = new FormData(document.getElementById(
                                             "formularioedicionrgmamaiz"));
                                         formData.append("dato", "valor");
-
                                         $.ajax({
-
                                             url: "aplicacion/editarDatosRgMamaiz.php",
                                             type: "post",
                                             dataType: "html",
@@ -1973,14 +1948,12 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                 let ob = {
                                                             id: id
                                                             };
-  
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",
                                                             data: ob,
                                                     
                                                         success: function(data) {
-
                                                             $("#tabla_resultado").html(data);
                                                             //$("#editarDatosPersonalescancerdeMama").modal('show');
                                                             setTimeout(function(){
@@ -2118,7 +2091,6 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                 let ob = {
                                                             id: id
                                                             };
-  
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",

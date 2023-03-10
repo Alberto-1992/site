@@ -58,7 +58,87 @@ $sql_t = $conexion2->query("SELECT id_pacientebucal,descripcionantecedentepatobu
             HAVING count(id_pacientebucal) >= 1)
             and id_pacientebucal = $id_paciente
             ORDER BY id_pacientebucal");
-
+$sql_afd = $conexion2->query("SELECT id_pacientebucal,descripcionafectacionoral
+            FROM afectacionesoralesbucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM afectacionesoralesbucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_msd = $conexion2->query("SELECT id_pacientebucal,descripcionorganorallesionado
+            FROM afectaciondentalorganoorallesionado
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM afectaciondentalorganoorallesionado
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_maxisupder = $conexion2->query("SELECT id_pacientebucal,descripcionmaxisupdere
+            FROM maxisupderecho
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM maxisupderecho
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_maxiinfder = $conexion2->query("SELECT id_pacientebucal,descripcionmaxinfderecho
+            FROM maxinfderecho
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM maxinfderecho
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_maxsupizq = $conexion2->query("SELECT id_pacientebucal,descripcionmaxsupizquierdo
+            FROM maxsupizquierdo
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM maxsupizquierdo
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_maxinfizq = $conexion2->query("SELECT id_pacientebucal,descripcionmaxinfizquierdo
+            FROM maxinfizquierdo
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM maxinfizquierdo
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_tipolesion = $conexion2->query("SELECT id_pacientebucal,descripciontipolesionoral
+            FROM tipolesionoral
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM tipolesionoral
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_ubicoral = $conexion2->query("SELECT id_pacientebucal,descripcionubicacionoral
+            FROM ubicacionesoralesdentales
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM tipolesionoral
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_subatomico = $conexion2->query("SELECT id_pacientebucal,descripcionubicderechasubatomico
+            FROM ubicacionderechasubsitioatomico
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM ubicacionderechasubsitioatomico
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
 
 
@@ -320,28 +400,43 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
     <div class="containerr4">Afectación Dental</div>
     <tr>
-        <th id="th">Órgano Oral Lesionado:</th>
-        <td id="td"></td>
+        <th id="th">Afectación oral:</th>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_afd))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionafectacionoral'].'-'.'';} ?></td>
     </tr>
-
+    <tr>
+        <th id="th">Órgano Oral Lesionado:</th>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_msd))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionorganorallesionado'].'-'.'';} ?></td>
+    </tr>
     <tr>
         <th id="th">Maxilar Superior Derecho:</th>
-        <td id="td"></td>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_maxisupder))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionmaxisupdere'].'-'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Inferior Derecho:</th>
-        <td id="td"></td>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_maxiinfder))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionmaxinfderecho'].'-'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Superior Izquierdo:</th>
-        <td id="td"></td>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_maxsupizq))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionmaxsupizquierdo'].'-'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Maxilar Inferior Izquierdo:</th>
-        <td id="td"></td>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_maxinfizq))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionmaxinfizquierdo'].'-'.'';} ?></td>
     </tr>
 </table>
 
@@ -349,59 +444,68 @@ echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
     <div class="containerr4">Lesiones Orales</div>
     <tr>
         <th id="th">¿Lesión Oral?:</th>
-        <td id="td"></td>
+        <td id="td"><?php echo $dataRegistro['lesionoral'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Tipo Tejido:</th>
-        <td id="td"></td>
+        <td id="td"><?php echo $dataRegistro['tipotejido'] ?></td>
     </tr>
 
     <tr>
         <th id="th">Tipo Lesión:</th>
-        <td id="td"></td>
+        <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_tipolesion))
+{
+echo '&nbsp&nbsp'.$dataReg['descripciontipolesionoral'].'-'.'';} ?></td>
     </tr>
 
     <tr>
         <th id="th">Coloración:</th>
-        <td id="td"></td>
+        <td id="td"><?php echo $dataRegistro['coloracionbucal'] ?></td>
     </tr>
 </table>
-
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr4">Ubicación</div>
-
+    <div class="containerr4">Ubicaciones orales</div>
+    <tr>
+            <th id="th">Ubicación:</th>
+            <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_ubicoral))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionubicacionoral'].'-'.'';} ?></td>
+        </tr>
+    </table>
     <!--Subdivisión de AFECTACIONES ORALES / UBICACIÓN / UBICACIÓN DERECHA-->
     <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
         <div class="containerr5">Ubicación Derecha</div>
         <tr>
             <th id="th">Subsitio Anatómico:</th>
-            <td id="td"></td>
+            <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_subatomico))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionubicderechasubatomico'].'-'.'';} ?></td>
         </tr>
 
         <tr>
             <th id="th">Labios:</th>
-            <td id="td"></td>
+            <td id="td"><?php echo $dataRegistro['labios'] ?></td>
         </tr>
 
         <tr>
             <th id="th">Lengua:</th>
-            <td id="td"></td>
+            <td id="td"><?php echo $dataRegistro['lengua'] ?></td>
         </tr>
 
         <tr>
             <th id="th">Paladar Blando:</th>
-            <td id="td"></td>
+            <td id="td"><?php echo $dataRegistro['paladarblando'] ?></td>
         </tr>
 
         <tr>
             <th id="th">Encia:</th>
-            <td id="td"></td>
+            <td id="td"><?php echo $dataRegistro['encia'] ?></td>
         </tr>
 
         <tr>
             <th id="th">¿Está relacionado con un órgano dental?:</th>
-            <td id="td"></td>
+            <td id="td"><?php echo $dataRegistro['relacionadoconorganodental'] ?></td>
         </tr>
 
         <tr>

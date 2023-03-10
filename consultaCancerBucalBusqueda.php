@@ -11,7 +11,9 @@ atencionclinicabucal.*,
 histopatologiacancerbucal.*,
 alcoholismotabaquismobucal.*,
 inmunohistoquimicabucal.*,
+lesionoralbucal.*,
 casoexitosobucal.*,
+subatomicoderecha.*,
 defuncionbucal.*
 FROM dato_usuariobucal
 left outer join somatometriabucal on somatometriabucal.id_pacientebucal = dato_usuariobucal.id_bucal
@@ -22,7 +24,9 @@ left outer join atencionclinicabucal on atencionclinicabucal.id_pacientebucal = 
 left outer join histopatologiacancerbucal on histopatologiacancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join alcoholismotabaquismobucal on alcoholismotabaquismobucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join inmunohistoquimicabucal on inmunohistoquimicabucal.id_pacientebucal = dato_usuariobucal.id_bucal
+left outer join lesionoralbucal on lesionoralbucal.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join casoexitosobucal on casoexitosobucal.id_pacientebucal = dato_usuariobucal.id_bucal
+left outer join subatomicoderecha on subatomicoderecha.id_pacientebucal = dato_usuariobucal.id_bucal
 left outer join defuncionbucal on defuncionbucal.id_pacientebucal = dato_usuariobucal.id_bucal
 where dato_usuariobucal.id_bucal = $id");
 $query->setFetchMode(PDO::FETCH_ASSOC);
