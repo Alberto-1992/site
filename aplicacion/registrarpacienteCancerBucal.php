@@ -102,6 +102,20 @@ $hoy = date("Y-m-d");
                                             ':comidasbucal'=>$comidasbucal,
                                             ':higienebucal'=>$higienebucal
                                         ));
+                                        $mstoxicomanias;
+                                        if(is_array($mstoxicomanias) || is_object($mstoxicomanias)){
+                                            foreach($mstoxicomanias as $toxicohabitos) {
+                                                $sql = $conexionCancer->prepare("INSERT into antecedentespersonalespatotoxicobucal(descripcionantecedentepatobucal, id_pacientebucal) 
+                                
+                                                values(:descripcionantecedentepatobucal, :id_pacientebucal)");
+                            
+                                                $sql->execute(array(
+                                                    ':descripcionantecedentepatobucal'=>$toxicohabitos,
+                                                    ':id_pacientebucal'=>$id_usuario
+                            
+                                                ));
+                                            }
+                                        }; 
                                         $mshabitos;
                                         if(is_array($mshabitos) || is_object($mshabitos)){
                                             foreach($mshabitos as $habitos) {
@@ -116,6 +130,45 @@ $hoy = date("Y-m-d");
                                                 ));
                                             }
                                         };  
+                                        $sql = $conexionCancer->prepare("INSERT into alcoholismotabaquismobucal(id_alcoholtabacobucal,id_pacientebucal,frecuenciaalcoholbucal,tiempotabaquismobucal,cigarrosaldiabucal)
+                                        values(:id_alcoholtabacobucal,:id_pacientebucal,:frecuenciaalcoholbucal,:tiempotabaquismobucal,:cigarrosaldiabucal)");
+                                            $sql->execute(array(
+                                                ':id_alcoholtabacobucal'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':frecuenciaalcoholbucal'=>$frecuenciaal,
+                                                ':tiempotabaquismobucal'=>$anostabaquismo,
+                                                ':cigarrosaldiabucal'=>$cigarrosdia
+                                            ));
+                                        
+                                            $msvirus;
+                                            if(is_array($msvirus) || is_object($msvirus)){
+                                                foreach($msvirus as $viruspato) {
+                                                    $sql = $conexionCancer->prepare("INSERT into viruspatobucal(descripcionviruspatobucal, id_pacientebucal) 
+                                    
+                                                    values(:descripcionviruspatobucal, :id_pacientebucal)");
+                                
+                                                    $sql->execute(array(
+                                                        ':descripcionviruspatobucal'=>$viruspato,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };  
+                                        
+                                            $mscancer;
+                                            if(is_array($mscancer) || is_object($mscancer)){
+                                                foreach($mscancer as $cancerpato) {
+                                                    $sql = $conexionCancer->prepare("INSERT into cancerpatopatobucal(descripcioncancerpatobucal, id_pacientebucal) 
+                                    
+                                                    values(:descripcioncancerpatobucal, :id_pacientebucal)");
+                                
+                                                    $sql->execute(array(
+                                                        ':descripcioncancerpatobucal'=>$cancerpato,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            }; 
                                         $msao;
                         if(is_array($msao) || is_object($msao)){
                             foreach($msao as $afectoral) {
@@ -200,59 +253,6 @@ $hoy = date("Y-m-d");
                                 ));
                             }
                         };
-
-                            $sql = $conexionCancer->prepare("INSERT into alcoholismotabaquismobucal(id_alcoholtabacobucal,id_pacientebucal,frecuenciaalcoholbucal,tiempotabaquismobucal,cigarrosaldiabucal)
-                                    values(:id_alcoholtabacobucal,:id_pacientebucal,:frecuenciaalcoholbucal,:tiempotabaquismobucal,:cigarrosaldiabucal)");
-                                        $sql->execute(array(
-                                            ':id_alcoholtabacobucal'=>uniqid('hraei'),
-                                            ':id_pacientebucal'=>$id_usuario,
-                                            ':frecuenciaalcoholbucal'=>$frecuenciaal,
-                                            ':tiempotabaquismobucal'=>$anostabaquismo,
-                                            ':cigarrosaldiabucal'=>$cigarrosdia
-                                        ));
-                                        $mshabitos;
-                                        if(is_array($mshabitos) || is_object($mshabitos)){
-                                            foreach($mshabitos as $habitos) {
-                                                $sql = $conexionCancer->prepare("INSERT into habitospersonalespatobucal(descripcionhabitopatobucal, id_pacientebucal) 
-                                
-                                                values(:descripcionhabitopatobucal, :id_pacientebucal)");
-                            
-                                                $sql->execute(array(
-                                                    ':descripcionhabitopatobucal'=>$habitos,
-                                                    ':id_pacientebucal'=>$id_usuario
-                            
-                                                ));
-                                            }
-                                        };  
-                                        $msvirus;
-                                        if(is_array($msvirus) || is_object($msvirus)){
-                                            foreach($msvirus as $viruspato) {
-                                                $sql = $conexionCancer->prepare("INSERT into viruspatobucal(descripcionviruspatobucal, id_pacientebucal) 
-                                
-                                                values(:descripcionviruspatobucal, :id_pacientebucal)");
-                            
-                                                $sql->execute(array(
-                                                    ':descripcionviruspatobucal'=>$viruspato,
-                                                    ':id_pacientebucal'=>$id_usuario
-                            
-                                                ));
-                                            }
-                                        };  
-                                    
-                                        $mscancer;
-                                        if(is_array($mscancer) || is_object($mscancer)){
-                                            foreach($mscancer as $cancerpato) {
-                                                $sql = $conexionCancer->prepare("INSERT into cancerpatopatobucal(descripcioncancerpatobucal, id_pacientebucal) 
-                                
-                                                values(:descripcioncancerpatobucal, :id_pacientebucal)");
-                            
-                                                $sql->execute(array(
-                                                    ':descripcioncancerpatobucal'=>$cancerpato,
-                                                    ':id_pacientebucal'=>$id_usuario
-                            
-                                                ));
-                                            }
-                                        }; 
                                     $sql = $conexionCancer->prepare("INSERT into atencionclinicabucal(id_atencionclinicabucal,id_pacientebucal,fechaprimeratencionbucal,estadoclinicobucal,etapaclinicabucal,tamaniotumoralbucal,compromisolinfaticobucal,metastasisbucal,calidadvidaecog)
                                         values(:id_atencionclinicabucal,:id_pacientebucal,:fechaprimeratencionbucal,:estadoclinicobucal,:etapaclinicabucal,:tamaniotumoralbucal,:compromisolinfaticobucal,:metastasisbucal,:calidadvidaecog)");
                                             $sql->execute(array(
@@ -282,7 +282,7 @@ $hoy = date("Y-m-d");
                                             $sql->execute(array(
                                                 ':id_inumobucal'=>uniqid('hraei'),
                                                 ':realizoinmunobucal'=>$pdl,
-                                                ':descripcioninmunobucal'=>$descripcioninmunobucal,
+                                                ':descripcioninmunobucal'=>$idpdl,
                                                 ':id_pacientebucal'=>$id_usuario
                                             ));
                                     $sql = $conexionCancer->prepare("INSERT into casoexitosobucal(id_casoexitosobucal,id_pacientebucal,exitosobucal,respiuestatratamientobucal)
