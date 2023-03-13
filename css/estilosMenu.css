@@ -28,7 +28,7 @@ overflow:visible;
 
 .main-menu {
   background: #ffffff;
-    border-right: 1px solid #bababa;
+  border-right: 1px solid #e5e5e5;
 position: relative;
 margin-top: 48px;
 bottom:0;
@@ -498,9 +498,8 @@ thead tr th{
     left: 40px;
 }
 hr{
-  background-color: rgb(8, 6, 6);
-    height: .5px;
-    width: 100%;
+  background-color: grey;
+  height: 1px;
   margin: 0px 0px;
 }
 .parent{
