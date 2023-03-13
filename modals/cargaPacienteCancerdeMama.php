@@ -196,13 +196,13 @@
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="peso"
-                                            onblur="calculaIMCCancer();" name="peso" required>
+                                            onblur="calculaIMCCancer();" name="peso">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>IMC</strong>
                                         <input type="text" class="form-control" id="imc" onblur="calculaIMCCancer();"
-                                            name="imc" value="" readonly>
+                                            name="imc" value="">
 
                                     </div>
 
@@ -210,7 +210,7 @@
                                         <strong>Estado de residencia</strong>
 
                                         <select name="cbx_estado" id="cbx_estado" class="form-control"
-                                            style="width: 100%;" required>
+                                            style="width: 100%;">
                                             <option value="Sin registro" selected>Sin registro</option>
                                             <?php 
                                     require 'conexionCancer.php';

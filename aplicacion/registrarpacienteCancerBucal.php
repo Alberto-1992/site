@@ -315,6 +315,87 @@ $hoy = date("Y-m-d");
                                                 ':encia'=>$encia,
                                                 ':relacionadoconorganodental'=>$relacion
                                             ));
+                                            $msmaxisd;
+                                            if(is_array($msmaxisd) || is_object($msmaxisd)){
+                                                foreach($msmaxisd as $maxsupderecho) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into ubicaderemazsupdere(descripcionubisupdere,id_pacientebucal) 
+                                    
+                                                    values(:descripcionubisupdere,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionubisupdere'=>$maxsupderecho,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
+                                            $msmaxiid;
+                                            if(is_array($msmaxiid) || is_object($msmaxiid)){
+                                                foreach($msmaxiid as $maxinfderecho) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into ubicaderemazinfdere(descripcionubicainfdere,id_pacientebucal) 
+                                    
+                                                    values(:descripcionubicainfdere,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionubicainfdere'=>$maxinfderecho,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
+                                            $msqueva2;
+                                            if(is_array($msqueva2) || is_object($msqueva2)){
+                                                foreach($msqueva2 as $subatomicoiz) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into ubicacionizquierdasubsitioatomico(descripcionubicizquierdasubatomico, id_pacientebucal) 
+                                    
+                                                    values(:descripcionubicizquierdasubatomico, :id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionubicizquierdasubatomico'=>$subatomicoiz,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
+                                        $sql = $conexionCancer->prepare("INSERT into subatomicoizquierda(id_subatomicoizquierda,id_pacientebucal,labiosiz,lenguaiz,paladarblandoiz,enciaiz,relacionadoconorganodentaliz)
+                                            values(:id_subatomicodereizquierda,:id_pacientebucal,:labiosiz,:lenguaiz,:paladarblandoiz,:enciaiz,:relacionadoconorganodentaliz)");
+                                            $sql->execute(array(
+                                                ':id_subatomicodereizquierda'=>uniqid('hraei'),
+                                                ':id_pacientebucal'=>$id_usuario,
+                                                ':labiosiz'=>$labiosiz,
+                                                ':lenguaiz'=>$lenguaiz,
+                                                ':paladarblandoiz'=>$paladarblandoiz,
+                                                ':enciaiz'=>$enciaiz,
+                                                ':relacionadoconorganodentaliz'=>$relacioniz
+                                            ));
+                                            $msmaxisiiz;
+                                            if(is_array($msmaxisiiz) || is_object($msmaxisiiz)){
+                                                foreach($msmaxisiiz as $maxsupizquierda) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into ubicaderemazsupizquierda(descripcionubisupizquierda,id_pacientebucal) 
+                                    
+                                                    values(:descripcionubisupizquierda,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionubisupizquierda'=>$maxsupizquierda,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
+                                            $msmaxiiz;
+                                            if(is_array($msmaxiiz) || is_object($msmaxiiz)){
+                                                foreach($msmaxiiz as $maxinfizquierda) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into ubicaderemazinfizquierda(descripcionubicainfizquierda,id_pacientebucal) 
+                                    
+                                                    values(:descripcionubicainfizquierda,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionubicainfizquierda'=>$maxinfizquierda,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
                                     $sql = $conexionCancer->prepare("INSERT into atencionclinicabucal(id_atencionclinicabucal,id_pacientebucal,fechaprimeratencionbucal,estadoclinicobucal,etapaclinicabucal,tamaniotumoralbucal,compromisolinfaticobucal,metastasisbucal,calidadvidaecog)
                                         values(:id_atencionclinicabucal,:id_pacientebucal,:fechaprimeratencionbucal,:estadoclinicobucal,:etapaclinicabucal,:tamaniotumoralbucal,:compromisolinfaticobucal,:metastasisbucal,:calidadvidaecog)");
                                             $sql->execute(array(
