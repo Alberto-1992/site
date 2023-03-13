@@ -278,7 +278,7 @@ $(document).ready(function() {
 
 // COMPLICACIONES RT
 $(document).ready(function() {
-    $('#mscomplicaciones').change(function(e) { 
+    $('#mscomplicacionesrt').change(function(e) { 
     }).multipleSelect({
         width: '100%'
     });
