@@ -484,6 +484,34 @@ $hoy = date("Y-m-d");
                                                 ':dosismaxtiroides'=>$Tiroides1,
                                                 ':dosispromediotiroides'=>$Tiroides2
                                             ));
+                                            $tiporeconstruccion;
+                                            if(is_array($tiporeconstruccion) || is_object($tiporeconstruccion)){
+                                                foreach($tiporeconstruccion as $tipodereconstruccion) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into tipodereconstruccionbucal(descripccionreconstruccionbucal,id_pacientebucal) 
+                                    
+                                                    values(:descripccionreconstruccionbucal,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripccionreconstruccionbucal'=>$tipodereconstruccion,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
+                                            $mscomplicacionesrt;
+                                            if(is_array($mscomplicacionesrt) || is_object($mscomplicacionesrt)){
+                                                foreach($mscomplicacionesrt as $complicacionesrt) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into complicacionesrtbucal(descripcionrtbucal,id_pacientebucal) 
+                                    
+                                                    values(:descripcionrtbucal,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionrtbucal'=>$complicacionesrt,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
                                     $sql = $conexionCancer->prepare("INSERT into casoexitosobucal(id_casoexitosobucal,id_pacientebucal,exitosobucal,respiuestatratamientobucal)
                                         values(:id_casoexitosobucal,:id_pacientebucal,:exitosobucal,:respiuestatratamientobucal)");
                                             $sql->execute(array(

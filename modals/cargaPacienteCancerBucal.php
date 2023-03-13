@@ -1163,7 +1163,7 @@
 
                                 <div class="col-md-12" id="idcomplicaciones">
                                     <strong>Complicaciones RT</strong>
-                                    <select id="mscomplicaciones" name="mscomplicaciones[]" multiple="multiple" class="form-control">
+                                    <select id="mscomplicacionesrt" name="mscomplicacionesrt[]" multiple="multiple" class="form-control">
                                         <option value="Caries">Caries</option>
                                         <option value="Disgeusia">Disgeusia</option>
                                         <option value="Dolor">Dolor</option>

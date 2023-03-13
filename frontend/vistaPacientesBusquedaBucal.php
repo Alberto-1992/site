@@ -184,6 +184,24 @@ $sql_ubiinfizquierda = $conexion2->query("SELECT id_pacientebucal,descripcionubi
             HAVING count(id_pacientebucal) >= 1)
             and id_pacientebucal = $id_paciente
             ORDER BY id_pacientebucal");
+$sql_tiporeconstruccion = $conexion2->query("SELECT id_pacientebucal,descripccionreconstruccionbucal
+            FROM tipodereconstruccionbucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM tipodereconstruccionbucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_complicacionrt = $conexion2->query("SELECT id_pacientebucal,descripcionrtbucal
+            FROM complicacionesrtbucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM complicacionesrtbucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 
 
 
@@ -750,7 +768,9 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
 
             <tr>
                 <th id="th">Tipo de Reconstrucción:</th>
-                <td id="td"><?php echo $dataRegistro[''] ?></td>
+                <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_tiporeconstruccion))
+{
+echo '&nbsp&nbsp'.$dataReg['descripccionreconstruccionbucal'].'-'.'';} ?></td>
             </tr>
 
             <tr>
@@ -765,7 +785,9 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
 
             <tr>
                 <th id="th">Complicaciones:</th>
-                <td id="td"><?php echo $dataRegistro[''] ?></td>
+                <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_complicacionrt))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
             </tr>
 
             <tr>
