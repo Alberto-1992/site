@@ -715,102 +715,102 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
 
             <tr>
                 <th id="th">Quirurgico:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['quirurgicobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo de Cirugía:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['tipocirugiabucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Maxilectomia de Infraestructura:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['maxilectomiadeinfraestructura'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Lugar:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['lugardrmc'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['tipodrmc'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Nivel Cervical:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['nivelcervical'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Reconstrucción:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['reconstruccionbucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Tipo de Reconstrucción:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro[''] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Radioterapia:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['radioterapiabucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Fecha:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['fecharadioterapiabucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Complicaciones:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro[''] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Momento RT:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['momentortradiobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Tx Complicaciones Orales:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro[''] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Dosis:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['dosisradiobucal']?></td>
             </tr>
 
             <tr>
                 <th id="th">Fracciones:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['fraccionesradiobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">No. Fracciones:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['numfraccionesradiobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">Técnica:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro['tecnicaradiobucal'] ?></td>
             </tr>
 
             <tr>
                 <th id="th">OARS Dosis:</th>
-                <td id="td"></td>
+                <td id="td"><?php echo $dataRegistro[''] ?></td>
             </tr>
 
             <tr>
-                <th id="th">Dosis Máxima:</th>
-                <td id="td"></td>
+                <th id="th">Dosis Máxima:<br><br></th>
+                <td id="td"><?php echo 'Dosis Máx Cavidad Oral: '.$dataRegistro['dosismaxcavidadoral'].' | Dosis Máx Cocleas: '.$dataRegistro['dosismaxcocleas'].' | Dosis Máx Cristalinos: '.$dataRegistro['dosismaxcristalinos'].' | Dosis Máx Esófago: '.$dataRegistro['dosismaxesofago'].' | Dosis Máx Labios: '.$dataRegistro['dosismaxlabios'].' | Dosis Máx Laringe: '.$dataRegistro['dosismaxlaringe'].' | Dosis Máx Mandibula: '.$dataRegistro['dosismaxmandibula'].' | Dosis Máx Médula: '.$dataRegistro['dosismaxmedula'].'<br>Dosis Máx Nervio Óptico: '.$dataRegistro['dosismaxnerviooptico'].' | Dosis Máx Ojos: '.$dataRegistro['dosismaxojos'].' | Dosis Máx PFP: '.$dataRegistro['dosismaxpfp'].' | Dosis Máx Parotidas: '.$dataRegistro['dosismaxparotidas'].' | Dosis Máx Sublinguales: '.$dataRegistro['dosismaxsubli'].' | Dosis Máx Tallo: '.$dataRegistro['dosismaxtallo'].' | Dosis Máx Tiroides: '.$dataRegistro['dosismaxtiroides'] ?></td>
             </tr>
 
             <tr>
-                <th id="th">Dosis Promedio:</th>
-                <td id="td"></td>
+                <th id="th">Dosis Promedio:<br><br></th>
+                <td id="td"><?php echo 'Dosis Prom Cavidad Oral: '.$dataRegistro['dosispromcavidadoral'].' | Dosis Prom Cocleas: '.$dataRegistro['dosispromediococlelas'].' | Dosis Prom Cristalinos: '.$dataRegistro['dosispromediocristalinos'].' | Dosis Prom Esófago: '.$dataRegistro['dosispromedioesofago'].' | Dosis Prom Labios: '.$dataRegistro['dosispromediolabios'].' | Dosis Prom Laringe: '.$dataRegistro['dosispromediolaringe'].' | Dosis Prom Mandibula: '.$dataRegistro['dosispromediomandibula'].' | Dosis Prom Médula: '.$dataRegistro['dosispromediomedula'].'<br>Dosis Prom Nervio Óptico: '.$dataRegistro['dosispromedionerviooptico'].' | Dosis Prom Ojos: '.$dataRegistro['dosispromedioojos'].' | Dosis Prom PFP:'.$dataRegistro['dosispromediopfp'].' | Dosis Prom Parotidas: '.$dataRegistro['dosispromedioparotidas'].' | Dosis Prom Sublinguales: '.$dataRegistro['dosispromediosubli'].' | Dosis Prom Tallo: '.$dataRegistro['dosispromediotallo'].' | Dosis Prom Tiroides:'.$dataRegistro['dosispromediotiroides'] ?></td>
             </tr>
         </table>
 

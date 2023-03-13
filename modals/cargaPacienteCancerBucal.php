@@ -1029,7 +1029,7 @@
                                 <!--Si se selecciona Maxilectomia de Infraestructura, se debe mostrar lo siguiente-->
                                 <div class="col-md-12" id="idmaxinfra">
                                     <strong>Maxilectomia de Infraestructura</strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="maxinfraestructu" id="maxinfraestructu" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Clase I. Reseccion quirurgica clasica del maxilar que abarca paladar duro y dentición hasta la linea media, es unilateral.">Clase I. Resección quirúrgica clásica del maxilar que abarca paladar duro y dentición hasta la línea media, es unilateral.</option>
                                         <option value="Clase II. Incluye defectos que mantienen la denticion del lado contralateral. Es unilateral posterior que no abarca hasta la linea media.">Clase II . Incluye defectos que mantienen la dentición del lado contralateral. Es unilateral posterior que no abarca hasta la línea media.</option>
@@ -1044,7 +1044,7 @@
                                 <!--Si se selecciona DISECCION RADICAL MODIFICADA DE CUELLO, se deben mostrar los siguientes 3 select: LUGAR, TIPO Y NIVEL CERVICAL-->
                                 <div class="col-md-4" id="idlugar">
                                     <strong>Lugar DRMC </strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="lugardrmc" id="lugardrmc" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bilateral">Bilateral</option>
                                         <option value="Unilateral">Unilateral</option>
@@ -1053,7 +1053,7 @@
 
                                 <div class="col-md-4" id="idtipo">
                                     <strong>Tipo DRMC</strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="tipodrmc" id="tipodrmc" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Selectiva">Selectiva</option>
                                         <option value="Superselectiva">Superselectiva</option>
@@ -1091,8 +1091,8 @@
                                 <!--Si selecciona SÍ en reconstrucción, se debe mostrar lo siguiente-->
                                 <div class="col-md-12" id="idtiporeconstruccion">
                                     <strong>Tipo de Reconstrucción</strong>
-                                    <select name="tiporeconstruccion" id="tiporeconstruccion" class="form-control">
-                                        <option value="Seleccione">Seleccione...</option>
+                                    <select name="tiporeconstruccion[]" id="tiporeconstruccion" multiple class="form-control">
+                                        <option value="Ninguna">Ninguna</option>
                                         <option value="Colgajo Microvascular">Colgajo Microvascular</option>
                                         <option value="Injerto Oseo Autologo o Cadaverico">Injerto Óseo Autólogo o Cadavérico</option>
                                         <option value="Material de Osteosintesis">Material de Osteosíntesis</option>
@@ -1123,7 +1123,7 @@
 
                                 <div class="col-md-3" id="idmomentort">
                                     <strong>Momento RT</strong>
-                                    <select name="moentort" id="momentort" class="form-control">
+                                    <select name="momentort" id="momentort" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Adyuvante">Adyuvante</option>
                                         <option value="Paliativa">Paliativa</option>
@@ -1148,7 +1148,7 @@
 
                                 <div class="col-md-6" id="idnofracciones">
                                     <strong>No. Fracciones</strong>
-                                    <input type="number" class="form-control" id="fracciones" name="fracciones" placeholder="Ingrese...">
+                                    <input type="number" class="form-control" id="numfracciones" name="numfracciones" placeholder="Ingrese...">
                                 </div>
 
                                 <div class="col-md-6" id="idtecnica">
@@ -1161,7 +1161,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-6" id="idcomplicaciones">
+                                <div class="col-md-12" id="idcomplicaciones">
                                     <strong>Complicaciones RT</strong>
                                     <select id="mscomplicaciones" name="mscomplicaciones[]" multiple="multiple" class="form-control">
                                         <option value="Caries">Caries</option>
@@ -1247,7 +1247,7 @@
 
                                 <div class="col-md-3">
                                     <strong>Dosis Máx Esófago</strong>
-                                    <input type="number" class="form-control" id="esofago1" name="cesofago1" placeholder="Ingrese...">
+                                    <input type="number" class="form-control" id="esofago1" name="esofago1" placeholder="Ingrese...">
                                 </div>
                                 <div class="col-md-3">
                                     <strong>Dosis Prom Esófago</strong>

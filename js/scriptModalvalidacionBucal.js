@@ -283,6 +283,13 @@ $(document).ready(function() {
         width: '100%'
     });
 });
+
+$(document).ready(function() {
+    $('#tiporeconstruccion').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
 $(function () {
     $('#medioreferencia').prop("hidden", true);
     $('#yearstabaquismo').prop("hidden", true);
