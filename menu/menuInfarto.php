@@ -41,7 +41,7 @@
                 <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                      
+                    
                     </ul>
             </li>-->
             <hr>
@@ -55,7 +55,7 @@
                 <!--  <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                      
+                    
                     </ul>-->
             </li>
             <hr>
@@ -69,14 +69,14 @@
                 <!--  <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                      
+                    
                     </ul>-->
             </li>
             
             <!--
                 <li class="has-subnav">
                     <a href="vistaCisfa.php">
-                       <i class="fa fa-medkit fa-2x" id="icon-color"></i>
+                    <i class="fa fa-medkit fa-2x" id="icon-color"></i>
                         <span class="nav-text">
                             Cisfa
                         </span>
@@ -204,5 +204,4 @@
         </ul>
     </nav>
 </body>
-
 </html>
