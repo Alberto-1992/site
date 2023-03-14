@@ -152,7 +152,9 @@ date_default_timezone_set('America/Monterey');
                 <?php }
             };?>
             <input type="submit" onclick="abandonopaciente();" id="abandonopaciente" value="Abandono paciente">
+            <input type="submit" onclick="graficos();" id="graficos" value="Graficos">
             <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
+            
             
             <?php
     }?>
@@ -933,6 +935,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
 
 require 'modals/editarDatosPaciente.php';
 require 'modals/seguimientoCancerMama.php';
+require 'modals/graficoscancermama.php';
 ?>
 <script>
 function eliminarRegistro() {
@@ -1083,6 +1086,9 @@ function editardatostratamiento() {
 }
 function editardatosmastectomia() {
     $("#editardatosmastectomia").modal('show');
+}
+function graficos() {
+    $("#graficos").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();
