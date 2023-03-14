@@ -557,6 +557,21 @@ $(document).ready(function () {
 
     })
 });
+$(document).ready(function () {
+    $("#msodf").change(function (e) {
+        if (msodf.options[1].selected == true) {
+            $('#maxilarsd').prop('hidden',false);
+            $('#maxilarid').prop('hidden',false);
+            $('#maxilarsd2').prop('hidden',false);
+            $('#maxilarid2').prop('hidden',false);
+        }else if(msodf.options[1].selected == false) {
+            $('#maxilarsd').prop('hidden',true);
+            $('#maxilarid').prop('hidden',true);
+            $('#maxilarsd2').prop('hidden',true);
+            $('#maxilarid2').prop('hidden',true);
+        }
+    })
+});
 /*afectaciones orales */
 $(document).ready(function () {
     $("#msao").change(function (e) {
@@ -564,10 +579,7 @@ $(document).ready(function () {
             $('#afectaciondental').prop('#hidden',false);
             $('#tituloafectaciondental').prop('hidden',false);
             $('#tipodeodf').prop('hidden',false);
-            $('#maxilarsd').prop('hidden',false);
-            $('#maxilarid').prop('hidden',false);
-            $('#maxilarsd2').prop('hidden',false);
-            $('#maxilarid2').prop('hidden',false);
+            
         }else if (msao.options[0].selected == false) {
             $('#afectaciondental').prop('#hidden',true);
             $('#tituloafectaciondental').prop('hidden',true);

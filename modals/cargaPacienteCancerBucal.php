@@ -165,17 +165,17 @@
                                     });
                                 </script>
 
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <strong>Talla</strong>
                                     <input type="number" step="any" class="form-control" id="tallabucal" name="tallabucal" required>
 
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <strong>Peso</strong>
                                     <input type="number" step="any" class="form-control" id="pesobucal" onblur="calculaIMC();" name="pesobucal" required>
 
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <strong>IMC</strong>
                                     <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" readonly>
 
@@ -267,6 +267,7 @@
                                     <strong>Higiene Bucal</strong>
                                     <select name="higienebucal" id="higienebucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
+                                        <option value="Ninguno">Ninguno</option>
                                         <option value="1 vez al dia">1 vez al día</option>
                                         <option value="2 veces al dia">2 veces al día</option>
                                         <option value="3 o mas veces al dia">3 o más veces al día</option>
@@ -297,6 +298,7 @@
                                         <option value="Marihuana"> Marihuana</option>
                                         <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
                                         <option value="Solventes"> Solventes</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
                                 <!-- si selecciona SÍ en ALCOHOLISMO, se deben habiliar los siguientes dos campos:-->
@@ -334,6 +336,7 @@
                                         <option value="Respiracion Oral"> Respiración Oral</option>
                                         <option value="Succion Labial"> Succión Labial</option>
                                         <option value="Succion Digital"> Succión Digital</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple HÁBITOS-->
@@ -346,6 +349,7 @@
                                         <option value="VIH"> VIH </option>
                                         <option value="VPH"> VPH</option>
                                         <option value="I. Epstein Barr"> I. Epstein Barr</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple  Virus-->
@@ -371,6 +375,7 @@
                                         <option value="Testiculo"> Testículo</option>
                                         <option value="Tiroides"> Tiroides</option>
                                         <option value="Vejiga"> Vejiga</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
                                 <!-- FINALIZA Select múltiple CÁNCER-->
@@ -1182,6 +1187,7 @@
                                         <option value="Reaccionalergica">Reaccion Alergica</option>
                                         <option value="Trismus">Trismus</option>
                                         <option value="Xerostomia">Xerostomia</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
 
