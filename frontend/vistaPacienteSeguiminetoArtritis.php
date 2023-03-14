@@ -137,11 +137,11 @@ $sdai = "<span class='obesidad1'> $sdaialta";
         </script>
         <?php session_start();
                 if (isset($_SESSION['usuarioAdmin']) or isset($_SESSION['usuarioMedico']) or isset($_SESSION['artritis'])) { 
-                    if($dataRegistro['editopaciente'] == 0 ) {?>
+                    if($dataRegistro['editopacienteseguimiento'] == 0 ) {?>
             
-           <!-- <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">-->
+           <input type="submit" onclick="editarRegistro();" id="editarregistro" value="Editar registro">
                 <?php }else{ ?>
-                    <!--<input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">-->
+                    <input type="submit" onclick="finalizarEdicion();" id="editarregistro" value="Finalizar Edicion">
 
                 <?php }
             };?>
@@ -167,9 +167,10 @@ $sdai = "<span class='obesidad1'> $sdaialta";
                     }
                 </style>
 
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonales();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopaciente'] == 1 ) { ?> onclick="editardatospersonales();" <?php } }?>>
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%" <?php if (isset($_SESSION['usuarioAdmin'])) { if($dataRegistro['editopacienteseguimiento'] == 1 ) { ?> onclick="editarfechaseguimiento();" <?php } }else if(isset($_SESSION['artritis'])) { if($dataRegistro['editopacienteseguimiento'] == 1 ) { ?> onclick="editarfechaseguimiento();" <?php } }?>>
 
-
+<input type="hidden" id="fechainicioseguimiento" value="<?php echo $dataRegistro['fechainicioseguiartritis'] ?>">
+<input type="hidden" id="idartritis" value="<?php echo $dataRegistro['id_seguimientoartritis'] ?>">
 
     <!-- Primera sección "Datos del Paciente, se agregan los campos que se solicitan en el formulario -->
 
@@ -459,6 +460,7 @@ $sdai = "<span class='obesidad1'> $sdaialta";
 
 require 'modals/edicionArtritis.php';
 require 'modals/seguimientoArtritis.php';
+
 ?>
 
 
@@ -466,7 +468,7 @@ require 'modals/seguimientoArtritis.php';
 <script>
     
     function editarRegistro(){
-        var id = $("#idcurp").val();
+        var id = $("#idartritis").val();
     var artritis = $("#artritispaciente").val();
     var valor = 1;
     var nombrepaciente = $("#nombrepaciente").val();
@@ -477,18 +479,19 @@ require 'modals/seguimientoArtritis.php';
             if(mensaje == true){
                 $.ajax({
             data: parametros,
-            url: 'aplicacion/editarRegistro.php',
+            url: 'aplicacion/editarRegistroArtritisseguimeinto.php',
             type: 'post',
             success: function(datos) {
                                                 $("#mensaje").html(datos);
                                                 let id = $("#idcurp").val();
+                                                let fechasegui = $("#fechainicioseguimiento").val();
                                                 let ob = {
-                                                            id: id
+                                                            id: id, fechasegui:fechasegui
                                                             };
   
                                                     $.ajax({
                                                             type: "POST",
-                                                            url: "consultaArtritisBusqueda.php",
+                                                            url: "consultaSeguimientosArtritis.php",
                                                             data: ob,
                                                     
                                                         success: function(data) {
@@ -599,4 +602,8 @@ function editarlaboratoriosartritis() {
 function artritisusghepatic() {
     $("#artritisusghepatico").modal('show');
 }
+function editarfechaseguimiento() {
+        $("#edicionfechaseguimiento").modal('show');
+    }
 </script>
+

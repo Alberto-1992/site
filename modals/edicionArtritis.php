@@ -868,3 +868,107 @@ if(hallazgo == 'Si'){
                 </div>
             </div>
         </div>
+        <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="edicionfechaseguimiento">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--la siguiente liga es para el icon de Agregar persona que se muestra en el Modal CargarPacienteArtritis-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--Fin de la liga-->
+
+    <link href="css/estilosMenu.css" rel="stylesheet">
+    <script src="js/getCatalogos.js"></script>
+    <script src="js/scriptModalvalidacionArtritis.js"></script>
+    <script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" id="cabeceraModalArtritis">
+                <span class="material-symbols-outlined">
+                    📝
+                </span>
+                <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiar();">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="panel_editar">
+                    <div class="contrato-nuevo">
+                        <div class="modal-body">
+
+                            <form name="formularioartritisedicionfechasegui" id="formularioartritisedicionfechasegui" onSubmit="return limpiar()" autocomplete="off">
+                                <div class="form-row">
+                                    <div id="mensaje"></div>
+                                    <script>
+                                        $("#formularioartritisedicionfechasegui").on("submit", function(e) {
+                                            
+                                            let checked = this.querySelectorAll('input[type=checkbox]:checked');
+                                            e.preventDefault();
+
+                                            var formData = new FormData(document.getElementById(
+                                                "formularioartritisedicionfechasegui"));
+                                            formData.append("dato", "valor");
+
+                                            $.ajax({
+
+                                                url: "aplicacion/editarArtritisfechainicioseguimiento.php",
+                                                type: "post",
+                                                dataType: "html",
+                                                data: formData,
+                                                cache: false,
+                                                contentType: false,
+                                                processData: false,
+                                                success: function(datos) {
+                                                    $("#mensaje").html(datos);
+                                                    let id = $("#idcurp").val();
+                                                let fechasegui = $("#fechainicioseguimiento").val();
+                                                let ob = {
+                                                            id: id, fechasegui:fechasegui
+                                                            };
+
+                                                    $.ajax({
+                                                            type: "POST",
+                                                            url: "consultaSeguimientosArtritis.php",
+                                                            data: ob,
+                                                    
+                                                        success: function(data) {
+
+                                                            $("#tabla_resultado").html(data);
+                                                            //$("#editarDatosPersonalescancerdeMama").modal('show');
+                                                            setTimeout(function(){
+                                                                $("#edicionfechaseguimiento").modal('hide');
+                                                                    }, 1500);
+                                                                    $("#edicionfechaseguimiento").modal('hide');
+                                                            
+                                                            }
+                                                            
+                                                    });
+                                                    $("#edicionfechaseguimiento").modal('hide');
+                                            }
+                                        
+                                            })
+                                        })
+                                    </script>
+                                    <div class="col-md-12">
+                                            <input id="id_seguimientoartritis" name="id_seguimientoartritis" type="hidden" class="form-control" value="<?php echo $dataRegistro['id_seguimientoartritis']; ?>">
+                                        </div>
+                                        <input type="hidden" id="fechainicioseguimiento" value="<?php echo $dataRegistro['fechainicioseguiartritis'] ?>">
+                                        <input type="hidden" id="idcurp" value="<?php echo $id_paciente; ?>">
+                                        <div class="col-md-6">
+                                        <strong>CURP</strong>
+                                        <input id="" name="" type="text" value="<?php echo $dataRegistro['curpseguiart'] ?>"  class="form-control" readonly>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <strong>Fecha de inicio de seguimiento</strong>
+                                        <input id="fechaeditseguimiento" name="fechaeditseguimiento" type="date" value="<?php echo $dataRegistro['fechaseguimiento'] ?>"  class="form-control">
+                                        </div>
+                                    
+                                        </div>
+                                    <div class="col-md-12"></div>
+                                    <input type="submit" value="Editar" style="width: 170px; height: 27px; color: white; background-color: #6CCD06; float: right; margin-right: 5px; margin-top: 5px; text-decoration: none; border: none; border-radius: 15px;">
+                        </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
