@@ -893,7 +893,7 @@ echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
                 if (mensaje == true) {
                     $.ajax({
                         data: parametros,
-                        url: 'aplicacion/eliminarRegistroCancer.php',
+                        url: 'aplicacion/eliminarCancerbucal.php',
                         type: 'post',
                         beforeSend: function() {
                             $("#mensaje").html("Procesando, espere por favor");

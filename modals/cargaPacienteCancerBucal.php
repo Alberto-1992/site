@@ -1184,7 +1184,6 @@
                                 <div class="col-md-12" id="idmsoarsdosis">
                                     <strong>OARS Dosis</strong>
                                     <select id="msoarsdosis" name="msoarsdosis[]" multiple="multiple" class="form-control">
-
                                         <option value="Cavidad Oral">Cavidad Oral</option>
                                         <option value="Cocleas">Cocleas</option>
                                         <option value="Cristalinos">Cristalinos</option>
@@ -1207,12 +1206,12 @@
                                 <!-- SELECCION DE OARS DOSIS-->
                                 <!--CAVIDAD ORAL-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis1">
                                     <strong>Dosis Máx Cavidad Oral</strong>
                                     <input type="number" class="form-control" id="cavidadoral1" name="cavidadoral1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio1">
                                     <strong>Dosis Prom Cavidad Oral</strong>
                                     <input type="number" class="form-control" id="cavidadoral2" name="cavidadoral2" placeholder="Ingrese...">
                                 </div>
@@ -1220,24 +1219,24 @@
 
                                 <!--Cocleas-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis2">
                                     <strong>Dosis Máx Cocleas</strong>
                                     <input type="number" class="form-control" id="cocleas1" name="cocleas1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio2">
                                     <strong>Dosis Prom Cocleas</strong>
                                     <input type="number" class="form-control" id="cocleas2" name="cocleas2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Crsitalinos-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis3">
                                     <strong>Dosis Máx Cristalinos</strong>
                                     <input type="number" class="form-control" id="cristalinos1" name="cristalinos1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio3">
                                     <strong>Dosis Prom Cristalinos</strong>
                                     <input type="number" class="form-control" id="cristalinos2" name="cristalinos2" placeholder="Ingrese...">
                                 </div>
@@ -1245,54 +1244,54 @@
 
                                 <!--Esófago-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis4">
                                     <strong>Dosis Máx Esófago</strong>
                                     <input type="number" class="form-control" id="esofago1" name="esofago1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio4">
                                     <strong>Dosis Prom Esófago</strong>
                                     <input type="number" class="form-control" id="esofago2" name="esofago2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Labios-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis5">
                                     <strong>Dosis Máx Labios</strong>
                                     <input type="number" class="form-control" id="labios1" name="labios1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio5">
                                     <strong>Dosis Prom Labios</strong>
                                     <input type="number" class="form-control" id="labios2" name="labios2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--LARINGE-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis6">
                                     <strong>Dosis Máx Laringe</strong>
                                     <input type="number" class="form-control" id="laringe1" name="laringe1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio6">
                                     <strong>Dosis Prom Laringe</strong>
                                     <input type="number" class="form-control" id="laringe2" name="laringe2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--MANDIBULA-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis7">
                                     <strong>Dosis Máx Mandibula</strong>
                                     <input type="number" class="form-control" id="mandibula1" name="mandibula1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio7">
                                     <strong>Dosis Prom Mandibula</strong>
                                     <input type="number" class="form-control" id="mandibula2" name="mandibula2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Médula-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis8">
                                     <strong>Dosis Máx Médula</strong>
                                     <input type="number" class="form-control" id="medula1" name="medula1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio8">
                                     <strong>Dosis Prom Médula</strong>
                                     <input type="number" class="form-control" id="medula2" name="medula2" placeholder="Ingrese...">
                                 </div>
@@ -1300,77 +1299,77 @@
 
 
                                 <!--Nervio Óptico-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis9">
                                     <strong>Dosis Máx Nervio Óptico</strong>
                                     <input type="number" class="form-control" id="nerviooptico1" name="nerviooptico1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio9">
                                     <strong>Dosis Prom Nervio Óptico</strong>
                                     <input type="number" class="form-control" id="nerviooptico2" name="nerviooptico2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Ojos-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis10">
                                     <strong>Dosis Máx Ojos</strong>
                                     <input type="number" class="form-control" id="ojos1" name="ojos1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio10">
                                     <strong>Dosis Prom Ojos</strong>
                                     <input type="number" class="form-control" id="ojos2" name="ojos2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Pared Faringea Posterior-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis11">
                                     <strong>Dosis Máx PFP</strong>
                                     <input type="number" class="form-control" id="pfp1" name="pfp1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio11">
                                     <strong>Dosis Prom PFP</strong>
                                     <input type="number" class="form-control" id="pfp2" name="pfp2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Parotidas-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis12">
                                     <strong>Dosis Máx Parotidas</strong>
                                     <input type="number" class="form-control" id="Parotidas1" name="Parotidas1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio12">
                                     <strong>Dosis Prom Parotidas</strong>
                                     <input type="number" class="form-control" id="Parotidas2" name="Parotidas2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Sublinguales-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis13">
                                     <strong>Dosis Máx Sublinguales</strong>
                                     <input type="number" class="form-control" id="Sublinguales1" name="Sublinguales1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio13">
                                     <strong>Dosis Prom Sublinguales</strong>
                                     <input type="number" class="form-control" id="Sublinguales2" name="Sublinguales2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Tallo-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis14">
                                     <strong>Dosis Máx Tallo</strong>
                                     <input type="number" class="form-control" id="Tallo1" name="Tallo1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio14">
                                     <strong>Dosis Prom Tallo</strong>
                                     <input type="number" class="form-control" id="Tallo2" name="Tallo2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Tiroides-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis15">
                                     <strong>Dosis Máx Tiroides</strong>
                                     <input type="number" class="form-control" id="Tiroides1" name="Tiroides1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio15">
                                     <strong>Dosis Prom Tiroides</strong>
                                     <input type="number" class="form-control" id="Tiroides2" name="Tiroides2" placeholder="Ingrese...">
                                 </div>
