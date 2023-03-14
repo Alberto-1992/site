@@ -396,13 +396,13 @@ return false;
                                     <div class="col-md-2">
                                         <strong>Talla</strong>
                                         <input type="number" step="any" class="form-control" id="tallaedit" name="tallaedit"
-                                            required value="<?php echo $dataRegistro['talla'] ?>">
+                                            value="<?php echo $dataRegistro['talla'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="pesoedit"
-                                            onblur="calculaIMCEdit();" name="pesoedit" required value="<?php echo $dataRegistro['peso'] ?>">
+                                            onblur="calculaIMCEdit();" name="pesoedit" value="<?php echo $dataRegistro['peso'] ?>">
 
                                     </div>
                                     <div class="col-md-2">
@@ -416,7 +416,7 @@ return false;
                                         <strong>Estado de residencia</strong>
 
                                         <select name="cbx_estadoedit" id="cbx_estadoedit" class="form-control"
-                                            style="width: 100%;" required>
+                                            style="width: 100%;" >
                                             <option value="<?php echo $rows['id_estado'] ?>" selected><?php echo $rows['estado'] ?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <?php 
@@ -676,6 +676,7 @@ return false;
                                             
                                                 <option value="Madre CM">Madre</option>
                                                 <option value="Hermana CM">Hermana</option>
+                                                <option value="Hija CM">Hija</option>
                                                 <option value="Abuela materna CM">Abuela materna</option>
                                                 <option value="Abuela paterna CM">Abuela paterna</option>
                                                 <option value="Tia paterna CM">Tia paterna</option>
@@ -686,6 +687,7 @@ return false;
                                             <optgroup label="Cancer de ovario">
                                                 <option value="Madre CO">Madre</option>
                                                 <option value="Hermana CO">Hermana</option>
+                                                <option value="Hija CO">Hija</option>
                                                 <option value="Abuela materna CO">Abuela materna</option>
                                                 <option value="Abuela paterna CO">Abuela paterna</option>
                                                 <option value="Tia paterna CO">Tia paterna</option>
@@ -825,6 +827,9 @@ return false;
                                         <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
+                                            class="check" value="Cancer de mama">&nbsp;Cancer de mama
+                                        &nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapatoedit[]" id="check_listapatoedit[]"
                                             class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;                                 
                                     </fieldset>
@@ -1774,27 +1779,17 @@ $('#mstectoextra2edit').prop("hidden", true);
                                 <!--finaliza region ganglionar izquierda-->
                                 <!--inicia mama izquierda--> 
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosMamaIz">
-    
     <div class="modal-dialog modal-lg">
-
         <!-- Modal content-->
-
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
-                
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
-            
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
                         <div class="modal-body">
-
                             <!-- form start -->
-                        
-
                             <form name="formularioedicionmamaizquierda" id="formularioedicionmamaizquierda" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
@@ -1884,8 +1879,6 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="Grado I Bien diferenciado">Grado I Bien diferenciado</option>
                                             <option value="Grado II Moderadamente diferenciado">Grado II Moderadamente diferenciado</option>
                                             <option value="Grado III Escasamente diferenciado">Grado III Escasamente diferenciado</option>
-                                           
-
                                         </select>
                                     </div>
                                     <div class="col-md-12" >
@@ -1920,27 +1913,17 @@ $('#mstectoextra2edit').prop("hidden", true);
         
                                 <!--finaliza mama izquierda -->
 <div class="modal fade in" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" id="editarDatosRgmamaIz">
-    
     <div class="modal-dialog modal-lg">
-
         <!-- Modal content-->
-
         <div class="modal-content">
             <div class="modal-header" id="cabeceraModalMama">
-                
                 <button type="button" class="close" data-bs-dismiss="modal" onclick="limpiarpato();">&times;</button>
-            
             </div>
             <div class="modal-body">
-
                 <div id="panel_editar">
-
                     <div class="contrato-nuevo">
                         <div class="modal-body">
-
                             <!-- form start -->
-                        
-
                             <form name="formularioedicionrgmamaiz" id="formularioedicionrgmamaiz" onSubmit="return limpiar()" autocomplete="off">
                                 <div class="form-row">
                                     <div id="mensaje"></div>
@@ -1948,13 +1931,10 @@ $('#mstectoextra2edit').prop("hidden", true);
                                     $("#formularioedicionrgmamaiz").on("submit", function(e) {
                                         checked = this.querySelectorAll('input[type=checkbox]:checked');
                                         e.preventDefault();
-
                                         var formData = new FormData(document.getElementById(
                                             "formularioedicionrgmamaiz"));
                                         formData.append("dato", "valor");
-
                                         $.ajax({
-
                                             url: "aplicacion/editarDatosRgMamaiz.php",
                                             type: "post",
                                             dataType: "html",
@@ -1968,14 +1948,12 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                 let ob = {
                                                             id: id
                                                             };
-  
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",
                                                             data: ob,
                                                     
                                                         success: function(data) {
-
                                                             $("#tabla_resultado").html(data);
                                                             //$("#editarDatosPersonalescancerdeMama").modal('show');
                                                             setTimeout(function(){
@@ -2113,7 +2091,6 @@ $('#mstectoextra2edit').prop("hidden", true);
                                                 let ob = {
                                                             id: id
                                                             };
-  
                                                     $.ajax({
                                                             type: "POST",
                                                             url: "consultaCancerdeMamaBusqueda.php",
@@ -2287,9 +2264,9 @@ $('#mstectoextra2edit').prop("hidden", true);
                                         
                                             <strong>Oncogen HER2</strong>
                                             <select name="oncogenedit" id="oncogenedit" class="form-control">
-                                                
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="<?php echo $dataRegistro['oncogenher2'] ?>" selected><?php echo $dataRegistro['oncogenher2'] ?></option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2544,6 +2521,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <select name="oncogenrgdedit" id="oncogenrgdedit" class="form-control">
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="<?php echo $dataRegistro['oncogenher2rgd'] ?>" selected><?php echo $dataRegistro['oncogenher2rgd'] ?></option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -2720,6 +2698,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <select name="oncogenizedit" id="oncogenizedit" class="form-control">
                                                 <option value="<?php echo $dataRegistro['oncogenher2iz'] ?>"><?php echo $dataRegistro['oncogenher2iz'] ?></option>
                                                 <option value="Sin registro">Sin registro</option>
+                                                <option value="Negativo">Negativo</option>
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
@@ -3106,7 +3085,7 @@ $('#mstectoextra2edit').prop("hidden", true);
                                             <option value="<?php echo $dataRegistro['tipohormonoterapia'] ?>"><?php echo $dataRegistro['tipohormonoterapia'];?></option>
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Letrazol">Letrazol</option>
-                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Anastrozol">Anastrozol</option>
                                             <option value="Tomoxifeno">Tomoxifeno</option>
                                             <option value="Exemetastino">Exemetastino</option>
                                         </select>
@@ -3940,8 +3919,8 @@ $(function () {
                                         <select name="mastectomiatipoedit" id="mastectomiatipoedit" class="form-control">
                                             <option value="<?php echo $dataRegistro['tipomastecto'] ;?>"><?php echo $dataRegistro['tipomastecto'] ;?></option>
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="Mastectomia conservadora">Mastectomia conservadora</option>
-                                            <option value="Mastectomia paliativa">Mastectomia paliativa</option>
+                                            <option value="Mastectomia total">Mastectomia total</option>
+                                            <option value="Mastectomia parcial">Mastectomia parcial</option>
 
                                         </select>
                                     </div>
@@ -4005,4 +3984,5 @@ $(function () {
                 </div>
             </div>
         </div>
+
     

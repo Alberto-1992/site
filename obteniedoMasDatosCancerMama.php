@@ -2,7 +2,7 @@
 sleep(0.5);
 
 $utimoId = $_POST['utimoId'];
-$limite  = 10;
+$limite  = 20;
 	require 'conexionCancer.php';
     $sqlQueryComentarios  = $conexion2->query("SELECT dato_usuario.id, cancerpaciente.id_paciente FROM dato_usuario inner join cancerpaciente on cancerpaciente.id_paciente = dato_usuario.id");
     $total_registro       = mysqli_num_rows($sqlQueryComentarios);

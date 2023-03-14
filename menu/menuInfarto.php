@@ -17,9 +17,7 @@
                 </a>
 
             </li>
-
-            <!--
-            <hr>
+        
             <li class="has-subnav">
                 <a href="datosUsuario">
                     <i class="fa fa-user fa-2x" id="icon-color"></i>
@@ -37,10 +35,13 @@
                         Sindrome Coronario Agudo
                     </span>
                 </a>
-            </li>
-
-
-            <hr>
+                <ul>
+                            <li><a href="#" id="nav-text" data-toggle="modal"
+                    data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
+                      
+                    </ul>
+            </li>-->
+            
             <li class="has-subnav">
                 <a href="cancer">
                     <i class="fa fa-user-md" aria-hidden="true"></i>
@@ -48,9 +49,13 @@
                         Cáncer
                     </span>
                 </a>
+                <!--  <ul>
+                            <li><a href="#" id="nav-text" data-toggle="modal"
+                    data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
+                      
+                    </ul>-->
             </li>
-
-            <hr>
+            
             <li class="has-subnav">
                 <a href="artritis">
                     <i class="fa fa-hand-spock-o fa-2x" id="icon-color"></i>
@@ -58,19 +63,33 @@
                         Artritis
                     </span>
                 </a>
+                <!--  <ul>
+                            <li><a href="#" id="nav-text" data-toggle="modal"
+                    data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
+                      
+                    </ul>-->
             </li>
-
-            <hr>
-            <li class="has-subnav">
-                <a href="../cisfa/principal">
-                    <i class="fa fa-medkit fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
-                        Cisfa
-                    </span>
-                </a>
-            </li>
-
-            <hr>
+            
+            <!--
+                <li class="has-subnav">
+                    <a href="vistaCisfa.php">
+                       <i class="fa fa-medkit fa-2x" id="icon-color"></i>
+                        <span class="nav-text">
+                            Cisfa
+                        </span>
+                    </a>
+                    <ul>
+                            <li><a href="#" id="nav-text">Farmacia Intrahosp.</a></li>
+                            <li><a href="#" id="nav-text">Farmacia Gratuita</a></li>
+                            <li><a href="#" id="nav-text">Promociones</a></li>
+                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
+                            <li><a href="#" id="nav-text">Lozas</a></li>
+                            <li><a href="#" id="nav-text">Lápidas</a></li>
+                            <li><a href="#" id="nav-text">Promociones</a></li>
+                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
+                    </ul>
+                </li>
+                -->
             <li class="has-subnav">
                 <a href="lupus">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -80,8 +99,7 @@
                 </a>
 
             </li>
-            <!--
-            <hr>
+            
             <li>
                 <a href="#">
                     <i class="fa fa-tint" aria-hidden="true"></i>
@@ -99,8 +117,13 @@
                         Rehabilitación
                     </span>
                 </a>
-
-            </li>
+                <ul>
+                            <li><a href="#" id="nav-text">Lozas</a></li>
+                            <li><a href="#" id="nav-text">Lápidas</a></li>
+                            <li><a href="#" id="nav-text">Promociones</a></li>
+                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
+                    </ul>
+            </li>-->
             <li>
                 <a href="#">
                     <i class="fa fa-graduation-cap" aria-hidden="true""></i>
@@ -108,9 +131,14 @@
                         Evaluación del Desempeño
                         </span>
                 </a>
-
-            </li>-->
-            <hr>
+                <!--<ul>
+                            <li><a href="#" id="nav-text">Lozas</a></li>
+                            <li><a href="#" id="nav-text">Lápidas</a></li>
+                            <li><a href="#" id="nav-text">Promociones</a></li>
+                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
+                    </ul>-->
+            </li>
+            
             <li>
                 <a href="../bolsa/principal">
                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -120,17 +148,7 @@
                 </a>
 
             </li>
-            <hr>
-            <li>
-                <a href="../compatibilidad/principal">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <span class="nav-text">
-                        Compatiblidad laboral
-                    </span>
-                </a>
-
-            </li>
-            <hr>
+            
             <li>
                 <a href="validar" target="_blank">
                     <i class="fa fa-id-card fa-2x" id="icon-color"></i>
@@ -138,16 +156,17 @@
                         Registrar usuario
                     </span>
                 </a>
-
+                <!--
+                <ul>
+                    <li><a href="#" id="nav-text">Lozas</a></li>
+                    <li><a href="#" id="nav-text">Lápidas</a></li>
+                    <li><a href="#" id="nav-text">Promociones</a></li>
+                    <li><a href="#" id="nav-text">Fotos 20x30</a></li>
+                </ul>
+-->
             </li>
-            <hr>
+            
         </ul>
-
-
-        </li>
-
-        </ul>
-
         <ul class="logout">
             <li>
                 <a href="#">
@@ -160,5 +179,4 @@
         </ul>
     </nav>
 </body>
-
 </html>

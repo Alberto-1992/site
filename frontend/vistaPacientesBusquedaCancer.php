@@ -13,10 +13,22 @@ date_default_timezone_set('America/Monterey');
             $estado = $dataRegistro['estado'];
             $idquirurgico = $dataRegistro['id_quirurgico'];
             require 'conexionCancer.php';
-            
+            $sqls = $conexionCancer->prepare("SELECT estado from t_estado where id_estado = :id_estado");
+                $sqls->execute(array(
+                    ':id_estado'=>$estado
+                ));
+            $rows= $sqls->fetch();          
+            $sqlsm = $conexionCancer->prepare("SELECT municipio from t_municipio where id_municipio = :id_municipio");
+                $sqlsm->execute(array(
+                    ':id_municipio'=>$municipio
+                ));
+                $rowsm = $sqlsm->fetch();
             $clues = $dataRegistro['clues'];
-            $sql_f = $conexion2->query("SELECT unidad from hospitales where clues = '$clues'");
-            $rown = mysqli_fetch_assoc($sql_f);
+            $sql_f = $conexionCancer->prepare("SELECT unidad from hospitales where clues = :clues");
+                $sql_f->execute(array(
+                    ':clues'=>$clues
+                ));
+            $rown = $sql_f->fetch();
                 
             $sql = $conexion2->query("SELECT id_paciente, datoantecedentefamiliar
             FROM antecedentesfamiliarescancer
@@ -57,13 +69,7 @@ date_default_timezone_set('America/Monterey');
             HAVING count(id_quirurgico) >= 1)
             and id_quirurgico = '$idquirurgico'
             ORDER BY id_quirurgico");
-            
-                
-                
-                
-                
-            
-        
+
             //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
            // $fecha2 = new DateTime($dataRegistro['fechaterminotrombolisis']);//fecha de cierre
             
@@ -89,15 +95,6 @@ date_default_timezone_set('America/Monterey');
         }elseif($imccalculo > 35 and $imccalculo <= 39.9 ){
             $showimc = "<span class='obesidad2'> $obe2";
         }
-            require 'conexionCancer.php';
-            $sqls = $conexion2->query("SELECT * from t_estado where id_estado = $estado");
-            $rows = mysqli_fetch_assoc($sqls);
-            
-            $sqlsm = $conexion2->query("SELECT * from t_municipio where id_municipio = $municipio");
-            $rowsm = mysqli_fetch_assoc($sqlsm);
-
-                   
-        
         ?>
 
 <div id="mensaje"></div>
@@ -155,7 +152,9 @@ date_default_timezone_set('America/Monterey');
                 <?php }
             };?>
             <input type="submit" onclick="abandonopaciente();" id="abandonopaciente" value="Abandono paciente">
+            <input type="submit" onclick="graficos();" id="graficos" value="Graficos">
             <input type="submit" onclick="eliminarRegistro();" id="eliminarregistro" value="Eliminar registro">
+            
             
             <?php
     }?>
@@ -180,6 +179,15 @@ date_default_timezone_set('America/Monterey');
         <tr>
         <th id="th">Sexo:</th>
         <td id="td"><?php echo $dataRegistro['sexo'] ?></td></tr>
+        <tr>
+        <th id="th">Población indegena:</th>
+        <td id="td"><?php echo $dataRegistro['poblacionindigena'] ?></td></tr>
+        <tr>
+        <th id="th">Raza:</th>
+        <td id="td"><?php echo $dataRegistro['raza'] ?></td></tr>
+        <tr>
+        <th id="th">Discapacidad:</th>
+        <td id="td"><?php echo $dataRegistro['discapacidad'] ?></td></tr>
         <tr>
         <th id="th">Estado:</th>
         <td id="td"><?php echo $rows['estado'] ?></td></tr>
@@ -927,6 +935,7 @@ echo '&nbsp&nbsp'.$dataRegist['descripcionantecedente'].'--'.'';} ?></td>
 
 require 'modals/editarDatosPaciente.php';
 require 'modals/seguimientoCancerMama.php';
+require 'modals/graficoscancermama.php';
 ?>
 <script>
 function eliminarRegistro() {
@@ -1077,6 +1086,9 @@ function editardatostratamiento() {
 }
 function editardatosmastectomia() {
     $("#editardatosmastectomia").modal('show');
+}
+function graficos() {
+    $("#graficos").modal('show');
 }
 function editarRegistro(){
         var id = $("#idcurp").val();

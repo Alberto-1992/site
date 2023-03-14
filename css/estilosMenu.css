@@ -28,7 +28,7 @@ overflow:visible;
 
 .main-menu {
   background: #ffffff;
-    border-right: 1px solid #bababa;
+  border-right: 1px solid #e5e5e5;
 position: relative;
 margin-top: 48px;
 bottom:0;
@@ -254,36 +254,6 @@ height: 100%;
   color: rgb(255, 255, 255); 
   font-style: normal; 
   font-size: 30px;
-
-}
-#tabla_resultado{
-    font-size: 12px; 
-    width: 100%; 
-    height: auto; 
-    margin-left: 1px;
-    background: white; 
-    margin-top: 0px; 
-    padding: 5px;
-}
-#tabla_resultadobus{
-  width: 30rem;
-  height: auto;
-  position: relative;
-  float: left;
-  margin-left: 2px;
-  margin-top: 90px;
-  resize: horizontal; overflow: auto;
-  font-size: 12px;
-  
-}
-.adaptar{
-  width: 100%;
-  height: 80em;
-  font-size: 12px;
-  position: relative;
-  resize: horizontal; overflow: auto;
-  margin-left: 15px;
-  overflow-x: auto;
 
 }
 #boton_infarto {
@@ -522,16 +492,7 @@ height: 100%;
   color: white;
   height: 50px;
 }
-.box1{
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  color: black;
-  display: flex;
-  position: absolute;
-  overflow-y:hidden;
 
-}
 thead{
   background-color: #ACAEAD;
   
@@ -543,9 +504,8 @@ thead tr th{
     left: 40px;
 }
 hr{
-  background-color: rgb(8, 6, 6);
-    height: .5px;
-    width: 100%;
+  background-color: grey;
+  height: 1px;
   margin: 0px 0px;
 }
 .parent{
@@ -563,6 +523,16 @@ hr{
 
  
 }
+.box1{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  color: black;
+  display: flex;
+  position: absolute;
+  overflow-y:hidden;
+
+}
 .autoheight {
   width:100%;
   height: 100%;
@@ -571,8 +541,36 @@ hr{
   display: flex;
  
 } 
+#tabla_resultado{
+  font-size: 12px; 
+  width: 100%; 
+  height: auto; 
+  margin-left: 1px;
+  background: white; 
+  margin-top: 0px; 
+  padding: 5px;
+}
+#tabla_resultadobus{
+width: 30rem;
+height: auto;
+position: relative;
+float: left;
+margin-left: 2px;
+margin-top: 90px;
+resize: horizontal; overflow: auto;
+font-size: 12px;
 
+}
+.adaptar{
+width: 100%;
+height: 80em;
+font-size: 12px;
+position: relative;
+resize: horizontal; overflow: auto;
+margin-left: 15px;
+overflow-x: auto;
 
+}
 p{
   text-align: center;
   font-size: 16px;
@@ -972,6 +970,15 @@ table {
 #seguimientos {
   color: black;
   background: rgb(248, 197, 12);
+  border: none;
+  font-size: 10px;
+  padding: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+#graficos {
+  color: rgb(255, 255, 255);
+  background: rgb(2, 163, 58);
   border: none;
   font-size: 10px;
   padding: 4px;

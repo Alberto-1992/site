@@ -5,7 +5,7 @@ $hoy = date("Y-m-d");
     extract($_POST);
 
     $sql = $conexionCancer->prepare("UPDATE dato_usuario set curp = :curp, nombrecompleto = :nombrecompleto, poblacionindigena = :poblacionindigena, escolaridad =:escolaridad, fechanacimiento =:fechanacimiento, edad = :edad,
-    sexo = :sexo, raza = :raza, estado = :estado, municipio = :municipio where id = :id");
+    sexo = :sexo, discapacidad = :discapacidad, raza = :raza, estado = :estado, municipio = :municipio where id = :id");
         $sql->execute(array(
             ':curp' => $curpedit,
             ':nombrecompleto' => $nombrecompletoedit,
@@ -14,6 +14,7 @@ $hoy = date("Y-m-d");
             ':fechanacimiento' =>$fechaedit,
             ':edad'=>$edadedit,
             ':sexo' =>$sexoedit,
+            ':discapacidad'=>$discapacidadedit,
             ':raza' =>$razaedit,
             ':estado'=>$cbx_estadoedit,
             ':municipio'=>$cbx_municipioedit,

@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <strong>IMC</strong>
-                                    <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" value="" readonly>
+                                    <input type="text" class="form-control" id="imcbucal" onblur="calculaIMC();" name="imcbucal" readonly>
 
                                 </div>
 
@@ -246,7 +246,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Exposición Solar</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="exposicionsolarbucal" id="exposicionsolarbucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="si">Sí</option>
                                         <option value="no">No</option>
@@ -255,7 +255,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Comidas al Día</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="comidasbucal" id="comidasbucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -265,7 +265,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Higiene Bucal</strong>
-                                    <select name="comidas" id="comidas" class="form-control">
+                                    <select name="higienebucal" id="higienebucal" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="1 vez al dia">1 vez al día</option>
                                         <option value="2 veces al dia">2 veces al día</option>
@@ -292,17 +292,10 @@
                                     <strong>Toxicomanias</strong>
                                     <select id="mstoxicomanias" name="mstoxicomanias[]" multiple="multiple" class="form-control">
                                         <option value="Alcoholismo"> Alcoholismo</option>
-
+                                        <option value="Tabaquismo"> Tabaquismo</option>
                                         <option value="Cocaina"> Cocaína</option>
                                         <option value="Marihuana"> Marihuana</option>
                                         <option value="Medicamentos Controlados"> Medicamentos Controlados</option>
-                                        <option value="Solventes"> Solventes</option>
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-
-                                        <option value="Tabaquismo"> Tabaquismo</option>
-                                        <option value="Cocaina"> Cocaina</option>
-                                        <option value="Marihuana"> Marihuana</option>
-                                        <option value="Medicamentoscontrolados"> Medicamentos Controlados</option>
                                         <option value="Solventes"> Solventes</option>
                                     </select>
                                 </div>
@@ -320,11 +313,11 @@
                                 <!-- si selecciona SÍ en Tabaquismo, se deben habiliar los siguientes dos campos:-->
                                 <div class="col-md-4" id="yearstabaquismo">
                                     <strong>Años Tabaquismo:</strong>
-                                    <input id="anostabaquismo" name="anostabaquismo" type="number" class="form-control" placeholder="Ingrese años..." value="" required>
+                                    <input id="anostabaquismo" name="anostabaquismo" type="number" class="form-control" placeholder="Ingrese años..." >
                                 </div>
                                 <div class="col-md-4" id="diacigarros">
                                     <strong>Cigarros al día:</strong>
-                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día..." value="" required>
+                                    <input id="cigarrosdia" name="cigarrosdia" type="number" class="form-control" placeholder="Ingrese cigarros al día...">
                                 </div>
                                 <!-- FINALIZA Sección de Toxicomanias-->
 
@@ -493,10 +486,6 @@
                                 </div>
                                 <!--Finalizan los 4 multi select-->
                                 <!--Finaliza la sección ORGANO DENTAL FRACTURADO-->
-
-
-
-
                                 <!-- del select múltiple de Afectaciones Orales, si se selecciona LESIONES ORALES, se debe abrir la siguiente sección-->
                                 <!--Inicia Lesiones Orales-->
                                 <div class="col-md-12" id="titulolesionesorales" style="text-align: center; 
@@ -867,7 +856,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Compromiso Linfático Nodal</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="compromisolinfatico" id="compromisolinfatico" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="NX: No puede ser evaluado por falta de datos">NX: No puede ser evaluado por falta de datos </option>
                                         <option value="N0:Ausencia de adenopatias palpables">N0:Ausencia de adenopatias palpables</option>
@@ -880,7 +869,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Metástasis</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="metastasisbucal" id="metastasisbucal" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="MX: No se pueden evaluar metastasis distantes">MX: No se pueden evaluar metastasis distantes</option>
                                         <option value="M0 Sin enfermedad a distancia">M0 Sin enfermedad a distancia</option>
@@ -908,7 +897,7 @@
 
                                 <div class="col-md-4">
                                     <strong>Calidad de vida ECOG</strong>
-                                    <select name="tamaniotumoral" id="tamaniotumoral" class="form-control">
+                                    <select name="calidadvidaecogbucal" id="calidadvidaecogbucal" class="form-control">
                                         <option value="Sin registro">Sin registro</option>
                                         <option value="Ecog 0  Desempeño Funcional Normal">Ecog 0 Desempeño Funcional Normal</option>
                                         <option value="Ecog 1 Desempeño Leve">Ecog 1 Desempeño Leve</option>
@@ -980,9 +969,6 @@
                                     </select>
                                 </div>
 
-
-
-                                <!--********************************************************************************************************************************************************************-->
                                 <!--Inicia la sección de INMUNOHISTOQUIMICA-->
                                 <div class="col-md-12"></div>
                                 <div class="form-title" style="text-align: center; background-color: #d9a4a5;
@@ -1004,12 +990,9 @@
 
                                 <div class="col-md-6" id="idpdl">
                                     <strong id="inmuno-title">PDL</strong>
-                                    <input type="number" id="idpdl" name="idpdl" placeholder="%" class="form-control" value="%">
+                                    <input type="number" id="descripcionpdl" name="descripcionpdl" placeholder="%" class="form-control">
                                 </div>
 
-
-
-                                <!--********************************************************************************************************************************************************************-->
                                 <!--Inicia la sección de TRATAMIENTO, en esta sección se deben ver, de inicio solo tres campos QUIRURGICO, RECONSTRUCCIÓN Y RADIOTERAPIA-->
                                 <div class="col-md-12"></div>
                                 <div class="form-title" style="text-align: center; background-color: #d9a4a5;
@@ -1048,7 +1031,7 @@
                                 <!--Si se selecciona Maxilectomia de Infraestructura, se debe mostrar lo siguiente-->
                                 <div class="col-md-12" id="idmaxinfra">
                                     <strong>Maxilectomia de Infraestructura</strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="maxinfraestructu" id="maxinfraestructu" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Clase I. Reseccion quirurgica clasica del maxilar que abarca paladar duro y dentición hasta la linea media, es unilateral.">Clase I. Resección quirúrgica clásica del maxilar que abarca paladar duro y dentición hasta la línea media, es unilateral.</option>
                                         <option value="Clase II. Incluye defectos que mantienen la denticion del lado contralateral. Es unilateral posterior que no abarca hasta la linea media.">Clase II . Incluye defectos que mantienen la dentición del lado contralateral. Es unilateral posterior que no abarca hasta la línea media.</option>
@@ -1063,7 +1046,7 @@
                                 <!--Si se selecciona DISECCION RADICAL MODIFICADA DE CUELLO, se deben mostrar los siguientes 3 select: LUGAR, TIPO Y NIVEL CERVICAL-->
                                 <div class="col-md-4" id="idlugar">
                                     <strong>Lugar DRMC </strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="lugardrmc" id="lugardrmc" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bilateral">Bilateral</option>
                                         <option value="Unilateral">Unilateral</option>
@@ -1072,7 +1055,7 @@
 
                                 <div class="col-md-4" id="idtipo">
                                     <strong>Tipo DRMC</strong>
-                                    <select name="maxinfra" id="maxinfra" class="form-control">
+                                    <select name="tipodrmc" id="tipodrmc" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Selectiva">Selectiva</option>
                                         <option value="Superselectiva">Superselectiva</option>
@@ -1112,14 +1095,14 @@
                                 <!--Si selecciona SÍ en reconstrucción, se debe mostrar lo siguiente-->
                                 <div class="col-md-12" id="idtiporeconstruccion">
                                     <strong>Tipo de Reconstrucción</strong>
-                                    <select id="tiporeconstruccion" name="tiporeconstruccion[]" multiple="multiple" class="form-control">
-                                            
-                                            <option value="Colgajo Microvascular">Colgajo Microvascular</option>
-                                            <option value="Injerto Oseo Autologo o Cadaverico">Injerto Óseo Autólogo o Cadavérico</option>
-                                            <option value="Material de Osteosintesis">Material de Osteosíntesis</option>
-                                            <option value="Rotacion de Colgajo">Rotación de Colgajo</option>
-                                            <option value="Toma y Aplicacion de Injerto">Toma y Aplicación de Injerto</option>
-                                        </select>
+                                    <select name="tiporeconstruccion" id="tiporeconstruccion" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Colgajo Microvascular">Colgajo Microvascular</option>
+                                        <option value="Injerto Oseo Autologo o Cadaverico">Injerto Óseo Autólogo o Cadavérico</option>
+                                        <option value="Material de Osteosintesis">Material de Osteosíntesis</option>
+                                        <option value="Rotacion de Colgajo">Rotación de Colgajo</option>
+                                        <option value="Toma y Aplicacion de Injerto">Toma y Aplicación de Injerto</option>
+                                    </select>
                                 </div>
 
 
@@ -1144,7 +1127,7 @@
 
                                 <div class="col-md-3" id="idmomentort">
                                     <strong>Momento RT</strong>
-                                    <select name="moentort" id="momentort" class="form-control">
+                                    <select name="momentort" id="momentort" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Adyuvante">Adyuvante</option>
                                         <option value="Paliativa">Paliativa</option>
@@ -1169,7 +1152,7 @@
 
                                 <div class="col-md-6" id="idnofracciones">
                                     <strong>No. Fracciones</strong>
-                                    <input type="number" class="form-control" id="fracciones" name="fracciones" placeholder="Ingrese...">
+                                    <input type="number" class="form-control" id="numfracciones" name="numfracciones" placeholder="Ingrese...">
                                 </div>
 
                                 <div class="col-md-6" id="idtecnica">
@@ -1182,9 +1165,9 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-6" id="idcomplicaciones">
+                                <div class="col-md-12" id="idcomplicaciones">
                                     <strong>Complicaciones RT</strong>
-                                    <select id="mscomplicaciones" name="mscomplicaciones[]" multiple="multiple" class="form-control">
+                                    <select id="mscomplicacionesrt" name="mscomplicacionesrt[]" multiple="multiple" class="form-control">
                                         <option value="Caries">Caries</option>
                                         <option value="Disgeusia">Disgeusia</option>
                                         <option value="Dolor">Dolor</option>
@@ -1202,7 +1185,137 @@
                                     </select>
                                 </div>
 
-                                
+                                <!--Si se selecciona una complicación, se debe mostrar lo siguiente-->
+                                <div class="col-md-3" id="idtxcomplicaciones">
+                                    <strong>Tx Caries</strong>
+                                    <select name="txcomplicaciones" id="txcomplicaciones" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdisguesia">
+                                    <strong>Tx Disgeusia</strong>
+                                    <select name="txcomplicacionesdisguesia" id="txcomplicacionesdisguesia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdolor">
+                                    <strong>Tx Dolor</strong>
+                                    <select name="txcomplicacionesdolor" id="txcomplicacionesdolor" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesfractura">
+                                    <strong>Tx Fractura</strong>
+                                    <select name="txcomplicacionesfractua" id="txcomplicacionesfractura" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesinfeccion">
+                                    <strong>Tx Infección</strong>
+                                    <select name="txcomplicacionesinfeccion" id="txcomplicacionesinfeccion" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesdisguesiahemorragia">
+                                    <strong>Tx Hemorragias</strong>
+                                    <select name="txcomplicacioneshemorragia" id="txcomplicacioneshemorragia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesmucositis">
+                                    <strong>Tx Mucositis</strong>
+                                    <select name="txcomplicacionesmucositis" id="txcomplicacionesdmucositis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesosteonecrosis">
+                                    <strong>Tx Osteonecrosis</strong>
+                                    <select name="txcomplicacionessteonecrosis" id="txcomplicacionessteonecrosis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesParestesia">
+                                    <strong>Tx Parestesia</strong>
+                                    <select name="txcomplicacionesParestesia" id="txcomplicacionesParestesia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesalocal">
+                                    <strong>Tx Anestesia Local</strong>
+                                    <select name="txcomplicacionesalocal" id="txcomplicacionesalocal" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesradiodermitis">
+                                    <strong>Tx Radiodermitis</strong>
+                                    <select name="txcomplicacionesradiodermitis" id="txcomplicacionesradiodermitis" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesalergia">
+                                    <strong>Tx Reaccion Alergica</strong>
+                                    <select name="txcomplicacionesalergia" id="txcomplicacionesalergia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionetrismus">
+                                    <strong>Tx Trismus</strong>
+                                    <select name="txcomplicacionestrismus" id="txcomplicacionesdtrismus" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="idtxcomplicacionesxerostomia">
+                                    <strong>Tx Xerostomia</strong>
+                                    <select name="txcomplicacionesxerostomia" id="txcomplicacionesxerostomia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="crioterapia">Crioterapia</option>
+                                        <option value="Farmacologico">Farmacológico</option>
+                                        <option value="Laser">Láser</option>
+                                    </select>
+                                </div>
+
+
+
+
                                 <!--**********************************-->
                                 <!--AQUI FINALIZAN LOS COMBOS QUE SE MUESTRAN SI SE SELECCIONA SÍ EN RADIOTERAPIA-->
 
@@ -1211,7 +1324,6 @@
                                 <div class="col-md-12" id="idmsoarsdosis">
                                     <strong>OARS Dosis</strong>
                                     <select id="msoarsdosis" name="msoarsdosis[]" multiple="multiple" class="form-control">
-
                                         <option value="Cavidad Oral">Cavidad Oral</option>
                                         <option value="Cocleas">Cocleas</option>
                                         <option value="Cristalinos">Cristalinos</option>
@@ -1234,12 +1346,12 @@
                                 <!-- SELECCION DE OARS DOSIS-->
                                 <!--CAVIDAD ORAL-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis1">
                                     <strong>Dosis Máx Cavidad Oral</strong>
                                     <input type="number" class="form-control" id="cavidadoral1" name="cavidadoral1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio1">
                                     <strong>Dosis Prom Cavidad Oral</strong>
                                     <input type="number" class="form-control" id="cavidadoral2" name="cavidadoral2" placeholder="Ingrese...">
                                 </div>
@@ -1247,24 +1359,24 @@
 
                                 <!--Cocleas-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis2">
                                     <strong>Dosis Máx Cocleas</strong>
                                     <input type="number" class="form-control" id="cocleas1" name="cocleas1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio2">
                                     <strong>Dosis Prom Cocleas</strong>
                                     <input type="number" class="form-control" id="cocleas2" name="cocleas2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Crsitalinos-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis3">
                                     <strong>Dosis Máx Cristalinos</strong>
                                     <input type="number" class="form-control" id="cristalinos1" name="cristalinos1" placeholder="Ingrese...">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio3">
                                     <strong>Dosis Prom Cristalinos</strong>
                                     <input type="number" class="form-control" id="cristalinos2" name="cristalinos2" placeholder="Ingrese...">
                                 </div>
@@ -1272,54 +1384,54 @@
 
                                 <!--Esófago-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis4">
                                     <strong>Dosis Máx Esófago</strong>
-                                    <input type="number" class="form-control" id="esofago1" name="cesofago1" placeholder="Ingrese...">
+                                    <input type="number" class="form-control" id="esofago1" name="esofago1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio4">
                                     <strong>Dosis Prom Esófago</strong>
                                     <input type="number" class="form-control" id="esofago2" name="esofago2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Labios-->
 
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis5">
                                     <strong>Dosis Máx Labios</strong>
                                     <input type="number" class="form-control" id="labios1" name="labios1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio5">
                                     <strong>Dosis Prom Labios</strong>
                                     <input type="number" class="form-control" id="labios2" name="labios2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--LARINGE-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis6">
                                     <strong>Dosis Máx Laringe</strong>
                                     <input type="number" class="form-control" id="laringe1" name="laringe1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio6">
                                     <strong>Dosis Prom Laringe</strong>
                                     <input type="number" class="form-control" id="laringe2" name="laringe2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--MANDIBULA-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis7">
                                     <strong>Dosis Máx Mandibula</strong>
                                     <input type="number" class="form-control" id="mandibula1" name="mandibula1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio7">
                                     <strong>Dosis Prom Mandibula</strong>
                                     <input type="number" class="form-control" id="mandibula2" name="mandibula2" placeholder="Ingrese...">
                                 </div>
 
                                 <!--Médula-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis8">
                                     <strong>Dosis Máx Médula</strong>
                                     <input type="number" class="form-control" id="medula1" name="medula1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio8">
                                     <strong>Dosis Prom Médula</strong>
                                     <input type="number" class="form-control" id="medula2" name="medula2" placeholder="Ingrese...">
                                 </div>
@@ -1327,77 +1439,77 @@
 
 
                                 <!--Nervio Óptico-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis9">
                                     <strong>Dosis Máx Nervio Óptico</strong>
                                     <input type="number" class="form-control" id="nerviooptico1" name="nerviooptico1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio9">
                                     <strong>Dosis Prom Nervio Óptico</strong>
                                     <input type="number" class="form-control" id="nerviooptico2" name="nerviooptico2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Ojos-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis10">
                                     <strong>Dosis Máx Ojos</strong>
                                     <input type="number" class="form-control" id="ojos1" name="ojos1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio10">
                                     <strong>Dosis Prom Ojos</strong>
                                     <input type="number" class="form-control" id="ojos2" name="ojos2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Pared Faringea Posterior-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis11">
                                     <strong>Dosis Máx PFP</strong>
                                     <input type="number" class="form-control" id="pfp1" name="pfp1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio11">
                                     <strong>Dosis Prom PFP</strong>
                                     <input type="number" class="form-control" id="pfp2" name="pfp2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Parotidas-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis12">
                                     <strong>Dosis Máx Parotidas</strong>
                                     <input type="number" class="form-control" id="Parotidas1" name="Parotidas1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio12">
                                     <strong>Dosis Prom Parotidas</strong>
                                     <input type="number" class="form-control" id="Parotidas2" name="Parotidas2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Sublinguales-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis13">
                                     <strong>Dosis Máx Sublinguales</strong>
                                     <input type="number" class="form-control" id="Sublinguales1" name="Sublinguales1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio13">
                                     <strong>Dosis Prom Sublinguales</strong>
                                     <input type="number" class="form-control" id="Sublinguales2" name="Sublinguales2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Tallo-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis14">
                                     <strong>Dosis Máx Tallo</strong>
                                     <input type="number" class="form-control" id="Tallo1" name="Tallo1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio14">
                                     <strong>Dosis Prom Tallo</strong>
                                     <input type="number" class="form-control" id="Tallo2" name="Tallo2" placeholder="Ingrese...">
                                 </div>
 
 
                                 <!--Tiroides-->
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="dosis15">
                                     <strong>Dosis Máx Tiroides</strong>
                                     <input type="number" class="form-control" id="Tiroides1" name="Tiroides1" placeholder="Ingrese...">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" id="promedio15">
                                     <strong>Dosis Prom Tiroides</strong>
                                     <input type="number" class="form-control" id="Tiroides2" name="Tiroides2" placeholder="Ingrese...">
                                 </div>
@@ -1449,7 +1561,7 @@
 
                                 <div class="col-md-4" id="defuncionfecha">
                                     <strong>Fecha Defunción</strong>
-                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                                    <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control">
                                 </div>
 
                                 <div class=" col-md-4" id="defuncioncausa">

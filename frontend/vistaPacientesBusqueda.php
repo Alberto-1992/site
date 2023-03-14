@@ -15,7 +15,16 @@ $sql = $conexion2->query("SELECT descripcionfrinfarto, id_pacienteinfarto
             FROM factoresriesgoinfarto
             WHERE id_pacienteinfarto
             IN (SELECT id_pacienteinfarto
-            FROM factoresriesgoinfarto
+        FROM factoresriesgoinfarto
+            GROUP BY id_pacienteinfarto
+            HAVING count(id_pacienteinfarto) >= 1)
+            and id_pacienteinfarto = $id_paciente
+            ORDER BY id_pacienteinfarto");
+$sql_mace = $conexion2->query("SELECT descripcionmacehosp, id_pacienteinfarto
+            FROM macehospinfarto
+            WHERE id_pacienteinfarto
+            IN (SELECT id_pacienteinfarto
+        FROM macehospinfarto
             GROUP BY id_pacienteinfarto
             HAVING count(id_pacienteinfarto) >= 1)
             and id_pacienteinfarto = $id_paciente
@@ -184,7 +193,9 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     </tr>
     <tr>
         <th id="th">Mace Hospitalario</th>
-        <td id="td"><?php echo $dataRegistro['macehospi'] ?></td>
+        <td id="td"><?php while ($dataMace = mysqli_fetch_assoc($sql_mace)) {
+                        echo '&nbsp&nbsp' . $dataMace['descripcionmacehosp'] . '--' . '';
+                    } ?></td>
     </tr>
     <tr>
         <th id="th">Killip Kimball</th>

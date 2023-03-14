@@ -71,7 +71,7 @@ function curp2datebucal(curp) {
     } else if (sexo != 'M' || 'H') {
         alert('Error de CURP');
     }
-
+    calcularEdadbucal();
 }
 Date.prototype.toString = function() {
     var anyo = this.getFullYear();
@@ -287,7 +287,14 @@ $(document).ready(function() {
 
 // COMPLICACIONES RT
 $(document).ready(function() {
-    $('#mscomplicaciones').change(function(e) { 
+    $('#mscomplicacionesrt').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+$(document).ready(function() {
+    $('#tiporeconstruccion').change(function(e) { 
     }).multipleSelect({
         width: '100%'
     });
@@ -355,6 +362,178 @@ $(function () {
     $('#maxisdiz').prop('hidden', true);
     $('#maxiidiz').prop('hidden', true);
 
+   
+    $('#dosis1').prop('hidden', true);
+    $('#promedio1').prop('hidden', true);
+    $('#dosis2').prop('hidden', true);
+    $('#promedio2').prop('hidden', true);
+    $('#dosis3').prop('hidden', true);
+    $('#promedio3').prop('hidden', true);
+    $('#dosis4').prop('hidden', true);
+    $('#promedio4').prop('hidden', true);
+    $('#dosis5').prop('hidden', true);
+    $('#promedio5').prop('hidden', true);
+    $('#dosis6').prop('hidden', true);
+    $('#promedio6').prop('hidden', true);
+    $('#dosis7').prop('hidden', true);
+    $('#promedio7').prop('hidden', true);
+    $('#dosis8').prop('hidden', true);
+    $('#promedio8').prop('hidden', true);
+    $('#dosis9').prop('hidden', true);
+    $('#promedio9').prop('hidden', true);
+    $('#dosis10').prop('hidden', true);
+    $('#promedio10').prop('hidden', true);
+    $('#dosis11').prop('hidden', true);
+    $('#promedio11').prop('hidden', true);
+    $('#dosis12').prop('hidden', true);
+    $('#promedio12').prop('hidden', true);
+    $('#dosis13').prop('hidden', true);
+    $('#promedio13').prop('hidden', true);
+    $('#dosis14').prop('hidden', true);
+    $('#promedio14').prop('hidden', true);
+    $('#dosis15').prop('hidden', true);
+    $('#promedio15').prop('hidden', true);
+    
+
+});
+$(document).ready(function () {
+    $("#msoarsdosis").change(function (e) {
+        if (msoarsdosis.options[0].selected == true) {
+            $('#dosis1').prop("hidden", false);
+            $('#promedio1').prop("hidden", false);
+        } else if (msoarsdosis.options[0].selected == false) {
+            $('#dosis1').prop("hidden", true);
+            $('#promedio1').prop("hidden", true);
+            $('#cavidadoral1').val('');
+            $('#cavidadoral2').val('');
+        }
+        if (msoarsdosis.options[1].selected == true) {
+            $('#dosis2').prop("hidden", false);
+            $('#promedio2').prop("hidden", false);
+        } else if (msoarsdosis.options[1].selected == false) {
+            $('#dosis2').prop("hidden", true);
+            $('#promedio2').prop("hidden", true);
+            $('#cocleas1').val('');
+            $('#cocleas2').val('');
+        }
+        if (msoarsdosis.options[2].selected == true) {
+            $('#dosis3').prop("hidden", false);
+            $('#promedio3').prop("hidden", false);
+        } else if (msoarsdosis.options[2].selected == false) {
+            $('#dosis3').prop("hidden", true);
+            $('#promedio3').prop("hidden", true);
+            $('#cristalinos1').val('');
+            $('#cristalinos2').val('');
+        }
+        if (msoarsdosis.options[3].selected == true) {
+            $('#dosis4').prop("hidden", false);
+            $('#promedio4').prop("hidden", false);
+        } else if (msoarsdosis.options[3].selected == false) {
+            $('#dosis4').prop("hidden", true);
+            $('#promedio4').prop("hidden", true);
+            $('#esofago1').val('');
+            $('#esofago2').val('');
+        }
+        if (msoarsdosis.options[4].selected == true) {
+            $('#dosis5').prop("hidden", false);
+            $('#promedio5').prop("hidden", false);
+        } else if (msoarsdosis.options[4].selected == false) {
+            $('#dosis5').prop("hidden", true);
+            $('#promedio5').prop("hidden", true);
+            $('#labios1').val('');
+            $('#labios2').val('');
+        }
+        if (msoarsdosis.options[5].selected == true) {
+            $('#dosis6').prop("hidden", false);
+            $('#promedio6').prop("hidden", false);
+        } else if (msoarsdosis.options[5].selected == false) {
+            $('#dosis6').prop("hidden", true);
+            $('#promedio6').prop("hidden", true);
+            $('#laringe1').val('');
+            $('#laringe2').val('');
+        }
+        if (msoarsdosis.options[6].selected == true) {
+            $('#dosis7').prop("hidden", false);
+            $('#promedio7').prop("hidden", false);
+        } else if (msoarsdosis.options[6].selected == false) {
+            $('#dosis7').prop("hidden", true);
+            $('#promedio7').prop("hidden", true);
+            $('#mandibula1').val('');
+            $('#mandibula2').val('');
+        }
+        if (msoarsdosis.options[7].selected == true) {
+            $('#dosis8').prop("hidden", false);
+            $('#promedio8').prop("hidden", false);
+        } else if (msoarsdosis.options[7].selected == false) {
+            $('#dosis8').prop("hidden", true);
+            $('#promedio8').prop("hidden", true);
+            $('#medula1').val('');
+            $('#medula2').val('');
+        }
+        if (msoarsdosis.options[8].selected == true) {
+            $('#dosis9').prop("hidden", false);
+            $('#promedio9').prop("hidden", false);
+        } else if (msoarsdosis.options[8].selected == false) {
+            $('#dosis9').prop("hidden", true);
+            $('#promedio9').prop("hidden", true);
+            $('#nerviooptico1').val('');
+            $('#nerviooptico2').val('');
+        }
+        if (msoarsdosis.options[9].selected == true) {
+            $('#dosis10').prop("hidden", false);
+            $('#promedio10').prop("hidden", false);
+        } else if (msoarsdosis.options[9].selected == false) {
+            $('#dosis10').prop("hidden", true);
+            $('#promedio10').prop("hidden", true);
+            $('#ojos1').val('');
+            $('#ojos2').val('');
+        }
+        if (msoarsdosis.options[10].selected == true) {
+            $('#dosis11').prop("hidden", false);
+            $('#promedio11').prop("hidden", false);
+        } else if (msoarsdosis.options[10].selected == false) {
+            $('#dosis11').prop("hidden", true);
+            $('#promedio11').prop("hidden", true);
+            $('#pfp1').val('');
+            $('#pfp2').val('');
+        }
+        if (msoarsdosis.options[11].selected == true) {
+            $('#dosis12').prop("hidden", false);
+            $('#promedio12').prop("hidden", false);
+        } else if (msoarsdosis.options[11].selected == false) {
+            $('#dosis12').prop("hidden", true);
+            $('#promedio12').prop("hidden", true);
+            $('#Parotidas1').val('');
+            $('#Parotidas2').val('');
+        }
+        if (msoarsdosis.options[12].selected == true) {
+            $('#dosis13').prop("hidden", false);
+            $('#promedio13').prop("hidden", false);
+        } else if (msoarsdosis.options[12].selected == false) {
+            $('#dosis13').prop("hidden", true);
+            $('#promedio13').prop("hidden", true);
+            $('#Sublinguales1').val('');
+            $('#Sublinguales2').val('');
+        }
+        if (msoarsdosis.options[13].selected == true) {
+            $('#dosis14').prop("hidden", false);
+            $('#promedio14').prop("hidden", false);
+        } else if (msoarsdosis.options[13].selected == false) {
+            $('#dosis14').prop("hidden", true);
+            $('#promedio14').prop("hidden", true);
+            $('#Tallo1').val('');
+            $('#Tallo2').val('');
+        }
+        if (msoarsdosis.options[14].selected == true) {
+            $('#dosis15').prop("hidden", false);
+            $('#promedio15').prop("hidden", false);
+        } else if (msoarsdosis.options[14].selected == false) {
+            $('#dosis15').prop("hidden", true);
+            $('#promedio15').prop("hidden", true);
+            $('#Tiroides1').val('');
+            $('#Tiroides2').val('');
+        }
+    })
 });
 function defusi() {
     $('#defuncionfecha').prop('hidden', false);
@@ -665,7 +844,16 @@ $(document).ready(function() {
             
         } else if ($(this).val() === "No") {
             $('#idtipoquirurgico').prop("hidden", true);
-            $('#tipoquirurgico').prop('selectedIndex',0); //es para resetear el valor (.val(''); -> para resetear un input)
+            $('#tipoquirurgico').prop('selectedIndex',0);
+            $('#idmaxinfra').prop('hidden', true); 
+            $('#idlugar').prop('hidden', true);
+            $('#idtipo').prop('hidden', true);
+            $('#idnivelcervical').prop('hidden', true);
+
+            $('#maxinfraestructu').prop('selectedIndex', 0);
+            $('#lugardrmc').prop('selectedIndex', 0);
+            $('#tipodrmc').prop('selectedIndex', 0);
+            $('#nivelcervical').prop('selectedIndex', 0);
         }
     })
 });
@@ -679,10 +867,11 @@ $(function() {
 // Habilita Maxilectomia de Infraestructura:
 $(document).ready(function() {
     $('#tipoquirurgico').change(function(e) {
-        if ($(this).val() === "Maxilectomia de Infraestructura") {
+        if (tipoquirurgico.options[8].selected == true) {
             $('#idmaxinfra').prop("hidden", false);
-        } else if ($(this).val() === "0") {
+        } else if (tipoquirurgico.options[8].selected == false) {
             $('#idmaxinfra').prop("hidden", true);
+            $('#maxinfraestructu').prop('selectedIndex', 0);
         }
     })
 });
@@ -693,15 +882,20 @@ $(function() {
 // Habilita DISECCIÓN RADICAL MODIFICADA:
 $(document).ready(function() {
     $('#tipoquirurgico').change(function(e) {
-        if ($(this).val() === "Diseccion Radical Modificada de Cuello") {
+        if (tipoquirurgico.options[3].selected == true) {
             $('#idlugar').prop("hidden", false);
             $('#idtipo').prop("hidden", false);
             $('#idnivelcervical').prop("hidden", false);
-        } else if ($(this).val() === "0") {
+        } else if (tipoquirurgico.options[3].selected == false) {
             $('#idlugar').prop("hidden", true);
             $('#idtipo').prop("hidden", true);
             $('#idnivelcervical').prop("hidden", true);
+
+            $('#lugardrmc').prop('selectedIndex', 0);
+            $('#tipodrmc').prop('selectedIndex', 0);
+            $('#nivelcervical').prop('selectedIndex', 0);
         }
+        
     })
 });
 $(function() {
@@ -761,6 +955,12 @@ $(document).ready(function() {
             $('#idnofracciones').prop("hidden", true);
             $('#idtecnica').prop("hidden", true);
             $('#idcomplicaciones').prop("hidden", true);
+            $('#fecharadio').val('');
+            $('#momentort').prop('selectedIndex',0);
+            $('#dosis').val('');
+            $('#fracciones').val('');
+            $('#numfracciones').val('');
+            $('#tecnica').prop('selectedIndex', 0);
 
         }
     })

@@ -506,14 +506,29 @@ $(document).ready(function() {
         
     })
 });
-
-
-
 $(function() {
     $('#arritmias').prop("hidden", true);
 
 
 })
+$(document).ready(function() {
+
+    $('#check_lista2').change(function(e) {
+
+        
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+$(document).ready(function() {
+
+    $('#caracatipicas').change(function(e) {
+
+        
+    }).multipleSelect({
+        width: '100%'
+    });
+});
 $(document).ready(function() {
 
     $('#mscomplicacion').change(function(e) {

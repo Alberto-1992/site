@@ -196,13 +196,13 @@
                                     <div class="col-md-2">
                                         <strong>Peso</strong>
                                         <input type="number" step="any" class="form-control" id="peso"
-                                            onblur="calculaIMCCancer();" name="peso" required>
+                                            onblur="calculaIMCCancer();" name="peso">
 
                                     </div>
                                     <div class="col-md-2">
                                         <strong>IMC</strong>
                                         <input type="text" class="form-control" id="imc" onblur="calculaIMCCancer();"
-                                            name="imc" value="" readonly>
+                                            name="imc" value="">
 
                                     </div>
 
@@ -210,7 +210,7 @@
                                         <strong>Estado de residencia</strong>
 
                                         <select name="cbx_estado" id="cbx_estado" class="form-control"
-                                            style="width: 100%;" required>
+                                            style="width: 100%;">
                                             <option value="Sin registro" selected>Sin registro</option>
                                             <?php 
                                     require 'conexionCancer.php';
@@ -281,6 +281,7 @@
                                             <optgroup style="margin-left: 5px;" label="Cancer de mama">
                                                 <option value="Madre CM">Madre</option>
                                                 <option value="Hermana CM">Hermana</option>
+                                                <option value="Hija CM">Hija</option>
                                                 <option value="Abuela materna CM">Abuela materna</option>
                                                 <option value="Abuela paterna CM">Abuela paterna</option>
                                                 <option value="Tia paterna CM">Tia paterna</option>
@@ -291,6 +292,7 @@
                                             <optgroup label="Cancer de ovario">
                                                 <option value="Madre CO">Madre</option>
                                                 <option value="Hermana CO">Hermana</option>
+                                                <option value="Hija CO">Hija</option>
                                                 <option value="Abuela materna CO">Abuela materna</option>
                                                 <option value="Abuela paterna CO">Abuela paterna</option>
                                                 <option value="Tia paterna CO">Tia paterna</option>
@@ -383,7 +385,7 @@
                                     <div class="col-md-2" id="probableparto">
                                         <strong>F.P.P</strong>
                                         <input type="date" class="form-control" id="fechaprobableparto"
-                                            name="fechaprobableparto" value="0000/00/00">
+                                            name="fechaprobableparto">
 
                                     </div>
                                     <div class="col-md-4">
@@ -452,6 +454,9 @@
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Conocida con Gen BRCA 2">&nbsp;Conocida con Gen BRCA
                                         2&nbsp;&nbsp;
+                                        <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
+                                            class="check" value="Cancer de mama">&nbsp;Cancer de mama
+                                        &nbsp;&nbsp;
                                         <input type="checkbox" name="check_listapato[]" id="check_listapato[]"
                                             class="check" value="Ninguno de los anteriores">&nbsp;Ninguno de los anteriores&nbsp;&nbsp;
 
@@ -1023,7 +1028,6 @@
                                                 <option value="Sin registro">Sin registro</option>
                                                 <option value="Si">Si</option>
                                                 <option value="No">No</option>
-
                                             </select>
                                     
                                     </div>
@@ -1043,7 +1047,6 @@
                                                 class="form-control" value="0">
                                         
                                     </div>
-
                                     <div class="col-md-2" id="inmunoderecha9rgd">
                                         
                                             <strong>Oncogen HER2</strong>
@@ -1053,9 +1056,7 @@
                                                 <option value="Una cruz">+</option>
                                                 <option value="Dos cruces">++</option>
                                                 <option value="Tres cruces">+++</option>
-
                                             </select>
-                                        
                                     </div>
                                     <div class="col-md-2" id="inmunoderecha10rgd">
                                     
@@ -1592,9 +1593,8 @@
                                         <strong>Tipo de mastectomia</strong>
                                         <select name="mastectomiatipo" id="mastectomiatipo" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
-                                            <option value="Mastectomia conservadora">Mastectomia conservadora</option>
-                                            <option value="Mastectomia paliativa">Mastectomia paliativa</option>
-
+                                            <option value="Mastectomia total">Mastectomia total</option>
+                                            <option value="Mastectomia parcial">Mastectomia parcial</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="fechatipomastectomia">
@@ -1769,7 +1769,6 @@
                                             <option value="<?php echo $row['descripcion']; ?>">
                                                 <?php echo $row['descripcion']; ?></option>
                                             <?php } ?>
-
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="quimiomomento">
@@ -1793,7 +1792,7 @@
                                         <select name="tipohormonoterapia" id="tipohormonoterapia" class="form-control">
                                             <option value="Sin registro">Sin registro</option>
                                             <option value="Letrazol">Letrazol</option>
-                                            <option value="Anastrazol">Anastrazol</option>
+                                            <option value="Anastrozol">Anastrozol</option>
                                             <option value="Tomoxifeno">Tomoxifeno</option>
                                             <option value="Exemetastino">Exemetastino</option>
                                         </select>
@@ -1983,7 +1982,7 @@
                                     </fieldset>
                                     <div class="col-md-3" id="defuncionfecha">
                                         <strong>Fecha defunción</strong>
-                                        <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control" value="0000/00/00">
+                                        <input type="date" name="fechadeladefuncion" id="fechadeladefuncion" class="form-control">
                                           
                                     </div>
                                     <div class="col-md-3" id="defuncioncausa">
