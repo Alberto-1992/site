@@ -1,11 +1,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/estilosMenuNew.css">
 </head>
-
 <body>
-
     <nav class="main-menu">
         <ul>
             <li>
@@ -15,7 +12,6 @@
                         HRAE IXTAPALUCA
                     </span>
                 </a>
-
             </li>
         
             <li class="has-subnav">
@@ -25,8 +21,7 @@
                         Mis Datos
                     </span>
                 </a>
-            </li>-->
-
+            </li>
             <hr>
             <li class="has-subnav">
                 <a href="infarto">
@@ -38,9 +33,8 @@
                 <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                      
                     </ul>
-            </li>-->
+            </li>
             
             <li class="has-subnav">
                 <a href="cancer">
@@ -110,7 +104,7 @@
 
             </li>
             <hr>
-            <li>
+           <!-- <li>
                 <a href="#">
                     <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
                     <span class="nav-text">

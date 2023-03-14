@@ -77,7 +77,7 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>
                 </li>
-                <li>
+              <!--  <li>
                     <a href="#">
                         <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
                         <span class="nav-text">
@@ -90,7 +90,7 @@
                             <li><a href="#" id="nav-text">Promociones</a></li>
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>
-                </li>
+                </li>-->
                 <li>
                    <a href="#">
                        <i class="fa fa-file-excel-o fa-2x" id="icon-color"></i>
