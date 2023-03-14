@@ -207,19 +207,7 @@ height: 100%;
   z-index: 99;
   transition: .5s
 }
-.headerartritis {
-  width: 100%;
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  background-color: #45B39D;
-  z-index: 99;
-  transition: .5s
-}
+
 #boton_cancerBucal{
   text-decoration: none; 
   background-color:  #7d0022; 
@@ -233,6 +221,22 @@ height: 100%;
   margin-left: 0px; 
   margin-top: 0px;
 }
+
+
+.headerartritis {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #45B39D;
+  z-index: 99;
+  transition: .5s
+}
+
 .header.white {
   background: #F2F3F4;
   box-shadow: 0px 4px 10px gray;
@@ -364,6 +368,8 @@ height: 100%;
 #cabeceraModalaMama {
   background-color: #FC71D4;
 }
+
+
 
 /**
 #cabecerainfartoce{
@@ -1046,4 +1052,56 @@ table {
 .mandaid:hover {
   color: black;
 }
+
+/*INICIAN ESTILOS LUPUS*/
+
+
+.headerlupus {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between; 
+  padding: 0 1rem;
+  background-color:#7c2b83;
+  z-index: 99;
+  transition: .5s
+}
+
+#boton_lupus{
+  text-decoration: none; 
+  background-color:  #129dd3; 
+  text-align: center;
+  color: white; 
+  cursor: pointer; 
+  width: 120px; 
+  height: 25px; 
+  font-size: 12px; 
+  border: 5px; 
+  margin-left: 0px; 
+  margin-top: 0px;
+}
+
+
+#cabeceraModalLupus {
+  background-color:  #7c2b83 /*#cba1ce*/;
+  color: aliceblue;
+}
+
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#contenedor > div {
+  width: 50%;
+}
+/*FINALIZAN ESTILOS LUPUS*/
+
+
 /*finaliza */
+
+

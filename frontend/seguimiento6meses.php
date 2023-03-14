@@ -9,38 +9,34 @@
     <link rel="stylesheet" href="css/multiple-select.css" />
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <!--la siguiente liga es para el icon de Agregar persona que se muestra en el Modal CargarPaciente-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--Fin de la liga-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-    <title>Artritis Reumatoide</title>
+    <!--<script defer src="https://app.embed.im/snow.js"></script>-->
+    <title>Seguimiento 6 meses</title>
 </head>
 
 <body>
 
     <div class="box1">
-        <header class="headerartritis">
+        <header class="headerinfarto">
+
             <span id="cabecera">
                 <span class="material-symbols-outlined">
-                    rheumatology
+                    cardiology
                 </span>
-                ARTRITIS REUMATOIDE
-
-            </span>
-
+                Sindrome Coronario Agudo - Seguimiento 6 Meses</span>
         </header>
-        <?php
-        if (isset($_SESSION['usuarioAdmin'])) {
-            require 'menu/menuInfarto.php';
-        } elseif (isset($_SESSION['usuarioJefe'])) {
-            require 'menu/menuMedico.php';
-        }else if(isset($_SESSION['artritis'])) {
-            require 'menu/menuArtritis.php';
-        }
-        ?>
 
+        <?php
+        require 'menu/menuInfarto.php';
+
+        ?>
 
         <script>
             $.ajax({
-                    url: 'consultaArtritisBusqueda.php',
+                    url: 'consultaPacienteBusqueda6SCA.php',
                     type: 'POST',
                     dataType: 'html',
                 })
@@ -52,7 +48,7 @@
 
             function obtener_registros(paciente) {
                 $.ajax({
-                        url: 'consultaArtritis.php',
+                        url: 'consultapacientes.php',
                         type: 'POST',
                         dataType: 'html',
                         data: {
@@ -73,9 +69,18 @@
                 }
             });
         </script>
- 
+        <style>
+            .control {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid grey;
+                font-size: 18px;
+                height: 35px;
+                text-transform: uppercase;
+            }
+        </style>
         <div class="autoheight">
-            <input type="text" class="form-control" id="busqueda" name="busqueda" value="" placeholder="Buscar...">
+            <input type="text" class="form-control col-md-12" id="busqueda" name="busqueda" value="" placeholder="Buscar...">
             <div id="tabla_resultadobus">
 
             </div>
@@ -84,13 +89,17 @@
     </div>
     <?php
 
-    require 'modals/cargarPacienteArtritis.php';
-    require 'modals/seguimientoArtritis.php';
+    require 'modals/cargarPacienteCE.php';
+    require 'modals/seguimientoPaciente.php';
+
 
     ?>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'>
-    </script>
-    <script src="js/multiple-select-cancermama.js"></script>
+
+
 </body>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'>
+</script>
+<script src="js/multiple-select.js"></script>
+<script src="js/multiple-select-factores.js"></script>
 
 </html>

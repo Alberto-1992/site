@@ -1,9 +1,9 @@
-<?php 
+<?php
 error_reporting(0);
 date_default_timezone_set('America/Mexico_City');
 require 'conexionCancer.php';
 $id = $_POST['id'];
-$query= $conexionCancer->prepare("SELECT *, 
+$query = $conexionCancer->prepare("SELECT *, 
 somatometriainfarto.*,
 atencionclinicainfarto.*,
 paraclinicos.*,
@@ -26,12 +26,11 @@ left outer join seguimientopostprocedimiento on seguimientopostprocedimiento.id_
 where dato_personalinfarto.id = $id");
 $query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();
-$dataRegistro= $query->fetch();
-if($query != false){
-    require 'frontend/vistaPacientesBusqueda.php';
-    
-}else{
+$dataRegistro = $query->fetch();
+if ($query != false) {
 
+    require 'frontend/vistaPacientesBusqueda6SCA.php';
+} else {
 }
 return $dataRegistro['id'] ?? 'default value';
 ?>

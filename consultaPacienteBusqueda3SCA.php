@@ -28,10 +28,9 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
 $query->execute();
 $dataRegistro= $query->fetch();
 if($query != false){
-    require 'frontend/vistaPacientesBusqueda.php';
     
+    require 'frontend/vistaPacientesBusquedaSCA.php';
 }else{
 
 }
 return $dataRegistro['id'] ?? 'default value';
-?>

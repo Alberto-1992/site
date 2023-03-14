@@ -1,12 +1,8 @@
 <html>
-
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
-
 <body>
-
     <nav class="main-menu">
         <ul>
             <li>
@@ -17,66 +13,61 @@
                     </span>
                 </a>
             </li>
-        <hr>
+        
             <li class="has-subnav">
-                <a href="infarto">
-                    <i class="fa fa-ambulance fa-2x" id="icon-color"></i>
+                <a href="datosUsuario">
+                    <i class="fa fa-user fa-2x" id="icon-color"></i>
                     <span class="nav-text">
-                        Infarto Agudo al Miocardio
+                        Mis Datos
                     </span>
                 </a>
-                <!--  <ul>
-                            <li><a href="#" id="nav-text" data-toggle="modal"
-                    data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                
-                    </ul>-->
             </li>
-            <!--<li class="has-subnav">
-                <a href="angina">
-                    <i class="fa fa-heartbeat fa-2x" id="icon-color"></i>
+            <hr>
+            <li class="has-subnav">
+                <a href="infarto">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Angina
+                        Sindrome Coronario Agudo
                     </span>
                 </a>
                 <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                    
                     </ul>
-            </li>-->
-            <hr>
+            </li>
+            
             <li class="has-subnav">
                 <a href="cancer">
-                    <i class="fa fa-child fa-2x" id="icon-color"></i>
+                    <i class="fa fa-user-md" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Cancer
+                        Cáncer
                     </span>
                 </a>
                 <!--  <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                    
+                      
                     </ul>-->
             </li>
-            <hr>
+            
             <li class="has-subnav">
                 <a href="artritis">
                     <i class="fa fa-hand-spock-o fa-2x" id="icon-color"></i>
                     <span class="nav-text">
-                        Artritis reumatoide
+                        Artritis
                     </span>
                 </a>
                 <!--  <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                    
+                      
                     </ul>-->
             </li>
             
             <!--
                 <li class="has-subnav">
                     <a href="vistaCisfa.php">
-                    <i class="fa fa-medkit fa-2x" id="icon-color"></i>
+                       <i class="fa fa-medkit fa-2x" id="icon-color"></i>
                         <span class="nav-text">
                             Cisfa
                         </span>
@@ -93,38 +84,27 @@
                     </ul>
                 </li>
                 -->
-                <hr>
             <li class="has-subnav">
-                <a href="#">
-                    <i class="fa fa-folder-open fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
-                        Esclerosis Multiple
+                <a href="lupus">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span class=" nav-text">
+                        Lupus
                     </span>
                 </a>
-                <!--<ul>
-                            <li><a href="#" id="nav-text">Lozas</a></li>
-                            <li><a href="#" id="nav-text">Lápidas</a></li>
-                            <li><a href="#" id="nav-text">Promociones</a></li>
-                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
-                    </ul>-->
+
             </li>
-            <hr>
+            
             <li>
                 <a href="#">
-                    <i class="fa fa-heart-o fa-2x" id="icon-color"></i>
+                    <i class="fa fa-tint" aria-hidden="true"></i>
                     <span class="nav-text">
                         Hemodinamia
                     </span>
                 </a>
-                <!-- <ul>
-                            <li><a href="#" id="nav-text">Lozas</a></li>
-                            <li><a href="#" id="nav-text">Lápidas</a></li>
-                            <li><a href="#" id="nav-text">Promociones</a></li>
-                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
-                    </ul>-->
+
             </li>
-        
-            <!-- <li>
+            <hr>
+           <!-- <li>
                 <a href="#">
                     <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
                     <span class="nav-text">
@@ -138,13 +118,12 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>
             </li>-->
-            <hr>
             <li>
                 <a href="#">
-                    <i class="fa fa-file-excel-o fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
+                    <i class="fa fa-graduation-cap" aria-hidden="true""></i>
+                    <span class=" nav-text">
                         Evaluación del Desempeño
-                    </span>
+                        </span>
                 </a>
                 <!--<ul>
                             <li><a href="#" id="nav-text">Lozas</a></li>
@@ -153,33 +132,23 @@
                             <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
                     </ul>-->
             </li>
-            <hr>
+            
             <li>
-                <a href="#">
-                    <i class="fa fa-map-marker fa-2x" id="icon-color"></i>
+                <a href="../bolsa/principal">
+                    <i class="fa fa-users" aria-hidden="true"></i>
                     <span class="nav-text">
                         Reclutamiento y Selección
                     </span>
                 </a>
-                <!--<ul>
-                            <li><a href="#" id="nav-text">Lozas</a></li>
-                            <li><a href="#" id="nav-text">Lápidas</a></li>
-                            <li><a href="#" id="nav-text">Promociones</a></li>
-                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
-                            <li><a href="#" id="nav-text">Lozas</a></li>
-                            <li><a href="#" id="nav-text">Lápidas</a></li>
-                            <li><a href="#" id="nav-text">Promociones</a></li>
-                            <li><a href="#" id="nav-text">Fotos 20x30</a></li> 
-                    </ul>-->
-            </li>
-            <hr>
-            <li>
-                <a href="#">
-                    <i class="fa fa-info fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
-                        Documentation
-                    </span>
 
+            </li>
+            
+            <li>
+                <a href="validar" target="_blank">
+                    <i class="fa fa-id-card fa-2x" id="icon-color"></i>
+                    <span class="nav-text">
+                        Registrar usuario
+                    </span>
                 </a>
                 <!--
                 <ul>
@@ -190,7 +159,7 @@
                 </ul>
 -->
             </li>
-            <hr>
+            
         </ul>
         <ul class="logout">
             <li>

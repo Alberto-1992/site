@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    
+    <!-- ICON MARIPOSA-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
     <!--<script defer src="https://app.embed.im/snow.js"></script>-->
     <title>LUPUS</title>
 </head>
@@ -17,10 +21,8 @@
 <body>
 
     <div class="box1">
-        <header class="headercancerbucal">
-            <span id="cabecera"><span class="material-symbols-outlined">
-                    dentistry
-                </span> LUPUS
+        <header class="headerlupus">
+            <span id="cabecera"><i class="ti ti-butterfly"></i> LUPUS
             </span>
         </header>
         <?php
@@ -34,7 +36,7 @@
 
         <script>
             $.ajax({
-                    url: 'consultaCancerBucalBusqueda.php',
+                    url: 'consultalupusbusqueda.php',
                     type: 'POST',
                     dataType: 'html',
                 })
@@ -46,7 +48,7 @@
 
             function obtener_registros(paciente) {
                 $.ajax({
-                        url: 'consultacancerbucal.php',
+                        url: 'consultalupus.php',
                         type: 'POST',
                         dataType: 'html',
                         data: {
