@@ -988,7 +988,7 @@
 
                                 <div class="col-md-6" id="idpdl">
                                     <strong id="inmuno-title">PDL</strong>
-                                    <input type="number" id="idpdl" name="idpdl" placeholder="%" class="form-control">
+                                    <input type="number" id="descripcionpdl" name="descripcionpdl" placeholder="%" class="form-control">
                                 </div>
 
                                 <!--Inicia la sección de TRATAMIENTO, en esta sección se deben ver, de inicio solo tres campos QUIRURGICO, RECONSTRUCCIÓN Y RADIOTERAPIA-->

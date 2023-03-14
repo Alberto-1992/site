@@ -439,7 +439,7 @@ $hoy = date("Y-m-d");
                                             $sql->execute(array(
                                                 ':id_inumobucal'=>uniqid('hraei'),
                                                 ':realizoinmunobucal'=>$pdl,
-                                                ':descripcioninmunobucal'=>$idpdl,
+                                                ':descripcioninmunobucal'=>$descripcionpdl,
                                                 ':id_pacientebucal'=>$id_usuario
                                             ));
                                     $sql = $conexionCancer->prepare("INSERT into tratamientobucal(id_tratamientobucal,id_pacientebucal,quirurgicobucal,tipocirugiabucal,maxilectomiadeinfraestructura,lugardrmc,tipodrmc,nivelcervical,reconstruccionbucal,radioterapiabucal,fecharadioterapiabucal,momentortradiobucal,dosisradiobucal,
