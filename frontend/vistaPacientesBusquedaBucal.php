@@ -335,12 +335,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <th id="th">Sexo:</th>
         <td id="td"><?php echo $dataRegistro['sexobucal'] ?>
     </tr>
-
-    <tr>
-        <th id="th">Raza:</th>
-        <td id="td"><?php echo $dataRegistro['razabucal'] ?>
-    </tr>
-
     <tr>
         <th id="th">Talla:</th>
         <td id="td"><?php echo $dataRegistro['tallabucal'] ?>
@@ -543,12 +537,18 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicderechasubatomico'].'-'.'';} ?></td>
             <th id="th">Paladar Blando:</th>
             <td id="td"><?php echo $dataRegistro['paladarblando'] ?></td>
         </tr>
-
+        <tr>
+            <th id="th">Paladar Duro:</th>
+            <td id="td"><?php echo $dataRegistro['paladarduro'] ?></td>
+        </tr>
         <tr>
             <th id="th">Encia:</th>
             <td id="td"><?php echo $dataRegistro['encia'] ?></td>
         </tr>
-
+        <tr>
+            <th id="th">Encia inferior:</th>
+            <td id="td"><?php echo $dataRegistro['enciainferior'] ?></td>
+        </tr>
         <tr>
             <th id="th">¿Está relacionado con un órgano dental?:</th>
             <td id="td"><?php echo $dataRegistro['relacionadoconorganodental'] ?></td>
@@ -592,12 +592,19 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicizquierdasubatomico'].'-'.'';} ?></td
             <th id="th">Paladar Blando:</th>
             <td id="td"><?php echo $dataRegistro['paladarblandoiz'] ?></td>
         </tr>
+        <tr>
+            <th id="th">Paladar Duro:</th>
+            <td id="td"><?php echo $dataRegistro['paladarduroiz'] ?></td>
+        </tr>
 
         <tr>
             <th id="th">Encia:</th>
             <td id="td"><?php echo $dataRegistro['enciaiz'] ?></td>
         </tr>
-
+        <tr>
+            <th id="th">Encia inferior:</th>
+            <td id="td"><?php echo $dataRegistro['enciaizinferior'] ?></td>
+        </tr>
         <tr>
             <th id="th">¿Está relacionado con un órgano dental?:</th>
             <td id="td"><?php echo $dataRegistro['relacionadoconorganodentaliz'] ?></td>

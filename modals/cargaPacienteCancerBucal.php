@@ -632,11 +632,29 @@
                                         <option value="Velo de Paladar">Velo de Paladar</option>
                                     </select>
                                 </div>
+                                <div class="col-md-3" id="paladarduropanel">
+                                    <strong>Paladar Duro:</strong>
+                                    <select name="paladarduro" id="paladarduro" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Boveda de Paladar">Boveda de Paladar</option>
+                                        <option value="Velo de Paladar">Velo de Paladar</option>
+                                    </select>
+                                </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
                                 <div class="col-md-3" id="enciapanel">
-                                    <strong>Encia:</strong>
+                                    <strong>Encia superior:</strong>
                                     <select name="encia" id="encia" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Bucal">Bucal</option>
+                                        <option value="Interpapilar">Interpapilar</option>
+                                        <option value="Lingual">Lingual</option>
+                                        <option value="Paladar">Paladar</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3" id="enciapanelinferior">
+                                    <strong>Encia inferior:</strong>
+                                    <select name="enciainferior" id="enciainferior" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
                                         <option value="Interpapilar">Interpapilar</option>
@@ -749,10 +767,18 @@
                                         <option value="Velo de Paladar">Velo de Paladar</option>
                                     </select>
                                 </div>
+                                <div class="col-md-3" id="paladarduropaneliz">
+                                    <strong>Paladar Duro:</strong>
+                                    <select name="paladarduroiz" id="paladarduroiz" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Boveda de Paladar">Boveda de Paladar</option>
+                                        <option value="Velo de Paladar">Velo de Paladar</option>
+                                    </select>
+                                </div>
 
                                 <!--Si se selecciona la opción ENCIA se debe habilitar el siguiente select simple-->
                                 <div class="col-md-3" id="enciapaneliz">
-                                    <strong>Encia:</strong>
+                                    <strong>Encia superior:</strong>
                                     <select name="enciaiz" id="enciaiz" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Bucal">Bucal</option>
@@ -760,7 +786,19 @@
                                         <option value="Lingual">Lingual</option>
                                         <option value="Paladar">Paladar</option>
                                     </select>
-                                </div><br><br>
+                                </div>
+                                <div class="col-md-3" id="enciapanelinferioriz">
+                                    <strong>Encia inferior:</strong>
+                                    <select name="enciaizinferior" id="enciaizinferior" class="form-control">
+                                        <option value="Seleccione">Seleccione...</option>
+                                        <option value="Bucal">Bucal</option>
+                                        <option value="Interpapilar">Interpapilar</option>
+                                        <option value="Lingual">Lingual</option>
+                                        <option value="Paladar">Paladar</option>
+                                    </select>
+                                </div>
+                                
+                                <br><br>
 
                                 <!-- esta pendiente definir con qué campo se relaciona-->
                                 <div class="col-md-6" id="relacionpaneliz">
@@ -960,11 +998,12 @@
                                         <option value="Seleccione">Seleccione...</option>
                                         <option value="Benigno">Benigno</option>
                                         <option value="Maligno">Maligno</option>
+                                        <option value="Ninguno">Ninguno</option>
                                     </select>
                                 </div>
 
                                 <!--Si se selecciona Maligno, se debe mostrar el siguiente select-->
-                                <div class="col-md-4" id="">
+                                <div class="col-md-4" id="tumormaligno">
                                     <strong>Maligno:</strong>
                                     <select name="maligno" id="maligno" class="form-control">
                                         <option value="Seleccione">Seleccione...</option>

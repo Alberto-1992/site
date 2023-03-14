@@ -17,10 +17,10 @@ $sql = "SELECT COUNT(*) total FROM dato_usuariobucal";
 $result = mysqli_query($conexion2, $sql);
 $fila = mysqli_fetch_assoc($result);
 
-$query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal,  dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal order by dato_usuariobucal.id_bucal DESC LIMIT 23  ");
+$query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal,  dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal order by dato_usuariobucal.id_bucal DESC LIMIT 23  ");
 if (isset($_POST['pacientes'])) {
     $q = $conexion2->real_escape_string($_POST['pacientes']);
-    $query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.razabucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal  where
+    $query = $conexionCancer->prepare("SELECT dato_usuariobucal.id_bucal, dato_usuariobucal.curpbucal, dato_usuariobucal.nombrecompletobucal, dato_usuariobucal.escolaridadbucal, dato_usuariobucal.fechanacimientobucal, dato_usuariobucal.edadbucal, dato_usuariobucal.sexobucal, dato_usuariobucal.estadobucal, dato_usuariobucal.municipiobucal FROM dato_usuariobucal inner join cancerbucal on cancerbucal.id_pacientebucal = dato_usuariobucal.id_bucal  where
 		dato_usuariobucal.id_bucal LIKE '%" . $q . "%' OR
         dato_usuariobucal.nombrecompletobucal LIKE '%" . $q . "%' OR
 		dato_usuariobucal.fechanacimientobucal LIKE '%" . $q . "%' OR

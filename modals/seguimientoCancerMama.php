@@ -266,6 +266,8 @@
                                             <option value="0">Seleccione</option>
                                             <option value="CICLO MAMARIO COMPLETO">CICLO MAMARIO COMPLETO</option>
                                             <option value="TANGENCIAL">TANGENCIAL</option>
+                                            <option value="HOLOCRANEO">HOLOCRANEO</option>
+                                            <option value="PELVIS">PELVIS</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4" id="fecharadio">

@@ -39,9 +39,9 @@ $hoy = date("Y-m-d");
     }else{
 	// SI EL EMAIL NO EXISTE, REGISTRAMOS LOS DATOS EN LA TABLA USUARIO
         //if($validaCurp != $curp){
-	$sql = $conexionCancer->prepare("INSERT into dato_usuariobucal(curpbucal, nombrecompletobucal, escolaridadbucal, fechanacimientobucal, edadbucal, sexobucal, razabucal, estadobucal, municipiobucal, yearbucal) 
+	$sql = $conexionCancer->prepare("INSERT into dato_usuariobucal(curpbucal, nombrecompletobucal, escolaridadbucal, fechanacimientobucal, edadbucal, sexobucal, estadobucal, municipiobucal, yearbucal) 
     
-                                    values (:curpbucal, :nombrecompletobucal, :escolaridadbucal, :fechanacimientobucal, :edadbucal, :sexobucal, :razabucal, :estadobucal, :municipiobucal, :yearbucal)");
+                                    values (:curpbucal, :nombrecompletobucal, :escolaridadbucal, :fechanacimientobucal, :edadbucal, :sexobucal, :estadobucal, :municipiobucal, :yearbucal)");
                     
                                 $sql->execute(array(
                                     ':curpbucal'=>$curp,
@@ -50,7 +50,6 @@ $hoy = date("Y-m-d");
                                     ':fechanacimientobucal'=>$fecha,  
                                     ':edadbucal'=>$edad,  
                                     ':sexobucal'=>$sexo,
-                                    ':razabucal'=>$raza,
                                     ':estadobucal'=>$cbx_estado,  
                                     ':municipiobucal'=>$cbx_municipio,  
                                     ':yearbucal'=>$hoy
@@ -304,15 +303,17 @@ $hoy = date("Y-m-d");
                                                 ));
                                             }
                                         };
-                                        $sql = $conexionCancer->prepare("INSERT into subatomicoderecha(id_subatomicodere,id_pacientebucal,labios,lengua,paladarblando,encia,relacionadoconorganodental)
-                                            values(:id_subatomicodere,:id_pacientebucal,:labios,:lengua,:paladarblando,:encia,:relacionadoconorganodental)");
+                                        $sql = $conexionCancer->prepare("INSERT into subatomicoderecha(id_subatomicodere,id_pacientebucal,labios,lengua,paladarblando,paladarduro,encia,enciainferior,relacionadoconorganodental)
+                                            values(:id_subatomicodere,:id_pacientebucal,:labios,:lengua,:paladarblando,:paladarduro,:encia,:enciainferior,:relacionadoconorganodental)");
                                             $sql->execute(array(
                                                 ':id_subatomicodere'=>uniqid('hraei'),
                                                 ':id_pacientebucal'=>$id_usuario,
                                                 ':labios'=>$labios,
                                                 ':lengua'=>$lengua,
                                                 ':paladarblando'=>$paladarblando,
+                                                ':paladarduro'=>$paladarduro,
                                                 ':encia'=>$encia,
+                                                ':enciainferior'=>$enciainferior,
                                                 ':relacionadoconorganodental'=>$relacion
                                             ));
                                             $msmaxisd;
@@ -357,15 +358,17 @@ $hoy = date("Y-m-d");
                                                     ));
                                                 }
                                             };
-                                        $sql = $conexionCancer->prepare("INSERT into subatomicoizquierda(id_subatomicoizquierda,id_pacientebucal,labiosiz,lenguaiz,paladarblandoiz,enciaiz,relacionadoconorganodentaliz)
-                                            values(:id_subatomicodereizquierda,:id_pacientebucal,:labiosiz,:lenguaiz,:paladarblandoiz,:enciaiz,:relacionadoconorganodentaliz)");
+                                        $sql = $conexionCancer->prepare("INSERT into subatomicoizquierda(id_subatomicoizquierda,id_pacientebucal,labiosiz,lenguaiz,paladarblandoiz,paladarduroiz,enciaiz,enciaizinferior,relacionadoconorganodentaliz)
+                                            values(:id_subatomicodereizquierda,:id_pacientebucal,:labiosiz,:lenguaiz,:paladarblandoiz,:paladarduroiz,:enciaiz,:enciaizinferior,:relacionadoconorganodentaliz)");
                                             $sql->execute(array(
                                                 ':id_subatomicodereizquierda'=>uniqid('hraei'),
                                                 ':id_pacientebucal'=>$id_usuario,
                                                 ':labiosiz'=>$labiosiz,
                                                 ':lenguaiz'=>$lenguaiz,
                                                 ':paladarblandoiz'=>$paladarblandoiz,
+                                                ':paladarduroiz'=>$paladarduroiz,
                                                 ':enciaiz'=>$enciaiz,
+                                                ':enciaizinferior'=>$enciaizinferior,
                                                 ':relacionadoconorganodentaliz'=>$relacioniz
                                             ));
                                             $msmaxisiiz;

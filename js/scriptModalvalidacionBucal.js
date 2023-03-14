@@ -393,8 +393,31 @@ $(function () {
     $('#promedio14').prop('hidden', true);
     $('#dosis15').prop('hidden', true);
     $('#promedio15').prop('hidden', true);
-    
+    $('#enciapanelinferior').prop("hidden", true);
+    $('#paladarduropanel').prop("hidden", true);
+    $('#enciapanelinferioriz').prop("hidden", true);
+    $('#paladarduropaneliz').prop("hidden", true);
+    $('#idmssitiometastasis').prop("hidden", true);
+    $('#tumormaligno').prop("hidden", true);
 
+});
+$(document).ready(function () {
+    $("#metastasisbucal").change(function (e) {
+        if (metastasisbucal.options[3].selected == true) {
+            $('#idmssitiometastasis').prop("hidden", false);
+        }else if(metastasisbucal.options[3].selected == false){
+            $('#idmssitiometastasis').prop("hidden", true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#tipohisto").change(function (e) {
+        if (tipohisto.options[2].selected == true) {
+            $('#tumormaligno').prop("hidden", false);
+        }else if(tipohisto.options[2].selected == false){
+            $('#tumormaligno').prop("hidden", true);
+        }
+    })
 });
 $(document).ready(function () {
     $("#msoarsdosis").change(function (e) {
@@ -614,6 +637,7 @@ $(document).ready(function () {
             $('#lenguapaneliz').prop('hidden', true);
             $('#paladarblandopaneliz').prop('hidden', true);
             $('#enciapaneliz').prop('hidden', true);
+            $('#enciapanelinferior').prop("hidden", true);
             $('#relacionpaneliz').prop('hidden', true);
             $('#maxisdiz').prop('hidden', true);
             $('#maxiidiz').prop('hidden', true);
@@ -635,17 +659,78 @@ $(document).ready(function () {
 /*inicia lesiones orales */
 
 $(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[2].selected == true) {
+            $('#labiospanel').prop('hidden', false);
+         }else if (msqueva.options[2].selected == false) {
+            $('#labiospanel').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[3].selected == true) {
+            $('#lenguapanel').prop('hidden', false);
+         }else if (msqueva.options[3].selected == false) {
+            $('#lenguapanel').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[1].selected == true) {
+            $('#enciapanel').prop('hidden', false);
+         }else if (msqueva.options[1].selected == false) {
+            $('#enciapanel').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[4].selected == true) {
+            $('#enciapanelinferior').prop("hidden", false);
+         }else if (msqueva.options[4].selected == false) {
+            $('#enciapanelinferior').prop("hidden", true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[7].selected == true) {
+            $('#paladarblandopanel').prop('hidden', false);
+         }else if (msqueva.options[7].selected == false) {
+            $('#paladarblandopanel').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#msqueva").change(function (e) {
+        if (msqueva.options[8].selected == true) {
+            $('#paladarduropanel').prop("hidden", false);
+         }else if (msqueva.options[8].selected == false) {
+            $('#paladarduropanel').prop("hidden", true);
+        }
+    })
+});
+$(document).ready(function () {
+    $("#relacion").change(function (e) {
+        if (relacion.options[1].selected == true) {
+            $('#maxisd').prop('hidden', false);
+            $('#maxiid').prop('hidden', false);
+         }else if (relacion.options[1].selected == false) {
+            $('#maxisd').prop('hidden', true);
+            $('#maxiid').prop('hidden', true);
+        }
+    })
+});
+$(document).ready(function () {
     $("#msubicacion").change(function (e) {
         if (msubicacion.options[0].selected == true) {
             $('#tituloubicacionderecha').prop('hidden', false);
             $('#subanatomico').prop('hidden', false);
-            $('#labiospanel').prop('hidden', false);
-            $('#lenguapanel').prop('hidden', false);
-            $('#paladarblandopanel').prop('hidden', false);
-            $('#enciapanel').prop('hidden', false);
+            
             $('#relacionpanel').prop('hidden', false);
-            $('#maxisd').prop('hidden', false);
-            $('#maxiid').prop('hidden', false);
+        
     }else if (msubicacion.options[0].selected == false) {
             $('#tituloubicacionderecha').prop('hidden', true);
             $('#subanatomico').prop('hidden', true);
@@ -653,10 +738,12 @@ $(document).ready(function () {
             $('#lenguapanel').prop('hidden', true);
             $('#paladarblandopanel').prop('hidden', true);
             $('#enciapanel').prop('hidden', true);
+            $('#enciapanelinferior').prop("hidden", true);
             $('#relacionpanel').prop('hidden', true);
             $('#maxisd').prop('hidden', true);
             $('#maxiid').prop('hidden', true);
-
+            $('#paladarduropanel').prop("hidden", true);
+            $('#paladarduropanel').prop("hidden", true);
             $('#msqueva').prop('selectedIndex', 0);
             $('#labios').prop('selectedIndex', 0);
             $('#lengua').prop('selectedIndex', 0);
@@ -668,25 +755,93 @@ $(document).ready(function () {
         }
     })
 });
+            
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[2].selected == true) {
+                        $('#labiospaneliz').prop('hidden', false);
+                    }else if (msqueva2.options[2].selected == false) {
+                        $('#labiospaneliz').prop('hidden', true);
+                    }
+                })
+            });
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[3].selected == true) {
+                        $('#lenguapaneliz').prop('hidden', false);
+                    }else if (msqueva2.options[3].selected == false) {
+                        $('#lenguapaneliz').prop('hidden', true);
+                    }
+                })
+            });
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[1].selected == true) {
+                        $('#enciapaneliz').prop('hidden', false);
+                    }else if (msqueva2.options[1].selected == false) {
+                        $('#enciapaneliz').prop('hidden', true);
+                    }
+                })
+            });
+        
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[4].selected == true) {
+                        $('#enciapanelinferioriz').prop("hidden", false);
+                    }else if (msqueva2.options[4].selected == false) {
+                        $('#enciapanelinferioriz').prop("hidden", true);
+                    }
+                })
+            });
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[7].selected == true) {
+                        $('#paladarblandopaneliz').prop('hidden', false);
+                    }else if (msqueva2.options[7].selected == false) {
+                        $('#paladarblandopaneliz').prop('hidden', true);
+                    }
+                })
+            });
+            
+            $(document).ready(function () {
+                $("#msqueva2").change(function (e) {
+                    if (msqueva2.options[8].selected == true) {
+                        $('#paladarduropaneliz').prop("hidden", false);
+                    }else if (msqueva2.options[8].selected == false) {
+                        $('#paladarduropaneliz').prop("hidden", true);
+                    }
+                })
+            });
+            $(document).ready(function () {
+                $("#relacioniz").change(function (e) {
+                    if (relacioniz.options[1].selected == true) {
+                        $('#maxisdiz').prop('hidden', false);
+                        $('#maxiidiz').prop('hidden', false);
+                    }else if (relacioniz.options[1].selected == false) {
+                        $('#maxisdiz').prop('hidden', true);
+                        $('#maxiidiz').prop('hidden', true);
+                        $('#msmaxisiiz').prop('selectedIndex', 0);
+                        $('#msmaxiiz').prop('selectedIndex', 0);
+                    }
+                })
+            });
 $(document).ready(function () {
     $("#msubicacion").change(function (e) {
         if (msubicacion.options[1].selected == true) {
             $('#tituloubicacionizquierda').prop('hidden', false);
             $('#subanatomicoiz').prop('hidden', false);
-            $('#labiospaneliz').prop('hidden', false);
-            $('#lenguapaneliz').prop('hidden', false);
-            $('#paladarblandopaneliz').prop('hidden', false);
-            $('#enciapaneliz').prop('hidden', false);
+            
             $('#relacionpaneliz').prop('hidden', false);
-            $('#maxisdiz').prop('hidden', false);
-            $('#maxiidiz').prop('hidden', false);
+            
     }else if (msubicacion.options[1].selected == false) {
             $('#tituloubicacionizquierda').prop('hidden', true);
             $('#subanatomicoiz').prop('hidden', true);
             $('#labiospaneliz').prop('hidden', true);
             $('#lenguapaneliz').prop('hidden', true);
             $('#paladarblandopaneliz').prop('hidden', true);
+            $('#paladarduropaneliz').prop("hidden", true);
             $('#enciapaneliz').prop('hidden', true);
+            $('#enciapanelinferioriz').prop("hidden", true);
             $('#relacionpaneliz').prop('hidden', true);
             $('#maxisdiz').prop('hidden', true);
             $('#maxiidiz').prop('hidden', true);
