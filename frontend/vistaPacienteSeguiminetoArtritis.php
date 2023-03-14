@@ -511,30 +511,30 @@ require 'modals/seguimientoArtritis.php';
             }
     }
     function finalizarEdicion(){
-        var id = $("#idcurp").val();
+        var id = $("#idartritis").val();
     var artritis = $("#artritispaciente").val();
     var valor = 0;
     var nombrepaciente = $("#nombrepaciente").val();
-    var mensaje = confirm("Desea finalizar con la edición de los datos");
+    var mensaje = confirm("Desea continuar con la edición de los datos");
     let parametros = {
         id: id, artritis:artritis, valor:valor, nombrepaciente:nombrepaciente
     }
             if(mensaje == true){
                 $.ajax({
             data: parametros,
-            url: 'aplicacion/editarRegistro.php',
+            url: 'aplicacion/editarRegistroArtritisseguimeinto.php',
             type: 'post',
-        
             success: function(datos) {
                                                 $("#mensaje").html(datos);
                                                 let id = $("#idcurp").val();
+                                                let fechasegui = $("#fechainicioseguimiento").val();
                                                 let ob = {
-                                                            id: id
+                                                            id: id, fechasegui:fechasegui
                                                             };
   
                                                     $.ajax({
                                                             type: "POST",
-                                                            url: "consultaArtritisBusqueda.php",
+                                                            url: "consultaSeguimientosArtritis.php",
                                                             data: ob,
                                                     
                                                         success: function(data) {
