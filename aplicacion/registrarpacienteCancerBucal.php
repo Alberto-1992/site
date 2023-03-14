@@ -410,6 +410,20 @@ $hoy = date("Y-m-d");
                                                 ':calidadvidaecog'=>$calidadvidaecogbucal
 
                                             ));
+                                            $mssitiometastasis;
+                                            if(is_array($mssitiometastasis) || is_object($mssitiometastasis)){
+                                                foreach($mssitiometastasis as $metastasissitio) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into sitiometastasisbucal(descripcionmetastasisbucal,id_pacientebucal) 
+                                    
+                                                    values(:descripcionmetastasisbucal,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionmetastasisbucal'=>$metastasissitio,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
                                     $sql = $conexionCancer->prepare("INSERT into histopatologiacancerbucal(id_hitopatologiabucal,id_pacientebucal,dxhistopatologicobucal,fechareportebucal,tipobucal,malignobucal)
                                         values(:id_hitopatologiabucal,:id_pacientebucal,:dxhistopatologicobucal,:fechareportebucal,:tipobucal,:malignobucal)");
                                             $sql->execute(array(
@@ -484,6 +498,20 @@ $hoy = date("Y-m-d");
                                                 ':dosismaxtiroides'=>$Tiroides1,
                                                 ':dosispromediotiroides'=>$Tiroides2
                                             ));
+                                            $msoarsdosis;
+                                            if(is_array($msoarsdosis) || is_object($msoarsdosis)){
+                                                foreach($msoarsdosis as $dosisoars) {
+                                                    $sql_s = $conexionCancer->prepare("INSERT into oarsdosis(descripcionoarsbucal,id_pacientebucal) 
+                                    
+                                                    values(:descripcionoarsbucal,:id_pacientebucal)");
+                                
+                                                    $sql_s->execute(array(
+                                                        ':descripcionoarsbucal'=>$dosisoars,
+                                                        ':id_pacientebucal'=>$id_usuario
+                                
+                                                    ));
+                                                }
+                                            };
                                             $tiporeconstruccion;
                                             if(is_array($tiporeconstruccion) || is_object($tiporeconstruccion)){
                                                 foreach($tiporeconstruccion as $tipodereconstruccion) {

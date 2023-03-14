@@ -202,6 +202,24 @@ $sql_complicacionrt = $conexion2->query("SELECT id_pacientebucal,descripcionrtbu
             HAVING count(id_pacientebucal) >= 1)
             and id_pacientebucal = $id_paciente
             ORDER BY id_pacientebucal");
+$sql_sitiometastasis = $conexion2->query("SELECT id_pacientebucal,descripcionmetastasisbucal
+            FROM sitiometastasisbucal
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM sitiometastasisbucal
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
+$sql_dosisoars = $conexion2->query("SELECT id_pacientebucal,descripcionoarsbucal
+            FROM oarsdosis
+            WHERE id_pacientebucal
+            IN (SELECT id_pacientebucal
+            FROM oarsdosis
+            GROUP BY id_pacientebucal
+            HAVING count(id_pacientebucal) >= 1)
+            and id_pacientebucal = $id_paciente
+            ORDER BY id_pacientebucal");
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
 // $fecha2 = new DateTime($dataRegistro['fechaterminotrombolisis']);//fecha de cierre
 
@@ -630,7 +648,9 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
             </tr>
             <tr>
                 <th id="th">Sitio metastasis</th>
-                <td id="td"><?php ?></td>
+                <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_sitiometastasis))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionmetastasisbucal'].'-'.'';} ?></td>
             </tr>
             <tr>
                 <th id="th">Calidad de vida ECOG</th>
@@ -730,12 +750,6 @@ echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
                 <th id="th">Momento RT:</th>
                 <td id="td"><?php echo $dataRegistro['momentortradiobucal'] ?></td>
             </tr>
-
-            <tr>
-                <th id="th">Tx Complicaciones Orales:</th>
-                <td id="td"><?php echo $dataRegistro[''] ?></td>
-            </tr>
-
             <tr>
                 <th id="th">Dosis:</th>
                 <td id="td"><?php echo $dataRegistro['dosisradiobucal']?></td>
@@ -758,7 +772,9 @@ echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
 
             <tr>
                 <th id="th">OARS Dosis:</th>
-                <td id="td"><?php echo $dataRegistro[''] ?></td>
+                <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_dosisoars))
+{
+echo '&nbsp&nbsp'.$dataReg['descripcionoarsbucal'].'-'.'';} ?></td>
             </tr>
 
             <tr>
