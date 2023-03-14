@@ -1,23 +1,23 @@
 <?php
 include("../conexionCancer.php");
 date_default_timezone_set('America/Monterrey');
-$seguimientoinicio = 0;
+
     extract($_POST);
-        $sql = $conexionCancer->prepare("INSERT into seguimientoartritis(fechainicioseguiartritis,fechaseguimiento,curpseguiart,tallaseguiart,pesoartsegui,imcseguiart,plaquetasseguiart,frbasalseguiart,frnominalseguiart,pcrseguiart,vitaminadbasalseguiart,
+        $sql = $conexionCancer->prepare("INSERT into seguimientoartritis(fechaseguimiento,fechainicioseguiartritis,curpseguiart,tallaseguiart,pesoartsegui,imcseguiart,plaquetasseguiart,frbasalseguiart,frnominalseguiart,pcrseguiart,vitaminadbasalseguiart,
         vitaminadnominalseguiart,anticppbasalseguiart,anticppnominalseguiart,vsgseguiart,tgobasalseguiart,tgonominalseguiart,tgpbasalseguiart,tgpnominalseguiart,glucosaseguiart,colesteroseguiart,trigliceridosseguiart,fib4seguiart,
         resultadofib4seguiart,detalleusghepaticoseguiart,hallazgousgseguiart,clasificacionesteatosisseguiart,articulacionesinflamadassjc28seguiart,articulacionesdolorosastjc28seguiart,evglobalpgaseguiart,evegaseguiart,resultadocdaiseguiart,
         resultadosdaiseguiart,metrotexateseguiart,dosissemanalmetroseguiart,leflunomideseguiart,dosissemanalfemuaseguiart,sulfazalasinaseguiart,dosissemanalsulfaseguiart,tecoferolseguiart,dosissemanaltecoseguiart,glucocorticoideseguiart,
-        usghepaticoseguiart,dosissemanaltrataseguiart,vitaminadseguiart,dosissemanalvitadseguiart,biologicoseguiart,tratamientobiologicoseguiart,apegotratamientoseguiart,editopacienteseguimiento,id_paciente)
+        usghepaticoseguiart,dosissemanaltrataseguiart,vitaminadseguiart,dosissemanalvitadseguiart,biologicoseguiart,tratamientobiologicoseguiart,apegotratamientoseguiart,id_paciente)
 
-            values(:fechainicioseguiartritis,:fechaseguimiento,:curpseguiart,:tallaseguiart,:pesoartsegui,:imcseguiart,:plaquetasseguiart,:frbasalseguiart,:frnominalseguiart,:pcrseguiart,:vitaminadbasalseguiart,
+            values(:fechaseguimiento,:fechainicioseguiartritis,:curpseguiart,:tallaseguiart,:pesoartsegui,:imcseguiart,:plaquetasseguiart,:frbasalseguiart,:frnominalseguiart,:pcrseguiart,:vitaminadbasalseguiart,
         :vitaminadnominalseguiart,:anticppbasalseguiart,:anticppnominalseguiart,:vsgseguiart,:tgobasalseguiart,:tgonominalseguiart,:tgpbasalseguiart,:tgpnominalseguiart,:glucosaseguiart,:colesteroseguiart,:trigliceridosseguiart,:fib4seguiart,
         :resultadofib4seguiart,:detalleusghepaticoseguiart,:hallazgousgseguiart,:clasificacionesteatosisseguiart,:articulacionesinflamadassjc28seguiart,:articulacionesdolorosastjc28seguiart,:evglobalpgaseguiart,:evegaseguiart,:resultadocdaiseguiart,
         :resultadosdaiseguiart,:metrotexateseguiart,:dosissemanalmetroseguiart,:leflunomideseguiart,:dosissemanalfemuaseguiart,:sulfazalasinaseguiart,:dosissemanalsulfaseguiart,:tecoferolseguiart,:dosissemanaltecoseguiart,:glucocorticoideseguiart,
-        :usghepaticoseguiart,:dosissemanaltrataseguiart,:vitaminadseguiart,:dosissemanalvitadseguiart,:biologicoseguiart,:tratamientobiologicoseguiart,:apegotratamientoseguiart,:editopacienteseguimiento,:id_paciente)");
+        :usghepaticoseguiart,:dosissemanaltrataseguiart,:vitaminadseguiart,:dosissemanalvitadseguiart,:biologicoseguiart,:tratamientobiologicoseguiart,:apegotratamientoseguiart,:id_paciente)");
 
             $sql->execute(array(
-                ':fechainicioseguiartritis'=>$fechahoy,
                 ':fechaseguimiento'=>$fechaseguimientoart,
+                ':fechainicioseguiartritis'=>$fechahoy,
                 ':curpseguiart'=>$curpseguiart,
                 ':tallaseguiart'=>$tallaseguiart,
                 ':pesoartsegui'=>$pesoseguiart,
@@ -65,8 +65,7 @@ $seguimientoinicio = 0;
                 ':biologicoseguiart'=>$biologicosegui,
                 ':tratamientobiologicoseguiart'=>$tratamientobiologicosegui,
                 ':apegotratamientoseguiart'=>$apegotratamientosegui,
-                ':id_paciente'=>$seguiart,
-                ':editopacienteseguimiento'=>$seguimientoinicio
+                ':id_paciente'=>$seguiart
 
             ));
             if($sql != false) {
