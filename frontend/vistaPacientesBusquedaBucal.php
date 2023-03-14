@@ -202,12 +202,6 @@ $sql_complicacionrt = $conexion2->query("SELECT id_pacientebucal,descripcionrtbu
             HAVING count(id_pacientebucal) >= 1)
             and id_pacientebucal = $id_paciente
             ORDER BY id_pacientebucal");
-
-
-
-
-
-
 //$fecha1 = new DateTime($dataRegistro['iniciosintomas']);//fecha inicial
 // $fecha2 = new DateTime($dataRegistro['fechaterminotrombolisis']);//fecha de cierre
 
@@ -297,15 +291,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 </div>
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
-
-
-
-
-
-
-
-    <!-- Primera sección "Datos del Paciente, se agregan los campos que se solicitan en el formulario -->
-
     <div class="containerr2">Datos del Paciente</div>
 
     <tr>
@@ -371,13 +356,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
             <td id="td"><?php echo $rown['unidad']; ?></td>
         </tr>
         </table>
-<!--Finaliza Datos del Paciente-->
-
-
-
-
-
-<!--Inicia Antecedentes NO Patológicos-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
     <div class="containerr3">Antecedentes No Patológicos</div>
@@ -396,14 +374,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <td id="td"><?php echo $dataRegistro['higienebucal'] ?></td>
     </tr>
 </table>
-<!--Inicia Antecedentes Personales Patológicos-->
-
-
-
-
-
-
-<!--Inicia Antecedentes Personales Patológicos-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
     <div class="containerr3">Antecedentes Personales Patológicos</div>
 
@@ -450,11 +420,6 @@ echo '&nbsp&nbsp'.$dataRegis['descripcionviruspatobucal'].'--'.'';} ?></td>
 echo '&nbsp&nbsp'.$dataRegi['descripcioncancerpatobucal'].'--'.'';} ?></td>
     </tr>
 </table>
-<!--FINALIZA SECCIÓN DE ANTECEDENTES PERSONALES PATOLÓGICOS-->
-
-
-
-<!-- INCIA AFECTACIONES ORALES-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
     <div class="containerr3">AFECTACIONES ORALES</div>
 
@@ -585,8 +550,6 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubisupdere'].'-'.'';} ?></td>
 echo '&nbsp&nbsp'.$dataReg['descripcionubicainfdere'].'-'.'';} ?></td>
         </tr>
     </table>
-
-
     <!--Subdivisión de AFECTACIONES ORALES / UBICACIÓN / UBICACIÓN IZQUIERDA-->
     <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
         <div class="containerr5">Ubicación Izquierda</div>
@@ -636,14 +599,6 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubisupizquierda'].'-'.'';} ?></td>
 echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
         </tr>
     </table>
-
-    <!-- FINALIZA SECCIÓN USG HEPÁTICO-->
-
-
-
-
-
-    <!--Inicia la sección ATENCIÓN CLINICA-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">ATENCIÓN CLINICA</div>
 
@@ -682,10 +637,7 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
                 <td id="td"><?php echo $dataRegistro['calidadvidaecog']?></td>
             </tr>
         </table>
-
-
-        <!--Inicia la sección HISTOPATOLOGÍA-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">HISTOPATOLOGÍA</div>
 
             <tr>
@@ -707,12 +659,8 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
                 <th id="th">Maligno:</th>
                 <td id="td"><?php echo $dataRegistro['malignobucal'] ?></td>
             </tr>
-
         </table>
-
-
-        <!--Inicia la sección INMUNOHISTOQUÍMICA-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">INMUNOHISTOQUÍMICA</div>
 
             <tr>
@@ -725,47 +673,36 @@ echo '&nbsp&nbsp'.$dataReg['descripcionubicainfizquierda'].'-'.'';} ?></td>
                 <td id="td"><?php echo $dataRegistro['descripcioninmunobucal'] ?></td>
             </tr>
         </table>
-
-
-        <!--Inicia la sección TRATAMIENTO-->
-        <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
+<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">TRATAMIENTO</div>
-
             <tr>
                 <th id="th">Quirurgico:</th>
                 <td id="td"><?php echo $dataRegistro['quirurgicobucal'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Tipo de Cirugía:</th>
                 <td id="td"><?php echo $dataRegistro['tipocirugiabucal'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Maxilectomia de Infraestructura:</th>
                 <td id="td"><?php echo $dataRegistro['maxilectomiadeinfraestructura'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Lugar:</th>
                 <td id="td"><?php echo $dataRegistro['lugardrmc'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Tipo:</th>
                 <td id="td"><?php echo $dataRegistro['tipodrmc'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Nivel Cervical:</th>
                 <td id="td"><?php echo $dataRegistro['nivelcervical'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Reconstrucción:</th>
                 <td id="td"><?php echo $dataRegistro['reconstruccionbucal'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Tipo de Reconstrucción:</th>
                 <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_tiporeconstruccion))
@@ -782,7 +719,6 @@ echo '&nbsp&nbsp'.$dataReg['descripccionreconstruccionbucal'].'-'.'';} ?></td>
                 <th id="th">Fecha:</th>
                 <td id="td"><?php echo $dataRegistro['fecharadioterapiabucal'] ?></td>
             </tr>
-
             <tr>
                 <th id="th">Complicaciones:</th>
                 <td id="td"><?php while($dataReg= mysqli_fetch_assoc($sql_complicacionrt))
@@ -835,10 +771,6 @@ echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
                 <td id="td"><?php echo 'Dosis Prom Cavidad Oral: '.$dataRegistro['dosispromcavidadoral'].' | Dosis Prom Cocleas: '.$dataRegistro['dosispromediococlelas'].' | Dosis Prom Cristalinos: '.$dataRegistro['dosispromediocristalinos'].' | Dosis Prom Esófago: '.$dataRegistro['dosispromedioesofago'].' | Dosis Prom Labios: '.$dataRegistro['dosispromediolabios'].' | Dosis Prom Laringe: '.$dataRegistro['dosispromediolaringe'].' | Dosis Prom Mandibula: '.$dataRegistro['dosispromediomandibula'].' | Dosis Prom Médula: '.$dataRegistro['dosispromediomedula'].'<br>Dosis Prom Nervio Óptico: '.$dataRegistro['dosispromedionerviooptico'].' | Dosis Prom Ojos: '.$dataRegistro['dosispromedioojos'].' | Dosis Prom PFP:'.$dataRegistro['dosispromediopfp'].' | Dosis Prom Parotidas: '.$dataRegistro['dosispromedioparotidas'].' | Dosis Prom Sublinguales: '.$dataRegistro['dosispromediosubli'].' | Dosis Prom Tallo: '.$dataRegistro['dosispromediotallo'].' | Dosis Prom Tiroides:'.$dataRegistro['dosispromediotiroides'] ?></td>
             </tr>
         </table>
-
-
-
-        <!--Inicia la sección DEFUNCIÓN-->
         <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">DEFUNCIÓN</div>
 
@@ -857,10 +789,6 @@ echo '&nbsp&nbsp'.$dataReg['descripcionrtbucal'].'-'.'';} ?></td>
                 <td id="td"><?php echo $dataRegistro['causadefuncionbucal'] ?></td>
             </tr>
         </table>
-
-
-
-        <!--Inicia la sección CASO ÉXITOSO-->
         <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
             <div class="containerr3">CASO ÉXITOSO</div>
 
