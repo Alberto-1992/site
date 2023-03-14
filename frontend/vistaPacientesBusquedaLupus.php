@@ -98,8 +98,6 @@ $rows = mysqli_fetch_assoc($sqls);
 $sqlsm = $conexion2->query("SELECT * from t_municipio where id_municipio = $municipio");
 $rowsm = mysqli_fetch_assoc($sqlsm);
 
-
-
 ?>
 
 <div id="mensaje"></div>
@@ -116,7 +114,7 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
     $validaid = $validacion['id_pacientebucal'];
     if ($dataRegistro['curpbucal'] != '') {
         if ($validaid != $id_paciente) { ?>
-            <a href="#" class="mandaidbucal" id="<?php echo $id_paciente ?>">Seguimiento</a> <?php } else { ?>
+            <a href="#" class="mandaidbucal" id="<?php echo $id_paciente ?>" onclick="modalSeguimientoLupus();">Seguimiento</a> <?php } else { ?>
             <input type="hidden" value="<?php echo $id_paciente ?>" id="seguimiento">
             <a href="#" onclick="seguimiento();" style="color: blue;">
                 Ver seguimiento</a>
@@ -164,36 +162,31 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
     <!-- Primera sección "Datos del Paciente, se agregan los campos que se solicitan en el formulario -->
 
-    <div class="containerr2">Datos del Paciente</div>
+    <div class="containerr2">DATOS DEL PACIENTE</div>
 
     <tr>
         <th id="th">CURP:</th>
-        <td id="td"><?php echo $dataRegistro['curpbucal'] ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
         <th id="th">Nombre:</th>
-        <td id="td"><?php echo $dataRegistro['nombrecompletobucal'] ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
         <th id="th">Escolaridad:</th>
-        <td id="td"><?php echo $dataRegistro['escolaridadbucal'] ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
         <th id="th">Edad:</th>
-        <td id="td"><?php echo $dataRegistro['edadbucal'] ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
         <th id="th">Sexo:</th>
-        <td id="td"><?php echo $dataRegistro['sexobucal'] ?>
-    </tr>
-
-    <tr>
-        <th id="th">Raza:</th>
-        <td id="td"><?php echo $dataRegistro['razabucal'] ?>
+        <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
     <tr>
@@ -211,21 +204,6 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <td id="td"><?php echo $dataRegistro[''] ?>
     </tr>
 
-    <tr>
-        <th id="th">Estado de Residencia:</th>
-        <td id="td"><?php echo $dataRegistro['estadobucal'] ?>
-    </tr>
-
-    <tr>
-        <th id="th">Delegación / Municipio:</th>
-        <td id="td"><?php echo $dataRegistro['municipiobucal'] ?>
-    </tr>
-
-    <tr>
-        <th id="th">Referencia:</th>
-        <td id="td"><?php  ?>
-    </tr>
-
     </tr>
 </table>
 <!--Finaliza Datos del Paciente-->
@@ -237,20 +215,10 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 <!--Inicia Antecedentes NO Patológicos-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
 
-    <div class="containerr3">Antecedentes No Patológicos</div>
+    <div class="containerr3">ANTECEDENTES PERSONALES PATOLÓGICOS</div>
     <tr>
-        <th id="th">Exposición Solar:</th>
-        <td id="td"><?php  ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Comidas al día:</th>
-        <td id="td"><?php  ?></td>
-    </tr>
-
-    <tr>
-        <th id="th">Higiene Bucal:</th>
-        <td id="td"><?php  ?></td>
+        <th id="th">Toxicomanías:</th>
+        <td id="td"><?php echo $dataRegistro[''] ?></td>
     </tr>
 </table>
 <!--Inicia Antecedentes Personales Patológicos-->
@@ -260,373 +228,237 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
 
 
 
-<!--Inicia Antecedentes Personales Patológicos-->
+<!--Inicia CLINICA-->
 <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr3">Antecedentes Personales Patológicos</div>
+    <div class="containerr3">CLÍNICA</div>
 
-    <tr>
-        <th id="th">Toxicomanias:</th>
-        <td id="td">
-    </tr>
+    <!--Inicia ACTIVIDAD LÚPICA-->
+    <table class="table table-responsive table-bordered " cellspacing="0" width="100%">
+        <div class="containerr4">Actividad Lúpica</div>
 
-    <tr>
-        <th id="th">Años Tabaquismo:</th>
-        <td id="td">
-    </tr>
+        <tr>
+            <th id="th">Actividad Articular:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
 
-    <tr>
-        <th id="th">Cigarros al Día:</th>
-        <td id="td">
-    </tr>
+        <tr>
+            <th id="th">Actividad Cutánea:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
 
-    <tr>
-        <th id="th">Frecuencia Alcoholismo:</th>
-        <td id="td">
-    </tr>
+        <tr>
+            <th id="th">Actividad Hematología:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
 
-    <tr>
-        <th id="th">Hábitos:</th>
-        <td id="td">
-    </tr>
+        <tr>
+            <th id="th">Actividad Inmunológica:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
 
-    <tr>
-        <th id="th">Virus:</th>
-        <td id="td">
-    </tr>
+        <tr>
+            <th id="th">Actividad Neurológica:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
 
-    <tr>
-        <th id="th">Cáncer:</th>
-        <td id="td">
-    </tr>
-</table>
-<!--FINALIZA SECCIÓN DE ANTECEDENTES PERSONALES PATOLÓGICOS-->
-
+        <tr>
+            <th id="th">Actividad Renal:</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+    </table>
+    <!--FINALIZA ACTIVIDAD LÚPICA-->
 
 
-<!-- INCIA AFECTACIONES ORALES-->
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr3">AFECTACIONES ORALES</div>
 
-</table>
-
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr4">Afectación Dental</div>
-    <tr>
-        <th id="th">Órgano Oral Lesionado:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Maxilar Superior Derecho:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Maxilar Inferior Derecho:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Maxilar Superior Izquierdo:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Maxilar Inferior Izquierdo:</th>
-        <td></td>
-    </tr>
-</table>
-
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr4">Lesiones Orales</div>
-    <tr>
-        <th id="th">¿Lesión Oral?:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Tipo Tejido:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Tipo Lesión:</th>
-        <td></td>
-    </tr>
-
-    <tr>
-        <th id="th">Coloración:</th>
-        <td></td>
-    </tr>
-</table>
-
-<table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-    <div class="containerr4">Ubicación</div>
-
-    <!--Subdivisión de AFECTACIONES ORALES / UBICACIÓN / UBICACIÓN DERECHA-->
+    <!-- INCIA AFECTACIONES ORALES-->
     <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr5">Ubicación Derecha</div>
+        <div class="containerr4">CALCULADORA SLEDAI</div>
         <tr>
-            <th id="th">Subsitio Anatómico:</th>
-            <td></td>
+            <th id="th">Convulsión</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Labios:</th>
-            <td></td>
+            <th id="th">Psicosis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Lengua:</th>
-            <td></td>
+            <th id="th">Síndrome Cerebral Orgánico</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Paladar Blando:</th>
-            <td></td>
+            <th id="th">Alteración Visual</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Encia:</th>
-            <td></td>
+            <th id="th">Trastorno De Los Nervios Craneales</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Dolor De Cabeza Por Lupus</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">¿Está relacionado con un órgano dental?:</th>
-            <td></td>
+            <th id="th">EVC</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Maxilar Superior Derecho</th>
-            <td></td>
+            <th id="th">Vasculitis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Maxilar Inferior Derecho:</th>
-            <td></td>
+            <th id="th">Artritis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Miositis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Cilindros Urinarios</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Hematuria</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Piuria</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Proteinuria</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Erupción</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Úlceras De Las Mucosas</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Pleuritis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Pericarditis</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Bajo complemento (C3,C4 O Ch50 Bajo)</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Aumento de la Unión al ADN</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+        <tr>
+            <th id="th">Fiebre</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Trombocitopenia</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Leucopenia</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Alopecia</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
+        </tr>
+
+        <tr>
+            <th id="th">Resultado SLEDAI</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
     </table>
 
 
-    <!--Subdivisión de AFECTACIONES ORALES / UBICACIÓN / UBICACIÓN IZQUIERDA-->
+
+    <!-- INCIA LABORATORIOS-->
     <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr5">Ubicación Izquierda</div>
+        <div class="containerr4">LABORATORIOS</div>
+
         <tr>
-            <th id="th">Subsitio Anatómico:</th>
-            <td></td>
+            <th id="th">Albumina</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Labios:</th>
-            <td></td>
+            <th id="th">BUN</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Lengua:</th>
-            <td></td>
+            <th id="th">C3</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Paladar Blando:</th>
-            <td></td>
+            <th id="th">C4</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Encia:</th>
-            <td></td>
+            <th id="th">Creatina</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">¿Está relacionado con un órgano dental?:</th>
-            <td></td>
+            <th id="th">Proteina</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Maxilar Superior Izquierdo</th>
-            <td></td>
+            <th id="th">Urea</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Maxilar Inferior Izquierdo:</th>
-            <td></td>
-        </tr>
-    </table>
-
-    <!-- FINALIZA SECCIÓN USG HEPÁTICO-->
-
-
-
-
-
-    <!--Inicia la sección ATENCIÓN CLINICA-->
-    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr3">ATENCIÓN CLINICA</div>
-
-        <tr>
-            <th id="th">Fecha primer atención:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Estadío Clínico:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Etapa Clínica:</th>
-            <td></td>
-        </tr>
-
-    </table>
-
-
-    <!--Inicia la sección HISTOPATOLOGÍA-->
-    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr3">HISTOPATOLOGÍA</div>
-
-        <tr>
-            <th id="th">Dx Histopatológico:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Fecha de Reporte:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Tipo:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Maligno:</th>
-            <td></td>
-        </tr>
-
-    </table>
-
-
-    <!--Inicia la sección INMUNOHISTOQUÍMICA-->
-    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr3">INMUNOHISTOQUÍMICA</div>
-
-        <tr>
-            <th id="th">¿Se realizó PDL?</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">PDL:</th>
-            <td></td>
+            <th id="th">Vitamina D</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
     </table>
 
 
-    <!--Inicia la sección TRATAMIENTO-->
+    <!-- INCIA BIOPSIA RENAL-->
     <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr3">TRATAMIENTO</div>
+        <div class="containerr4">LABORATORIOS</div>
 
         <tr>
-            <th id="th">Quirurgico:</th>
-            <td></td>
+            <th id="th">Biopsia Renal</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
 
         <tr>
-            <th id="th">Tipo de Cirugía:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Maxilectomia de Infraestructura:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Lugar:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Tipo:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Nivel Cervical:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Reconstrucción:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Tipo de Reconstrucción:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Radioterapia:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Fecha:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Complicaciones:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Momento RT:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Tx Complicaciones Orales:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Dosis:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Fracciones:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">No. Fracciones:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Técnica:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">OARS Dosis:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Dosis Máxima:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Dosis Promedio:</th>
-            <td></td>
+            <th id="th">Tipo</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
     </table>
+
+
 
 
 
@@ -635,47 +467,29 @@ $rowsm = mysqli_fetch_assoc($sqlsm);
         <div class="containerr3">DEFUNCIÓN</div>
 
         <tr>
-            <th id="th">¿Defunción?:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Fecha Defunción:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Causa:</th>
-            <td></td>
+            <th id="th">Defunción</th>
+            <td id="td"><?php echo $dataRegistro[''] ?></td>
         </tr>
     </table>
 
 
 
-    <!--Inicia la sección CASO ÉXITOSO-->
-    <table class="table table-responsive  table-bordered " cellspacing="0" width="100%">
-        <div class="containerr3">CASO ÉXITOSO</div>
-
-        <tr>
-            <th id="th">¿Caso éxitoso?:</th>
-            <td></td>
-        </tr>
-
-        <tr>
-            <th id="th">Respuesta al Tratamiento:</th>
-            <td></td>
-        </tr>
-
-    </table>
+    <?php
 
 
+    require 'modals/seguimientoLupus.php';
 
-
-
+    ?>
 
 
 
     <script>
+        function modalSeguimientoLupus() {
+
+            $("#seguimientolupus").modal('show');
+        }
+
+
         function eliminarRegistro() {
             var id = $("#idcurp").val();
             var cancer = $("#cancer").val();

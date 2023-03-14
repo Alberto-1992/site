@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilosMenuNew.css">
 </head>
 
 <body>
@@ -17,48 +18,134 @@
                 </a>
 
             </li>
+
+            <!--
+            <hr>
             <li class="has-subnav">
-                <a href="#">
+                <a href="datosUsuario">
                     <i class="fa fa-user fa-2x" id="icon-color"></i>
                     <span class="nav-text">
-                        Mis datos
+                        Mis Datos
                     </span>
                 </a>
+            </li>-->
 
-            </li>
-            <li>
-                <a href="../rh/principal">
-                    <i class="fa fa-file-excel-o fa-2x" id="icon-color"></i>
+            <hr>
+            <li class="has-subnav">
+                <a href="infarto">
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Evaluación del Desempeño
+                        Sindrome Coronario Agudo
                     </span>
                 </a>
-
             </li>
-            <?php
-        if (isset($_SESSION['usuarioJefe'])) {
-            $usernameSesion = $_SESSION['usuarioJefe'];
-            require '../cisfa/conexion.php';
-            $statement = $conexion->prepare("SELECT correo, rol, password FROM usuarioslogeojefes WHERE correo= '$usernameSesion' AND rol = 4");
-            $statement->execute(array(
-                ':correo' => $usernameSesion
-            ));
-            $rw = $statement->fetch();
-            $admin = $rw['correo'];
-            if ($admin == 'drraulguzman@gmail.com') {
-                ?>
 
-            <li>
+
+            <hr>
+            <li class="has-subnav">
                 <a href="cancer">
-                    <i class="fa fa-child fa-2x" id="icon-color"></i>
+                    <i class="fa fa-user-md" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Cancer
+                        Cáncer
                     </span>
                 </a>
+            </li>
+
+            <hr>
+            <li class="has-subnav">
+                <a href="artritis">
+                    <i class="fa fa-hand-spock-o fa-2x" id="icon-color"></i>
+                    <span class="nav-text">
+                        Artritis
+                    </span>
+                </a>
+            </li>
+
+            <hr>
+            <li class="has-subnav">
+                <a href="../cisfa/principal">
+                    <i class="fa fa-medkit fa-2x" id="icon-color"></i>
+                    <span class="nav-text">
+                        Cisfa
+                    </span>
+                </a>
+            </li>
+
+            <hr>
+            <li class="has-subnav">
+                <a href="lupus">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span class=" nav-text">
+                        Lupus
+                    </span>
+                </a>
+
+            </li>
+            <!--
+            <hr>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tint" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Hemodinamia
+                    </span>
+                </a>
+
+            </li>
+            <hr>
+            <li>
+                <a href="#">
+                    <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
+                    <span class="nav-text">
+                        Rehabilitación
+                    </span>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-graduation-cap" aria-hidden="true""></i>
+                    <span class=" nav-text">
+                        Evaluación del Desempeño
+                        </span>
+                </a>
+
+            </li>-->
+            <hr>
+            <li>
+                <a href="../bolsa/principal">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Reclutamiento y Selección
+                    </span>
+                </a>
+
+            </li>
+            <hr>
+            <li>
+                <a href="../compatibilidad/principal">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Compatiblidad laboral
+                    </span>
+                </a>
+
+            </li>
+            <hr>
+            <li>
+                <a href="validar" target="_blank">
+                    <i class="fa fa-id-card fa-2x" id="icon-color"></i>
+                    <span class="nav-text">
+                        Registrar usuario
+                    </span>
+                </a>
+
+            </li>
+            <hr>
+        </ul>
                 <!--  <ul>
                             <li><a href="#" id="nav-text" data-toggle="modal"
                     data-target="#myModal_cargamedicamento">Cargar paciente</a></li>
-                      
                     </ul>-->
             </li>
 

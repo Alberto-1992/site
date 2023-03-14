@@ -266,6 +266,15 @@ $(document).ready(function() {
     });
 });
 
+// Tipo de Reconstrucción
+$(document).ready(function() {
+    $('#tiporeconstruccion').change(function(e) { 
+    }).multipleSelect({
+        width: '100%'
+    });
+});
+
+
 
 // OARS Dosis
 $(document).ready(function() {

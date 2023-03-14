@@ -18,44 +18,49 @@
                 </a>
 
             </li>
+
+            <!--
             <hr>
             <li class="has-subnav">
                 <a href="datosUsuario">
                     <i class="fa fa-user fa-2x" id="icon-color"></i>
                     <span class="nav-text">
-                        Mis datos
+                        Mis Datos
                     </span>
                 </a>
+            </li>-->
 
-            </li>
             <hr>
             <li class="has-subnav">
                 <a href="infarto">
-                    <i class="fa fa-ambulance fa-2x" id="icon-color"></i>
+                    <i class="fa fa-heartbeat" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Infarto Agudo al Miocardio
+                        Sindrome Coronario Agudo
                     </span>
                 </a>
-
             </li>
+
+
             <hr>
             <li class="has-subnav">
                 <a href="cancer">
-                    <i class="fa fa-child fa-2x" id="icon-color"></i>
+                    <i class="fa fa-user-md" aria-hidden="true"></i>
                     <span class="nav-text">
-                        Cancer
+                        Cáncer
                     </span>
                 </a>
             </li>
+
             <hr>
             <li class="has-subnav">
-            <a href="artritis">
+                <a href="artritis">
                     <i class="fa fa-hand-spock-o fa-2x" id="icon-color"></i>
                     <span class="nav-text">
                         Artritis
                     </span>
                 </a>
             </li>
+
             <hr>
             <li class="has-subnav">
                 <a href="../cisfa/principal">
@@ -64,22 +69,23 @@
                         Cisfa
                     </span>
                 </a>
-
             </li>
+
             <hr>
             <li class="has-subnav">
-                <a href="../esclerosis/principal">
-                    <i class="fa fa-folder-open fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
-                        Esclerosis Multiple
+                <a href="lupus">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span class=" nav-text">
+                        Lupus
                     </span>
                 </a>
 
             </li>
+            <!--
             <hr>
             <li>
                 <a href="#">
-                    <i class="fa fa-heart-o fa-2x" id="icon-color"></i>
+                    <i class="fa fa-tint" aria-hidden="true"></i>
                     <span class="nav-text">
                         Hemodinamia
                     </span>
@@ -87,7 +93,7 @@
 
             </li>
             <hr>
-            <!--<li>
+            <li>
                 <a href="#">
                     <i class="fa fa-wheelchair-alt fa-2x" id="icon-color"></i>
                     <span class="nav-text">
@@ -95,20 +101,20 @@
                     </span>
                 </a>
 
-            </li>-->
+            </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-file-excel-o fa-2x" id="icon-color"></i>
-                    <span class="nav-text">
+                    <i class="fa fa-graduation-cap" aria-hidden="true""></i>
+                    <span class=" nav-text">
                         Evaluación del Desempeño
-                    </span>
+                        </span>
                 </a>
 
-            </li>
+            </li>-->
             <hr>
             <li>
                 <a href="../bolsa/principal">
-                    <i class="fa fa-map-marker fa-2x" id="icon-color"></i>
+                    <i class="fa fa-users" aria-hidden="true"></i>
                     <span class="nav-text">
                         Reclutamiento y Selección
                     </span>
@@ -118,7 +124,7 @@
             <hr>
             <li>
                 <a href="../compatibilidad/principal">
-                    <i class="fa fa-info fa-2x" id="icon-color"></i>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
                     <span class="nav-text">
                         Compatiblidad laboral
                     </span>
